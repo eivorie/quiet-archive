@@ -1,0 +1,40 @@
+/* =========================
+   dry cookies – ambiance
+   ========================= */
+
+body {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.06),
+      rgba(0, 0, 0, 0.4) 70%
+    ),
+    #241b13;
+}
+
+/* Texte légèrement plus chaud */
+.oneshot-text p {
+  color: #3a2a1d;
+}
+
+/* Phrase pivot */
+.emphasis {
+  font-style: italic;
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* Dernière phrase */
+.oneshot-text p:last-child {
+  font-style: italic;
+  margin-top: 50px;
+}
+
+/* Signature silencieuse */
+.oneshot-text::after {
+  content: "—";
+  display: block;
+  text-align: center;
+  margin: 60px 0 0;
+  color: #6b4a2d;
+}
