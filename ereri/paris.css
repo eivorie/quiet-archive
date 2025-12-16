@@ -4,6 +4,22 @@ body {
   background: #2a2016;
 }
 
+.ereri-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 80px;
+}
+
+.oneshot-card {
+  max-width: 720px;
+}
+
+.oneshot-header {
+  text-align: center;
+}
+
 .oneshot-text p:first-of-type {
   font-style: italic;
 }
