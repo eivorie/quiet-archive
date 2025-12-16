@@ -1,0 +1,57 @@
+/* =========================
+   Depending on the weather
+   ========================= */
+
+/* Carte légèrement plus enveloppante */
+.weather-card {
+  text-align: center;
+}
+
+/* Liste des humeurs */
+.weather-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 35px;
+}
+
+.weather-list li {
+  margin-bottom: 16px;
+}
+
+/* Liens */
+.weather-list a {
+  font-size: 0.95rem;
+  color: #6b4a2d;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.weather-list a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Pages individuelles */
+.weather-text p {
+  max-width: 520px;
+  margin: 0 auto 1.4em;
+  line-height: 1.8;
+  color: #4a2f1a;
+}
+
+/* Dernière phrase (souvent importante) */
+.weather-text p:last-child {
+  margin-top: 40px;
+  font-style: italic;
+}
+
+/* Option : ambiance plus calme */
+body.weather {
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(255, 255, 255, 0.06),
+      rgba(0, 0, 0, 0.35) 65%
+    ),
+    #241b18;
+}
