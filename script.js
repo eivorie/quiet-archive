@@ -49,7 +49,7 @@ const memories = [
 const button = document.getElementById("generate");
 const result = document.getElementById("result");
 
-if (button) {
+if (button && result) {
   button.addEventListener("click", () => {
     const memory = memories[Math.floor(Math.random() * memories.length)];
 
@@ -68,15 +68,4 @@ function formatAuthor(author) {
     case "us": return "— us";
     default: return "";
   }
-}
-
-
-const button = document.getElementById("generate");
-const result = document.getElementById("result");
-
-if (button) {
-  button.addEventListener("click", () => {
-    const text = memories[Math.floor(Math.random() * memories.length)];
-    result.textContent = text;
-  });
 }
