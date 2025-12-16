@@ -1,8 +1,64 @@
-/* Ereri / Levi POV – styles communs */
+/* =========================
+   Ereri / Levi POV – base
+   ========================= */
 
 .ereri {
   max-width: 640px;
 }
+
+/* Liens Ereri */
+.ereri a {
+  color: #6b4a2d;
+  text-decoration: none;
+}
+
+.ereri a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Layout index Ereri
+   ========================= */
+
+.ereri-layout {
+  display: flex;
+  gap: 60px;
+}
+
+/* Table des matières */
+.ereri-toc {
+  min-width: 160px;
+}
+
+.ereri-toc h2 {
+  font-weight: normal;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #4a2f1a;
+}
+
+.ereri-toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ereri-toc li {
+  margin-bottom: 12px;
+}
+
+/* Contenu à droite */
+.ereri-content {
+  flex: 1;
+}
+
+.ereri-intro {
+  font-style: italic;
+  color: #5a3c24;
+}
+
+/* =========================
+   One shot (paris.html)
+   ========================= */
 
 .oneshot-header {
   margin-bottom: 50px;
@@ -28,13 +84,19 @@
   color: #3b2a1a;
 }
 
-/* Liens Ereri */
+/* =========================
+   Responsive
+   ========================= */
 
-.ereri a {
-  color: #6b4a2d;
-  text-decoration: none;
+@media (max-width: 700px) {
+  .ereri-layout {
+    flex-direction: column;
+  }
+
+  .ereri-toc {
+    border-bottom: 1px solid #d8c7b3;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
 }
 
-.ereri a:hover {
-  text-decoration: underline;
-}
