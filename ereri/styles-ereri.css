@@ -27,3 +27,14 @@
   text-align: justify;
   color: #3b2a1a;
 }
+
+/* Liens Ereri */
+
+.ereri a {
+  color: #6b4a2d;
+  text-decoration: none;
+}
+
+.ereri a:hover {
+  text-decoration: underline;
+}
