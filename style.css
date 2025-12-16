@@ -81,3 +81,16 @@ button:hover {
   font-style: italic;
   color: #4a2f1a;
 }
+
+@media (max-width: 600px) {
+  .container {
+    margin: 40px 15px;
+    padding: 25px 20px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
