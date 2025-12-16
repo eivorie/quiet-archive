@@ -3,64 +3,92 @@
    ========================= */
 
 .ereri-page {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 80px auto;
   padding: 0 40px;
 }
 
-.ereri-content {
+/* =========================
+   Carte Ereri (papier)
+   ========================= */
+
+.ereri-card {
   background: #f3ede4; /* papier */
-  padding: 40px 35px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  border-radius: 16px;
+  padding: 60px 70px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
 }
 
-/* Layout */
+/* =========================
+   Layout
+   ========================= */
+
 .ereri-layout {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 180px minmax(0, 1fr);
   gap: 80px;
+  align-items: start;
 }
 
-/* Table des matières */
-
-.ereri-toc {
-  padding-top: 20px;
-}
+/* =========================
+   Table des matières
+   ========================= */
 
 .ereri-toc h2 {
-  font-size: 0.95rem;
-  margin-bottom: 24px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  color: #7a5a3a;
 }
 
 .ereri-toc ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .ereri-toc li {
   margin-bottom: 14px;
 }
 
-.ereri-toc a {
-  font-size: 0.9rem;
+/* Liens Ereri */
+.ereri a {
+  color: #6b4a2d;
+  text-decoration: none;
 }
 
-/* Contenu */
+.ereri a:hover {
+  color: #3b2a1a;
+  text-decoration: underline;
+}
+
+/* =========================
+   Contenu
+   ========================= */
+
 .ereri-content {
-  max-width: 520px;
+  max-width: 620px;
 }
 
 .ereri-intro {
   font-style: italic;
   color: #5a3c24;
+  line-height: 1.8;
 }
 
+/* =========================
+   Responsive
+   ========================= */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .ereri-page {
     margin: 40px auto;
     padding: 0 20px;
+  }
+
+  .ereri-card {
+    padding: 35px 25px;
   }
 
   .ereri-layout {
