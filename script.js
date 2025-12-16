@@ -46,12 +46,21 @@ const memories = [
   }
 ];
 
+let lastIndex = null;
+
 const button = document.getElementById("generate");
 const result = document.getElementById("result");
 
 if (button && result) {
   button.addEventListener("click", () => {
-    const memory = memories[Math.floor(Math.random() * memories.length)];
+    let index;
+
+    do {
+      index = Math.floor(Math.random() * memories.length);
+    } while (index === lastIndex && memories.length > 1);
+
+    lastIndex = index;
+    const memory = memories[index];
 
     result.innerHTML = `
       <p class="memory-text">${memory.text.replace(/\n/g, "<br>")}</p>
