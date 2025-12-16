@@ -1,0 +1,17 @@
+/* Paris – ambiance spécifique */
+
+body {
+  background: #2a2016;
+}
+
+.oneshot-text p:first-of-type {
+  font-style: italic;
+}
+
+.oneshot-text::after {
+  content: "—";
+  display: block;
+  text-align: center;
+  margin: 60px 0 0;
+  color: #6b4a2d;
+}
