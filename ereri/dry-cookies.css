@@ -12,6 +12,25 @@ body {
     #241b13;
 }
 
+.ereri-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 80px;
+}
+
+.ereri-card {
+  background: #f3ede4;
+  padding: 40px 35px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.oneshot-card {
+  max-width: 720px;
+}
+
 /* Texte légèrement plus chaud */
 .oneshot-text p {
   color: #3a2a1d;
