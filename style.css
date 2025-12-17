@@ -58,6 +58,24 @@ body {
 }
 
 /* =========================
+   Home clocks
+   ========================= */
+
+.home-clocks {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #e6d6c3;
+  opacity: 0.65;
+  margin-top: 6px;
+  letter-spacing: 0.05em;
+}
+
+.clock-separator {
+  margin: 0 6px;
+  opacity: 0.4;
+}
+
+/* =========================
    Conteneur principal
    ========================= */
 
@@ -203,6 +221,18 @@ button:hover {
 
   .nav {
     flex-wrap: wrap;
-    gap: 12px;
+    justify-content: center;
+    gap: 14px;
+    text-align: center;
   }
+
+  .nav a {
+    font-size: 0.85rem;
+  }
+
+  .home-clocks {
+    font-size: 0.7rem;
+    margin-top: 10px;
+  }
+}
 }
