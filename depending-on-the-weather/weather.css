@@ -55,3 +55,25 @@ body.weather {
     ),
     #241b18;
 }
+
+/* Ouverture */
+.weather-lead {
+  font-style: italic;
+  color: #5a3c24;
+  margin-bottom: 30px;
+}
+
+/* Texte principal */
+.weather-text p {
+  max-width: 520px;
+  margin: 0 auto 1.6em;
+  line-height: 1.85;
+  color: #4a2f1a;
+}
+
+/* Paragraphes de fin */
+.weather-ending {
+  margin-top: 40px;
+  font-style: italic;
+}
+
