@@ -43,6 +43,14 @@ const memories = [
     text: "Esse demônio vai sair nem que se for afogado, MAS HOJE SAI",
     author: "you",
     note: "childhood adventures, narrated dramatically"
+  },
+  {
+    text: "Under this constant longing for you, beneath this unwavering love, there are these sudden waves of yearning that almost break me",
+    author: "me"
+  },
+   {
+    text: "You are everything I didn’t know I was allowed to hope for. And I love you more than I know how to say",
+    author: "me"
   }
 ];
 
