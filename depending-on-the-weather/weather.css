@@ -143,5 +143,36 @@ body.jealous .weather-ending {
   color: #7a5a3a;
 }
 
+/* =========================
+   Angry mood – grounded & steady
+   ========================= */
+
+body.angry {
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(255, 255, 255, 0.05),
+      rgba(0, 0, 0, 0.45) 70%
+    ),
+    #231a15;
+}
+
+/* Texte plus ancré */
+body.angry .weather-text p {
+  color: #4a2f1a;
+}
+
+/* Ouverture : poser le cadre */
+body.angry .weather-lead {
+  font-style: italic;
+  color: #6b4a2d;
+}
+
+/* Dernières phrases : apaisement */
+body.angry .weather-ending {
+  font-style: italic;
+  color: #7a5a3a;
+}
+
 
 
