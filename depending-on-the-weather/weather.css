@@ -206,5 +206,52 @@ body.moody .weather-ending {
   color: #8a6a4a;
 }
 
+/* =========================
+   Extra love mood
+   ========================= */
 
+body.love {
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(255, 255, 255, 0.08),
+      rgba(0, 0, 0, 0.35) 70%
+    ),
+    #261c16;
+}
+
+/* Language switch */
+.lang-switch {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.lang-switch button {
+  background: none;
+  border: 1px solid #6b4a2d;
+  color: #6b4a2d;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.lang-switch button.active,
+.lang-switch button:hover {
+  opacity: 1;
+  background: #6b4a2d;
+  color: #f3ede4;
+}
+
+/* Language blocks */
+.lang {
+  display: none;
+}
+
+.lang.active {
+  display: block;
+}
 
