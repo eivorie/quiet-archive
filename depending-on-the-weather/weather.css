@@ -77,3 +77,41 @@ body.weather {
   font-style: italic;
 }
 
+/* =========================
+   Happy mood – léger & lumineux
+   ========================= */
+
+body.happy {
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(255, 255, 255, 0.08),
+      rgba(0, 0, 0, 0.28) 65%
+    ),
+    #2a2118;
+}
+
+/* Titre plus doux */
+body.happy h1 {
+  letter-spacing: 0.02em;
+}
+
+/* Texte plus aérien */
+body.happy .weather-text p {
+  line-height: 1.9;
+  color: #4b2f1d;
+}
+
+/* Ouverture plus lumineuse */
+body.happy .weather-lead {
+  font-style: italic;
+  color: #6b4a2d;
+}
+
+/* Paragraphes de fin : sensation de sourire */
+body.happy .weather-ending {
+  font-style: italic;
+  color: #7a5a3a;
+}
+
+
