@@ -174,5 +174,37 @@ body.angry .weather-ending {
   color: #7a5a3a;
 }
 
+/* =========================
+   Moody mood – soft & foggy
+   ========================= */
+
+body.moody {
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(255, 255, 255, 0.06),
+      rgba(0, 0, 0, 0.38) 70%
+    ),
+    #241f1b;
+}
+
+/* Texte plus flou, plus lent */
+body.moody .weather-text p {
+  line-height: 1.9;
+  color: #4f3522;
+}
+
+/* Ouverture très douce */
+body.moody .weather-lead {
+  font-style: italic;
+  color: #7a5a3a;
+}
+
+/* Derniers paragraphes : cocon */
+body.moody .weather-ending {
+  font-style: italic;
+  color: #8a6a4a;
+}
+
 
 
