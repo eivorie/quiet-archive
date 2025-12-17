@@ -112,4 +112,36 @@ body.happy .weather-ending {
   color: #7a5a3a;
 }
 
+/* =========================
+   Jealous mood – intense & warm
+   ========================= */
+
+body.jealous {
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(255, 255, 255, 0.05),
+      rgba(0, 0, 0, 0.4) 70%
+    ),
+    #241a14;
+}
+
+/* Texte un peu plus dense */
+body.jealous .weather-text p {
+  color: #4a2f1a;
+}
+
+/* Ouverture plus intime */
+body.jealous .weather-lead {
+  font-style: italic;
+  color: #6b4a2d;
+}
+
+/* Dernières phrases : ancrage */
+body.jealous .weather-ending {
+  font-style: italic;
+  color: #7a5a3a;
+}
+
+
 
