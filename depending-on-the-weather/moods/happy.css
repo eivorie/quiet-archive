@@ -1,0 +1,71 @@
+/* =========================
+   Happy mood – warm & alive
+   ========================= */
+
+body.happy {
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(255, 255, 255, 0.14),
+      rgba(0, 0, 0, 0.28) 65%
+    ),
+    #2b231c;
+
+  color: #2f241a;
+}
+
+/* Carte : plus lumineuse */
+body.happy .weather-card {
+  background: rgba(255, 248, 235, 0.92);
+  box-shadow:
+    0 0 0 1px rgba(255, 230, 180, 0.3),
+    0 20px 45px rgba(0, 0, 0, 0.35);
+  border-radius: 18px;
+}
+
+/* Titre : sourire */
+body.happy h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #4a3523;
+}
+
+/* Texte : fluide et joyeux */
+body.happy .weather-text p {
+  font-family: "Libre Baskerville", serif;
+  color: #3f2d1f;
+  line-height: 1.85;
+}
+
+/* Ouverture : invitation */
+body.happy .weather-lead {
+  color: #6b4a2d;
+  font-style: italic;
+}
+
+/* Fin : chaleur */
+body.happy .weather-ending {
+  color: #7a5535;
+  font-style: italic;
+}
+
+/* Animation : montée douce */
+body.happy .weather-text p {
+  animation: happyFloat 0.8s ease-out both;
+}
+
+body.happy .weather-text p:nth-child(n) {
+  animation-delay: calc(var(--i, 1) * 40ms);
+}
+
+@keyframes happyFloat {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
