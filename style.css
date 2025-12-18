@@ -9,15 +9,37 @@
 body {
   margin: 0;
   font-family: "Georgia", serif;
+  color: #3b2a1a;
+  line-height: 1.7;
+
   background:
     radial-gradient(
-      circle at top center,
-      rgba(255, 255, 255, 0.04),
-      rgba(0, 0, 0, 0.25) 60%
+      circle at 20% 10%,
+      rgba(255, 245, 230, 0.6),
+      transparent 45%
     ),
-    #2b2118; /* bois foncé */
-  color: #3b2a1a; /* brun doux */
-  line-height: 1.7;
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(220, 200, 170, 0.35),
+      transparent 50%
+    ),
+    linear-gradient(
+      to bottom,
+      #3a2a1f,
+      #2b2118
+    );
+
+  animation: ambientShift 18s ease-in-out infinite;
+}
+
+/* Animation du fond */
+@keyframes ambientShift {
+  0%, 100% {
+    background-position: 0% 0%, 100% 0%, 0% 0%;
+  }
+  50% {
+    background-position: 10% 5%, 90% 10%, 0% 0%;
+  }
 }
 
 /* =========================
@@ -25,36 +47,52 @@ body {
    ========================= */
 
 .site-header {
-  padding-top: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  background: rgba(58, 42, 31, 0.55);
+}
+
+.nav-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 14px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .nav {
-  padding: 20px 30px;
   display: flex;
-  gap: 24px;
+  gap: 26px;
   font-size: 0.9rem;
 }
 
 .nav a {
-  color: #e6d6c3; /* beige chaud */
+  color: #f0e2cf;
   text-decoration: none;
   opacity: 0.85;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
 }
 
 .nav a:hover {
   opacity: 1;
-  text-decoration: underline;
 }
 
-/* =========================
-   Home layout
-   ========================= */
-
-.home {
-  min-height: calc(100vh - 80px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.nav a:hover::after {
+  width: 100%;
 }
 
 /* =========================
@@ -62,12 +100,12 @@ body {
    ========================= */
 
 .home-clocks {
-  text-align: center;
+  margin-top: 6px;
   font-size: 0.75rem;
   color: #e6d6c3;
   opacity: 0.65;
-  margin-top: 6px;
   letter-spacing: 0.05em;
+  text-align: center;
 }
 
 .clock-separator {
@@ -76,43 +114,52 @@ body {
 }
 
 /* =========================
+   Layouts
+   ========================= */
+
+.home {
+  min-height: calc(100vh - 110px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  min-height: calc(100vh - 110px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+/* =========================
    Conteneur principal
    ========================= */
 
 .container {
   max-width: 720px;
-  padding: 40px 30px;
-  background: #f3ede4; /* papier */
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  padding: 44px 34px;
+  background: #f6efe6;
+  border-radius: 18px;
+  box-shadow:
+    0 20px 50px rgba(90, 60, 30, 0.25);
 }
 
 /* Carte centrale (home) */
 .home-card {
   position: relative;
   text-align: center;
+  animation: cardFloat 6s ease-in-out infinite;
 }
 
-.home-card::before {
-  content: "";
-  position: absolute;
-  inset: -24px;
-  border-radius: 18px;
-  background: rgba(0, 0, 0, 0.18);
-  filter: blur(22px);
-  z-index: -1;
-}
-
-/* =========================
-   Page layout (desktop)
-   ========================= */
-
-.page {
-  min-height: calc(100vh - 80px);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 80px;
+/* Animation légère de flottement */
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 /* =========================
@@ -146,7 +193,7 @@ p {
    ========================= */
 
 button {
-  background: #6b4a2d; /* marron chaud */
+  background: #6b4a2d;
   color: #f3ede4;
   border: none;
   padding: 10px 18px;
@@ -159,10 +206,6 @@ button {
 button:hover {
   background: #7c5838;
 }
-
-/* =========================
-   Zone mémoire générée
-   ========================= */
 
 /* =========================
    Memories
@@ -196,7 +239,7 @@ button:hover {
   opacity: 0.7;
 }
 
-/* petite transition douce */
+/* Animation douce */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -208,31 +251,28 @@ button:hover {
   }
 }
 
-
 /* =========================
    Responsive
    ========================= */
 
 @media (max-width: 600px) {
-  .container {
-    margin: 0 15px;
-    padding: 25px 20px;
-  }
-
   .nav {
     flex-wrap: wrap;
     justify-content: center;
     gap: 14px;
-    text-align: center;
   }
 
-  .nav a {
-    font-size: 0.85rem;
+  .container {
+    margin: 0 14px;
+    padding: 30px 22px;
+  }
+
+  .home-card {
+    animation: none;
   }
 
   .home-clocks {
     font-size: 0.7rem;
     margin-top: 10px;
   }
-}
 }
