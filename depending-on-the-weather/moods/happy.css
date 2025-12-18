@@ -1,69 +1,70 @@
 /* =========================
-   Happy mood – warm & gentle
+   Happy mood – light & joyful
    ========================= */
 
 body.happy {
   background:
     radial-gradient(
       circle at top center,
-      rgba(255, 255, 255, 0.12),
-      rgba(0, 0, 0, 0.3) 70%
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 240, 220, 0.9) 70%
     ),
-    #2b231c;
+    #f6efe6;
 
   color: #3a2a1d;
 }
 
-/* Carte : cocon lumineux */
+/* Carte : soleil doux */
 body.happy .weather-card {
-  background: rgba(255, 248, 235, 0.94);
-  border-radius: 20px;
+  background: #fffaf2;
+  border-radius: 22px;
   box-shadow:
-    0 0 0 1px rgba(255, 230, 190, 0.35),
-    0 20px 50px rgba(0, 0, 0, 0.3);
+    0 10px 30px rgba(180, 140, 90, 0.25);
 
-  animation: happyAppear 2.8s ease-out both;
+  animation: happyAppear 3.2s ease-out both;
 }
 
-/* Titre : doux, pas imposant */
-body.happy h1 {
+/* Forcer la font (important) */
+body.happy .weather-card,
+body.happy .weather-card p,
+body.happy .weather-card h1 {
   font-family: "Cormorant Garamond", serif;
+}
+
+/* Titre : souriant */
+body.happy h1 {
   font-weight: 500;
-  font-size: 1.6rem;
-  letter-spacing: 0.04em;
+  font-size: 1.55rem;
+  letter-spacing: 0.05em;
+  color: #6a4b2f;
+}
+
+/* Texte : léger, respirant */
+body.happy .weather-text p {
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 2;
   color: #4a3523;
 }
 
-/* Texte principal : rond, rassurant */
-body.happy .weather-text p {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 0.95rem;
-  line-height: 1.95;
-  color: #3f2d1f;
-}
-
-/* Ouverture : invitation */
+/* Ouverture */
 body.happy .weather-lead {
-  color: #6b4a2d;
-  font-style: italic;
+  color: #8a653f;
 }
 
-/* Fin : chaleur retenue */
+/* Fin */
 body.happy .weather-ending {
   color: #7a5535;
-  font-style: italic;
 }
 
 /* =========================
-   Animation douce
+   Animation très lente
    ========================= */
 
 @keyframes happyAppear {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
