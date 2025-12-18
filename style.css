@@ -9,30 +9,30 @@
 body {
   margin: 0;
   font-family: "Cormorant Garamond", serif;
-  color: #3b2a1a;
+  color: #3f2e22;
   line-height: 1.7;
   overflow-x: hidden;
 
   background:
     radial-gradient(
       circle at 30% 25%,
-      rgba(255, 235, 210, 0.55),
+      rgba(255, 235, 210, 0.45),
       transparent 55%
     ),
     radial-gradient(
       circle at 70% 65%,
-      rgba(220, 190, 160, 0.45),
+      rgba(215, 185, 155, 0.35),
       transparent 60%
     ),
     linear-gradient(
       to bottom,
-      #7a5a42 0%,
-      #4a372b 45%,
+      #8a6a52 0%,
+      #5b4434 45%,
       #2a2018 100%
     );
 
   background-size: 140% 140%;
-  animation: backgroundBreath 18s ease-in-out infinite;
+  animation: backgroundBreath 22s ease-in-out infinite;
 }
 
 @keyframes backgroundBreath {
@@ -40,12 +40,12 @@ body {
     background-position: 0% 0%;
   }
   50% {
-    background-position: 12% 8%;
+    background-position: 10% 6%;
   }
 }
 
 /* =========================
-   Animation
+   Ambient dust / light
    ========================= */
 
 .ambient {
@@ -53,63 +53,62 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  overflow: hidden;
 }
 
 .ambient span {
   position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(255, 235, 210, 0.9);
+  top: calc(100% * var(--y));
+  left: calc(100% * var(--x));
+
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
+  background: rgba(255, 235, 210, 0.8);
   filter: blur(1.5px);
-  opacity: 0.6;
-  animation: drift linear infinite;
+
+  opacity: 0.4;
+  animation: floatDust ease-in-out infinite;
+  animation-duration: calc(10s + var(--d) * 12s);
 }
 
-/* variations naturelles */
+/* Variations naturelles */
 .ambient span:nth-child(odd) {
-  width: 6px;
-  height: 6px;
-  opacity: 0.35;
+  width: 7px;
+  height: 7px;
+  opacity: 0.25;
 }
 
 .ambient span:nth-child(3n) {
   width: 3px;
   height: 3px;
-  opacity: 0.5;
+  opacity: 0.55;
 }
 
-/* positions & durées différentes */
-@keyframes drift {
-  from {
-    transform: translateY(110vh) translateX(0);
+.ambient span:nth-child(1)  { --x: 0.08; --y: 0.20; --d: 0.2; }
+.ambient span:nth-child(2)  { --x: 0.15; --y: 0.65; --d: 0.6; }
+.ambient span:nth-child(3)  { --x: 0.22; --y: 0.35; --d: 0.3; }
+.ambient span:nth-child(4)  { --x: 0.30; --y: 0.55; --d: 0.7; }
+.ambient span:nth-child(5)  { --x: 0.38; --y: 0.25; --d: 0.4; }
+.ambient span:nth-child(6)  { --x: 0.46; --y: 0.70; --d: 0.6; }
+.ambient span:nth-child(7)  { --x: 0.55; --y: 0.40; --d: 0.2; }
+.ambient span:nth-child(8)  { --x: 0.63; --y: 0.60; --d: 0.5; }
+.ambient span:nth-child(9)  { --x: 0.72; --y: 0.30; --d: 0.3; }
+.ambient span:nth-child(10) { --x: 0.80; --y: 0.50; --d: 0.7; }
+.ambient span:nth-child(11) { --x: 0.88; --y: 0.25; --d: 0.4; }
+.ambient span:nth-child(12) { --x: 0.92; --y: 0.65; --d: 0.6; }
+
+/* Mouvement local uniquement */
+@keyframes floatDust {
+  0% {
+    transform: translate(0, 0) scale(0.95);
   }
-  to {
-    transform: translateY(-120vh) translateX(40px);
+  50% {
+    transform: translate(14px, -18px) scale(1);
+  }
+  100% {
+    transform: translate(0, 0) scale(0.95);
   }
 }
-
-.ambient span {
-  left: calc(100% * var(--x));
-  animation-duration: calc(18s + var(--d) * 12s);
-}
-
-/* génération pseudo-aléatoire */
-.ambient span:nth-child(1)  { --x: 0.05; --d: 0.1; }
-.ambient span:nth-child(2)  { --x: 0.12; --d: 0.4; }
-.ambient span:nth-child(3)  { --x: 0.20; --d: 0.2; }
-.ambient span:nth-child(4)  { --x: 0.28; --d: 0.6; }
-.ambient span:nth-child(5)  { --x: 0.35; --d: 0.3; }
-.ambient span:nth-child(6)  { --x: 0.42; --d: 0.5; }
-.ambient span:nth-child(7)  { --x: 0.50; --d: 0.2; }
-.ambient span:nth-child(8)  { --x: 0.58; --d: 0.7; }
-.ambient span:nth-child(9)  { --x: 0.65; --d: 0.4; }
-.ambient span:nth-child(10) { --x: 0.72; --d: 0.6; }
-.ambient span:nth-child(11) { --x: 0.78; --d: 0.3; }
-.ambient span:nth-child(12) { --x: 0.85; --d: 0.5; }
-.ambient span:nth-child(13) { --x: 0.92; --d: 0.2; }
-
 
 /* =========================
    Navigation
@@ -119,7 +118,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(15, 13, 12, 0.55);
+  background: rgba(42, 32, 24, 0.55);
   backdrop-filter: blur(10px);
 }
 
@@ -139,7 +138,7 @@ body {
 }
 
 .nav a {
-  color: #f0e2cf;
+  color: #cbb39c; /* marron clair */
   text-decoration: none;
   opacity: 0.85;
   position: relative;
@@ -152,7 +151,7 @@ body {
   bottom: -4px;
   width: 0%;
   height: 1px;
-  background: currentColor;
+  background: #cbb39c;
   transition: width 0.3s ease;
 }
 
@@ -209,9 +208,9 @@ body {
   position: relative;
   max-width: 720px;
   padding: 48px 36px;
-  background: rgba(255, 248, 240, 0.94);
-  backdrop-filter: blur(2px);
+  background: rgba(255, 248, 240, 0.95);
   border-radius: 18px;
+
   box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.25),
     inset 0 0 0 1px rgba(255, 255, 255, 0.4);
@@ -220,16 +219,14 @@ body {
   z-index: 2;
 }
 
-/.home-card {
-  animation: floatCard 8s ease-in-out infinite;
-}
-
-@keyframes floatCard {
-  0%, 100% {
-    transform: translateY(0);
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
   }
-  50% {
-    transform: translateY(-6px);
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
