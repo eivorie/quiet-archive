@@ -1,60 +1,70 @@
 /* =========================
-   Angry mood – cocon contenu
+   Angry mood – held & warm
    ========================= */
 
 body.angry {
   background:
     radial-gradient(
       circle at top center,
-      rgba(255, 255, 255, 0.04),
-      rgba(0, 0, 0, 0.5) 75%
+      rgba(255, 220, 200, 0.15),
+      rgba(90, 40, 30, 0.45) 70%
     ),
-    #1f1612;
+    #3a241d;
 
-  color: #e6d9cc;
+  color: #f1e4d8;
 }
 
-/* Carte plus lourde, plus ancrée */
+/* Carte : tenir sans serrer */
 body.angry .weather-card {
-  background: rgba(20, 14, 10, 0.55);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-  border-radius: 14px;
+  background: rgba(60, 38, 30, 0.75);
+  border-radius: 22px;
+  box-shadow:
+    0 18px 45px rgba(30, 15, 10, 0.5);
+
+  animation: angrySettle 3.2s ease-out both;
 }
 
-/* Titre : calme ferme */
+/* Forcer la font */
+body.angry .weather-card,
+body.angry .weather-card p,
+body.angry .weather-card h1 {
+  font-family: "EB Garamond", serif;
+}
+
+/* Titre : calme bas */
 body.angry h1 {
-  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  font-size: 1.5rem;
   letter-spacing: 0.04em;
-  color: #f0e6da;
+  color: #f6e7da;
 }
 
-/* Texte : posé, respirant */
+/* Texte : chaud, respirant */
 body.angry .weather-text p {
-  color: #d8c7b6;
-  line-height: 1.85;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.95;
+  color: #e6d4c4;
 }
 
-/* Ouverture : cadre sécurisant */
+/* Ouverture : main posée */
 body.angry .weather-lead {
-  color: #c8b2a0;
-  font-style: italic;
+  color: #f1cfc0;
 }
 
-/* Dernières phrases : apaisement */
+/* Fin : apaisement */
 body.angry .weather-ending {
-  color: #e8d6c4;
-  font-style: italic;
+  color: #f7e3d4;
 }
 
-/* Option : respiration lente */
-body.angry .weather-text {
-  animation: slowFadeIn 1.8s ease-out;
-}
+/* =========================
+   Animation : la colère se pose
+   ========================= */
 
-@keyframes slowFadeIn {
+@keyframes angrySettle {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
