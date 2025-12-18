@@ -1,0 +1,89 @@
+/* =========================
+   Jealous mood – warm & reassuring
+   ========================= */
+
+body.jealous {
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(255, 230, 240, 0.35),
+      rgba(120, 70, 90, 0.45) 70%
+    ),
+    #4a2f3b;
+
+  color: #f2e3ea;
+}
+
+/* Carte : proximité rassurante */
+body.jealous .weather-card {
+  background: rgba(80, 45, 60, 0.85);
+  border-radius: 22px;
+  box-shadow:
+    0 20px 50px rgba(40, 15, 25, 0.5);
+
+  animation: jealousSettle 3.4s ease-out both;
+}
+
+/* Forcer la font */
+body.jealous .weather-card,
+body.jealous .weather-card p,
+body.jealous .weather-card h1 {
+  font-family: "Crimson Pro", serif;
+}
+
+/* Titre : calme intense */
+body.jealous h1 {
+  font-weight: 500;
+  font-size: 1.55rem;
+  letter-spacing: 0.04em;
+  color: #f6e8ee;
+}
+
+/* Texte : enveloppant */
+body.jealous .weather-text p {
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.95;
+  color: #e9d3dc;
+}
+
+/* Ouverture : main sur la poitrine */
+body.jealous .weather-lead {
+  color: #f1c5d4;
+}
+
+/* Fin : ancrage */
+body.jealous .weather-ending {
+  color: #f7dde7;
+}
+
+/* =========================
+   Animations
+   ========================= */
+
+@keyframes jealousSettle {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respiration très douce */
+body.jealous .weather-card {
+  animation:
+    jealousSettle 3.4s ease-out both,
+    jealousBreath 14s ease-in-out infinite;
+}
+
+@keyframes jealousBreath {
+  0%, 100% {
+    box-shadow: 0 20px 50px rgba(40, 15, 25, 0.5);
+  }
+  50% {
+    box-shadow: 0 24px 60px rgba(40, 15, 25, 0.65);
+  }
+}
