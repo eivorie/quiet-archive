@@ -2,24 +2,102 @@
    Memories theme
    ========================= */
 
+/* 🌫️ Fond nostalgique */
 body {
   background:
-    radial-gradient(circle at 30% 25%, rgba(255,235,210,.45), transparent 55%),
-    radial-gradient(circle at 70% 65%, rgba(215,185,155,.35), transparent 60%),
-    linear-gradient(to bottom, #8a6a52, #2a2018);
+    radial-gradient(circle at 25% 20%, rgba(255,235,210,.55), transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(200,170,140,.45), transparent 60%),
+    linear-gradient(to bottom, #9b7b62, #3a2b22);
+
+  background-size: 140% 140%;
+  animation: memoriesBreath 22s ease-in-out infinite;
 }
 
-.nav a {
-  color: #cbb39c;
+@keyframes memoriesBreath {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 10% 6%; }
 }
 
-.container {
-  background: rgba(255, 248, 240, 0.95);
-  border-radius: 14px;
-}
-
-/* ambiance douce */
+/* 🌬️ Poussière lumineuse */
 .ambient span {
-  background: rgba(255,235,210,.75);
-  animation: floatDust 14s ease-in-out infinite;
+  position: absolute;
+  top: calc(100% * var(--y));
+  left: calc(100% * var(--x));
+
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 240, 220, 0.75);
+  filter: blur(2px);
+
+  opacity: 0.35;
+  animation: floatDust 16s ease-in-out infinite;
+}
+
+/* variations */
+.ambient span:nth-child(odd) {
+  width: 8px;
+  height: 8px;
+  opacity: 0.22;
+}
+
+.ambient span:nth-child(3n) {
+  width: 4px;
+  height: 4px;
+  opacity: 0.5;
+}
+
+/* mouvement local, pas de traversée */
+@keyframes floatDust {
+  0%   { transform: translate(0, 0) scale(0.95); }
+  50%  { transform: translate(12px, -18px) scale(1); }
+  100% { transform: translate(0, 0) scale(0.95); }
+}
+
+/* positions pseudo-aléatoires */
+.ambient span:nth-child(1)  { --x: .08; --y: .22; }
+.ambient span:nth-child(2)  { --x: .14; --y: .48; }
+.ambient span:nth-child(3)  { --x: .20; --y: .70; }
+.ambient span:nth-child(4)  { --x: .28; --y: .30; }
+.ambient span:nth-child(5)  { --x: .35; --y: .58; }
+.ambient span:nth-child(6)  { --x: .42; --y: .78; }
+.ambient span:nth-child(7)  { --x: .50; --y: .25; }
+.ambient span:nth-child(8)  { --x: .58; --y: .52; }
+.ambient span:nth-child(9)  { --x: .65; --y: .72; }
+.ambient span:nth-child(10) { --x: .72; --y: .35; }
+.ambient span:nth-child(11) { --x: .78; --y: .55; }
+.ambient span:nth-child(12) { --x: .84; --y: .75; }
+.ambient span:nth-child(13) { --x: .90; --y: .28; }
+.ambient span:nth-child(14) { --x: .94; --y: .50; }
+.ambient span:nth-child(15) { --x: .97; --y: .70; }
+
+/* 🧭 Nav plus chaude */
+.nav a {
+  color: #d6bfa6;
+}
+
+/* 📜 Carte nostalgique */
+.container {
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.6), transparent 60%),
+    rgba(255, 248, 240, 0.96);
+
+  border-radius: 22px;
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.35),
+    inset 0 0 0 1px rgba(255,255,255,.5);
+
+  animation: memoryCard 8s ease-in-out infinite;
+}
+
+@keyframes memoryCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* 📜 Bloc souvenir */
+#result {
+  background: rgba(240,230,215,.8);
+  border-left: 4px solid #7b5638;
+  box-shadow: inset 0 0 12px rgba(0,0,0,.05);
 }
