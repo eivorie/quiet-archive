@@ -255,3 +255,45 @@ body.love {
   display: block;
 }
 
+/* =========================
+   Language switch
+   ========================= */
+
+/* Toutes les langues sont cachées par défaut */
+.lang {
+  display: none;
+}
+
+/* Seule la langue active est visible */
+.lang.active {
+  display: block;
+}
+
+/* Boutons de langue */
+.lang-switch {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.lang-switch button {
+  background: #6b4a2d;
+  color: #f3ede4;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.lang-switch button.active {
+  opacity: 1;
+}
+
+.lang-switch button:hover {
+  opacity: 1;
+}
+
