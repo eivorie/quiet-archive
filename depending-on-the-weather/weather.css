@@ -23,11 +23,13 @@
   font-size: 0.95rem;
   text-decoration: none;
   opacity: 0.85;
+   color: #6b4a2d;
 }
 
 .weather-list a:hover {
   opacity: 1;
   text-decoration: underline;
+   color: #6b4a2d;
 }
 
 /* Texte */
