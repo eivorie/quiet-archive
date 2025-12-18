@@ -1,0 +1,118 @@
+/* =========================
+   Extra love – soft cocoon
+   ========================= */
+
+body.love {
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(255, 255, 255, 0.8),
+      rgba(245, 235, 220, 0.95) 75%
+    ),
+    #f6efe6;
+
+  color: #3f2f26;
+}
+
+/* Carte : amour enveloppant */
+body.love .weather-card {
+  background: #fffaf4;
+  border-radius: 28px;
+  box-shadow:
+    0 16px 45px rgba(200, 170, 130, 0.25);
+
+  animation: loveSettle 4s ease-out both;
+}
+
+/* Police forcée */
+body.love .weather-card,
+body.love .weather-card p,
+body.love .weather-card h1 {
+  font-family: "Fraunces", serif;
+}
+
+/* Titre : tendre */
+body.love h1 {
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
+  color: #6a4a36;
+}
+
+/* Texte : enveloppant */
+body.love .weather-text p {
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 2;
+  color: #4a372b;
+}
+
+/* Ouverture */
+body.love .weather-lead {
+  color: #7a5a44;
+}
+
+/* Fin */
+body.love .weather-ending {
+  color: #6a4a36;
+}
+
+/* =========================
+   Variations par langue
+   ========================= */
+
+/* FR – chaleur miel */
+body.love .lang-fr {
+  --card-accent: #f3e2c8;
+}
+
+/* EN – douceur crème */
+body.love .lang-en {
+  --card-accent: #efe7da;
+}
+
+/* PT – chaleur pêche */
+body.love .lang-pt {
+  --card-accent: #f6ded4;
+}
+
+/* Accent subtil appliqué */
+body.love .weather-card {
+  background:
+    linear-gradient(
+      to bottom,
+      var(--card-accent, #fffaf4),
+      #fffaf4 40%
+    );
+}
+
+/* =========================
+   Animation : se déposer
+   ========================= */
+
+@keyframes loveSettle {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respiration très douce */
+body.love .weather-card {
+  animation:
+    loveSettle 4s ease-out both,
+    loveBreath 16s ease-in-out infinite;
+}
+
+@keyframes loveBreath {
+  0%, 100% {
+    box-shadow: 0 16px 45px rgba(200, 170, 130, 0.25);
+  }
+  50% {
+    box-shadow: 0 20px 55px rgba(200, 170, 130, 0.35);
+  }
+}
