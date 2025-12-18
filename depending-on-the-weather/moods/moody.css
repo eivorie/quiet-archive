@@ -1,0 +1,90 @@
+/* =========================
+   Moody mood – fog & float
+   ========================= */
+
+body.moody {
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(230, 240, 240, 0.75),
+      rgba(200, 210, 210, 0.95) 75%
+    ),
+    #dfe6e4;
+
+  color: #3e4a4a;
+}
+
+/* Carte : brume contenue */
+body.moody .weather-card {
+  background: rgba(245, 250, 248, 0.92);
+  border-radius: 22px;
+  box-shadow:
+    0 14px 40px rgba(120, 140, 140, 0.25);
+
+  animation: moodyDrift 4s ease-out both;
+}
+
+/* Forcer la font */
+body.moody .weather-card,
+body.moody .weather-card p,
+body.moody .weather-card h1 {
+  font-family: "Spectral", serif;
+}
+
+/* Titre : doux, détaché */
+body.moody h1 {
+  font-weight: 500;
+  font-size: 1.45rem;
+  letter-spacing: 0.03em;
+  color: #4a5a58;
+}
+
+/* Texte : flottant */
+body.moody .weather-text p {
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 2;
+  color: #4f5f5c;
+}
+
+/* Ouverture : floue */
+body.moody .weather-lead {
+  color: #6a7a78;
+}
+
+/* Fin : retour progressif */
+body.moody .weather-ending {
+  color: #5a6a68;
+}
+
+/* =========================
+   Animations
+   ========================= */
+
+/* Apparition lente */
+@keyframes moodyDrift {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Légère respiration */
+body.moody .weather-card {
+  animation:
+    moodyDrift 4s ease-out both,
+    moodyBreath 12s ease-in-out infinite;
+}
+
+@keyframes moodyBreath {
+  0%, 100% {
+    box-shadow: 0 14px 40px rgba(120, 140, 140, 0.25);
+  }
+  50% {
+    box-shadow: 0 18px 50px rgba(120, 140, 140, 0.35);
+  }
+}
