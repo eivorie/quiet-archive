@@ -81,7 +81,6 @@ body.weather {
 }
 
 .lang-switch button {
-  background: none;
   border: 1px solid currentColor;
   padding: 4px 10px;
   border-radius: 20px;
