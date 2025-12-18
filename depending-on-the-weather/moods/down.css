@@ -1,61 +1,70 @@
 /* =========================
-   Down mood – soft refuge
+   Down mood – soft & holding
    ========================= */
 
 body.down {
   background:
     radial-gradient(
       circle at top center,
-      rgba(255, 255, 255, 0.08),
-      rgba(0, 0, 0, 0.45) 75%
+      rgba(255, 255, 255, 0.7),
+      rgba(235, 225, 210, 0.95) 75%
     ),
-    #1e1814;
+    #f2ece4;
 
-  color: #e6ddd3;
+  color: #3f342b;
 }
 
-/* Carte : refuge */
+/* Carte : cocon clair */
 body.down .weather-card {
-  background: rgba(24, 18, 14, 0.55);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
-  border-radius: 16px;
+  background: #fffaf3;
+  border-radius: 24px;
+  box-shadow:
+    0 12px 35px rgba(180, 160, 130, 0.25);
+
+  animation: downSettle 3.5s ease-out both;
 }
 
-/* Titre : calme, rassurant */
+/* Forcer la police */
+body.down .weather-card,
+body.down .weather-card p,
+body.down .weather-card h1 {
+  font-family: "Lora", serif;
+}
+
+/* Titre : posé, doux */
 body.down h1 {
-  font-family: "Playfair Display", serif;
   font-weight: 500;
-  letter-spacing: 0.03em;
-  color: #f0e7dc;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: #5a4a3d;
 }
 
-/* Texte : lent, respirant */
+/* Texte : lent, enveloppant */
 body.down .weather-text p {
-  color: #d8cec4;
-  line-height: 1.9;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 2;
+  color: #4a3e34;
 }
 
-/* Ouverture : prise par la main */
+/* Ouverture : main tendue */
 body.down .weather-lead {
-  color: #cbbfb3;
-  font-style: italic;
+  color: #7a6a5a;
 }
 
-/* Fin : promesse */
+/* Fin : promesse douce */
 body.down .weather-ending {
-  color: #f2e7da;
-  font-style: italic;
+  color: #6a5a4a;
 }
 
-/* Lecture douce */
-body.down .weather-text {
-  animation: fadeInSoft 2s ease-out;
-}
+/* =========================
+   Animation : se poser
+   ========================= */
 
-@keyframes fadeInSoft {
+@keyframes downSettle {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(22px);
   }
   to {
     opacity: 1;
