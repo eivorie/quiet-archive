@@ -1,0 +1,25 @@
+/* =========================
+   Memories theme
+   ========================= */
+
+body {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,235,210,.45), transparent 55%),
+    radial-gradient(circle at 70% 65%, rgba(215,185,155,.35), transparent 60%),
+    linear-gradient(to bottom, #8a6a52, #2a2018);
+}
+
+.nav a {
+  color: #cbb39c;
+}
+
+.container {
+  background: rgba(255, 248, 240, 0.95);
+  border-radius: 14px;
+}
+
+/* ambiance douce */
+.ambient span {
+  background: rgba(255,235,210,.75);
+  animation: floatDust 14s ease-in-out infinite;
+}
