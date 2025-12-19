@@ -1,59 +1,213 @@
-/* =========================
-   dry cookies – ambiance
-   ========================= */
+/* =====================================================
+   dry cookies — Ereri one-shot
+   ===================================================== */
 
-body {
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(255, 255, 255, 0.06),
-      rgba(0, 0, 0, 0.4) 70%
-    ),
-    #241b13;
+/* -----------------------------------------------------
+   Fond & héritage
+   ----------------------------------------------------- */
+
+.ereri-story .page {
+  background: transparent;
 }
 
-.ereri-page {
-  min-height: calc(100vh - 80px);
+.ereri-story-page {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 80px;
+  padding: 80px 20px;
 }
 
-.ereri-card {
-  background: #f3ede4;
-  padding: 40px 35px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-}
+/* -----------------------------------------------------
+   Carte — cuisine chaude, hiver, intérieur
+   ----------------------------------------------------- */
 
-.oneshot-card {
+.ereri-story .ereri-card {
+  position: relative;
+  z-index: 1;
+
   max-width: 720px;
+  width: 100%;
+
+  /* 🍪 Ambiance cuisine / hiver */
+  background:
+    radial-gradient(
+      circle at 28% 18%,
+      rgba(255, 255, 255, 0.05),
+      transparent 65%
+    ),
+    linear-gradient(
+      to bottom,
+      #3a2f26,
+      #2b221c
+    );
+
+  border-radius: 26px 22px 30px 24px;
+
+  box-shadow:
+    0 45px 140px rgba(0, 0, 0, 0.75),
+    0 18px 42px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.6);
+
+  padding: 70px 80px;
 }
 
-/* Texte légèrement plus chaud */
-.oneshot-text p {
-  color: #3a2a1d;
+/* Cadre intérieur */
+.ereri-story .ereri-card::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+
+  border-radius: 20px 18px 24px 20px;
+  border: 1px solid rgba(200, 180, 160, 0.18);
+
+  pointer-events: none;
 }
 
-/* Phrase pivot */
+/* Grain chaud */
+.ereri-story .ereri-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255,255,255,0.035),
+      transparent 65%
+    );
+
+  opacity: 0.22;
+}
+
+/* -----------------------------------------------------
+   Typographie — plus intime, moins littéraire
+   ----------------------------------------------------- */
+
+.ereri-story .ereri-content {
+  font-family: "Libre Baskerville", serif;
+  color: rgba(235, 228, 220, 0.8);
+  line-height: 1.85;
+  font-size: 1.02rem;
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.4);
+}
+
+.ereri-story .ereri-content p {
+  margin-bottom: 1.4em;
+  color: rgba(230, 220, 210, 0.76);
+}
+
+.ereri-story .ereri-content p:nth-child(3n) {
+  margin-bottom: 1.8em;
+}
+
+/* -----------------------------------------------------
+   Titre & meta
+   ----------------------------------------------------- */
+
+.ereri-story h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.1rem;
+  font-weight: normal;
+  color: rgba(245, 235, 225, 0.9);
+  margin-bottom: 10px;
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.6),
+    0 12px 28px rgba(0,0,0,.55);
+}
+
+.ereri-story .subtitle,
+.ereri-story .story-meta {
+  font-size: 0.9rem;
+  color: rgba(190, 170, 150, 0.75);
+  letter-spacing: 0.04em;
+  margin-bottom: 40px;
+}
+
+/* -----------------------------------------------------
+   Illustration — même principe que Linagee
+   ----------------------------------------------------- */
+
+.story-illustration {
+  margin: 40px auto 60px;
+  text-align: center;
+}
+
+.story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 18px 24px 20px 26px;
+
+  box-shadow:
+    0 32px 80px rgba(0,0,0,.65),
+    inset 0 0 0 1px rgba(255,255,255,.12);
+
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.story-illustration img:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 42px 100px rgba(0,0,0,.75),
+    inset 0 0 0 1px rgba(255,255,255,.18);
+}
+
+/* -----------------------------------------------------
+   Paragraphes spécifiques
+   ----------------------------------------------------- */
+
 .emphasis {
   font-style: italic;
   text-align: center;
-  margin: 40px 0;
+  margin: 50px 0;
+  color: rgba(245, 230, 215, 0.85);
 }
 
 /* Dernière phrase */
-.oneshot-text p:last-child {
+.ereri-story .ereri-content p:last-child {
   font-style: italic;
   margin-top: 50px;
 }
 
 /* Signature silencieuse */
-.oneshot-text::after {
+.ereri-story .ereri-content::after {
   content: "—";
   display: block;
   text-align: center;
   margin: 60px 0 0;
-  color: #6b4a2d;
+  color: rgba(200, 180, 160, 0.6);
+}
+
+/* -----------------------------------------------------
+   Responsive
+   ----------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .ereri-story-page {
+    padding: 40px 16px;
+  }
+
+  .ereri-story .ereri-card {
+    max-width: 100%;
+    padding: 32px 22px;
+    border-radius: 22px;
+  }
+
+  .ereri-story h1 {
+    font-size: 1.8rem;
+  }
+
+  .story-illustration img {
+    max-width: 260px;
+  }
+
+  .ereri-story .ereri-content {
+    font-size: 0.98rem;
+  }
 }
