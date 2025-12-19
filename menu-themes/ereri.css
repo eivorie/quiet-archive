@@ -1,0 +1,127 @@
+/* =====================================================
+   Ereri Index – Depth & Invitation Layer
+   ===================================================== */
+
+/* ---------------------------
+   Titre : plus discret, plus intime
+--------------------------- */
+
+.ereri-index .ereri-title {
+  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+  max-width: 520px;
+  margin: 0 auto 48px;
+
+  text-align: center;
+  line-height: 1.6;
+
+  opacity: 0.88;
+}
+
+/* mobile : pas de titre envahissant */
+@media (max-width: 600px) {
+  .ereri-index .ereri-title {
+    margin-bottom: 32px;
+  }
+}
+
+/* ---------------------------
+   Table des fragments (liens)
+--------------------------- */
+
+.ereri-index .ereri-toc ul {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* chaque entrée devient un “fragment” */
+.ereri-index .ereri-toc li {
+  position: relative;
+  padding-left: 22px;
+}
+
+/* point narratif */
+.ereri-index .ereri-toc li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  color: rgba(120, 150, 145, 0.6);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* lien = respiration */
+.ereri-index .ereri-toc a {
+  display: inline-block;
+  padding: 6px 0;
+
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease,
+    letter-spacing 0.35s ease;
+}
+
+/* hover : on invite, on ne crie pas */
+.ereri-index .ereri-toc a:hover {
+  transform: translateX(6px);
+  letter-spacing: 0.04em;
+  color: #2e4b45;
+}
+
+/* underline plus vivant */
+.ereri-index .ereri-toc a::after {
+  bottom: -6px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(80, 120, 115, 0.6),
+    rgba(80, 120, 115, 0)
+  );
+}
+
+/* ---------------------------
+   Carte : moins “collée”, plus flottante
+--------------------------- */
+
+.ereri-index .ereri-card {
+  backdrop-filter: blur(6px);
+}
+
+/* micro-ombre interne pour profondeur */
+.ereri-index .ereri-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(0, 0, 0, 0.08),
+      transparent 60%
+    );
+}
+
+/* ---------------------------
+   Animation subtile d’entrée
+--------------------------- */
+
+.ereri-index .ereri-card {
+  animation:
+    ereriCardFloat 12s ease-in-out infinite,
+    ereriFadeIn 1.2s ease forwards;
+}
+
+@keyframes ereriFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
