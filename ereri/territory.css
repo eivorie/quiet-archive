@@ -1,0 +1,111 @@
+/* =====================================================
+   Territory — Levi POV
+   ===================================================== */
+
+/* page */
+.territory-story .ereri-page {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+/* carte */
+.territory-card {
+  max-width: 720px;
+  width: 100%;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(38, 44, 48, 0.85),
+      rgba(26, 30, 34, 0.95)
+    );
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 50px 140px rgba(0,0,0,0.7),
+    0 18px 50px rgba(0,0,0,0.45);
+
+  padding: 70px 80px;
+}
+
+/* header */
+.story-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.story-header h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 400;
+
+  font-size: 2.2rem;
+  letter-spacing: 0.06em;
+
+  color: rgba(240,245,242,0.95);
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.6),
+    0 12px 28px rgba(0,0,0,0.5);
+}
+
+.story-header .subtitle {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+
+  color: rgba(180,195,190,0.7);
+}
+
+/* texte */
+.territory-story .ereri-content {
+  font-family: "Libre Baskerville", serif;
+  font-size: 1.02rem;
+  line-height: 1.85;
+
+  color: rgba(235,240,238,0.88);
+}
+
+.territory-story .ereri-content p {
+  margin-bottom: 1.4em;
+}
+
+.territory-story .ereri-content p:nth-child(3n) {
+  margin-bottom: 1.8em;
+}
+
+/* emphase */
+.territory-story .emphasis {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.1rem;
+  margin: 48px 0;
+
+  color: rgba(245,248,245,0.95);
+}
+
+/* dernière ligne */
+.territory-story .final-line {
+  margin-top: 48px;
+  font-style: italic;
+  text-align: center;
+
+  color: rgba(210,220,215,0.85);
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .territory-card {
+    padding: 36px 24px;
+  }
+
+  .story-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .territory-story .ereri-content {
+    font-size: 0.98rem;
+  }
+}
