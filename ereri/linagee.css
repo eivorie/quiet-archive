@@ -83,18 +83,23 @@
 }
 
 /* -----------------------------------------------------
-   Typographie
+   Typographie — fondue, lisible, non lumineuse
    ----------------------------------------------------- */
 
 .ereri-story .ereri-content {
   font-family: "Cormorant Garamond", serif;
-  color: #dde3dd;
+  color: rgba(225, 230, 225, 0.82);
   line-height: 1.85;
   font-size: 1.05rem;
+
+  /* ancrage dans la matière */
+  text-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.35);
 }
 
 .ereri-story .ereri-content p {
   margin-bottom: 1.4em;
+  color: rgba(220, 225, 220, 0.78);
 }
 
 .ereri-story .ereri-content p:nth-child(3n) {
@@ -102,23 +107,23 @@
 }
 
 /* -----------------------------------------------------
-   Titre & meta
+   Titre & meta — velours, non brillant
    ----------------------------------------------------- */
 
 .ereri-story h1 {
   font-size: 2.2rem;
   font-weight: normal;
-  color: #eef3ef;
+  color: rgba(235, 240, 235, 0.88);
   margin-bottom: 12px;
 
   text-shadow:
     0 1px 0 rgba(0,0,0,.6),
-    0 12px 28px rgba(0,0,0,.45);
+    0 12px 28px rgba(0,0,0,.5);
 }
 
 .ereri-story .story-meta {
   font-size: 0.9rem;
-  color: #9fb0a6;
+  color: rgba(160, 175, 165, 0.75);
   letter-spacing: 0.04em;
   margin-bottom: 40px;
 }
