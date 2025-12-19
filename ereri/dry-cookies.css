@@ -87,18 +87,19 @@
 
 .ereri-story .ereri-content {
   font-family: "Libre Baskerville", serif;
-  color: rgba(232, 238, 232, 0.86);
+  color: rgba(245, 248, 245, 0.86); /* blanc cassé, pas lumineux */
   line-height: 1.85;
   font-size: 1.02rem;
 
   text-shadow:
-    0 1px 0 rgba(0,0,0,0.4);
+    0 1px 0 rgba(0,0,0,0.45);
 }
 
 .ereri-story .ereri-content p {
   margin-bottom: 1.4em;
-  color: rgba(225, 232, 225, 0.8);
+  color: rgba(240, 244, 240, 0.82);
 }
+
 
 .ereri-story .ereri-content p:nth-child(3n) {
   margin-bottom: 1.8em;
@@ -112,8 +113,7 @@
   font-family: "Cormorant Garamond", serif;
   font-size: 2.1rem;
   font-weight: normal;
-  color: rgba(242, 247, 242, 0.9);
-  margin-bottom: 10px;
+  color: rgba(250, 252, 250, 0.92);
 
   text-shadow:
     0 1px 0 rgba(0,0,0,.6),
@@ -122,7 +122,7 @@
 
 .ereri-story .subtitle {
   font-size: 0.9rem;
-  color: rgba(190, 210, 200, 0.75);
+  color: rgba(210, 225, 215, 0.7);
   letter-spacing: 0.04em;
   margin-bottom: 40px;
 }
@@ -165,7 +165,7 @@
   font-style: italic;
   text-align: center;
   margin: 50px 0;
-  color: rgba(242, 247, 242, 0.9);
+  color: rgba(250, 252, 250, 0.9);
 }
 
 .ereri-story .ereri-content p:last-child {
