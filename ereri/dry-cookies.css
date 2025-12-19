@@ -27,17 +27,17 @@
   max-width: 720px;
   width: 100%;
 
-  /* 🌿 Vert mousse chaud */
+  /* 🌿 Vert sauge froid — anti-marron */
   background:
     radial-gradient(
       circle at 26% 18%,
-      rgba(255, 255, 255, 0.07),
+      rgba(220, 240, 230, 0.08),
       transparent 65%
     ),
     linear-gradient(
       to bottom,
-      #3f4a45,
-      #313a36
+      #455a54,
+      #344742
     );
 
   border-radius: 26px 22px 30px 24px;
