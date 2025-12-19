@@ -1,0 +1,155 @@
+/* =========================
+   Linagee — coffee shop mood
+   ========================= */
+
+/* 🌫️ Atmosphère générale */
+body {
+  background:
+    radial-gradient(circle at 20% 25%, rgba(255, 235, 215, 0.55), transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(210, 180, 150, 0.45), transparent 60%),
+    linear-gradient(
+      to bottom,
+      #c6ab92 0%,
+      #9b7b62 45%,
+      #5a4333 100%
+    );
+
+  background-size: 140% 140%;
+  animation: linageeBreath 26s ease-in-out infinite;
+}
+
+@keyframes linageeBreath {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 12% 8%; }
+}
+
+/* =========================
+   Carte Linagee
+   ========================= */
+
+.ereri-card {
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.65), transparent 60%),
+    linear-gradient(
+      to bottom,
+      #f8f1e8,
+      #efe4d6
+    );
+
+  border-radius: 22px;
+  padding: 64px 74px;
+
+  box-shadow:
+    0 40px 90px rgba(0,0,0,0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.55);
+
+  animation: linageeFloat 10s ease-in-out infinite;
+}
+
+@keyframes linageeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Bordure subtile façon cadre */
+.ereri-card::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(120, 85, 55, 0.25);
+  pointer-events: none;
+}
+
+/* =========================
+   Typographie
+   ========================= */
+
+.ereri-content {
+  font-family: "Cormorant Garamond", serif;
+  color: #3b2a1a;
+  line-height: 1.85;
+  font-size: 1.05rem;
+}
+
+.ereri-content p {
+  margin-bottom: 1.4em;
+}
+
+/* Titre */
+.ereri-content h1 {
+  font-size: 2.2rem;
+  font-weight: normal;
+  color: #4a2f1a;
+  margin-bottom: 12px;
+}
+
+/* Levi — POV */
+.story-meta,
+.ereri-intro {
+  font-size: 0.9rem;
+  color: #7a5a3a;
+  letter-spacing: 0.04em;
+  margin-bottom: 40px;
+}
+
+/* =========================
+   Paragraphes clés
+   ========================= */
+
+/* Dialogues un peu plus chauds */
+.ereri-content p:has(“”) {
+  color: #4a3322;
+}
+
+/* Respiration visuelle après phrases courtes */
+.ereri-content p:nth-child(3n) {
+  margin-bottom: 1.8em;
+}
+
+/* =========================
+   Animation ambiance (poussière café)
+   ========================= */
+
+.ambient span {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 235, 210, 0.75);
+  filter: blur(1.8px);
+  opacity: 0.35;
+  animation: coffeeDust 18s ease-in-out infinite;
+}
+
+@keyframes coffeeDust {
+  0%   { transform: translate(0, 0) scale(0.95); }
+  50%  { transform: translate(18px, -12px) scale(1); }
+  100% { transform: translate(0, 0) scale(0.95); }
+}
+
+/* =========================
+   Liens Ereri
+   ========================= */
+
+.ereri a {
+  color: #6b4a2d;
+}
+
+.ereri a:hover {
+  color: #3b2a1a;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 900px) {
+  .ereri-card {
+    padding: 40px 28px;
+  }
+
+  .ereri-content {
+    font-size: 1rem;
+  }
+}
