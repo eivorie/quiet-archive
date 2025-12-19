@@ -1,5 +1,5 @@
 /* =====================================================
-   dry cookies — Ereri one-shot (FINAL)
+   dry cookies — Ereri one-shot (GREEN HARMONY)
    ===================================================== */
 
 /* -----------------------------------------------------
@@ -17,7 +17,7 @@
 }
 
 /* -----------------------------------------------------
-   Carte — cuisine chaude, lisible, intégrée
+   Carte — vert chaud, cuisine, intérieur
    ----------------------------------------------------- */
 
 .ereri-story .ereri-card {
@@ -27,26 +27,26 @@
   max-width: 720px;
   width: 100%;
 
-  /* 🍪 Carte plus claire que le fond */
+  /* 🌿 Vert mousse chaud */
   background:
     radial-gradient(
-      circle at 25% 18%,
-      rgba(255, 255, 255, 0.08),
+      circle at 26% 18%,
+      rgba(255, 255, 255, 0.07),
       transparent 65%
     ),
     linear-gradient(
       to bottom,
-      #4a3a2f,
-      #362a21
+      #3f4a45,
+      #313a36
     );
 
   border-radius: 26px 22px 30px 24px;
 
   box-shadow:
-    0 45px 120px rgba(0, 0, 0, 0.65),
+    0 45px 130px rgba(0, 0, 0, 0.65),
     0 18px 42px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.45);
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.5);
 
   padding: 70px 80px;
 }
@@ -58,12 +58,12 @@
   inset: 14px;
 
   border-radius: 20px 18px 24px 20px;
-  border: 1px solid rgba(210, 190, 170, 0.22);
+  border: 1px solid rgba(190, 210, 200, 0.18);
 
   pointer-events: none;
 }
 
-/* Grain très léger */
+/* Grain doux */
 .ereri-story .ereri-card::after {
   content: "";
   position: absolute;
@@ -74,30 +74,30 @@
   background:
     radial-gradient(
       circle at 30% 25%,
-      rgba(255,255,255,0.05),
+      rgba(255,255,255,0.04),
       transparent 65%
     );
 
-  opacity: 0.18;
+  opacity: 0.22;
 }
 
 /* -----------------------------------------------------
-   Typographie — LISIBLE mais fondue
+   Typographie — lisible, fondue, calme
    ----------------------------------------------------- */
 
 .ereri-story .ereri-content {
   font-family: "Libre Baskerville", serif;
-  color: rgba(240, 232, 222, 0.88);
+  color: rgba(232, 238, 232, 0.86);
   line-height: 1.85;
   font-size: 1.02rem;
 
   text-shadow:
-    0 1px 0 rgba(0,0,0,0.45);
+    0 1px 0 rgba(0,0,0,0.4);
 }
 
 .ereri-story .ereri-content p {
   margin-bottom: 1.4em;
-  color: rgba(235, 225, 215, 0.82);
+  color: rgba(225, 232, 225, 0.8);
 }
 
 .ereri-story .ereri-content p:nth-child(3n) {
@@ -105,14 +105,14 @@
 }
 
 /* -----------------------------------------------------
-   Titre & meta — doux, visible
+   Titre & meta
    ----------------------------------------------------- */
 
 .ereri-story h1 {
   font-family: "Cormorant Garamond", serif;
   font-size: 2.1rem;
   font-weight: normal;
-  color: rgba(248, 240, 230, 0.92);
+  color: rgba(242, 247, 242, 0.9);
   margin-bottom: 10px;
 
   text-shadow:
@@ -120,16 +120,15 @@
     0 10px 24px rgba(0,0,0,.5);
 }
 
-.ereri-story .subtitle,
-.ereri-story .story-meta {
+.ereri-story .subtitle {
   font-size: 0.9rem;
-  color: rgba(210, 190, 170, 0.75);
+  color: rgba(190, 210, 200, 0.75);
   letter-spacing: 0.04em;
   margin-bottom: 40px;
 }
 
 /* -----------------------------------------------------
-   Illustration — intégrée
+   Illustration
    ----------------------------------------------------- */
 
 .story-illustration {
@@ -166,7 +165,7 @@
   font-style: italic;
   text-align: center;
   margin: 50px 0;
-  color: rgba(248, 235, 220, 0.9);
+  color: rgba(242, 247, 242, 0.9);
 }
 
 .ereri-story .ereri-content p:last-child {
@@ -180,7 +179,7 @@
   display: block;
   text-align: center;
   margin: 60px 0 0;
-  color: rgba(210, 190, 170, 0.6);
+  color: rgba(190, 210, 200, 0.6);
 }
 
 /* -----------------------------------------------------
