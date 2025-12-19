@@ -1,33 +1,215 @@
-/* Paris – ambiance spécifique */
+/* =====================================================
+   Paris — Ereri one-shot (BLUE HARMONY)
+   ===================================================== */
 
-body {
-  background: #2a2016;
+/* -----------------------------------------------------
+   Fond & héritage
+   ----------------------------------------------------- */
+
+.ereri-story .page {
+  background: transparent;
 }
 
-.ereri-page {
-  min-height: calc(100vh - 80px);
+.ereri-story-page {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 80px;
+  padding: 80px 20px;
 }
 
-.oneshot-card {
+/* -----------------------------------------------------
+   Carte — bleu parisien, froid, fondu
+   ----------------------------------------------------- */
+
+.ereri-story .ereri-card {
+  position: relative;
+  z-index: 1;
+
   max-width: 720px;
+  width: 100%;
+
+  /* 🌫️ Bleu ardoise / brume */
+  background:
+    radial-gradient(
+      circle at 28% 18%,
+      rgba(240, 245, 255, 0.06),
+      transparent 65%
+    ),
+    linear-gradient(
+      to bottom,
+      #3f4c57,
+      #2f3a44
+    );
+
+  border-radius: 26px 22px 30px 24px;
+
+  box-shadow:
+    0 45px 140px rgba(0, 0, 0, 0.65),
+    0 18px 42px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.55);
+
+  padding: 70px 80px;
+
+  animation: parisCardFloat 14s ease-in-out infinite;
 }
 
-.oneshot-header {
+/* Cadre intérieur */
+.ereri-story .ereri-card::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+
+  border-radius: 20px 18px 24px 20px;
+  border: 1px solid rgba(200, 215, 235, 0.18);
+
+  pointer-events: none;
+}
+
+/* Grain lumineux froid */
+.ereri-story .ereri-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 32% 22%,
+      rgba(255,255,255,0.035),
+      transparent 65%
+    );
+
+  opacity: 0.22;
+}
+
+/* animation douce */
+@keyframes parisCardFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* -----------------------------------------------------
+   Typographie — claire, froide, lisible
+   ----------------------------------------------------- */
+
+.ereri-story .oneshot-text {
+  font-family: "Libre Baskerville", serif;
+  color: rgba(240, 245, 250, 0.88);
+  line-height: 1.85;
+  font-size: 1.02rem;
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.45);
+}
+
+.ereri-story .oneshot-text p {
+  margin-bottom: 1.4em;
+  color: rgba(235, 240, 245, 0.82);
+}
+
+.ereri-story .oneshot-text p:nth-child(3n) {
+  margin-bottom: 1.8em;
+}
+
+/* Intro en italique conservée */
+.ereri-story .oneshot-text p:first-of-type {
+  font-style: italic;
+  color: rgba(245, 248, 252, 0.9);
+}
+
+/* -----------------------------------------------------
+   Titre & meta
+   ----------------------------------------------------- */
+
+.ereri-story h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.2rem;
+  font-weight: normal;
+  color: rgba(250, 252, 255, 0.92);
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.6),
+    0 12px 28px rgba(0,0,0,.5);
+}
+
+.ereri-story .subtitle {
+  font-size: 0.9rem;
+  color: rgba(190, 205, 225, 0.75);
+  letter-spacing: 0.04em;
+  margin-bottom: 40px;
+}
+
+/* -----------------------------------------------------
+   Illustration — même principe que Linagee
+   ----------------------------------------------------- */
+
+.story-illustration {
+  margin: 40px auto 60px;
   text-align: center;
 }
 
-.oneshot-text p:first-of-type {
-  font-style: italic;
+.story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 18px 24px 20px 26px;
+
+  box-shadow:
+    0 32px 80px rgba(0,0,0,.65),
+    inset 0 0 0 1px rgba(255,255,255,.14);
+
+  transition: transform .4s ease, box-shadow .4s ease;
 }
 
-.oneshot-text::after {
+.story-illustration img:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 42px 100px rgba(0,0,0,.75),
+    inset 0 0 0 1px rgba(255,255,255,.2);
+}
+
+/* -----------------------------------------------------
+   Signature silencieuse
+   ----------------------------------------------------- */
+
+.ereri-story .oneshot-text::after {
   content: "—";
   display: block;
   text-align: center;
   margin: 60px 0 0;
-  color: #6b4a2d;
+  color: rgba(190, 205, 225, 0.6);
+}
+
+/* -----------------------------------------------------
+   Responsive
+   ----------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .ereri-story-page {
+    padding: 40px 16px;
+  }
+
+  .ereri-story .ereri-card {
+    max-width: 100%;
+    padding: 32px 22px;
+    border-radius: 22px;
+  }
+
+  .ereri-story h1 {
+    font-size: 1.8rem;
+  }
+
+  .story-illustration img {
+    max-width: 260px;
+  }
+
+  .ereri-story .oneshot-text {
+    font-size: 0.98rem;
+  }
 }
