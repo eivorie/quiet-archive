@@ -1,243 +1,142 @@
 /* =====================================================
-   Ereri – Index Theme (FINAL CLEAN VERSION)
+   Linagee — Story variant (inherits Ereri index)
    ===================================================== */
 
-/* --------- Base & sécurité --------- */
+/* =========================
+   Pas de fond ici !
+   On hérite de ereri-index
+   ========================= */
 
-html, body {
-  min-height: 100%;
-}
+/* =========================
+   Carte Linagee (plus chaude)
+   ========================= */
 
-body.ereri-index {
-  position: relative;
-  overflow-x: hidden;
-
-  /* 🌫️ Fond principal – cohérent avec l’index général */
-  background:
-    radial-gradient(circle at 30% 25%, rgba(210, 230, 220, 0.35), transparent 55%),
-    radial-gradient(circle at 70% 65%, rgba(180, 200, 210, 0.25), transparent 60%),
-    linear-gradient(
-      to bottom,
-      #6b6f66 0%,
-      #4f524b 45%,
-      #2a2c28 100%
-    );
-
-  background-size: 140% 140%;
-  animation: ereriBreath 24s ease-in-out infinite;
-  background-blend-mode: soft-light;
-}
-
-/* animation lente du fond */
-@keyframes ereriBreath {
-  0%, 100% { background-position: 0% 0%; }
-  50% { background-position: 10% 6%; }
-}
-
-/* --------- Correction définitive de la “bande moche” --------- */
-
-body.ereri-index::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-
-  background:
-    radial-gradient(circle at 50% 75%, rgba(0,0,0,.35), transparent 65%);
-}
-
-/* léger grain lumineux */
-body.ereri-index::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-
-  background:
-    radial-gradient(circle at 50% 30%, rgba(255,255,255,.04), transparent 60%);
-}
-
-/* =====================================================
-   Particules d’ambiance (vert / bleu très subtil)
-   ===================================================== */
-
-.ereri-ambient {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.ereri-ambient span {
-  position: absolute;
-  top: calc(100% * var(--y));
-  left: calc(100% * var(--x));
-
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-
-  background: radial-gradient(
-    circle,
-    rgba(170, 200, 190, 0.6),
-    rgba(140, 170, 180, 0.3)
-  );
-
-  filter: blur(2px);
-  opacity: 0.35;
-
-  animation:
-    ereriDust 18s ease-in-out infinite,
-    ereriPulse 6s ease-in-out infinite;
-}
-
-/* variations naturelles */
-.ereri-ambient span:nth-child(odd) {
-  width: 7px;
-  height: 7px;
-  opacity: 0.22;
-}
-
-.ereri-ambient span:nth-child(3n) {
-  width: 3px;
-  height: 3px;
-  opacity: 0.5;
-}
-
-@keyframes ereriDust {
-  0%   { transform: translate(0, 0) scale(0.95); }
-  50%  { transform: translate(14px, -18px) scale(1); }
-  100% { transform: translate(0, 0) scale(0.95); }
-}
-
-@keyframes ereriPulse {
-  0%, 100% { opacity: .25; }
-  50% { opacity: .45; }
-}
-
-/* positions */
-.ereri-ambient span:nth-child(1)  { --x: .06; --y: .22; }
-.ereri-ambient span:nth-child(2)  { --x: .12; --y: .48; }
-.ereri-ambient span:nth-child(3)  { --x: .18; --y: .72; }
-.ereri-ambient span:nth-child(4)  { --x: .26; --y: .30; }
-.ereri-ambient span:nth-child(5)  { --x: .34; --y: .58; }
-.ereri-ambient span:nth-child(6)  { --x: .42; --y: .78; }
-.ereri-ambient span:nth-child(7)  { --x: .50; --y: .25; }
-.ereri-ambient span:nth-child(8)  { --x: .58; --y: .52; }
-.ereri-ambient span:nth-child(9)  { --x: .66; --y: .72; }
-.ereri-ambient span:nth-child(10) { --x: .74; --y: .35; }
-.ereri-ambient span:nth-child(11) { --x: .80; --y: .55; }
-.ereri-ambient span:nth-child(12) { --x: .86; --y: .75; }
-.ereri-ambient span:nth-child(13) { --x: .90; --y: .28; }
-.ereri-ambient span:nth-child(14) { --x: .94; --y: .50; }
-.ereri-ambient span:nth-child(15) { --x: .97; --y: .70; }
-
-/* =====================================================
-   Navbar (sobre, sans border-radius)
-   ===================================================== */
-
-.ereri-index .nav {
-  background: rgba(38, 42, 40, 0.72);
-  backdrop-filter: blur(12px);
-  padding: 14px 32px;
-
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-.ereri-index .nav a {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  color: #a9bfb6;
-}
-
-.ereri-index .nav a:hover {
-  color: #e6f0ec;
-}
-
-/* =====================================================
-   Carte Ereri (forme vivante, pas lisse)
-   ===================================================== */
-
-.ereri-card {
+.ereri-story .ereri-card {
   position: relative;
   z-index: 1;
 
+  max-width: 720px;
+  width: 100%;
+
   background:
-    radial-gradient(circle at 20% 15%, rgba(255,255,255,.55), transparent 55%),
+    radial-gradient(circle at 18% 12%, rgba(255,255,255,.6), transparent 55%),
     linear-gradient(
       to bottom,
-      rgba(245,245,240,.96),
-      rgba(232,236,230,.96)
+      rgba(248,246,242,.97),
+      rgba(232,228,220,.97)
     );
 
-  border-radius: 26px 22px 28px 24px;
-
-  box-shadow:
-    0 45px 90px rgba(0,0,0,.55),
-    0 8px 18px rgba(0,0,0,.25),
-    inset 0 0 0 1px rgba(255,255,255,.35);
+  border-radius: 26px 22px 30px 24px;
 
   padding: 70px 80px;
 
-  animation: ereriCardFloat 12s ease-in-out infinite;
+  box-shadow:
+    0 45px 90px rgba(0,0,0,.45),
+    0 10px 22px rgba(0,0,0,.25),
+    inset 0 0 0 1px rgba(255,255,255,.35);
+
+  animation: linageeFloat 12s ease-in-out infinite;
 }
 
-.ereri-card::before {
+.ereri-story .ereri-card::before {
   content: "";
   position: absolute;
   inset: 14px;
-  border-radius: 20px 18px 22px 20px;
-  border: 1px solid rgba(120,140,135,.28);
+  border-radius: 20px 18px 24px 20px;
+  border: 1px solid rgba(140,150,145,.28);
   pointer-events: none;
 }
 
-@keyframes ereriCardFloat {
+@keyframes linageeFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
 
-/* =====================================================
-   Titre & liens
-   ===================================================== */
+/* =========================
+   Typographie (plus intime)
+   ========================= */
 
-.ereri-title {
-  font-size: 2rem;
-  line-height: 1.45;
-  margin-bottom: 60px;
+.ereri-story .ereri-content {
+  font-family: "Cormorant Garamond", serif;
+  color: #2f2f2c;
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
 
+.ereri-story .ereri-content p {
+  margin-bottom: 1.4em;
+}
+
+.ereri-story .ereri-content p:nth-child(3n) {
+  margin-bottom: 1.8em;
+}
+
+/* =========================
+   Titre & meta
+   ========================= */
+
+.ereri-story h1 {
+  font-size: 2.2rem;
+  font-weight: normal;
   color: #2e3a35;
-  letter-spacing: 0.01em;
+
+  margin-bottom: 12px;
 
   text-shadow:
     0 1px 0 rgba(255,255,255,.6),
-    0 8px 20px rgba(0,0,0,.15);
+    0 8px 18px rgba(0,0,0,.12);
 }
 
-/* liens table des matières */
-.ereri-index .ereri-toc a {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.02em;
-
-  color: #4f6b63;
-  position: relative;
-  text-decoration: none;
+.story-meta {
+  font-size: 0.9rem;
+  color: #6b756f;
+  letter-spacing: 0.04em;
+  margin-bottom: 40px;
 }
 
-.ereri-index .ereri-toc a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 1px;
-  background: rgba(79,107,99,.6);
-  transition: width .3s ease;
+/* =========================
+   Illustration — Linagee
+   ========================= */
+
+.story-illustration {
+  margin: 42px auto 60px;
+  text-align: center;
 }
 
-.ereri-index .ereri-toc a:hover::after {
+.story-illustration img {
+  max-width: 380px;
   width: 100%;
+  height: auto;
+
+  border-radius: 16px 22px 18px 24px;
+
+  box-shadow:
+    0 25px 55px rgba(0,0,0,.35),
+    inset 0 0 0 1px rgba(255,255,255,.35);
+
+  opacity: 0.96;
+  filter: saturate(0.95) contrast(1.05);
+
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.story-illustration img:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 35px 75px rgba(0,0,0,.45),
+    inset 0 0 0 1px rgba(255,255,255,.45);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 900px) {
+  .ereri-story .ereri-card {
+    padding: 40px 28px;
+  }
+
+  .ereri-story .ereri-content {
+    font-size: 1rem;
+  }
 }
