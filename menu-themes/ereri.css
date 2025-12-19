@@ -6,15 +6,45 @@
    Titre : plus discret, plus intime
 --------------------------- */
 
+/* =====================================================
+   Titre — ancien, rituel, lisible
+   ===================================================== */
+
 .ereri-index .ereri-title {
-  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
-  max-width: 520px;
-  margin: 0 auto 48px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 400;
+
+  font-size: clamp(1.4rem, 3.2vw, 2rem);
+  letter-spacing: 0.04em;
+
+  color: rgba(235, 240, 238, 0.95);
 
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.5;
 
-  opacity: 0.88;
+  margin: 0 auto 36px;
+  position: relative;
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.4),
+    0 6px 18px rgba(0,0,0,0.45);
+}
+
+/* Ornement délicat sous le titre */
+.ereri-index .ereri-title::after {
+  content: "✦";
+
+  display: block;
+  margin: 18px auto 0;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.6em;
+
+  color: rgba(200, 180, 120, 0.65);
+
+  text-shadow:
+    0 0 6px rgba(200, 180, 120, 0.35);
 }
 
 /* mobile : pas de titre envahissant */
@@ -75,24 +105,49 @@
    Carte : moins “collée”, plus flottante
 --------------------------- */
 
+/* =====================================================
+   Dorures intérieures — coins subtils
+   ===================================================== */
+
 .ereri-index .ereri-card {
-  backdrop-filter: blur(6px);
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(48, 56, 60, 0.72),
+      rgba(30, 36, 40, 0.82)
+    );
 }
 
-/* micro-ombre interne pour profondeur */
-.ereri-index .ereri-card::after {
+.ereri-index .ereri-card::before {
   content: "";
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
+  inset: 14px;
   pointer-events: none;
 
   background:
     radial-gradient(
-      circle at 50% 100%,
-      rgba(0, 0, 0, 0.08),
-      transparent 60%
+      circle at top left,
+      rgba(200, 180, 120, 0.25),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(200, 180, 120, 0.22),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(200, 180, 120, 0.18),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(200, 180, 120, 0.2),
+      transparent 40%
     );
+
+  border-radius: inherit;
+  opacity: 0.35;
 }
 
 /* =====================================================
