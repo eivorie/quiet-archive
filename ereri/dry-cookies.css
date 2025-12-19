@@ -96,10 +96,9 @@
 }
 
 .ereri-story .ereri-content p {
-  margin-bottom: 1.4em;
-  color: rgba(240, 244, 240, 0.82);
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.45);
 }
-
 
 .ereri-story .ereri-content p:nth-child(3n) {
   margin-bottom: 1.8em;
@@ -181,6 +180,17 @@
   margin: 60px 0 0;
   color: rgba(190, 210, 200, 0.6);
 }
+
+/* =========================================
+   OVERRIDE DÉFINITIF — SUPPRESSION DU MARRON
+   ========================================= */
+
+.ereri-story .ereri-content,
+.ereri-story .ereri-content p,
+.ereri-story .oneshot-text p {
+  color: rgba(245, 248, 245, 0.88) !important;
+}
+
 
 /* -----------------------------------------------------
    Responsive
