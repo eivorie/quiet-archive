@@ -1,13 +1,10 @@
 /* =====================================================
-   Ereri Index – Depth & Invitation Layer
+   Ereri Index — Depth & Invitation (FINAL)
    ===================================================== */
 
-/* ---------------------------
-   Titre : plus discret, plus intime
---------------------------- */
 
 /* =====================================================
-   Titre — ancien, rituel, lisible
+   TITRE — ancien, rituel, lisible
    ===================================================== */
 
 .ereri-index .ereri-title {
@@ -16,22 +13,22 @@
   font-weight: 400;
 
   font-size: clamp(1.4rem, 3.2vw, 2rem);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 
   color: rgba(235, 240, 238, 0.95);
 
   text-align: center;
   line-height: 1.5;
 
-  margin: 0 auto 36px;
+  margin: 0 auto 42px;
   position: relative;
 
   text-shadow:
-    0 1px 0 rgba(0,0,0,0.4),
-    0 6px 18px rgba(0,0,0,0.45);
+    0 1px 0 rgba(0,0,0,0.45),
+    0 8px 22px rgba(0,0,0,0.5);
 }
 
-/* Ornement délicat sous le titre */
+/* ornement délicat */
 .ereri-index .ereri-title::after {
   content: "✦";
 
@@ -39,24 +36,77 @@
   margin: 18px auto 0;
 
   font-size: 0.75rem;
-  letter-spacing: 0.6em;
+  letter-spacing: 0.8em;
 
-  color: rgba(200, 180, 120, 0.65);
+  color: rgba(210, 190, 140, 0.75);
 
   text-shadow:
-    0 0 6px rgba(200, 180, 120, 0.35);
+    0 0 6px rgba(210, 190, 140, 0.45),
+    0 0 18px rgba(210, 190, 140, 0.25);
 }
 
-/* mobile : pas de titre envahissant */
+/* mobile */
 @media (max-width: 600px) {
   .ereri-index .ereri-title {
     margin-bottom: 32px;
   }
 }
 
-/* ---------------------------
-   Table des fragments (liens)
---------------------------- */
+
+/* =====================================================
+   CARTE — sombre, intégrée, shadow box intérieur
+   ===================================================== */
+
+.ereri-index .ereri-card {
+  position: relative;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(42, 50, 54, 0.78),
+      rgba(28, 34, 38, 0.88)
+    );
+
+  color: rgba(235, 240, 238, 0.92);
+
+  border-radius: 24px;
+
+  /* ombre externe */
+  box-shadow:
+    0 40px 120px rgba(0, 0, 0, 0.65),
+    0 14px 42px rgba(0, 0, 0, 0.45);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  padding: 70px 80px;
+
+  animation:
+    ereriCardFloat 12s ease-in-out infinite,
+    ereriFadeIn 1.2s ease forwards;
+}
+
+/* shadow box doré interne */
+.ereri-index .ereri-card::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  pointer-events: none;
+
+  border-radius: 18px;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(210, 190, 140, 0.28),
+    inset 0 0 30px rgba(210, 190, 140, 0.18),
+    inset 0 0 90px rgba(210, 190, 140, 0.12);
+
+  opacity: 0.9;
+}
+
+
+/* =====================================================
+   TABLE DES FRAGMENTS — apparition progressive
+   ===================================================== */
 
 .ereri-index .ereri-toc ul {
   display: flex;
@@ -64,11 +114,22 @@
   gap: 22px;
 }
 
-/* chaque entrée devient un “fragment” */
+/* chaque fragment */
 .ereri-index .ereri-toc li {
   position: relative;
   padding-left: 22px;
+
+  opacity: 0;
+  transform: translateY(8px);
+
+  animation: fragmentFade 0.9s ease forwards;
 }
+
+/* décalage progressif */
+.ereri-index .ereri-toc li:nth-child(1) { animation-delay: 0.4s; }
+.ereri-index .ereri-toc li:nth-child(2) { animation-delay: 0.6s; }
+.ereri-index .ereri-toc li:nth-child(3) { animation-delay: 0.8s; }
+.ereri-index .ereri-toc li:nth-child(4) { animation-delay: 1s; }
 
 /* point narratif */
 .ereri-index .ereri-toc li::before {
@@ -77,124 +138,70 @@
   left: 0;
   top: 0;
 
-  color: rgba(120, 150, 145, 0.6);
+  color: rgba(180, 200, 195, 0.5);
   font-size: 1.2rem;
-  line-height: 1;
 }
 
+/* liens */
 .ereri-index .ereri-toc a {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+
   color: rgba(200, 215, 210, 0.85);
+  text-decoration: none;
+
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease,
+    letter-spacing 0.35s ease;
 }
 
 .ereri-index .ereri-toc a:hover {
+  transform: translateX(6px);
+  letter-spacing: 0.06em;
   color: rgba(235, 245, 242, 1);
 }
 
-/* underline plus vivant */
+/* underline vivant */
 .ereri-index .ereri-toc a::after {
-  bottom: -6px;
+  content: "";
+  display: block;
+  width: 0%;
   height: 1px;
+  margin-top: 6px;
+
   background: linear-gradient(
     to right,
-    rgba(80, 120, 115, 0.6),
-    rgba(80, 120, 115, 0)
+    rgba(210, 190, 140, 0.7),
+    rgba(210, 190, 140, 0)
   );
+
+  transition: width 0.4s ease;
 }
 
-/* ---------------------------
-   Carte : moins “collée”, plus flottante
---------------------------- */
+.ereri-index .ereri-toc a:hover::after {
+  width: 100%;
+}
+
 
 /* =====================================================
-   Dorures intérieures — coins subtils
+   ANIMATIONS
    ===================================================== */
-
-.ereri-index .ereri-card {
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(48, 56, 60, 0.72),
-      rgba(30, 36, 40, 0.82)
-    );
-}
-
-.ereri-index .ereri-card::before {
-  content: "";
-  position: absolute;
-  inset: 14px;
-  pointer-events: none;
-
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(200, 180, 120, 0.25),
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at top right,
-      rgba(200, 180, 120, 0.22),
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at bottom left,
-      rgba(200, 180, 120, 0.18),
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(200, 180, 120, 0.2),
-      transparent 40%
-    );
-
-  border-radius: inherit;
-  opacity: 0.35;
-}
-
-/* =====================================================
-   Ereri Index — Voile / Mémoire
-   ===================================================== */
-
-.ereri-index .ereri-card {
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(40, 48, 52, 0.75),
-      rgba(28, 34, 38, 0.85)
-    );
-
-  color: rgba(230, 235, 232, 0.9);
-
-  border-radius: 22px;
-  box-shadow:
-    0 40px 120px rgba(0, 0, 0, 0.6);
-
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* suppression des artefacts papier */
-.ereri-index .ereri-card::before,
-.ereri-index .ereri-card::after {
-  display: none;
-}
-
-/* ---------------------------
-   Animation subtile d’entrée
---------------------------- */
-
-.ereri-index .ereri-card {
-  animation:
-    ereriCardFloat 12s ease-in-out infinite,
-    ereriFadeIn 1.2s ease forwards;
-}
 
 @keyframes ereriFadeIn {
   from {
     opacity: 0;
     transform: translateY(12px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fragmentFade {
   to {
     opacity: 1;
     transform: translateY(0);
