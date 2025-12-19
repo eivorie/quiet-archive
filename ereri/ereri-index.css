@@ -1,0 +1,117 @@
+/* =========================
+   Ereri – Index Theme
+   ========================= */
+
+body.ereri-index {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(210, 230, 220, 0.35), transparent 55%),
+    radial-gradient(circle at 70% 65%, rgba(180, 200, 210, 0.25), transparent 60%),
+    linear-gradient(
+      to bottom,
+      #6b6f66 0%,
+      #4f524b 45%,
+      #2a2c28 100%
+    );
+
+  background-size: 140% 140%;
+  animation: ereriBreath 24s ease-in-out infinite;
+}
+
+@keyframes ereriBreath {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 10% 6%; }
+}
+.ereri-ambient span {
+  position: absolute;
+  top: calc(100% * var(--y));
+  left: calc(100% * var(--x));
+
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(170, 200, 190, 0.6),
+    rgba(140, 170, 180, 0.3)
+  );
+
+  filter: blur(2px);
+  opacity: 0.35;
+
+  animation: ereriDust 18s ease-in-out infinite;
+}
+
+/* variations naturelles */
+.ereri-ambient span:nth-child(odd) {
+  width: 7px;
+  height: 7px;
+  opacity: 0.22;
+}
+
+.ereri-ambient span:nth-child(3n) {
+  width: 3px;
+  height: 3px;
+  opacity: 0.5;
+}
+
+@keyframes ereriDust {
+  0%   { transform: translate(0, 0) scale(0.95); }
+  50%  { transform: translate(14px, -18px) scale(1); }
+  100% { transform: translate(0, 0) scale(0.95); }
+}
+
+.ereri-ambient span:nth-child(1)  { --x: .06; --y: .22; }
+.ereri-ambient span:nth-child(2)  { --x: .12; --y: .48; }
+.ereri-ambient span:nth-child(3)  { --x: .18; --y: .72; }
+.ereri-ambient span:nth-child(4)  { --x: .26; --y: .30; }
+.ereri-ambient span:nth-child(5)  { --x: .34; --y: .58; }
+.ereri-ambient span:nth-child(6)  { --x: .42; --y: .78; }
+.ereri-ambient span:nth-child(7)  { --x: .50; --y: .25; }
+.ereri-ambient span:nth-child(8)  { --x: .58; --y: .52; }
+.ereri-ambient span:nth-child(9)  { --x: .66; --y: .72; }
+.ereri-ambient span:nth-child(10) { --x: .74; --y: .35; }
+.ereri-ambient span:nth-child(11) { --x: .80; --y: .55; }
+.ereri-ambient span:nth-child(12) { --x: .86; --y: .75; }
+.ereri-ambient span:nth-child(13) { --x: .90; --y: .28; }
+.ereri-ambient span:nth-child(14) { --x: .94; --y: .50; }
+.ereri-ambient span:nth-child(15) { --x: .97; --y: .70; }
+
+.ereri-card {
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.65), transparent 60%),
+    rgba(245, 240, 232, 0.96);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 35px 80px rgba(0,0,0,.45),
+    inset 0 0 0 1px rgba(255,255,255,.45);
+
+  animation: ereriCardFloat 10s ease-in-out infinite;
+}
+
+@keyframes ereriCardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.ereri-title {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin-bottom: 50px;
+
+  color: #2f3a36;
+  text-shadow: 0 1px 0 rgba(255,255,255,.6);
+}
+
+.ereri a {
+  color: #4f6b63;
+}
+
+.ereri a:hover {
+  color: #2f3a36;
+}
+
+
+
