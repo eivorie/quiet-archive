@@ -141,6 +141,39 @@ body {
 }
 
 /* =========================
+   Illustration – Linagee
+   ========================= */
+
+.story-illustration {
+  margin: 40px auto 60px;
+  text-align: center;
+}
+
+.story-illustration img {
+  max-width: 320px;        /* pas trop grand */
+  width: 100%;
+  height: auto;
+
+  border-radius: 14px 18px 16px 20px; /* irrégulier, vivant */
+  
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.35);
+
+  opacity: 0.96;
+  filter: saturate(0.95) contrast(1.05);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.story-illustration img:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 30px 65px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.45);
+}
+
+/* =========================
    Responsive
    ========================= */
 
