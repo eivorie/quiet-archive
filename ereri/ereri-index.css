@@ -357,4 +357,30 @@ body.ereri-index::before {
   padding-top: 110px;
 }
 
+/* =====================================================
+   Mobile fix — navbar non destructive
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  /* la nav redevient dans le flux */
+  .ereri-index .ereri-nav {
+    position: sticky;
+    top: 0;
+
+    padding-top: env(safe-area-inset-top);
+  }
+
+  /* on réduit l’espace nécessaire */
+  .ereri-page {
+    padding-top: 48px;
+  }
+
+  /* carte plus respirante sur petit écran */
+  .ereri-card {
+    padding: 42px 26px;
+  }
+}
+
+
 
