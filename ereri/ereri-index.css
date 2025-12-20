@@ -300,7 +300,6 @@ body.ereri-index::before {
   right: 0;
 
   display: flex;
-  justify-content: center;
   gap: 28px;
 
   padding: 14px 24px;
