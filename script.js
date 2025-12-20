@@ -198,9 +198,10 @@ const button = document.getElementById("generate");
 const result = document.getElementById("result");
 const container = document.querySelector(".container");
 
-if (button && result && container) {
+if (button && result) {
   button.addEventListener("click", () => {
-    container.classList.add("loading");
+    // phase 1 — on efface doucement
+    result.classList.add("is-fading");
 
     setTimeout(() => {
       let index;
@@ -212,14 +213,19 @@ if (button && result && container) {
       lastIndex = index;
       const memory = memories[index];
 
+      // phase 2 — on change le contenu pendant l’invisible
       result.innerHTML = `
         <p class="memory-text">“${memory.text.replace(/\n/g, "<br>")}”</p>
         <p class="memory-author">${formatAuthor(memory.author)}</p>
         ${memory.note ? `<p class="memory-note">${memory.note}</p>` : ""}
       `;
 
-      container.classList.remove("loading");
-    }, 700); // délai doux, perceptif
+      // phase 3 — on réapparaît
+      requestAnimationFrame(() => {
+        result.classList.remove("is-fading");
+      });
+
+    }, 350); // plus court, aligné avec la transition CSS
   });
 }
 
