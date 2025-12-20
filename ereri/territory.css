@@ -1,111 +1,137 @@
 /* =====================================================
-   Territory — Levi POV
+   Territory — Levi POV / continuité Ereri
    ===================================================== */
 
-/* page */
-.territory-story .ereri-page {
-  display: flex;
-  justify-content: center;
-  padding: 80px 20px;
-}
+/* -----------------------------------------------------
+   Carte spécifique (micro-ajustements seulement)
+----------------------------------------------------- */
 
-/* carte */
 .territory-card {
   max-width: 720px;
-  width: 100%;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(38, 44, 48, 0.85),
-      rgba(26, 30, 34, 0.95)
-    );
-
-  border-radius: 24px;
-
-  box-shadow:
-    0 50px 140px rgba(0,0,0,0.7),
-    0 18px 50px rgba(0,0,0,0.45);
-
-  padding: 70px 80px;
 }
 
-/* header */
-.story-header {
+/* -----------------------------------------------------
+   Header
+----------------------------------------------------- */
+
+.territory-card .story-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 36px;
 }
 
-.story-header h1 {
+.territory-card h1 {
   font-family: "Cormorant Garamond", serif;
-  font-style: italic;
-  font-weight: 400;
+  font-size: 2rem;
+  font-weight: normal;
+  letter-spacing: 0.02em;
 
-  font-size: 2.2rem;
-  letter-spacing: 0.06em;
-
-  color: rgba(240,245,242,0.95);
+  color: rgba(245, 248, 246, 0.95);
 
   text-shadow:
-    0 1px 0 rgba(0,0,0,0.6),
-    0 12px 28px rgba(0,0,0,0.5);
+    0 1px 0 rgba(0,0,0,0.5),
+    0 8px 22px rgba(0,0,0,0.45);
 }
 
-.story-header .subtitle {
-  margin-top: 12px;
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
-
-  color: rgba(180,195,190,0.7);
+.territory-card .subtitle {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: rgba(200, 215, 210, 0.65);
 }
 
-/* texte */
-.territory-story .ereri-content {
-  font-family: "Libre Baskerville", serif;
-  font-size: 1.02rem;
-  line-height: 1.85;
+/* -----------------------------------------------------
+   Texte — Levi retenu, lisible, calme
+----------------------------------------------------- */
 
-  color: rgba(235,240,238,0.88);
+.territory-card .ereri-content p {
+  color: rgba(235, 240, 238, 0.88);
 }
 
-.territory-story .ereri-content p {
-  margin-bottom: 1.4em;
+.territory-card .ereri-content p em {
+  color: rgba(245, 250, 248, 0.95);
+  font-style: italic;
 }
 
-.territory-story .ereri-content p:nth-child(3n) {
-  margin-bottom: 1.8em;
+/* respirations plus marquées */
+.territory-card .ereri-content p:nth-child(6n) {
+  margin-bottom: 2em;
 }
 
-/* emphase */
-.territory-story .emphasis {
+/* -----------------------------------------------------
+   Emphasis centrale
+----------------------------------------------------- */
+
+.territory-card .emphasis {
   text-align: center;
   font-style: italic;
-  font-size: 1.1rem;
   margin: 48px 0;
 
-  color: rgba(245,248,245,0.95);
+  color: rgba(250, 252, 250, 0.95);
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.4),
+    0 6px 18px rgba(0,0,0,0.4);
 }
 
-/* dernière ligne */
-.territory-story .final-line {
-  margin-top: 48px;
-  font-style: italic;
+/* -----------------------------------------------------
+   Dernière ligne
+----------------------------------------------------- */
+
+.territory-card .final-line {
+  margin-top: 52px;
   text-align: center;
+  font-style: italic;
 
-  color: rgba(210,220,215,0.85);
+  color: rgba(210, 225, 220, 0.85);
 }
 
-/* responsive */
+/* -----------------------------------------------------
+   Illustration (si ajoutée plus tard)
+   même logique que Paris / Linagee
+----------------------------------------------------- */
+
+.territory-card .story-illustration {
+  margin: 42px auto 60px;
+  text-align: center;
+}
+
+.territory-card .story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 18px 22px 20px 24px;
+
+  box-shadow:
+    0 32px 80px rgba(0,0,0,0.65),
+    inset 0 0 0 1px rgba(255,255,255,0.12);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.territory-card .story-illustration img:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 44px 100px rgba(0,0,0,0.75),
+    inset 0 0 0 1px rgba(255,255,255,0.18);
+}
+
+/* -----------------------------------------------------
+   Responsive
+----------------------------------------------------- */
+
 @media (max-width: 900px) {
-  .territory-card {
-    padding: 36px 24px;
+  .territory-card h1 {
+    font-size: 1.7rem;
   }
 
-  .story-header h1 {
-    font-size: 1.8rem;
+  .territory-card .story-illustration img {
+    max-width: 260px;
   }
 
-  .territory-story .ereri-content {
+  .territory-card .ereri-content {
     font-size: 0.98rem;
   }
 }
