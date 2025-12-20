@@ -1,198 +1,201 @@
-/* =========================
-   Memories theme
-   ========================= */
-
-/* =========================
-   Typographie – verrouillage
-   ========================= */
+/* =====================================================
+   Memories — Quiet recollection
+   ===================================================== */
 
 :root {
-  --font-main: "Cormorant Garamond", serif;
+  --memory-font: "Cormorant Garamond", serif;
+  --memory-light: rgba(235, 240, 238, 0.9);
+  --memory-muted: rgba(190, 200, 198, 0.7);
+  --memory-accent: rgba(140, 170, 180, 0.6);
 }
 
-html, body {
-  font-family: var(--font-main);
-}
+/* -----------------------------------------------------
+   Base
+----------------------------------------------------- */
 
-.nav a {
-  color: #8b6a4f;
-  opacity: 0.9;
-  letter-spacing: 0.06em;
-}
-
-.nav a:hover {
-  color: #6f4e36;
-}
-
-.nav,
-.nav a,
-button,
-p,
-h1, h2,
-#result {
-  font-family: var(--font-main);
-}
-
-h1, h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-}
-
-p, button {
-  font-family: "Cormorant Garamond", serif;
-}
-
-button {
-  background: linear-gradient(to bottom, #7b5638, #5e402a);
-  box-shadow:
-    0 6px 14px rgba(0,0,0,.25),
-    inset 0 1px 0 rgba(255,255,255,.25);
-}
-
-button:hover {
-  background: linear-gradient(to bottom, #8a6544, #6a4a32);
-}
-
-
-/* 🌫️ Fond nostalgique */
 body {
+  font-family: var(--memory-font);
+  color: var(--memory-light);
+
   background:
-    radial-gradient(circle at 25% 20%, rgba(255,235,210,.55), transparent 55%),
-    radial-gradient(circle at 75% 70%, rgba(200,170,140,.45), transparent 60%),
-    linear-gradient(to bottom, #9b7b62, #3a2b22);
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(180, 205, 215, 0.25),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 70% 65%,
+      rgba(140, 170, 180, 0.22),
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom,
+      #5a6468,
+      #3e474b,
+      #242b2e
+    );
 
   background-size: 140% 140%;
-  animation: memoriesBreath 22s ease-in-out infinite;
+  animation: memoriesBreath 26s ease-in-out infinite;
 }
 
 @keyframes memoriesBreath {
   0%, 100% { background-position: 0% 0%; }
-  50% { background-position: 10% 6%; }
+  50% { background-position: 8% 5%; }
 }
 
-/* 🌬️ Poussière lumineuse */
+/* -----------------------------------------------------
+   Ambient — poussière froide
+----------------------------------------------------- */
+
 .ambient span {
-  position: absolute;
-  top: calc(100% * var(--y));
-  left: calc(100% * var(--x));
-
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255, 240, 220, 0.75);
+  background: rgba(210, 225, 230, 0.6);
   filter: blur(2px);
-
-  opacity: 0.35;
-  animation: floatDust 16s ease-in-out infinite;
+  opacity: 0.25;
 }
 
-/* variations */
-.ambient span:nth-child(odd) {
-  width: 8px;
-  height: 8px;
-  opacity: 0.22;
-}
+/* -----------------------------------------------------
+   Navigation — atténuée
+----------------------------------------------------- */
 
-.ambient span:nth-child(3n) {
-  width: 4px;
-  height: 4px;
-  opacity: 0.5;
-}
-
-/* mouvement local, pas de traversée */
-@keyframes floatDust {
-  0%   { transform: translate(0, 0) scale(0.95); }
-  50%  { transform: translate(12px, -18px) scale(1); }
-  100% { transform: translate(0, 0) scale(0.95); }
-}
-
-/* positions pseudo-aléatoires */
-.ambient span:nth-child(1)  { --x: .08; --y: .22; }
-.ambient span:nth-child(2)  { --x: .14; --y: .48; }
-.ambient span:nth-child(3)  { --x: .20; --y: .70; }
-.ambient span:nth-child(4)  { --x: .28; --y: .30; }
-.ambient span:nth-child(5)  { --x: .35; --y: .58; }
-.ambient span:nth-child(6)  { --x: .42; --y: .78; }
-.ambient span:nth-child(7)  { --x: .50; --y: .25; }
-.ambient span:nth-child(8)  { --x: .58; --y: .52; }
-.ambient span:nth-child(9)  { --x: .65; --y: .72; }
-.ambient span:nth-child(10) { --x: .72; --y: .35; }
-.ambient span:nth-child(11) { --x: .78; --y: .55; }
-.ambient span:nth-child(12) { --x: .84; --y: .75; }
-.ambient span:nth-child(13) { --x: .90; --y: .28; }
-.ambient span:nth-child(14) { --x: .94; --y: .50; }
-.ambient span:nth-child(15) { --x: .97; --y: .70; }
-
-/* 🧭 Nav plus chaude */
 .nav a {
-  color: #d6bfa6;
+  color: rgba(210, 225, 230, 0.75);
 }
 
-/* 📜 Carte nostalgique enrichie */
+.nav a:hover {
+  color: rgba(240, 245, 245, 0.95);
+}
+
+/* -----------------------------------------------------
+   Carte Memories
+----------------------------------------------------- */
+
 .container {
   position: relative;
+  z-index: 2;
+
+  max-width: 680px;
 
   background:
     linear-gradient(
-      145deg,
-      rgba(255,252,248,.98),
-      rgba(248,235,220,.96)
+      to bottom,
+      rgba(245, 248, 246, 0.92),
+      rgba(232, 238, 236, 0.88)
     );
 
-  border-radius: 28px 22px 30px 24px;
+  color: #2f3b3e;
+
+  border-radius: 22px 20px 24px 22px;
+
+  box-shadow:
+    0 40px 120px rgba(0,0,0,0.45),
+    0 18px 40px rgba(0,0,0,0.25),
+    inset 0 0 0 1px rgba(255,255,255,0.45);
 
   padding: 56px 48px;
 
-  box-shadow:
-    0 45px 120px rgba(0,0,0,.35),
-    0 18px 45px rgba(0,0,0,.22),
-    inset 0 0 0 1px rgba(255,255,255,.6);
-
-  animation: memoryCard 10s ease-in-out infinite;
-  z-index: 2;
+  animation: memoryFloat 14s ease-in-out infinite;
 }
 
-@keyframes memoryCard {
+@keyframes memoryFloat {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-4px); }
 }
 
-/* Bordure intérieure imparfaite */
+/* cadre intérieur très discret */
 .container::before {
   content: "";
   position: absolute;
   inset: 14px;
-  border-radius: 20px 18px 22px 19px;
-  border: 1px solid rgba(160,120,80,.22);
+  border-radius: 18px;
+  border: 1px solid rgba(150, 170, 175, 0.25);
   pointer-events: none;
 }
 
-/* Grain très léger */
-.container::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background:
-    radial-gradient(circle at 18% 22%, rgba(0,0,0,.03), transparent 45%),
-    radial-gradient(circle at 72% 68%, rgba(0,0,0,.025), transparent 50%);
-  pointer-events: none;
+/* -----------------------------------------------------
+   Titre
+----------------------------------------------------- */
+
+.container h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 18px;
+  color: #2e3a3d;
 }
 
-/* 📜 Bloc souvenir */
-#result {
-  margin-top: 32px;
-  padding: 26px 30px;
+/* -----------------------------------------------------
+   Texte d’intro
+----------------------------------------------------- */
 
-  background: rgba(240,230,215,.85);
-  border-left: 4px solid #7b5638;
-  border-radius: 8px;
+.container p {
+  text-align: center;
+  color: rgba(60, 75, 80, 0.8);
+  margin-bottom: 32px;
+}
+
+/* -----------------------------------------------------
+   Bouton — invocation
+----------------------------------------------------- */
+
+button#generate {
+  display: block;
+  margin: 0 auto;
+
+  background: transparent;
+  color: rgba(70, 95, 105, 0.85);
+
+  border: 1px solid rgba(120, 150, 160, 0.45);
+  border-radius: 999px;
+
+  padding: 10px 26px;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+button#generate:hover {
+  background: rgba(120, 150, 160, 0.12);
+  color: rgba(40, 60, 70, 1);
 
   box-shadow:
-    inset 0 0 12px rgba(0,0,0,.06),
-    0 8px 18px rgba(0,0,0,.12);
-
-  font-style: italic;
+    0 8px 24px rgba(0,0,0,0.15);
 }
 
+/* -----------------------------------------------------
+   Résultat — souvenir reçu
+----------------------------------------------------- */
+
+#result {
+  margin-top: 36px;
+  padding: 26px 30px;
+
+  background: rgba(255,255,255,0.65);
+  border-left: 2px solid var(--memory-accent);
+  border-radius: 6px;
+
+  box-shadow:
+    inset 0 0 12px rgba(0,0,0,0.04),
+    0 10px 24px rgba(0,0,0,0.12);
+
+  font-style: italic;
+  color: #2f3b3e;
+
+  animation: memoryAppear 0.6s ease;
+}
+
+@keyframes memoryAppear {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
