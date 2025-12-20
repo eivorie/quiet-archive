@@ -55,15 +55,63 @@ body {
 }
 
 /* -----------------------------------------------------
-   Navigation — atténuée
+   Navigation — feutrée & rituelle
 ----------------------------------------------------- */
 
+.nav {
+  display: flex;
+  gap: 30px;
+
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  opacity: 0.85;
+  animation: navFadeIn 1.4s ease forwards;
+}
+
+@keyframes navFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 0.85;
+    transform: translateY(0);
+  }
+}
+
 .nav a {
+  position: relative;
+  padding: 2px 0;
+
   color: rgba(210, 225, 230, 0.75);
+  transition: color 0.4s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    rgba(180, 210, 220, 0.6),
+    rgba(180, 210, 220, 0)
+  );
+
+  transition: width 0.6s ease;
 }
 
 .nav a:hover {
   color: rgba(240, 245, 245, 0.95);
+}
+
+.nav a:hover::after {
+  width: 100%;
 }
 
 /* -----------------------------------------------------
@@ -120,6 +168,8 @@ body {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 18px;
+
+  letter-spacing: 0.06em;
   color: #2e3a3d;
 }
 
@@ -131,6 +181,8 @@ body {
   text-align: center;
   color: rgba(60, 75, 80, 0.8);
   margin-bottom: 32px;
+
+  letter-spacing: 0.02em;
 }
 
 /* -----------------------------------------------------
@@ -156,7 +208,8 @@ button#generate {
   transition:
     background 0.4s ease,
     color 0.4s ease,
-    box-shadow 0.4s ease;
+    box-shadow 0.4s ease,
+    transform 0.3s ease;
 }
 
 button#generate:hover {
@@ -165,6 +218,41 @@ button#generate:hover {
 
   box-shadow:
     0 8px 24px rgba(0,0,0,0.15);
+
+  transform: translateY(-1px);
+}
+
+/* -----------------------------------------------------
+   État “remembering…” (attente douce)
+----------------------------------------------------- */
+
+.container.loading {
+  cursor: wait;
+}
+
+.container.loading #result {
+  opacity: 0.3;
+}
+
+.container.loading::after {
+  content: "remembering…";
+  position: absolute;
+  bottom: 24px;
+  right: 28px;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+
+  color: rgba(120, 150, 160, 0.6);
+  font-style: italic;
+
+  animation: pulseText 1.6s ease-in-out infinite;
+}
+
+@keyframes pulseText {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.85; }
 }
 
 /* -----------------------------------------------------
@@ -184,6 +272,7 @@ button#generate:hover {
     0 10px 24px rgba(0,0,0,0.12);
 
   font-style: italic;
+  letter-spacing: 0.015em;
   color: #2f3b3e;
 
   animation: memoryAppear 0.6s ease;
