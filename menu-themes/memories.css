@@ -350,24 +350,58 @@ button#generate:hover {
   background: rgba(120,150,160,0.15);
   transform: translateY(-1px);
 }
+
+/* =========================
+   FEEDBACK — RÉPONSE
+   ========================= */
+
 #result.correct {
-  animation: memoryGood 0.6s ease;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(215, 240, 230, 0.95),
+      rgba(200, 230, 220, 0.9)
+    );
+
+  border-left-color: rgba(90, 170, 145, 0.9);
+
+  animation: memoryGood 0.7s ease;
 }
 
 #result.wrong {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(235, 215, 215, 0.95),
+      rgba(220, 200, 200, 0.9)
+    );
+
+  border-left-color: rgba(170, 90, 90, 0.9);
+
   animation: memoryWrong 0.6s ease;
 }
 
 @keyframes memoryGood {
-  0% { box-shadow: 0 0 0 rgba(0,0,0,0); }
-  50% { box-shadow: 0 0 40px rgba(120,180,160,0.45); }
-  100% { box-shadow: 0 0 0 rgba(0,0,0,0); }
+  0% {
+    box-shadow: none;
+  }
+  40% {
+    box-shadow:
+      0 0 0 6px rgba(120, 200, 170, 0.25),
+      0 0 60px rgba(120, 200, 170, 0.55);
+  }
+  100% {
+    box-shadow: none;
+  }
 }
 
 @keyframes memoryWrong {
-  0% { transform: translateY(0); }
-  30% { transform: translateY(2px); }
-  60% { transform: translateY(-1px); }
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+  100% { transform: translateX(0); }
 }
 
 .last-score {
@@ -383,6 +417,45 @@ button#generate:hover {
   padding-bottom: 90px;
 }
 
+/* =========================
+   BOUTON FINAL — RESTART
+   ========================= */
+
+#restart {
+  display: block;
+  margin: 36px auto 0;
+
+  background: transparent;
+
+  font-family: var(--memory-font);
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+
+  color: rgba(70, 105, 120, 0.9);
+
+  border: 1px solid rgba(140, 180, 195, 0.6);
+  border-radius: 999px;
+
+  padding: 10px 28px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.3s ease;
+}
+
+#restart:hover {
+  background: rgba(140, 180, 195, 0.18);
+  color: rgba(30, 60, 75, 1);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.25);
+
+  transform: translateY(-1px);
+}
 
 
 @media (max-width: 768px) {
@@ -390,14 +463,20 @@ button#generate:hover {
   .nav {
     position: sticky;
     top: 0;
-    padding-top: env(safe-area-inset-top);
+
+    padding: 12px 18px;
+    padding-top: calc(env(safe-area-inset-top) + 10px);
+
+    gap: 18px;
+    font-size: 0.75rem;
   }
 
   .page {
-    padding-top: 56px;
+    padding-top: 72px; /* ↑ plus d’air */
   }
 
   .container {
+    margin-top: 8px; /* empêche le contact visuel */
     padding: 44px 28px;
     border-radius: 22px;
   }
@@ -406,5 +485,6 @@ button#generate:hover {
     inset: 12px;
   }
 }
+
 
 
