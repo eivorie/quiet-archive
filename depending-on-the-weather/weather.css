@@ -1,31 +1,378 @@
-.weather-list a {
+/* =====================================================
+   Depending on the Weather
+   Intimate, Warm, Worked — FINAL PASS
+   ===================================================== */
+
+/* =====================================================
+   Variables — palette chaude & feutrée
+   ===================================================== */
+
+:root {
+  --weather-bg-dark: #3a3d37;
+  --weather-bg-mid: #565b52;
+  --weather-bg-light: #737a6f;
+
+  --weather-card-base: rgba(58, 62, 56, 0.55);
+  --weather-card-inner: rgba(240, 236, 228, 0.12);
+
+  --weather-text-main: #e6ebe3;
+  --weather-text-soft: rgba(220, 225, 215, 0.75);
+  --weather-text-muted: rgba(200, 205, 195, 0.55);
+
+  --weather-accent: rgba(170, 185, 155, 0.55);
+}
+
+/* =====================================================
+   Base
+   ===================================================== */
+
+html,
+body {
+  min-height: 100%;
+}
+
+body.weather-index {
+  position: relative;
+  overflow-x: hidden;
   font-family: "Cormorant Garamond", serif;
+}
+
+/* =====================================================
+   Fond vivant — chaud, respirant
+   ===================================================== */
+
+body.weather-index {
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(190, 205, 180, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      rgba(160, 175, 145, 0.25),
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom,
+      var(--weather-bg-light),
+      var(--weather-bg-mid),
+      var(--weather-bg-dark)
+    );
+
+  background-size: 140% 140%;
+  animation: weatherBreath 24s ease-in-out infinite;
+}
+
+@keyframes weatherBreath {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 10% 6%; }
+}
+
+/* vignette basse */
+body.weather-index::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 75%,
+      rgba(0,0,0,0.45),
+      transparent 65%
+    );
+}
+
+/* grain subtil */
+body.weather-index::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(255,255,255,0.035),
+      transparent 60%
+    );
+}
+
+/* =====================================================
+   Particules
+   ===================================================== */
+
+.weather-ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.weather-ambient span {
+  position: absolute;
+  top: calc(100% * var(--y));
+  left: calc(100% * var(--x));
+
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(215,225,205,0.55),
+    rgba(170,185,155,0.25)
+  );
+
+  filter: blur(2px);
+  opacity: 0.25;
+
+  animation:
+    weatherDust 18s ease-in-out infinite,
+    weatherPulse 6s ease-in-out infinite;
+}
+
+@keyframes weatherDust {
+  0% { transform: translate(0,0) scale(0.95); }
+  50% { transform: translate(14px,-18px) scale(1); }
+  100% { transform: translate(0,0) scale(0.95); }
+}
+
+@keyframes weatherPulse {
+  0%,100% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+}
+
+/* =====================================================
+   NAVBAR — EXACTEMENT ALIGNÉE ERERI
+   ===================================================== */
+
+.weather-index .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  gap: 28px;
+
+  padding: 14px 24px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  background: rgba(38, 42, 40, 0.55);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  z-index: 10;
+}
+
+.weather-index .nav a {
+  position: relative;
+  padding: 2px 0;
+
+  color: rgba(185,205,195,0.75);
+  text-decoration: none;
+
+  transition: color 0.4s ease;
+}
+
+.weather-index .nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    rgba(200,215,185,0.6),
+    rgba(200,215,185,0)
+  );
+
+  transition: width 0.6s ease;
+}
+
+.weather-index .nav a:hover {
+  color: rgba(240,248,235,0.95);
+}
+
+.weather-index .nav a:hover::after {
+  width: 100%;
+}
+
+/* =====================================================
+   Page spacing
+   ===================================================== */
+
+.weather-page {
+  padding-top: 120px;
+  padding-bottom: 90px;
+}
+
+/* =====================================================
+   CARTE — FONDUE, PROFONDE, TRAVAILLÉE
+   ===================================================== */
+
+.weather-card {
+  position: relative;
+  z-index: 1;
+
+  max-width: 620px;
+  margin: 0 auto;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(58,62,56,0.55),
+      rgba(45,48,43,0.65)
+    );
+
+  border-radius: 28px 24px 32px 26px;
+
+  box-shadow:
+    0 60px 120px rgba(0,0,0,0.65),
+    0 18px 40px rgba(0,0,0,0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+
+  padding: 72px 76px;
+
+  animation: weatherCardFloat 14s ease-in-out infinite;
+}
+
+/* couche interne douce */
+.weather-card::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+
+  border-radius: 22px 20px 26px 22px;
+
+  background:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(255,255,255,0.12),
+      transparent 55%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.02)
+    );
+
+  border: 1px solid rgba(255,255,255,0.08);
+  pointer-events: none;
+}
+
+@keyframes weatherCardFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* =====================================================
+   Titres
+   ===================================================== */
+
+.weather-title {
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 0.06em;
+
+  color: var(--weather-text-main);
+
+  margin-bottom: 18px;
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.4),
+    0 10px 30px rgba(0,0,0,0.45);
+}
+
+.weather-intro {
+  text-align: center;
+  font-style: italic;
+  color: var(--weather-text-soft);
+  margin-bottom: 52px;
+}
+
+/* =====================================================
+   Liens — travaillés, sensibles
+   ===================================================== */
+
+.weather-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.weather-list li {
+  margin-bottom: 18px;
+}
+
+.weather-list a {
   font-size: 1.05rem;
   letter-spacing: 0.02em;
 
-  color: rgba(90, 105, 85, 0.85);
+  color: var(--weather-text-muted);
   text-decoration: none;
   position: relative;
 
-  transition: color 0.35s ease, transform 0.35s ease;
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+.weather-list a::before {
+  content: "— ";
+  opacity: 0.5;
 }
 
 .weather-list a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px;
+  bottom: -6px;
+
   width: 0%;
   height: 1px;
-  background: rgba(140, 160, 120, 0.6);
-  transition: width 0.3s ease;
+  background: rgba(170,185,155,0.5);
+
+  transition: width 0.4s ease;
 }
 
 .weather-list a:hover {
-  color: rgba(55, 70, 55, 1);
-  transform: translateX(4px);
+  color: var(--weather-text-main);
+  transform: translateX(6px);
 }
 
 .weather-list a:hover::after {
   width: 100%;
+}
+
+/* =====================================================
+   Mobile
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  .weather-index .nav {
+    position: sticky;
+    top: 0;
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .weather-page {
+    padding-top: 52px;
+  }
+
+  .weather-card {
+    padding: 44px 28px;
+  }
 }
