@@ -1,79 +1,107 @@
 /* =====================================================
-   Extra Love — Gilded Cocoon
+   LOVE — FULL MOOD (BACKGROUND + CARD + ANIMATION)
    ===================================================== */
 
-body.love {
-  --ink-main: #4a372b;
-  --ink-soft: #7a5a44;
-  --gold: #e6d3a3;
-}
+/* ===== Fond animé PROPRE À LOVE ===== */
 
-/* Carte — crème dorée */
-body.love .weather-card {
+body.love {
   background:
     radial-gradient(
-      circle at 20% 15%,
-      rgba(255,255,255,0.35),
+      circle at 30% 20%,
+      rgba(255,235,210,0.55),
       transparent 55%
+    ),
+    radial-gradient(
+      circle at 70% 75%,
+      rgba(230,200,160,0.45),
+      transparent 60%
     ),
     linear-gradient(
       to bottom,
-      rgba(255,248,235,0.96),
-      rgba(245,235,220,0.97)
+      #e8d6bf,
+      #d2bfa6,
+      #b79f86
     );
 
-  box-shadow:
-    0 45px 90px rgba(120, 80, 40, 0.45),
-    0 15px 35px rgba(120, 80, 40, 0.25);
-
-  animation:
-    loveSettle 3s ease-out both,
-    loveBreath 18s ease-in-out infinite;
+  background-size: 140% 140%;
+  animation: loveBackground 22s ease-in-out infinite;
 }
 
-/* Typo */
+@keyframes loveBackground {
+  0%,100% { background-position: 0% 0%; }
+  50% { background-position: 12% 8%; }
+}
+
+/* ===== Carte ===== */
+
+body.love .weather-card {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,250,242,0.96),
+      rgba(245,235,220,0.98)
+    );
+
+  border-radius: 30px;
+  padding: 80px 84px;
+
+  box-shadow:
+    0 60px 120px rgba(120, 80, 40, 0.55),
+    0 18px 40px rgba(120, 80, 40, 0.35);
+
+  animation: loveAppear 3s ease-out both;
+}
+
+/* ===== Coins dorés — ASSUMÉS ===== */
+
+body.love .weather-card::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  pointer-events: none;
+
+  background:
+    linear-gradient(#d8b26a, #d8b26a) top left / 60px 2px no-repeat,
+    linear-gradient(#d8b26a, #d8b26a) top left / 2px 60px no-repeat,
+
+    linear-gradient(#d8b26a, #d8b26a) top right / 60px 2px no-repeat,
+    linear-gradient(#d8b26a, #d8b26a) top right / 2px 60px no-repeat,
+
+    linear-gradient(#d8b26a, #d8b26a) bottom left / 60px 2px no-repeat,
+    linear-gradient(#d8b26a, #d8b26a) bottom left / 2px 60px no-repeat,
+
+    linear-gradient(#d8b26a, #d8b26a) bottom right / 60px 2px no-repeat,
+    linear-gradient(#d8b26a, #d8b26a) bottom right / 2px 60px no-repeat;
+
+  opacity: 0.85;
+}
+
+/* ===== Typo ===== */
+
 body.love,
 body.love p,
 body.love h1 {
   font-family: "Fraunces", serif;
+  color: #4a372b;
 }
 
-/* Titre */
 body.love h1 {
-  color: var(--ink-soft);
+  color: #6a4a36;
 }
 
-/* Texte */
-body.love .weather-text p {
-  color: var(--ink-main);
-  font-style: italic;
-}
+/* ===== Animation ===== */
 
-/* Ouverture / fermeture */
-body.love .weather-lead,
-body.love .weather-ending {
-  color: var(--ink-soft);
-}
-
-/* Animations */
-@keyframes loveSettle {
+@keyframes loveAppear {
   from {
     opacity: 0;
-    transform: translateY(26px);
+    transform: translateY(32px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes loveBreath {
-  0%,100% {
-    box-shadow:
-      0 45px 90px rgba(120, 80, 40, 0.45);
-  }
-  50% {
-    box-shadow:
-      0 55px 110px rgba(120, 80, 40, 0.6);
   }
 }
