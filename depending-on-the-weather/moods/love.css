@@ -1,22 +1,24 @@
 /* =====================================================
    Extra Love — Quiet, Handwritten, Intimate
+   FINAL
    ===================================================== */
 
 body.love {
   /* fond UNIQUEMENT pour cette humeur */
   background:
     radial-gradient(
-      circle at 50% 25%,
+      circle at 50% 20%,
       rgba(255,245,230,0.9),
       transparent 60%
     ),
     linear-gradient(
       to bottom,
       #f3e7d8,
-      #eddcca
+      #e9d6bf,
+      #e2cbb1
     );
 
-  background-size: 120% 120%;
+  background-size: 120% 140%;
   animation: loveBackground 28s ease-in-out infinite;
 
   color: #4a372b;
@@ -25,7 +27,7 @@ body.love {
 /* animation de fond très lente */
 @keyframes loveBackground {
   0%,100% { background-position: 0% 0%; }
-  50% { background-position: 6% 4%; }
+  50% { background-position: 6% 10%; }
 }
 
 /* =====================================================
@@ -33,11 +35,13 @@ body.love {
    ===================================================== */
 
 body.love .weather-card {
+  position: relative;
+
   background:
     linear-gradient(
       to bottom,
-      rgba(255,250,244,0.96),
-      rgba(245,235,225,0.98)
+      rgba(255,250,244,0.97),
+      rgba(245,235,225,0.99)
     );
 
   border-radius: 32px;
@@ -51,7 +55,34 @@ body.love .weather-card {
     loveBreath 22s ease-in-out infinite;
 }
 
-/* coins dorés très fins */
+/* =====================================================
+   Dégradé de fin de lecture (IMPORTANT)
+   ===================================================== */
+
+body.love .weather-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 140px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(245,235,225,0),
+      rgba(245,235,225,0.85),
+      rgba(245,235,225,1)
+    );
+
+  pointer-events: none;
+  border-radius: 0 0 32px 32px;
+}
+
+/* =====================================================
+   Coins dorés — fins, discrets, élégants
+   ===================================================== */
+
 body.love .weather-card::after {
   content: "";
   position: absolute;
@@ -75,7 +106,7 @@ body.love .weather-card::after {
 }
 
 /* =====================================================
-   Typographie — UNIFORME
+   Typographie — uniforme, manuscrite
    ===================================================== */
 
 body.love,
@@ -88,12 +119,17 @@ body.love h1 {
   color: #6a4a36;
 }
 
-/* TEXTE : tout pareil, tout doux */
+/* TEXTE — lecture continue */
+body.love .weather-text {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
 body.love .weather-text p {
   font-style: italic;
-  font-size: 0.96rem;
-  line-height: 2.05;
-  margin-bottom: 28px;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  margin-bottom: 20px;
   color: #4a372b;
 }
 
