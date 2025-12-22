@@ -77,11 +77,27 @@
   line-height: 1.8;
 }
 
+/* =====================================================
+   ERERI — Story pages layout (override)
+   IMPORTANT : ne touche qu’aux pages .ereri-story
+   ===================================================== */
+
+.ereri-story .ereri-page {
+  max-width: none;              /* on enlève la contrainte desktop */
+  margin: 0;
+  padding: 120px 24px 90px;
+
+  display: flex;
+  justify-content: center;      /* centrage réel de la carte */
+}
+
 /* =========================
    Responsive
    ========================= */
 
 @media (max-width: 900px) {
+
+  /* Pages Ereri classiques */
   .ereri-page {
     margin: 40px auto;
     padding: 0 20px;
@@ -98,5 +114,10 @@
 
   .ereri-content {
     max-width: 100%;
+  }
+
+  /* Pages story Ereri */
+  .ereri-story .ereri-page {
+    padding: 40px 16px;
   }
 }
