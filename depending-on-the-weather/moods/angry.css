@@ -85,6 +85,16 @@ body.angry .weather-ending {
   color: #5a3429;
 }
 
+/* =====================================================
+   Overrides UI — NAV & éléments non-lettre
+   ===================================================== */
+
+body.angry .nav,
+body.angry .nav a {
+  font-style: normal;
+  font-family: inherit; /* garde la typo globale du site */
+}
+
 /* =========================
    Animation : la colère se pose
    ========================= */
