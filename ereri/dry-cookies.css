@@ -90,28 +90,6 @@
 }
 
 /* -----------------------------------------------------
-   Typographie — lisible, fondue, calme
-   ----------------------------------------------------- */
-
-.ereri-story .ereri-content {
-  font-family: "Libre Baskerville", serif;
-  color: rgba(245, 248, 245, 0.88);
-  line-height: 1.85;
-  font-size: 1.02rem;
-
-  text-shadow:
-    0 1px 0 rgba(0,0,0,0.45);
-}
-
-.ereri-story .ereri-content p {
-  margin-bottom: 1.4em;
-}
-
-.ereri-story .ereri-content p:nth-child(3n) {
-  margin-bottom: 1.8em;
-}
-
-/* -----------------------------------------------------
    Titre & meta
    ----------------------------------------------------- */
 
@@ -174,19 +152,29 @@
   color: rgba(250, 252, 250, 0.9);
 }
 
-.ereri-story .ereri-content p:last-child {
-  font-style: italic;
-  margin-top: 50px;
+/* -----------------------------------------------------
+   Typographie — alignée Paris / Territory
+   ----------------------------------------------------- */
+
+.ereri-story .oneshot-text {
+  font-family: "Libre Baskerville", serif;
+  color: rgba(240, 245, 248, 0.88);
+  line-height: 1.85;
+  font-size: 1.02rem;
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.45);
 }
 
-/* Signature silencieuse */
-.ereri-story .ereri-content::after {
-  content: "—";
-  display: block;
-  text-align: center;
-  margin: 60px 0 0;
-  color: rgba(190, 210, 200, 0.6);
+.ereri-story .oneshot-text p {
+  margin-bottom: 1.4em;
+  color: rgba(235, 240, 242, 0.82);
 }
+
+.ereri-story .oneshot-text p:nth-child(3n) {
+  margin-bottom: 1.8em;
+}
+
 
 /* -----------------------------------------------------
    Responsive
