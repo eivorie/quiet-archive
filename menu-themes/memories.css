@@ -1,5 +1,5 @@
 /* =====================================================
-   Memories — Quiet recollection
+   Memories — Quiet recollection (ENHANCED CARD)
    ===================================================== */
 
 :root {
@@ -115,7 +115,7 @@ body {
 }
 
 /* -----------------------------------------------------
-   Carte Memories
+   Carte Memories — RELIQUAIRE VIVANT
 ----------------------------------------------------- */
 
 .container {
@@ -125,39 +125,76 @@ body {
   max-width: 680px;
 
   background:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(255,255,255,0.65),
+      transparent 55%
+    ),
     linear-gradient(
       to bottom,
       rgba(245, 248, 246, 0.92),
-      rgba(232, 238, 236, 0.88)
+      rgba(228, 234, 232, 0.88)
     );
 
   color: #2f3b3e;
 
-  border-radius: 22px 20px 24px 22px;
+  border-radius: 26px 24px 30px 26px;
 
   box-shadow:
-    0 40px 120px rgba(0,0,0,0.45),
-    0 18px 40px rgba(0,0,0,0.25),
+    0 60px 140px rgba(0,0,0,0.55),
+    0 20px 50px rgba(0,0,0,0.3),
     inset 0 0 0 1px rgba(255,255,255,0.45);
 
-  padding: 56px 48px;
+  padding: 68px 56px;
 
-  animation: memoryFloat 14s ease-in-out infinite;
+  animation: memoryFloat 16s ease-in-out infinite;
 }
 
 @keyframes memoryFloat {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+  50% { transform: translateY(-5px); }
 }
 
-/* cadre intérieur très discret */
+/* cadre mémoire interne */
 .container::before {
   content: "";
   position: absolute;
-  inset: 14px;
-  border-radius: 18px;
-  border: 1px solid rgba(150, 170, 175, 0.25);
+  inset: 18px;
+
+  border-radius: 20px;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255,255,255,0.35),
+      transparent 60%
+    );
+
+  border: 1px solid rgba(150, 170, 175, 0.28);
+
+  box-shadow:
+    inset 0 0 22px rgba(255,255,255,0.25),
+    inset 0 0 80px rgba(180,200,205,0.15);
+
   pointer-events: none;
+}
+
+/* grain subtil */
+.container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(0,0,0,0.06),
+      transparent 65%
+    );
+
+  opacity: 0.25;
 }
 
 /* -----------------------------------------------------
@@ -167,10 +204,14 @@ body {
 .container h1 {
   font-size: 2rem;
   text-align: center;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: #2e3a3d;
+
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.6),
+    0 10px 28px rgba(0,0,0,0.25);
 }
 
 /* -----------------------------------------------------
@@ -263,7 +304,8 @@ button#generate:hover {
   transition:
     opacity 0.45s ease,
     transform 0.45s ease;
-   margin-top: 36px;
+
+  margin-top: 36px;
   padding: 26px 30px;
 
   background: rgba(255,255,255,0.65);
@@ -283,4 +325,3 @@ button#generate:hover {
   opacity: 0;
   transform: translateY(6px);
 }
-
