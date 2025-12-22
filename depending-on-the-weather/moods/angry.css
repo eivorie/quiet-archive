@@ -15,6 +15,34 @@ body.angry {
 }
 
 /* =====================================================
+   NAVBAR — hard reset pour angry
+   ===================================================== */
+
+body.angry .nav {
+  font-family: "Cormorant Garamond", serif;
+  font-style: normal;
+  font-weight: 400;
+
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  background: rgba(120, 95, 80, 0.55);
+  backdrop-filter: blur(10px);
+}
+
+body.angry .nav a {
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  color: rgba(240, 230, 220, 0.75);
+}
+
+body.angry .nav a:hover {
+  color: rgba(255, 245, 235, 0.95);
+}
+
+/* =====================================================
    Carte — tenue, respirante, non rigide
    ===================================================== */
 
