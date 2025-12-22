@@ -379,15 +379,19 @@ function handleAnswer(button, correctAuthor, note) {
 
   if (isCorrect) score++;
 
+  /* feedback visuel */
   result.classList.add(isCorrect ? "correct" : "wrong");
 
+  /* désactiver les boutons + révéler la bonne réponse */
   document.querySelectorAll(".choices button").forEach(b => {
     b.disabled = true;
+
     if (b.dataset.choice === correctAuthor) {
       b.classList.add("right-answer");
     }
   });
 
+  /* afficher la note si elle existe */
   if (note) {
     const noteEl = document.createElement("p");
     noteEl.className = "memory-note";
@@ -395,10 +399,13 @@ function handleAnswer(button, correctAuthor, note) {
     result.appendChild(noteEl);
   }
 
+  /* timing adaptatif */
+  const delay = note ? 2200 : 1200;
+
   setTimeout(() => {
     result.classList.remove("correct", "wrong");
     nextMemory();
-  }, 1200);
+  }, delay);
 }
 
 /* ---------------------------
