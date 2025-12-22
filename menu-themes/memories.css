@@ -482,6 +482,69 @@ button#generate:hover {
   }
 }
 
+/* =========================
+   RESET BOUTONS — MEMORIES
+   ========================= */
+
+.container button {
+  background: transparent !important;
+  color: rgba(70, 105, 120, 0.9);
+  border: 1px solid rgba(140, 180, 195, 0.6);
+  box-shadow: none;
+}
+
+/* =========================
+   BOUTON INTRO — REMEMBER
+   ========================= */
+
+#start-quiz {
+  display: block;
+  margin: 24px auto 0;
+
+  font-family: var(--memory-font);
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+
+  padding: 10px 30px;
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.55),
+      rgba(230,238,242,0.45)
+    );
+
+  border: 1px solid rgba(140, 180, 195, 0.6);
+
+  color: rgba(40, 70, 85, 0.95);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.18),
+    inset 0 0 18px rgba(255,255,255,0.5);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+#start-quiz:hover {
+  transform: translateY(-1px);
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.7),
+      rgba(235,245,248,0.6)
+    );
+
+  box-shadow:
+    0 14px 40px rgba(0,0,0,0.25),
+    inset 0 0 22px rgba(255,255,255,0.65);
+}
 
 @media (max-width: 768px) {
 
