@@ -202,24 +202,46 @@ const container = document.querySelector(".container");
 
 const lastScore = localStorage.getItem("memoriesLastScore");
 
-/* affichage score précédent */
-if (lastScore) {
-  const p = document.createElement("p");
-  p.className = "last-score";
-  p.textContent = `Last time, you remembered ${lastScore}.`;
-  container.insertBefore(p, result);
+/* -----------------------------------------------------
+   Écran d’entrée
+----------------------------------------------------- */
+
+showIntro();
+
+function showIntro() {
+  result.innerHTML = `
+    <p class="memory-text">
+      Who said that?
+    </p>
+
+    <button id="start-quiz">Remember</button>
+  `;
+
+  /* afficher le dernier score si présent */
+  const existing = document.querySelector(".last-score");
+  if (existing) existing.remove();
+
+  if (lastScore) {
+    const p = document.createElement("p");
+    p.className = "last-score";
+    p.textContent = `Last time, you remembered ${lastScore}.`;
+    container.insertBefore(p, result);
+  }
+
+  document
+    .getElementById("start-quiz")
+    .addEventListener("click", startQuiz);
 }
 
-startQuiz();
-
-/* ---------------------------
+/* -----------------------------------------------------
    Quiz lifecycle
---------------------------- */
+----------------------------------------------------- */
 
 function startQuiz() {
   score = 0;
   round = 0;
 
+  /* mélange + tirage sans remise */
   shuffledMemories = [...memories]
     .sort(() => Math.random() - 0.5)
     .slice(0, totalRounds);
@@ -257,9 +279,9 @@ function nextMemory() {
   });
 }
 
-/* ---------------------------
+/* -----------------------------------------------------
    Answer handling
---------------------------- */
+----------------------------------------------------- */
 
 function handleAnswer(button, correctAuthor) {
   const choice = button.dataset.choice;
@@ -267,12 +289,13 @@ function handleAnswer(button, correctAuthor) {
 
   if (isCorrect) score++;
 
-  /* feedback immédiat */
+  /* feedback visuel */
   result.classList.add(isCorrect ? "correct" : "wrong");
 
-  /* désactiver les boutons après réponse */
+  /* désactivation + révélation bonne réponse */
   document.querySelectorAll(".choices button").forEach(b => {
     b.disabled = true;
+
     if (b.dataset.choice === correctAuthor) {
       b.classList.add("right-answer");
     }
@@ -284,9 +307,9 @@ function handleAnswer(button, correctAuthor) {
   }, 900);
 }
 
-/* ---------------------------
-   End
---------------------------- */
+/* -----------------------------------------------------
+   Fin de quiz
+----------------------------------------------------- */
 
 function endQuiz() {
   const finalScore = `${score} / ${totalRounds}`;
@@ -297,10 +320,10 @@ function endQuiz() {
       You remembered <strong>${score}</strong> out of ${totalRounds}.
     </p>
 
-    <button id="restart">Remember again</button>
+    <button id="restart">Back to memories</button>
   `;
 
   document
     .getElementById("restart")
-    .addEventListener("click", startQuiz);
+    .addEventListener("click", showIntro);
 }
