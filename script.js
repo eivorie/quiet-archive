@@ -301,10 +301,20 @@ function handleAnswer(button, correctAuthor) {
     }
   });
 
+  /* affichage de la note si elle existe */
+  const currentMemory = shuffledMemories[round - 1];
+
+  if (currentMemory.note) {
+    const note = document.createElement("p");
+    note.className = "memory-note";
+    note.textContent = currentMemory.note;
+    result.appendChild(note);
+  }
+
   setTimeout(() => {
     result.classList.remove("correct", "wrong");
     nextMemory();
-  }, 900);
+  }, 1200); // un peu plus long pour laisser vivre la note
 }
 
 /* -----------------------------------------------------
