@@ -24,26 +24,33 @@ body.angry .weather-card {
   animation: angrySettle 3.2s ease-out both;
 }
 
-/* Forcer la font */
+/* =====================================================
+   Typographie — Courier Prime affinée
+   ===================================================== */
+
 body.angry .weather-card,
 body.angry .weather-card p,
 body.angry .weather-card h1 {
-  font-family: "EB Garamond", serif;
+  font-family: "Courier Prime", monospace;
 }
 
-/* Titre : calme bas */
+/* Titre : sobre, contenu */
 body.angry h1 {
-  font-weight: 500;
-  font-size: 1.5rem;
+  font-weight: 400;
+  font-size: 1.4rem;
   letter-spacing: 0.04em;
   color: #f6e7da;
 }
 
-/* Texte : chaud, respirant */
+/* Texte : FIN, respirant */
 body.angry .weather-text p {
-  font-style: italic;
-  font-size: 0.95rem;
-  line-height: 1.95;
+  font-style: normal;
+  font-weight: 400;
+
+  font-size: 0.92rem;
+  line-height: 1.65;
+
+  letter-spacing: 0.015em;
   color: #e6d4c4;
 }
 
