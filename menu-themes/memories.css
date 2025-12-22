@@ -362,7 +362,7 @@ button#generate:hover {
     inset 0 0 18px rgba(255,255,255,0.45),
     0 20px 40px rgba(0,0,0,0.18);
 
-  font-style: italic;
+  font-style: normal;
   letter-spacing: 0.02em;
 }
 
