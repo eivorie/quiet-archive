@@ -192,17 +192,17 @@ const memories = [
   }
 ];
 
-let currentIndex = null;
+let shuffledMemories = [];
 let score = 0;
 let round = 0;
-const totalRounds = 10; // nombre de questions par session
+const totalRounds = 10;
 
 const result = document.getElementById("result");
 const container = document.querySelector(".container");
 
 const lastScore = localStorage.getItem("memoriesLastScore");
 
-// affichage score précédent
+/* affichage score précédent */
 if (lastScore) {
   const p = document.createElement("p");
   p.className = "last-score";
@@ -212,35 +212,39 @@ if (lastScore) {
 
 startQuiz();
 
+/* ---------------------------
+   Quiz lifecycle
+--------------------------- */
+
 function startQuiz() {
   score = 0;
   round = 0;
+
+  shuffledMemories = [...memories]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, totalRounds);
+
   nextMemory();
 }
 
 function nextMemory() {
-  if (round >= totalRounds) {
+  if (round >= shuffledMemories.length) {
     endQuiz();
     return;
   }
 
+  const memory = shuffledMemories[round];
   round++;
 
-  let index;
-  do {
-    index = Math.floor(Math.random() * memories.length);
-  } while (index === currentIndex && memories.length > 1);
-
-  currentIndex = index;
-  const memory = memories[index];
-
   result.innerHTML = `
-    <p class="memory-text">“${memory.text.replace(/\n/g, "<br>")}”</p>
+    <p class="memory-text">
+      “${memory.text.replace(/\n/g, "<br>")}”
+    </p>
 
     <div class="choices">
-      <button data-choice="me">me</button>
-      <button data-choice="you">you</button>
-      <button data-choice="us">us</button>
+      <button data-choice="me">L.</button>
+      <button data-choice="you">J.</button>
+      <button data-choice="us">Us</button>
     </div>
 
     <p class="progress">Memory ${round} / ${totalRounds}</p>
@@ -248,29 +252,45 @@ function nextMemory() {
 
   document.querySelectorAll(".choices button").forEach(btn => {
     btn.addEventListener("click", () => {
-      handleAnswer(btn.dataset.choice, memory.author);
+      handleAnswer(btn, memory.author);
     });
   });
 }
 
-function handleAnswer(choice, correct) {
-  const isCorrect = choice === correct;
+/* ---------------------------
+   Answer handling
+--------------------------- */
+
+function handleAnswer(button, correctAuthor) {
+  const choice = button.dataset.choice;
+  const isCorrect = choice === correctAuthor;
 
   if (isCorrect) score++;
 
+  /* feedback immédiat */
   result.classList.add(isCorrect ? "correct" : "wrong");
+
+  /* désactiver les boutons après réponse */
+  document.querySelectorAll(".choices button").forEach(b => {
+    b.disabled = true;
+    if (b.dataset.choice === correctAuthor) {
+      b.classList.add("right-answer");
+    }
+  });
 
   setTimeout(() => {
     result.classList.remove("correct", "wrong");
     nextMemory();
-  }, 700);
+  }, 900);
 }
 
+/* ---------------------------
+   End
+--------------------------- */
+
 function endQuiz() {
-  localStorage.setItem(
-    "memoriesLastScore",
-    `${score} / ${totalRounds}`
-  );
+  const finalScore = `${score} / ${totalRounds}`;
+  localStorage.setItem("memoriesLastScore", finalScore);
 
   result.innerHTML = `
     <p class="final-score">
@@ -280,5 +300,7 @@ function endQuiz() {
     <button id="restart">Remember again</button>
   `;
 
-  document.getElementById("restart").addEventListener("click", startQuiz);
+  document
+    .getElementById("restart")
+    .addEventListener("click", startQuiz);
 }
