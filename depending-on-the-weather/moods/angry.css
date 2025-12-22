@@ -1,5 +1,5 @@
 /* =========================
-   Angry mood — held, warm, breathing (FINAL CLEAN)
+   Angry mood — held, warm, breathing (FINAL)
    ========================= */
 
 body.angry {
@@ -15,31 +15,17 @@ body.angry {
 }
 
 /* =====================================================
-   NAVBAR — hard reset pour angry
+   Layout — alignement avec les autres moods
    ===================================================== */
 
-body.angry .nav {
-  font-family: "Cormorant Garamond", serif;
-  font-style: normal;
-  font-weight: 400;
-
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-
-  background: rgba(120, 95, 80, 0.55);
-  backdrop-filter: blur(10px);
+body.angry .page {
+  padding-top: 80px;
 }
 
-body.angry .nav a {
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-
-  color: rgba(240, 230, 220, 0.75);
-}
-
-body.angry .nav a:hover {
-  color: rgba(255, 245, 235, 0.95);
+@media (max-width: 768px) {
+  body.angry .page {
+    padding-top: 64px;
+  }
 }
 
 /* =====================================================
@@ -79,7 +65,6 @@ body.angry .weather-card::after {
    Typographie — Courier Prime (CONTENU UNIQUEMENT)
    ===================================================== */
 
-/* texte de la lettre */
 body.angry .weather-text,
 body.angry .weather-text p {
   font-family: "Courier Prime", monospace;
@@ -94,7 +79,7 @@ body.angry .weather-text p {
   color: #3b2a22;
 }
 
-/* titre — même police, plus posé */
+/* Titre */
 body.angry .weather-header h1 {
   font-family: "Courier Prime", monospace;
 
@@ -103,25 +88,18 @@ body.angry .weather-header h1 {
   letter-spacing: 0.05em;
 
   color: #4a2f24;
-  margin-bottom: 44px; /* souffle volontaire */
+  margin-bottom: 44px;
 }
 
-/* ouverture un peu plus chaude */
+/* Ouverture */
 body.angry .weather-lead {
   color: #6a3f32;
 }
 
-/* fin plus douce */
+/* Fin */
 body.angry .weather-ending {
   color: #5a3429;
 }
-
-/* =====================================================
-   UI — NE PAS TOUCHER À LA NAV
-   (la nav reste gérée par style.css + mood-base)
-   ===================================================== */
-
-/* aucun override nav ici, volontaire */
 
 /* =====================================================
    Animation — la colère se pose
