@@ -297,14 +297,11 @@ showIntro();
 
 function showIntro() {
   result.innerHTML = `
-    <p class="memory-text">
+    <button id="start-quiz" class="intro-question">
       Who said that?
-    </p>
-
-    <button id="start-quiz">Remember</button>
+    </button>
   `;
 
-  /* afficher le dernier score si présent */
   const existing = document.querySelector(".last-score");
   if (existing) existing.remove();
 
