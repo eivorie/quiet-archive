@@ -1,65 +1,182 @@
 /* =========================
-   Jealous mood – warm & reassuring
+   Jealous mood – intimate & warm
+   (soft jealousy, held close)
    ========================= */
 
 body.jealous {
   background:
+    /* lumière diffuse */
     radial-gradient(
       circle at top center,
-      rgba(255, 230, 240, 0.35),
-      rgba(120, 70, 90, 0.45) 70%
+      rgba(255, 210, 225, 0.25),
+      transparent 60%
     ),
-    #4a2f3b;
 
-  color: #f2e3ea;
+    /* texture charnelle */
+    radial-gradient(
+      circle at 30% 40%,
+      rgba(160, 100, 125, 0.35),
+      transparent 65%
+    ),
+    radial-gradient(
+      circle at 70% 60%,
+      rgba(190, 130, 150, 0.25),
+      transparent 70%
+    ),
+
+    /* fond principal */
+    #3a2430;
+
+  color: #f3e6ec;
 }
 
-/* Carte : proximité rassurante */
+/* =====================================================
+   Carte — proximité, présence
+   ===================================================== */
+
 body.jealous .weather-card {
-  background: rgba(80, 45, 60, 0.85);
-  border-radius: 22px;
-  box-shadow:
-    0 20px 50px rgba(40, 15, 25, 0.5);
+  position: relative;
+  overflow: hidden;
 
-  animation: jealousSettle 3.4s ease-out both;
+  background: rgba(95, 55, 70, 0.88);
+  border-radius: 22px;
+
+  box-shadow:
+    /* ancrage profond */
+    0 36px 80px rgba(20, 5, 12, 0.75),
+
+    /* halo chaud */
+    0 16px 40px rgba(120, 70, 90, 0.55),
+
+    /* peau interne */
+    inset 0 0 0 1px rgba(255, 230, 240, 0.35),
+    inset 0 10px 22px rgba(255, 230, 240, 0.15);
+
+  animation:
+    jealousSettle 3.4s ease-out both,
+    jealousBreath 16s ease-in-out infinite;
 }
 
-/* Forcer la font */
+/* =====================================================
+   Texture émotionnelle — chaleur mouvante
+   ===================================================== */
+
+body.jealous .weather-card::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(220, 170, 185, 0.45),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 65% 70%,
+      rgba(255, 210, 225, 0.35),
+      transparent 60%
+    );
+
+  opacity: 0.45;
+  filter: blur(28px);
+
+  animation: jealousGlow 20s ease-in-out infinite;
+}
+
+/* =====================================================
+   Liseret — possessif mais doux
+   ===================================================== */
+
+body.jealous .weather-card::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 18px;
+  pointer-events: none;
+
+  border: 1px solid rgba(235, 185, 200, 0.65);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 230, 240, 0.35),
+    0 0 0 1px rgba(60, 25, 40, 0.4);
+
+  opacity: 0.9;
+}
+
+/* =====================================================
+   Typographie — typewriter doux
+   ===================================================== */
+
 body.jealous .weather-card,
 body.jealous .weather-card p,
 body.jealous .weather-card h1 {
-  font-family: "Crimson Pro", serif;
+  font-family: "Courier Prime", "Courier New", monospace;
 }
 
-/* Titre : calme intense */
+/* Titre : retenu, intense */
 body.jealous h1 {
-  font-weight: 500;
-  font-size: 1.55rem;
-  letter-spacing: 0.04em;
-  color: #f6e8ee;
+  font-weight: 400;
+  font-size: 1.45rem;
+  letter-spacing: 0.06em;
+  color: #f6e3ea;
 }
 
-/* Texte : enveloppant */
+/* Texte : proche, murmuré */
 body.jealous .weather-text p {
-  font-style: italic;
-  font-size: 0.95rem;
-  line-height: 1.95;
-  color: #e9d3dc;
+  font-style: normal;
+  font-size: 0.92rem;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+  color: #efd5df;
 }
 
-/* Ouverture : main sur la poitrine */
+/* Ouverture */
 body.jealous .weather-lead {
-  color: #f1c5d4;
+  color: #f2bfcf;
 }
 
-/* Fin : ancrage */
+/* Fin */
 body.jealous .weather-ending {
-  color: #f7dde7;
+  color: #f6dde7;
 }
 
-/* =========================
+/* =====================================================
+   NAVBAR — jalousie douce
+   ===================================================== */
+
+body.jealous .nav {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.72rem;
+
+  padding: 18px 28px;
+  gap: 34px;
+
+  background: rgba(120, 80, 95, 0.85);
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 12px 32px rgba(20, 5, 12, 0.65);
+}
+
+body.jealous .nav a {
+  color: rgba(245, 215, 225, 0.9);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+body.jealous .nav a:hover {
+  color: rgba(255, 235, 240, 1);
+}
+
+/* =====================================================
    Animations
-   ========================= */
+   ===================================================== */
 
 @keyframes jealousSettle {
   from {
@@ -72,18 +189,43 @@ body.jealous .weather-ending {
   }
 }
 
-/* Respiration très douce */
-body.jealous .weather-card {
-  animation:
-    jealousSettle 3.4s ease-out both,
-    jealousBreath 14s ease-in-out infinite;
-}
-
 @keyframes jealousBreath {
   0%, 100% {
-    box-shadow: 0 20px 50px rgba(40, 15, 25, 0.5);
+    box-shadow:
+      0 36px 80px rgba(20, 5, 12, 0.75),
+      0 16px 40px rgba(120, 70, 90, 0.55);
   }
   50% {
-    box-shadow: 0 24px 60px rgba(40, 15, 25, 0.65);
+    box-shadow:
+      0 44px 95px rgba(20, 5, 12, 0.85),
+      0 22px 55px rgba(140, 85, 105, 0.65);
+  }
+}
+
+@keyframes jealousGlow {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(-3%, -2%);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.35;
+  }
+}
+
+/* =====================================================
+   Mobile
+   ===================================================== */
+
+@media (max-width: 768px) {
+  body.jealous .nav {
+    padding: 14px 18px;
+    gap: 18px;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
   }
 }
