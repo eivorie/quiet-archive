@@ -1,75 +1,75 @@
 /* =========================
    Happy mood – light & joyful
-   (fresh, airy, celebratory)
+   (pistachio, fresh, alive)
    ========================= */
 
 body.happy {
   background:
     radial-gradient(
       circle at top center,
-      rgba(255, 255, 255, 0.75),
-      rgba(235, 245, 235, 0.95) 70%
+      rgba(255, 255, 255, 0.8),
+      rgba(225, 240, 225, 0.95) 70%
     ),
-    #eef4ee;
+    #e6efe6;
 
-  color: #2f3a30;
+  color: #243528;
 }
 
 /* =====================================================
-   Carte : lumière fraîche, vivante
+   Carte : lumière pistache, vivante
    ===================================================== */
 
 body.happy .weather-card {
   position: relative;
   overflow: hidden;
 
-  background: #fdfefb;
+  background: #f9fdf9;
   border-radius: 22px;
 
   box-shadow:
-    /* ancrage léger */
-    0 24px 48px rgba(140, 170, 140, 0.18),
+    /* ancrage doux */
+    0 26px 52px rgba(120, 160, 130, 0.25),
 
-    /* halo frais */
-    0 10px 26px rgba(190, 220, 190, 0.35),
+    /* halo joyeux */
+    0 12px 30px rgba(170, 215, 175, 0.45),
 
     /* peau interne */
-    inset 0 0 0 1px rgba(255, 255, 255, 0.85),
-    inset 0 6px 14px rgba(255, 255, 255, 0.55);
+    inset 0 0 0 1px rgba(255, 255, 255, 0.9),
+    inset 0 8px 18px rgba(255, 255, 255, 0.55);
 
   animation: happyAppear 3.2s ease-out both;
 }
 
 /* =====================================================
-   Animation douce — souffle lumineux
+   Animation douce — souffle pistache
    ===================================================== */
 
 body.happy .weather-card::before {
   content: "";
   position: absolute;
-  inset: -25%;
+  inset: -30%;
   pointer-events: none;
 
   background:
     radial-gradient(
-      circle at 30% 25%,
-      rgba(215, 235, 215, 0.45),
+      circle at 35% 25%,
+      rgba(170, 215, 175, 0.55),
       transparent 55%
     ),
     radial-gradient(
       circle at 70% 75%,
-      rgba(245, 250, 240, 0.35),
+      rgba(225, 245, 225, 0.45),
       transparent 60%
     );
 
-  opacity: 0.4;
-  filter: blur(20px);
+  opacity: 0.55;
+  filter: blur(26px);
 
-  animation: happyGlow 20s ease-in-out infinite;
+  animation: happyGlow 18s ease-in-out infinite;
 }
 
 /* =====================================================
-   Ornement — champagne clair
+   Ornement — champagne clair (équilibre)
    ===================================================== */
 
 body.happy .weather-card::after {
@@ -80,19 +80,19 @@ body.happy .weather-card::after {
   pointer-events: none;
 
   background:
-    linear-gradient(#e6d9b8, #e6d9b8) top left / 26px 1px no-repeat,
-    linear-gradient(#e6d9b8, #e6d9b8) top left / 1px 26px no-repeat,
+    linear-gradient(#e6d9b8, #e6d9b8) top left / 28px 1px no-repeat,
+    linear-gradient(#e6d9b8, #e6d9b8) top left / 1px 28px no-repeat,
 
-    linear-gradient(#e6d9b8, #e6d9b8) top right / 26px 1px no-repeat,
-    linear-gradient(#e6d9b8, #e6d9b8) top right / 1px 26px no-repeat,
+    linear-gradient(#e6d9b8, #e6d9b8) top right / 28px 1px no-repeat,
+    linear-gradient(#e6d9b8, #e6d9b8) top right / 1px 28px no-repeat,
 
-    linear-gradient(#e6d9b8, #e6d9b8) bottom left / 26px 1px no-repeat,
-    linear-gradient(#e6d9b8, #e6d9b8) bottom left / 1px 26px no-repeat,
+    linear-gradient(#e6d9b8, #e6d9b8) bottom left / 28px 1px no-repeat,
+    linear-gradient(#e6d9b8, #e6d9b8) bottom left / 1px 28px no-repeat,
 
-    linear-gradient(#e6d9b8, #e6d9b8) bottom right / 26px 1px no-repeat,
-    linear-gradient(#e6d9b8, #e6d9b8) bottom right / 1px 26px no-repeat;
+    linear-gradient(#e6d9b8, #e6d9b8) bottom right / 28px 1px no-repeat,
+    linear-gradient(#e6d9b8, #e6d9b8) bottom right / 1px 28px no-repeat;
 
-  opacity: 0.22;
+  opacity: 0.26;
 }
 
 /* =====================================================
@@ -105,12 +105,12 @@ body.happy .weather-card h1 {
   font-family: "Cormorant Garamond", serif;
 }
 
-/* Titre : clair, ouvert */
+/* Titre : joyeux, clair */
 body.happy h1 {
   font-weight: 500;
   font-size: 1.55rem;
-  letter-spacing: 0.06em;
-  color: #4f6a55;
+  letter-spacing: 0.07em;
+  color: #3e6b4a;
 }
 
 /* Texte : léger, respirant */
@@ -118,21 +118,21 @@ body.happy .weather-text p {
   font-style: italic;
   font-size: 0.95rem;
   line-height: 2;
-  color: #3f5645;
+  color: #2f523a;
 }
 
 /* Ouverture */
 body.happy .weather-lead {
-  color: #6f8a73;
+  color: #5f8a6b;
 }
 
 /* Fin */
 body.happy .weather-ending {
-  color: #5f7863;
+  color: #4f7a5f;
 }
 
 /* =====================================================
-   NAVBAR — Happy mood (frais & festif)
+   NAVBAR — Happy mood (pistache festif)
    ===================================================== */
 
 body.happy .nav {
@@ -141,17 +141,17 @@ body.happy .nav {
   font-weight: 400;
 
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.32em;
   font-size: 0.74rem;
 
   padding: 18px 28px;
   gap: 34px;
 
-  background: rgba(245, 250, 245, 0.85);
+  background: rgba(230, 245, 230, 0.9);
   backdrop-filter: blur(10px);
 
   box-shadow:
-    0 10px 26px rgba(170, 200, 170, 0.3);
+    0 10px 26px rgba(150, 200, 160, 0.4);
 }
 
 body.happy .nav a {
@@ -159,13 +159,13 @@ body.happy .nav a {
   font-style: normal;
   letter-spacing: inherit;
 
-  color: rgba(90, 120, 95, 0.85);
+  color: rgba(60, 120, 85, 0.9);
   text-decoration: none;
   transition: color 0.25s ease;
 }
 
 body.happy .nav a:hover {
-  color: rgba(90, 120, 95, 1);
+  color: rgba(60, 120, 85, 1);
 }
 
 /* =====================================================
@@ -186,15 +186,15 @@ body.happy .nav a:hover {
 @keyframes happyGlow {
   0% {
     transform: translate(0, 0) scale(1);
-    opacity: 0.25;
+    opacity: 0.35;
   }
   50% {
-    transform: translate(-3%, -2%) scale(1.05);
-    opacity: 0.45;
+    transform: translate(-4%, -3%) scale(1.08);
+    opacity: 0.65;
   }
   100% {
     transform: translate(0, 0) scale(1);
-    opacity: 0.25;
+    opacity: 0.35;
   }
 }
 
