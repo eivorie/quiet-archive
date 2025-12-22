@@ -192,48 +192,94 @@ const memories = [
   }
 ];
 
-let lastIndex = null;
+let currentIndex = null;
+let score = 0;
+let round = 0;
+const totalRounds = 10; // nombre de questions par session
 
-const button = document.getElementById("generate");
 const result = document.getElementById("result");
 const container = document.querySelector(".container");
 
-if (button && result) {
-  button.addEventListener("click", () => {
-    // phase 1 — on efface doucement
-    result.classList.add("is-fading");
+const lastScore = localStorage.getItem("memoriesLastScore");
 
-    setTimeout(() => {
-      let index;
+// affichage score précédent
+if (lastScore) {
+  const p = document.createElement("p");
+  p.className = "last-score";
+  p.textContent = `Last time, you remembered ${lastScore}.`;
+  container.insertBefore(p, result);
+}
 
-      do {
-        index = Math.floor(Math.random() * memories.length);
-      } while (index === lastIndex && memories.length > 1);
+startQuiz();
 
-      lastIndex = index;
-      const memory = memories[index];
+function startQuiz() {
+  score = 0;
+  round = 0;
+  nextMemory();
+}
 
-      // phase 2 — on change le contenu pendant l’invisible
-      result.innerHTML = `
-        <p class="memory-text">“${memory.text.replace(/\n/g, "<br>")}”</p>
-        <p class="memory-author">${formatAuthor(memory.author)}</p>
-        ${memory.note ? `<p class="memory-note">${memory.note}</p>` : ""}
-      `;
+function nextMemory() {
+  if (round >= totalRounds) {
+    endQuiz();
+    return;
+  }
 
-      // phase 3 — on réapparaît
-      requestAnimationFrame(() => {
-        result.classList.remove("is-fading");
-      });
+  round++;
 
-    }, 350); // plus court, aligné avec la transition CSS
+  let index;
+  do {
+    index = Math.floor(Math.random() * memories.length);
+  } while (index === currentIndex && memories.length > 1);
+
+  currentIndex = index;
+  const memory = memories[index];
+
+  result.innerHTML = `
+    <p class="memory-text">“${memory.text.replace(/\n/g, "<br>")}”</p>
+
+    <div class="choices">
+      <button data-choice="me">me</button>
+      <button data-choice="you">you</button>
+      <button data-choice="us">us</button>
+    </div>
+
+    <p class="progress">Memory ${round} / ${totalRounds}</p>
+  `;
+
+  document.querySelectorAll(".choices button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      handleAnswer(btn.dataset.choice, memory.author);
+    });
   });
 }
 
-function formatAuthor(author) {
-  switch (author) {
-    case "you": return "— you";
-    case "me": return "— me";
-    case "us": return "— us";
-    default: return "";
-  }
+function handleAnswer(choice, correct) {
+  const isCorrect = choice === correct;
+
+  if (isCorrect) score++;
+
+  result.classList.add(isCorrect ? "correct" : "wrong");
+
+  setTimeout(() => {
+    result.classList.remove("correct", "wrong");
+    nextMemory();
+  }, 700);
+}
+
+function endQuiz() {
+  localStorage.setItem(
+    "memoriesLastScore",
+    `${score} / ${totalRounds}`
+  );
+
+  result.innerHTML = `
+    <p class="final-score">
+      You remembered <strong>${score}</strong> out of ${totalRounds}.
+    </p>
+
+    <button id="restart">Remember again</button>
+  `;
+
+  document.getElementById("restart").addEventListener("click", startQuiz);
+}
 }
