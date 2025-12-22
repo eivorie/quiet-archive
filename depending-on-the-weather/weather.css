@@ -295,15 +295,23 @@ body.weather-index::before {
     0 10px 30px rgba(0,0,0,0.45);
 }
 
+/* 👉 INTRO — voix plus douce, incarnée */
 .weather-intro {
   text-align: center;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
   font-style: italic;
-  color: var(--weather-text-soft);
-  margin-bottom: 52px;
+  letter-spacing: 0.05em;
+  line-height: 1.75;
+
+  color: rgba(230, 235, 225, 0.8);
+
+  margin-bottom: 56px;
 }
 
 /* =====================================================
-   Liens — travaillés, sensibles
+   Liens — sensibles, invitants
    ===================================================== */
 
 .weather-list {
@@ -317,10 +325,12 @@ body.weather-index::before {
 }
 
 .weather-list a {
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.02rem;
+  letter-spacing: 0.12em;
+  font-variant: small-caps;
 
-  color: var(--weather-text-muted);
+  color: rgba(210, 215, 205, 0.75);
   text-decoration: none;
   position: relative;
 
@@ -331,7 +341,7 @@ body.weather-index::before {
 
 .weather-list a::before {
   content: "— ";
-  opacity: 0.5;
+  opacity: 0.35;
 }
 
 .weather-list a::after {
@@ -342,13 +352,17 @@ body.weather-index::before {
 
   width: 0%;
   height: 1px;
-  background: rgba(170,185,155,0.5);
+  background: linear-gradient(
+    to right,
+    rgba(190,205,180,0.55),
+    rgba(190,205,180,0)
+  );
 
   transition: width 0.4s ease;
 }
 
 .weather-list a:hover {
-  color: var(--weather-text-main);
+  color: rgba(245, 250, 240, 0.95);
   transform: translateX(6px);
 }
 
