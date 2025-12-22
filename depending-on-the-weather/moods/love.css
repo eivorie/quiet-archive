@@ -15,27 +15,28 @@ body.love {
 }
 
 /* =====================================================
-   Carte — papier imprimé
+   Carte — papier imprimé, NON rigide
    ===================================================== */
 
 body.love .weather-card {
   position: relative;
+  z-index: 1;
 
   background: #fffaf3;
   border-radius: 28px;
 
-  padding: 96px 90px;
+  padding: 88px 84px;
 
   box-shadow:
-    0 25px 60px rgba(90, 60, 35, 0.18);
+    0 22px 55px rgba(90, 60, 35, 0.18);
 
-  animation: pageAppear 1.8s ease-out both;
+  animation: pageAppear 1.6s ease-out both;
 }
 
 @keyframes pageAppear {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -44,24 +45,24 @@ body.love .weather-card {
 }
 
 /* =====================================================
-   Typographie — identique à "happy"
+   Typographie — IDENTIQUE À HAPPY
    ===================================================== */
 
 body.love,
 body.love p,
 body.love h1 {
-  font-family: "Fraunces", serif;
+  font-family: "Cormorant Garamond", serif;
 }
 
 body.love h1 {
   font-size: 1.45rem;
-  letter-spacing: 0.04em;
-  margin-bottom: 32px;
+  letter-spacing: 0.05em;
+  margin-bottom: 28px;
   color: #6a4a36;
 }
 
 /* =====================================================
-   Texte
+   Texte — lettre imprimée
    ===================================================== */
 
 body.love .weather-text {
@@ -70,19 +71,26 @@ body.love .weather-text {
 }
 
 body.love .weather-text p {
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   line-height: 1.75;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   color: #3f2f26;
-}
-
-/* italique UNIQUEMENT si présent dans le HTML */
-body.love .weather-text em {
   font-style: italic;
 }
 
+/* lead un peu plus posé */
+body.love .weather-lead {
+  margin-bottom: 26px;
+}
+
+/* fin plus discrète */
+body.love .weather-ending {
+  margin-top: 42px;
+  opacity: 0.85;
+}
+
 /* =====================================================
-   Coins dorés — discrets, décoratifs
+   Coins dorés — décor imprimé
    ===================================================== */
 
 body.love .weather-card::after {
@@ -105,4 +113,95 @@ body.love .weather-card::after {
     linear-gradient(#d1b07a, #d1b07a) bottom right / 1px 26px no-repeat;
 
   opacity: 0.25;
+}
+
+/* =====================================================
+   Ambient — Extra Love (HTML only)
+   ===================================================== */
+
+.ambient-love {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-love span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(255,230,200,0.55),
+    rgba(255,200,160,0.25)
+  );
+
+  opacity: 0.35;
+  filter: blur(2px);
+
+  animation:
+    ambientFloat 22s ease-in-out infinite,
+    ambientPulse 8s ease-in-out infinite;
+}
+
+.ambient-love span:nth-child(odd) {
+  width: 4px;
+  height: 4px;
+  opacity: 0.25;
+}
+
+.ambient-love span:nth-child(3n) {
+  width: 7px;
+  height: 7px;
+  opacity: 0.4;
+}
+
+/* positions fixes */
+.ambient-love span:nth-child(1)  { top: 18%; left: 12%; }
+.ambient-love span:nth-child(2)  { top: 42%; left: 28%; }
+.ambient-love span:nth-child(3)  { top: 68%; left: 20%; }
+.ambient-love span:nth-child(4)  { top: 26%; left: 70%; }
+.ambient-love span:nth-child(5)  { top: 54%; left: 84%; }
+.ambient-love span:nth-child(6)  { top: 76%; left: 58%; }
+.ambient-love span:nth-child(7)  { top: 12%; left: 40%; }
+.ambient-love span:nth-child(8)  { top: 36%; left: 52%; }
+.ambient-love span:nth-child(9)  { top: 64%; left: 46%; }
+.ambient-love span:nth-child(10) { top: 82%; left: 32%; }
+.ambient-love span:nth-child(11) { top: 20%; left: 88%; }
+.ambient-love span:nth-child(12) { top: 44%; left: 92%; }
+.ambient-love span:nth-child(13) { top: 70%; left: 90%; }
+.ambient-love span:nth-child(14) { top: 30%; left: 6%; }
+.ambient-love span:nth-child(15) { top: 60%; left: 8%; }
+
+@keyframes ambientFloat {
+  0%,100% { transform: translate(0,0); }
+  50% { transform: translate(14px,-18px); }
+}
+
+@keyframes ambientPulse {
+  0%,100% { opacity: 0.25; }
+  50% { opacity: 0.45; }
+}
+
+/* =====================================================
+   MOBILE — lecture fluide
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  body.love .weather-card {
+    padding: 48px 22px;
+    border-radius: 18px;
+  }
+
+  body.love .weather-text {
+    max-width: 100%;
+  }
+
+  body.love .weather-text p {
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
 }
