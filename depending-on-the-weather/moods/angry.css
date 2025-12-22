@@ -1,5 +1,5 @@
 /* =========================
-   Angry mood – held, warm, breathing
+   Angry mood — held, warm, breathing (FINAL CLEAN)
    ========================= */
 
 body.angry {
@@ -14,7 +14,10 @@ body.angry {
   color: #3b2a22;
 }
 
-/* Carte : tenir sans étouffer */
+/* =====================================================
+   Carte — tenue, respirante, non rigide
+   ===================================================== */
+
 body.angry .weather-card {
   position: relative;
 
@@ -22,10 +25,10 @@ body.angry .weather-card {
   border-radius: 22px;
 
   box-shadow:
-    /* ombre portée externe */
+    /* ombre externe */
     0 20px 45px rgba(80, 45, 30, 0.25),
 
-    /* shadow box interne */
+    /* profondeur interne */
     inset 0 0 0 1px rgba(255, 255, 255, 0.6),
     inset 0 6px 14px rgba(255, 255, 255, 0.35),
     inset 0 -10px 18px rgba(140, 80, 60, 0.08);
@@ -33,6 +36,7 @@ body.angry .weather-card {
   animation: angrySettle 3.2s ease-out both;
 }
 
+/* bordure interne douce */
 body.angry .weather-card::after {
   content: "";
   position: absolute;
@@ -44,60 +48,56 @@ body.angry .weather-card::after {
 }
 
 /* =====================================================
-   Typographie — Courier Prime affinée
+   Typographie — Courier Prime (CONTENU UNIQUEMENT)
    ===================================================== */
 
-body.angry .weather-card,
-body.angry .weather-card p,
-body.angry .weather-card h1 {
-  font-family: "Courier Prime", monospace;
-}
-
-/* Titre : calme ferme */
-body.angry h1 {
-  font-weight: 400;
-  font-size: 1.4rem;
-  letter-spacing: 0.05em;
-  color: #4a2f24;
-
-  margin-bottom: 44px; /* 👈 plus de souffle */
-}
-
-/* Texte : FIN, respirant */
+/* texte de la lettre */
+body.angry .weather-text,
 body.angry .weather-text p {
+  font-family: "Courier Prime", monospace;
+
   font-style: normal;
   font-weight: 400;
 
   font-size: 0.92rem;
   line-height: 1.7;
-
   letter-spacing: 0.02em;
+
   color: #3b2a22;
 }
 
-/* Ouverture : chaleur posée */
+/* titre — même police, plus posé */
+body.angry .weather-header h1 {
+  font-family: "Courier Prime", monospace;
+
+  font-weight: 400;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+
+  color: #4a2f24;
+  margin-bottom: 44px; /* souffle volontaire */
+}
+
+/* ouverture un peu plus chaude */
 body.angry .weather-lead {
   color: #6a3f32;
 }
 
-/* Fin : apaisement */
+/* fin plus douce */
 body.angry .weather-ending {
   color: #5a3429;
 }
 
 /* =====================================================
-   Overrides UI — NAV & éléments non-lettre
+   UI — NE PAS TOUCHER À LA NAV
+   (la nav reste gérée par style.css + mood-base)
    ===================================================== */
 
-body.angry .nav,
-body.angry .nav a {
-  font-style: normal;
-  font-family: inherit; /* garde la typo globale du site */
-}
+/* aucun override nav ici, volontaire */
 
-/* =========================
-   Animation : la colère se pose
-   ========================= */
+/* =====================================================
+   Animation — la colère se pose
+   ===================================================== */
 
 @keyframes angrySettle {
   from {
