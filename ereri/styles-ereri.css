@@ -79,7 +79,6 @@
 
 /* =====================================================
    ERERI — Story pages layout (override)
-   IMPORTANT : uniquement pour .ereri-story
    ===================================================== */
 
 .ereri-story .ereri-page {
@@ -159,19 +158,28 @@
 }
 
 /* =========================
-   Responsive
+   Responsive — MOBILE FIX
    ========================= */
 
 @media (max-width: 900px) {
+
+  /* Navbar affinée */
+  .ereri .nav {
+    padding: 10px 16px;
+    gap: 16px;
+
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  .ereri .nav a::after {
+    bottom: -4px;
+  }
 
   /* Pages Ereri classiques */
   .ereri-page {
     margin: 40px auto;
     padding: 0 20px;
-  }
-  
-   .ereri-story .ereri-card {
-    margin-top: 24px;
   }
 
   .ereri-card {
@@ -187,8 +195,12 @@
     max-width: 100%;
   }
 
-  /* Pages story Ereri — compensation navbar fixe */
+  /* Pages story Ereri — compensation exacte navbar */
   .ereri-story .ereri-page {
-    padding: 96px 16px 40px;
+    padding: 72px 16px 40px;
+  }
+
+  .ereri-story .ereri-card {
+    margin-top: 16px;
   }
 }
