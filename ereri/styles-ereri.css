@@ -91,6 +91,10 @@
   justify-content: center;
 }
 
+.ereri-story .ereri-card {
+  margin-top: 32px;
+}
+
 /* =====================================================
    NAVBAR — Ereri (stories & index)
    ===================================================== */
