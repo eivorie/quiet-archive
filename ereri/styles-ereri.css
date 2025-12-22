@@ -1,5 +1,5 @@
 /* =====================================================
-   ERERI — GLOBAL LAYOUT & NAV SYSTEM
+   ERERI — GLOBAL LAYOUT & NAV SYSTEM (FINAL)
    ===================================================== */
 
 :root {
@@ -7,12 +7,12 @@
 }
 
 /* =====================================================
-   Base Ereri page
+   Base Ereri page (index, archive, etc.)
    ===================================================== */
 
 .ereri-page {
   max-width: 1200px;
-  margin: var(--ereri-nav-height) auto 80px;
+  margin: calc(var(--ereri-nav-height) + 24px) auto 80px;
   padding: 0 40px;
 }
 
@@ -86,19 +86,22 @@
 }
 
 /* =====================================================
-   ERERI — Story pages (centrage réel)
+   ERERI — Story pages (CENTRAGE RÉEL, NAV COMPENSÉE)
    ===================================================== */
 
 .ereri-story .ereri-page {
   max-width: none;
-  margin: var(--ereri-nav-height) 0 0;
-  padding: 64px 24px 80px;
+  margin: 0;
+  padding:
+    calc(var(--ereri-nav-height) + 32px)
+    24px
+    80px;
 
   display: flex;
   justify-content: center;
 }
 
-/* ⛔ AUCUN margin-top sur la carte */
+/* IMPORTANT : jamais de rustine locale */
 .ereri-story .ereri-card {
   margin: 0;
 }
@@ -167,7 +170,7 @@
 }
 
 /* =====================================================
-   RESPONSIVE — MOBILE (la clé)
+   RESPONSIVE — MOBILE (CLÉ DU PROBLÈME)
    ===================================================== */
 
 @media (max-width: 900px) {
@@ -182,6 +185,7 @@
     gap: 16px;
   }
 
+  /* Pages Ereri classiques */
   .ereri-page {
     margin-bottom: 40px;
     padding: 0 20px;
@@ -200,7 +204,11 @@
     max-width: 100%;
   }
 
+  /* Stories : compensation exacte navbar */
   .ereri-story .ereri-page {
-    padding: 48px 16px 40px;
+    padding:
+      calc(var(--ereri-nav-height) + 20px)
+      16px
+      40px;
   }
 }
