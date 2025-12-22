@@ -1,25 +1,26 @@
 /* =========================
-   Angry mood – held & warm
+   Angry mood – held, warm, breathing
    ========================= */
 
 body.angry {
   background:
     radial-gradient(
       circle at top center,
-      rgba(255, 220, 200, 0.15),
-      rgba(90, 40, 30, 0.45) 70%
+      rgba(255, 235, 220, 0.35),
+      rgba(170, 110, 90, 0.35) 70%
     ),
-    #3a241d;
+    #5a3a2f;
 
-  color: #f1e4d8;
+  color: #3b2a22;
 }
 
-/* Carte : tenir sans serrer */
+/* Carte : tenir sans étouffer */
 body.angry .weather-card {
-  background: rgba(60, 38, 30, 0.75);
+  background: rgba(255, 245, 235, 0.85);
   border-radius: 22px;
+
   box-shadow:
-    0 18px 45px rgba(30, 15, 10, 0.5);
+    0 20px 45px rgba(80, 45, 30, 0.25);
 
   animation: angrySettle 3.2s ease-out both;
 }
@@ -34,12 +35,12 @@ body.angry .weather-card h1 {
   font-family: "Courier Prime", monospace;
 }
 
-/* Titre : sobre, contenu */
+/* Titre : calme ferme */
 body.angry h1 {
   font-weight: 400;
   font-size: 1.4rem;
-  letter-spacing: 0.04em;
-  color: #f6e7da;
+  letter-spacing: 0.05em;
+  color: #4a2f24;
 }
 
 /* Texte : FIN, respirant */
@@ -48,20 +49,20 @@ body.angry .weather-text p {
   font-weight: 400;
 
   font-size: 0.92rem;
-  line-height: 1.65;
+  line-height: 1.7;
 
-  letter-spacing: 0.015em;
-  color: #e6d4c4;
+  letter-spacing: 0.02em;
+  color: #3b2a22;
 }
 
-/* Ouverture : main posée */
+/* Ouverture : chaleur posée */
 body.angry .weather-lead {
-  color: #f1cfc0;
+  color: #6a3f32;
 }
 
 /* Fin : apaisement */
 body.angry .weather-ending {
-  color: #f7e3d4;
+  color: #5a3429;
 }
 
 /* =========================
