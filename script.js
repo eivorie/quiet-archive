@@ -276,12 +276,60 @@ const memories = [
   text: "Everytime that songs pops up we are forced to kiss, right ? To honor Eren and Levi\n— Oh damn ~ *loop*",
   author: "us",
   note: "A tiny bit drunk."
+},
+  {
+  text: "I changed the locks, you little shit !",
+  author: "me"
+},
+{
+  text: "You are being a little fucker now, you know that right ?",
+  author: "you",
+  note: "Surprising right ? How you get when you're hot."
+},
+{
+  text: "But at least I said some stuff to you, right ? It was hard because I was nervous but I felt I said little things.",
+  author: "you",
+  note: "Making sure the call was worth it, amor ?"
+},
+{
+  text: "BUT THAT WASN'T AN EXCUSE TO BIZARRE THINGS HAPPEN TO ME ALL THE TIME",
+  author: "you",
+  note: "Caps locking me now, huh?"
+},
+{
+  text: "I'm not mad at all. I feel rejected tho. I'm being unvalidated. My membership card has been revoked.",
+  author: "me",
+  note: "Being dramatic can't hurt sometimes"
+},
+{
+  text: "I AM THE ONE HERE WHO LOVE MORE, LET'S START BY THAT.",
+  author: "you",
+  note: "I just laughed here."
+},
+{
+  text: "Yeah, I'm cleaning. Don't tell me you're attracted to things like that too?",
+  author: "you",
+  note: "Yeah, what a surprise."
+},
+{
+  text: "Now the apartment smells like watermelon. Now it smells like a 50 yo gay man's house",
+  author: "you",
+  note: "I'm still laughing."
+},
+{
+  text: "Je te amo tellement !",
+  author: "you"
+},
+{
+  text: "Que horror.",
+  author: "us"
 }
 ];
 
 let shuffledMemories = [];
 let score = 0;
 let round = 0;
+let lastMemory = null;
 const totalRounds = 10;
 
 const generateBtn = document.getElementById("generate");
@@ -326,9 +374,14 @@ function startQuiz() {
 
   generateBtn.style.display = "none";
 
-  shuffledMemories = [...memories]
-    .sort(() => Math.random() - 0.5)
-    .slice(0, totalRounds);
+  do {
+    shuffledMemories = [...memories]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, totalRounds);
+  } while (
+    lastMemory &&
+    shuffledMemories[0] === lastMemory
+  );
 
   nextMemory();
 }
@@ -344,6 +397,7 @@ function nextMemory() {
   }
 
   const memory = shuffledMemories[round];
+  lastMemory = memory;
   round++;
 
   result.innerHTML = `
