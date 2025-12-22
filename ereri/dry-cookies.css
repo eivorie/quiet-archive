@@ -10,10 +10,18 @@
   background: transparent;
 }
 
-.ereri-story-page {
+/* -----------------------------------------------------
+   FIX — layout story & compensation navbar
+   (aligné Paris / Territory)
+   ----------------------------------------------------- */
+
+.ereri-story .ereri-page {
+  max-width: none;
+  margin: 0;
+  padding: 120px 24px 90px;
+
   display: flex;
   justify-content: center;
-  padding: 80px 20px;
 }
 
 /* -----------------------------------------------------
@@ -87,7 +95,7 @@
 
 .ereri-story .ereri-content {
   font-family: "Libre Baskerville", serif;
-  color: rgba(245, 248, 245, 0.86); /* blanc cassé, pas lumineux */
+  color: rgba(245, 248, 245, 0.88);
   line-height: 1.85;
   font-size: 1.02rem;
 
@@ -96,8 +104,7 @@
 }
 
 .ereri-story .ereri-content p {
-  text-shadow:
-    0 1px 0 rgba(0,0,0,0.45);
+  margin-bottom: 1.4em;
 }
 
 .ereri-story .ereri-content p:nth-child(3n) {
@@ -181,24 +188,15 @@
   color: rgba(190, 210, 200, 0.6);
 }
 
-/* =========================================
-   OVERRIDE DÉFINITIF — SUPPRESSION DU MARRON
-   ========================================= */
-
-.ereri-story .ereri-content,
-.ereri-story .ereri-content p,
-.ereri-story .oneshot-text p {
-  color: rgba(245, 248, 245, 0.88) !important;
-}
-
-
 /* -----------------------------------------------------
    Responsive
    ----------------------------------------------------- */
 
 @media (max-width: 900px) {
-  .ereri-story-page {
-    padding: 40px 16px;
+
+  /* compensation navbar mobile */
+  .ereri-story .ereri-page {
+    padding: 72px 16px 40px;
   }
 
   .ereri-story .ereri-card {
