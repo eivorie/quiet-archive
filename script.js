@@ -189,7 +189,7 @@ const memories = [
   {
     text: "I love your kindness, the gentleness in you that disarms me. Your honesty, your strength, the way I trust you without even thinking. I love your eyes, your voice, your smile — the things that pull me under a little more each time.",
     author: "me"
-  }
+  },
   {
   text: "Is there any language in which you sound bleh ? Cause I'll learn it.",
   author: "me",
