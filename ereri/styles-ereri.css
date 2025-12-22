@@ -1,27 +1,35 @@
-/* =========================
-   Ereri page
-   ========================= */
+/* =====================================================
+   ERERI — GLOBAL LAYOUT & NAV SYSTEM
+   ===================================================== */
+
+:root {
+  --ereri-nav-height: 56px;
+}
+
+/* =====================================================
+   Base Ereri page
+   ===================================================== */
 
 .ereri-page {
   max-width: 1200px;
-  margin: 80px auto;
+  margin: var(--ereri-nav-height) auto 80px;
   padding: 0 40px;
 }
 
-/* =========================
+/* =====================================================
    Carte Ereri (papier)
-   ========================= */
+   ===================================================== */
 
 .ereri-card {
-  background: #f3ede4; /* papier */
+  background: #f3ede4;
   border-radius: 16px;
   padding: 60px 70px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.35);
 }
 
-/* =========================
+/* =====================================================
    Layout
-   ========================= */
+   ===================================================== */
 
 .ereri-layout {
   display: grid;
@@ -30,9 +38,9 @@
   align-items: start;
 }
 
-/* =========================
+/* =====================================================
    Table des matières
-   ========================= */
+   ===================================================== */
 
 .ereri-toc h2 {
   font-size: 0.75rem;
@@ -63,9 +71,9 @@
   text-decoration: underline;
 }
 
-/* =========================
+/* =====================================================
    Contenu
-   ========================= */
+   ===================================================== */
 
 .ereri-content {
   max-width: 620px;
@@ -78,20 +86,21 @@
 }
 
 /* =====================================================
-   ERERI — Story pages layout (override)
+   ERERI — Story pages (centrage réel)
    ===================================================== */
 
 .ereri-story .ereri-page {
   max-width: none;
-  margin: 0;
-  padding: 120px 24px 90px;
+  margin: var(--ereri-nav-height) 0 0;
+  padding: 64px 24px 80px;
 
   display: flex;
   justify-content: center;
 }
 
+/* ⛔ AUCUN margin-top sur la carte */
 .ereri-story .ereri-card {
-  margin-top: 32px;
+  margin: 0;
 }
 
 /* =====================================================
@@ -104,10 +113,12 @@
   left: 0;
   right: 0;
 
+  height: var(--ereri-nav-height);
   display: flex;
+  align-items: center;
   gap: 28px;
 
-  padding: 14px 24px;
+  padding: 0 24px;
 
   font-family: "Cormorant Garamond", serif;
   font-size: 0.85rem;
@@ -127,7 +138,6 @@
 
   color: rgba(200,215,225,0.75);
   text-decoration: none;
-
   transition: color 0.4s ease;
 }
 
@@ -139,7 +149,6 @@
 
   width: 0%;
   height: 1px;
-
   background: linear-gradient(
     to right,
     rgba(190,210,225,0.6),
@@ -157,28 +166,24 @@
   width: 100%;
 }
 
-/* =========================
-   Responsive — MOBILE FIX
-   ========================= */
+/* =====================================================
+   RESPONSIVE — MOBILE (la clé)
+   ===================================================== */
 
 @media (max-width: 900px) {
 
-  /* Navbar affinée */
-  .ereri .nav {
-    padding: 10px 16px;
-    gap: 16px;
+  :root {
+    --ereri-nav-height: 44px;
+  }
 
+  .ereri .nav {
     font-size: 0.72rem;
     letter-spacing: 0.08em;
+    gap: 16px;
   }
 
-  .ereri .nav a::after {
-    bottom: -4px;
-  }
-
-  /* Pages Ereri classiques */
   .ereri-page {
-    margin: 40px auto;
+    margin-bottom: 40px;
     padding: 0 20px;
   }
 
@@ -195,12 +200,7 @@
     max-width: 100%;
   }
 
-  /* Pages story Ereri — compensation exacte navbar */
   .ereri-story .ereri-page {
-    padding: 72px 16px 40px;
-  }
-
-  .ereri-story .ereri-card {
-    margin-top: 16px;
+    padding: 48px 16px 40px;
   }
 }
