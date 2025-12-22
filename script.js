@@ -190,6 +190,93 @@ const memories = [
     text: "I love your kindness, the gentleness in you that disarms me. Your honesty, your strength, the way I trust you without even thinking. I love your eyes, your voice, your smile — the things that pull me under a little more each time.",
     author: "me"
   }
+  {
+  text: "Is there any language in which you sound bleh ? Cause I'll learn it.",
+  author: "me",
+  note: "No matter the language, you're talking sweet."
+},
+{
+  text: "You hate me ? So go to jail, I don't care ~",
+  author: "you"
+},
+{
+  text: "Remember babe, on those situation, don't express 100% of your mind ok ?",
+  author: "you",
+  note: "I'll remember that"
+},
+{
+  text: "I can't write poems for you because I'm not good at this, but you're a constant melody in the back of my head.",
+  author: "me"
+},
+{
+  text: "Fucking cat, seriously",
+  author: "me",
+  note: "Always in the middle of a fight, nice."
+},
+{
+  text: "I like her, even though I really love panettone",
+  author: "me",
+  note: "Your sister when she got her bonus."
+},
+{
+  text: "I'm gonna be 100% honest I even had a cramp in my fucking foot",
+  author: "me",
+  note: "You're that good."
+},
+{
+  text: "Your funeral is gonna be tomorrow at 9:00AM",
+  author: "you",
+  note: "Threats, always threats."
+},
+{
+  text: "Oi, say something please I'm sweating like a fucking pig here",
+  author: "me",
+  note: "First call."
+},
+{
+  text: "Mas ela come rato ???",
+  author: "you"
+},
+{
+  text: "Go to war my love, I'll write to you and pray you get my letters. I'll send my very best pigeon up to the task.",
+  author: "me",
+  note: "Going to work is always a hassle."
+},
+{
+  text: "Je n'ai jamais imaginé que c'était en étant perdu que je me trouverais",
+  author: "you",
+  note: "from a lifetime in France"
+},
+{
+  text: "Peut-être que je te connais de l'époque où j'envoyais des milliers de lettres, ou alors de celle où on se retrouvait en cachette, contre la volonté de nos parents, pour être ensemble ?",
+  author: "you",
+  note: "You romantic little fucker."
+},
+{
+  text: "What mercy could I have when you smell so good ?",
+  author: "me",
+  note: "First date."
+},
+{
+  text: "Just holding this fucking frustration is a pain.",
+  author: "you",
+  note: "First date ~"
+},
+{
+  text: "I think if you were here we'd be singing Sweater Weather together !",
+  author: "you",
+  note: "Yeah, we would."
+},
+{
+  text: "Sorry, I'm taking advantage before the normal days come and I hear just a \"Oi, Thanks.\"\n— Normal days are behind now.\nUh huh, til you become cold af and I have to fight with you to get your attention.",
+  author: "us",
+  note: "After the big reveal that wasn't such a reveal — on my side — to be honest."
+},
+{
+  text: "Everytime that songs pops up we are forced to kiss, right ? To honor Eren and Levi\n— Oh damn ~ *loop*",
+  author: "us",
+  note: "A tiny bit drunk."
+}
 ];
 
 let shuffledMemories = [];
