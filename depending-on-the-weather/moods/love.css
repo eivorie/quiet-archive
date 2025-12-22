@@ -1,15 +1,14 @@
 /* =====================================================
-   Extra Love — Warm Cocoon
+   Extra Love — Gilded Cocoon
    ===================================================== */
 
 body.love {
-  --love-bg: #f3e6d6;
-  --love-ink: #4a372b;
-  --love-soft: #7a5a44;
-  --love-accent: #e2c9a8;
+  --ink-main: #4a372b;
+  --ink-soft: #7a5a44;
+  --gold: #e6d3a3;
 }
 
-/* Carte : cocon chaud */
+/* Carte — crème dorée */
 body.love .weather-card {
   background:
     radial-gradient(
@@ -19,16 +18,16 @@ body.love .weather-card {
     ),
     linear-gradient(
       to bottom,
-      rgba(255,248,238,0.92),
-      rgba(245,235,220,0.96)
+      rgba(255,248,235,0.96),
+      rgba(245,235,220,0.97)
     );
 
   box-shadow:
-    0 40px 80px rgba(120, 80, 40, 0.35),
-    0 10px 25px rgba(120, 80, 40, 0.25);
+    0 45px 90px rgba(120, 80, 40, 0.45),
+    0 15px 35px rgba(120, 80, 40, 0.25);
 
   animation:
-    loveSettle 3.5s ease-out both,
+    loveSettle 3s ease-out both,
     loveBreath 18s ease-in-out infinite;
 }
 
@@ -39,31 +38,28 @@ body.love h1 {
   font-family: "Fraunces", serif;
 }
 
-/* Titres */
+/* Titre */
 body.love h1 {
-  color: var(--love-soft);
+  color: var(--ink-soft);
 }
 
 /* Texte */
 body.love .weather-text p {
-  color: var(--love-ink);
+  color: var(--ink-main);
   font-style: italic;
 }
 
-/* Ouverture & fin */
-body.love .weather-lead {
-  color: var(--love-soft);
-}
-
+/* Ouverture / fermeture */
+body.love .weather-lead,
 body.love .weather-ending {
-  color: var(--love-soft);
+  color: var(--ink-soft);
 }
 
 /* Animations */
 @keyframes loveSettle {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(26px);
   }
   to {
     opacity: 1;
@@ -74,10 +70,10 @@ body.love .weather-ending {
 @keyframes loveBreath {
   0%,100% {
     box-shadow:
-      0 40px 80px rgba(120, 80, 40, 0.35);
+      0 45px 90px rgba(120, 80, 40, 0.45);
   }
   50% {
     box-shadow:
-      0 50px 95px rgba(120, 80, 40, 0.45);
+      0 55px 110px rgba(120, 80, 40, 0.6);
   }
 }
