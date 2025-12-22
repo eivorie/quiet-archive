@@ -1,39 +1,34 @@
 /* =====================================================
-   Depending on the Weather — Cohesive & Warm
+   Depending on the weather — Calm & Warm Identity
    ===================================================== */
 
 :root {
-  --weather-font: "Cormorant Garamond", serif;
+  --weather-bg-dark: #4f5a56;
+  --weather-bg-mid: #6b746f;
+  --weather-bg-light: #8b958f;
 
-  --weather-bg-dark: #3f4a4a;
-  --weather-bg-mid: #5a6664;
-  --weather-bg-light: #7a8a86;
+  --weather-card-top: rgba(250, 252, 249, 0.96);
+  --weather-card-bottom: rgba(238, 242, 238, 0.94);
 
-  --weather-card-light: rgba(245, 248, 246, 0.94);
-  --weather-card-mid: rgba(232, 238, 236, 0.92);
-
-  --weather-text-main: #2f3b3e;
-  --weather-text-muted: rgba(60, 75, 80, 0.7);
-
-  --weather-accent: rgba(140, 170, 180, 0.55);
+  --weather-text-main: #2f3b37;
+  --weather-text-muted: rgba(70, 85, 80, 0.75);
+  --weather-accent: rgba(140, 165, 155, 0.55);
 }
 
-/* -----------------------------------------------------
-   Base background — vivant mais doux
------------------------------------------------------ */
+/* =====================================================
+   Page & fond vivant
+   ===================================================== */
 
 body.weather {
-  font-family: var(--weather-font);
-
   background:
     radial-gradient(
       circle at 30% 25%,
-      rgba(160, 190, 185, 0.28),
+      rgba(170, 195, 185, 0.28),
       transparent 55%
     ),
     radial-gradient(
       circle at 70% 70%,
-      rgba(120, 150, 155, 0.22),
+      rgba(140, 165, 155, 0.25),
       transparent 60%
     ),
     linear-gradient(
@@ -44,181 +39,173 @@ body.weather {
     );
 
   background-size: 140% 140%;
-  animation: weatherBreath 28s ease-in-out infinite;
+  animation: weatherBreath 26s ease-in-out infinite;
 }
 
 @keyframes weatherBreath {
   0%,100% { background-position: 0% 0%; }
-  50% { background-position: 7% 6%; }
+  50% { background-position: 8% 6%; }
 }
 
-/* -----------------------------------------------------
-   Ambient dust (identique à Memories)
------------------------------------------------------ */
+/* =====================================================
+   Particules douces
+   ===================================================== */
 
-.ambient span {
-  background: rgba(220, 235, 235, 0.6);
+.weather-ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.weather-ambient span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+  background: rgba(220, 235, 228, 0.35);
   filter: blur(2px);
-  opacity: 0.22;
+
+  animation: weatherDust 18s ease-in-out infinite;
 }
 
-/* -----------------------------------------------------
-   Page layout
------------------------------------------------------ */
+@keyframes weatherDust {
+  0%,100% { transform: translate(0,0); opacity: 0.25; }
+  50% { transform: translate(14px,-18px); opacity: 0.45; }
+}
+
+/* positions naturelles */
+.weather-ambient span:nth-child(1) { top:20%; left:10%; }
+.weather-ambient span:nth-child(2) { top:40%; left:30%; }
+.weather-ambient span:nth-child(3) { top:65%; left:18%; }
+.weather-ambient span:nth-child(4) { top:30%; left:70%; }
+.weather-ambient span:nth-child(5) { top:55%; left:85%; }
+.weather-ambient span:nth-child(6) { top:75%; left:55%; }
+
+/* =====================================================
+   Ajustement page (anti-navbar mobile)
+   ===================================================== */
 
 .weather-page {
-  padding-top: 90px;
+  padding-top: 120px;
+  padding-bottom: 80px;
 }
 
-/* -----------------------------------------------------
-   Weather card — intégrée, enveloppante
------------------------------------------------------ */
+/* =====================================================
+   Carte centrale — intégrée & chaleureuse
+   ===================================================== */
 
 .weather-card {
   position: relative;
-  max-width: 540px;
-  margin: 0 auto;
+  z-index: 1;
 
-  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
 
   background:
     radial-gradient(
       circle at 20% 15%,
-      rgba(255,255,255,0.55),
+      rgba(255,255,255,0.6),
       transparent 55%
     ),
     linear-gradient(
       to bottom,
-      var(--weather-card-light),
-      var(--weather-card-mid)
+      var(--weather-card-top),
+      var(--weather-card-bottom)
     );
 
-  border-radius: 26px 22px 30px 24px;
+  border-radius: 26px 22px 28px 24px;
 
   box-shadow:
-    0 45px 120px rgba(0,0,0,.45),
-    0 16px 36px rgba(0,0,0,.25),
-    inset 0 0 0 1px rgba(255,255,255,.45);
+    0 45px 120px rgba(0,0,0,0.45),
+    0 18px 40px rgba(0,0,0,0.25),
+    inset 0 0 0 1px rgba(255,255,255,0.45);
 
-  padding: 62px 52px;
+  padding: 64px 56px;
 
-  animation: weatherFloat 16s ease-in-out infinite;
+  animation: weatherFloat 14s ease-in-out infinite;
+}
+
+.weather-card::before {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(140,165,155,0.35);
+  pointer-events: none;
 }
 
 @keyframes weatherFloat {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-5px); }
 }
 
-/* cadre intérieur très doux */
-.weather-card::before {
-  content: "";
-  position: absolute;
-  inset: 14px;
+/* =====================================================
+   Titre & intro
+   ===================================================== */
 
-  border-radius: 18px;
-  border: 1px solid rgba(150, 170, 175, 0.28);
-
-  pointer-events: none;
-}
-
-/* -----------------------------------------------------
-   Typography
------------------------------------------------------ */
-
-.weather-card h1 {
-  font-size: 1.85rem;
+.weather-title {
+  text-align: center;
+  font-size: 1.9rem;
   letter-spacing: 0.06em;
   color: var(--weather-text-main);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
-.weather-card .intro {
+.weather-intro {
+  text-align: center;
   font-style: italic;
   color: var(--weather-text-muted);
   margin-bottom: 42px;
 }
 
-/* -----------------------------------------------------
-   Mood list — narrative, pas utilitaire
------------------------------------------------------ */
+/* =====================================================
+   Liste des humeurs — vivante
+   ===================================================== */
 
 .weather-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .weather-list li {
   margin-bottom: 16px;
-  opacity: 0;
-  transform: translateY(6px);
-  animation: moodFade 0.9s ease forwards;
-}
-
-.weather-list li:nth-child(1) { animation-delay: 0.3s; }
-.weather-list li:nth-child(2) { animation-delay: 0.45s; }
-.weather-list li:nth-child(3) { animation-delay: 0.6s; }
-.weather-list li:nth-child(4) { animation-delay: 0.75s; }
-.weather-list li:nth-child(5) { animation-delay: 0.9s; }
-.weather-list li:nth-child(6) { animation-delay: 1.05s; }
-
-@keyframes moodFade {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .weather-list a {
-  font-size: 1rem;
-  letter-spacing: 0.025em;
-
-  color: rgba(70, 90, 95, 0.75);
+  display: inline-block;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  color: rgba(65, 85, 78, 0.75);
   text-decoration: none;
 
   transition:
     color 0.35s ease,
-    transform 0.35s ease,
-    letter-spacing 0.35s ease;
+    transform 0.35s ease;
+}
+
+.weather-list a::before {
+  content: "— ";
+  opacity: 0.6;
 }
 
 .weather-list a:hover {
-  color: rgba(45, 65, 70, 1);
+  color: rgba(40, 60, 55, 1);
   transform: translateX(6px);
-  letter-spacing: 0.05em;
 }
 
-/* underline respirant */
-.weather-list a::after {
-  content: "";
-  display: block;
-  width: 0%;
-  height: 1px;
-  margin-top: 6px;
-
-  background: linear-gradient(
-    to right,
-    var(--weather-accent),
-    rgba(140,170,180,0)
-  );
-
-  transition: width 0.4s ease;
-}
-
-.weather-list a:hover::after {
-  width: 100%;
-}
-
-/* -----------------------------------------------------
+/* =====================================================
    Mobile
------------------------------------------------------ */
+   ===================================================== */
 
 @media (max-width: 600px) {
-  .weather-page {
-    padding-top: 70px;
-  }
-
   .weather-card {
     padding: 42px 28px;
+  }
+
+  .weather-page {
+    padding-top: 100px;
   }
 }
