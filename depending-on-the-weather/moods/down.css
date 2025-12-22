@@ -57,6 +57,46 @@ body.down .weather-ending {
   color: #6a5a4a;
 }
 
+/* =====================================================
+   NAVBAR — Down mood
+   (douce, claire, enveloppante)
+   ===================================================== */
+
+body.down .nav {
+  font-family: "Cormorant Garamond", serif;
+  font-style: normal;
+  font-weight: 400;
+
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+
+  padding: 18px 28px;
+  gap: 32px;
+
+  background: rgba(255, 250, 245, 0.75);
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 8px 22px rgba(160, 140, 115, 0.25);
+}
+
+/* liens */
+body.down .nav a {
+  font-family: inherit;
+  font-style: normal;
+  letter-spacing: inherit;
+
+  color: rgba(90, 75, 60, 0.75);
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+
+body.down .nav a:hover {
+  color: rgba(90, 75, 60, 1);
+}
+
 /* =========================
    Animation : se poser
    ========================= */
@@ -71,3 +111,13 @@ body.down .weather-ending {
     transform: translateY(0);
   }
 }
+
+@media (max-width: 768px) {
+  body.down .nav {
+    padding: 14px 18px;
+    gap: 18px;
+    font-size: 0.65rem;
+    letter-spacing: 0.24em;
+  }
+}
+
