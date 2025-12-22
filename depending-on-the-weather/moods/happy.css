@@ -1,22 +1,22 @@
 /* =========================
-   Happy mood – light & joyful
-   (pistachio, fresh, alive)
+   Happy mood – vivid & joyful
+   (pistachio, confident)
    ========================= */
 
 body.happy {
   background:
     radial-gradient(
       circle at top center,
-      rgba(255, 255, 255, 0.8),
-      rgba(225, 240, 225, 0.95) 70%
+      rgba(200, 225, 200, 0.55),
+      rgba(150, 190, 155, 0.95) 70%
     ),
-    #e6efe6;
+    #9fc3a5;
 
-  color: #243528;
+  color: #1f2e24;
 }
 
 /* =====================================================
-   Carte : lumière pistache, vivante
+   Carte : contraste clair sur fond vivant
    ===================================================== */
 
 body.happy .weather-card {
@@ -27,21 +27,21 @@ body.happy .weather-card {
   border-radius: 22px;
 
   box-shadow:
-    /* ancrage doux */
-    0 26px 52px rgba(120, 160, 130, 0.25),
+    /* ancrage net */
+    0 30px 60px rgba(40, 80, 55, 0.35),
 
     /* halo joyeux */
-    0 12px 30px rgba(170, 215, 175, 0.45),
+    0 14px 34px rgba(120, 180, 140, 0.45),
 
     /* peau interne */
     inset 0 0 0 1px rgba(255, 255, 255, 0.9),
-    inset 0 8px 18px rgba(255, 255, 255, 0.55);
+    inset 0 8px 18px rgba(255, 255, 255, 0.6);
 
-  animation: happyAppear 3.2s ease-out both;
+  animation: happyAppear 2.8s ease-out both;
 }
 
 /* =====================================================
-   Animation douce — souffle pistache
+   Animation douce — souffle vivant
    ===================================================== */
 
 body.happy .weather-card::before {
@@ -53,23 +53,23 @@ body.happy .weather-card::before {
   background:
     radial-gradient(
       circle at 35% 25%,
-      rgba(170, 215, 175, 0.55),
+      rgba(170, 215, 175, 0.6),
       transparent 55%
     ),
     radial-gradient(
       circle at 70% 75%,
-      rgba(225, 245, 225, 0.45),
+      rgba(220, 245, 220, 0.45),
       transparent 60%
     );
 
-  opacity: 0.55;
+  opacity: 0.6;
   filter: blur(26px);
 
-  animation: happyGlow 18s ease-in-out infinite;
+  animation: happyGlow 16s ease-in-out infinite;
 }
 
 /* =====================================================
-   Ornement — champagne clair (équilibre)
+   Ornement — champagne lisible
    ===================================================== */
 
 body.happy .weather-card::after {
@@ -92,7 +92,7 @@ body.happy .weather-card::after {
     linear-gradient(#e6d9b8, #e6d9b8) bottom right / 28px 1px no-repeat,
     linear-gradient(#e6d9b8, #e6d9b8) bottom right / 1px 28px no-repeat;
 
-  opacity: 0.26;
+  opacity: 0.3;
 }
 
 /* =====================================================
@@ -105,67 +105,50 @@ body.happy .weather-card h1 {
   font-family: "Cormorant Garamond", serif;
 }
 
-/* Titre : joyeux, clair */
+/* Titre : vibrant mais élégant */
 body.happy h1 {
   font-weight: 500;
   font-size: 1.55rem;
   letter-spacing: 0.07em;
-  color: #3e6b4a;
+  color: #2f5f44;
 }
 
-/* Texte : léger, respirant */
+/* Texte */
 body.happy .weather-text p {
   font-style: italic;
   font-size: 0.95rem;
   line-height: 2;
-  color: #2f523a;
+  color: #254a36;
 }
 
 /* Ouverture */
 body.happy .weather-lead {
-  color: #5f8a6b;
+  color: #4f7f62;
 }
 
 /* Fin */
 body.happy .weather-ending {
-  color: #4f7a5f;
+  color: #3f6f56;
 }
 
 /* =====================================================
-   NAVBAR — Happy mood (pistache festif)
+   NAVBAR — Happy (lisible sur fond fort)
    ===================================================== */
 
 body.happy .nav {
-  font-family: "Cormorant Garamond", serif;
-  font-style: normal;
-  font-weight: 400;
-
-  text-transform: uppercase;
-  letter-spacing: 0.32em;
-  font-size: 0.74rem;
-
-  padding: 18px 28px;
-  gap: 34px;
-
-  background: rgba(230, 245, 230, 0.9);
+  background: rgba(225, 245, 225, 0.85);
   backdrop-filter: blur(10px);
 
   box-shadow:
-    0 10px 26px rgba(150, 200, 160, 0.4);
+    0 10px 26px rgba(60, 120, 90, 0.45);
 }
 
 body.happy .nav a {
-  font-family: inherit;
-  font-style: normal;
-  letter-spacing: inherit;
-
-  color: rgba(60, 120, 85, 0.9);
-  text-decoration: none;
-  transition: color 0.25s ease;
+  color: rgba(45, 95, 70, 0.9);
 }
 
 body.happy .nav a:hover {
-  color: rgba(60, 120, 85, 1);
+  color: rgba(45, 95, 70, 1);
 }
 
 /* =====================================================
@@ -175,7 +158,7 @@ body.happy .nav a:hover {
 @keyframes happyAppear {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -186,15 +169,15 @@ body.happy .nav a:hover {
 @keyframes happyGlow {
   0% {
     transform: translate(0, 0) scale(1);
-    opacity: 0.35;
+    opacity: 0.4;
   }
   50% {
-    transform: translate(-4%, -3%) scale(1.08);
-    opacity: 0.65;
+    transform: translate(-4%, -3%) scale(1.1);
+    opacity: 0.7;
   }
   100% {
     transform: translate(0, 0) scale(1);
-    opacity: 0.35;
+    opacity: 0.4;
   }
 }
 
