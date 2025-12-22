@@ -186,6 +186,25 @@ body.love .weather-card::after {
 }
 
 /* =====================================================
+   Overrides — éléments UI NON italiques
+   ===================================================== */
+
+/* Navbar : même style que le reste du site */
+body.love .nav,
+body.love .nav a {
+  font-style: normal;
+  font-family: inherit; /* reprend la typo globale */
+}
+
+/* Language switch : UI, pas lettre */
+body.love .lang-switch,
+body.love .lang-switch button {
+  font-style: normal;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.3em;
+}
+
+/* =====================================================
    MOBILE — lecture fluide
    ===================================================== */
 
