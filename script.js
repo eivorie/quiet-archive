@@ -282,4 +282,3 @@ function endQuiz() {
 
   document.getElementById("restart").addEventListener("click", startQuiz);
 }
-}
