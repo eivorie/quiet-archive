@@ -2,7 +2,7 @@ const memories = [
   {
     text: "Hi my dear ! How have you been ? ♥",
     author: "you",
-    note: "first message you sent me"
+    note: "For sure the luckiest day of my life."
   },
   {
     text: "Can I just \"hear\" you say Je t'aime one more time ? I just want to keep that in my memory",
