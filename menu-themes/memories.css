@@ -54,38 +54,42 @@ body {
   opacity: 0.25;
 }
 
-/* -----------------------------------------------------
-   Navigation — feutrée & rituelle
------------------------------------------------------ */
+/* =====================================================
+   NAVBAR — alignée Ereri / Weather
+   ===================================================== */
 
 .nav {
-  display: flex;
-  gap: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 
+  display: flex;
+  gap: 28px;
+
+  padding: 14px 24px;
+
+  font-family: "Cormorant Garamond", serif;
   font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 
-  opacity: 0.85;
-  animation: navFadeIn 1.4s ease forwards;
-}
+  background: rgba(38, 44, 48, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
-@keyframes navFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 0.85;
-    transform: translateY(0);
-  }
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+
+  z-index: 10;
 }
 
 .nav a {
   position: relative;
   padding: 2px 0;
 
-  color: rgba(210, 225, 230, 0.75);
+  color: rgba(185, 205, 215, 0.75);
+  text-decoration: none;
+
   transition: color 0.4s ease;
 }
 
@@ -94,92 +98,82 @@ body {
   position: absolute;
   left: 0;
   bottom: -6px;
+
   width: 0%;
   height: 1px;
 
   background: linear-gradient(
     to right,
-    rgba(180, 210, 220, 0.6),
-    rgba(180, 210, 220, 0)
+    rgba(170, 200, 215, 0.6),
+    rgba(170, 200, 215, 0)
   );
 
   transition: width 0.6s ease;
 }
 
 .nav a:hover {
-  color: rgba(240, 245, 245, 0.95);
+  color: rgba(235, 245, 250, 0.95);
 }
 
 .nav a:hover::after {
   width: 100%;
 }
 
-/* -----------------------------------------------------
-   Carte Memories — RELIQUAIRE VIVANT
------------------------------------------------------ */
+/* =====================================================
+   Carte Memories — RELIQUAIRE PROFOND
+   ===================================================== */
 
 .container {
   position: relative;
   z-index: 2;
 
   max-width: 680px;
+  margin: 0 auto;
 
   background:
     radial-gradient(
-      circle at 20% 15%,
-      rgba(255,255,255,0.65),
+      circle at 22% 18%,
+      rgba(255,255,255,0.18),
       transparent 55%
     ),
     linear-gradient(
       to bottom,
-      rgba(245, 248, 246, 0.92),
-      rgba(228, 234, 232, 0.88)
+      rgba(220, 230, 235, 0.92),
+      rgba(200, 212, 218, 0.9)
     );
 
-  color: #2f3b3e;
+  color: #2a353a;
 
-  border-radius: 26px 24px 30px 26px;
+  border-radius: 28px 26px 32px 28px;
 
   box-shadow:
-    0 60px 140px rgba(0,0,0,0.55),
-    0 20px 50px rgba(0,0,0,0.3),
+    0 80px 180px rgba(0,0,0,0.6),
+    0 30px 60px rgba(0,0,0,0.35),
     inset 0 0 0 1px rgba(255,255,255,0.45);
 
-  padding: 68px 56px;
+  padding: 72px 62px;
 
-  animation: memoryFloat 16s ease-in-out infinite;
+  animation: memoryFloat 18s ease-in-out infinite;
 }
 
-@keyframes memoryFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-/* cadre mémoire interne */
+/* cadre interne froid */
 .container::before {
   content: "";
   position: absolute;
   inset: 18px;
 
-  border-radius: 20px;
+  border-radius: 22px;
 
-  background:
-    radial-gradient(
-      circle at 30% 25%,
-      rgba(255,255,255,0.35),
-      transparent 60%
-    );
-
-  border: 1px solid rgba(150, 170, 175, 0.28);
+  border: 1px solid rgba(150, 175, 185, 0.35);
 
   box-shadow:
-    inset 0 0 22px rgba(255,255,255,0.25),
-    inset 0 0 80px rgba(180,200,205,0.15);
+    inset 0 0 40px rgba(255,255,255,0.35),
+    inset 0 0 120px rgba(170,195,205,0.22);
 
   pointer-events: none;
 }
 
-/* grain subtil */
+/* voile profond */
 .container::after {
   content: "";
   position: absolute;
@@ -190,7 +184,7 @@ body {
   background:
     radial-gradient(
       circle at 50% 30%,
-      rgba(0,0,0,0.06),
+      rgba(0,0,0,0.12),
       transparent 65%
     );
 
@@ -202,16 +196,17 @@ body {
 ----------------------------------------------------- */
 
 .container h1 {
-  font-size: 2rem;
+  font-size: 2.05rem;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 
-  letter-spacing: 0.08em;
-  color: #2e3a3d;
+  letter-spacing: 0.1em;
+
+  color: #243035;
 
   text-shadow:
-    0 1px 0 rgba(255,255,255,0.6),
-    0 10px 28px rgba(0,0,0,0.25);
+    0 1px 0 rgba(255,255,255,0.65),
+    0 14px 34px rgba(0,0,0,0.35);
 }
 
 /* -----------------------------------------------------
@@ -301,24 +296,26 @@ button#generate:hover {
 ----------------------------------------------------- */
 
 #result {
-  transition:
-    opacity 0.45s ease,
-    transform 0.45s ease;
+  margin-top: 42px;
+  padding: 32px 34px;
 
-  margin-top: 36px;
-  padding: 26px 30px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.75),
+      rgba(235,240,242,0.7)
+    );
 
-  background: rgba(255,255,255,0.65);
-  border-left: 2px solid var(--memory-accent);
-  border-radius: 6px;
+  border-left: 3px solid rgba(140, 180, 195, 0.7);
+
+  border-radius: 10px;
 
   box-shadow:
-    inset 0 0 12px rgba(0,0,0,0.04),
-    0 10px 24px rgba(0,0,0,0.12);
+    inset 0 0 18px rgba(255,255,255,0.45),
+    0 20px 40px rgba(0,0,0,0.18);
 
   font-style: italic;
-  letter-spacing: 0.015em;
-  color: #2f3b3e;
+  letter-spacing: 0.02em;
 }
 
 #result.is-fading {
@@ -380,4 +377,34 @@ button#generate:hover {
   color: rgba(100,130,140,0.65);
   margin-bottom: 28px;
 }
+
+.page {
+  padding-top: 120px;
+  padding-bottom: 90px;
+}
+
+
+
+@media (max-width: 768px) {
+
+  .nav {
+    position: sticky;
+    top: 0;
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .page {
+    padding-top: 56px;
+  }
+
+  .container {
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+  .container::before {
+    inset: 12px;
+  }
+}
+
 
