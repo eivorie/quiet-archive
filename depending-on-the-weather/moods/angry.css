@@ -47,23 +47,20 @@ body.angry .weather-card::after {
    Navbar — cohérente avec les autres moods
    ===================================================== */
 
-body.angry .mood-nav {
-  background: rgba(60, 40, 30, 0.65);
-  backdrop-filter: blur(12px);
+/* =====================================================
+   Navbar — same structure as other moods
+   ===================================================== */
 
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+body.angry .nav {
+  background: rgba(60, 40, 30, 0.55);
+  backdrop-filter: blur(10px);
 }
 
-body.angry .mood-nav a {
-  font-family: "Cormorant Garamond", serif;
-  font-style: normal;
-  font-size: 0.8rem;
-
-  color: rgba(250, 235, 225, 0.75);
+body.angry .nav a {
+  color: rgba(245, 235, 225, 0.75);
 }
 
-body.angry .mood-nav a:hover {
+body.angry .nav a:hover {
   color: rgba(255, 245, 235, 0.95);
 }
 
