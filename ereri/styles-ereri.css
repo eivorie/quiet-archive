@@ -79,16 +79,16 @@
 
 /* =====================================================
    ERERI — Story pages layout (override)
-   IMPORTANT : ne touche qu’aux pages .ereri-story
+   IMPORTANT : uniquement pour .ereri-story
    ===================================================== */
 
 .ereri-story .ereri-page {
-  max-width: none;              /* on enlève la contrainte desktop */
+  max-width: none;
   margin: 0;
   padding: 120px 24px 90px;
 
   display: flex;
-  justify-content: center;      /* centrage réel de la carte */
+  justify-content: center;
 }
 
 /* =====================================================
@@ -179,8 +179,8 @@
     max-width: 100%;
   }
 
-  /* Pages story Ereri */
+  /* Pages story Ereri — compensation navbar fixe */
   .ereri-story .ereri-page {
-    padding: 40px 16px;
+    padding: 96px 16px 40px;
   }
 }
