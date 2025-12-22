@@ -44,27 +44,6 @@ body.angry .weather-card::after {
 }
 
 /* =====================================================
-   Navbar — cohérente avec les autres moods
-   ===================================================== */
-
-/* =====================================================
-   Navbar — same structure as other moods
-   ===================================================== */
-
-body.angry .nav {
-  background: rgba(60, 40, 30, 0.55);
-  backdrop-filter: blur(10px);
-}
-
-body.angry .nav a {
-  color: rgba(245, 235, 225, 0.75);
-}
-
-body.angry .nav a:hover {
-  color: rgba(255, 245, 235, 0.95);
-}
-
-/* =====================================================
    Typographie — Courier Prime affinée
    ===================================================== */
 
