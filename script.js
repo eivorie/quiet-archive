@@ -37,7 +37,8 @@ const memories = [
   },
   {
     text: "You can't be cute after spitting on my cookies",
-    author: "me"
+    author: "me",
+    note: "I don't mind, it's tradition from now on."
   },
   {
     text: "Esse demônio vai sair nem que se for afogado, MAS HOJE SAI",
