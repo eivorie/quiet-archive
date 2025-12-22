@@ -284,24 +284,22 @@ let score = 0;
 let round = 0;
 const totalRounds = 10;
 
+const generateBtn = document.getElementById("generate");
 const result = document.getElementById("result");
 const container = document.querySelector(".container");
 
 const lastScore = localStorage.getItem("memoriesLastScore");
 
-/* -----------------------------------------------------
-   Écran d’entrée
------------------------------------------------------ */
+/* ---------------------------
+   ÉCRAN INITIAL
+--------------------------- */
 
 showIntro();
 
 function showIntro() {
-  result.innerHTML = `
-    <button id="start-quiz" class="intro-question">
-      Who said that?
-    </button>
-  `;
+  result.innerHTML = "";
 
+  // supprimer ancien score affiché
   const existing = document.querySelector(".last-score");
   if (existing) existing.remove();
 
@@ -312,26 +310,32 @@ function showIntro() {
     container.insertBefore(p, result);
   }
 
-  document
-    .getElementById("start-quiz")
-    .addEventListener("click", startQuiz);
+  generateBtn.style.display = "block";
+  generateBtn.textContent = "Remember";
 }
 
-/* -----------------------------------------------------
-   Quiz lifecycle
------------------------------------------------------ */
+/* ---------------------------
+   DÉMARRAGE QUIZ
+--------------------------- */
+
+generateBtn.addEventListener("click", startQuiz);
 
 function startQuiz() {
   score = 0;
   round = 0;
 
-  /* mélange + tirage sans remise */
+  generateBtn.style.display = "none";
+
   shuffledMemories = [...memories]
     .sort(() => Math.random() - 0.5)
     .slice(0, totalRounds);
 
   nextMemory();
 }
+
+/* ---------------------------
+   QUESTIONS
+--------------------------- */
 
 function nextMemory() {
   if (round >= shuffledMemories.length) {
@@ -343,6 +347,8 @@ function nextMemory() {
   round++;
 
   result.innerHTML = `
+    <p class="memory-question">Who said that?</p>
+
     <p class="memory-text">
       “${memory.text.replace(/\n/g, "<br>")}”
     </p>
@@ -358,52 +364,46 @@ function nextMemory() {
 
   document.querySelectorAll(".choices button").forEach(btn => {
     btn.addEventListener("click", () => {
-      handleAnswer(btn, memory.author);
+      handleAnswer(btn, memory.author, memory.note);
     });
   });
 }
 
-/* -----------------------------------------------------
-   Answer handling
------------------------------------------------------ */
+/* ---------------------------
+   RÉPONSE
+--------------------------- */
 
-function handleAnswer(button, correctAuthor) {
+function handleAnswer(button, correctAuthor, note) {
   const choice = button.dataset.choice;
   const isCorrect = choice === correctAuthor;
 
   if (isCorrect) score++;
 
-  /* feedback visuel */
   result.classList.add(isCorrect ? "correct" : "wrong");
 
-  /* désactivation + révélation bonne réponse */
   document.querySelectorAll(".choices button").forEach(b => {
     b.disabled = true;
-
     if (b.dataset.choice === correctAuthor) {
       b.classList.add("right-answer");
     }
   });
 
-  /* affichage de la note si elle existe */
-  const currentMemory = shuffledMemories[round - 1];
-
-  if (currentMemory.note) {
-    const note = document.createElement("p");
-    note.className = "memory-note";
-    note.textContent = currentMemory.note;
-    result.appendChild(note);
+  if (note) {
+    const noteEl = document.createElement("p");
+    noteEl.className = "memory-note";
+    noteEl.textContent = note;
+    result.appendChild(noteEl);
   }
 
   setTimeout(() => {
     result.classList.remove("correct", "wrong");
     nextMemory();
-  }, 1200); // un peu plus long pour laisser vivre la note
+  }, 1200);
 }
 
-/* -----------------------------------------------------
-   Fin de quiz
------------------------------------------------------ */
+/* ---------------------------
+   FIN
+--------------------------- */
 
 function endQuiz() {
   const finalScore = `${score} / ${totalRounds}`;
@@ -413,11 +413,8 @@ function endQuiz() {
     <p class="final-score">
       You remembered <strong>${score}</strong> out of ${totalRounds}.
     </p>
-
-    <button id="restart">Back to memories</button>
   `;
 
-  document
-    .getElementById("restart")
-    .addEventListener("click", showIntro);
+  generateBtn.style.display = "block";
+  generateBtn.textContent = "Back to memories";
 }
