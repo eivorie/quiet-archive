@@ -1,12 +1,12 @@
 /* =====================================================
-   HOME — Neutral anchor (aligned with Memories / Ereri)
+   HOME — Neutral anchor (HOME ONLY)
    ===================================================== */
 
 /* -----------------------------------------------------
-   BODY — palette neutre, froide, liant
+   BODY — palette neutre, froide (HOME ONLY)
 ----------------------------------------------------- */
 
-body {
+body:has(.home) {
   color: #2e3438;
 
   background:
@@ -37,10 +37,10 @@ body {
 }
 
 /* -----------------------------------------------------
-   AMBIENT — poussière froide, discrète
+   AMBIENT — poussière froide (HOME ONLY)
 ----------------------------------------------------- */
 
-.ambient span {
+body:has(.home) .ambient span {
   background: rgba(210, 225, 230, 0.6);
   filter: blur(2px);
   opacity: 0.25;
@@ -176,7 +176,36 @@ body {
 }
 
 /* -----------------------------------------------------
-   RESPONSIVE — HOME
+   NAVBAR — HOME ONLY (texte, pas de fond)
+----------------------------------------------------- */
+
+body:has(.home) .nav {
+  background: transparent;
+  border-bottom: none;
+}
+
+body:has(.home) .nav a {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+
+  color: rgba(235, 240, 243, 0.85);
+}
+
+body:has(.home) .nav a:hover {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+body:has(.home) .nav a::after {
+  background: linear-gradient(
+    to right,
+    rgba(235,240,243,0.6),
+    rgba(235,240,243,0)
+  );
+}
+
+/* -----------------------------------------------------
+   RESPONSIVE — HOME ONLY
 ----------------------------------------------------- */
 
 @media (max-width: 768px) {
