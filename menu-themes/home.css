@@ -1,0 +1,196 @@
+/* =====================================================
+   HOME — Neutral anchor (aligned with Memories / Ereri)
+   ===================================================== */
+
+/* -----------------------------------------------------
+   BODY — palette neutre, froide, liant
+----------------------------------------------------- */
+
+body {
+  color: #2e3438;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(200, 215, 220, 0.25),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 70% 65%,
+      rgba(180, 195, 200, 0.22),
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom,
+      #6b7478,
+      #485155,
+      #2a3033
+    );
+
+  background-size: 140% 140%;
+  animation: homeBreath 26s ease-in-out infinite;
+}
+
+@keyframes homeBreath {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 8% 5%; }
+}
+
+/* -----------------------------------------------------
+   AMBIENT — poussière froide, discrète
+----------------------------------------------------- */
+
+.ambient span {
+  background: rgba(210, 225, 230, 0.6);
+  filter: blur(2px);
+  opacity: 0.25;
+}
+
+/* -----------------------------------------------------
+   PAGE — centrage HOME
+----------------------------------------------------- */
+
+.page.home {
+  min-height: calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 120px;
+  padding-bottom: 90px;
+}
+
+/* -----------------------------------------------------
+   CLOCKS — HOME ONLY
+----------------------------------------------------- */
+
+.home-clocks {
+  margin-bottom: 18px;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+
+  color: rgba(220, 235, 240, 0.7);
+  opacity: 0.75;
+  text-align: center;
+}
+
+.clock-separator {
+  margin: 0 6px;
+  opacity: 0.4;
+}
+
+/* -----------------------------------------------------
+   HOME CARD — papier clair, silencieux
+----------------------------------------------------- */
+
+.home .container {
+  position: relative;
+  z-index: 2;
+
+  background:
+    radial-gradient(
+      circle at 25% 20%,
+      rgba(255,255,255,0.35),
+      transparent 55%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(245,248,249,0.95),
+      rgba(230,235,238,0.92)
+    );
+
+  color: #2a3438;
+
+  border-radius: 26px;
+
+  box-shadow:
+    0 60px 140px rgba(0,0,0,0.45),
+    0 20px 40px rgba(0,0,0,0.25),
+    inset 0 0 0 1px rgba(255,255,255,0.45);
+
+  padding: 72px 64px;
+
+  animation: homeCardAppear 1.4s ease-out;
+}
+
+/* cadre interne subtil */
+.home .container::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+
+  border-radius: 18px;
+  border: 1px solid rgba(170,190,200,0.35);
+
+  box-shadow:
+    inset 0 0 40px rgba(255,255,255,0.35);
+
+  pointer-events: none;
+}
+
+@keyframes homeCardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* -----------------------------------------------------
+   TITRES & TEXTE — retenus
+----------------------------------------------------- */
+
+.home h1 {
+  font-weight: normal;
+  letter-spacing: 0.08em;
+  text-align: center;
+
+  color: #243035;
+
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.65),
+    0 14px 34px rgba(0,0,0,0.35);
+
+  margin-bottom: 22px;
+}
+
+.home .intro {
+  text-align: center;
+  font-size: 1.05rem;
+  color: rgba(50,65,70,0.8);
+
+  margin-bottom: 32px;
+}
+
+.home .home-footnote {
+  text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+
+  color: rgba(90,110,120,0.6);
+}
+
+/* -----------------------------------------------------
+   RESPONSIVE — HOME
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .page.home {
+    padding-top: 72px;
+  }
+
+  .home .container {
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+  .home .container::before {
+    inset: 12px;
+  }
+}
