@@ -314,6 +314,10 @@ body {
   font-style: italic;
 }
 
+.hidden-letter.is-visible {
+  display: block;
+}
+
 @keyframes letterReveal {
   from {
     opacity: 0;
