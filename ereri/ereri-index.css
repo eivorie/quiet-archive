@@ -292,12 +292,13 @@ body.ereri-index .ereri-page {
 
   /* PAGE — supprime le gros trou */
   .ereri-page {
-    padding-top: 32px;
+    padding-top: 12px;
+    margin-top: 0;
   }
 
   /* CARTE — respiration latérale */
   .ereri-card {
-    margin: 0 14px;
+    margin: 0;
     padding: 42px 26px;
     border-radius: 22px;
   }
