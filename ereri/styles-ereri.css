@@ -157,9 +157,28 @@
   width: 100%;
 }
 
-/* =========================
-   Responsive — MOBILE FIX
-   ========================= */
+/* =====================================================
+   ERERI — Story cards mobile width alignment (GLOBAL FIX)
+   Aligné Home / Memories / Weather
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  /* Page story : respire comme les autres pages */
+  .ereri-story .ereri-page {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Carte story : même largeur visuelle que Home */
+  .ereri-story .ereri-card {
+    margin-left: 14px;
+    margin-right: 14px;
+
+    padding: 44px 28px; /* identique Weather / Memories */
+    border-radius: 22px;
+  }
+}
 
 @media (max-width: 900px) {
 
