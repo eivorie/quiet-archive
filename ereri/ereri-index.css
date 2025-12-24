@@ -13,7 +13,6 @@ body.ereri-index {
   position: relative;
   overflow-x: hidden;
 
-  /* 🌫️ Fond principal – cohérent avec l’index général */
   background:
     radial-gradient(
       circle at 30% 25%,
@@ -38,26 +37,23 @@ body.ereri-index {
   animation: ereriBreath 24s ease-in-out infinite;
 }
 
-/* animation lente du fond */
 @keyframes ereriBreath {
-  0%,
-  100% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 10% 6%;
-  }
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 10% 6%; }
 }
 
-/* --------- Correction définitive de la “bande moche” --------- */
+/* --------- Voiles de correction --------- */
 
-body.ereri-index::after {
+body.ereri-index::after,
+body.ereri-index::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
+}
 
+body.ereri-index::after {
   background:
     radial-gradient(
       circle at 50% 75%,
@@ -66,14 +62,7 @@ body.ereri-index::after {
     );
 }
 
-/* léger grain lumineux */
 body.ereri-index::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-
   background:
     radial-gradient(
       circle at 50% 30%,
@@ -83,7 +72,7 @@ body.ereri-index::before {
 }
 
 /* =====================================================
-   Particules d’ambiance (vert / bleu très subtil)
+   AMBIENT
    ===================================================== */
 
 .ereri-ambient {
@@ -93,106 +82,81 @@ body.ereri-index::before {
   z-index: 0;
 }
 
-.ereri-ambient span {
-  position: absolute;
-  top: calc(100% * var(--y));
-  left: calc(100% * var(--x));
-
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-
-  background: radial-gradient(
-    circle,
-    rgba(170, 200, 190, 0.6),
-    rgba(140, 170, 180, 0.3)
-  );
-
-  filter: blur(2px);
-  opacity: 0.35;
-
-  animation:
-    ereriDust 18s ease-in-out infinite,
-    ereriPulse 6s ease-in-out infinite;
-}
-
-/* variations naturelles */
-.ereri-ambient span:nth-child(odd) {
-  width: 7px;
-  height: 7px;
-  opacity: 0.22;
-}
-
-.ereri-ambient span:nth-child(3n) {
-  width: 3px;
-  height: 3px;
-  opacity: 0.5;
-}
-
-@keyframes ereriDust {
-  0% {
-    transform: translate(0, 0) scale(0.95);
-  }
-  50% {
-    transform: translate(14px, -18px) scale(1);
-  }
-  100% {
-    transform: translate(0, 0) scale(0.95);
-  }
-}
-
-@keyframes ereriPulse {
-  0%,
-  100% {
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 0.45;
-  }
-}
-
-/* positions */
-.ereri-ambient span:nth-child(1)  { --x: 0.06; --y: 0.22; }
-.ereri-ambient span:nth-child(2)  { --x: 0.12; --y: 0.48; }
-.ereri-ambient span:nth-child(3)  { --x: 0.18; --y: 0.72; }
-.ereri-ambient span:nth-child(4)  { --x: 0.26; --y: 0.30; }
-.ereri-ambient span:nth-child(5)  { --x: 0.34; --y: 0.58; }
-.ereri-ambient span:nth-child(6)  { --x: 0.42; --y: 0.78; }
-.ereri-ambient span:nth-child(7)  { --x: 0.50; --y: 0.25; }
-.ereri-ambient span:nth-child(8)  { --x: 0.58; --y: 0.52; }
-.ereri-ambient span:nth-child(9)  { --x: 0.66; --y: 0.72; }
-.ereri-ambient span:nth-child(10) { --x: 0.74; --y: 0.35; }
-.ereri-ambient span:nth-child(11) { --x: 0.80; --y: 0.55; }
-.ereri-ambient span:nth-child(12) { --x: 0.86; --y: 0.75; }
-.ereri-ambient span:nth-child(13) { --x: 0.90; --y: 0.28; }
-.ereri-ambient span:nth-child(14) { --x: 0.94; --y: 0.50; }
-.ereri-ambient span:nth-child(15) { --x: 0.97; --y: 0.70; }
-
 /* =====================================================
-   Navbar (sobre, sans border-radius)
+   NAVBAR — ALIGNÉE HOME / MEMORIES
    ===================================================== */
 
-.ereri-index .nav {
-  background: rgba(38, 42, 40, 0.72);
-  backdrop-filter: blur(12px);
-  padding: 14px 32px;
+.ereri-index .ereri-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
+  display: flex;
+  gap: 28px;
 
-.ereri-index .nav a {
+  padding: 14px 24px;
+
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  color: #a9bfb6;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  background: rgba(38, 42, 40, 0.55);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  z-index: 10;
 }
 
-.ereri-index .nav a:hover {
-  color: #e6f0ec;
+.ereri-index .ereri-nav a {
+  position: relative;
+  padding: 2px 0;
+  color: rgba(185, 205, 200, 0.75);
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+.ereri-index .ereri-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(180, 210, 220, 0.6),
+    rgba(180, 210, 220, 0)
+  );
+  transition: width 0.6s ease;
+}
+
+.ereri-index .ereri-nav a:hover {
+  color: rgba(235, 245, 242, 0.95);
+}
+
+.ereri-index .ereri-nav a:hover::after {
+  width: 100%;
 }
 
 /* =====================================================
-   Carte Ereri (forme vivante, pas lisse)
+   PAGE LAYOUT
+   ===================================================== */
+
+.ereri-page {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 120px;
+  padding-bottom: 90px;
+}
+
+/* =====================================================
+   CARTE ERERI
    ===================================================== */
 
 .ereri-card {
@@ -220,167 +184,57 @@ body.ereri-index::before {
 
   padding: 70px 80px;
 
-  animation: ereriCardFloat 12s ease-in-out infinite;
+  animation:
+    ereriFadeIn 1.2s ease forwards,
+    ereriCardFloat 12s ease-in-out 1.2s infinite;
 }
 
 .ereri-card::before {
   content: "";
   position: absolute;
   inset: 14px;
-
   border-radius: 20px 18px 22px 20px;
   border: 1px solid rgba(120, 140, 135, 0.28);
-
   pointer-events: none;
 }
 
+@keyframes ereriFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes ereriCardFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 /* =====================================================
-   Titre & liens
-   ===================================================== */
-
-.ereri-title {
-  font-size: 2rem;
-  line-height: 1.45;
-  margin-bottom: 60px;
-
-  color: #2e3a35;
-  letter-spacing: 0.01em;
-
-  text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.6),
-    0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* liens table des matières */
-.ereri-index .ereri-toc a {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.02em;
-
-  color: #4f6b63;
-  text-decoration: none;
-  position: relative;
-}
-
-.ereri-index .ereri-toc a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-
-  width: 0%;
-  height: 1px;
-  background: rgba(79, 107, 99, 0.6);
-
-  transition: width 0.3s ease;
-}
-
-.ereri-index .ereri-toc a:hover::after {
-  width: 100%;
-}
-
-/* =====================================================
-   Navbar — alignée avec Memories
-   ===================================================== */
-
-.ereri-index .ereri-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-
-  display: flex;
-  gap: 28px;
-
-  padding: 14px 24px;
-
-  font-family: "Cormorant Garamond", serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-
-  background: rgba(38, 42, 40, 0.55);
-  backdrop-filter: blur(12px);
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-
-  z-index: 10;
-}
-
-.ereri-index .ereri-nav a {
-  position: relative;
-  padding: 2px 0;
-
-  color: rgba(185, 205, 200, 0.75);
-  text-decoration: none;
-
-  transition: color 0.4s ease;
-}
-
-.ereri-index .ereri-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-
-  width: 0%;
-  height: 1px;
-
-  background: linear-gradient(
-    to right,
-    rgba(180, 210, 220, 0.6),
-    rgba(180, 210, 220, 0)
-  );
-
-  transition: width 0.6s ease;
-}
-
-.ereri-index .ereri-nav a:hover {
-  color: rgba(235, 245, 242, 0.95);
-}
-
-.ereri-index .ereri-nav a:hover::after {
-  width: 100%;
-}
-
-.ereri-page {
-  padding-top: 80px;
-}
-
-/* =====================================================
-   Mobile fix — navbar non destructive
+   MOBILE — ALIGNEMENT HOME / MEMORIES
    ===================================================== */
 
 @media (max-width: 768px) {
 
-  /* la nav redevient dans le flux */
+  /* NAV */
   .ereri-index .ereri-nav {
     position: sticky;
     top: 0;
 
-    padding-top: env(safe-area-inset-top);
+    padding: 12px 18px;
+    padding-top: calc(env(safe-area-inset-top) + 10px);
+
+    gap: 18px;
+    font-size: 0.75rem;
   }
 
-  /* on réduit l’espace nécessaire */
+  /* PAGE — SUPPRIME LE GROS TROU */
   .ereri-page {
-    padding-top: 48px;
+    padding-top: 32px;
   }
 
-  /* carte plus respirante sur petit écran */
+  /* CARTE — RESPIRATION LATÉRALE COMME HOME */
   .ereri-card {
+    margin: 0 14px;
     padding: 42px 26px;
+    border-radius: 22px;
   }
 }
-
-
-
