@@ -222,6 +222,21 @@ body.ereri-index .ereri-page {
   50%      { transform: translateY(-6px); }
 }
 
+/* =====================================================
+   FIX — Remonter la carte sur l’index Ereri
+   ===================================================== */
+
+/* On neutralise le margin-top hérité des stories */
+body.ereri-index .ereri-card {
+  margin-top: 0;
+}
+
+/* On réduit légèrement l’espace sous la nav */
+body.ereri-index .ereri-page {
+  padding-top: 80px; /* au lieu de 120px */
+}
+
+
 /* -----------------------------------------------------
    Mobile — alignement Home / Memories
    ----------------------------------------------------- */
