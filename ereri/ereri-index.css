@@ -236,6 +236,41 @@ body.ereri-index .ereri-page {
   padding-top: 80px; /* au lieu de 120px */
 }
 
+/* =====================================================
+   ERERI INDEX — NAV SPACING FIX
+   ===================================================== */
+
+.ereri-index .ereri-page {
+  padding-top: 72px;   /* juste sous la nav */
+  margin-top: 0;       /* annule styles-ereri */
+}
+
+
+/* =====================================================
+   ERERI — TOC staggered appearance (FIX)
+   ===================================================== */
+
+.ereri-index .ereri-toc li {
+  opacity: 0;
+  transform: translateY(6px);
+
+  animation: ereriTocAppear 0.8s ease forwards;
+}
+
+/* stagger */
+.ereri-index .ereri-toc li:nth-child(1) { animation-delay: 0.15s; }
+.ereri-index .ereri-toc li:nth-child(2) { animation-delay: 0.25s; }
+.ereri-index .ereri-toc li:nth-child(3) { animation-delay: 0.35s; }
+.ereri-index .ereri-toc li:nth-child(4) { animation-delay: 0.45s; }
+.ereri-index .ereri-toc li:nth-child(5) { animation-delay: 0.55s; }
+
+@keyframes ereriTocAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* -----------------------------------------------------
    Mobile — alignement Home / Memories
