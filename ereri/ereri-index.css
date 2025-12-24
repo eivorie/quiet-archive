@@ -1,13 +1,12 @@
 /* =====================================================
-   Ereri – Index Theme (FINAL CLEAN VERSION)
-   ===================================================== */
+Ereri – Index Theme (FINAL CLEAN VERSION)
+===================================================== */
 
 /* -----------------------------------------------------
-   Base & sécurité
-   ----------------------------------------------------- */
+Base & sécurité
+----------------------------------------------------- */
 
-html,
-body {
+html, body {
   min-height: 100%;
 }
 
@@ -45,8 +44,8 @@ body.ereri-index {
 }
 
 /* -----------------------------------------------------
-   Voiles de correction
-   ----------------------------------------------------- */
+Voiles de correction
+----------------------------------------------------- */
 
 body.ereri-index::before,
 body.ereri-index::after {
@@ -58,26 +57,24 @@ body.ereri-index::after {
 }
 
 body.ereri-index::after {
-  background:
-    radial-gradient(
-      circle at 50% 75%,
-      rgba(0, 0, 0, 0.35),
-      transparent 65%
-    );
+  background: radial-gradient(
+    circle at 50% 75%,
+    rgba(0, 0, 0, 0.35),
+    transparent 65%
+  );
 }
 
 body.ereri-index::before {
-  background:
-    radial-gradient(
-      circle at 50% 30%,
-      rgba(255, 255, 255, 0.04),
-      transparent 60%
-    );
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(255, 255, 255, 0.04),
+    transparent 60%
+  );
 }
 
 /* -----------------------------------------------------
-   Ambient
-   ----------------------------------------------------- */
+Ambient
+----------------------------------------------------- */
 
 .ereri-ambient {
   position: fixed;
@@ -87,8 +84,8 @@ body.ereri-index::before {
 }
 
 /* -----------------------------------------------------
-   Navbar — alignée Home / Memories
-   ----------------------------------------------------- */
+Navbar — alignée Home / Memories
+----------------------------------------------------- */
 
 .ereri-index .ereri-nav {
   position: fixed;
@@ -146,39 +143,42 @@ body.ereri-index::before {
 }
 
 /* -----------------------------------------------------
-   Page layout — INDEX ERERI
-   ----------------------------------------------------- */
+Page layout — INDEX ERERI
+----------------------------------------------------- */
 
-body.ereri-index .ereri-page {
+.ereri-page {
   min-height: calc(100vh - 120px);
   display: flex;
   justify-content: center;
   align-items: flex-start;
 
-  padding-top: 72px;
+  padding-top: 120px;
   padding-bottom: 90px;
-  margin: 0;
+}
+
+/* 🔑 Ajustement spécifique INDEX : carte légèrement remontée */
+body.ereri-index .ereri-page {
+  padding-top: 88px;
 }
 
 /* -----------------------------------------------------
-   Carte Ereri (INDEX UNIQUEMENT)
-   ----------------------------------------------------- */
+Carte Ereri (index)
+----------------------------------------------------- */
 
-body.ereri-index .ereri-card {
+.ereri-card {
   position: relative;
   z-index: 1;
 
-  background:
-    radial-gradient(
-      circle at 20% 15%,
-      rgba(255, 255, 255, 0.55),
-      transparent 55%
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(245, 245, 240, 0.96),
-      rgba(232, 236, 230, 0.96)
-    );
+  background: radial-gradient(
+    circle at 20% 15%,
+    rgba(255, 255, 255, 0.55),
+    transparent 55%
+  ),
+  linear-gradient(
+    to bottom,
+    rgba(245, 245, 240, 0.96),
+    rgba(232, 236, 230, 0.96)
+  );
 
   border-radius: 26px 22px 28px 24px;
 
@@ -194,7 +194,7 @@ body.ereri-index .ereri-card {
     ereriCardFloat 12s ease-in-out 1.2s infinite;
 }
 
-body.ereri-index .ereri-card::before {
+.ereri-card::before {
   content: "";
   position: absolute;
   inset: 14px;
@@ -205,7 +205,7 @@ body.ereri-index .ereri-card::before {
 
 @keyframes ereriFadeIn {
   from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes ereriCardFloat {
@@ -213,9 +213,30 @@ body.ereri-index .ereri-card::before {
   50% { transform: translateY(-6px); }
 }
 
-/* -----------------------------------------------------
-   TOC — apparition échelonnée
-   ----------------------------------------------------- */
+/* =====================================================
+FIX — Remonter la carte sur l’index Ereri
+===================================================== */
+
+body.ereri-index .ereri-card {
+  margin-top: 0;
+}
+
+body.ereri-index .ereri-page {
+  padding-top: 80px;
+}
+
+/* =====================================================
+ERERI INDEX — NAV SPACING FIX
+===================================================== */
+
+.ereri-index .ereri-page {
+  padding-top: 72px;
+  margin-top: 0;
+}
+
+/* =====================================================
+ERERI — TOC staggered appearance (FIX)
+===================================================== */
 
 .ereri-index .ereri-toc li {
   opacity: 0;
@@ -230,15 +251,12 @@ body.ereri-index .ereri-card::before {
 .ereri-index .ereri-toc li:nth-child(5) { animation-delay: 0.55s; }
 
 @keyframes ereriTocAppear {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* -----------------------------------------------------
-   Mobile — INDEX ONLY
-   ----------------------------------------------------- */
+Mobile — alignement Home / Memories
+----------------------------------------------------- */
 
 @media (max-width: 768px) {
 
@@ -251,13 +269,20 @@ body.ereri-index .ereri-card::before {
     font-size: 0.75rem;
   }
 
-  body.ereri-index .ereri-page {
-    padding-top: 12px;
-    padding-bottom: 40px;
+  @media (max-width: 768px) {
+
+    body.ereri-index .ereri-page {
+      padding-top: 12px;
+      padding-bottom: 40px;
+    }
+
+    body.ereri-index .ereri-card {
+      margin-top: 0;
+    }
   }
 
-  body.ereri-index .ereri-card {
-    margin: 0 14px;
+  .ereri-card {
+    margin: 0;
     padding: 42px 26px;
     border-radius: 22px;
   }
