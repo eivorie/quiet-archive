@@ -289,6 +289,10 @@ body.ereri-index .ereri-page {
     gap: 18px;
     font-size: 0.75rem;
   }
+   
+   .ereri-index .ereri-card {
+    padding-top: 36px;
+  }
 
   /* PAGE — supprime le gros trou */
   .ereri-page {
