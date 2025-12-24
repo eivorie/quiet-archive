@@ -50,7 +50,9 @@
 
   padding: 70px 80px;
 
-  animation: parisCardFloat 14s ease-in-out infinite;
+  animation:
+    ereriStoryAppear 1.2s ease-out forwards,
+    parisCardFloat 14s ease-in-out 1.2s infinite;
 }
 
 /* Cadre intérieur */
