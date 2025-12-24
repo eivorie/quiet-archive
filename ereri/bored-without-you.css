@@ -68,6 +68,58 @@
 }
 
 /* -----------------------------------------------------
+   Titre & meta
+   ----------------------------------------------------- */
+
+.ereri-story h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.2rem;
+  font-weight: normal;
+  color: rgba(248, 248, 242, 0.92);
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.6),
+    0 12px 28px rgba(0,0,0,.5);
+}
+
+.ereri-story .subtitle {
+  font-size: 0.9rem;
+  color: rgba(210, 210, 200, 0.7);
+  letter-spacing: 0.04em;
+  margin-bottom: 40px;
+}
+
+/* -----------------------------------------------------
+   Illustration — ALIGNÉE dry cookies
+   ----------------------------------------------------- */
+
+.story-illustration {
+  margin: 40px auto 60px;
+  text-align: center;
+}
+
+.story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 18px 24px 20px 26px;
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.6),
+    inset 0 0 0 1px rgba(255,255,255,.14);
+
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.story-illustration img:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 40px 90px rgba(0,0,0,.7),
+    inset 0 0 0 1px rgba(255,255,255,.2);
+}
+
+/* -----------------------------------------------------
    Typographie — douce, intérieure
    ----------------------------------------------------- */
 
@@ -91,72 +143,11 @@
 }
 
 /* -----------------------------------------------------
-   Titre & meta
-   ----------------------------------------------------- */
-
-.ereri-story h1 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.2rem;
-  font-weight: normal;
-  color: rgba(248, 248, 242, 0.92);
-
-  text-shadow:
-    0 1px 0 rgba(0,0,0,.6),
-    0 12px 28px rgba(0,0,0,.5);
-}
-
-.ereri-story .subtitle {
-  font-size: 0.9rem;
-  color: rgba(210, 210, 200, 0.7);
-  letter-spacing: 0.04em;
-  margin-bottom: 40px;
-}
-
-/* =====================================================
-   Image — containment FIX (desktop + mobile)
-   ===================================================== */
-
-.ereri-story .story-illustration {
-  max-width: 100%;
-  overflow: hidden; /* 🔑 empêche tout débord */
-}
-
-.ereri-story .story-illustration img {
-  display: block;
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-}
-
-
-/* -----------------------------------------------------
-   Responsive
+   Responsive — MOBILE (identique dry cookies)
    ----------------------------------------------------- */
 
 @media (max-width: 900px) {
 
-  .ereri-story .ereri-card {
-    max-width: 100%;
-    padding: 32px 22px;
-    border-radius: 22px;
-  }
-
-  .ereri-story h1 {
-    font-size: 1.8rem;
-  }
-
-  .ereri-story .oneshot-text {
-    font-size: 0.98rem;
-  }
-}
-
-/* =====================================================
-   Mobile — largeur et image fixes (CRITICAL FIX)
-   ===================================================== */
-
-@media (max-width: 900px) {
-
-  /* Contraint visuellement la carte comme les autres stories */
   .ereri-story-page {
     padding-left: 16px;
     padding-right: 16px;
@@ -164,17 +155,21 @@
   }
 
   .ereri-story .ereri-card {
-    max-width: none;
-    width: 100%;
-    margin: 0 auto;
+    max-width: 100%;
     padding: 32px 22px;
     border-radius: 22px;
+    margin: 0;
   }
 
-  /* Image : jamais plus large que la carte */
-  .ereri-story .story-illustration img {
-    max-width: 100%;
-    height: auto;
+  .ereri-story h1 {
+    font-size: 1.8rem;
+  }
+
+  .story-illustration img {
+    max-width: 260px;
+  }
+
+  .ereri-story .oneshot-text {
+    font-size: 0.98rem;
   }
 }
-
