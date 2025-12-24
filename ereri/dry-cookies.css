@@ -10,6 +10,12 @@
   background: transparent;
 }
 
+.ereri-story .ereri-page {
+  position: relative;
+  z-index: 1;
+}
+
+
 /* -----------------------------------------------------
    Carte — vert chaud, cuisine, intérieur
    ----------------------------------------------------- */
