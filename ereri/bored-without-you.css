@@ -137,3 +137,32 @@
     font-size: 0.98rem;
   }
 }
+
+/* =====================================================
+   Mobile — largeur et image fixes (CRITICAL FIX)
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+  /* Contraint visuellement la carte comme les autres stories */
+  .ereri-story-page {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 40px;
+  }
+
+  .ereri-story .ereri-card {
+    max-width: none;
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 22px;
+    border-radius: 22px;
+  }
+
+  /* Image : jamais plus large que la carte */
+  .ereri-story .story-illustration img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
