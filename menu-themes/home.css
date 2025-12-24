@@ -282,6 +282,7 @@ body {
   text-transform: uppercase;
 
   color: rgba(200, 215, 225, 0.85);
+    -webkit-tap-highlight-color: transparent;
 
   cursor: pointer;
 }
@@ -322,6 +323,17 @@ body {
 
 .always-trigger:hover::after {
   width: 80%;
+}
+
+.always-trigger,
+.always-trigger:hover,
+.always-trigger:active,
+.always-trigger:focus,
+.always-trigger:focus-visible {
+  background: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  transform: none !important;
 }
 
 /* -----------------------------------------------------
