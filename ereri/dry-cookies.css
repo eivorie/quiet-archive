@@ -9,7 +9,7 @@
 .ereri-story-page {
   display: flex;
   justify-content: center;
-  //padding: 80px 20px;
+  padding: 48px 16px;
 }
 
 .ereri-story .ereri-page {
@@ -212,6 +212,10 @@
   /* compensation navbar mobile */
   .ereri-story .ereri-page {
     padding: 72px 16px 40px;
+  }
+
+    .ereri-story-page {
+    padding-top: 24px;
   }
 
   .ereri-story .ereri-card {
