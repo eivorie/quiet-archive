@@ -296,7 +296,7 @@ body.ereri-index .ereri-page {
 
   /* PAGE — supprime le gros trou */
   .ereri-page {
-    padding-top: 12px;
+    padding-top: 32px !important;
     margin-top: 0;
   }
 
