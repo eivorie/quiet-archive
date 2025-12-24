@@ -2,21 +2,6 @@
    dry cookies — Ereri one-shot (GREEN HARMONY)
    ===================================================== */
 
-/* -----------------------------------------------------
-   Fond & héritage
-   ----------------------------------------------------- */
-
-.ereri-story-page {
-  display: flex;
-  justify-content: center;
-  padding: 48px 16px;
-}
-
-.ereri-story .ereri-page {
-  position: relative;
-  z-index: 1;
-}
-
 /* =====================================================
    Ambient — kitchen warmth (dry cookies)
    ===================================================== */
@@ -71,19 +56,6 @@
 
   padding: 70px 80px;
 }
-
-/* =====================================================
-   Mobile — respiration interne du texte (aligné Linagee)
-   ===================================================== */
-
-@media (max-width: 900px) {
-  .ereri-story .oneshot-text {
-    max-width: 620px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 
 /* Cadre intérieur */
 .ereri-story .ereri-card::before {
@@ -208,15 +180,6 @@
    ----------------------------------------------------- */
 
 @media (max-width: 900px) {
-
-  /* compensation navbar mobile */
-  .ereri-story .ereri-page {
-    padding: 72px 16px 40px;
-  }
-
-    .ereri-story-page {
-    padding-top: 24px;
-  }
 
   .ereri-story .ereri-card {
     max-width: 100%;
