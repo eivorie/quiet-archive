@@ -180,7 +180,34 @@
   width: 100%;
 }
 
+/* =====================================================
+   ERERI — BACKGROUND STORIES
+   (reprend le fond Ereri hors index)
+   ===================================================== */
 
+body.ereri-story {
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(210, 230, 220, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 70% 65%,
+      rgba(180, 200, 210, 0.25),
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom,
+      #6b6f66 0%,
+      #4f524b 45%,
+      #2a2c28 100%
+    );
+
+  background-size: 140% 140%;
+  background-blend-mode: soft-light;
+  animation: ereriBreath 24s ease-in-out infinite;
+}
 
 /* =====================================================
    ERERI — MOBILE & RESPONSIVE
