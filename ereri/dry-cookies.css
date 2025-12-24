@@ -11,20 +11,6 @@
 }
 
 /* -----------------------------------------------------
-   FIX — layout story & compensation navbar
-   (aligné Paris / Territory)
-   ----------------------------------------------------- */
-
-.ereri-story .ereri-page {
-  max-width: none;
-  margin: 0;
-  padding: 120px 24px 90px;
-
-  display: flex;
-  justify-content: center;
-}
-
-/* -----------------------------------------------------
    Carte — vert chaud, cuisine, intérieur
    ----------------------------------------------------- */
 
