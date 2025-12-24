@@ -233,7 +233,7 @@ body.ereri-index .ereri-card {
 
 /* On réduit légèrement l’espace sous la nav */
 body.ereri-index .ereri-page {
-  padding-top: 80px; /* au lieu de 120px */
+  padding-top: 32px;
 }
 
 /* =====================================================
