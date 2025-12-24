@@ -1,10 +1,10 @@
 /* =====================================================
-   Ereri – Index Theme (RESTORED & SAFE)
+   Ereri – Index Theme (FINAL CLEAN VERSION)
    ===================================================== */
 
-/* =====================================================
-   BASE
-   ===================================================== */
+/* -----------------------------------------------------
+   Base & sécurité
+   ----------------------------------------------------- */
 
 html,
 body {
@@ -41,12 +41,12 @@ body.ereri-index {
 
 @keyframes ereriBreath {
   0%, 100% { background-position: 0% 0%; }
-  50%      { background-position: 10% 6%; }
+  50% { background-position: 10% 6%; }
 }
 
-/* =====================================================
-   VOILES
-   ===================================================== */
+/* -----------------------------------------------------
+   Voiles de correction
+   ----------------------------------------------------- */
 
 body.ereri-index::before,
 body.ereri-index::after {
@@ -75,9 +75,9 @@ body.ereri-index::before {
     );
 }
 
-/* =====================================================
-   AMBIENT
-   ===================================================== */
+/* -----------------------------------------------------
+   Ambient
+   ----------------------------------------------------- */
 
 .ereri-ambient {
   position: fixed;
@@ -86,9 +86,9 @@ body.ereri-index::before {
   z-index: 0;
 }
 
-/* =====================================================
-   NAVBAR
-   ===================================================== */
+/* -----------------------------------------------------
+   Navbar — alignée Home / Memories
+   ----------------------------------------------------- */
 
 .ereri-index .ereri-nav {
   position: fixed;
@@ -116,7 +116,6 @@ body.ereri-index::before {
 .ereri-index .ereri-nav a {
   position: relative;
   padding: 2px 0;
-
   color: rgba(185, 205, 200, 0.75);
   text-decoration: none;
   transition: color 0.4s ease;
@@ -130,13 +129,11 @@ body.ereri-index::before {
 
   width: 0%;
   height: 1px;
-
   background: linear-gradient(
     to right,
     rgba(180, 210, 220, 0.6),
     rgba(180, 210, 220, 0)
   );
-
   transition: width 0.6s ease;
 }
 
@@ -148,26 +145,24 @@ body.ereri-index::before {
   width: 100%;
 }
 
-/* =====================================================
-   PAGE LAYOUT — INDEX ONLY
-   ===================================================== */
+/* -----------------------------------------------------
+   Page layout — INDEX ERERI
+   ----------------------------------------------------- */
 
 body.ereri-index .ereri-page {
   min-height: calc(100vh - 120px);
-
   display: flex;
   justify-content: center;
   align-items: flex-start;
 
-  /* 🔑 espace réduit sous la nav */
   padding-top: 72px;
   padding-bottom: 90px;
   margin: 0;
 }
 
-/* =====================================================
-   INDEX CARD (NE TOUCHE PAS AUX STORIES)
-   ===================================================== */
+/* -----------------------------------------------------
+   Carte Ereri (INDEX UNIQUEMENT)
+   ----------------------------------------------------- */
 
 body.ereri-index .ereri-card {
   position: relative;
@@ -203,7 +198,6 @@ body.ereri-index .ereri-card::before {
   content: "";
   position: absolute;
   inset: 14px;
-
   border-radius: 20px 18px 22px 20px;
   border: 1px solid rgba(120, 140, 135, 0.28);
   pointer-events: none;
@@ -216,12 +210,12 @@ body.ereri-index .ereri-card::before {
 
 @keyframes ereriCardFloat {
   0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-6px); }
+  50% { transform: translateY(-6px); }
 }
 
-/* =====================================================
-   TOC — STAGGERED LINKS (FIXED)
-   ===================================================== */
+/* -----------------------------------------------------
+   TOC — apparition échelonnée
+   ----------------------------------------------------- */
 
 .ereri-index .ereri-toc li {
   opacity: 0;
@@ -242,19 +236,17 @@ body.ereri-index .ereri-card::before {
   }
 }
 
-/* =====================================================
-   MOBILE — INDEX ONLY (SAFE)
-   ===================================================== */
+/* -----------------------------------------------------
+   Mobile — INDEX ONLY
+   ----------------------------------------------------- */
 
 @media (max-width: 768px) {
 
   .ereri-index .ereri-nav {
     position: sticky;
     top: 0;
-
     padding: 12px 18px;
     padding-top: calc(env(safe-area-inset-top) + 10px);
-
     gap: 18px;
     font-size: 0.75rem;
   }
