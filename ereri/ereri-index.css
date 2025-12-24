@@ -272,7 +272,7 @@ Mobile — alignement Home / Memories
   @media (max-width: 768px) {
 
     body.ereri-index .ereri-page {
-      padding-top: 12px;
+      //padding-top: 12px;
       padding-bottom: 40px;
     }
 
