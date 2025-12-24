@@ -241,6 +241,12 @@
     padding-right: 0;
   }
 
+     .ereri-story .ereri-page {
+    padding-top: calc(var(--ereri-nav-height) + 24px);
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   /* Carte story : largeur visuelle identique aux autres pages */
   .ereri-story .ereri-card {
     max-width: none;        /* 🔑 clé principale */
