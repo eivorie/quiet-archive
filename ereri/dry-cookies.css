@@ -19,6 +19,13 @@
   max-width: none;
 }
 
+/* FIX LAYOUT — alignement avec les autres stories */
+.ereri-story .ereri-page {
+  padding-top: 72px;      /* hauteur réelle navbar */
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 40px;
+}
 
 /* -----------------------------------------------------
    Carte — vert chaud, cuisine, intérieur
