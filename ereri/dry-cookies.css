@@ -15,10 +15,6 @@
   z-index: 1;
 }
 
-.ereri-story .ereri-content.oneshot-text {
-  max-width: none;
-}
-
 /* -----------------------------------------------------
    Carte — vert chaud, cuisine, intérieur
    ----------------------------------------------------- */
@@ -195,9 +191,5 @@
 
   .story-illustration img {
     max-width: 260px;
-  }
-
-  .ereri-story .ereri-content {
-    font-size: 0.98rem;
   }
 }
