@@ -1,5 +1,5 @@
 /* =====================================================
-   Ereri – Index Theme (FINAL CLEAN — SAFE)
+   Ereri – Index Theme (RESTORED & SAFE)
    ===================================================== */
 
 /* =====================================================
@@ -87,7 +87,7 @@ body.ereri-index::before {
 }
 
 /* =====================================================
-   NAVBAR (INDEX)
+   NAVBAR
    ===================================================== */
 
 .ereri-index .ereri-nav {
@@ -116,6 +116,7 @@ body.ereri-index::before {
 .ereri-index .ereri-nav a {
   position: relative;
   padding: 2px 0;
+
   color: rgba(185, 205, 200, 0.75);
   text-decoration: none;
   transition: color 0.4s ease;
@@ -126,13 +127,16 @@ body.ereri-index::before {
   position: absolute;
   left: 0;
   bottom: -6px;
+
   width: 0%;
   height: 1px;
+
   background: linear-gradient(
     to right,
     rgba(180, 210, 220, 0.6),
     rgba(180, 210, 220, 0)
   );
+
   transition: width 0.6s ease;
 }
 
@@ -145,7 +149,7 @@ body.ereri-index::before {
 }
 
 /* =====================================================
-   PAGE LAYOUT — INDEX UNIQUEMENT
+   PAGE LAYOUT — INDEX ONLY
    ===================================================== */
 
 body.ereri-index .ereri-page {
@@ -155,13 +159,14 @@ body.ereri-index .ereri-page {
   justify-content: center;
   align-items: flex-start;
 
-  padding-top: 72px;      /* 🔑 rapproché de la nav */
+  /* 🔑 espace réduit sous la nav */
+  padding-top: 72px;
   padding-bottom: 90px;
   margin: 0;
 }
 
 /* =====================================================
-   CARTE — INDEX
+   INDEX CARD (NE TOUCHE PAS AUX STORIES)
    ===================================================== */
 
 body.ereri-index .ereri-card {
@@ -188,7 +193,6 @@ body.ereri-index .ereri-card {
     inset 0 0 0 1px rgba(255, 255, 255, 0.35);
 
   padding: 70px 80px;
-  margin-top: 0;
 
   animation:
     ereriFadeIn 1.2s ease forwards,
@@ -199,6 +203,7 @@ body.ereri-index .ereri-card::before {
   content: "";
   position: absolute;
   inset: 14px;
+
   border-radius: 20px 18px 22px 20px;
   border: 1px solid rgba(120, 140, 135, 0.28);
   pointer-events: none;
@@ -215,7 +220,7 @@ body.ereri-index .ereri-card::before {
 }
 
 /* =====================================================
-   TOC — STAGGERED APPEAR (INDEX)
+   TOC — STAGGERED LINKS (FIXED)
    ===================================================== */
 
 .ereri-index .ereri-toc li {
@@ -238,7 +243,7 @@ body.ereri-index .ereri-card::before {
 }
 
 /* =====================================================
-   MOBILE — INDEX UNIQUEMENT (SAFE)
+   MOBILE — INDEX ONLY (SAFE)
    ===================================================== */
 
 @media (max-width: 768px) {
@@ -246,18 +251,21 @@ body.ereri-index .ereri-card::before {
   .ereri-index .ereri-nav {
     position: sticky;
     top: 0;
+
     padding: 12px 18px;
     padding-top: calc(env(safe-area-inset-top) + 10px);
+
     gap: 18px;
     font-size: 0.75rem;
   }
 
   body.ereri-index .ereri-page {
-    padding-top: 12px;     /* 🔑 très proche de la nav */
+    padding-top: 12px;
     padding-bottom: 40px;
   }
 
   body.ereri-index .ereri-card {
+    margin: 0 14px;
     padding: 42px 26px;
     border-radius: 22px;
   }
