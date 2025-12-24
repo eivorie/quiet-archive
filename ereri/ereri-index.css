@@ -1,10 +1,10 @@
 /* =====================================================
-   Ereri – Index Theme (FINAL CLEAN VERSION)
+   Ereri – Index Theme (FINAL CLEAN — SAFE)
    ===================================================== */
 
-/* -----------------------------------------------------
-   Base & sécurité
-   ----------------------------------------------------- */
+/* =====================================================
+   BASE
+   ===================================================== */
 
 html,
 body {
@@ -44,9 +44,9 @@ body.ereri-index {
   50%      { background-position: 10% 6%; }
 }
 
-/* -----------------------------------------------------
-   Voiles de correction
-   ----------------------------------------------------- */
+/* =====================================================
+   VOILES
+   ===================================================== */
 
 body.ereri-index::before,
 body.ereri-index::after {
@@ -75,9 +75,9 @@ body.ereri-index::before {
     );
 }
 
-/* -----------------------------------------------------
-   Ambient
-   ----------------------------------------------------- */
+/* =====================================================
+   AMBIENT
+   ===================================================== */
 
 .ereri-ambient {
   position: fixed;
@@ -86,9 +86,9 @@ body.ereri-index::before {
   z-index: 0;
 }
 
-/* -----------------------------------------------------
-   Navbar — alignée Home / Memories
-   ----------------------------------------------------- */
+/* =====================================================
+   NAVBAR (INDEX)
+   ===================================================== */
 
 .ereri-index .ereri-nav {
   position: fixed;
@@ -116,7 +116,6 @@ body.ereri-index::before {
 .ereri-index .ereri-nav a {
   position: relative;
   padding: 2px 0;
-
   color: rgba(185, 205, 200, 0.75);
   text-decoration: none;
   transition: color 0.4s ease;
@@ -127,16 +126,13 @@ body.ereri-index::before {
   position: absolute;
   left: 0;
   bottom: -6px;
-
   width: 0%;
   height: 1px;
-
   background: linear-gradient(
     to right,
     rgba(180, 210, 220, 0.6),
     rgba(180, 210, 220, 0)
   );
-
   transition: width 0.6s ease;
 }
 
@@ -148,31 +144,27 @@ body.ereri-index::before {
   width: 100%;
 }
 
-/* -----------------------------------------------------
-   Page layout — INDEX ERERI
-   ----------------------------------------------------- */
+/* =====================================================
+   PAGE LAYOUT — INDEX UNIQUEMENT
+   ===================================================== */
 
-.ereri-page {
+body.ereri-index .ereri-page {
   min-height: calc(100vh - 120px);
 
   display: flex;
   justify-content: center;
   align-items: flex-start;
 
-  padding-top: 120px;
+  padding-top: 72px;      /* 🔑 rapproché de la nav */
   padding-bottom: 90px;
+  margin: 0;
 }
 
-/* 🔑 Ajustement spécifique INDEX : carte légèrement remontée */
-body.ereri-index .ereri-page {
-  padding-top: 88px;
-}
+/* =====================================================
+   CARTE — INDEX
+   ===================================================== */
 
-/* -----------------------------------------------------
-   Carte Ereri (index)
-   ----------------------------------------------------- */
-
-.ereri-card {
+body.ereri-index .ereri-card {
   position: relative;
   z-index: 1;
 
@@ -196,17 +188,17 @@ body.ereri-index .ereri-page {
     inset 0 0 0 1px rgba(255, 255, 255, 0.35);
 
   padding: 70px 80px;
+  margin-top: 0;
 
   animation:
     ereriFadeIn 1.2s ease forwards,
     ereriCardFloat 12s ease-in-out 1.2s infinite;
 }
 
-.ereri-card::before {
+body.ereri-index .ereri-card::before {
   content: "";
   position: absolute;
   inset: 14px;
-
   border-radius: 20px 18px 22px 20px;
   border: 1px solid rgba(120, 140, 135, 0.28);
   pointer-events: none;
@@ -223,41 +215,15 @@ body.ereri-index .ereri-page {
 }
 
 /* =====================================================
-   FIX — Remonter la carte sur l’index Ereri
-   ===================================================== */
-
-/* On neutralise le margin-top hérité des stories */
-body.ereri-index .ereri-card {
-  margin-top: 0;
-}
-
-/* On réduit légèrement l’espace sous la nav */
-body.ereri-index .ereri-page {
-  padding-top: 80px;
-}
-
-/* =====================================================
-   ERERI INDEX — NAV SPACING FIX
-   ===================================================== */
-
-.ereri-index .ereri-page {
-  padding-top: 72px;   /* juste sous la nav */
-  margin-top: 0;       /* annule styles-ereri */
-}
-
-
-/* =====================================================
-   ERERI — TOC staggered appearance (FIX)
+   TOC — STAGGERED APPEAR (INDEX)
    ===================================================== */
 
 .ereri-index .ereri-toc li {
   opacity: 0;
   transform: translateY(6px);
-
   animation: ereriTocAppear 0.8s ease forwards;
 }
 
-/* stagger */
 .ereri-index .ereri-toc li:nth-child(1) { animation-delay: 0.15s; }
 .ereri-index .ereri-toc li:nth-child(2) { animation-delay: 0.25s; }
 .ereri-index .ereri-toc li:nth-child(3) { animation-delay: 0.35s; }
@@ -271,38 +237,27 @@ body.ereri-index .ereri-page {
   }
 }
 
-
-/* -----------------------------------------------------
-   Mobile — alignement Home / Memories
-   ----------------------------------------------------- */
+/* =====================================================
+   MOBILE — INDEX UNIQUEMENT (SAFE)
+   ===================================================== */
 
 @media (max-width: 768px) {
 
-  /* NAV */
   .ereri-index .ereri-nav {
     position: sticky;
     top: 0;
-
     padding: 12px 18px;
     padding-top: calc(env(safe-area-inset-top) + 10px);
-
     gap: 18px;
     font-size: 0.75rem;
   }
-   
-   .ereri-index .ereri-card {
-    padding-top: 36px;
+
+  body.ereri-index .ereri-page {
+    padding-top: 12px;     /* 🔑 très proche de la nav */
+    padding-bottom: 40px;
   }
 
-  /* PAGE — supprime le gros trou */
-  .ereri-page {
-    padding-top: 32px !important;
-    margin-top: 0;
-  }
-
-  /* CARTE — respiration latérale */
-  .ereri-card {
-    margin: 0;
+  body.ereri-index .ereri-card {
     padding: 42px 26px;
     border-radius: 22px;
   }
