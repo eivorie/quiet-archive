@@ -5,7 +5,6 @@
 .ereri-story-page {
   display: flex;
   justify-content: center;
-  padding: 80px 20px;
 }
 
 /* =====================================================
@@ -187,19 +186,18 @@
 
 @media (max-width: 900px) {
 
+  .ereri-story-page {
+    padding-top: 56px;   /* hauteur réelle de la nav */
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 40px;
+  }
+
   .ereri-story .ereri-card {
     max-width: 100%;
     padding: 32px 22px;
     border-radius: 22px;
     margin: 0;
-  }
-
-    .ereri-story-page {
-    padding-top: 64px;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 40px;
-  }
   }
 
   .ereri-story h1 {
@@ -210,3 +208,4 @@
     max-width: 260px;
   }
 }
+
