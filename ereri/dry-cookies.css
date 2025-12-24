@@ -15,6 +15,10 @@
   z-index: 1;
 }
 
+.ereri-story .ereri-content.oneshot-text {
+  max-width: none;
+}
+
 
 /* -----------------------------------------------------
    Carte — vert chaud, cuisine, intérieur
