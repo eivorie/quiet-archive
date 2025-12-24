@@ -235,12 +235,20 @@
     max-width: 100%;
   }
 
-  /* Pages story Ereri — compensation exacte navbar */
+   /* Page story : on enlève la contrainte centrale */
   .ereri-story .ereri-page {
-    padding: 72px 16px 40px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
+  /* Carte story : largeur visuelle identique aux autres pages */
   .ereri-story .ereri-card {
-    margin-top: 16px;
+    max-width: none;        /* 🔑 clé principale */
+    width: auto;
+
+    margin: 0 14px;         /* même respiration que Home */
+    padding: 42px 28px;
+
+    border-radius: 22px;
   }
 }
