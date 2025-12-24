@@ -2,6 +2,12 @@
    dry cookies — Ereri one-shot (GREEN HARMONY)
    ===================================================== */
 
+.ereri-story-page {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
 /* =====================================================
    Ambient — kitchen warmth (dry cookies)
    ===================================================== */
@@ -185,8 +191,11 @@
     max-width: 100%;
     padding: 32px 22px;
     border-radius: 22px;
-    margin-left: 14px;
-    margin-right: 14px;
+    margin: 0;
+  }
+
+    .ereri-story-page {
+    padding: 40px 16px;
   }
 
   .ereri-story h1 {
