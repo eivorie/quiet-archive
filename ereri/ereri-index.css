@@ -2,7 +2,9 @@
    Ereri – Index Theme (FINAL CLEAN VERSION)
    ===================================================== */
 
-/* --------- Base & sécurité --------- */
+/* -----------------------------------------------------
+   Base & sécurité
+   ----------------------------------------------------- */
 
 html,
 body {
@@ -39,13 +41,15 @@ body.ereri-index {
 
 @keyframes ereriBreath {
   0%, 100% { background-position: 0% 0%; }
-  50% { background-position: 10% 6%; }
+  50%      { background-position: 10% 6%; }
 }
 
-/* --------- Voiles de correction --------- */
+/* -----------------------------------------------------
+   Voiles de correction
+   ----------------------------------------------------- */
 
-body.ereri-index::after,
-body.ereri-index::before {
+body.ereri-index::before,
+body.ereri-index::after {
   content: "";
   position: fixed;
   inset: 0;
@@ -71,9 +75,9 @@ body.ereri-index::before {
     );
 }
 
-/* =====================================================
-   AMBIENT
-   ===================================================== */
+/* -----------------------------------------------------
+   Ambient
+   ----------------------------------------------------- */
 
 .ereri-ambient {
   position: fixed;
@@ -82,9 +86,9 @@ body.ereri-index::before {
   z-index: 0;
 }
 
-/* =====================================================
-   NAVBAR — ALIGNÉE HOME / MEMORIES
-   ===================================================== */
+/* -----------------------------------------------------
+   Navbar — alignée Home / Memories
+   ----------------------------------------------------- */
 
 .ereri-index .ereri-nav {
   position: fixed;
@@ -112,6 +116,7 @@ body.ereri-index::before {
 .ereri-index .ereri-nav a {
   position: relative;
   padding: 2px 0;
+
   color: rgba(185, 205, 200, 0.75);
   text-decoration: none;
   transition: color 0.4s ease;
@@ -125,11 +130,13 @@ body.ereri-index::before {
 
   width: 0%;
   height: 1px;
+
   background: linear-gradient(
     to right,
     rgba(180, 210, 220, 0.6),
     rgba(180, 210, 220, 0)
   );
+
   transition: width 0.6s ease;
 }
 
@@ -141,12 +148,13 @@ body.ereri-index::before {
   width: 100%;
 }
 
-/* =====================================================
-   PAGE LAYOUT
-   ===================================================== */
+/* -----------------------------------------------------
+   Page layout — INDEX ERERI
+   ----------------------------------------------------- */
 
 .ereri-page {
   min-height: calc(100vh - 120px);
+
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -155,9 +163,14 @@ body.ereri-index::before {
   padding-bottom: 90px;
 }
 
-/* =====================================================
-   CARTE ERERI
-   ===================================================== */
+/* 🔑 Ajustement spécifique INDEX : carte légèrement remontée */
+body.ereri-index .ereri-page {
+  padding-top: 88px;
+}
+
+/* -----------------------------------------------------
+   Carte Ereri (index)
+   ----------------------------------------------------- */
 
 .ereri-card {
   position: relative;
@@ -193,6 +206,7 @@ body.ereri-index::before {
   content: "";
   position: absolute;
   inset: 14px;
+
   border-radius: 20px 18px 22px 20px;
   border: 1px solid rgba(120, 140, 135, 0.28);
   pointer-events: none;
@@ -205,12 +219,12 @@ body.ereri-index::before {
 
 @keyframes ereriCardFloat {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50%      { transform: translateY(-6px); }
 }
 
-/* =====================================================
-   MOBILE — ALIGNEMENT HOME / MEMORIES
-   ===================================================== */
+/* -----------------------------------------------------
+   Mobile — alignement Home / Memories
+   ----------------------------------------------------- */
 
 @media (max-width: 768px) {
 
@@ -226,12 +240,12 @@ body.ereri-index::before {
     font-size: 0.75rem;
   }
 
-  /* PAGE — SUPPRIME LE GROS TROU */
+  /* PAGE — supprime le gros trou */
   .ereri-page {
     padding-top: 32px;
   }
 
-  /* CARTE — RESPIRATION LATÉRALE COMME HOME */
+  /* CARTE — respiration latérale */
   .ereri-card {
     margin: 0 14px;
     padding: 42px 26px;
