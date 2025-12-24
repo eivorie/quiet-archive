@@ -138,13 +138,15 @@
   color: rgba(250, 252, 250, 0.9);
 }
 
+
 /* -----------------------------------------------------
    Typographie — alignée Paris / Territory
    ----------------------------------------------------- */
 
 .ereri-story .oneshot-text {
   font-family: "Libre Baskerville", serif;
-  color: rgba(240, 245, 248, 0.88);
+  max-width: none; /* 🔓 libère la largeur */
+  color: rgba(235, 240, 242, 0.82); /* 🔥 écrase le marron */
   line-height: 1.85;
   font-size: 1.02rem;
 
@@ -160,7 +162,6 @@
 .ereri-story .oneshot-text p:nth-child(3n) {
   margin-bottom: 1.8em;
 }
-
 
 /* -----------------------------------------------------
    Responsive
