@@ -156,11 +156,6 @@ Page layout — INDEX ERERI
   padding-bottom: 90px;
 }
 
-/* 🔑 Ajustement spécifique INDEX : carte légèrement remontée */
-body.ereri-index .ereri-page {
-  padding-top: 88px;
-}
-
 /* -----------------------------------------------------
 Carte Ereri (index)
 ----------------------------------------------------- */
@@ -221,16 +216,12 @@ body.ereri-index .ereri-card {
   margin-top: 0;
 }
 
-body.ereri-index .ereri-page {
-  padding-top: 80px;
-}
-
 /* =====================================================
 ERERI INDEX — NAV SPACING FIX
 ===================================================== */
 
 .ereri-index .ereri-page {
-  padding-top: 72px;
+  padding-top: 64px;
   margin-top: 0;
 }
 
@@ -269,16 +260,14 @@ Mobile — alignement Home / Memories
     font-size: 0.75rem;
   }
 
-  @media (max-width: 768px) {
+  /* 🔑 FIX MOBILE INDEX */
+  body.ereri-index .ereri-page {
+    padding-top: 24px;   /* ← clé du problème */
+    padding-bottom: 40px;
+  }
 
-    body.ereri-index .ereri-page {
-      /* padding-top: 12px; */
-      padding-bottom: 40px;
-    }
-
-    body.ereri-index .ereri-card {
-      margin-top: 0;
-    }
+  body.ereri-index .ereri-card {
+    margin: 0;
   }
 
   .ereri-card {
@@ -287,3 +276,4 @@ Mobile — alignement Home / Memories
     border-radius: 22px;
   }
 }
+
