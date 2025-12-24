@@ -6,8 +6,10 @@
    Fond & héritage
    ----------------------------------------------------- */
 
-.ereri-story .page {
-  background: transparent;
+.ereri-story-page {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
 }
 
 .ereri-story .ereri-page {
