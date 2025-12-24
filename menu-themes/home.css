@@ -179,13 +179,13 @@ body {
   background:
     radial-gradient(
       circle at 50% 20%,
-      rgba(255,255,255,0.25),
+      rgba(255,255,255,0.10),
       transparent 60%
     ),
     linear-gradient(
       to bottom,
-      rgba(236,241,244,0.96),
-      rgba(215,222,226,0.92)
+      rgba(190, 200, 205, 0.68),
+      rgba(170, 180, 185, 0.62)
     );
 
   color: #243035;
@@ -193,14 +193,18 @@ body {
 
   box-shadow:
     /* ancrage dans le décor */
-    0 90px 160px rgba(0,0,0,0.65),
-    0 35px 55px rgba(0,0,0,0.45),
+    0 100px 220px rgba(0,0,0,0.7),
+    0 40px 80px rgba(0,0,0,0.45),
 
-    /* relief interne */
-    inset 0 2px 4px rgba(255,255,255,0.6),
-    inset 0 -12px 30px rgba(0,0,0,0.08);
+    /* souffle interne */
+    inset 0 1px 2px rgba(255,255,255,0.35),
+    inset 0 -10px 24px rgba(0,0,0,0.10);
 
   padding: 84px 78px;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
   animation: homeCardAppear 1.6s ease-out;
 }
 
@@ -211,12 +215,12 @@ body {
   inset: 16px;
 
   border-radius: 22px;
-  border: 1px solid rgba(160,175,185,0.55);
+  border: 1px solid rgba(140,155,165,0.32);
 
   box-shadow:
-    inset 0 0 50px rgba(255,255,255,0.45),
-    inset 0 0 140px rgba(170,185,195,0.35),
-    inset 0 -40px 60px rgba(0,0,0,0.12);
+    inset 0 0 30px rgba(255,255,255,0.25),
+    inset 0 0 120px rgba(160,175,185,0.22),
+    inset 0 -30px 50px rgba(0,0,0,0.10);
 
   pointer-events: none;
 }
