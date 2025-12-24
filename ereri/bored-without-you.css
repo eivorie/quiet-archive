@@ -112,10 +112,22 @@
   margin-bottom: 40px;
 }
 
-/* -----------------------------------------------------
-   Illustration — héritée du style global
-   (aucune redéfinition nécessaire)
-   ----------------------------------------------------- */
+/* =====================================================
+   Image — containment FIX (desktop + mobile)
+   ===================================================== */
+
+.ereri-story .story-illustration {
+  max-width: 100%;
+  overflow: hidden; /* 🔑 empêche tout débord */
+}
+
+.ereri-story .story-illustration img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
 
 /* -----------------------------------------------------
    Responsive
