@@ -270,57 +270,39 @@ body {
 ----------------------------------------------------- */
 
 .always-trigger {
-  display: inline-block;
+  position: relative;
 
-  padding: 10px 22px;
-  border-radius: 999px;
+  background: none;
+  border: none;
+  padding: 0;
 
   font-family: var(--home-font);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
 
-  color: rgba(30, 45, 55, 0.9);
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(245,250,252,0.85),
-      rgba(225,235,240,0.75)
-    );
-
-  border: 1px solid rgba(170,190,200,0.55);
-
-  box-shadow:
-    0 8px 24px rgba(0,0,0,0.25),
-    inset 0 1px 0 rgba(255,255,255,0.75);
+  color: rgba(200, 215, 225, 0.85);
 
   cursor: pointer;
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    background 0.35s ease;
 }
 
 .always-trigger::after {
   content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -10px;
+  display: block;
 
-  width: 0%;
+  width: 36px;
   height: 1px;
+
+  margin: 10px auto 0;
 
   background: linear-gradient(
     to right,
     transparent,
-    rgba(200,215,225,0.75),
+    rgba(200,215,225,0.85),
     transparent
   );
 
-  transform: translateX(-50%);
-  transition: width 0.6s ease;
+  opacity: 0.8;
 }
 
 .always-trigger:hover {
