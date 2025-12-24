@@ -1,26 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const trigger = document.querySelector(".always-trigger");
-  const letter = document.querySelector(".hidden-letter");
+  const toggle = document.getElementById("alwaysToggle");
+  const letter = document.getElementById("hiddenLetter");
 
-  if (!trigger || !letter) return;
+  if (!toggle || !letter) return;
 
-  trigger.addEventListener("click", () => {
-    // reveal
-    letter.style.display = "block";
+  toggle.addEventListener("click", () => {
+    const isOpen = letter.classList.contains("is-visible");
 
-    // a11y
-    trigger.setAttribute("aria-expanded", "true");
-    letter.setAttribute("aria-hidden", "false");
+    if (isOpen) {
+      // Fermer
+      letter.classList.remove("is-visible");
+      letter.style.display = "none";
 
-    // scroll doux
-    letter.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+      toggle.setAttribute("aria-expanded", "false");
+      letter.setAttribute("aria-hidden", "true");
+    } else {
+      // Ouvrir
+      letter.style.display = "block";
+      letter.classList.add("is-visible");
 
-    // optionnel : empêcher un second clic
-    trigger.disabled = true;
-    trigger.style.cursor = "default";
-    trigger.style.opacity = "0.4";
+      toggle.setAttribute("aria-expanded", "true");
+      letter.setAttribute("aria-hidden", "false");
+
+      // Scroll doux vers la lettre
+      letter.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
   });
 });
