@@ -44,6 +44,7 @@ body.weather-needy .nav {
   font-family: "Cormorant Garamond", serif;
   letter-spacing: .22em;
   font-size: .72rem;
+  text-transform: uppercase;
 
   padding: 16px 26px;
   gap: 28px;
@@ -60,6 +61,7 @@ body.weather-needy .nav a {
   color: rgba(230,205,205,.82);
   text-decoration: none;
   transition: color .25s ease;
+  text-transform: uppercase;
 }
 
 body.weather-needy .nav a:hover {
