@@ -151,12 +151,13 @@ body.weather-needy .weather-card::after {
 body.weather-needy .weather-title {
   font-family: "Cormorant Garamond", serif;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 300;
+  margin-bottom: 28px;
 
   font-size: 2.05rem;
   letter-spacing: .04em;
 
-  color: rgba(255, 230, 236, .96);
+  color: rgba(245, 220, 222, 0.88);
 
   text-shadow:
     0 1px 0 rgba(0,0,0,.55),
