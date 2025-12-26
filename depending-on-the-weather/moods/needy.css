@@ -150,7 +150,7 @@ body.weather-needy .weather-card::after {
 
 body.weather-needy .weather-title {
   font-family: "Cormorant Garamond", serif;
-  font-style: italic;
+  //font-style: italic;
   font-weight: 300;
   margin-bottom: 28px;
 
