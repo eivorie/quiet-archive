@@ -1,0 +1,167 @@
+/* =====================================================
+   Depending on the Weather — NEEDY MOOD
+   Bordeaux / Warm Dark Gradient
+   ===================================================== */
+
+body.weather-needy {
+  /* fond animé */
+  background:
+    radial-gradient(
+      circle at 28% 22%,
+      rgba(175, 70, 70, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 70% 68%,
+      rgba(110, 40, 40, 0.32),
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom,
+      #703239 0%,
+      #4c1f24 45%,
+      #2a1114 100%
+    );
+
+  background-size: 140% 140%;
+  animation: needyBreath 24s ease-in-out infinite;
+  color: rgba(245, 235, 235, 0.9);
+}
+
+@keyframes needyBreath {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 10% 6%; }
+}
+
+/* voile chaud & profondeur */
+body.weather-needy::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 78%,
+      rgba(0,0,0,0.45),
+      transparent 65%
+    );
+}
+
+body.weather-needy::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 38% 28%,
+      rgba(255,255,255,0.035),
+      transparent 60%
+    );
+}
+
+/* ambient particles — même logique que les autres */
+.weather-needy .weather-ambient {
+  mix-blend-mode: soft-light;
+  opacity: .55;
+}
+
+/* =====================================================
+   NAV — nuance bordeaux fumée
+   ===================================================== */
+
+.weather-needy .weather-nav {
+  background: rgba(48, 20, 24, 0.55);
+  border-bottom: 1px solid rgba(255, 235, 235, 0.08);
+}
+
+.weather-needy .weather-nav a {
+  color: rgba(235, 200, 205, 0.78);
+}
+
+.weather-needy .weather-nav a::after {
+  background: linear-gradient(
+    to right,
+    rgba(220,150,160,0.7),
+    rgba(220,150,160,0)
+  );
+}
+
+.weather-needy .weather-nav a:hover {
+  color: rgba(255, 235, 238, 0.95);
+}
+
+/* =====================================================
+   CARD — velours sombre, chaleur intérieure
+   ===================================================== */
+
+.weather-needy .weather-card {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(78, 32, 36, 0.70),
+      rgba(46, 18, 20, 0.82)
+    );
+
+  border-radius: 28px 24px 32px 26px;
+
+  box-shadow:
+    0 60px 140px rgba(0,0,0,0.65),
+    0 18px 48px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255, 220, 225, 0.08);
+
+  animation:
+    needyAppear 1.2s ease-out,
+    needyFloat 14s ease-in-out 1.2s infinite;
+}
+
+@keyframes needyAppear {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes needyFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* cadre intérieur subtil rosé */
+.weather-needy .weather-card::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 22px 20px 26px 22px;
+  border: 1px solid rgba(235, 180, 185, 0.16);
+  pointer-events: none;
+}
+
+/* =====================================================
+   TYPO — douceur chaude
+   ===================================================== */
+
+.weather-needy .weather-title {
+  color: rgba(255, 235, 238, 0.96);
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.45),
+    0 10px 32px rgba(0,0,0,0.45);
+}
+
+.weather-needy .weather-content p {
+  color: rgba(245, 230, 232, 0.86);
+}
+
+/* blocs de fin — souffle plus doux */
+.weather-needy .weather-ending {
+  color: rgba(255, 240, 242, 0.92);
+  letter-spacing: .03em;
+}
