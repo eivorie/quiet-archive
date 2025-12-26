@@ -37,7 +37,7 @@ body.weather-needy {
 }
 
 /* -----------------------------------------------------
-   NAV — fondue dans le décor, moins contrastée
+   NAV — fondue dans le décor
 ----------------------------------------------------- */
 
 body.weather-needy .nav {
@@ -69,7 +69,7 @@ body.weather-needy .nav a:hover {
 }
 
 /* -----------------------------------------------------
-   CARTE — velours bordeaux sombre + relief interne
+   CARTE — velours bordeaux + profondeur
 ----------------------------------------------------- */
 
 body.weather-needy .weather-card {
@@ -128,7 +128,7 @@ body.weather-needy .weather-card::before {
   opacity: .55;
 }
 
-/* liserets dorés — coins travaillés */
+/* liserets dorés */
 body.weather-needy .weather-card::after {
   content: "";
   position: absolute;
@@ -145,17 +145,18 @@ body.weather-needy .weather-card::after {
 }
 
 /* -----------------------------------------------------
-   TYPO — plus “érotique”, organique
+   TITRE — fin, sensuel + soulignement doré animé
 ----------------------------------------------------- */
 
 body.weather-needy .weather-title {
+  position: relative;
+
   font-family: "Cormorant Garamond", serif;
-  //font-style: italic;
   font-weight: 300;
-  margin-bottom: 28px;
 
   font-size: 2.05rem;
   letter-spacing: .04em;
+  margin-bottom: 30px;
 
   color: rgba(245, 220, 222, 0.88);
 
@@ -164,26 +165,63 @@ body.weather-needy .weather-title {
     0 12px 34px rgba(0,0,0,.55);
 }
 
-body.weather-needy .weather-content {
-  margin-top: 18px;
+/* soulignement doré */
+body.weather-needy .weather-title::after {
+  content: "";
+  display: block;
+
+  width: 46px;
+  height: 1px;
+  margin: 18px auto 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(210,175,125,0),
+    rgba(210,175,125,.75),
+    rgba(210,175,125,0)
+  );
+
+  opacity: .75;
+  filter: blur(.3px);
+
+  animation: needyUnderline 6s ease-in-out infinite;
 }
 
-/* corps — plus charnel */
+@keyframes needyUnderline {
+  0%,100% {
+    width: 42px;
+    opacity: .5;
+  }
+  50% {
+    width: 64px;
+    opacity: .9;
+  }
+}
+
+/* -----------------------------------------------------
+   TEXTE — fin, fondu, charnel
+----------------------------------------------------- */
+
+body.weather-needy .weather-content {
+  margin-top: 20px;
+}
+
 body.weather-needy .weather-content p {
   font-family: "Spectral", serif;
   font-style: italic;
   font-size: 0.88rem;
   line-height: 1.85;
+  font-weight: 300;
+
   color: rgba(232, 205, 208, 0.82);
 }
 
 /* -----------------------------------------------------
-   ACCENTS — blocs plus sombres / relief émotionnel
+   ACCENTS — relief émotionnel
 ----------------------------------------------------- */
 
-/* blocs “darker” */
 body.weather-needy .weather-content p:nth-child(odd) {
-  color: rgba(255, 230, 235, .94);
+  color: rgba(245, 220, 225, .90);
 }
 
 body.weather-needy .weather-content p.emphasis,
@@ -194,14 +232,16 @@ body.weather-needy .weather-content p[class*="shift"] {
     rgba(110, 35, 45, .32),
     rgba(70, 18, 25, .38)
   );
+
   border-radius: 12px;
   padding: 10px 14px;
+
   box-shadow:
     inset 0 0 0 1px rgba(210,160,150,.16),
     0 10px 24px rgba(0,0,0,.35);
 }
 
-/* fins de texte — souffle chaud */
+/* fins de texte */
 body.weather-needy .weather-ending {
   color: rgba(255, 238, 240, .96);
   letter-spacing: .03em;
