@@ -91,8 +91,8 @@ body.weather-needy .weather-card {
     inset 0 0 0 1px rgba(255,225,225,.06);
 
   animation:
-    needyAppear 1.1s ease-out both,
-    needyFloat 14s ease-in-out 1.1s infinite;
+  needyAppear 1.6s ease-out both,
+  needyFloat 14s ease-in-out 1.6s infinite;
 }
 
 @keyframes needyAppear {
