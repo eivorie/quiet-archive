@@ -1,9 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
   const threads = document.querySelectorAll(".text-thread");
 
-  threads.forEach(thread => {
-    const messages = Array.from(thread.querySelectorAll(".text"));
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startThread(entry.target);
+          observer.unobserve(entry.target); // une seule fois
+        }
+      });
+    },
+    {
+      threshold: 0.35 // 35% visible = lecture confortable
+    }
+  );
 
+  threads.forEach(thread => observer.observe(thread));
+
+  function startThread(thread) {
+    const messages = Array.from(thread.querySelectorAll(".text"));
     let index = 0;
 
     const typingIndicator = document.createElement("div");
@@ -50,8 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const typingDuration =
         author === "levi"
-          ? 1800 + Math.random() * 1200
-          : 1200 + Math.random() * 800;
+          ? 2200 + Math.random() * 1600
+          : 1400 + Math.random() * 1000;
 
       setTimeout(() => {
         hideTyping();
@@ -59,12 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
           showMessage(msg);
           index++;
-
           setTimeout(nextMessage, 900);
         }, 400);
       }, typingDuration);
     }
 
-    setTimeout(nextMessage, 800);
-  });
+    // petit temps de respiration après l’arrivée à l’écran
+    setTimeout(nextMessage, 600);
+  }
 });
