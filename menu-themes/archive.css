@@ -385,9 +385,7 @@ body.archive .nav a:hover::after {
 
      /* flow normal */
   .archive-page {
-    min-height: auto;
     padding-top: 32px;
     padding-bottom: 48px;
-    display: block;
   }
 }
