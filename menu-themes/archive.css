@@ -242,36 +242,52 @@ body.archive .nav a:hover::after {
 }
 
 /* =====================================================
-   MOBILE — CLEAN & SAFE
+   MOBILE PATCH — NO DUPLICATE CARD / NAV SAFE
    ===================================================== */
 
 @media (max-width: 768px) {
 
+  /* sécurité globale */
   html, body {
     overflow-x: hidden;
   }
 
+  /* fond : plus de fixed sur mobile */
   body.archive::before,
   body.archive::after {
     position: absolute;
+    inset: 0;
   }
 
+  /* page : pas de faux vide */
   .archive-page {
     min-height: auto;
-    padding-top: 32px;
     padding-bottom: 48px;
     display: block;
   }
 
+  /* carte : UNE SEULE, contenue */
   .archive-card {
     width: calc(100% - 28px);
-    padding: 44px 28px;
-    border-radius: 22px;
+    max-width: none;
     margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
+  /* décor carte : JAMAIS hors cadre */
+  .archive-card::before,
+  .archive-card::after {
+    inset: 0;
+    opacity: 0.35;
+    filter: blur(22px);
+  }
+
+  /* date / titres : jamais hors cadre */
+  .archive-entry-date,
   .archive-card h1 {
-    font-size: 1.8rem;
-    margin-bottom: 36px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 }
+
