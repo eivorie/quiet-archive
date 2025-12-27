@@ -1,37 +1,36 @@
 /* =====================================================
    OUR ARCHIVE — PERSONAL JOURNAL
-   Harmonized with Ereri & Weather
+   Quiet, intimate, aligned with Weather
    ===================================================== */
 
 /* -----------------------------------------------------
-   BASE — fond respirant, neutre
+   BASE — fond feutré, mat, respirant
 ----------------------------------------------------- */
 
 body.archive {
   font-family: "Cormorant Garamond", serif;
-  color: #2f312e;
+  color: rgba(45,50,47,0.9);
 
   background:
     radial-gradient(
       circle at 30% 25%,
-      rgba(210, 225, 218, 0.35),
+      rgba(170, 185, 175, 0.22),
       transparent 55%
     ),
     radial-gradient(
       circle at 70% 70%,
-      rgba(185, 200, 195, 0.25),
+      rgba(140, 155, 145, 0.18),
       transparent 60%
     ),
     linear-gradient(
       to bottom,
-      #6b716b 0%,
-      #4c514c 45%,
-      #2a2c28 100%
+      #5f655e,
+      #4a4f48,
+      #32352f
     );
 
   background-size: 140% 140%;
-  background-blend-mode: soft-light;
-  animation: archiveBreath 24s ease-in-out infinite;
+  animation: archiveBreath 26s ease-in-out infinite;
 }
 
 @keyframes archiveBreath {
@@ -40,7 +39,7 @@ body.archive {
 }
 
 /* -----------------------------------------------------
-   NAV — alignée site
+   NAV — strictement alignée Weather
 ----------------------------------------------------- */
 
 body.archive .nav {
@@ -55,11 +54,11 @@ body.archive .nav {
   padding: 14px 24px;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 
-  background: rgba(40, 46, 44, 0.55);
+  background: rgba(38, 42, 40, 0.55);
   backdrop-filter: blur(12px);
 
   border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -69,9 +68,10 @@ body.archive .nav {
 body.archive .nav a {
   position: relative;
   padding: 2px 0;
-  color: rgba(210, 220, 215, 0.78);
+
+  color: rgba(185,205,195,0.75);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.4s ease;
 }
 
 body.archive .nav a::after {
@@ -79,20 +79,19 @@ body.archive .nav a::after {
   position: absolute;
   left: 0;
   bottom: -6px;
+
   width: 0%;
   height: 1px;
-
   background: linear-gradient(
     to right,
-    rgba(200,220,215,0.6),
-    rgba(200,220,215,0)
+    rgba(200,215,185,0.6),
+    rgba(200,215,185,0)
   );
-
   transition: width 0.6s ease;
 }
 
 body.archive .nav a:hover {
-  color: rgba(240,245,242,0.95);
+  color: rgba(240,248,235,0.95);
 }
 
 body.archive .nav a:hover::after {
@@ -104,67 +103,87 @@ body.archive .nav a:hover::after {
 ----------------------------------------------------- */
 
 .archive-page {
-  max-width: 900px;
-  margin: 120px auto 90px;
-  padding: 0 32px;
+  min-height: calc(100vh - 120px);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 120px;
+  padding-bottom: 90px;
 }
 
 /* -----------------------------------------------------
-   ARCHIVE CARD — carnet discret
+   ARCHIVE CARD — carnet silencieux
 ----------------------------------------------------- */
 
 .archive-card {
   position: relative;
   z-index: 1;
 
+  max-width: 760px;
+  margin: 0 auto;
+
   background:
-    radial-gradient(
-      circle at 22% 18%,
-      rgba(255,255,255,0.35),
-      transparent 55%
-    ),
     linear-gradient(
       to bottom,
-      rgba(242,244,240,0.94),
-      rgba(228,230,225,0.96)
+      rgba(240,242,238,0.90),
+      rgba(228,230,225,0.94)
     );
 
-  border-radius: 22px;
-  padding: 56px 64px;
+  border-radius: 28px 24px 32px 26px;
 
   box-shadow:
-    0 38px 90px rgba(0,0,0,0.45),
-    0 10px 22px rgba(0,0,0,0.25),
-    inset 0 0 0 1px rgba(255,255,255,0.35);
+    0 60px 140px rgba(0,0,0,0.55),
+    0 20px 45px rgba(0,0,0,0.30),
+    inset 0 0 0 1px rgba(255,255,255,0.28);
 
-  animation: archiveAppear 1.2s ease-out forwards;
+  padding: 72px 72px;
+
+  animation: archiveAppear 1.4s ease-out both;
 }
 
 @keyframes archiveAppear {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(18px) scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
-/* -----------------------------------------------------
-   TITRE — discret, non démonstratif
------------------------------------------------------ */
-
-.archive-card h1 {
-  margin: 0 0 28px;
-  font-size: 2.2rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: #323632;
+/* cadre interne subtil */
+.archive-card::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 22px 20px 26px 22px;
+  border: 1px solid rgba(255,255,255,0.08);
+  pointer-events: none;
 }
 
 /* -----------------------------------------------------
-   LISTE DE PENSÉES — cœur du module
+   TITRE
+----------------------------------------------------- */
+
+.archive-card h1 {
+  margin: 0 0 36px;
+
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+
+  color: rgba(45,50,47,0.95);
+
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.35),
+    0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* -----------------------------------------------------
+   LISTE — DATES UNIQUEMENT
 ----------------------------------------------------- */
 
 .archive-list {
@@ -178,34 +197,47 @@ body.archive .nav a:hover::after {
 }
 
 .archive-list a {
-  display: inline-block;
+  font-size: 1.02rem;
+  letter-spacing: 0.12em;
+  font-variant: small-caps;
 
-  font-family: "Spectral", serif;
-  font-size: 1.05rem;
-  font-style: italic;
-  line-height: 1.6;
-
-  color: rgba(70,75,72,0.85);
+  color: rgba(90,95,92,0.75);
   text-decoration: none;
+  position: relative;
 
-  transition: color 0.25s ease, transform 0.25s ease;
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+.archive-list a::before {
+  content: "— ";
+  opacity: 0.35;
+}
+
+.archive-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(110,120,110,0.55),
+    rgba(110,120,110,0)
+  );
+  transition: width 0.4s ease;
 }
 
 .archive-list a:hover {
-  color: rgba(40,45,42,0.95);
-  transform: translateX(4px);
+  color: rgba(45,50,45,0.95);
+  transform: translateX(6px);
 }
 
-/* date discrète */
-.archive-list .date {
-  display: block;
-  margin-bottom: 4px;
-
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-
-  color: rgba(120,130,125,0.6);
+.archive-list a:hover::after {
+  width: 100%;
 }
 
 /* -----------------------------------------------------
@@ -216,21 +248,18 @@ body.archive .nav a:hover::after {
 
   body.archive .nav {
     gap: 18px;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     padding: 12px 18px;
   }
 
-  .archive-page {
-    padding: 0 20px;
-  }
-
   .archive-card {
-    padding: 42px 28px;
-    border-radius: 20px;
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
   }
 
   .archive-card h1 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 
   .archive-list a {
