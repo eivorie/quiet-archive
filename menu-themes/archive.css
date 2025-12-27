@@ -384,4 +384,10 @@ body.archive .nav a:hover::after {
     font-size: 1.8rem;
     margin-bottom: 36px;
   }
+   
+   body.archive .page {
+    min-height: auto;
+    padding: 0;
+    background: transparent;
+  }
 }
