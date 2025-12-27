@@ -134,23 +134,6 @@ body.archive .nav a:hover::after {
 }
 
 /* =====================================================
-   PAGE — flux & centrage identiques DOTW
-   ===================================================== */
-
-.archive-page {
-  min-height: calc(100vh - 120px);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-
-  padding-top: 120px;
-  padding-bottom: 90px;
-
-  position: relative;
-  z-index: 1;
-}
-
-/* =====================================================
    ARCHIVE CARD — carnet nocturne
    ===================================================== */
 
@@ -354,14 +337,6 @@ body.archive .nav a:hover::after {
   html,
   body {
     overflow-x: hidden;
-  }
-
-  /* flow normal */
-  .archive-page {
-    min-height: auto;
-    padding-top: 32px;
-    padding-bottom: 48px;
-    display: block;
   }
 
   /* carte contenue */
