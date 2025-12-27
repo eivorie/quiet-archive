@@ -1,46 +1,81 @@
 /* =====================================================
-   OUR ARCHIVE — PERSONAL JOURNAL
-   Quiet, intimate, aligned with Weather
+   OUR ARCHIVE — INTIMATE JOURNAL
+   Night ink / old paper palette
    ===================================================== */
 
-/* -----------------------------------------------------
-   BASE — fond feutré, mat, respirant
------------------------------------------------------ */
+/* =====================================================
+   BASE — fond nocturne respirant
+   ===================================================== */
 
 body.archive {
+  position: relative;
+  overflow-x: hidden;
+
   font-family: "Cormorant Garamond", serif;
-  color: rgba(45,50,47,0.9);
+  color: rgba(235, 232, 225, 0.9);
 
   background:
     radial-gradient(
-      circle at 30% 25%,
-      rgba(170, 185, 175, 0.22),
+      circle at 28% 22%,
+      rgba(90, 95, 110, 0.35),
       transparent 55%
     ),
     radial-gradient(
-      circle at 70% 70%,
-      rgba(140, 155, 145, 0.18),
+      circle at 72% 70%,
+      rgba(60, 65, 80, 0.25),
       transparent 60%
     ),
     linear-gradient(
       to bottom,
-      #5f655e,
-      #4a4f48,
-      #32352f
+      #4b4f5a 0%,
+      #343741 45%,
+      #1d1f25 100%
     );
 
   background-size: 140% 140%;
-  animation: archiveBreath 26s ease-in-out infinite;
+  animation: archiveBreath 28s ease-in-out infinite;
 }
 
 @keyframes archiveBreath {
-  0%, 100% { background-position: 0% 0%; }
-  50%      { background-position: 10% 6%; }
+  0%,100% { background-position: 0% 0%; }
+  50%     { background-position: 9% 6%; }
 }
 
-/* -----------------------------------------------------
-   NAV — strictement alignée Weather
------------------------------------------------------ */
+/* vignette basse */
+body.archive::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 75%,
+      rgba(0,0,0,0.55),
+      transparent 65%
+    );
+}
+
+/* grain papier */
+body.archive::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(255,255,255,0.03),
+      transparent 60%
+    );
+}
+
+/* =====================================================
+   NAV — sobre, encre
+   ===================================================== */
 
 body.archive .nav {
   position: fixed;
@@ -53,23 +88,21 @@ body.archive .nav {
 
   padding: 14px 24px;
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 
-  background: rgba(38, 42, 40, 0.55);
+  background: rgba(28, 30, 36, 0.55);
   backdrop-filter: blur(12px);
 
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
   z-index: 10;
 }
 
 body.archive .nav a {
   position: relative;
   padding: 2px 0;
-
-  color: rgba(185,205,195,0.75);
+  color: rgba(210,210,220,0.72);
   text-decoration: none;
   transition: color 0.4s ease;
 }
@@ -79,32 +112,32 @@ body.archive .nav a::after {
   position: absolute;
   left: 0;
   bottom: -6px;
-
   width: 0%;
   height: 1px;
+
   background: linear-gradient(
     to right,
-    rgba(200,215,185,0.6),
-    rgba(200,215,185,0)
+    rgba(200,175,120,0.6),
+    rgba(200,175,120,0)
   );
+
   transition: width 0.6s ease;
 }
 
 body.archive .nav a:hover {
-  color: rgba(240,248,235,0.95);
+  color: rgba(245,242,235,0.95);
 }
 
 body.archive .nav a:hover::after {
   width: 100%;
 }
 
-/* -----------------------------------------------------
-   PAGE LAYOUT
------------------------------------------------------ */
+/* =====================================================
+   PAGE
+   ===================================================== */
 
 .archive-page {
   min-height: calc(100vh - 120px);
-
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -113,40 +146,85 @@ body.archive .nav a:hover::after {
   padding-bottom: 90px;
 }
 
-/* -----------------------------------------------------
-   ARCHIVE CARD — carnet silencieux
------------------------------------------------------ */
+/* =====================================================
+   ARCHIVE CARD — carnet nocturne
+   ===================================================== */
 
 .archive-card {
   position: relative;
   z-index: 1;
 
-  max-width: 760px;
-  margin: 0 auto;
+  max-width: 720px;
+  width: 100%;
 
   background:
     linear-gradient(
       to bottom,
-      rgba(240,242,238,0.90),
-      rgba(228,230,225,0.94)
+      rgba(38, 40, 48, 0.78),
+      rgba(28, 30, 36, 0.88)
     );
 
   border-radius: 28px 24px 32px 26px;
 
   box-shadow:
-    0 60px 140px rgba(0,0,0,0.55),
-    0 20px 45px rgba(0,0,0,0.30),
-    inset 0 0 0 1px rgba(255,255,255,0.28);
+    0 65px 150px rgba(0,0,0,0.75),
+    0 22px 50px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
 
   padding: 72px 72px;
 
-  animation: archiveAppear 1.4s ease-out both;
+  animation:
+    archiveAppear 1.7s ease-out,
+    archiveFloat 18s ease-in-out 1.7s infinite;
 }
+
+/* cadre interne — laiton ancien */
+.archive-card::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 22px 20px 26px 22px;
+
+  border: 1px solid rgba(200,175,120,0.28);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.04),
+    0 0 0 1px rgba(120,100,70,0.25);
+
+  pointer-events: none;
+}
+
+/* voile interne chaud */
+.archive-card::after {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 42% 30%,
+      rgba(210,180,120,0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 70% 78%,
+      rgba(160,140,95,0.18),
+      transparent 65%
+    );
+
+  filter: blur(32px);
+  opacity: 0.42;
+}
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
 
 @keyframes archiveAppear {
   from {
     opacity: 0;
-    transform: translateY(18px) scale(0.98);
+    transform: translateY(22px) scale(0.98);
   }
   to {
     opacity: 1;
@@ -154,37 +232,33 @@ body.archive .nav a:hover::after {
   }
 }
 
-/* cadre interne subtil */
-.archive-card::before {
-  content: "";
-  position: absolute;
-  inset: 14px;
-  border-radius: 22px 20px 26px 22px;
-  border: 1px solid rgba(255,255,255,0.08);
-  pointer-events: none;
+@keyframes archiveFloat {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-6px); }
 }
 
-/* -----------------------------------------------------
+/* =====================================================
    TITRE
------------------------------------------------------ */
+   ===================================================== */
 
 .archive-card h1 {
-  margin: 0 0 36px;
+  margin: 0 0 48px;
+  text-align: center;
 
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 2.2rem;
   letter-spacing: 0.06em;
+  font-weight: 500;
 
-  color: rgba(45,50,47,0.95);
+  color: rgba(245,242,235,0.95);
 
   text-shadow:
-    0 1px 0 rgba(255,255,255,0.35),
-    0 10px 30px rgba(0,0,0,0.15);
+    0 1px 0 rgba(0,0,0,0.45),
+    0 14px 34px rgba(0,0,0,0.55);
 }
 
-/* -----------------------------------------------------
-   LISTE — DATES UNIQUEMENT
------------------------------------------------------ */
+/* =====================================================
+   LISTE — dates seules
+   ===================================================== */
 
 .archive-list {
   list-style: none;
@@ -193,15 +267,15 @@ body.archive .nav a:hover::after {
 }
 
 .archive-list li {
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
 
 .archive-list a {
-  font-size: 1.02rem;
-  letter-spacing: 0.12em;
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
   font-variant: small-caps;
 
-  color: rgba(90,95,92,0.75);
+  color: rgba(215,215,220,0.75);
   text-decoration: none;
   position: relative;
 
@@ -220,19 +294,20 @@ body.archive .nav a:hover::after {
   position: absolute;
   left: 0;
   bottom: -6px;
-
   width: 0%;
   height: 1px;
+
   background: linear-gradient(
     to right,
-    rgba(110,120,110,0.55),
-    rgba(110,120,110,0)
+    rgba(200,175,120,0.55),
+    rgba(200,175,120,0)
   );
+
   transition: width 0.4s ease;
 }
 
 .archive-list a:hover {
-  color: rgba(45,50,45,0.95);
+  color: rgba(245,242,235,0.95);
   transform: translateX(6px);
 }
 
@@ -240,16 +315,19 @@ body.archive .nav a:hover::after {
   width: 100%;
 }
 
-/* -----------------------------------------------------
-   RESPONSIVE
------------------------------------------------------ */
+/* =====================================================
+   MOBILE
+   ===================================================== */
 
 @media (max-width: 768px) {
 
   body.archive .nav {
+    position: sticky;
+    top: 0;
+
+    padding: 12px 18px;
     gap: 18px;
     font-size: 0.75rem;
-    padding: 12px 18px;
   }
 
   .archive-card {
@@ -259,10 +337,7 @@ body.archive .nav a:hover::after {
   }
 
   .archive-card h1 {
-    font-size: 1.7rem;
-  }
-
-  .archive-list a {
-    font-size: 0.95rem;
+    font-size: 1.8rem;
+    margin-bottom: 36px;
   }
 }
