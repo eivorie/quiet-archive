@@ -1,7 +1,7 @@
 /* =====================================================
    OUR ARCHIVE — INTIMATE JOURNAL
    Night ink / old paper palette
-   FINAL — aligned with DOTW
+   FINAL — desktop + mobile clean
    ===================================================== */
 
 /* =====================================================
@@ -42,35 +42,31 @@ body.archive {
   50%     { background-position: 9% 6%; }
 }
 
-/* vignette basse */
+/* fond décoratif */
+body.archive::before,
 body.archive::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-
-  background:
-    radial-gradient(
-      circle at 50% 75%,
-      rgba(0,0,0,0.55),
-      transparent 65%
-    );
 }
 
-/* grain papier */
 body.archive::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-
   background:
     radial-gradient(
       circle at 50% 30%,
       rgba(255,255,255,0.03),
       transparent 60%
+    );
+}
+
+body.archive::after {
+  background:
+    radial-gradient(
+      circle at 50% 75%,
+      rgba(0,0,0,0.55),
+      transparent 65%
     );
 }
 
@@ -134,7 +130,7 @@ body.archive .nav a:hover::after {
 }
 
 /* =====================================================
-   PAGE — flux & centrage identiques DOTW
+   PAGE
    ===================================================== */
 
 .archive-page {
@@ -151,14 +147,14 @@ body.archive .nav a:hover::after {
 }
 
 /* =====================================================
-   ARCHIVE CARD — carnet nocturne
+   CARD
    ===================================================== */
 
 .archive-card {
   position: relative;
   z-index: 1;
 
-  max-width: 760px;   /* MATCH DOTW */
+  max-width: 760px;
   width: 100%;
   margin: 0 auto;
 
@@ -176,94 +172,50 @@ body.archive .nav a:hover::after {
     0 20px 45px rgba(0,0,0,0.40),
     inset 0 0 0 1px rgba(255,255,255,0.05);
 
-  padding: 72px 72px;
+  padding: 72px;
+  overflow: hidden;
 
   animation:
     archiveAppear 1.4s ease-out,
     archiveFloat 14s ease-in-out 1.4s infinite;
 }
 
-/* cadre interne — laiton ancien */
-.archive-card::before {
-  content: "";
-  position: absolute;
-  inset: 14px;
-  border-radius: 22px 20px 26px 22px;
-
-  border: 1px solid rgba(200,175,120,0.28);
-
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.04),
-    0 0 0 1px rgba(120,100,70,0.25);
-
-  pointer-events: none;
-}
-
-/* voile interne chaud */
+.archive-card::before,
 .archive-card::after {
   content: "";
   position: absolute;
-  inset: -18%;
+  inset: 14px;
   pointer-events: none;
+}
 
+.archive-card::before {
+  border-radius: 22px;
+  border: 1px solid rgba(200,175,120,0.28);
+}
+
+.archive-card::after {
+  inset: 0;
   background:
     radial-gradient(
       circle at 42% 30%,
-      rgba(210,180,120,0.22),
+      rgba(210,180,120,0.18),
       transparent 60%
-    ),
-    radial-gradient(
-      circle at 70% 78%,
-      rgba(160,140,95,0.18),
-      transparent 65%
     );
-
-  filter: blur(32px);
-  opacity: 0.42;
+  filter: blur(26px);
+  opacity: 0.35;
 }
 
 /* =====================================================
-   ANIMATIONS
-   ===================================================== */
-
-@keyframes archiveAppear {
-  from {
-    opacity: 0;
-    transform: translateY(18px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes archiveFloat {
-  0%,100% { transform: translateY(0); }
-  50%     { transform: translateY(-6px); }
-}
-
-/* =====================================================
-   TITRE
+   TITRE & LISTE
    ===================================================== */
 
 .archive-card h1 {
   margin: 0 0 48px;
   text-align: center;
-
   font-size: 2.2rem;
   letter-spacing: 0.06em;
   font-weight: 500;
-
-  color: rgba(245,242,235,0.95);
-
-  text-shadow:
-    0 1px 0 rgba(0,0,0,0.45),
-    0 14px 34px rgba(0,0,0,0.55);
 }
-
-/* =====================================================
-   LISTE — dates seules
-   ===================================================== */
 
 .archive-list {
   list-style: none;
@@ -279,36 +231,9 @@ body.archive .nav a:hover::after {
   font-size: 1.05rem;
   letter-spacing: 0.14em;
   font-variant: small-caps;
-
   color: rgba(215,215,220,0.75);
   text-decoration: none;
-  position: relative;
-
-  transition:
-    color 0.4s ease,
-    transform 0.4s ease;
-}
-
-.archive-list a::before {
-  content: "— ";
-  opacity: 0.35;
-}
-
-.archive-list a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 1px;
-
-  background: linear-gradient(
-    to right,
-    rgba(200,175,120,0.55),
-    rgba(200,175,120,0)
-  );
-
-  transition: width 0.4s ease;
+  transition: color 0.4s ease, transform 0.4s ease;
 }
 
 .archive-list a:hover {
@@ -316,82 +241,16 @@ body.archive .nav a:hover::after {
   transform: translateX(6px);
 }
 
-.archive-list a:hover::after {
-  width: 100%;
-}
-
 /* =====================================================
-   MOBILE — IDENTIQUE DOTW
+   MOBILE — CLEAN & SAFE
    ===================================================== */
 
 @media (max-width: 768px) {
 
-  body.archive .nav {
-    position: sticky;
-    top: 0;
-
-    padding: 12px 18px;
-    padding-top: calc(env(safe-area-inset-top) + 10px);
-
-    gap: 18px;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-
-    background: rgba(38, 42, 40, 0.55);
-    backdrop-filter: blur(12px);
-
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .archive-page {
-    min-height: auto;
-    padding-top: 32px;
-    padding-bottom: 60px;
-    display: block;
-  }
-
-  .archive-card {
-    margin: 0 14px;
-    padding: 44px 28px;
-    border-radius: 22px;
-  }
-
-  .archive-card h1 {
-    font-size: 1.8rem;
-    margin-bottom: 36px;
-  }
-}
-
-/* =====================================================
-   MOBILE FIX — overflow right & bottom bar
-   ===================================================== */
-
-@media (max-width: 768px) {
-
-  /* sécurité overflow horizontal */
-  html,
-  body {
+  html, body {
     overflow-x: hidden;
   }
 
-  /* empêche les pseudo-elements de déborder */
-  .archive-card::after,
-  .archive-card::before {
-    inset: 0;
-    filter: blur(22px);
-    opacity: 0.35;
-  }
-
-  /* carte strictement contenue */
-  .archive-card {
-    max-width: 100%;
-    width: calc(100% - 28px);
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-  }
-
-  /* supprime la fausse barre basse (vh + fixed) */
   body.archive::before,
   body.archive::after {
     position: absolute;
@@ -399,12 +258,20 @@ body.archive .nav a:hover::after {
 
   .archive-page {
     min-height: auto;
+    padding-top: 32px;
     padding-bottom: 48px;
+    display: block;
   }
 
-  /* iOS / Safari friendly */
-  body.archive {
-    overscroll-behavior-x: none;
+  .archive-card {
+    width: calc(100% - 28px);
+    padding: 44px 28px;
+    border-radius: 22px;
+    margin: 0 auto;
+  }
+
+  .archive-card h1 {
+    font-size: 1.8rem;
+    margin-bottom: 36px;
   }
 }
-
