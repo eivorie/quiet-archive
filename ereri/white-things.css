@@ -80,3 +80,53 @@
   letter-spacing: 0.08em;
   color: rgba(220,230,225,0.65);
 }
+
+/* =====================================================
+   MOBILE — White Things
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  /* carte */
+  .ereri-story .ereri-card {
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+  /* texte */
+  .ereri-story .ereri-content {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  /* image */
+  .story-illustration {
+    margin: 28px auto 42px;
+  }
+
+  .story-illustration img {
+    max-width: 260px;
+  }
+
+  /* messages */
+  .text-thread {
+    margin: 28px 0 34px;
+    gap: 10px;
+  }
+
+  .text {
+    max-width: 85%;
+  }
+
+  .text span {
+    font-size: 0.9rem;
+    padding: 9px 13px;
+  }
+
+  /* fleurs */
+  .flowers {
+    margin: 36px 0;
+    font-size: 0.9rem;
+  }
+}
