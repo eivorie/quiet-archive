@@ -74,8 +74,21 @@ body.archive::before {
     );
 }
 
-.archive-card {
-  margin: 120px auto 90px;
+/* =====================================================
+   PAGE — flux & centrage identiques DOTW
+   ===================================================== */
+
+.archive-page {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 120px;
+  padding-bottom: 90px;
+
+  position: relative;
+  z-index: 1;
 }
 
 /* =====================================================
@@ -370,7 +383,11 @@ body.archive .nav a:hover::after {
     background: transparent;
   }
 
-   .archive-card {
-    margin: 32px 14px 48px;
+     /* flow normal */
+  .archive-page {
+    min-height: auto;
+    padding-top: 32px;
+    padding-bottom: 48px;
+    display: block;
   }
 }
