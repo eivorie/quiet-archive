@@ -197,6 +197,13 @@
     opacity: 0.22;
   }
 
+   .ereri-story .ereri-page {
+    display: block;        /* ⛔ stop flex */
+    min-height: auto;      /* ⛔ stop recalcul hauteur */
+    padding-top: 120px;    /* garde l’espace nav */
+    padding-bottom: 90px;
+  }
+
   /* --- Illustration --- */
   .story-illustration {
     margin: 40px auto 60px;
