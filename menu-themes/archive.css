@@ -321,10 +321,14 @@ body.archive .nav a:hover::after {
 }
 
 /* =====================================================
-   MOBILE — IDENTIQUE DOTW
+   MOBILE — SAFE (DOTW + FIXES)
    ===================================================== */
 
 @media (max-width: 768px) {
+
+  /* -------------------------
+     NAV — IDENTIQUE DOTW
+  ------------------------- */
 
   body.archive .nav {
     position: sticky;
@@ -343,18 +347,56 @@ body.archive .nav a:hover::after {
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
 
+  /* -------------------------
+     GLOBAL SAFETY
+  ------------------------- */
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  /* -------------------------
+     BACKGROUND — follow scroll
+  ------------------------- */
+
+  body.archive::before,
+  body.archive::after {
+    position: absolute;
+  }
+
+  /* -------------------------
+     PAGE FLOW
+  ------------------------- */
+
   .archive-page {
     min-height: auto;
     padding-top: 32px;
-    padding-bottom: 60px;
+    padding-bottom: 48px;
     display: block;
   }
+
+  /* -------------------------
+     CARD — contained
+  ------------------------- */
 
   .archive-card {
     margin: 0 14px;
     padding: 44px 28px;
     border-radius: 22px;
+    overflow: hidden;
   }
+
+  /* décor interne */
+  .archive-card::after {
+    inset: 0;
+    opacity: 0.35;
+    filter: blur(22px);
+  }
+
+  /* -------------------------
+     TITLE
+  ------------------------- */
 
   .archive-card h1 {
     font-size: 1.8rem;
