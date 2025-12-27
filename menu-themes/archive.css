@@ -1,154 +1,239 @@
 /* =====================================================
-   OUR ARCHIVE — GLOBAL STYLE (HARMONIZED WITH SITE)
+   OUR ARCHIVE — PERSONAL JOURNAL
+   Harmonized with Ereri & Weather
    ===================================================== */
 
-/* --------------------------
-   Base settings
---------------------------- */
+/* -----------------------------------------------------
+   BASE — fond respirant, neutre
+----------------------------------------------------- */
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
+body.archive {
   font-family: "Cormorant Garamond", serif;
-  color: #2b2d2a;
+  color: #2f312e;
 
   background:
-    radial-gradient(circle at 28% 22%, rgba(205, 225, 215, 0.35), transparent 55%),
-    radial-gradient(circle at 70% 70%, rgba(190, 205, 200, 0.28), transparent 60%),
-    linear-gradient(to bottom, #6c726c 0%, #4a4f4a 45%, #2a2c28 100%);
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(210, 225, 218, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      rgba(185, 200, 195, 0.25),
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom,
+      #6b716b 0%,
+      #4c514c 45%,
+      #2a2c28 100%
+    );
 
   background-size: 140% 140%;
   background-blend-mode: soft-light;
-  animation: archiveBreath 22s ease-in-out infinite;
+  animation: archiveBreath 24s ease-in-out infinite;
 }
 
 @keyframes archiveBreath {
   0%, 100% { background-position: 0% 0%; }
-  50% { background-position: 12% 6%; }
+  50%      { background-position: 10% 6%; }
 }
 
-/* --------------------------
-   NAVIGATION BAR
---------------------------- */
+/* -----------------------------------------------------
+   NAV — alignée site
+----------------------------------------------------- */
 
-.nav {
+body.archive .nav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 56px;
+  right: 0;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
+  gap: 28px;
 
-  background: rgba(85, 95, 90, 0.38);
-  backdrop-filter: blur(12px);
+  padding: 14px 24px;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.05rem;
-  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+
+  background: rgba(40, 46, 44, 0.55);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   z-index: 10;
 }
 
-.nav a {
-  color: rgba(240, 240, 235, 0.9);
+body.archive .nav a {
+  position: relative;
+  padding: 2px 0;
+  color: rgba(210, 220, 215, 0.78);
   text-decoration: none;
-  transition: all 0.25s ease;
-  padding: 6px 12px;
-  border-radius: 6px;
+  transition: color 0.3s ease;
 }
 
-.nav a:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.12);
+body.archive .nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    rgba(200,220,215,0.6),
+    rgba(200,220,215,0)
+  );
+
+  transition: width 0.6s ease;
 }
 
-/* --------------------------
+body.archive .nav a:hover {
+  color: rgba(240,245,242,0.95);
+}
+
+body.archive .nav a:hover::after {
+  width: 100%;
+}
+
+/* -----------------------------------------------------
    PAGE LAYOUT
---------------------------- */
+----------------------------------------------------- */
 
-.page {
-  max-width: 1200px;
-  margin: 120px auto 80px;
-  padding: 0 40px;
+.archive-page {
+  max-width: 900px;
+  margin: 120px auto 90px;
+  padding: 0 32px;
 }
 
-/* --------------------------
-   ARCHIVE CARD
---------------------------- */
+/* -----------------------------------------------------
+   ARCHIVE CARD — carnet discret
+----------------------------------------------------- */
 
-.home-card {
+.archive-card {
+  position: relative;
+  z-index: 1;
+
   background:
-    radial-gradient(circle at 25% 15%, rgba(255,255,255,0.14), transparent 55%),
-    linear-gradient(to bottom, rgba(240,242,238,0.92), rgba(225,228,223,0.96));
-  padding: 60px 70px;
-  border-radius: 20px;
+    radial-gradient(
+      circle at 22% 18%,
+      rgba(255,255,255,0.35),
+      transparent 55%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(242,244,240,0.94),
+      rgba(228,230,225,0.96)
+    );
+
+  border-radius: 22px;
+  padding: 56px 64px;
 
   box-shadow:
-    0 40px 80px rgba(0,0,0,0.45),
-    0 12px 24px rgba(0,0,0,0.25),
-    inset 0 0 0 1px rgba(255,255,255,0.25);
+    0 38px 90px rgba(0,0,0,0.45),
+    0 10px 22px rgba(0,0,0,0.25),
+    inset 0 0 0 1px rgba(255,255,255,0.35);
 
-  animation: cardFade 0.8s ease-out forwards;
-  opacity: 0;
-  transform: translateY(20px);
+  animation: archiveAppear 1.2s ease-out forwards;
 }
 
-@keyframes cardFade {
+@keyframes archiveAppear {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* titles */
+/* -----------------------------------------------------
+   TITRE — discret, non démonstratif
+----------------------------------------------------- */
 
-.home-card h1 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 3rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  color: #2e322f;
+.archive-card h1 {
+  margin: 0 0 28px;
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #323632;
 }
 
-/* text */
+/* -----------------------------------------------------
+   LISTE DE PENSÉES — cœur du module
+----------------------------------------------------- */
 
-.home-card p {
-  font-size: 1.4rem;
+.archive-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.archive-list li {
+  margin-bottom: 18px;
+}
+
+.archive-list a {
+  display: inline-block;
+
+  font-family: "Spectral", serif;
+  font-size: 1.05rem;
+  font-style: italic;
   line-height: 1.6;
-  color: #333631;
+
+  color: rgba(70,75,72,0.85);
+  text-decoration: none;
+
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
-/* --------------------------
-   RESPONSIVE
---------------------------- */
+.archive-list a:hover {
+  color: rgba(40,45,42,0.95);
+  transform: translateX(4px);
+}
 
-@media (max-width: 700px) {
-  .nav {
-    gap: 16px;
-    font-size: 0.9rem;
+/* date discrète */
+.archive-list .date {
+  display: block;
+  margin-bottom: 4px;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: rgba(120,130,125,0.6);
+}
+
+/* -----------------------------------------------------
+   RESPONSIVE
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  body.archive .nav {
+    gap: 18px;
+    font-size: 0.7rem;
+    padding: 12px 18px;
   }
 
-  .page {
+  .archive-page {
     padding: 0 20px;
   }
 
-  .home-card {
-    padding: 40px 30px;
+  .archive-card {
+    padding: 42px 28px;
+    border-radius: 20px;
   }
 
-  .home-card h1 {
-    font-size: 2.2rem;
+  .archive-card h1 {
+    font-size: 1.8rem;
   }
 
-  .home-card p {
-    font-size: 1.2rem;
+  .archive-list a {
+    font-size: 0.95rem;
   }
 }
