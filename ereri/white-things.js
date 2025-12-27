@@ -4,12 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   threads.forEach(thread => {
     const messages = Array.from(thread.querySelectorAll(".text"));
 
-    // cacher tous les messages au départ
-    messages.forEach(msg => {
-      msg.style.opacity = "0";
-      msg.style.transform = "translateY(6px)";
-    });
-
     let index = 0;
 
     const typingIndicator = document.createElement("div");
@@ -37,10 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function showMessage(msg) {
-  msg.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-  msg.style.opacity = "1";
-  msg.style.transform = "translateY(0)";
-}
+      msg.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+      msg.style.opacity = "1";
+      msg.style.transform = "translateY(0)";
+      msg.style.pointerEvents = "auto";
+    }
 
     function nextMessage() {
       if (index >= messages.length) {
@@ -53,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       showTyping(author);
 
-      // durée de frappe (Levi hésite un peu plus)
       const typingDuration =
         author === "levi"
           ? 1800 + Math.random() * 1200
@@ -66,13 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
           showMessage(msg);
           index++;
 
-          // pause entre messages
           setTimeout(nextMessage, 900);
         }, 400);
       }, typingDuration);
     }
 
-    // petit délai avant de commencer la conversation
     setTimeout(nextMessage, 800);
   });
 });
