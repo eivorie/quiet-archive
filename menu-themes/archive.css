@@ -1,7 +1,7 @@
 /* =====================================================
    OUR ARCHIVE — INTIMATE JOURNAL
    Night ink / old paper palette
-   FINAL — desktop + mobile clean
+   FINAL — aligned with DOTW
    ===================================================== */
 
 /* =====================================================
@@ -42,31 +42,35 @@ body.archive {
   50%     { background-position: 9% 6%; }
 }
 
-/* fond décoratif */
-body.archive::before,
+/* vignette basse */
 body.archive::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-}
 
-body.archive::before {
-  background:
-    radial-gradient(
-      circle at 50% 30%,
-      rgba(255,255,255,0.03),
-      transparent 60%
-    );
-}
-
-body.archive::after {
   background:
     radial-gradient(
       circle at 50% 75%,
       rgba(0,0,0,0.55),
       transparent 65%
+    );
+}
+
+/* grain papier */
+body.archive::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(255,255,255,0.03),
+      transparent 60%
     );
 }
 
@@ -130,7 +134,7 @@ body.archive .nav a:hover::after {
 }
 
 /* =====================================================
-   PAGE
+   PAGE — flux & centrage identiques DOTW
    ===================================================== */
 
 .archive-page {
@@ -147,14 +151,14 @@ body.archive .nav a:hover::after {
 }
 
 /* =====================================================
-   CARD
+   ARCHIVE CARD — carnet nocturne
    ===================================================== */
 
 .archive-card {
   position: relative;
   z-index: 1;
 
-  max-width: 760px;
+  max-width: 760px;   /* MATCH DOTW */
   width: 100%;
   margin: 0 auto;
 
@@ -172,50 +176,94 @@ body.archive .nav a:hover::after {
     0 20px 45px rgba(0,0,0,0.40),
     inset 0 0 0 1px rgba(255,255,255,0.05);
 
-  padding: 72px;
-  overflow: hidden;
+  padding: 72px 72px;
 
   animation:
     archiveAppear 1.4s ease-out,
     archiveFloat 14s ease-in-out 1.4s infinite;
 }
 
-.archive-card::before,
-.archive-card::after {
+/* cadre interne — laiton ancien */
+.archive-card::before {
   content: "";
   position: absolute;
   inset: 14px;
+  border-radius: 22px 20px 26px 22px;
+
+  border: 1px solid rgba(200,175,120,0.28);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.04),
+    0 0 0 1px rgba(120,100,70,0.25);
+
   pointer-events: none;
 }
 
-.archive-card::before {
-  border-radius: 22px;
-  border: 1px solid rgba(200,175,120,0.28);
-}
-
+/* voile interne chaud */
 .archive-card::after {
-  inset: 0;
+  content: "";
+  position: absolute;
+  inset: -18%;
+  pointer-events: none;
+
   background:
     radial-gradient(
       circle at 42% 30%,
-      rgba(210,180,120,0.18),
+      rgba(210,180,120,0.22),
       transparent 60%
+    ),
+    radial-gradient(
+      circle at 70% 78%,
+      rgba(160,140,95,0.18),
+      transparent 65%
     );
-  filter: blur(26px);
-  opacity: 0.35;
+
+  filter: blur(32px);
+  opacity: 0.42;
 }
 
 /* =====================================================
-   TITRE & LISTE
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes archiveAppear {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes archiveFloat {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-6px); }
+}
+
+/* =====================================================
+   TITRE
    ===================================================== */
 
 .archive-card h1 {
   margin: 0 0 48px;
   text-align: center;
+
   font-size: 2.2rem;
   letter-spacing: 0.06em;
   font-weight: 500;
+
+  color: rgba(245,242,235,0.95);
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.45),
+    0 14px 34px rgba(0,0,0,0.55);
 }
+
+/* =====================================================
+   LISTE — dates seules
+   ===================================================== */
 
 .archive-list {
   list-style: none;
@@ -231,9 +279,36 @@ body.archive .nav a:hover::after {
   font-size: 1.05rem;
   letter-spacing: 0.14em;
   font-variant: small-caps;
+
   color: rgba(215,215,220,0.75);
   text-decoration: none;
-  transition: color 0.4s ease, transform 0.4s ease;
+  position: relative;
+
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+.archive-list a::before {
+  content: "— ";
+  opacity: 0.35;
+}
+
+.archive-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    rgba(200,175,120,0.55),
+    rgba(200,175,120,0)
+  );
+
+  transition: width 0.4s ease;
 }
 
 .archive-list a:hover {
@@ -241,53 +316,48 @@ body.archive .nav a:hover::after {
   transform: translateX(6px);
 }
 
+.archive-list a:hover::after {
+  width: 100%;
+}
+
 /* =====================================================
-   MOBILE PATCH — NO DUPLICATE CARD / NAV SAFE
+   MOBILE — IDENTIQUE DOTW
    ===================================================== */
 
 @media (max-width: 768px) {
 
-  /* sécurité globale */
-  html, body {
-    overflow-x: hidden;
+  body.archive .nav {
+    position: sticky;
+    top: 0;
+
+    padding: 12px 18px;
+    padding-top: calc(env(safe-area-inset-top) + 10px);
+
+    gap: 18px;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+
+    background: rgba(38, 42, 40, 0.55);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.06);
   }
 
-  /* fond : plus de fixed sur mobile */
-  body.archive::before,
-  body.archive::after {
-    position: absolute;
-    inset: 0;
-  }
-
-  /* page : pas de faux vide */
   .archive-page {
     min-height: auto;
-    padding-bottom: 48px;
+    padding-top: 32px;
+    padding-bottom: 60px;
     display: block;
   }
 
-  /* carte : UNE SEULE, contenue */
   .archive-card {
-    width: calc(100% - 28px);
-    max-width: none;
-    margin: 0 auto;
-    box-sizing: border-box;
-    overflow: hidden;
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
   }
 
-  /* décor carte : JAMAIS hors cadre */
-  .archive-card::before,
-  .archive-card::after {
-    inset: 0;
-    opacity: 0.35;
-    filter: blur(22px);
-  }
-
-  /* date / titres : jamais hors cadre */
-  .archive-entry-date,
   .archive-card h1 {
-    max-width: 100%;
-    overflow-wrap: anywhere;
+    font-size: 1.8rem;
+    margin-bottom: 36px;
   }
 }
-
