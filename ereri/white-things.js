@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     },
     {
-      threshold: 0.35 // 35% visible = lecture confortable
+      threshold: 0.35 // lecture confortable
     }
   );
 
@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function startThread(thread) {
     const messages = Array.from(thread.querySelectorAll(".text"));
     let index = 0;
+
+    /* -------- typing indicator -------- */
 
     const typingIndicator = document.createElement("div");
     typingIndicator.className = "typing-indicator";
@@ -45,12 +47,55 @@ document.addEventListener("DOMContentLoaded", () => {
       typingIndicator.style.opacity = "0";
     }
 
+    /* -------- affichage simple (Eren) -------- */
+
     function showMessage(msg) {
       msg.style.transition = "opacity 0.6s ease, transform 0.6s ease";
       msg.style.opacity = "1";
       msg.style.transform = "translateY(0)";
       msg.style.pointerEvents = "auto";
     }
+
+    /* -------- frappe lettre par lettre (Levi) -------- */
+
+    function typeLeviMessage(msg, callback) {
+      const span = msg.querySelector("span");
+      if (!span) {
+        callback();
+        return;
+      }
+
+      const fullText = span.textContent;
+      span.textContent = "";
+
+      msg.style.opacity = "1";
+      msg.style.transform = "translateY(0)";
+      msg.style.pointerEvents = "auto";
+
+      const cursor = document.createElement("span");
+      cursor.className = "typing-cursor";
+      cursor.textContent = "▍";
+      span.appendChild(cursor);
+
+      let i = 0;
+
+      const interval = setInterval(() => {
+        if (i >= fullText.length) {
+          clearInterval(interval);
+          cursor.remove();
+          callback();
+          return;
+        }
+
+        span.insertBefore(
+          document.createTextNode(fullText.charAt(i)),
+          cursor
+        );
+        i++;
+      }, 45 + Math.random() * 40);
+    }
+
+    /* -------- déroulement narratif -------- */
 
     function nextMessage() {
       if (index >= messages.length) {
@@ -72,14 +117,21 @@ document.addEventListener("DOMContentLoaded", () => {
         hideTyping();
 
         setTimeout(() => {
-          showMessage(msg);
-          index++;
-          setTimeout(nextMessage, 900);
-        }, 400);
+          if (author === "levi") {
+            typeLeviMessage(msg, () => {
+              index++;
+              setTimeout(nextMessage, 900);
+            });
+          } else {
+            showMessage(msg);
+            index++;
+            setTimeout(nextMessage, 900);
+          }
+        }, 300);
       }, typingDuration);
     }
 
-    // petit temps de respiration après l’arrivée à l’écran
+    // respiration avant le premier message
     setTimeout(nextMessage, 600);
   }
 });
