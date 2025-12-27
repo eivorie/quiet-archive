@@ -46,10 +46,31 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  position: relative;
 }
 
+/* typing ghost */
+.text-thread::before {
+  content: "Eren ♥ is typing…";
+  display: block;
+  margin-bottom: 6px;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  font-style: italic;
+
+  color: rgba(200,215,210,0.45);
+
+  opacity: 0;
+  animation: typingFade 2.8s ease forwards;
+}
+
+/* message base */
 .text {
   max-width: 75%;
+  opacity: 0;
+  transform: translateY(4px);
+  animation: textAppear 0.6s ease forwards;
 }
 
 .text span {
@@ -72,6 +93,14 @@
   letter-spacing: 0.01em;
   font-weight: 400;
 }
+
+/* apparition progressive */
+.text:nth-child(1) { animation-delay: 0.4s; }
+.text:nth-child(2) { animation-delay: 0.9s; }
+.text:nth-child(3) { animation-delay: 1.5s; }
+.text:nth-child(4) { animation-delay: 2.1s; }
+.text:nth-child(5) { animation-delay: 2.7s; }
+.text:nth-child(6) { animation-delay: 3.3s; }
 
 /* Eren — gauche */
 .text.eren {
@@ -97,6 +126,24 @@
 }
 
 /* -----------------------------------------------------
+   Animations
+----------------------------------------------------- */
+
+@keyframes textAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typingFade {
+  0%   { opacity: 0; }
+  20%  { opacity: 0.6; }
+  80%  { opacity: 0.6; }
+  100% { opacity: 0; }
+}
+
+/* -----------------------------------------------------
    Accent — fleurs
 ----------------------------------------------------- */
 
@@ -115,20 +162,17 @@
 
 @media (max-width: 768px) {
 
-  /* carte */
   .ereri-story .ereri-card {
     margin: 0 14px;
     padding: 44px 28px;
     border-radius: 22px;
   }
 
-  /* texte */
   .ereri-story .ereri-content {
     font-size: 1rem;
     line-height: 1.75;
   }
 
-  /* image */
   .story-illustration {
     margin: 28px auto 42px;
   }
@@ -137,7 +181,6 @@
     max-width: 260px;
   }
 
-  /* messages */
   .text-thread {
     margin: 28px 0 34px;
     gap: 10px;
@@ -152,7 +195,6 @@
     padding: 9px 13px;
   }
 
-  /* fleurs */
   .flowers {
     margin: 36px 0;
     font-size: 0.9rem;
