@@ -1,67 +1,23 @@
 /* =====================================================
    ARCHIVE ENTRY — 2025-12-27
-   Intimate journal / ink & brass
+   Intimate journal — typography only
    ===================================================== */
 
-/* =====================================================
-   CONTEXT — PAS DE NOUVEAU FOND
-   (hérite de archive.css)
-   ===================================================== */
+/* -----------------------------------------------------
+   CONTEXT
+----------------------------------------------------- */
 
 body.archive-entry {
   color: rgba(235,232,225,0.9);
 }
 
-/* =====================================================
-   CARD EXTENSION — même base, plus dense
-   ===================================================== */
-
-.archive-entry {
-  /* hérite de archive-card */
-  max-width: 760px;
-
-  padding: 76px 78px;
-
-  animation:
-    archiveAppear 1.8s ease-out,
-    archiveFloat 20s ease-in-out 1.8s infinite;
-}
-
-/* voile intérieur plus chaud */
-.archive-entry::after {
-  content: "";
-  position: absolute;
-  inset: -22%;
-  pointer-events: none;
-
-  background:
-    radial-gradient(
-      circle at 42% 30%,
-      rgba(210,180,120,0.26),
-      transparent 60%
-    ),
-    radial-gradient(
-      circle at 70% 78%,
-      rgba(160,140,95,0.22),
-      transparent 65%
-    );
-
-  filter: blur(36px);
-  opacity: 0.45;
-}
-
-/* cadre interne plus intime */
-.archive-entry::before {
-  border-color: rgba(200,175,120,0.32);
-}
-
-/* =====================================================
-   HEADER — date seule, typewriter
-   ===================================================== */
+/* -----------------------------------------------------
+   HEADER — date
+----------------------------------------------------- */
 
 .archive-entry-header {
   text-align: center;
-  margin-bottom: 54px;
+  margin-bottom: 48px;
 }
 
 .archive-entry-date {
@@ -69,11 +25,9 @@ body.archive-entry {
   font-size: 0.85rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-
   color: rgba(220,215,200,0.75);
 }
 
-/* filet doré sous la date */
 .archive-entry-header::after {
   content: "";
   display: block;
@@ -91,38 +45,31 @@ body.archive-entry {
   opacity: 0.6;
 }
 
-/* =====================================================
-   TEXTE — journal intime
-   ===================================================== */
+/* -----------------------------------------------------
+   TEXT — journal
+----------------------------------------------------- */
 
 .archive-entry-content p {
   font-family: "Courier New", Courier, monospace;
   font-size: 0.92rem;
   line-height: 1.95;
-
   margin-bottom: 26px;
-
   color: rgba(235,232,225,0.88);
 }
 
-/* ouverture */
+/* opening */
 .archive-entry-content .weather-lead {
-  margin-bottom: 38px;
+  margin-bottom: 36px;
   color: rgba(245,242,235,0.95);
 }
 
-/* fin */
+/* ending */
 .archive-entry-content .weather-ending {
-  margin-top: 34px;
+  margin-top: 32px;
   color: rgba(245,242,235,0.92);
 }
 
-/* =====================================================
-   MICRO-RELIEF — respiration visuelle
-   ===================================================== */
-
+/* subtle rhythm */
 .archive-entry-content p:nth-child(odd) {
   color: rgba(240,235,230,0.92);
 }
-
-
