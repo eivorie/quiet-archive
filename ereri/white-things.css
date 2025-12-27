@@ -54,6 +54,13 @@
   gap: 14px;
 }
 
+/* état initial — JS controlled */
+.text-thread .text {
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+
 .text {
   max-width: 75%;
 }
