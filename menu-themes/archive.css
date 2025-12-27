@@ -1,0 +1,154 @@
+/* =====================================================
+   OUR ARCHIVE — GLOBAL STYLE (HARMONIZED WITH SITE)
+   ===================================================== */
+
+/* --------------------------
+   Base settings
+--------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  color: #2b2d2a;
+
+  background:
+    radial-gradient(circle at 28% 22%, rgba(205, 225, 215, 0.35), transparent 55%),
+    radial-gradient(circle at 70% 70%, rgba(190, 205, 200, 0.28), transparent 60%),
+    linear-gradient(to bottom, #6c726c 0%, #4a4f4a 45%, #2a2c28 100%);
+
+  background-size: 140% 140%;
+  background-blend-mode: soft-light;
+  animation: archiveBreath 22s ease-in-out infinite;
+}
+
+@keyframes archiveBreath {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 12% 6%; }
+}
+
+/* --------------------------
+   NAVIGATION BAR
+--------------------------- */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+  background: rgba(85, 95, 90, 0.38);
+  backdrop-filter: blur(12px);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.nav a {
+  color: rgba(240, 240, 235, 0.9);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.nav a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* --------------------------
+   PAGE LAYOUT
+--------------------------- */
+
+.page {
+  max-width: 1200px;
+  margin: 120px auto 80px;
+  padding: 0 40px;
+}
+
+/* --------------------------
+   ARCHIVE CARD
+--------------------------- */
+
+.home-card {
+  background:
+    radial-gradient(circle at 25% 15%, rgba(255,255,255,0.14), transparent 55%),
+    linear-gradient(to bottom, rgba(240,242,238,0.92), rgba(225,228,223,0.96));
+  padding: 60px 70px;
+  border-radius: 20px;
+
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.45),
+    0 12px 24px rgba(0,0,0,0.25),
+    inset 0 0 0 1px rgba(255,255,255,0.25);
+
+  animation: cardFade 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes cardFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* titles */
+
+.home-card h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #2e322f;
+}
+
+/* text */
+
+.home-card p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #333631;
+}
+
+/* --------------------------
+   RESPONSIVE
+--------------------------- */
+
+@media (max-width: 700px) {
+  .nav {
+    gap: 16px;
+    font-size: 0.9rem;
+  }
+
+  .page {
+    padding: 0 20px;
+  }
+
+  .home-card {
+    padding: 40px 30px;
+  }
+
+  .home-card h1 {
+    font-size: 2.2rem;
+  }
+
+  .home-card p {
+    font-size: 1.2rem;
+  }
+}
