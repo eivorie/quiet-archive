@@ -125,6 +125,40 @@ body.archive-entry {
   color: rgba(240,235,230,0.92);
 }
 
+/* =========================
+   CENTER ENTRY ON DESKTOP
+========================= */
+
+.archive-page {
+  min-height: calc(100vh - 120px);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 120px;
+  padding-bottom: 90px;
+}
+
+/* keep card width + breathing */
+.archive-entry {
+  margin: 0 auto;
+  max-width: 760px;
+  width: 100%;
+}
+
+/* mobile — natural flow, not too tight */
+@media (max-width: 768px) {
+  .archive-page {
+    align-items: stretch;
+    padding-top: 80px;
+  }
+
+  .archive-entry {
+    margin: 0 14px;
+  }
+}
+
 /* =====================================================
    RESPONSIVE
    ===================================================== */
