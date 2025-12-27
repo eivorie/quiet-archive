@@ -44,6 +44,27 @@
 }
 
 /* -----------------------------------------------------
+   Illustration — alignée Ereri standard
+----------------------------------------------------- */
+
+.story-illustration {
+  margin: 40px auto 60px;
+  text-align: center;
+}
+
+.story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 18px 24px 20px 26px;
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.6),
+    inset 0 0 0 1px rgba(255,255,255,.14);
+}
+
+/* -----------------------------------------------------
    Messages (text-thread)
 ----------------------------------------------------- */
 
@@ -150,12 +171,17 @@
   }
 
   .story-illustration {
-    margin: 28px auto 42px;
+    margin: 40px auto 60px;
+    text-align: center;
   }
 
   .story-illustration img {
-    max-width: 260px;
-  }
+    max-width: 380px;
+    width: 100%;
+    height: auto;
+    border-radius: 18px 24px 20px 26px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, .6), inset 0 0 0 1px rgba(255, 255, 255, .14);
+    transition: transform .4s ease, box-shadow .4s ease;
 
   .text-thread {
     margin: 28px 0 34px;
