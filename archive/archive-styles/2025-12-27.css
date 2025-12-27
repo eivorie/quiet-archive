@@ -160,22 +160,47 @@ body.archive-entry {
 }
 
 /* =====================================================
-   RESPONSIVE
+   MOBILE — ALIGNEMENT EXACT WEATHER / ERERI
    ===================================================== */
 
 @media (max-width: 768px) {
 
+  /* navbar — même comportement */
+  body.archive-entry .nav {
+    position: sticky;
+    top: 0;
+
+    padding: 12px 18px;
+    padding-top: calc(env(safe-area-inset-top) + 10px);
+
+    gap: 18px;
+    font-size: 0.75rem;
+  }
+
+  /* page — on quitte le flex */
+  .archive-page {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 60px;
+  }
+
+  /* carte — EXACTEMENT comme weather */
   .archive-entry {
-    padding: 48px 30px;
+    margin: 0 14px;
+    width: auto;
+
+    padding: 44px 28px;
     border-radius: 22px;
+  }
+
+  /* texte — respiration identique */
+  .archive-entry-content p {
+    font-size: 0.86rem;
+    line-height: 1.85;
   }
 
   .archive-entry-header {
     margin-bottom: 42px;
   }
-
-  .archive-entry-content p {
-    font-size: 0.86rem;
-    line-height: 1.85;
-  }
 }
+
