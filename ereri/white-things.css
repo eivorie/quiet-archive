@@ -1,0 +1,82 @@
+/* =====================================================
+   White Things — Story variation (Ereri)
+   Silence, water, white
+   ===================================================== */
+
+/* -----------------------------------------------------
+   Carte — claire, calme, nocturne
+----------------------------------------------------- */
+
+.ereri-story .ereri-card {
+  background:
+    radial-gradient(
+      circle at 26% 18%,
+      rgba(255,255,255,0.06),
+      transparent 65%
+    ),
+    linear-gradient(
+      to bottom,
+      #3f4442,
+      #2b2f2e
+    );
+}
+
+/* -----------------------------------------------------
+   Texte
+----------------------------------------------------- */
+
+.ereri-story .ereri-content {
+  color: rgba(230,235,230,0.82);
+}
+
+.ereri-story .ereri-content p {
+  margin-bottom: 1.5em;
+}
+
+/* -----------------------------------------------------
+   Messages (text-thread)
+----------------------------------------------------- */
+
+.text-thread {
+  margin: 36px 0 42px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.text {
+  max-width: 75%;
+}
+
+.text span {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.text.eren span {
+  background: rgba(255,255,255,0.08);
+  color: rgba(240,245,240,0.9);
+  align-self: flex-start;
+}
+
+.text.levi span {
+  background: rgba(180,200,190,0.18);
+  color: rgba(30,40,35,0.95);
+  align-self: flex-end;
+}
+
+/* -----------------------------------------------------
+   Accent — fleurs
+----------------------------------------------------- */
+
+.flowers {
+  margin: 48px 0;
+  text-align: center;
+
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: rgba(220,230,225,0.65);
+}
