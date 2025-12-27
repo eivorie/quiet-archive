@@ -1,19 +1,29 @@
 /* =====================================================
    ARCHIVE ENTRY — 2025-12-27
-   Intimate journal — typography only
+   FINAL — aligned with Archive & DOTW
    ===================================================== */
 
-/* -----------------------------------------------------
+/* =====================================================
    CONTEXT
------------------------------------------------------ */
+   ===================================================== */
 
 body.archive-entry {
   color: rgba(235,232,225,0.9);
 }
 
-/* -----------------------------------------------------
+/* =====================================================
+   CARD — dimensions & flow IDENTIQUES archive index
+   ===================================================== */
+
+.archive-card.archive-entry {
+  max-width: 760px;   /* MATCH DOTW + archive index */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* =====================================================
    HEADER — date
------------------------------------------------------ */
+   ===================================================== */
 
 .archive-entry-header {
   text-align: center;
@@ -45,15 +55,16 @@ body.archive-entry {
   opacity: 0.6;
 }
 
-/* -----------------------------------------------------
+/* =====================================================
    TEXT — journal
------------------------------------------------------ */
+   ===================================================== */
 
 .archive-entry-content p {
   font-family: "Courier New", Courier, monospace;
   font-size: 0.92rem;
   line-height: 1.95;
   margin-bottom: 26px;
+
   color: rgba(235,232,225,0.88);
 }
 
@@ -72,4 +83,26 @@ body.archive-entry {
 /* subtle rhythm */
 .archive-entry-content p:nth-child(odd) {
   color: rgba(240,235,230,0.92);
+}
+
+/* =====================================================
+   MOBILE — IDENTIQUE ARCHIVE / DOTW
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  .archive-card.archive-entry {
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+  .archive-entry-header {
+    margin-bottom: 36px;
+  }
+
+  .archive-entry-content p {
+    font-size: 0.86rem;
+    line-height: 1.85;
+  }
 }
