@@ -1,6 +1,7 @@
 /* =====================================================
    OUR ARCHIVE — INTIMATE JOURNAL
    Night ink / old paper palette
+   FINAL — aligned with DOTW
    ===================================================== */
 
 /* =====================================================
@@ -74,7 +75,7 @@ body.archive::before {
 }
 
 /* =====================================================
-   NAV — sobre, encre
+   NAV — alignée DOTW
    ===================================================== */
 
 body.archive .nav {
@@ -88,14 +89,14 @@ body.archive .nav {
 
   padding: 14px 24px;
 
-  font-size: 0.8rem;
-  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 
   background: rgba(28, 30, 36, 0.55);
   backdrop-filter: blur(12px);
 
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   z-index: 10;
 }
 
@@ -133,7 +134,7 @@ body.archive .nav a:hover::after {
 }
 
 /* =====================================================
-   PAGE
+   PAGE — flux & centrage identiques DOTW
    ===================================================== */
 
 .archive-page {
@@ -144,6 +145,9 @@ body.archive .nav a:hover::after {
 
   padding-top: 120px;
   padding-bottom: 90px;
+
+  position: relative;
+  z-index: 1;
 }
 
 /* =====================================================
@@ -154,8 +158,9 @@ body.archive .nav a:hover::after {
   position: relative;
   z-index: 1;
 
-  max-width: 720px;
+  max-width: 760px;   /* MATCH DOTW */
   width: 100%;
+  margin: 0 auto;
 
   background:
     linear-gradient(
@@ -167,15 +172,15 @@ body.archive .nav a:hover::after {
   border-radius: 28px 24px 32px 26px;
 
   box-shadow:
-    0 65px 150px rgba(0,0,0,0.75),
-    0 22px 50px rgba(0,0,0,0.45),
+    0 60px 140px rgba(0,0,0,0.70),
+    0 20px 45px rgba(0,0,0,0.40),
     inset 0 0 0 1px rgba(255,255,255,0.05);
 
   padding: 72px 72px;
 
   animation:
-    archiveAppear 1.7s ease-out,
-    archiveFloat 18s ease-in-out 1.7s infinite;
+    archiveAppear 1.4s ease-out,
+    archiveFloat 14s ease-in-out 1.4s infinite;
 }
 
 /* cadre interne — laiton ancien */
@@ -224,7 +229,7 @@ body.archive .nav a:hover::after {
 @keyframes archiveAppear {
   from {
     opacity: 0;
-    transform: translateY(22px) scale(0.98);
+    transform: translateY(18px) scale(0.98);
   }
   to {
     opacity: 1;
@@ -316,17 +321,12 @@ body.archive .nav a:hover::after {
 }
 
 /* =====================================================
-   MOBILE — ALIGNÉ EXACTEMENT DOTW
-===================================================== */
+   MOBILE — IDENTIQUE DOTW
+   ===================================================== */
 
 @media (max-width: 768px) {
 
-  /* -------------------------
-     NAVBAR — IDENTIQUE DOTW
-  ------------------------- */
-
-  body.archive .nav,
-  body.archive-entry .nav {
+  body.archive .nav {
     position: sticky;
     top: 0;
 
@@ -343,50 +343,21 @@ body.archive .nav a:hover::after {
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
 
-  /* -------------------------
-     PAGE — MÊME FLUX QUE DOTW
-  ------------------------- */
-
   .archive-page {
     min-height: auto;
     padding-top: 32px;
     padding-bottom: 60px;
-
     display: block;
   }
 
-  /* -------------------------
-     CARTE — DIMENSIONS DOTW
-  ------------------------- */
-
-  .archive-card,
-  .archive-entry {
+  .archive-card {
     margin: 0 14px;
     padding: 44px 28px;
-
     border-radius: 22px;
   }
 
-  /* -------------------------
-     HEADER — RESPIRATION
-  ------------------------- */
-
-  .archive-entry-header {
-    margin-bottom: 38px;
-  }
-
-   .archive-card h1 {
+  .archive-card h1 {
     font-size: 1.8rem;
     margin-bottom: 36px;
   }
-
-  /* -------------------------
-     TEXTE — DENSITÉ MOBILE
-  ------------------------- */
-
-  .archive-entry-content p {
-    font-size: 0.86rem;
-    line-height: 1.85;
-  }
 }
-
