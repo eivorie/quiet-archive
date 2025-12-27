@@ -1,209 +1,147 @@
 /* =====================================================
    ARCHIVE ENTRY — 2025-12-27
-   Intimate journal / typewriter mood
+   Intimate journal / ink & brass
    ===================================================== */
 
-/* -----------------------------------------------------
-   PAGE CONTEXT
------------------------------------------------------ */
+/* =====================================================
+   CONTEXT — PAS DE NOUVEAU FOND
+   (hérite de archive.css)
+   ===================================================== */
 
 body.archive-entry {
-  background:
-    radial-gradient(
-      circle at 30% 22%,
-      rgba(210, 215, 210, 0.22),
-      transparent 55%
-    ),
-    radial-gradient(
-      circle at 70% 72%,
-      rgba(185, 195, 190, 0.18),
-      transparent 60%
-    ),
-    linear-gradient(
-      to bottom,
-      #5f645f 0%,
-      #424642 45%,
-      #252825 100%
-    );
-
-  background-size: 140% 140%;
-  animation: archiveBreath 26s ease-in-out infinite;
-
-  color: rgba(235, 235, 230, 0.9);
+  color: rgba(235,232,225,0.9);
 }
 
-@keyframes archiveBreath {
-  0%, 100% { background-position: 0% 0%; }
-  50%      { background-position: 10% 6%; }
-}
-
-/* -----------------------------------------------------
-   LAYOUT
------------------------------------------------------ */
-
-.archive-page {
-  min-height: calc(100vh - 120px);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-
-  padding: 120px 24px 90px;
-}
+/* =====================================================
+   CARD EXTENSION — même base, plus dense
+   ===================================================== */
 
 .archive-entry {
-  position: relative;
-  z-index: 1;
+  /* hérite de archive-card */
+  max-width: 760px;
 
-  max-width: 720px;
-  width: 100%;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(40, 44, 40, 0.88),
-      rgba(30, 33, 30, 0.94)
-    );
-
-  border-radius: 22px 20px 24px 22px;
-
-  padding: 64px 72px;
-
-  box-shadow:
-    0 50px 120px rgba(0,0,0,0.65),
-    0 18px 42px rgba(0,0,0,0.45),
-    inset 0 0 0 1px rgba(255,255,255,0.06);
+  padding: 76px 78px;
 
   animation:
-    entryAppear 1.6s ease-out both,
-    entryFloat 18s ease-in-out 1.6s infinite;
+    archiveAppear 1.8s ease-out,
+    archiveFloat 20s ease-in-out 1.8s infinite;
 }
 
-@keyframes entryAppear {
-  from {
-    opacity: 0;
-    transform: translateY(22px) scale(0.985);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes entryFloat {
-  0%,100% { transform: translateY(0); }
-  50%     { transform: translateY(-4px); }
-}
-
-/* -----------------------------------------------------
-   INNER FRAME — carnet discret
------------------------------------------------------ */
-
-.archive-entry::before {
+/* voile intérieur plus chaud */
+.archive-entry::after {
   content: "";
   position: absolute;
-  inset: 14px;
+  inset: -22%;
   pointer-events: none;
 
-  border-radius: 18px;
-  border: 1px solid rgba(200, 200, 190, 0.18);
+  background:
+    radial-gradient(
+      circle at 42% 30%,
+      rgba(210,180,120,0.26),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 70% 78%,
+      rgba(160,140,95,0.22),
+      transparent 65%
+    );
 
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.05);
+  filter: blur(36px);
+  opacity: 0.45;
 }
 
-/* -----------------------------------------------------
-   TITLE & DATE
------------------------------------------------------ */
+/* cadre interne plus intime */
+.archive-entry::before {
+  border-color: rgba(200,175,120,0.32);
+}
 
-.archive-entry h1 {
-  margin: 0 0 10px;
+/* =====================================================
+   HEADER — date seule, typewriter
+   ===================================================== */
 
+.archive-entry-header {
+  text-align: center;
+  margin-bottom: 54px;
+}
+
+.archive-entry-date {
   font-family: "Courier New", Courier, monospace;
-  font-weight: 400;
-  font-size: 1.15rem;
-  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 
-  color: rgba(235, 235, 230, 0.95);
+  color: rgba(220,215,200,0.75);
 }
 
-.archive-entry .date {
+/* filet doré sous la date */
+.archive-entry-header::after {
+  content: "";
   display: block;
+  width: 64px;
+  height: 1px;
+  margin: 22px auto 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(200,175,120,0),
+    rgba(200,175,120,0.65),
+    rgba(200,175,120,0)
+  );
+
+  opacity: 0.6;
+}
+
+/* =====================================================
+   TEXTE — journal intime
+   ===================================================== */
+
+.archive-entry-content p {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.92rem;
+  line-height: 1.95;
+
+  margin-bottom: 26px;
+
+  color: rgba(235,232,225,0.88);
+}
+
+/* ouverture */
+.archive-entry-content .weather-lead {
   margin-bottom: 38px;
-
-  font-family: "Courier New", Courier, monospace;
-  font-size: 0.8rem;
-  letter-spacing: 0.14em;
-
-  color: rgba(190, 190, 185, 0.7);
+  color: rgba(245,242,235,0.95);
 }
 
-/* -----------------------------------------------------
-   TEXT — journal tone
------------------------------------------------------ */
-
-.archive-entry p {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 0.9rem;
-  line-height: 1.9;
-
-  margin-bottom: 22px;
-
-  color: rgba(230, 230, 225, 0.88);
+/* fin */
+.archive-entry-content .weather-ending {
+  margin-top: 34px;
+  color: rgba(245,242,235,0.92);
 }
 
-/* opening thought */
-.archive-entry .weather-lead {
-  margin-bottom: 32px;
+/* =====================================================
+   MICRO-RELIEF — respiration visuelle
+   ===================================================== */
 
-  color: rgba(240, 240, 235, 0.95);
+.archive-entry-content p:nth-child(odd) {
+  color: rgba(240,235,230,0.92);
 }
 
-/* ending — held, quieter */
-.archive-entry .weather-ending {
-  margin-top: 30px;
-
-  color: rgba(245, 245, 240, 0.92);
-}
-
-/* -----------------------------------------------------
-   NAV OVERRIDE — softer, archive tone
------------------------------------------------------ */
-
-body.archive-entry .nav {
-  background: rgba(55, 60, 55, 0.55);
-  backdrop-filter: blur(12px);
-}
-
-body.archive-entry .nav a {
-  color: rgba(235, 235, 230, 0.85);
-}
-
-body.archive-entry .nav a:hover {
-  color: rgba(255, 255, 250, 0.95);
-}
-
-/* -----------------------------------------------------
+/* =====================================================
    RESPONSIVE
------------------------------------------------------ */
+   ===================================================== */
 
 @media (max-width: 768px) {
 
-  .archive-page {
-    padding: 96px 16px 60px;
-  }
-
   .archive-entry {
-    padding: 44px 28px;
-    border-radius: 18px;
+    padding: 48px 30px;
+    border-radius: 22px;
   }
 
-  .archive-entry h1 {
-    font-size: 1rem;
+  .archive-entry-header {
+    margin-bottom: 42px;
   }
 
-  .archive-entry p {
-    font-size: 0.85rem;
-    line-height: 1.8;
+  .archive-entry-content p {
+    font-size: 0.86rem;
+    line-height: 1.85;
   }
 }
