@@ -240,6 +240,7 @@ ERERI — TOC staggered appearance (FIX)
 .ereri-index .ereri-toc li:nth-child(3) { animation-delay: 0.35s; }
 .ereri-index .ereri-toc li:nth-child(4) { animation-delay: 0.45s; }
 .ereri-index .ereri-toc li:nth-child(5) { animation-delay: 0.55s; }
+.ereri-index .ereri-toc li:nth-child(6) { animation-delay: 0.65s; }
 
 @keyframes ereriTocAppear {
   to { opacity: 1; transform: translateY(0); }
