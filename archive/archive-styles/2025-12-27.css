@@ -1,0 +1,209 @@
+/* =====================================================
+   ARCHIVE ENTRY — 2025-12-27
+   Intimate journal / typewriter mood
+   ===================================================== */
+
+/* -----------------------------------------------------
+   PAGE CONTEXT
+----------------------------------------------------- */
+
+body.archive-entry {
+  background:
+    radial-gradient(
+      circle at 30% 22%,
+      rgba(210, 215, 210, 0.22),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 70% 72%,
+      rgba(185, 195, 190, 0.18),
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom,
+      #5f645f 0%,
+      #424642 45%,
+      #252825 100%
+    );
+
+  background-size: 140% 140%;
+  animation: archiveBreath 26s ease-in-out infinite;
+
+  color: rgba(235, 235, 230, 0.9);
+}
+
+@keyframes archiveBreath {
+  0%, 100% { background-position: 0% 0%; }
+  50%      { background-position: 10% 6%; }
+}
+
+/* -----------------------------------------------------
+   LAYOUT
+----------------------------------------------------- */
+
+.archive-page {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 120px 24px 90px;
+}
+
+.archive-entry {
+  position: relative;
+  z-index: 1;
+
+  max-width: 720px;
+  width: 100%;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(40, 44, 40, 0.88),
+      rgba(30, 33, 30, 0.94)
+    );
+
+  border-radius: 22px 20px 24px 22px;
+
+  padding: 64px 72px;
+
+  box-shadow:
+    0 50px 120px rgba(0,0,0,0.65),
+    0 18px 42px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+
+  animation:
+    entryAppear 1.6s ease-out both,
+    entryFloat 18s ease-in-out 1.6s infinite;
+}
+
+@keyframes entryAppear {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes entryFloat {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-4px); }
+}
+
+/* -----------------------------------------------------
+   INNER FRAME — carnet discret
+----------------------------------------------------- */
+
+.archive-entry::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  pointer-events: none;
+
+  border-radius: 18px;
+  border: 1px solid rgba(200, 200, 190, 0.18);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+/* -----------------------------------------------------
+   TITLE & DATE
+----------------------------------------------------- */
+
+.archive-entry h1 {
+  margin: 0 0 10px;
+
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 400;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: rgba(235, 235, 230, 0.95);
+}
+
+.archive-entry .date {
+  display: block;
+  margin-bottom: 38px;
+
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+
+  color: rgba(190, 190, 185, 0.7);
+}
+
+/* -----------------------------------------------------
+   TEXT — journal tone
+----------------------------------------------------- */
+
+.archive-entry p {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.9;
+
+  margin-bottom: 22px;
+
+  color: rgba(230, 230, 225, 0.88);
+}
+
+/* opening thought */
+.archive-entry .weather-lead {
+  margin-bottom: 32px;
+
+  color: rgba(240, 240, 235, 0.95);
+}
+
+/* ending — held, quieter */
+.archive-entry .weather-ending {
+  margin-top: 30px;
+
+  color: rgba(245, 245, 240, 0.92);
+}
+
+/* -----------------------------------------------------
+   NAV OVERRIDE — softer, archive tone
+----------------------------------------------------- */
+
+body.archive-entry .nav {
+  background: rgba(55, 60, 55, 0.55);
+  backdrop-filter: blur(12px);
+}
+
+body.archive-entry .nav a {
+  color: rgba(235, 235, 230, 0.85);
+}
+
+body.archive-entry .nav a:hover {
+  color: rgba(255, 255, 250, 0.95);
+}
+
+/* -----------------------------------------------------
+   RESPONSIVE
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .archive-page {
+    padding: 96px 16px 60px;
+  }
+
+  .archive-entry {
+    padding: 44px 28px;
+    border-radius: 18px;
+  }
+
+  .archive-entry h1 {
+    font-size: 1rem;
+  }
+
+  .archive-entry p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+  }
+}
