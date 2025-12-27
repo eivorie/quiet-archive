@@ -37,11 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function showMessage(msg) {
-      msg.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-      msg.style.opacity = "1";
-      msg.style.transform = "translateY(0)";
-      msg.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    }
+  msg.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+  msg.style.opacity = "1";
+  msg.style.transform = "translateY(0)";
+}
 
     function nextMessage() {
       if (index >= messages.length) {
