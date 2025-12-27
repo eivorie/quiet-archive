@@ -316,28 +316,77 @@ body.archive .nav a:hover::after {
 }
 
 /* =====================================================
-   MOBILE
-   ===================================================== */
+   MOBILE — ALIGNÉ EXACTEMENT DOTW
+===================================================== */
 
 @media (max-width: 768px) {
 
-  body.archive .nav {
+  /* -------------------------
+     NAVBAR — IDENTIQUE DOTW
+  ------------------------- */
+
+  body.archive .nav,
+  body.archive-entry .nav {
     position: sticky;
     top: 0;
 
     padding: 12px 18px;
+    padding-top: calc(env(safe-area-inset-top) + 10px);
+
     gap: 18px;
     font-size: 0.75rem;
+    letter-spacing: 0.12em;
+
+    background: rgba(38, 42, 40, 0.55);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.06);
   }
 
-  .archive-card {
+  /* -------------------------
+     PAGE — MÊME FLUX QUE DOTW
+  ------------------------- */
+
+  .archive-page {
+    min-height: auto;
+    padding-top: 32px;
+    padding-bottom: 60px;
+
+    display: block;
+  }
+
+  /* -------------------------
+     CARTE — DIMENSIONS DOTW
+  ------------------------- */
+
+  .archive-card,
+  .archive-entry {
     margin: 0 14px;
     padding: 44px 28px;
+
     border-radius: 22px;
   }
 
-  .archive-card h1 {
+  /* -------------------------
+     HEADER — RESPIRATION
+  ------------------------- */
+
+  .archive-entry-header {
+    margin-bottom: 38px;
+  }
+
+   .archive-card h1 {
     font-size: 1.8rem;
     margin-bottom: 36px;
   }
+
+  /* -------------------------
+     TEXTE — DENSITÉ MOBILE
+  ------------------------- */
+
+  .archive-entry-content p {
+    font-size: 0.86rem;
+    line-height: 1.85;
+  }
 }
+
