@@ -361,3 +361,50 @@ body.archive .nav a:hover::after {
     margin-bottom: 36px;
   }
 }
+
+/* =====================================================
+   MOBILE FIX — overflow right & bottom bar
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  /* sécurité overflow horizontal */
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  /* empêche les pseudo-elements de déborder */
+  .archive-card::after,
+  .archive-card::before {
+    inset: 0;
+    filter: blur(22px);
+    opacity: 0.35;
+  }
+
+  /* carte strictement contenue */
+  .archive-card {
+    max-width: 100%;
+    width: calc(100% - 28px);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  /* supprime la fausse barre basse (vh + fixed) */
+  body.archive::before,
+  body.archive::after {
+    position: absolute;
+  }
+
+  .archive-page {
+    min-height: auto;
+    padding-bottom: 48px;
+  }
+
+  /* iOS / Safari friendly */
+  body.archive {
+    overscroll-behavior-x: none;
+  }
+}
+
