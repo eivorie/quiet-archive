@@ -324,6 +324,101 @@ const memories = [
 {
   text: "Que horror.",
   author: "us"
+},
+  {
+  text: "I'm not corny, I swear to God",
+  author: "him",
+  note: "You still talked about Céline Dion…"
+},
+{
+  text: "I force myself to wait at least an hour between messages otherwise you'd have a whole book to read every morning",
+  author: "me"
+},
+{
+  text: "This body is mine to play with anyway, and I'm in absolutely no rush",
+  author: "me",
+  note: "When you give me the illusion I have some control."
+},
+{
+  text: "Just let me tell you one more time that I'm desperately in love with everything that you are before you sleep.",
+  author: "me"
+},
+{
+  text: "EME-FUCKING-RGENCY, MOVE IT, KEEP MOVING !",
+  author: "me",
+  note: "You called before leaving for three days, I was in a meeting."
+},
+{
+  text: "You told me once to sit where I belong. I'm not opposed to the idea at all",
+  author: "me",
+  note: "This is MY seat."
+},
+{
+  text: "Now shoot me before I melt and become a sap again.",
+  author: "me"
+},
+{
+  text: "Who needs clothes ? Come here.",
+  author: "me",
+  note: "You always give details, thank you."
+},
+{
+  text: "Careful on your way to the battlefield, love",
+  author: "me"
+},
+{
+  text: "How's the situation over here? Need immediate assistance?\n- Gunfire everywhere, soldiers fighting soldiers. I hid for a second just to tell you that you make me laugh.(...)\n- Incoming pick up squad coming for evacuation Under the code: missing you brat.\n- Copy",
+  author: "us",
+  note: "smartass."
+},
+{
+  text: "I spent a few hours on foreplay with you, next time I'm cold it's because I'm fucking dead.",
+  author: "me",
+  note: "The way you make me feel ♫"
+},
+{
+  text: "If you're sick or something just call ok ? I can't do cpr from here but well, you never know.",
+  author: "me"
+},
+{
+  text: "What, get your shirt off ? Because I'd just hit you with it.",
+  author: "me",
+  note: "It will most likely happen."
+},
+{
+  text: "I don't have time to get turned on dear, I need to leave in 20 minutes. Keep your clothes on for the love of god.",
+  author: "me",
+  note: "Trying not to think about it right now-"
+},
+{
+  text: "Let me see again, for Science.",
+  author: "me",
+  note: "Damn, send the real stuff — not that shit that lasts for 2sec and I can't screenshot."
+},
+{
+  text: "Can you play with my hair while we watch? I'm not gonna sleep I swear. Can you do?",
+  author: "you",
+  note: "Cutest brat."
+},
+{
+  text: "IM TELLING YOU 5 TIMES I LIKE THAT. J'ai dit mille fois que j'aime ça.",
+  author: "you",
+  note: "You'd say I'm always the angry one."
+},
+{
+  text: "The forecast said it was supposed to rain at 5PM, so I was like 'ok, I can make it on time', but your energy was stronger.",
+  author: "you",
+  note: "pspspspspspsps."
+},
+{
+  text: "You'd rather have me comparing you to a sugar craving or something? I might be a little bold sometimes.\n- Shut up",
+  author: "us",
+  note: "I don't count how many times a day you ask me to shut up anymore."
+},
+{
+  text: "I'm great, what can I say\n- Shut up",
+  author: "us",
+  note: "again, shut up."
 }
 ];
 
