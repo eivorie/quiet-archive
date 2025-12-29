@@ -1,55 +1,103 @@
 /* =====================================================
-   OUR ARCHIVE — 2025.12.29
+   ARCHIVE ENTRY — 2025-12-29
+   FINAL — aligned with Archive & DOTW
    Angry / raw / sleepless
    ===================================================== */
 
-body.entry-2025-12-29 {
-  background:
-    radial-gradient(
-      circle at 30% 20%,
-      rgba(160, 120, 110, 0.25),
-      transparent 55%
-    ),
-    linear-gradient(
-      to bottom,
-      #4a3a38,
-      #2a1f1d
-    );
+/* =====================================================
+   CONTEXT
+   ===================================================== */
+
+body.archive-entry.entry-2025-12-29 {
+  color: rgba(235,232,225,0.9);
 }
 
-/* -----------------------------------------------------
-   Card
------------------------------------------------------ */
+/* =====================================================
+   CARD — dimensions & flow IDENTIQUES archive index
+   ===================================================== */
 
-.entry-2025-12-29 .archive-card {
-  background: rgba(40, 32, 30, 0.88);
-  box-shadow:
-    0 40px 120px rgba(0,0,0,0.7),
-    inset 0 1px 0 rgba(255,255,255,0.04);
+.entry-2025-12-29 .archive-card.archive-entry {
+  max-width: 760px;   /* MATCH DOTW + archive index */
+  width: 100%;
+  margin: 0 auto;
 }
 
-/* -----------------------------------------------------
-   Date
------------------------------------------------------ */
+/* =====================================================
+   HEADER — date
+   ===================================================== */
+
+.entry-2025-12-29 .archive-entry-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
 
 .entry-2025-12-29 .archive-entry-date {
-  color: rgba(230, 210, 205, 0.65);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: rgba(215,205,200,0.7);
 }
 
-/* -----------------------------------------------------
-   Text
------------------------------------------------------ */
+.entry-2025-12-29 .archive-entry-header::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 1px;
+  margin: 22px auto 0;
 
-.entry-2025-12-29 .archive-entry-content {
-  color: rgba(235, 228, 225, 0.9);
+  background: linear-gradient(
+    to right,
+    rgba(190,150,140,0),
+    rgba(190,150,140,0.6),
+    rgba(190,150,140,0)
+  );
+
+  opacity: 0.55;
 }
+
+/* =====================================================
+   TEXT — journal (tendu)
+   ===================================================== */
 
 .entry-2025-12-29 .archive-entry-content p {
-  margin-bottom: 1.8em;
-  line-height: 1.85;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.92rem;
+  line-height: 1.9;
+  margin-bottom: 24px;
+
+  color: rgba(235,232,225,0.86);
 }
 
-/* pauses visuelles */
-.entry-2025-12-29 .archive-entry-content p:nth-child(3n) {
-  margin-bottom: 2.4em;
+/* rythme plus nerveux */
+.entry-2025-12-29 .archive-entry-content p:nth-child(odd) {
+  color: rgba(242,238,232,0.92);
+}
+
+/* paragraphes plus lourds émotionnellement */
+.entry-2025-12-29 .archive-entry-content p:nth-child(4n) {
+  margin-bottom: 32px;
+}
+
+/* =====================================================
+   MOBILE — IDENTIQUE ARCHIVE / DOTW
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  .entry-2025-12-29 .archive-card.archive-entry {
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+  .entry-2025-12-29 .archive-entry-header {
+    margin-bottom: 36px;
+  }
+
+  .entry-2025-12-29 .archive-entry-content p {
+    font-size: 0.86rem;
+    line-height: 1.85;
+  }
 }
