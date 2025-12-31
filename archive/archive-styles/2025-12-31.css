@@ -1,0 +1,111 @@
+/* =====================================================
+   ARCHIVE ENTRY — 2025-12-31
+   FINAL — aligned with Archive & DOTW
+   Gentle / gratitude / year-end
+   ===================================================== */
+
+/* =====================================================
+   CONTEXT
+   ===================================================== */
+
+body.archive-entry.entry-2025-12-31 {
+  color: rgba(235,232,225,0.9);
+}
+
+/* =====================================================
+   CARD — dimensions & flow IDENTIQUES archive index
+   ===================================================== */
+
+.entry-2025-12-31 .archive-card.archive-entry {
+  max-width: 760px;  /* MATCH DOTW + archive index */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* =====================================================
+   HEADER — date
+   ===================================================== */
+
+.entry-2025-12-31 .archive-entry-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.entry-2025-12-31 .archive-entry-date {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  /* slightly warmer, hopeful */
+  color: rgba(225,220,205,0.78);
+}
+
+.entry-2025-12-31 .archive-entry-header::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 1px;
+  margin: 22px auto 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(210,185,140,0),
+    rgba(230,210,160,0.65),
+    rgba(210,185,140,0)
+  );
+
+  opacity: 0.65;
+}
+
+/* =====================================================
+   TEXT — journal (calm / reflective)
+   ===================================================== */
+
+.entry-2025-12-31 .archive-entry-content p {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.92rem;
+  line-height: 1.95;
+  margin-bottom: 26px;
+
+  color: rgba(235,232,225,0.9);
+}
+
+/* light opening warm tone if used */
+.entry-2025-12-31 .archive-entry-content .weather-lead {
+  margin-bottom: 36px;
+  color: rgba(246,243,236,0.96);
+}
+
+/* ending — soft emphasis */
+.entry-2025-12-31 .archive-entry-content .weather-ending {
+  margin-top: 32px;
+  color: rgba(246,243,236,0.94);
+}
+
+/* subtle breathing rhythm */
+.entry-2025-12-31 .archive-entry-content p:nth-child(odd) {
+  color: rgba(242,238,232,0.94);
+}
+
+/* =====================================================
+   MOBILE — IDENTIQUE ARCHIVE / DOTW
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  .entry-2025-12-31 .archive-card.archive-entry {
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+  .entry-2025-12-31 .archive-entry-header {
+    margin-bottom: 36px;
+  }
+
+  .entry-2025-12-31 .archive-entry-content p {
+    font-size: 0.86rem;
+    line-height: 1.85;
+  }
+}
