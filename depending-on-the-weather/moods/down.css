@@ -20,19 +20,14 @@ body.down {
 
 body.down .weather-card {
   position: relative;
-  overflow: hidden; /* nécessaire pour l’animation */
+  overflow: hidden;
 
   background: #fffaf3;
   border-radius: 24px;
 
   box-shadow:
-    /* ancrage doux */
     0 28px 55px rgba(160, 140, 110, 0.28),
-
-    /* halo chaud */
     0 8px 22px rgba(200, 180, 150, 0.35),
-
-    /* peau interne */
     inset 0 0 0 1px rgba(255, 255, 255, 0.7),
     inset 0 6px 14px rgba(255, 255, 255, 0.45);
 
@@ -81,13 +76,10 @@ body.down .weather-card::after {
   background:
     linear-gradient(#d4b27a, #d4b27a) top left / 24px 1px no-repeat,
     linear-gradient(#d4b27a, #d4b27a) top left / 1px 24px no-repeat,
-
     linear-gradient(#d4b27a, #d4b27a) top right / 24px 1px no-repeat,
     linear-gradient(#d4b27a, #d4b27a) top right / 1px 24px no-repeat,
-
     linear-gradient(#d4b27a, #d4b27a) bottom left / 24px 1px no-repeat,
     linear-gradient(#d4b27a, #d4b27a) bottom left / 1px 24px no-repeat,
-
     linear-gradient(#d4b27a, #d4b27a) bottom right / 24px 1px no-repeat,
     linear-gradient(#d4b27a, #d4b27a) bottom right / 1px 24px no-repeat;
 
@@ -100,12 +92,12 @@ body.down .weather-card::after {
 
 body.down .weather-card,
 body.down .weather-card p,
-body.down .weather-card h1 {
+body.down .weather-card .weather-title {
   font-family: "Lora", serif;
 }
 
 /* Titre : posé, doux */
-body.down h1 {
+body.down .weather-title {
   font-weight: 500;
   font-size: 1.5rem;
   letter-spacing: 0.04em;
@@ -207,8 +199,5 @@ body.down .nav a:hover {
     gap: 18px;
     font-size: 0.65rem;
     letter-spacing: 0.24em;
-  }
-   body.down .weather-page {
-    margin-top: 48px;
   }
 }
