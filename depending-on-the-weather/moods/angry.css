@@ -1,5 +1,5 @@
 /* =========================
-   Angry mood — held, warm, breathing (FINAL)
+   Angry mood — held, warm, breathing (FINAL FIXED)
    ========================= */
 
 body.angry {
@@ -15,21 +15,22 @@ body.angry {
 }
 
 /* =====================================================
-   Layout — alignement avec les autres moods
+   PAGE LAYOUT — aligné Weather canon
    ===================================================== */
 
-body.angry .page {
-  padding-top: 80px;
+body.angry .weather-page {
+  padding-top: 120px;
+  padding-bottom: 90px;
 }
 
 @media (max-width: 768px) {
-  body.angry .page {
-    padding-top: 64px;
+  body.angry .weather-page {
+    padding-top: 32px;
   }
 }
 
 /* =====================================================
-   Carte — tenue, respirante, non rigide
+   CARTE — tenue, respirante
    ===================================================== */
 
 body.angry .weather-card {
@@ -59,11 +60,11 @@ body.angry .weather-card::after {
 }
 
 /* =====================================================
-   Typographie — Courier Prime (CONTENU UNIQUEMENT)
+   TYPOGRAPHIE — Courier Prime (CONTENU)
    ===================================================== */
 
-body.angry .weather-text,
-body.angry .weather-text p {
+body.angry .weather-content,
+body.angry .weather-content p {
   font-family: "Courier Prime", monospace;
   font-style: normal;
   font-weight: 400;
@@ -75,8 +76,8 @@ body.angry .weather-text p {
   color: #3b2a22;
 }
 
-/* Titre */
-body.angry .weather-header h1 {
+/* TITRE */
+body.angry .weather-title {
   font-family: "Courier Prime", monospace;
   font-weight: 400;
   font-size: 1.4rem;
@@ -113,12 +114,10 @@ body.angry .weather-ending {
 
 /* =====================================================
    NAVBAR — Angry override
-   (alignée avec Love, marron conservé)
    ===================================================== */
 
-body.angry .nav {
+body.angry .weather-nav {
   font-family: "Cormorant Garamond", serif;
-  font-style: normal;
   font-weight: 400;
 
   text-transform: uppercase;
@@ -135,27 +134,22 @@ body.angry .nav {
     0 8px 22px rgba(60, 30, 20, 0.25);
 }
 
-body.angry .nav a {
-  font-family: inherit;
-  font-style: normal;
-  letter-spacing: inherit;
-
+body.angry .weather-nav a {
   color: rgba(245, 235, 225, 0.75);
   text-decoration: none;
-
   transition: color 0.25s ease;
 }
 
-body.angry .nav a:hover {
+body.angry .weather-nav a:hover {
   color: rgba(255, 245, 235, 1);
 }
 
 /* =====================================================
-   Mobile — cohérent avec Love
+   MOBILE
    ===================================================== */
 
 @media (max-width: 768px) {
-  body.angry .nav {
+  body.angry .weather-nav {
     padding: 14px 18px;
     gap: 18px;
     font-size: 0.65rem;
