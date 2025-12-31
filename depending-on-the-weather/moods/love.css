@@ -15,12 +15,50 @@ body.love {
 }
 
 /* =====================================================
+   FIX GLOBAL — Love n’est PAS un mood météo
+   ===================================================== */
+
+/* annule les comportements injectés par weather.css */
+body.love .page {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* =====================================================
+   Navbar — style SITE (pas météo)
+   ===================================================== */
+
+body.love .nav {
+  position: relative;
+  top: auto;
+
+  background: rgba(255, 250, 245, 0.88);
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 6px 18px rgba(90, 60, 35, 0.18);
+
+  margin-bottom: 0;
+}
+
+body.love .nav a {
+  color: rgba(90, 60, 35, 0.85);
+  font-style: normal;
+}
+
+body.love .nav a:hover {
+  color: rgba(90, 60, 35, 1);
+}
+
+/* =====================================================
    Carte — papier imprimé, NON rigide
    ===================================================== */
 
 body.love .weather-card {
   position: relative;
   z-index: 1;
+
+  margin-top: 48px; /* espace volontaire après navbar */
 
   background: #fffaf3;
   border-radius: 28px;
@@ -78,12 +116,10 @@ body.love .weather-text p {
   font-style: italic;
 }
 
-/* lead un peu plus posé */
 body.love .weather-lead {
   margin-bottom: 26px;
 }
 
-/* fin plus discrète */
 body.love .weather-ending {
   margin-top: 42px;
   opacity: 0.85;
@@ -186,17 +222,9 @@ body.love .weather-card::after {
 }
 
 /* =====================================================
-   Overrides — éléments UI NON italiques
+   UI Overrides — NON italiques
    ===================================================== */
 
-/* Navbar : même style que le reste du site */
-body.love .nav,
-body.love .nav a {
-  font-style: normal;
-  font-family: inherit; /* reprend la typo globale */
-}
-
-/* Language switch : UI, pas lettre */
 body.love .lang-switch,
 body.love .lang-switch button {
   font-style: normal;
@@ -211,6 +239,7 @@ body.love .lang-switch button {
 @media (max-width: 768px) {
 
   body.love .weather-card {
+    margin-top: 32px;
     padding: 48px 22px;
     border-radius: 18px;
   }
