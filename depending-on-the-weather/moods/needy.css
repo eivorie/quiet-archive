@@ -1,10 +1,10 @@
-/* =========================
-   NEEDY — wine velvet 
-   ========================= */
+/* =====================================================
+   NEEDY — wine velvet (FINAL CLEAN)
+   ===================================================== */
 
-/* -----------------------------------------------------
+/* =====================================================
    FOND — vin sombre + respiration chaude
------------------------------------------------------ */
+   ===================================================== */
 
 body.weather-needy {
   background:
@@ -36,45 +36,57 @@ body.weather-needy {
   50%     { background-position: 8% 6%; }
 }
 
-/* -----------------------------------------------------
-   NAV — fondue dans le décor
------------------------------------------------------ */
+/* =====================================================
+   FIX GLOBAL — neutralise offset météo
+   ===================================================== */
+
+body.weather-needy .page {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* =====================================================
+   NAVBAR — alignée avec tous les moods
+   ===================================================== */
 
 body.weather-needy .nav {
   font-family: "Cormorant Garamond", serif;
-  letter-spacing: .22em;
-  font-size: .72rem;
-  text-transform: uppercase;
+  font-weight: 400;
 
-  padding: 16px 26px;
-  gap: 28px;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+
+  padding: 18px 28px;
+  gap: 32px;
 
   background: rgba(24, 8, 10, 0.55);
   backdrop-filter: blur(10px);
 
   box-shadow:
-    0 12px 26px rgba(0,0,0,.45),
+    0 10px 28px rgba(0,0,0,.55),
     inset 0 0 0 1px rgba(180,120,110,.10);
 }
 
 body.weather-needy .nav a {
-  color: rgba(230,205,205,.82);
+  color: rgba(230,205,205,.85);
   text-decoration: none;
   transition: color .25s ease;
-  text-transform: uppercase;
 }
 
 body.weather-needy .nav a:hover {
   color: rgba(255,230,230,.95);
 }
 
-/* -----------------------------------------------------
+/* =====================================================
    CARTE — velours bordeaux + profondeur
------------------------------------------------------ */
+   ===================================================== */
 
 body.weather-needy .weather-card {
   position: relative;
   overflow: hidden;
+
+  margin-top: 48px;
 
   background:
     linear-gradient(
@@ -91,8 +103,8 @@ body.weather-needy .weather-card {
     inset 0 0 0 1px rgba(255,225,225,.06);
 
   animation:
-  needyAppear 1.6s ease-out both,
-  needyFloat 14s ease-in-out 1.6s infinite;
+    needyAppear 1.6s ease-out both,
+    needyFloat 14s ease-in-out 1.6s infinite;
 }
 
 @keyframes needyAppear {
@@ -144,9 +156,9 @@ body.weather-needy .weather-card::after {
   pointer-events: none;
 }
 
-/* -----------------------------------------------------
-   TITRE — fin, sensuel + soulignement doré animé
------------------------------------------------------ */
+/* =====================================================
+   TITRE — fin, sensuel + soulignement doré
+   ===================================================== */
 
 body.weather-needy .weather-title {
   position: relative;
@@ -165,7 +177,6 @@ body.weather-needy .weather-title {
     0 12px 34px rgba(0,0,0,.55);
 }
 
-/* soulignement doré */
 body.weather-needy .weather-title::after {
   content: "";
   display: block;
@@ -188,19 +199,13 @@ body.weather-needy .weather-title::after {
 }
 
 @keyframes needyUnderline {
-  0%,100% {
-    width: 42px;
-    opacity: .5;
-  }
-  50% {
-    width: 64px;
-    opacity: .9;
-  }
+  0%,100% { width: 42px; opacity: .5; }
+  50%     { width: 64px; opacity: .9; }
 }
 
-/* -----------------------------------------------------
-   TEXTE — fin, fondu, charnel
------------------------------------------------------ */
+/* =====================================================
+   TEXTE — fondu, charnel
+   ===================================================== */
 
 body.weather-needy .weather-content {
   margin-top: 20px;
@@ -216,10 +221,7 @@ body.weather-needy .weather-content p {
   color: rgba(232, 205, 208, 0.82);
 }
 
-/* -----------------------------------------------------
-   ACCENTS — relief émotionnel
------------------------------------------------------ */
-
+/* accents */
 body.weather-needy .weather-content p:nth-child(odd) {
   color: rgba(245, 220, 225, .90);
 }
@@ -241,8 +243,25 @@ body.weather-needy .weather-content p[class*="shift"] {
     0 10px 24px rgba(0,0,0,.35);
 }
 
-/* fins de texte */
+/* fin */
 body.weather-needy .weather-ending {
   color: rgba(255, 238, 240, .96);
   letter-spacing: .03em;
+}
+
+/* =====================================================
+   MOBILE — cohérence globale
+   ===================================================== */
+
+@media (max-width: 768px) {
+  body.weather-needy .nav {
+    padding: 14px 18px;
+    gap: 18px;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+  }
+
+  body.weather-needy .weather-card {
+    margin-top: 32px;
+  }
 }
