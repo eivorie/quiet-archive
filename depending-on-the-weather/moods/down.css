@@ -208,4 +208,7 @@ body.down .nav a:hover {
     font-size: 0.65rem;
     letter-spacing: 0.24em;
   }
+   body.down .weather-page {
+    margin-top: 48px;
+  }
 }
