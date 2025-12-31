@@ -26,13 +26,8 @@ body.moody .weather-card {
   border-radius: 22px;
 
   box-shadow:
-    /* séparation claire avec le fond */
     0 32px 70px rgba(70, 90, 90, 0.45),
-
-    /* halo froid diffus */
     0 14px 36px rgba(140, 170, 170, 0.35),
-
-    /* peau interne */
     inset 0 0 0 1px rgba(255, 255, 255, 0.8),
     inset 0 10px 22px rgba(255, 255, 255, 0.55);
 
@@ -90,16 +85,16 @@ body.moody .weather-card::after {
 }
 
 /* =====================================================
-   Typographie (inchangée)
+   Typographie
    ===================================================== */
 
 body.moody .weather-card,
-body.moody .weather-card p,
-body.moody .weather-card h1 {
+body.moody .weather-card h1,
+body.moody .weather-content p {
   font-family: "Spectral", serif;
 }
 
-/* Titre : détaché, calme */
+/* Titre — détaché, calme */
 body.moody h1 {
   font-weight: 500;
   font-size: 1.45rem;
@@ -107,8 +102,8 @@ body.moody h1 {
   color: #465a58;
 }
 
-/* Texte : flottant */
-body.moody .weather-text p {
+/* Texte — flottant */
+body.moody .weather-content p {
   font-style: italic;
   font-size: 0.95rem;
   line-height: 2;
