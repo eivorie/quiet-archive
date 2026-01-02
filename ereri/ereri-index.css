@@ -301,9 +301,27 @@ Mobile — alignement Home / Memories
     border-radius: 22px;
   }
 
+    .ereri-index .ereri-toc ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 14px;
+
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .ereri-index .ereri-toc a {
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (max-width: 420px) {
+
   .ereri-index .ereri-toc ul {
     grid-template-columns: 1fr;
     max-width: none;
   }
 }
+
 
