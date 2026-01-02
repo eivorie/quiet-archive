@@ -1,0 +1,213 @@
+/* =====================================================
+   Happy New Year — Story variation (Ereri)
+   Night, fireworks, warmth in the cold
+   ===================================================== */
+
+/* -----------------------------------------------------
+   Carte — nuit hivernale, lumière lointaine
+----------------------------------------------------- */
+
+.ereri-story .ereri-card {
+  background:
+    radial-gradient(
+      circle at 30% 18%,
+      rgba(255, 230, 200, 0.08),
+      transparent 65%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      rgba(180, 200, 255, 0.06),
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom,
+      #2f3440,
+      #1f232c
+    );
+}
+
+/* -----------------------------------------------------
+   Texte
+----------------------------------------------------- */
+
+.ereri-story h1 {
+  color: rgba(240, 235, 225, 0.88);
+}
+
+.ereri-story .ereri-content {
+  color: rgba(230, 235, 240, 0.84);
+}
+
+.ereri-story .ereri-content p {
+  margin-bottom: 1.5em;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: rgba(210, 215, 230, 0.75);
+  letter-spacing: 0.04em;
+}
+
+/* -----------------------------------------------------
+   Illustration — alignée Ereri standard
+----------------------------------------------------- */
+
+.story-illustration {
+  margin: 40px auto 60px;
+  text-align: center;
+}
+
+.story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 18px 24px 20px 26px;
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.65),
+    inset 0 0 0 1px rgba(255,255,255,.18);
+}
+
+/* -----------------------------------------------------
+   Messages (text-thread)
+----------------------------------------------------- */
+
+.text-thread {
+  margin: 36px 0 42px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* état initial — JS controlled */
+.text-thread .text {
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+
+.text {
+  max-width: 75%;
+}
+
+.text span {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Inter,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+}
+
+/* Eren — lumière chaude */
+.text.eren {
+  align-self: flex-start;
+}
+
+.text.eren span {
+  background: rgba(255, 215, 160, 0.14);
+  color: rgba(255, 245, 230, 0.92);
+  border-bottom-left-radius: 4px;
+}
+
+/* Levi — froid maîtrisé */
+.text.levi {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.text.levi span {
+  background: rgba(160, 180, 210, 0.22);
+  color: rgba(20, 30, 45, 0.95);
+  border-bottom-right-radius: 4px;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 6px;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  opacity: 0.7;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* -----------------------------------------------------
+   Accent — feu d’artifice (fin d’année)
+----------------------------------------------------- */
+
+.flowers {
+  margin: 48px 0;
+  text-align: center;
+
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: rgba(255, 220, 170, 0.65);
+}
+
+/* =====================================================
+   MOBILE — Happy New Year
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  .ereri-story .ereri-card {
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+  .ereri-story .ereri-content {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .story-illustration {
+    margin: 40px auto 60px;
+    text-align: center;
+  }
+
+  .story-illustration img {
+    max-width: 380px;
+    width: 100%;
+    height: auto;
+
+    border-radius: 18px 24px 20px 26px;
+
+    box-shadow:
+      0 30px 70px rgba(0,0,0,.65),
+      inset 0 0 0 1px rgba(255,255,255,.18);
+  }
+
+  .text-thread {
+    margin: 28px 0 34px;
+    gap: 10px;
+  }
+
+  .text {
+    max-width: 85%;
+  }
+
+  .text span {
+    font-size: 0.9rem;
+    padding: 9px 13px;
+  }
+
+  .flowers {
+    margin: 36px 0;
+    font-size: 0.9rem;
+  }
+}
