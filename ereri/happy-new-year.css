@@ -76,25 +76,15 @@
 /* QUIET — silence, respiration, intérieur */
 .ereri-story .ereri-content p.quiet {
   color: rgba(200, 215, 235, 0.70);
-  font-style: italic;
-  letter-spacing: 0.02em;
-  margin: 1.8em 0;
-}
-
-/* SOFT — tendresse, proximité */
-.ereri-story .ereri-content p.soft {
-  color: rgba(230, 235, 245, 0.88);
-  font-style: italic;
-  margin: 1.6em 0;
+  //font-style: italic;
 }
 
 /* EMPHASIS — point fixe, vérité */
 .ereri-story .ereri-content p.emphasis {
   text-align: center;
   font-style: italic;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   color: rgba(220, 235, 255, 0.92);
-  margin: 2.4em 0;
 }
 
 /* DIALOGUE — parole vivante */
