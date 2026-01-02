@@ -87,32 +87,33 @@
   color: rgba(220, 235, 255, 0.92);
 }
 
-/* DIALOGUE — parole vivante */
+/* -----------------------------------------------------
+   DIALOGUE — voix distincte, retenue
+----------------------------------------------------- */
+
 .ereri-story .ereri-content p.dialogue {
-  margin: 1.2em 0;
-  padding-left: 1.4em;
+  margin: 1.4em 0;
+  padding-left: 1.6em;
   position: relative;
 
-  color: rgba(240, 245, 255, 0.90);
-  font-style: normal;
+  font-family: "Libre Baskerville", "Georgia", serif;
+  font-size: 0.92rem;
+  line-height: 1.7;
+
+  color: rgba(235, 240, 255, 0.92);
+  letter-spacing: 0.015em;
 }
 
+/* marqueur discret */
 .ereri-story .ereri-content p.dialogue::before {
   content: "—";
   position: absolute;
   left: 0;
-  color: rgba(190, 215, 255, 0.65);
+  top: 0.1em;
+
+  color: rgba(180, 205, 245, 0.55);
 }
 
-/* ENDING — fermeture douce */
-.ereri-story .ereri-content p.ending {
-  text-align: center;
-  margin-top: 3em;
-
-  font-style: italic;
-  letter-spacing: 0.08em;
-  color: rgba(210, 225, 255, 0.75);
-}
 
 /* -----------------------------------------------------
    Messages (text-thread)
