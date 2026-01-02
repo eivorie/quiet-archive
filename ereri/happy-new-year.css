@@ -9,29 +9,34 @@
    Carte — nuit hivernale, lumière lointaine (icy blue)
 ----------------------------------------------------- */
 
+/* -----------------------------------------------------
+   Carte — nuit dorée, feu doux
+----------------------------------------------------- */
+
 .ereri-story .ereri-card {
   background:
-    /* halo froid diffus */
+    /* halo chaud principal */
     radial-gradient(
-      circle at 28% 22%,
-      rgba(220, 240, 255, 0.28),
-      transparent 60%
+      circle at 30% 20%,
+      rgba(255, 215, 165, 0.28),
+      transparent 62%
     ),
 
-    /* respiration secondaire */
+    /* lumière secondaire plus froide */
     radial-gradient(
-      circle at 72% 68%,
-      rgba(190, 215, 245, 0.18),
+      circle at 72% 70%,
+      rgba(210, 190, 150, 0.18),
       transparent 65%
     ),
 
-    /* fond principal — nuit glacée */
+    /* fond nocturne doré */
     linear-gradient(
       to bottom,
-      #3a4354,
-      #2a3140
+      #3a3328,
+      #262019
     );
 }
+
 /* -----------------------------------------------------
    Texte
 ----------------------------------------------------- */
@@ -79,45 +84,58 @@
    Story semantics — narration
 ----------------------------------------------------- */
 
-/* QUIET — silence, respiration, intérieur */
+/* QUIET — intérieur, retenu */
 .ereri-story .ereri-content p.quiet {
-  color: rgba(200, 215, 235, 0.70);
-  //font-style: italic;
+  color: rgba(210, 200, 185, 0.72);
 }
 
-/* EMPHASIS — point fixe, vérité */
+/* EMPHASIS — point d’ancrage */
 .ereri-story .ereri-content p.emphasis {
   text-align: center;
   font-style: italic;
   letter-spacing: 0.04em;
-  color: rgba(220, 235, 255, 0.92);
+  color: rgba(255, 235, 205, 0.92);
+}
+
+/* ENDING */
+.ereri-story .ereri-content p.ending {
+  text-align: center;
+  margin-top: 3em;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: rgba(230, 205, 165, 0.75);
 }
 
 /* -----------------------------------------------------
    DIALOGUE — parole distincte, retenue
 ----------------------------------------------------- */
 
+/* -----------------------------------------------------
+   DIALOGUE — parole douce, intégrée
+----------------------------------------------------- */
+
 .ereri-story .ereri-content p.dialogue {
-  margin: 1.6em 0;
-  padding-left: 1.8em;
+  margin: 1.4em 0;
+  padding-left: 1.6em;
   position: relative;
 
-  font-family: "Courier Prime", "Courier New", monospace;
-  font-size: 0.88rem;
-  line-height: 1.75;
-  letter-spacing: 0.04em;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
 
-  color: rgba(225, 235, 255, 0.90);
+  color: rgba(240, 230, 215, 0.88);
 }
 
-/* marqueur discret */
+/* marqueur très discret */
 .ereri-story .ereri-content p.dialogue::before {
   content: "—";
   position: absolute;
   left: 0;
-  top: 0.05em;
+  top: 0.1em;
 
-  color: rgba(170, 195, 235, 0.55);
+  color: rgba(200, 175, 135, 0.55);
 }
 
 /* -----------------------------------------------------
