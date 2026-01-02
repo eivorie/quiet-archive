@@ -4,25 +4,25 @@
    ===================================================== */
 
 /* -----------------------------------------------------
-   Carte — nuit hivernale, lumière lointaine
+   Carte — nuit hivernale, lumière lointaine (icy blue)
 ----------------------------------------------------- */
 
 .ereri-story .ereri-card {
   background:
     radial-gradient(
       circle at 30% 18%,
-      rgba(255, 230, 200, 0.08),
+      rgba(220, 235, 255, 0.10),
       transparent 65%
     ),
     radial-gradient(
       circle at 70% 70%,
-      rgba(180, 200, 255, 0.06),
+      rgba(180, 205, 255, 0.08),
       transparent 60%
     ),
     linear-gradient(
       to bottom,
-      #2f3440,
-      #1f232c
+      #2b3242,
+      #1a1f2a
     );
 }
 
@@ -31,11 +31,11 @@
 ----------------------------------------------------- */
 
 .ereri-story h1 {
-  color: rgba(240, 235, 225, 0.88);
+  color: rgba(235, 240, 250, 0.90);
 }
 
 .ereri-story .ereri-content {
-  color: rgba(230, 235, 240, 0.84);
+  color: rgba(220, 230, 245, 0.85);
 }
 
 .ereri-story .ereri-content p {
@@ -44,7 +44,7 @@
 
 .subtitle {
   font-size: 0.9rem;
-  color: rgba(210, 215, 230, 0.75);
+  color: rgba(200, 215, 235, 0.75);
   letter-spacing: 0.04em;
 }
 
@@ -66,7 +66,62 @@
 
   box-shadow:
     0 30px 70px rgba(0,0,0,.65),
-    inset 0 0 0 1px rgba(255,255,255,.18);
+    inset 0 0 0 1px rgba(255,255,255,.20);
+}
+
+/* -----------------------------------------------------
+   Story semantics — narration
+----------------------------------------------------- */
+
+/* QUIET — silence, respiration, intérieur */
+.ereri-story .ereri-content p.quiet {
+  color: rgba(200, 215, 235, 0.70);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  margin: 1.8em 0;
+}
+
+/* SOFT — tendresse, proximité */
+.ereri-story .ereri-content p.soft {
+  color: rgba(230, 235, 245, 0.88);
+  font-style: italic;
+  margin: 1.6em 0;
+}
+
+/* EMPHASIS — point fixe, vérité */
+.ereri-story .ereri-content p.emphasis {
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 0.06em;
+  color: rgba(220, 235, 255, 0.92);
+  margin: 2.4em 0;
+}
+
+/* DIALOGUE — parole vivante */
+.ereri-story .ereri-content p.dialogue {
+  margin: 1.2em 0;
+  padding-left: 1.4em;
+  position: relative;
+
+  color: rgba(240, 245, 255, 0.90);
+  font-style: normal;
+}
+
+.ereri-story .ereri-content p.dialogue::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: rgba(190, 215, 255, 0.65);
+}
+
+/* ENDING — fermeture douce */
+.ereri-story .ereri-content p.ending {
+  text-align: center;
+  margin-top: 3em;
+
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: rgba(210, 225, 255, 0.75);
 }
 
 /* -----------------------------------------------------
@@ -110,14 +165,14 @@
   font-weight: 400;
 }
 
-/* Eren — lumière chaude */
+/* Eren — chaleur dorée */
 .text.eren {
   align-self: flex-start;
 }
 
 .text.eren span {
-  background: rgba(255, 215, 160, 0.14);
-  color: rgba(255, 245, 230, 0.92);
+  background: rgba(255, 215, 170, 0.16);
+  color: rgba(255, 245, 235, 0.95);
   border-bottom-left-radius: 4px;
 }
 
@@ -128,8 +183,8 @@
 }
 
 .text.levi span {
-  background: rgba(160, 180, 210, 0.22);
-  color: rgba(20, 30, 45, 0.95);
+  background: rgba(170, 195, 230, 0.24);
+  color: rgba(18, 28, 44, 0.95);
   border-bottom-right-radius: 4px;
 }
 
@@ -146,7 +201,7 @@
 }
 
 /* -----------------------------------------------------
-   Accent — feu d’artifice (fin d’année)
+   Accent — feu d’artifice hivernal
 ----------------------------------------------------- */
 
 .flowers {
@@ -155,7 +210,7 @@
 
   font-style: italic;
   letter-spacing: 0.08em;
-  color: rgba(255, 220, 170, 0.65);
+  color: rgba(200, 220, 255, 0.65);
 }
 
 /* =====================================================
