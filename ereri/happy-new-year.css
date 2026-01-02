@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
 /* =====================================================
    Happy New Year — Story variation (Ereri)
    Night, fireworks, warmth in the cold
@@ -88,20 +90,20 @@
 }
 
 /* -----------------------------------------------------
-   DIALOGUE — voix distincte, retenue
+   DIALOGUE — parole distincte, retenue
 ----------------------------------------------------- */
 
 .ereri-story .ereri-content p.dialogue {
-  margin: 1.4em 0;
-  padding-left: 1.6em;
+  margin: 1.6em 0;
+  padding-left: 1.8em;
   position: relative;
 
-  font-family: "Libre Baskerville", "Georgia", serif;
-  font-size: 0.92rem;
-  line-height: 1.7;
+  font-family: "Courier Prime", "Courier New", monospace;
+  font-size: 0.88rem;
+  line-height: 1.75;
+  letter-spacing: 0.04em;
 
-  color: rgba(235, 240, 255, 0.92);
-  letter-spacing: 0.015em;
+  color: rgba(225, 235, 255, 0.90);
 }
 
 /* marqueur discret */
@@ -109,11 +111,10 @@
   content: "—";
   position: absolute;
   left: 0;
-  top: 0.1em;
+  top: 0.05em;
 
-  color: rgba(180, 205, 245, 0.55);
+  color: rgba(170, 195, 235, 0.55);
 }
-
 
 /* -----------------------------------------------------
    Messages (text-thread)
