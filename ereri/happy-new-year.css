@@ -11,23 +11,27 @@
 
 .ereri-story .ereri-card {
   background:
+    /* halo froid diffus */
     radial-gradient(
-      circle at 30% 18%,
-      rgba(220, 235, 255, 0.10),
-      transparent 65%
-    ),
-    radial-gradient(
-      circle at 70% 70%,
-      rgba(180, 205, 255, 0.08),
+      circle at 28% 22%,
+      rgba(220, 240, 255, 0.28),
       transparent 60%
     ),
+
+    /* respiration secondaire */
+    radial-gradient(
+      circle at 72% 68%,
+      rgba(190, 215, 245, 0.18),
+      transparent 65%
+    ),
+
+    /* fond principal — nuit glacée */
     linear-gradient(
       to bottom,
-      #2b3242,
-      #1a1f2a
+      #3a4354,
+      #2a3140
     );
 }
-
 /* -----------------------------------------------------
    Texte
 ----------------------------------------------------- */
