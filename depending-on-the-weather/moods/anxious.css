@@ -120,6 +120,14 @@ body.anxious .weather-warning {
   opacity: 0.85;
 }
 
+body.anxious .weather-warning::after {
+  content: "✦";
+  display: block;
+  margin: 22px auto 0;
+  font-size: 0.7rem;
+  color: rgba(120, 150, 190, 0.35);
+}
+
 /* =====================================================
    Typographie
    ===================================================== */
