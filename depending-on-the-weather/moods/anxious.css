@@ -246,7 +246,7 @@ body.anxious .weather-warning::after {
     linear-gradient(
       to right,
       rgba(0,0,0,0),
-      rgba(85,80,70,.75),
+      rgba(110,105,90,.55),
       rgba(0,0,0,0)
     );
 
