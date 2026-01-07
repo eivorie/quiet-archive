@@ -232,15 +232,25 @@ body.anxious .weather-warning {
 }
 
 body.anxious .weather-warning::after {
-  content: "✦";
+  content: "";
   display: block;
-  margin: 22px auto 0;
+
+  width: 42px;
+  height: 1px;
+  margin: 24px auto 0;
   margin-bottom: -30px;
-  font-size: 0.7rem;
 
-  color: rgba(215,190,145,.65);
+  background: rgba(215,190,145,.55);
 
-  opacity: 0.7;
+  opacity: 0.35;
+  animation: anxiousBreathLine 7.5s cubic-bezier(.45,0,.55,1) infinite;
+}
+
+@keyframes anxiousBreathLine {
+  0%   { width: 36px; opacity: .25; }
+  35%  { width: 64px; opacity: .55; } /* inspiration lente */
+  70%  { width: 52px; opacity: .45; } /* expiration */
+  100% { width: 36px; opacity: .25; }
 }
 
 /* =====================================================
