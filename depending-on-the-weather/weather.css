@@ -255,29 +255,30 @@ body.weather-index::before {
 
 .weather-intro {
   text-align: center;
-  font-size: 1.05rem;
+  font-size: 0.95rem;          /* ↓ plus discret */
   font-style: italic;
-  letter-spacing: 0.05em;
-  line-height: 1.75;
+  letter-spacing: 0.03em;      /* ↓ moins aéré */
+  line-height: 1.65;
+
   color: var(--weather-text-soft);
-  margin-bottom: 56px;
+  margin-bottom: 48px;         /* ↓ un peu plus serré */
 }
 
 /* =====================================================
-   WEATHER — underline signature
+   WEATHER INDEX — underline signature (match stories)
    ===================================================== */
 
-.weather-story .weather-title {
+.weather-index .weather-title {
   position: relative;
 }
 
-.weather-story .weather-title::after {
+.weather-index .weather-title::after {
   content: "";
   display: block;
 
   width: 44px;
   height: 1px;
-  margin: 16px auto 0;
+  margin: 14px auto 0;
 
   background: linear-gradient(
     to right,
@@ -286,7 +287,7 @@ body.weather-index::before {
     rgba(255,255,255,0)
   );
 
-  opacity: .55;
+  opacity: 0.55;
 }
 
 /* =====================================================
