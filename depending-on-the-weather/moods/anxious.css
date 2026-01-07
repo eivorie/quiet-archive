@@ -208,7 +208,7 @@ body.anxious .weather-text p {
 }
 
 body.anxious .weather-warning {
-  font-style: normal;
+  font-style: normal !important;
 }
 
 /* =====================================================
