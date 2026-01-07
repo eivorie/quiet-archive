@@ -1,84 +1,68 @@
 /* =========================
-   Anxious mood — grounding & steady
+   Anxious mood — calm & neutral
    ========================= */
 
 body.anxious {
   background:
     radial-gradient(
       circle at top center,
-      rgba(255, 255, 255, 0.6),
-      rgba(220, 225, 230, 0.95) 75%
+      rgba(255, 255, 255, 0.55),
+      rgba(235, 237, 240, 0.95) 75%
     ),
-    #e9edf1;
+    #f0f1f3;
 
-  color: #2f3540;
+  color: #2f333a;
 }
 
 /* =====================================================
-   Carte — stable, rassurante, ancrée
+   Card — clean, stable, unobtrusive
    ===================================================== */
 
 body.anxious .weather-card {
   position: relative;
   overflow: hidden;
 
-  background: #fdfefe;
+  background: #ffffff;
   border-radius: 24px;
 
   box-shadow:
-    0 26px 48px rgba(90, 110, 140, 0.22),
-    0 8px 20px rgba(120, 140, 170, 0.25),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.8),
-    inset 0 6px 14px rgba(255, 255, 255, 0.5);
+    0 24px 42px rgba(60, 70, 85, 0.18),
+    0 8px 18px rgba(90, 100, 120, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.9);
 
   animation: anxiousSettle 3s ease-out both;
 }
 
 /* =====================================================
-   Anxious — underline calm & steady
-   ===================================================== */
-
-body.anxious .weather-title::after {
-  background: linear-gradient(
-    to right,
-    rgba(120,150,190,0),
-    rgba(120,150,190,.65),
-    rgba(120,150,190,0)
-  );
-
-  opacity: .6;
-}
-
-/* =====================================================
-   Halo doux — respiration lente
+   Soft halo — extremely subtle
    ===================================================== */
 
 body.anxious .weather-card::before {
   content: "";
   position: absolute;
-  inset: -25%;
+  inset: -20%;
   pointer-events: none;
 
   background:
     radial-gradient(
       circle at 40% 20%,
-      rgba(180, 205, 235, 0.35),
+      rgba(200, 205, 215, 0.18),
       transparent 55%
     ),
     radial-gradient(
       circle at 65% 80%,
-      rgba(210, 225, 245, 0.25),
+      rgba(220, 225, 230, 0.14),
       transparent 60%
     );
 
-  opacity: 0.35;
-  filter: blur(26px);
+  opacity: 0.25;
+  filter: blur(24px);
 
-  animation: anxiousGlow 28s ease-in-out infinite;
+  animation: anxiousGlow 30s ease-in-out infinite;
 }
 
 /* =====================================================
-   Ornement discret — lignes froides
+   Discrete frame — neutral gray
    ===================================================== */
 
 body.anxious .weather-card::after {
@@ -89,33 +73,33 @@ body.anxious .weather-card::after {
   pointer-events: none;
 
   background:
-    linear-gradient(#b7c6dd, #b7c6dd) top left / 24px 1px no-repeat,
-    linear-gradient(#b7c6dd, #b7c6dd) top left / 1px 24px no-repeat,
-    linear-gradient(#b7c6dd, #b7c6dd) top right / 24px 1px no-repeat,
-    linear-gradient(#b7c6dd, #b7c6dd) top right / 1px 24px no-repeat,
-    linear-gradient(#b7c6dd, #b7c6dd) bottom left / 24px 1px no-repeat,
-    linear-gradient(#b7c6dd, #b7c6dd) bottom left / 1px 24px no-repeat,
-    linear-gradient(#b7c6dd, #b7c6dd) bottom right / 24px 1px no-repeat,
-    linear-gradient(#b7c6dd, #b7c6dd) bottom right / 1px 24px no-repeat;
+    linear-gradient(#d4d7dc, #d4d7dc) top left / 24px 1px no-repeat,
+    linear-gradient(#d4d7dc, #d4d7dc) top left / 1px 24px no-repeat,
+    linear-gradient(#d4d7dc, #d4d7dc) top right / 24px 1px no-repeat,
+    linear-gradient(#d4d7dc, #d4d7dc) top right / 1px 24px no-repeat,
+    linear-gradient(#d4d7dc, #d4d7dc) bottom left / 24px 1px no-repeat,
+    linear-gradient(#d4d7dc, #d4d7dc) bottom left / 1px 24px no-repeat,
+    linear-gradient(#d4d7dc, #d4d7dc) bottom right / 24px 1px no-repeat,
+    linear-gradient(#d4d7dc, #d4d7dc) bottom right / 1px 24px no-repeat;
 
-  opacity: 0.25;
+  opacity: 0.22;
 }
 
 /* =====================================================
-   Anxious — Warning / threshold
+   Warning / threshold
    ===================================================== */
 
 body.anxious .weather-warning {
-  font-style: italic;
+  font-style: normal;
   font-size: 0.85rem;
-  line-height: 1.9;
-  letter-spacing: 0.04em;
+  line-height: 1.7;
+  letter-spacing: normal;
 
-  color: rgba(80, 100, 130, 0.75);
+  color: rgba(70, 75, 85, 0.75);
   text-align: center;
 
   max-width: 520px;
-  margin: 0 auto 56px;
+  margin: 0 auto 48px;
 
   opacity: 0.85;
 }
@@ -123,81 +107,79 @@ body.anxious .weather-warning {
 body.anxious .weather-warning::after {
   content: "✦";
   display: block;
-  margin: 22px auto 0;
-  font-size: 0.7rem;
-  color: rgba(120, 150, 190, 0.35);
+  margin: 10px auto 0; /* reduced spacing */
+  font-size: 0.65rem;
+  color: rgba(120, 125, 135, 0.35);
 }
 
 /* =====================================================
-   Typographie
+   Typography — neutral system font
    ===================================================== */
 
 body.anxious .weather-card,
 body.anxious .weather-card p,
 body.anxious .weather-card .weather-title {
-  font-family: "Lora", serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-/* Titre — doux mais rassurant */
+/* Title — simple, non-decorative */
 body.anxious .weather-title {
   font-weight: 500;
-  font-size: 1.45rem;
-  letter-spacing: 0.05em;
-  color: #3b4a63;
+  font-size: 1.2rem;
+  letter-spacing: normal;
+  color: #2f333a;
 }
 
-/* Texte — calme, posé, non oppressant */
+/* Text — readable, calm */
 body.anxious .weather-text p {
-  font-style: italic;
+  font-style: normal;
   font-size: 0.95rem;
-  line-height: 1.95;
-  color: #384457;
+  line-height: 1.7;
+  color: #3a3f47;
 }
 
-/* Ouverture */
+/* Opening */
 body.anxious .weather-lead {
-  color: #5c6f8f;
+  color: #4a5059;
 }
 
-/* Fin */
+/* Ending */
 body.anxious .weather-ending {
-  color: #4a5d7a;
+  color: #4a5059;
 }
 
 /* =====================================================
-   NAVBAR — Anxious mood
+   NAVBAR — neutral
    ===================================================== */
 
 body.anxious .nav {
-  font-family: "Cormorant Garamond", serif;
-  font-style: normal;
-  font-weight: 400;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Arial, sans-serif;
 
-  text-transform: uppercase;
-  letter-spacing: 0.26em;
-  font-size: 0.72rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.04em;
+  font-size: 0.8rem;
 
   padding: 18px 28px;
-  gap: 32px;
+  gap: 28px;
 
-  background: rgba(245, 248, 252, 0.75);
+  background: rgba(245, 246, 248, 0.85);
   backdrop-filter: blur(10px);
 
   box-shadow:
-    0 8px 22px rgba(120, 140, 170, 0.25);
+    0 6px 18px rgba(60, 70, 85, 0.18);
 }
 
 body.anxious .nav a {
-  font-family: inherit;
-  letter-spacing: inherit;
-
-  color: rgba(60, 75, 100, 0.75);
+  color: rgba(60, 65, 75, 0.8);
   text-decoration: none;
   transition: color 0.25s ease;
 }
 
 body.anxious .nav a:hover {
-  color: rgba(60, 75, 100, 1);
+  color: rgba(60, 65, 75, 1);
 }
 
 /* =====================================================
@@ -218,15 +200,15 @@ body.anxious .nav a:hover {
 @keyframes anxiousGlow {
   0% {
     transform: translate(0, 0) scale(1);
-    opacity: 0.25;
+    opacity: 0.2;
   }
   50% {
-    transform: translate(-2%, -2%) scale(1.04);
-    opacity: 0.45;
+    transform: translate(-1%, -1%) scale(1.03);
+    opacity: 0.35;
   }
   100% {
     transform: translate(0, 0) scale(1);
-    opacity: 0.25;
+    opacity: 0.2;
   }
 }
 
@@ -238,7 +220,7 @@ body.anxious .nav a:hover {
   body.anxious .nav {
     padding: 14px 18px;
     gap: 18px;
-    font-size: 0.65rem;
-    letter-spacing: 0.22em;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
   }
 }
