@@ -35,6 +35,21 @@ body.anxious .weather-card {
 }
 
 /* =====================================================
+   Anxious — underline calm & steady
+   ===================================================== */
+
+body.anxious .weather-title::after {
+  background: linear-gradient(
+    to right,
+    rgba(120,150,190,0),
+    rgba(120,150,190,.65),
+    rgba(120,150,190,0)
+  );
+
+  opacity: .6;
+}
+
+/* =====================================================
    Halo doux — respiration lente
    ===================================================== */
 
