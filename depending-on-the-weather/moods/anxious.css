@@ -125,7 +125,8 @@ body.anxious .weather-warning::after {
   display: block;
   margin: 22px auto 0;
   font-size: 0.7rem;
-  color: rgba(170, 150, 120, 0.4);
+  margin-bottom: -30px;
+  //color: rgba(170, 150, 120, 0.4);
 }
 
 /* =====================================================
@@ -140,8 +141,8 @@ body.anxious .weather-card {
 
 /* Titre — doux mais rassurant */
 body.anxious .weather-title {
-  font-weight: 500;
-  font-size: 1.45rem;
+  //font-weight: 500;
+  //font-size: 1.45rem;
   letter-spacing: 0.05em;
   color: #4a4034;
 }
@@ -151,6 +152,7 @@ body.anxious .weather-text p {
   font-style: italic;
   font-size: 0.95rem;
   line-height: 1.95;
+  margin-top: 40px;
   color: #4b443a;
 }
 
