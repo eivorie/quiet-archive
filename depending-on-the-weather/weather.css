@@ -264,6 +264,32 @@ body.weather-index::before {
 }
 
 /* =====================================================
+   WEATHER — underline signature
+   ===================================================== */
+
+.weather-story .weather-title {
+  position: relative;
+}
+
+.weather-story .weather-title::after {
+  content: "";
+  display: block;
+
+  width: 44px;
+  height: 1px;
+  margin: 16px auto 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0),
+    rgba(230,235,225,0.45),
+    rgba(255,255,255,0)
+  );
+
+  opacity: .55;
+}
+
+/* =====================================================
    LINKS
    ===================================================== */
 
