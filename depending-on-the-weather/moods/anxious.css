@@ -207,8 +207,7 @@ body.anxious .weather-text p {
   color: rgba(235,230,220,0.86);
 }
 
-body.anxious .weather-text p:nth-child(odd) {
-  color: rgba(245,240,230,.92);
+body.anxious .weather-warning {
   font-style: normal;
 }
 
