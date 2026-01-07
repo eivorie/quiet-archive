@@ -6,24 +6,16 @@ body.anxious {
   background:
     radial-gradient(
       circle at top center,
-      rgba(255, 210, 150, 0.18),
-      transparent 55%
-    ),
-    radial-gradient(
-      circle at 60% 80%,
-      rgba(200, 140, 90, 0.25),
+      rgba(255, 220, 170, 0.35),
       transparent 60%
     ),
     linear-gradient(
       to bottom,
-      #2b1f16,
-      #1f160f
+      #e7ddcf,
+      #d6c8b6
     );
 
-  background-size: 140% 140%;
-  animation: anxiousGlow 26s ease-in-out infinite;
-
-  color: #f3e9dc;
+  color: #2f2a24;
 }
 
 /* =====================================================
@@ -31,39 +23,31 @@ body.anxious {
    ===================================================== */
 
 body.anxious .weather-card {
-  position: relative;
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(60, 38, 22, 0.92),
-      rgba(38, 24, 14, 0.96)
-    );
-
-  border-radius: 26px 24px 30px 28px;
+  background: #fdf8f1;
 
   box-shadow:
-    0 60px 140px rgba(0,0,0,0.65),
-    0 22px 48px rgba(0,0,0,0.45),
-    inset 0 0 0 1px rgba(255, 215, 160, 0.08);
-
-  animation: anxiousSettle 1.8s ease-out both;
+    0 26px 48px rgba(120, 100, 80, 0.22),
+    0 8px 20px rgba(140, 120, 95, 0.20),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.9),
+    inset 0 6px 14px rgba(255, 255, 255, 0.55);
 }
 
 /* =====================================================
    Anxious — underline calm & steady
    ===================================================== */
 
-body.anxious .weather-title::after {
-  background: linear-gradient(
-    to right,
-    rgba(180,160,135,0),
-    rgba(180,160,135,.65),
-    rgba(180,160,135,0)
-  );
+body.anxious .weather-card::after {
+  background:
+    linear-gradient(#d8c6a8, #d8c6a8) top left / 24px 1px no-repeat,
+    linear-gradient(#d8c6a8, #d8c6a8) top left / 1px 24px no-repeat,
+    linear-gradient(#d8c6a8, #d8c6a8) top right / 24px 1px no-repeat,
+    linear-gradient(#d8c6a8, #d8c6a8) top right / 1px 24px no-repeat,
+    linear-gradient(#d8c6a8, #d8c6a8) bottom left / 24px 1px no-repeat,
+    linear-gradient(#d8c6a8, #d8c6a8) bottom left / 1px 24px no-repeat,
+    linear-gradient(#d8c6a8, #d8c6a8) bottom right / 24px 1px no-repeat,
+    linear-gradient(#d8c6a8, #d8c6a8) bottom right / 1px 24px no-repeat;
 
-  opacity: .6;
+  opacity: 0.28;
 }
 
 /* =====================================================
@@ -71,51 +55,17 @@ body.anxious .weather-title::after {
    ===================================================== */
 
 body.anxious .weather-card::before {
-  content: "";
-  position: absolute;
-  inset: -30%;
-  pointer-events: none;
-
   background:
     radial-gradient(
-      circle at 30% 20%,
-      rgba(255, 170, 90, 0.35),
+      circle at 40% 20%,
+      rgba(255, 200, 130, 0.35),
       transparent 55%
     ),
     radial-gradient(
-      circle at 70% 80%,
-      rgba(200, 120, 60, 0.25),
+      circle at 65% 80%,
+      rgba(230, 190, 140, 0.25),
       transparent 60%
     );
-
-  filter: blur(36px);
-  opacity: 0.45;
-
-  animation: anxiousGlow 28s ease-in-out infinite;
-}
-
-/* =====================================================
-   Ornement discret — lignes chaudes
-   ===================================================== */
-
-body.anxious .weather-card::after {
-  content: "";
-  position: absolute;
-  inset: 18px;
-  border-radius: 18px;
-  pointer-events: none;
-
-  background:
-    linear-gradient(#d6cbb8, #d6cbb8) top left / 24px 1px no-repeat,
-    linear-gradient(#d6cbb8, #d6cbb8) top left / 1px 24px no-repeat,
-    linear-gradient(#d6cbb8, #d6cbb8) top right / 24px 1px no-repeat,
-    linear-gradient(#d6cbb8, #d6cbb8) top right / 1px 24px no-repeat,
-    linear-gradient(#d6cbb8, #d6cbb8) bottom left / 24px 1px no-repeat,
-    linear-gradient(#d6cbb8, #d6cbb8) bottom left / 1px 24px no-repeat,
-    linear-gradient(#d6cbb8, #d6cbb8) bottom right / 24px 1px no-repeat,
-    linear-gradient(#d6cbb8, #d6cbb8) bottom right / 1px 24px no-repeat;
-
-  opacity: 0.25;
 }
 
 /* =====================================================
@@ -128,7 +78,7 @@ body.anxious .weather-warning {
   line-height: 1.9;
   letter-spacing: 0.04em;
 
-  color: rgba(255, 215, 170, 0.75);
+  color: rgba(110, 90, 65, 0.85);
   text-align: center;
 
   max-width: 520px;
@@ -143,7 +93,6 @@ body.anxious .weather-warning::after {
   margin: 22px auto 0;
   font-size: 0.7rem;
   margin-bottom: -30px;
-  //color: rgba(170, 150, 120, 0.4);
 }
 
 /* =====================================================
@@ -158,8 +107,6 @@ body.anxious .weather-card {
 
 /* Titre — doux mais rassurant */
 body.anxious .weather-title {
-  //font-weight: 500;
-  //font-size: 1.45rem;
   letter-spacing: 0.05em;
   color: #4a4034;
 }
@@ -169,17 +116,17 @@ body.anxious .weather-text p {
   font-size: 0.95rem;
   line-height: 1.95;
 
-  color: rgba(245, 230, 215, 0.88);
+  color: #4a4035;
 }
 
 /* Ouverture */
 body.anxious .weather-lead {
-  color: rgba(255, 200, 150, 0.95);
+  color: #7a5f3f;
 }
 
 /* Fin */
 body.anxious .weather-ending {
-  color: rgba(255, 220, 185, 0.95);
+  color: #6a543c;
 }
 
 /* =====================================================
