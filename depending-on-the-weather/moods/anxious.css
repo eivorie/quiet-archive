@@ -10,19 +10,19 @@ body.anxious {
   background:
     radial-gradient(
       circle at 28% 18%,
-      rgba(190, 175, 145, 0.38),
+      rgba(185, 180, 160, 0.36),
       transparent 55%
     ),
     radial-gradient(
       circle at 72% 68%,
-      rgba(110, 100, 80, 0.32),
+      rgba(95, 100, 90, 0.30),
       transparent 60%
     ),
     linear-gradient(
       to bottom,
-      #4f4a42 0%,
-      #37332d 50%,
-      #1e1c18 100%
+      #4a4e48 0%,
+      #343833 50%,
+      #1b1e1b 100%
     );
 
   background-size: 140% 140%;
@@ -166,16 +166,43 @@ body.anxious .weather-title {
     0 12px 34px rgba(0,0,0,.55);
 }
 
+body.anxious .weather-title::after {
+  content: "";
+  display: block;
+
+  width: 44px;
+  height: 1px;
+  margin: 18px auto 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(200,180,140,0),
+    rgba(200,180,140,.75),
+    rgba(200,180,140,0)
+  );
+
+  opacity: .7;
+  filter: blur(.3px);
+
+  animation: anxiousUnderline 6s ease-in-out infinite;
+}
+
+@keyframes anxiousUnderline {
+  0%,100% { width: 40px; opacity: .45; }
+  50%     { width: 62px; opacity: .85; }
+}
+
+
 /* =====================================================
    TEXTE
    ===================================================== */
 
 body.anxious .weather-text p {
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
   font-style: italic;
   font-size: 0.9rem;
-  line-height: 1.9;
-  font-weight: 300;
+  line-height: 1.95;
+  font-weight: 400;
 
   color: rgba(235,230,220,0.86);
 }
@@ -189,6 +216,7 @@ body.anxious .weather-text p:nth-child(odd) {
    ===================================================== */
 
 body.anxious .weather-warning {
+  font-family: "Lora", serif;
   font-style: italic;
   font-size: 0.88rem;
   line-height: 1.9;
@@ -207,6 +235,7 @@ body.anxious .weather-warning::after {
   content: "✦";
   display: block;
   margin: 22px auto 0;
+  margin-bottom: -30px;
   font-size: 0.7rem;
 
   color: rgba(215,190,145,.65);
