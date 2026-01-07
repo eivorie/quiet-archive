@@ -1,0 +1,130 @@
+/* =====================================================
+   Cold Night — Story variation (Ereri)
+   Frost, silence, breath in winter
+   ===================================================== */
+
+/* -----------------------------------------------------
+   Carte — nuit froide, lumière bleutée
+----------------------------------------------------- */
+
+.ereri-story.cold-night .ereri-card {
+  background:
+    radial-gradient(
+      circle at 28% 20%,
+      rgba(180, 195, 210, 0.06),
+      transparent 65%
+    ),
+    radial-gradient(
+      circle at 72% 75%,
+      rgba(140, 155, 170, 0.08),
+      transparent 70%
+    ),
+    linear-gradient(
+      to bottom,
+      #2f3439,
+      #1d2024
+    );
+
+  box-shadow:
+    0 45px 120px rgba(0, 0, 0, 0.65),
+    0 20px 48px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* -----------------------------------------------------
+   Texte — bleu froid, argenté
+----------------------------------------------------- */
+
+.ereri-story.cold-night h1 {
+  color: rgba(220, 230, 238, 0.88);
+}
+
+.ereri-story.cold-night .subtitle {
+  color: rgba(175, 190, 205, 0.7);
+  letter-spacing: 0.05em;
+}
+
+.ereri-story.cold-night .ereri-content {
+  color: rgba(215, 225, 235, 0.83);
+  line-height: 1.75;
+}
+
+.ereri-story.cold-night .ereri-content p {
+  margin-bottom: 1.55em;
+}
+
+/* -----------------------------------------------------
+   Illustration — bleus froids
+----------------------------------------------------- */
+
+.story-illustration {
+  margin: 40px auto 60px;
+  text-align: center;
+}
+
+.story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 20px 26px 22px 28px;
+
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.65),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+/* -----------------------------------------------------
+   Ambient — givre, respiration nocturne
+----------------------------------------------------- */
+
+.cold-night .ereri-ambient span {
+  background: radial-gradient(
+    circle,
+    rgba(200, 220, 235, 0.12) 0%,
+    rgba(200, 220, 235, 0.02) 70%,
+    transparent 100%
+  );
+  filter: blur(18px);
+  opacity: 0.4;
+}
+
+/* -----------------------------------------------------
+   Fleurs / accents si besoin
+----------------------------------------------------- */
+
+.flowers {
+  margin: 48px 0;
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: rgba(200, 215, 225, 0.55);
+}
+
+/* -----------------------------------------------------
+   Mobile adjustments
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .ereri-story.cold-night .ereri-card {
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 24px;
+  }
+
+  .ereri-story.cold-night .ereri-content {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .story-illustration img {
+    max-width: 360px;
+    border-radius: 18px 22px 20px 24px;
+  }
+
+  .flowers {
+    margin: 36px 0;
+    font-size: 0.92rem;
+  }
+}
