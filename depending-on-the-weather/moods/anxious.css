@@ -1,0 +1,202 @@
+/* =========================
+   Anxious mood — grounding & steady
+   ========================= */
+
+body.anxious {
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(255, 255, 255, 0.6),
+      rgba(220, 225, 230, 0.95) 75%
+    ),
+    #e9edf1;
+
+  color: #2f3540;
+}
+
+/* =====================================================
+   Carte — stable, rassurante, ancrée
+   ===================================================== */
+
+body.anxious .weather-card {
+  position: relative;
+  overflow: hidden;
+
+  background: #fdfefe;
+  border-radius: 24px;
+
+  box-shadow:
+    0 26px 48px rgba(90, 110, 140, 0.22),
+    0 8px 20px rgba(120, 140, 170, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8),
+    inset 0 6px 14px rgba(255, 255, 255, 0.5);
+
+  animation: anxiousSettle 3s ease-out both;
+}
+
+/* =====================================================
+   Halo doux — respiration lente
+   ===================================================== */
+
+body.anxious .weather-card::before {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 40% 20%,
+      rgba(180, 205, 235, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 65% 80%,
+      rgba(210, 225, 245, 0.25),
+      transparent 60%
+    );
+
+  opacity: 0.35;
+  filter: blur(26px);
+
+  animation: anxiousGlow 28s ease-in-out infinite;
+}
+
+/* =====================================================
+   Ornement discret — lignes froides
+   ===================================================== */
+
+body.anxious .weather-card::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: 18px;
+  pointer-events: none;
+
+  background:
+    linear-gradient(#b7c6dd, #b7c6dd) top left / 24px 1px no-repeat,
+    linear-gradient(#b7c6dd, #b7c6dd) top left / 1px 24px no-repeat,
+    linear-gradient(#b7c6dd, #b7c6dd) top right / 24px 1px no-repeat,
+    linear-gradient(#b7c6dd, #b7c6dd) top right / 1px 24px no-repeat,
+    linear-gradient(#b7c6dd, #b7c6dd) bottom left / 24px 1px no-repeat,
+    linear-gradient(#b7c6dd, #b7c6dd) bottom left / 1px 24px no-repeat,
+    linear-gradient(#b7c6dd, #b7c6dd) bottom right / 24px 1px no-repeat,
+    linear-gradient(#b7c6dd, #b7c6dd) bottom right / 1px 24px no-repeat;
+
+  opacity: 0.25;
+}
+
+/* =====================================================
+   Typographie
+   ===================================================== */
+
+body.anxious .weather-card,
+body.anxious .weather-card p,
+body.anxious .weather-card .weather-title {
+  font-family: "Lora", serif;
+}
+
+/* Titre — doux mais rassurant */
+body.anxious .weather-title {
+  font-weight: 500;
+  font-size: 1.45rem;
+  letter-spacing: 0.05em;
+  color: #3b4a63;
+}
+
+/* Texte — calme, posé, non oppressant */
+body.anxious .weather-text p {
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.95;
+  color: #384457;
+}
+
+/* Ouverture */
+body.anxious .weather-lead {
+  color: #5c6f8f;
+}
+
+/* Fin */
+body.anxious .weather-ending {
+  color: #4a5d7a;
+}
+
+/* =====================================================
+   NAVBAR — Anxious mood
+   ===================================================== */
+
+body.anxious .nav {
+  font-family: "Cormorant Garamond", serif;
+  font-style: normal;
+  font-weight: 400;
+
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  font-size: 0.72rem;
+
+  padding: 18px 28px;
+  gap: 32px;
+
+  background: rgba(245, 248, 252, 0.75);
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 8px 22px rgba(120, 140, 170, 0.25);
+}
+
+body.anxious .nav a {
+  font-family: inherit;
+  letter-spacing: inherit;
+
+  color: rgba(60, 75, 100, 0.75);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+body.anxious .nav a:hover {
+  color: rgba(60, 75, 100, 1);
+}
+
+/* =====================================================
+   Animations
+   ===================================================== */
+
+@keyframes anxiousSettle {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes anxiousGlow {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate(-2%, -2%) scale(1.04);
+    opacity: 0.45;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.25;
+  }
+}
+
+/* =====================================================
+   Mobile
+   ===================================================== */
+
+@media (max-width: 768px) {
+  body.anxious .nav {
+    padding: 14px 18px;
+    gap: 18px;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+  }
+}
