@@ -78,23 +78,18 @@
 }
 
 .zoo-photo {
-  display: flex;
+  display: none;
   justify-content: center;
   margin: 10px 0 40px;
 
-  opacity: 1;
-  max-height: 600px;
-  transition:
-    opacity 0.5s ease,
-    max-height 0.6s ease;
-}
-
-.zoo-photo.hidden {
   opacity: 0;
-  max-height: 0;
-  overflow: hidden;
+  transition: opacity 0.4s ease;
 }
 
+.zoo-photo.active {
+  display: flex;
+  opacity: 1;
+}
 
 /* -----------------------------------------------------
    DIALOGUES — mêmes règles, ton plus clair
