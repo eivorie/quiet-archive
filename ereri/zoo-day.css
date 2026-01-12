@@ -58,6 +58,45 @@
 }
 
 /* -----------------------------------------------------
+   Photo souvenir
+----------------------------------------------------- */
+
+.ereri-story.zoo-day .photo-trigger {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.85rem;
+  margin: 10px 0 24px;
+
+  color: rgba(190, 220, 205, 0.65);
+  cursor: pointer;
+
+  transition: color 0.3s ease;
+}
+
+.ereri-story.zoo-day .photo-trigger:hover {
+  color: rgba(225, 245, 235, 0.95);
+}
+
+.zoo-photo {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 40px;
+
+  opacity: 1;
+  max-height: 600px;
+  transition:
+    opacity 0.5s ease,
+    max-height 0.6s ease;
+}
+
+.zoo-photo.hidden {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+
+/* -----------------------------------------------------
    DIALOGUES — mêmes règles, ton plus clair
 ----------------------------------------------------- */
 
