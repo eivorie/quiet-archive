@@ -1,0 +1,152 @@
+/* =====================================================
+   Toi et moi — Ereri (FINAL UNIFIED)
+   Même structure que Happy New Year
+   Palette douce, intime, matin calme
+   ===================================================== */
+
+/* -----------------------------------------------------
+   CARTE — intégrée au background Ereri
+----------------------------------------------------- */
+
+.ereri-story .ereri-card {
+  background:
+    radial-gradient(
+      circle at 28% 22%,
+      rgba(255,255,255,0.04),
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom,
+      #3e3a45,
+      #2c2933
+    );
+}
+
+/* -----------------------------------------------------
+   TITRES
+----------------------------------------------------- */
+
+.ereri-story h1 {
+  color: rgba(240,235,230,0.92);
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: rgba(210,205,200,0.72);
+}
+
+/* -----------------------------------------------------
+   TEXTE — base unique
+----------------------------------------------------- */
+
+.ereri-story .ereri-content {
+  color: rgba(235,230,225,0.88);
+}
+
+.ereri-story .ereri-content p {
+  margin-bottom: 1.5em;
+}
+
+/* TEXTE RETENU — respiration */
+.ereri-story .ereri-content p.quiet {
+  color: rgba(210,205,200,0.68);
+}
+
+/* TEXTE SOFT — intimité */
+.ereri-story .ereri-content p.soft {
+  color: rgba(225,220,215,0.75);
+}
+
+/* -----------------------------------------------------
+   DIALOGUE — distinct mais intégré
+----------------------------------------------------- */
+
+.ereri-story .ereri-content p.dialogue {
+  margin: 1.4em 0;
+  padding-left: 1.4em;
+  position: relative;
+
+  font-size: 0.95rem;
+  line-height: 1.8;
+  letter-spacing: 0.015em;
+
+  color: rgba(240,235,230,0.9);
+}
+
+/* marqueur discret */
+.ereri-story .ereri-content p.dialogue::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  color: rgba(195,185,175,0.45);
+}
+
+/* -----------------------------------------------------
+   ILLUSTRATION — standard Ereri
+----------------------------------------------------- */
+
+.story-illustration {
+  margin: 40px auto 60px;
+  text-align: center;
+}
+
+.story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 18px 24px 20px 26px;
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,255,255,0.18);
+}
+
+/* -----------------------------------------------------
+   FIN — conclusion douce
+----------------------------------------------------- */
+
+.ereri-story .ereri-content p.ending {
+  text-align: center;
+  margin-top: 3em;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: rgba(215,205,195,0.72);
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  .ereri-story .ereri-card {
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+  .ereri-story .ereri-content {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .ereri-story .ereri-content p {
+    margin-bottom: 1.6em;
+  }
+
+  .story-illustration {
+    margin: 36px auto 54px;
+  }
+
+  .story-illustration img {
+    max-width: 320px;
+  }
+
+  .text-thread {
+    margin: 28px 0 34px;
+    gap: 10px;
+  }
+}
