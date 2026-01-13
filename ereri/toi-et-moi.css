@@ -11,14 +11,14 @@
 .ereri-story .ereri-card {
   background:
     radial-gradient(
-      circle at 28% 22%,
-      rgba(255,255,255,0.04),
-      transparent 60%
+      circle at 30% 20%,
+      rgba(255,255,255,0.05),
+      transparent 62%
     ),
     linear-gradient(
       to bottom,
-      #3e3a45,
-      #2c2933
+      #3a3a38,
+      #242423
     );
 }
 
