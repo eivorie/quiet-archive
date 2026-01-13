@@ -84,6 +84,47 @@
 }
 
 /* -----------------------------------------------------
+   TRANSITION TEMPORELLE — avant Five years later
+----------------------------------------------------- */
+
+.time-shift {
+  margin: 4.5em 0 3.5em;
+  text-align: center;
+}
+
+.time-shift .time-line {
+  margin-bottom: 1.2em;
+
+  font-size: 0.95rem;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+
+  color: rgba(215,210,200,0.72);
+}
+
+.time-shift .time-line.soft {
+  font-style: italic;
+  color: rgba(230,225,215,0.85);
+}
+
+.time-divider {
+  display: block;
+  margin: 2.8em auto 0;
+
+  width: 54px;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    rgba(200,185,160,0),
+    rgba(200,185,160,0.7),
+    rgba(200,185,160,0)
+  );
+
+  opacity: 0.75;
+}
+
+/* -----------------------------------------------------
    ILLUSTRATION — standard Ereri
 ----------------------------------------------------- */
 
@@ -135,6 +176,15 @@
 
   .ereri-story .ereri-content p {
     margin-bottom: 1.6em;
+  }
+
+  .time-shift {
+    margin: 3.8em 0 3em;
+  }
+
+  .time-shift .time-line {
+    font-size: 0.92rem;
+    line-height: 1.85;
   }
 
   .story-illustration {
