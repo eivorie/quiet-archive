@@ -149,10 +149,10 @@
 ----------------------------------------------------- */
 
 .ereri-story .ereri-content p.ending {
-  text-align: center;
+  //text-align: center;
   margin-top: 3em;
   font-style: italic;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
   color: rgba(215,205,195,0.72);
 }
 
