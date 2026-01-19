@@ -1,0 +1,186 @@
+/* =====================================================
+   Love is Blind — Ereri
+   Soirée canapé, lumière chaude, intimité douce
+   Même structure que Toi et moi / Happy New Year
+   ===================================================== */
+
+/* -----------------------------------------------------
+   CARTE — chocolat chaud, lumière tamisée
+----------------------------------------------------- */
+
+.ereri-story.love-is-blind .ereri-card {
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(255, 230, 200, 0.06),
+      transparent 62%
+    ),
+    linear-gradient(
+      to bottom,
+      #3b342f,
+      #241f1b
+    );
+}
+
+/* -----------------------------------------------------
+   TITRES
+----------------------------------------------------- */
+
+.ereri-story.love-is-blind h1 {
+  color: rgba(245, 235, 225, 0.95);
+}
+
+.ereri-story.love-is-blind .subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: rgba(215, 200, 185, 0.72);
+}
+
+/* -----------------------------------------------------
+   TEXTE — base
+----------------------------------------------------- */
+
+.ereri-story.love-is-blind .ereri-content {
+  color: rgba(235, 225, 215, 0.9);
+}
+
+.ereri-story.love-is-blind .ereri-content p {
+  margin-bottom: 1.5em;
+}
+
+/* TEXTE RETENU — respiration */
+.ereri-story.love-is-blind .ereri-content p.quiet {
+  color: rgba(210, 195, 180, 0.68);
+}
+
+/* TEXTE SOFT — intimité */
+.ereri-story.love-is-blind .ereri-content p.soft {
+  color: rgba(225, 210, 195, 0.75);
+}
+
+/* -----------------------------------------------------
+   DIALOGUE
+----------------------------------------------------- */
+
+.ereri-story.love-is-blind .ereri-content p.dialogue {
+  margin: 1.4em 0;
+  padding-left: 1.4em;
+  position: relative;
+
+  font-size: 0.95rem;
+  line-height: 1.8;
+  letter-spacing: 0.015em;
+
+  color: rgba(245, 235, 225, 0.92);
+}
+
+/* marqueur discret */
+.ereri-story.love-is-blind .ereri-content p.dialogue::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  color: rgba(200, 185, 170, 0.45);
+}
+
+/* -----------------------------------------------------
+   TRANSITION TEMPORELLE
+----------------------------------------------------- */
+
+.time-shift .time-line {
+  margin-bottom: 1.2em;
+
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+
+  color: rgba(220, 205, 190, 0.7);
+}
+
+.time-shift .time-line.soft {
+  font-style: italic;
+  color: rgba(235, 220, 205, 0.85);
+}
+
+.time-divider {
+  display: block;
+  margin: 2.8em auto 0;
+
+  width: 100px;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    rgba(215, 190, 160, 0),
+    rgba(215, 190, 160, 0.7),
+    rgba(215, 190, 160, 0)
+  );
+
+  opacity: 0.75;
+}
+
+/* -----------------------------------------------------
+   ILLUSTRATION — standard Ereri
+----------------------------------------------------- */
+
+.story-illustration {
+  margin: 40px auto 60px;
+  text-align: center;
+}
+
+.story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 18px 24px 20px 26px;
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 245, 235, 0.18);
+}
+
+/* -----------------------------------------------------
+   FIN — conclusion douce
+----------------------------------------------------- */
+
+.ereri-story.love-is-blind .ereri-content p.ending {
+  margin-top: 3em;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: rgba(220, 200, 185, 0.72);
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .ereri-story.love-is-blind .ereri-card {
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+  .ereri-story.love-is-blind .ereri-content {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .ereri-story.love-is-blind .ereri-content p {
+    margin-bottom: 1.6em;
+  }
+
+  .time-shift .time-line {
+    font-size: 0.92rem;
+    line-height: 1.85;
+  }
+
+  .story-illustration {
+    margin: 36px auto 54px;
+  }
+
+  .story-illustration img {
+    max-width: 320px;
+  }
+}
