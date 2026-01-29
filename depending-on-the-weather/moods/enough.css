@@ -1,21 +1,21 @@
 /* =====================================================
-   ENOUGH — Honey Letter Edition (warm, soft, intimate)
+   ENOUGH — Blue-Grey Velvet Edition (calm, soft, intimate)
    ===================================================== */
 
 /* =====================================================
-   BACKGROUND — soft honey + warm dusk glow
+   BACKGROUND — cool dusk blues + soft gradients
    ===================================================== */
 
 body.weather-enough {
   background:
-    radial-gradient(circle at 28% 18%, rgba(255, 210, 145, 0.40), transparent 55%),
-    radial-gradient(circle at 72% 68%, rgba(185, 150, 110, 0.35), transparent 60%),
-    linear-gradient(to bottom, #8c6a4d 0%, #5c4635 50%, #3b2e25 100%);
-    
+    radial-gradient(circle at 28% 18%, rgba(150, 145, 140, 0.35), transparent 55%),
+    radial-gradient(circle at 72% 68%, rgba(120, 115, 110, 0.30), transparent 60%),
+    linear-gradient(to bottom, #746f6b 0%, #5a5653 50%, #484543 100%);
+
   background-size: 140% 140%;
   animation: enoughBreath 22s ease-in-out infinite;
 
-  color: rgba(255, 245, 235, 0.92);
+  color: rgba(233, 230, 228, 0.92);
 }
 
 @keyframes enoughBreath {
@@ -24,7 +24,7 @@ body.weather-enough {
 }
 
 /* =====================================================
-   AMBIENT PARTICLES — floating honey dust
+   AMBIENT PARTICLES — floating soft blue dust
    ===================================================== */
 
 .ambient-enough {
@@ -42,8 +42,8 @@ body.weather-enough {
 
   background: radial-gradient(
     circle,
-    rgba(255,230,200,0.55),
-    rgba(210,180,140,0.25)
+    rgba(210, 220, 235, 0.55),
+    rgba(150, 160, 175, 0.25)
   );
 
   opacity: 0.35;
@@ -62,7 +62,6 @@ body.weather-enough {
   width: 7px; height: 7px; opacity: 0.40;
 }
 
-/* floating motion */
 @keyframes ambientFloat {
   0%,100% { transform: translate(0,0); }
   50%     { transform: translate(14px,-18px); }
@@ -74,7 +73,7 @@ body.weather-enough {
 }
 
 /* =====================================================
-   NAVBAR — warm gold clarity
+   NAVBAR — cold bronze + soft highlight
    ===================================================== */
 
 body.weather-enough .nav {
@@ -88,20 +87,33 @@ body.weather-enough .nav {
   padding: 18px 28px;
   gap: 34px;
 
-  background: rgba(80, 60, 45, 0.55);
+  background: rgba(60, 55, 52, 0.55);
   backdrop-filter: blur(12px);
 
   box-shadow: 0 10px 28px rgba(0,0,0,0.55);
 }
 
 body.weather-enough .nav a {
-  color: rgba(255, 240, 220, 0.85);
+  color: rgba(240, 235, 230, 0.85);
   text-decoration: none;
   transition: color .25s ease;
 }
 
 body.weather-enough .nav a:hover {
-  color: rgba(255, 250, 235, 1);
+  color: rgba(255, 255, 250, 1);
+}
+
+/* =====================================================
+   TITLE (with underline glow)
+   ===================================================== */
+
+body.weather-enough .weather-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.55rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 28px;
+  color: #e8e5e1;
+  text-align: center;
 }
 
 body.weather-enough .weather-title::after {
@@ -110,12 +122,14 @@ body.weather-enough .weather-title::after {
   width: 44px;
   height: 1px;
   margin: 18px auto 0;
+
   background: linear-gradient(
     to right,
-    rgba(200, 180, 140, 0),
-    rgba(200, 180, 140, .75),
-    rgba(200, 180, 140, 0)
+    rgba(220, 215, 210, 0),
+    rgba(220, 215, 210, 0.75),
+    rgba(220, 215, 210, 0)
   );
+
   opacity: .7;
   filter: blur(.3px);
   animation: enoughUnderline 6s ease-in-out infinite;
@@ -126,67 +140,79 @@ body.weather-enough .weather-title::after {
   50%     { width: 64px; opacity: .9; }
 }
 
-
 /* =====================================================
-   CARD — honey parchment + soft depth
+   CARD — velvet blue-grey parchment
    ===================================================== */
 
-    position: relative;
-    margin-top: 48px;
-    box-shadow: rgba(0, 0, 0, 0.7) 0px 55px 140px, rgba(0, 0, 0, 0.5) 0px 18px 48px, rgba(255, 235, 215, 0.06) 0px 0px 0px 1px inset;
-    overflow: hidden;
-    background: linear-gradient(rgba(130, 95, 65, 0.88), rgba(96, 70, 50, 0.94));
-    border-radius: 26px 22px 30px 24px;
-    animation: 1.6s ease-out 0s 1 normal both running enoughAppear, 14s ease-in-out 1.6s infinite normal none running enoughFloat;
+body.weather-enough .weather-card {
+  position: relative;
+  margin-top: 48px;
+  padding: 88px 84px;
+  overflow: hidden;
 
-@keyframes enoughAppear {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
+  background: linear-gradient(
+    to bottom,
+    rgba(116, 111, 107, 0.95),
+    rgba(72, 69, 67, 0.96)
+  );
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 40px 120px rgba(0,0,0,0.55),
+    0 16px 36px rgba(0,0,0,0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+
+  animation:
+    enoughAppear 1.6s ease-out both,
+    enoughFloat 14s ease-in-out 1.6s infinite;
 }
 
-/* =====================================================
-   GOLD CORNERS — delicate ornament touch
-   ===================================================== */
+@keyframes enoughAppear {
+  from { opacity: 0; transform: translateY(14px) scale(.985); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
 
+@keyframes enoughFloat {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-5px); }
+}
+
+/* Inner soft glow */
+body.weather-enough .weather-card::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(255,255,255,0.06),
+    transparent 65%
+  );
+
+  filter: blur(40px);
+  opacity: 1;
+}
+
+/* Clean inside border */
 body.weather-enough .weather-card::after {
   content: "";
   position: absolute;
-  inset: 22px;
+  inset: 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   pointer-events: none;
-
-  background:
-    linear-gradient(#d8b788, #d8b788) top left / 26px 1px no-repeat,
-    linear-gradient(#d8b788, #d8b788) top left / 1px 26px no-repeat,
-
-    linear-gradient(#d8b788, #d8b788) top right / 26px 1px no-repeat,
-    linear-gradient(#d8b788, #d8b788) top right / 1px 26px no-repeat,
-
-    linear-gradient(#d8b788, #d8b788) bottom left / 26px 1px no-repeat,
-    linear-gradient(#d8b788, #d8b788) bottom left / 1px 26px no-repeat,
-
-    linear-gradient(#d8b788, #d8b788) bottom right / 26px 1px no-repeat,
-    linear-gradient(#d8b788, #d8b788) bottom right / 1px 26px no-repeat;
-
-  opacity: 0.26;
 }
 
 /* =====================================================
-   TYPOGRAPHY — soft, flowing honey ink
+   TEXT
    ===================================================== */
 
 body.weather-enough,
 body.weather-enough p,
 body.weather-enough h1 {
   font-family: "Cormorant Garamond", serif;
-}
-
-body.weather-enough .weather-title {
-  font-size: 1.55rem;
-  letter-spacing: 0.05em;
-  margin-bottom: 28px;
-  color: #a5866f;
-
-  text-align: center;
 }
 
 body.weather-enough .weather-content {
@@ -199,20 +225,19 @@ body.weather-enough .weather-content p {
   line-height: 1.82;
   margin-bottom: 22px;
 
-  color: #a99483;
+  color: #d7d3cf;
   font-style: italic;
 }
 
-/* lead */
 body.weather-enough .weather-lead {
   margin-bottom: 28px;
-  color: #4a3829;
+  color: #f2efec;
 }
 
-/* ending */
 body.weather-enough .weather-ending {
   margin-top: 42px;
-  opacity: 0.88;
+  opacity: 0.90;
+  color: #f4f2f0;
   font-style: italic;
 }
 
