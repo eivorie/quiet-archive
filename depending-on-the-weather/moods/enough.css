@@ -104,17 +104,28 @@ body.weather-enough .nav a:hover {
   color: rgba(255, 250, 235, 1);
 }
 
-body.enough .weather-title::after {
-    content: "";
-    display: block;
-    width: 44px;
-    height: 1px;
-    margin: 18px auto 0;
-    background: linear-gradient(to right, rgba(200, 180, 140, 0), rgba(200, 180, 140, .75), rgba(200, 180, 140, 0));
-    opacity: .7;
-    filter: blur(.3px);
-    animation: anxiousUnderline 6s ease-in-out infinite;
+body.weather-enough .weather-title::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 1px;
+  margin: 18px auto 0;
+  background: linear-gradient(
+    to right,
+    rgba(200, 180, 140, 0),
+    rgba(200, 180, 140, .75),
+    rgba(200, 180, 140, 0)
+  );
+  opacity: .7;
+  filter: blur(.3px);
+  animation: enoughUnderline 6s ease-in-out infinite;
 }
+
+@keyframes enoughUnderline {
+  0%,100% { width: 42px; opacity: .5; }
+  50%     { width: 64px; opacity: .9; }
+}
+
 
 /* =====================================================
    CARD — honey parchment + soft depth
