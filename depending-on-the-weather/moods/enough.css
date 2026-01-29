@@ -3,7 +3,7 @@
    ===================================================== */
 
 /* =====================================================
-   FOND — miel doux + lumière apaisante
+   BACKGROUND — warm honey + soothing light
    ===================================================== */
 
 body.weather-enough {
@@ -37,7 +37,7 @@ body.weather-enough {
 }
 
 /* =====================================================
-   NAVBAR — warm, soft gold
+   NAVBAR — soft golden shadow
    ===================================================== */
 
 body.weather-enough .nav {
@@ -70,7 +70,7 @@ body.weather-enough .nav a:hover {
 }
 
 /* =====================================================
-   CARTE — douceur miel + profondeur velours clair
+   CARD — honey velvet softness
    ===================================================== */
 
 body.weather-enough .weather-card {
@@ -108,7 +108,7 @@ body.weather-enough .weather-card {
   50%     { transform: translateY(-5px); }
 }
 
-/* halo intérieur — glow miel */
+/* inner honey glow */
 body.weather-enough .weather-card::before {
   content: "";
   position: absolute;
@@ -131,7 +131,7 @@ body.weather-enough .weather-card::before {
   opacity: .55;
 }
 
-/* liseret doré clair */
+/* soft golden outline */
 body.weather-enough .weather-card::after {
   content: "";
   position: absolute;
@@ -148,7 +148,7 @@ body.weather-enough .weather-card::after {
 }
 
 /* =====================================================
-   TITRE — glow crème dorée
+   TITLE — cream gold glow
    ===================================================== */
 
 body.weather-enough .weather-title {
@@ -195,7 +195,7 @@ body.weather-enough .weather-title::after {
 }
 
 /* =====================================================
-   TEXTE — doux, chaleureux
+   TEXT — warm, soft, breathing
    ===================================================== */
 
 body.weather-enough .weather-content {
@@ -203,7 +203,7 @@ body.weather-enough .weather-content {
 }
 
 body.weather-enough .weather-content p {
-  font-family: "Lora", serif;
+  font-family: "Cormorant", serif;
   font-style: italic;
   font-size: 0.90rem;
   line-height: 1.9;
@@ -212,7 +212,7 @@ body.weather-enough .weather-content p {
   color: rgba(255, 240, 225, 0.85);
 }
 
-/* accents */
+/* soft alternance */
 body.weather-enough .weather-content p:nth-child(odd) {
   color: rgba(255, 245, 235, .95);
 }
