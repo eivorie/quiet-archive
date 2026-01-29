@@ -161,7 +161,7 @@ body.weather-enough .weather-title {
   font-size: 1.55rem;
   letter-spacing: 0.05em;
   margin-bottom: 28px;
-  color: #6a4a32;
+  color: #a5866f;
 
   text-align: center;
 }
@@ -176,7 +176,7 @@ body.weather-enough .weather-content p {
   line-height: 1.82;
   margin-bottom: 22px;
 
-  color: #3f2f22;
+  color: #a99483;
   font-style: italic;
 }
 
