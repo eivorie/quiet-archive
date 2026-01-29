@@ -111,13 +111,7 @@ body.weather-enough .weather-title::after {
   height: 1px;
   margin: 18px auto 0;
 
-  background: linear-gradient(
-    to right,
-    rgba(170,160,220,0),
-    rgba(210,200,245,0.75),
-    rgba(170,160,220,0)
-  );
-
+  background: linear-gradient(to right, rgb(95 70 216 / 0%), rgb(127 102 214 / 75%), rgb(146 135 205 / 0%));
   opacity: .75;
   filter: blur(.25px);
   animation: enoughUnderline 6s ease-in-out infinite;
