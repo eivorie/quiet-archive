@@ -1,7 +1,7 @@
 /* =====================================================
    SUNMOON — ERERI-ALIGNED CORE
-   Desktop: 2 cartes éditoriales (comme Ereri)
-   Mobile: swipe 1 carte
+   Desktop: 2 cartes éditoriales
+   Mobile: swipe 1 carte + navbar par carte
    ===================================================== */
 
 /* -----------------------------------------------------
@@ -15,7 +15,7 @@
 }
 
 /* -----------------------------------------------------
-   AMBIANCE GLOBALE (comme Ereri)
+   AMBIANCE GLOBALE (DESKTOP UNIQUEMENT)
 ----------------------------------------------------- */
 .sunmoon::before {
   content: "";
@@ -28,21 +28,10 @@
 }
 
 /* -----------------------------------------------------
-   NAVBAR — IDENTIQUE ERERI
+   NAVBAR — BASE COMMUNE
 ----------------------------------------------------- */
 .sunmoon-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 14px 0;
-  z-index: 40;
-
-  background: rgba(20,20,22,0.25);
-  backdrop-filter: blur(14px);
-
   text-align: center;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
 }
 
 .sunmoon-nav a {
@@ -50,6 +39,7 @@
   color: rgba(215,200,180,0.75);
   text-decoration: none;
   transition: color 0.3s ease;
+
   text-transform: uppercase;
   font-size: 0.78rem;
   letter-spacing: 0.14em;
@@ -60,27 +50,48 @@
 }
 
 /* -----------------------------------------------------
-   PAGE WRAPPER — MÊME LOGIQUE QUE ERERI
+   NAVBAR — DESKTOP (GLOBALE, FIXE)
+----------------------------------------------------- */
+.sunmoon-nav-desktop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 14px 0;
+  z-index: 40;
+
+  background: rgba(20,20,22,0.25);
+  backdrop-filter: blur(14px);
+}
+
+/* -----------------------------------------------------
+   NAVBAR — MOBILE (DANS LES CARTES)
+----------------------------------------------------- */
+.sunmoon-nav-mobile {
+  display: none; /* visible uniquement en mobile */
+}
+
+/* -----------------------------------------------------
+   PAGE WRAPPER — LOGIQUE ERERI
 ----------------------------------------------------- */
 .sunmoon-wrapper {
-  padding-top: 110px;   /* nav */
+  padding-top: 110px;   /* hauteur navbar desktop */
   padding-bottom: 120px;
-  max-width: 1200px;    /* IMPORTANT : taille Ereri */
+  max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
 /* -----------------------------------------------------
-   DESKTOP LAYOUT — 2 CARTES CÔTE À CÔTE
+   DESKTOP LAYOUT — 2 CARTES
 ----------------------------------------------------- */
 .sunmoon-slider {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 72px; /* respiration Ereri */
+  gap: 72px;
 }
 
 /* -----------------------------------------------------
-   CARD — STRUCTURE ERERI
+   CARD — STRUCTURE
 ----------------------------------------------------- */
 .sunmoon-card {
   display: flex;
@@ -89,7 +100,7 @@
 }
 
 /* -----------------------------------------------------
-   TITRES — COMME STORY HEADER
+   TITRES
 ----------------------------------------------------- */
 .card-header {
   margin-bottom: 28px;
@@ -100,22 +111,17 @@
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: 0.05em;
-  color: rgba(245,235,220,0.95);
   margin: 0;
 }
 
 /* -----------------------------------------------------
-   CARD CONTENT — TAILLE ERERI (IMPORTANT)
+   CARD CONTENT — TAILLE ERERI
 ----------------------------------------------------- */
 .card-content {
   width: 100%;
-  max-width: 520px;   /* 👈 clé du problème */
+  max-width: 520px;
   padding: 44px 38px;
   border-radius: 26px;
-
-  background:
-    radial-gradient(circle at 32% 22%, rgba(255,255,255,0.05), transparent 62%),
-    linear-gradient(to bottom, #262a33, #1b1f27);
 
   box-shadow:
     0 30px 70px rgba(0,0,0,0.6),
@@ -125,51 +131,64 @@
 }
 
 /* -----------------------------------------------------
-   TEXTE — BASE ERERI
+   TEXTE
 ----------------------------------------------------- */
 .card-content p {
   margin-bottom: 1.5em;
   font-size: 1.05rem;
   line-height: 1.75;
-  color: rgba(235,225,210,0.9);
 }
 
-/* -----------------------------------------------------
-   MOBILE — SWIPE 1 CARTE
------------------------------------------------------ */
+/* =====================================================
+   MOBILE
+===================================================== */
 @media (max-width: 768px) {
 
-   .sunmoon::before {
+  /* on coupe le fond global */
+  .sunmoon::before {
     display: none;
   }
 
-   .sunmoon-nav {
-    position: relative;
-    background: transparent;
-    backdrop-filter: none;
-    padding: 24px 0 16px;
+  /* on cache la navbar desktop */
+  .sunmoon-nav-desktop {
+    display: none;
   }
-   
-  /* le wrapper doit occuper tout l’écran */
+
+  /* navbar mobile visible */
+  .sunmoon-nav-mobile {
+    display: block;
+    padding: 22px 0 14px;
+  }
+
+  .sunmoon-nav-mobile a {
+    margin: 0 10px;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+  }
+
+  /* wrapper plein écran */
   .sunmoon-wrapper {
     max-width: 100%;
-    padding: 90px 0 100px;
+    padding: 0;
     margin: 0;
   }
 
-  /* slider plein viewport */
+  /* slider swipe */
   .sunmoon-slider {
     display: flex;
-    width: 200vw; /* 👈 IMPORTANT */
-    transform: translateX(0);
+    width: 200vw;
     transition: transform 0.6s ease;
   }
 
-  /* chaque carte = 100vw */
+  /* chaque carte = 1 écran */
   .sunmoon-card {
     flex: 0 0 100vw;
-    padding: 0 16px;
+    padding: 0 16px 100px;
     box-sizing: border-box;
+  }
+
+  .card-header {
+    margin-top: 12px;
   }
 
   .card-title {
@@ -189,4 +208,3 @@
     line-height: 1.7;
   }
 }
-
