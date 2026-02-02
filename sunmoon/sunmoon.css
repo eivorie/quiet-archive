@@ -1,6 +1,6 @@
 /* =====================================================
-   SUNMOON — CORE LAYOUT (CLEAN RESET)
-   Desktop: 2 cartes visibles
+   SUNMOON — ERERI-ALIGNED CORE
+   Desktop: 2 cartes éditoriales (comme Ereri)
    Mobile: swipe 1 carte
    ===================================================== */
 
@@ -10,12 +10,12 @@
 .sunmoon {
   margin: 0;
   font-family: "Cormorant Garamond", serif;
-  color: rgba(245,240,235,0.92);
+  color: rgba(235,225,210,0.9);
   overflow-x: hidden;
 }
 
 /* -----------------------------------------------------
-   AMBIANCE GLOBALE (fond commun)
+   AMBIANCE GLOBALE (comme Ereri)
 ----------------------------------------------------- */
 .sunmoon::before {
   content: "";
@@ -23,12 +23,12 @@
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(circle at 50% 20%, rgba(120,140,165,0.18), transparent 60%),
-    linear-gradient(to bottom, #161b24, #0e1118);
+    radial-gradient(circle at 30% 20%, rgba(120,140,165,0.14), transparent 60%),
+    linear-gradient(to bottom, #1a1f27, #0f1217);
 }
 
 /* -----------------------------------------------------
-   NAVBAR
+   NAVBAR — IDENTIQUE ERERI
 ----------------------------------------------------- */
 .sunmoon-nav {
   position: fixed;
@@ -47,97 +47,92 @@
 
 .sunmoon-nav a {
   margin: 0 18px;
-  color: rgba(240,235,230,0.75);
+  color: rgba(215,200,180,0.75);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .sunmoon-nav a:hover {
-  color: rgba(255,255,255,0.92);
+  color: rgba(245,235,220,0.95);
 }
 
 /* -----------------------------------------------------
-   WRAPPER
+   PAGE WRAPPER — MÊME LOGIQUE QUE ERERI
 ----------------------------------------------------- */
 .sunmoon-wrapper {
-  padding-top: 120px;
+  padding-top: 110px;   /* nav */
   padding-bottom: 120px;
-  max-width: 1400px;
+  max-width: 1200px;    /* IMPORTANT : taille Ereri */
   margin: 0 auto;
   box-sizing: border-box;
 }
 
 /* -----------------------------------------------------
-   DESKTOP LAYOUT (DEFAULT)
+   DESKTOP LAYOUT — 2 CARTES CÔTE À CÔTE
 ----------------------------------------------------- */
 .sunmoon-slider {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 72px; /* respiration Ereri */
 }
 
 /* -----------------------------------------------------
-   CARD BASE
+   CARD — STRUCTURE ERERI
 ----------------------------------------------------- */
 .sunmoon-card {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 /* -----------------------------------------------------
-   TITRES (AU-DESSUS DES CARTES)
+   TITRES — COMME STORY HEADER
 ----------------------------------------------------- */
+.card-header {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
 .card-title {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 500;
   letter-spacing: 0.05em;
-  margin-bottom: 32px;
-  text-align: center;
-  color: rgba(255,255,255,0.92);
+  color: rgba(245,235,220,0.95);
+  margin: 0;
 }
 
 /* -----------------------------------------------------
-   CARD CONTENT (STYLE ÉDITORIAL)
+   CARD CONTENT — TAILLE ERERI (IMPORTANT)
 ----------------------------------------------------- */
 .card-content {
-  max-width: 620px;
   width: 100%;
-  padding: 46px 44px;
+  max-width: 520px;   /* 👈 clé du problème */
+  padding: 44px 38px;
   border-radius: 26px;
 
-  background: rgba(255,255,255,0.035);
-  backdrop-filter: blur(8px);
+  background:
+    radial-gradient(circle at 32% 22%, rgba(255,255,255,0.05), transparent 62%),
+    linear-gradient(to bottom, #262a33, #1b1f27);
 
   box-shadow:
-    0 30px 60px rgba(0,0,0,0.55),
-    inset 0 0 0 1px rgba(255,255,255,0.06);
+    0 30px 70px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,245,235,0.10);
 
-  position: relative;
-}
-
-.card-content::after {
-  content: "";
-  position: absolute;
-  inset: 16px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.12);
-  pointer-events: none;
+  box-sizing: border-box;
 }
 
 /* -----------------------------------------------------
-   TEXT
+   TEXTE — BASE ERERI
 ----------------------------------------------------- */
 .card-content p {
-  font-size: 1.08rem;
-  line-height: 1.7;
-  margin-bottom: 1.6em;
-  color: rgba(245,240,235,0.92);
+  margin-bottom: 1.5em;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(235,225,210,0.9);
 }
 
 /* -----------------------------------------------------
-   MOBILE — SWIPE MODE
+   MOBILE — SWIPE 1 CARTE
 ----------------------------------------------------- */
 @media (max-width: 768px) {
 
@@ -154,22 +149,23 @@
 
   .sunmoon-card {
     flex: 0 0 100%;
-    padding: 0 22px;
+    padding: 0 14px;
     box-sizing: border-box;
   }
 
   .card-title {
-    font-size: 1.8rem;
-    margin-bottom: 26px;
+    font-size: 1.75rem;
+    margin-bottom: 24px;
   }
 
   .card-content {
-    padding: 36px 30px;
-    border-radius: 20px;
+    max-width: none;
+    padding: 40px 28px;
+    border-radius: 22px;
   }
 
   .card-content p {
-    font-size: 1.03rem;
-    line-height: 1.62;
+    font-size: 1rem;
+    line-height: 1.7;
   }
 }
