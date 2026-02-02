@@ -1,18 +1,50 @@
+/* =====================================================
+   MOON — IDENTITÉ LUNAIRE
+   Couleurs, lumière, émotion
+   AUCUN layout ici
+   ===================================================== */
+
+/* -----------------------------
+   TITRE
+----------------------------- */
 .card-moon .card-title {
   color: #e7ebf2;
   text-shadow: 0 2px 12px rgba(170,190,210,0.35);
 }
 
+/* -----------------------------
+   CARTE — fond lunaire
+----------------------------- */
 .card-moon .card-content {
   background:
-    radial-gradient(circle at 45% 20%, rgba(120,140,165,0.18), transparent 60%),
+    radial-gradient(circle at 45% 18%, rgba(140,160,190,0.18), transparent 60%),
     linear-gradient(to bottom, #262a33, #1b1f27);
 }
 
+/* -----------------------------
+   TEXTE
+----------------------------- */
 .card-moon .card-content p {
   color: rgba(225,230,240,0.88);
 }
 
 .card-moon em {
   color: #f4f7fa;
+  font-style: italic;
+}
+
+/* -----------------------------
+   MOBILE — LUMIÈRE ACTIVE
+----------------------------- */
+@media (max-width: 768px) {
+
+  .card-moon {
+    background:
+      radial-gradient(circle at 50% 25%, rgba(140,160,190,0.22), transparent 65%);
+    transition: background 0.8s ease;
+  }
+
+  .card-moon:not(.is-active) {
+    background: none;
+  }
 }
