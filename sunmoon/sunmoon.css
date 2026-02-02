@@ -136,6 +136,10 @@
 ----------------------------------------------------- */
 @media (max-width: 768px) {
 
+   .sunmoon::before {
+    display: none;
+  }
+   
   /* le wrapper doit occuper tout l’écran */
   .sunmoon-wrapper {
     max-width: 100%;
