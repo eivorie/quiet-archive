@@ -1,1 +1,58 @@
+/* =====================================================
+   MOON THEME — Blue Violet Mystical
+   ===================================================== */
 
+/* -----------------------------------------------------
+   BACKGROUND — gradients violets profonds
+----------------------------------------------------- */
+body.mode-moon {
+  background:
+    radial-gradient(circle at 40% 20%, rgba(140, 120, 200, 0.35), transparent 60%),
+    radial-gradient(circle at 70% 80%, rgba(90, 70, 140, 0.28), transparent 65%),
+    linear-gradient(to bottom, #2a2440 0%, #1f1b33 50%, #161428 100%);
+  color: #e9e5ff;
+}
+
+/* -----------------------------------------------------
+   TITLE — glow violet + soulignement doré pâle
+----------------------------------------------------- */
+body.mode-moon .card-title {
+  color: #e8e3ff;
+  text-shadow: 0 2px 12px rgba(150,120,255,0.35);
+}
+
+body.mode-moon .card-title::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 1px;
+  margin: 18px auto 0;
+  background: linear-gradient(
+    to right,
+    rgba(235,215,255,0),
+    rgba(225,205,255,0.85),
+    rgba(235,215,255,0)
+  );
+  filter: blur(.4px);
+}
+
+/* -----------------------------------------------------
+   TEXT — doux, brume violette
+----------------------------------------------------- */
+body.mode-moon .card-content p {
+  color: #d9d4f3;
+}
+
+body.mode-moon em {
+  color: #f0e8ff;
+  font-style: italic;
+}
+
+/* -----------------------------------------------------
+   AMBIENT (light particles)
+----------------------------------------------------- */
+.ambient-moon {
+  background:
+    radial-gradient(circle, rgba(200,180,255,0.25), rgba(90,70,140,0.15));
+  filter: blur(40px);
+}
