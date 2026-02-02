@@ -1,80 +1,19 @@
-/* =====================================================
-   SUN THEME — Warm Gold / Premium Solar Glow
-   Ambiance : soleil de fin d’après-midi, doré profond,
-   chaleureux, luxueux, jamais jaune vif.
-   ===================================================== */
-
-/* -----------------------------------------------------
-   BACKGROUND — ambre profond + lumière dorée diffuse
------------------------------------------------------ */
-body.mode-sun {
-  background:
-    radial-gradient(circle at 38% 22%, rgba(255,210,140,0.40), transparent 60%),
-    radial-gradient(circle at 72% 78%, rgba(220,150,70,0.28), transparent 65%),
-    linear-gradient(to bottom, #e9c28f 0%, #d3a974 45%, #b3824f 100%);
-  
-  color: rgba(70, 50, 32, 0.92);
-  transition: background 1.2s ease, color 1s ease;
-}
-
-/* -----------------------------------------------------
-   TITLE — or profond + ombre douce haut de gamme
------------------------------------------------------ */
-body.mode-sun .card-title {
+.card-sun .card-title {
   color: #6b4a23;
   text-shadow:
-    0 2px 10px rgba(255,210,150,0.35),
-    0 0 4px rgba(255,185,120,0.25);
+    0 2px 10px rgba(255,210,150,0.35);
 }
 
-/* soulignement or poli */
-body.mode-sun .card-title::after {
-  content: "";
-  display: block;
-  width: 48px;
-  height: 1px;
-  margin: 18px auto 0;
-
-  background: linear-gradient(
-    to right,
-    rgba(255,200,140,0),
-    rgba(255,200,140,0.75),
-    rgba(255,200,140,0)
-  );
-  filter: blur(.35px);
-  opacity: 0.9;
-}
-
-/* -----------------------------------------------------
-   TEXT — brun ambre élégant, très lisible, chaleureux
------------------------------------------------------ */
-body.mode-sun .card-content p {
-  color: rgba(80,55,30,0.92);
-}
-
-body.mode-sun em {
-  color: rgba(100,68,40,0.95);
-  font-style: italic;
-}
-
-/* -----------------------------------------------------
-   INNER CARD FRAME — doré, discret, luxe
------------------------------------------------------ */
-body.mode-sun .sunmoon-card::after {
-  border-color: rgba(255,210,150,0.22) !important;
-}
-
-/* -----------------------------------------------------
-   AMBIENT — lumière solaire feutrée, non agressive
------------------------------------------------------ */
-.ambient-sun {
+.card-sun .card-content {
   background:
-    radial-gradient(circle at 50% 45%, rgba(255,205,150,0.28), rgba(240,160,90,0.14));
-  filter: blur(42px);
-  opacity: 0;
-  transition: opacity 1.2s ease;
+    radial-gradient(circle at 38% 22%, rgba(255,210,140,0.20), transparent 60%),
+    linear-gradient(to bottom, #3f362f, #26211d);
 }
 
-body.mode-sun .ambient-sun {
-  opacity: 1;
+.card-sun .card-content p {
+  color: rgba(235,225,210,0.9);
+}
+
+.card-sun em {
+  color: rgba(245,230,200,0.95);
 }
