@@ -1,58 +1,74 @@
 /* =====================================================
-   MOON THEME — Blue Violet Mystical
+   MOON THEME — Deep Blue Grey / Silver Light
+   Atmosphère nocturne, élégante, froide, sans violet.
    ===================================================== */
 
 /* -----------------------------------------------------
-   BACKGROUND — gradients violets profonds
+   BACKGROUND — bleu nuit profond + halos argentés
 ----------------------------------------------------- */
 body.mode-moon {
   background:
-    radial-gradient(circle at 40% 20%, rgba(140, 120, 200, 0.35), transparent 60%),
-    radial-gradient(circle at 70% 80%, rgba(90, 70, 140, 0.28), transparent 65%),
-    linear-gradient(to bottom, #2a2440 0%, #1f1b33 50%, #161428 100%);
-  color: #e9e5ff;
+    radial-gradient(circle at 45% 20%, rgba(120,140,165,0.20), transparent 60%),
+    radial-gradient(circle at 70% 80%, rgba(80,95,120,0.18), transparent 65%),
+    linear-gradient(to bottom, #1a1f27 0%, #141820 55%, #0f1217 100%);
+  color: rgba(230,235,240,0.92);
+  transition: background 1.2s ease, color 1s ease;
 }
 
 /* -----------------------------------------------------
-   TITLE — glow violet + soulignement doré pâle
+   TITLE — blanc froid + lueur argent
 ----------------------------------------------------- */
 body.mode-moon .card-title {
-  color: #e8e3ff;
-  text-shadow: 0 2px 12px rgba(150,120,255,0.35);
+  color: #e7ebf2;
+  text-shadow: 0 2px 12px rgba(170,190,210,0.35);
 }
 
+/* soulignement argenté minimaliste */
 body.mode-moon .card-title::after {
   content: "";
   display: block;
-  width: 46px;
+  width: 48px;
   height: 1px;
   margin: 18px auto 0;
   background: linear-gradient(
     to right,
-    rgba(235,215,255,0),
-    rgba(225,205,255,0.85),
-    rgba(235,215,255,0)
+    rgba(255,255,255,0),
+    rgba(210,220,230,0.85),
+    rgba(255,255,255,0)
   );
   filter: blur(.4px);
 }
 
 /* -----------------------------------------------------
-   TEXT — doux, brume violette
+   TEXT — argent clair, douceur nocturne
 ----------------------------------------------------- */
 body.mode-moon .card-content p {
-  color: #d9d4f3;
+  color: rgba(225,230,240,0.88);
 }
 
 body.mode-moon em {
-  color: #f0e8ff;
+  color: #f4f7fa;
   font-style: italic;
 }
 
 /* -----------------------------------------------------
-   AMBIENT (light particles)
+   CARD INNER BORDER — argent
+----------------------------------------------------- */
+body.mode-moon .card-content::after {
+  border-color: rgba(200,210,225,0.12);
+}
+
+/* -----------------------------------------------------
+   AMBIENT — légère brume bleutée glacée
 ----------------------------------------------------- */
 .ambient-moon {
   background:
-    radial-gradient(circle, rgba(200,180,255,0.25), rgba(90,70,140,0.15));
+    radial-gradient(circle at 50% 40%, rgba(160,175,195,0.15), rgba(60,70,85,0.08));
   filter: blur(40px);
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+body.mode-moon .ambient-moon {
+  opacity: 1;
 }
