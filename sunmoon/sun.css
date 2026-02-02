@@ -44,6 +44,12 @@
     transition: background 0.8s ease;
   }
 
+    .card-sun.is-active {
+    background:
+      radial-gradient(circle at 50% 25%, rgba(255,200,140,0.35), transparent 65%),
+      linear-gradient(to bottom, #e0b98a, #b3824f);
+  }
+
   .card-sun:not(.is-active) {
     background: none;
   }
