@@ -1,19 +1,50 @@
+/* =====================================================
+   SUN — IDENTITÉ SOLAIRE
+   Chaleur, or, présence
+   AUCUN layout ici
+   ===================================================== */
+
+/* -----------------------------
+   TITRE
+----------------------------- */
 .card-sun .card-title {
   color: #6b4a23;
-  text-shadow:
-    0 2px 10px rgba(255,210,150,0.35);
+  text-shadow: 0 2px 10px rgba(255,210,150,0.35);
 }
 
+/* -----------------------------
+   CARTE — fond solaire
+----------------------------- */
 .card-sun .card-content {
   background:
-    radial-gradient(circle at 38% 22%, rgba(255,210,140,0.20), transparent 60%),
+    radial-gradient(circle at 38% 22%, rgba(255,210,140,0.22), transparent 60%),
     linear-gradient(to bottom, #3f362f, #26211d);
 }
 
+/* -----------------------------
+   TEXTE
+----------------------------- */
 .card-sun .card-content p {
   color: rgba(235,225,210,0.9);
 }
 
 .card-sun em {
   color: rgba(245,230,200,0.95);
+  font-style: italic;
+}
+
+/* -----------------------------
+   MOBILE — LUMIÈRE ACTIVE
+----------------------------- */
+@media (max-width: 768px) {
+
+  .card-sun {
+    background:
+      radial-gradient(circle at 50% 25%, rgba(255,200,140,0.28), transparent 65%);
+    transition: background 0.8s ease;
+  }
+
+  .card-sun:not(.is-active) {
+    background: none;
+  }
 }
