@@ -139,6 +139,13 @@
    .sunmoon::before {
     display: none;
   }
+
+   .sunmoon-nav {
+    position: relative;
+    background: transparent;
+    backdrop-filter: none;
+    padding: 24px 0 16px;
+  }
    
   /* le wrapper doit occuper tout l’écran */
   .sunmoon-wrapper {
