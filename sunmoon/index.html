@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sun & Moon</title>
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Sun & Moon Module Styles -->
+  <link rel="stylesheet" href="sunmoon.css">
+  <link rel="stylesheet" href="moon.css">
+  <link rel="stylesheet" href="sun.css">
+</head>
+
+<body class="sunmoon mode-moon">
+
+  <!-- Ambient -->
+  <div class="ambient ambient-moon"></div>
+  <div class="ambient ambient-sun"></div>
+
+  <!-- NAVBAR -->
+  <nav class="nav sunmoon-nav">
+    <a href="../index.html">Home</a>
+    <a href="../memories.html">Memories</a>
+    <a href="../ereri/index.html">Ereri</a>
+    <a href="../depending-on-the-weather/index.html">Depending on the weather</a>
+    <a href="../archive.html">Our Archive</a>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="sunmoon-wrapper">
+
+    <section class="sunmoon-slider">
+
+      <!-- 🌙 MOON (his poem, untouched) -->
+      <article class="sunmoon-card card-moon" data-mode="moon">
+        <header class="card-header">
+          <h1 class="card-title">Fases da Lua</h1>
+        </header>
+
+        <div class="card-content">
+
+          <p>
+            Existe uma fase da vida em que você se vê perdido<br>
+            Perdido no tempo, na monotonia, na sua própria mente<br>
+            As cores se perdem quase por completo ou ao menos a intensidade delas diminuem<br>
+            A busca incessante pela <em>Lua Nova</em> se inicia.
+          </p>
+
+          <p>
+            Existe uma fase da vida em que as fases não acontecem na ordem correta<br>
+            Mas talvez isso seja a vida, uma eterna surpresa<br>
+            Um dia você está perdido e no outro seu coração se encontra, sem resposta, sem perguntas, sem razão<br>
+            As cores começam ligeiramente a aparecer de novo, você começa a enxergar novos horizontes, as coisas começam a fazer mais sentido<br>
+            Sentimentos aparecem na <em>Lua Crescente</em>.
+          </p>
+
+          <p>
+            Existe uma fase da vida em que o amor não é mais questionado, ele se mostra em forma de pessoa<br>
+            O amor que parecia não existir te prova que ele só estava ali, escondido, no sigilo<br>
+            Esse amor é ambíguo, calmo e intenso, louco e pacífico, ele te faz duvidar da realidade<br>
+            Mas então você vê que talvez nada mais seja que a sorte batendo à sua porta e sutilmente você a deixa entrar e com ela, a <em>Lua Minguante</em>.
+          </p>
+
+          <p>
+            Existe uma fase em que você não tem mais dúvidas<br>
+            Talvez seja isso o que eles chamam de alma gêmea<br>
+            E então você pensa que realmente não deveria importar se é “ele” ou “ela”, mas tinha que ser “L”<br>
+            E finalmente depois de tanto tempo perdido, com pouco, com quase nada talvez, você de repente se vê completo<br>
+            Bem-vinda, <em>Lua Cheia</em>.
+          </p>
+
+        </div>
+      </article>
+
+      <!-- ☀️ SUN (your future poem) -->
+      <article class="sunmoon-card card-sun" data-mode="sun">
+        <header class="card-header">
+          <h1 class="card-title">Sol — For Him</h1>
+        </header>
+
+        <div class="card-content">
+          <p class="placeholder">Your poem for him will live here soon.</p>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <script src="sunmoon.js"></script>
+</body>
+</html>
