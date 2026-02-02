@@ -1,65 +1,51 @@
-/* =====================================================
-   SUNMOON — SWIPE + MODE SWITCH
-   ===================================================== */
-
 const slider = document.querySelector(".sunmoon-slider");
-let currentMode = "moon"; // default
+
+let currentIndex = 0;
 let startX = 0;
 let currentX = 0;
 let isDragging = false;
 
-/* -----------------------------------------------------
-   UPDATE THEME
------------------------------------------------------ */
-function setMode(mode) {
-  currentMode = mode;
-  document.body.classList.remove("mode-moon", "mode-sun");
-  document.body.classList.add(`mode-${mode}`);
-
-  // translate slider
-  slider.style.transform = mode === "moon"
-    ? "translateX(0)"
-    : "translateX(-100vw)";
+function isMobile() {
+  return window.innerWidth <= 768;
 }
 
-/* -----------------------------------------------------
-   TOUCH EVENTS
------------------------------------------------------ */
+function updateSlider() {
+  if (!isMobile()) {
+    slider.style.transform = "none";
+    return;
+  }
+  slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
+}
+
+/* TOUCH */
 slider.addEventListener("touchstart", e => {
+  if (!isMobile()) return;
   startX = e.touches[0].clientX;
   isDragging = true;
 });
 
 slider.addEventListener("touchmove", e => {
-  if (!isDragging) return;
+  if (!isDragging || !isMobile()) return;
   currentX = e.touches[0].clientX;
 });
 
 slider.addEventListener("touchend", () => {
-  if (!isDragging) return;
+  if (!isDragging || !isMobile()) return;
   isDragging = false;
 
   const delta = currentX - startX;
 
-  // swipe left → SUN
-  if (delta < -60) {
-    setMode("sun");
+  if (delta < -60 && currentIndex < 1) {
+    currentIndex = 1;
+  } else if (delta > 60 && currentIndex > 0) {
+    currentIndex = 0;
   }
-  // swipe right → MOON
-  else if (delta > 60) {
-    setMode("moon");
-  }
+
+  updateSlider();
 });
 
-/* -----------------------------------------------------
-   DESKTOP KEYS (← / →)
------------------------------------------------------ */
-document.addEventListener("keydown", e => {
-  if (e.key === "ArrowRight") setMode("sun");
-  if (e.key === "ArrowLeft") setMode("moon");
-});
+/* RESET ON RESIZE */
+window.addEventListener("resize", updateSlider);
 
-/* -----------------------------------------------------
-   DESKTOP CLICK / DRAG (OPTIONAL PREMIUM)
------------------------------------------------------ */
-// (activation possible plus tard)
+/* INIT */
+updateSlider();
