@@ -1,1 +1,48 @@
+/* =====================================================
+   SUN THEME — Warm Gold / Solar Glow
+   ===================================================== */
 
+body.mode-sun {
+  background:
+    radial-gradient(circle at 35% 20%, rgba(255,220,160,0.45), transparent 55%),
+    radial-gradient(circle at 70% 75%, rgba(255,180,90,0.35), transparent 65%),
+    linear-gradient(to bottom, #f7d8a2 0%, #e4b886 45%, #c08a55 100%);
+  color: #3b2818;
+}
+
+/* TITLE */
+body.mode-sun .card-title {
+  color: #5c3a13;
+  text-shadow: 0 3px 12px rgba(255,195,120,0.45);
+}
+
+body.mode-sun .card-title::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 1px;
+  margin: 18px auto 0;
+  background: linear-gradient(
+    to right,
+    rgba(255,210,140,0),
+    rgba(255,210,140,0.75),
+    rgba(255,210,140,0)
+  );
+  filter: blur(.4px);
+}
+
+/* TEXT */
+body.mode-sun .card-content p {
+  color: #4a331e;
+}
+
+body.mode-sun em {
+  color: #6b4a29;
+}
+
+/* AMBIENT */
+.ambient-sun {
+  background:
+    radial-gradient(circle, rgba(255,220,160,0.45), rgba(255,170,80,0.25));
+  filter: blur(40px);
+}
