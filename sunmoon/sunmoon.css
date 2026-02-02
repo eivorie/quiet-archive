@@ -1,30 +1,34 @@
 /* =====================================================
-   SUNMOON — PREMIUM MODULE (GLOBAL)
-   Style moderne, élégant, discret, taille Ereri
+   SUNMOON — CORE LAYOUT (CLEAN RESET)
+   Desktop: 2 cartes visibles
+   Mobile: swipe 1 carte
    ===================================================== */
 
+/* -----------------------------------------------------
+   GLOBAL
+----------------------------------------------------- */
 .sunmoon {
   margin: 0;
-  padding: 0;
   font-family: "Cormorant Garamond", serif;
-  overflow: hidden;
-  color: rgba(245, 240, 235, 0.92);
-  transition: background 1s ease, color 1s ease;
+  color: rgba(245,240,235,0.92);
+  overflow-x: hidden;
 }
 
 /* -----------------------------------------------------
-   WRAPPER
+   AMBIANCE GLOBALE (fond commun)
 ----------------------------------------------------- */
-.sunmoon-wrapper {
-  position: relative;
-  width: 100vw;
-  min-height: 100vh;
-  padding-top: 80px; /* nav height */
-  box-sizing: border-box;
+.sunmoon::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(120,140,165,0.18), transparent 60%),
+    linear-gradient(to bottom, #161b24, #0e1118);
 }
 
 /* -----------------------------------------------------
-   NAVBAR — premium, comme Ereri
+   NAVBAR
 ----------------------------------------------------- */
 .sunmoon-nav {
   position: fixed;
@@ -33,7 +37,7 @@
   padding: 14px 0;
   z-index: 40;
 
-  background: rgba(20, 20, 22, 0.25);
+  background: rgba(20,20,22,0.25);
   backdrop-filter: blur(14px);
 
   text-align: center;
@@ -43,144 +47,125 @@
 
 .sunmoon-nav a {
   margin: 0 18px;
-  color: rgba(240, 235, 230, 0.75);
+  color: rgba(240,235,230,0.75);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .sunmoon-nav a:hover {
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255,255,255,0.92);
 }
 
 /* -----------------------------------------------------
-   SLIDER — Moon <-> Sun
+   WRAPPER
+----------------------------------------------------- */
+.sunmoon-wrapper {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* -----------------------------------------------------
+   DESKTOP LAYOUT (DEFAULT)
 ----------------------------------------------------- */
 .sunmoon-slider {
-  display: flex;
-  flex-direction: row;
-  width: 200%;
-  height: 100%;
-  transform: translateX(0);
-  transition: transform 0.85s cubic-bezier(.25, .1, .1, 1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
 }
 
 /* -----------------------------------------------------
-   CARD BASE — taille Ereri (corrigé)
+   CARD BASE
 ----------------------------------------------------- */
 .sunmoon-card {
-  flex: 0 0 100%;
-  padding: 40px 0 80px; /* plus petit, comme Ereri */
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  box-sizing: border-box;
   position: relative;
-
-  /* supprime l’obligation de remplir tout l’écran */
-  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* -----------------------------------------------------
-   CARD INTERNAL BOX (Ereri style)
+   TITRES (AU-DESSUS DES CARTES)
 ----------------------------------------------------- */
-.sunmoon-card .card-content {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(6px);
+.card-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 32px;
+  text-align: center;
+  color: rgba(255,255,255,0.92);
+}
 
-  max-width: 700px;
+/* -----------------------------------------------------
+   CARD CONTENT (STYLE ÉDITORIAL)
+----------------------------------------------------- */
+.card-content {
+  max-width: 620px;
   width: 100%;
-   margin: 0 auto;
-
-  padding: 50px 48px;
+  padding: 46px 44px;
   border-radius: 26px;
 
+  background: rgba(255,255,255,0.035);
+  backdrop-filter: blur(8px);
+
   box-shadow:
-    0 32px 60px rgba(0,0,0,0.55),
+    0 30px 60px rgba(0,0,0,0.55),
     inset 0 0 0 1px rgba(255,255,255,0.06);
 
   position: relative;
 }
 
-/* Decorative subtle frame */
-.sunmoon-card .card-content::after {
+.card-content::after {
   content: "";
   position: absolute;
   inset: 16px;
   border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.12);
   pointer-events: none;
 }
 
 /* -----------------------------------------------------
-   TITRE
------------------------------------------------------ */
-.card-header {
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.card-title {
-  font-size: 2.4rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.92);
-  margin: 0;
-}
-
-/* -----------------------------------------------------
-   PARAGRAPHES
+   TEXT
 ----------------------------------------------------- */
 .card-content p {
+  font-size: 1.08rem;
+  line-height: 1.7;
   margin-bottom: 1.6em;
-  line-height: 1.72;
-  font-size: 1.12rem;
   color: rgba(245,240,235,0.92);
 }
 
 /* -----------------------------------------------------
-   AMBIENT MODES
------------------------------------------------------ */
-.ambient {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  transition: opacity 1.2s ease;
-  opacity: 0;
-}
-
-/* MOON → bleu sombre graphite */
-.ambient-moon {
-  background:
-    radial-gradient(circle at 40% 30%, rgba(70,80,105,0.25), transparent 65%),
-    linear-gradient(to bottom, #1b1f27, #11141a);
-}
-
-/* SUN → ambre doré doux */
-.ambient-sun {
-  background:
-    radial-gradient(circle at 60% 20%, rgba(255,215,160,0.25), transparent 62%),
-    linear-gradient(to bottom, #d7b895, #b38e65);
-}
-
-/* Visible mode */
-body.mode-moon .ambient-moon { opacity: 1; }
-body.mode-sun  .ambient-sun  { opacity: 1; }
-
-/* -----------------------------------------------------
-   MOBILE
+   MOBILE — SWIPE MODE
 ----------------------------------------------------- */
 @media (max-width: 768px) {
-  .sunmoon-card {
-    padding: 60px 22px 100px;
+
+  .sunmoon-wrapper {
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
-  .sunmoon-card .card-content {
-    padding: 36px 28px;
-    border-radius: 20px;
+  .sunmoon-slider {
+    display: flex;
+    width: 200%;
+    transition: transform 0.8s cubic-bezier(.25,.1,.1,1);
+  }
+
+  .sunmoon-card {
+    flex: 0 0 100%;
+    padding: 0 22px;
+    box-sizing: border-box;
   }
 
   .card-title {
-    font-size: 1.85rem;
+    font-size: 1.8rem;
+    margin-bottom: 26px;
+  }
+
+  .card-content {
+    padding: 36px 30px;
+    border-radius: 20px;
   }
 
   .card-content p {
