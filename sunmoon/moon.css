@@ -13,7 +13,7 @@
 }
 
 /* -----------------------------
-   CARTE — fond lunaire
+   CARTE — FOND LUNAIRE (DESKTOP & MOBILE)
 ----------------------------- */
 .card-moon .card-content {
   background:
@@ -34,22 +34,19 @@
 }
 
 /* -----------------------------
-   MOBILE — LUMIÈRE ACTIVE
+   MOBILE — MONDE LUNAIRE ACTIF
 ----------------------------- */
 @media (max-width: 768px) {
 
-  .card-moon {
-    background:
-      radial-gradient(circle at 50% 25%, rgba(140,160,190,0.22), transparent 65%);
-    transition: background 0.8s ease;
-  }
-
-   .card-moon.is-active {
+  /* le monde lunaire n’existe QUE si la carte est active */
+  .card-moon.is-active {
     background:
       radial-gradient(circle at 50% 25%, rgba(140,160,190,0.35), transparent 65%),
       linear-gradient(to bottom, #1a1f27, #0f1217);
+    transition: background 0.8s ease;
   }
 
+  /* sinon, rien */
   .card-moon:not(.is-active) {
     background: none;
   }
