@@ -62,6 +62,34 @@
 }
 
 /* -----------------------------
+   LUNE VIVANTE — MOUVEMENT NOCTURNE
+----------------------------- */
+.card-moon .card-content::after {
+  animation: moon-drift 38s ease-in-out infinite;
+}
+
+@keyframes moon-drift {
+  0% {
+    background-position:
+      50% 8%,
+      15% 85%,
+      85% 90%;
+  }
+  50% {
+    background-position:
+      52% 10%,
+      18% 82%,
+      82% 92%;
+  }
+  100% {
+    background-position:
+      50% 8%,
+      15% 85%,
+      85% 90%;
+  }
+}
+
+/* -----------------------------
    TEXTE — CENTRALITÉ & RESPIRATION
 ----------------------------- */
 .card-moon .card-content p {
@@ -74,6 +102,31 @@
 
 .card-moon .card-content p:first-of-type {
   margin-top: 0.6em;
+}
+
+/* -----------------------------
+   LETTRINES — OUVERTURE DES STROPHES
+----------------------------- */
+.card-moon .card-content p::first-letter {
+  float: left;
+  font-size: 2.8em;
+  line-height: 1;
+  margin: 0.05em 0.18em 0 0;
+
+  font-weight: 500;
+  color: rgba(235,240,250,0.95);
+
+  text-shadow:
+    0 0 8px rgba(200,215,240,0.45),
+    0 0 18px rgba(180,200,230,0.25);
+}
+
+/* évite la lettrine sur mobile trop petit */
+@media (max-width: 768px) {
+  .card-moon .card-content p::first-letter {
+    font-size: 2.3em;
+    margin-right: 0.14em;
+  }
 }
 
 /* -----------------------------
