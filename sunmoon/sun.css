@@ -2,6 +2,13 @@
    SUN — IDENTITÉ SOLAIRE
    Lumière, clarté, présence
    ===================================================== */
+.title-sun {
+  color: rgba(180, 130, 60, 0.95);
+  font-weight: 700;
+  text-shadow:
+    1px 1px 0 rgba(120, 80, 30, 0.9),
+    2px 2px 4px rgba(0, 0, 0, 0.35);
+}
 
 /* -----------------------------
    CARTE — FOND SOLAIRE LUMINEUX
