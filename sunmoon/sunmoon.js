@@ -1,73 +1,39 @@
-const slider = document.querySelector(".sunmoon-slider");
+/* =====================================================
+   SUNMOON — MODE SWITCH (NO SWIPE)
+   ===================================================== */
+
+const body = document.body;
 const cards = document.querySelectorAll(".sunmoon-card");
-
-let currentIndex = 0;
-let startX = 0;
-let currentX = 0;
-let isDragging = false;
-
-function isMobile() {
-  return window.innerWidth <= 768;
-}
+const switches = document.querySelectorAll(".sunmoon-switch");
 
 /* -----------------------------------------------------
-   ACTIVE CARD (LUMIÈRE / MONDE)
+   SET ACTIVE MODE
 ----------------------------------------------------- */
-function updateActiveCard() {
-  cards.forEach((card, index) => {
-    card.classList.toggle("is-active", index === currentIndex);
+function setMode(mode) {
+  // body theme
+  body.classList.remove("mode-moon", "mode-sun");
+  body.classList.add(`mode-${mode}`);
+
+  // active card
+  cards.forEach(card => {
+    const isTarget = card.classList.contains(`card-${mode}`);
+    card.classList.toggle("is-active", isTarget);
   });
 }
 
 /* -----------------------------------------------------
-   UPDATE SLIDER
+   SWITCH BUTTONS
 ----------------------------------------------------- */
-function updateSlider() {
-  if (!isMobile()) {
-    slider.style.transform = "none";
-    cards.forEach(card => card.classList.remove("is-active"));
-    return;
-  }
+switches.forEach(button => {
+  button.addEventListener("click", () => {
+    const targetMode =
+      button.getAttribute("aria-label")?.includes("Sun") ? "sun" : "moon";
 
-  slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
-  updateActiveCard();
-}
-
-/* -----------------------------------------------------
-   TOUCH EVENTS
------------------------------------------------------ */
-slider.addEventListener("touchstart", e => {
-  if (!isMobile()) return;
-  startX = e.touches[0].clientX;
-  isDragging = true;
-});
-
-slider.addEventListener("touchmove", e => {
-  if (!isDragging || !isMobile()) return;
-  currentX = e.touches[0].clientX;
-});
-
-slider.addEventListener("touchend", () => {
-  if (!isDragging || !isMobile()) return;
-  isDragging = false;
-
-  const delta = currentX - startX;
-
-  if (delta < -60 && currentIndex < cards.length - 1) {
-    currentIndex++;
-  } else if (delta > 60 && currentIndex > 0) {
-    currentIndex--;
-  }
-
-  updateSlider();
+    setMode(targetMode);
+  });
 });
 
 /* -----------------------------------------------------
-   RESET ON RESIZE
+   INIT (default = moon)
 ----------------------------------------------------- */
-window.addEventListener("resize", updateSlider);
-
-/* -----------------------------------------------------
-   INIT
------------------------------------------------------ */
-updateSlider();
+setMode("moon");
