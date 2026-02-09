@@ -102,82 +102,88 @@ body.mode-sun {
 }
 
 /* -----------------------------------------------------
-   SWITCH BUTTON
+   SWITCH BUTTON — SOUS LE TITRE
 ----------------------------------------------------- */
 .sunmoon-switch {
-  position: fixed;
-  top: 78px;
-  right: 22px;
-  z-index: 50;
+  position: relative;
+  margin: 18px auto 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   background: rgba(0,0,0,0.25);
   backdrop-filter: blur(6px);
   border: none;
   border-radius: 999px;
-  padding: 10px 14px;
+  padding: 10px 16px;
 
   cursor: pointer;
   font-size: 1rem;
+  line-height: 1;
   color: rgba(255,255,255,0.85);
 
+  opacity: 0.85;
+
   transition:
-    background 0.6s ease,
-    transform 0.6s ease,
-    opacity 0.6s ease;
+    background 1s ease,
+    opacity 0.8s ease,
+    transform 1.2s ease;
 }
 
-/* Moon switch style */
-.card-moon .sunmoon-switch {
-  color: rgba(230,235,245,0.85);
-}
-
-/* Sun switch style */
-.card-sun .sunmoon-switch {
-  color: rgba(120,80,40,0.85);
-}
-
-/* hover subtil */
 .sunmoon-switch:hover {
   opacity: 1;
   transform: translateY(-2px);
 }
 
+/* Moon switch */
+.card-moon .sunmoon-switch {
+  background: rgba(120,140,165,0.35);
+  color: rgba(230,235,245,0.95);
+}
+
+/* Sun switch */
+.card-sun .sunmoon-switch {
+  background: rgba(255,210,150,0.35);
+  color: rgba(90,60,30,0.9);
+}
+
+body.mode-sun {
+  transition: background 2.6s ease;
+}
+
+body.mode-moon {
+  transition: background 2.6s ease;
+}
+
 body.mode-sun .sunmoon-stage {
-  animation: dawn 1.4s ease forwards;
+  animation: dawn 2.8s ease forwards;
 }
 
 body.mode-moon .sunmoon-stage {
-  animation: dusk 1.4s ease forwards;
-}
-
-body.mode-sun .sunmoon-nav-desktop {
-  background: rgba(255,230,200,0.35);
-  backdrop-filter: blur(12px);
-}
-
-body.mode-sun .sunmoon-nav-desktop a {
-  color: rgba(90,60,30,0.75);
-}
-
-body.mode-sun .sunmoon-nav-desktop a:hover {
-  color: rgba(70,45,20,0.95);
+  animation: dusk 2.8s ease forwards;
 }
 
 @keyframes dawn {
-  from {
-    filter: brightness(0.8) saturate(0.85);
+  0% {
+    filter: brightness(0.75) saturate(0.85);
   }
-  to {
+  50% {
+    filter: brightness(0.9) saturate(0.95);
+  }
+  100% {
     filter: brightness(1.05) saturate(1);
   }
 }
 
 @keyframes dusk {
-  from {
-    filter: brightness(1.05);
+  0% {
+    filter: brightness(1.05) saturate(1);
   }
-  to {
-    filter: brightness(0.85) saturate(0.8);
+  50% {
+    filter: brightness(0.95) saturate(0.9);
+  }
+  100% {
+    filter: brightness(0.8) saturate(0.8);
   }
 }
 
