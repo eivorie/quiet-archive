@@ -259,14 +259,8 @@ body.mode-moon .sunmoon-stage {
     padding: 0 16px 100px;
   }
 
-  .sunmoon-switch {
-    top: 18px;
-    right: 18px;
-  }
-
   .card-title {
     font-size: 1.7rem;
-    margin-bottom: 22px;
   }
 
   .card-content {
