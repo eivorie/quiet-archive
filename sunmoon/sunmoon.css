@@ -8,17 +8,14 @@
    GLOBAL
 ----------------------------------------------------- */
 .sunmoon {
-  margin: 0;
   font-family: "Cormorant Garamond", serif;
   overflow-x: hidden;
-  position: relative;
 }
 
 /* ===============================
    GLOBAL BACKGROUNDS BY MODE
 ================================ */
 
-/* 🌙 NIGHT */
 body.mode-moon {
   background:
     radial-gradient(circle at 30% 20%, rgba(120,140,165,0.18), transparent 60%),
@@ -26,7 +23,6 @@ body.mode-moon {
   transition: background 2.6s ease;
 }
 
-/* ☀️ DAY */
 body.mode-sun {
   background:
     radial-gradient(circle at 50% 10%, rgba(255,220,170,0.45), transparent 65%),
