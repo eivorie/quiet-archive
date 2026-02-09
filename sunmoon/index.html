@@ -21,7 +21,7 @@
 
 <body class="sunmoon mode-moon">
 
-  <!-- NAVBAR DESKTOP -->
+  <!-- NAVBAR UNIQUE -->
   <nav class="nav">
     <a href="../index.html">Home</a>
     <a href="../memories.html">Memories</a>
@@ -34,10 +34,9 @@
 
     <!-- 🌙 MOON -->
     <article class="sunmoon-card card-moon is-active">
-
       <header class="card-header">
         <h1 class="card-title">Fases da Lua</h1>
-        <button class="sunmoon-switch" aria-label="Go to Sun">☀︎</button>
+        <button class="sunmoon-switch" data-target="sun">☀︎</button>
       </header>
 
       <div class="card-content">
@@ -73,14 +72,14 @@
       </div>
     </article>
 
-    <!-- ☀️ SUN -->
-     <header class="card-header">
-      <h1 class="card-title">Là où commence la lumière</h1>
-      <button class="sunmoon-switch" aria-label="Go to Moon">☾</button>
-    </header>
+   <!-- ☀️ SUN -->
+    <article class="sunmoon-card card-sun">
+      <header class="card-header">
+        <h1 class="card-title">Là où commence la lumière</h1>
+        <button class="sunmoon-switch" data-target="moon">☾</button>
+      </header>
 
       <div class="card-content">
-
           <p>
             Il existe des jours où la vie n’était plus qu’un passage,<br>
             un mouvement sans direction,<br>
