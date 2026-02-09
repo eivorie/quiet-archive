@@ -136,6 +136,95 @@ body.mode-sun .nav a:hover {
 }
 
 /* =====================================================
+   CYCLE SOLAIRE — CONCLUSION LUMINEUSE
+===================================================== */
+
+.solar-cycle {
+  margin: 46px auto 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* -----------------------------
+   BASE — SOLEIL
+----------------------------- */
+.sun-phase {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+
+  position: relative;
+
+  background: rgba(255,215,150,0.85);
+
+  box-shadow:
+    0 0 6px rgba(255,200,130,0.45),
+    0 0 18px rgba(255,190,110,0.25);
+
+  opacity: 0.85;
+  animation: solar-pulse 8s ease-in-out infinite;
+}
+
+/* décalage rythmique */
+.sun-phase:nth-child(2) { animation-delay: 1.6s; }
+.sun-phase:nth-child(3) { animation-delay: 3.2s; }
+.sun-phase:nth-child(4) { animation-delay: 4.8s; }
+
+/* -----------------------------
+   PHASES
+----------------------------- */
+
+/* 🌅 Aube */
+.sun-phase.dawn {
+  background: linear-gradient(
+    to top,
+    rgba(255,200,130,0.45),
+    rgba(255,235,190,0.85)
+  );
+}
+
+/* 🌞 Zénith */
+.sun-phase.zenith {
+  background: rgba(255,245,210,0.95);
+  box-shadow:
+    0 0 10px rgba(255,230,170,0.75),
+    0 0 28px rgba(255,210,150,0.45);
+}
+
+/* 🌤️ Lumière douce */
+.sun-phase.soft {
+  background: rgba(255,220,160,0.75);
+}
+
+/* 🌇 Crépuscule */
+.sun-phase.dusk {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,190,120,0.75),
+    rgba(210,140,90,0.65)
+  );
+}
+
+/* -----------------------------
+   RESPIRATION SOLAIRE
+----------------------------- */
+@keyframes solar-pulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+/* =====================================================
    MOBILE — MONDE SOLAIRE ACTIF
 ===================================================== */
 
