@@ -71,8 +71,8 @@ body.mode-sun .nav a:hover {
 ===================================================== */
 
 .sunmoon-stage {
-  min-height: 100vh;
-  padding-top: 120px; /* hauteur réelle de .nav */
+  min-height: calc(100vh - 64px);
+  padding-top: 64px;        /* hauteur réelle de .nav */
   display: flex;
   justify-content: center;
 }
@@ -198,13 +198,28 @@ body.mode-moon .sunmoon-stage {
 }
 
 /* =====================================================
+   SUN & MOON — NAVBAR ALIGNMENT
+===================================================== */
+
+.sunmoon .nav {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+/* =====================================================
    MOBILE
 ===================================================== */
 
 @media (max-width: 768px) {
 
   .sunmoon-stage {
-    padding-top: 90px;
+    padding-top: 24px;
   }
 
   .sunmoon-card {
