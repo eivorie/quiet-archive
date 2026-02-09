@@ -1,36 +1,26 @@
 /* =====================================================
    SUN — IDENTITÉ SOLAIRE
-   Or, chaleur, présence incarnée
+   Lumière, clarté, présence
    ===================================================== */
 
 /* -----------------------------
-   TITRE
------------------------------ */
-.card-sun .card-title {
-  color: #7a4f1e;
-  text-shadow:
-    0 2px 10px rgba(255,210,150,0.45),
-    0 0 22px rgba(255,190,120,0.25);
-}
-
-/* -----------------------------
-   CARTE — FOND SOLAIRE TRAVAILLÉ
+   CARTE — FOND SOLAIRE LUMINEUX
 ----------------------------- */
 .card-sun .card-content {
   position: relative;
   overflow: hidden;
 
   background:
-    radial-gradient(circle at 45% 18%, rgba(255,215,160,0.28), transparent 60%),
-    linear-gradient(to bottom, #3b2f25, #241b14);
+    radial-gradient(circle at 45% 18%, rgba(255,245,220,0.95), transparent 60%),
+    linear-gradient(to bottom, #f6e9d6, #e7d4b6);
 
   box-shadow:
-    0 30px 70px rgba(0,0,0,0.6),
-    inset 0 0 0 1px rgba(255,220,180,0.18);
+    0 30px 70px rgba(0,0,0,0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.6);
 }
 
 /* -----------------------------
-   CADRE INTÉRIEUR — PARCHEMIN SOLAIRE
+   CADRE INTÉRIEUR — LUMIÈRE DOUCE
 ----------------------------- */
 .card-sun .card-content::before {
   content: "";
@@ -38,12 +28,12 @@
   inset: 16px;
   border-radius: 18px;
 
-  border: 1px solid rgba(255,215,170,0.35);
+  border: 1px solid rgba(230,200,150,0.45);
   pointer-events: none;
 }
 
 /* -----------------------------
-   HALO SOLAIRE VIVANT
+   HALO SOLAIRE — RESPIRATION
 ----------------------------- */
 .card-sun .card-content::after {
   content: "";
@@ -52,31 +42,31 @@
   border-radius: 26px;
 
   background:
-    radial-gradient(circle at 50% 6%, rgba(255,230,180,0.28), transparent 45%),
-    radial-gradient(circle at 15% 85%, rgba(255,200,140,0.18), transparent 55%),
-    radial-gradient(circle at 85% 90%, rgba(255,190,120,0.15), transparent 60%);
+    radial-gradient(circle at 50% 8%, rgba(255,255,255,0.65), transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(255,235,200,0.55), transparent 55%),
+    radial-gradient(circle at 85% 90%, rgba(255,225,180,0.45), transparent 60%);
 
-  opacity: 0.65;
+  opacity: 0.7;
   pointer-events: none;
-  animation: sun-drift 32s ease-in-out infinite;
+  animation: sun-breath 26s ease-in-out infinite;
 }
 
-@keyframes sun-drift {
+@keyframes sun-breath {
   0% {
     background-position:
-      50% 6%,
+      50% 8%,
       15% 85%,
       85% 90%;
   }
   50% {
     background-position:
-      52% 8%,
+      52% 10%,
       18% 82%,
       82% 92%;
   }
   100% {
     background-position:
-      50% 6%,
+      50% 8%,
       15% 85%,
       85% 90%;
   }
@@ -89,7 +79,7 @@
   position: relative;
   z-index: 1;
 
-  color: rgba(245,235,220,0.9);
+  color: rgba(85,65,40,0.9);
   letter-spacing: 0.02em;
 }
 
@@ -98,35 +88,57 @@
 ----------------------------- */
 .card-sun .card-content p::first-letter {
   float: left;
-  font-size: 1.55em;
+  font-size: 1.6em;
   line-height: 1.25;
   margin: 0.06em 0.14em 0 0;
 
   font-weight: 600;
-  color: rgba(255,235,200,0.95);
+  color: rgba(180,130,60,0.95);
 
   text-shadow:
-    0 0 6px rgba(255,210,150,0.55),
-    0 0 14px rgba(255,190,120,0.35);
+    0 0 4px rgba(255,230,180,0.85),
+    0 0 10px rgba(255,215,150,0.55);
 }
 
 /* -----------------------------
-   EMPHASES — OR CHAUD
+   EMPHASES — OR CLAIR
 ----------------------------- */
 .card-sun em {
-  color: rgba(255,235,200,0.95);
+  color: rgba(160,115,50,0.95);
   font-style: italic;
   text-shadow:
-    0 0 6px rgba(255,210,150,0.45),
-    0 0 14px rgba(255,190,120,0.25);
+    0 0 4px rgba(255,225,170,0.6);
 }
+
+/* =====================================================
+   NAVBAR — MODE SUN (LUMINEUSE)
+===================================================== */
+
+body.mode-sun .nav {
+  background: rgba(255,250,240,0.75);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(200,180,140,0.35);
+}
+
+body.mode-sun .nav a {
+  color: rgba(120,85,40,0.85);
+}
+
+body.mode-sun .nav a:hover {
+  color: rgba(90,60,25,1);
+}
+
+/* =====================================================
+   MOBILE — MONDE SOLAIRE ACTIF
+===================================================== */
 
 @media (max-width: 768px) {
 
   .card-sun.is-active {
     background:
-      radial-gradient(circle at 50% 25%, rgba(255,210,150,0.38), transparent 65%),
-      linear-gradient(to bottom, #3b2f25, #241b14);
+      radial-gradient(circle at 50% 25%, rgba(255,240,210,0.55), transparent 65%),
+      linear-gradient(to bottom, #f6e9d6, #e7d4b6);
 
     transition: background 1.2s ease;
   }
@@ -135,4 +147,3 @@
     background: none;
   }
 }
-
