@@ -133,6 +133,98 @@
 }
 
 /* =====================================================
+   CYCLE LUNAIRE — CONCLUSION SACRÉE
+===================================================== */
+
+.lunar-cycle {
+  margin: 42px auto 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* -----------------------------
+   BASE — LUNE
+----------------------------- */
+.moon-phase {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+
+  position: relative;
+
+  background: rgba(230,235,245,0.65);
+
+  box-shadow:
+    0 0 6px rgba(200,215,240,0.35),
+    0 0 16px rgba(180,200,230,0.18);
+
+  opacity: 0.85;
+
+  animation: lunar-pulse 9s ease-in-out infinite;
+}
+
+/* décalage subtil entre les lunes */
+.moon-phase:nth-child(2) { animation-delay: 1.8s; }
+.moon-phase:nth-child(3) { animation-delay: 3.6s; }
+.moon-phase:nth-child(4) { animation-delay: 5.4s; }
+
+/* -----------------------------
+   PHASES
+----------------------------- */
+
+/* 🌑 Lua Nova */
+.moon-phase.new {
+  background: rgba(230,235,245,0.25);
+  box-shadow:
+    0 0 6px rgba(200,215,240,0.18);
+}
+
+/* 🌒 Lua Crescente */
+.moon-phase.crescent {
+  background: linear-gradient(
+    to right,
+    rgba(230,235,245,0.15) 50%,
+    rgba(230,235,245,0.75) 50%
+  );
+}
+
+/* 🌕 Lua Cheia */
+.moon-phase.full {
+  background: rgba(245,248,255,0.95);
+  box-shadow:
+    0 0 10px rgba(220,230,255,0.55),
+    0 0 26px rgba(200,215,240,0.35);
+}
+
+/* 🌘 Lua Minguante */
+.moon-phase.waning {
+  background: linear-gradient(
+    to left,
+    rgba(230,235,245,0.15) 50%,
+    rgba(230,235,245,0.75) 50%
+  );
+}
+
+/* -----------------------------
+   SCINTILLEMENT LENT
+----------------------------- */
+@keyframes lunar-pulse {
+  0%, 100% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+/* =====================================================
    MOBILE — MONDE LUNAIRE ACTIF
 ===================================================== */
 @media (max-width: 768px) {
