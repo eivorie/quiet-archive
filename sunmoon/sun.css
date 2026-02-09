@@ -11,6 +11,23 @@
   font-weight: 700;
 }
 
+/* =====================================================
+   ORNEMENT SOLAIRE — LIGNE DE LUMIÈRE
+===================================================== */
+
+.card-sun .card-ornament {
+  background: linear-gradient(
+    to right,
+    rgba(255,210,150,0),
+    rgba(255,220,170,.95),
+    rgba(255,210,150,0)
+  );
+
+  box-shadow:
+    0 0 10px rgba(255,200,130,.45),
+    0 0 26px rgba(255,180,100,.25);
+}
+
 /* -----------------------------
    CARTE — MATIÈRE SOLAIRE
 ----------------------------- */
