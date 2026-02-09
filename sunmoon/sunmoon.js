@@ -1,39 +1,43 @@
-/* =====================================================
-   SUNMOON — MODE SWITCH (NO SWIPE)
-   ===================================================== */
+document.addEventListener("DOMContentLoaded", () => {
 
-const body = document.body;
-const cards = document.querySelectorAll(".sunmoon-card");
-const switches = document.querySelectorAll(".sunmoon-switch");
+  const body = document.body;
+  const cards = document.querySelectorAll(".sunmoon-card");
+  const switches = document.querySelectorAll(".sunmoon-switch");
 
-/* -----------------------------------------------------
-   SET ACTIVE MODE
------------------------------------------------------ */
-function setMode(mode) {
-  // body theme
-  body.classList.remove("mode-moon", "mode-sun");
-  body.classList.add(`mode-${mode}`);
+  if (!cards.length || !switches.length) {
+    console.warn("Sunmoon: elements not found");
+    return;
+  }
 
-  // active card
-  cards.forEach(card => {
-    const isTarget = card.classList.contains(`card-${mode}`);
-    card.classList.toggle("is-active", isTarget);
+  /* ----------------------------------------
+     SET ACTIVE MODE
+  ---------------------------------------- */
+  function setMode(mode) {
+    body.classList.remove("mode-moon", "mode-sun");
+    body.classList.add(`mode-${mode}`);
+
+    cards.forEach(card => {
+      const isTarget = card.classList.contains(`card-${mode}`);
+      card.classList.toggle("is-active", isTarget);
+    });
+  }
+
+  /* ----------------------------------------
+     SWITCH BUTTONS
+  ---------------------------------------- */
+  switches.forEach(button => {
+    button.addEventListener("click", () => {
+      const target =
+        button.getAttribute("aria-label") === "Go to Sun"
+          ? "sun"
+          : "moon";
+
+      setMode(target);
+    });
   });
-}
 
-/* -----------------------------------------------------
-   SWITCH BUTTONS
------------------------------------------------------ */
-switches.forEach(button => {
-  button.addEventListener("click", () => {
-    const targetMode =
-      button.getAttribute("aria-label")?.includes("Sun") ? "sun" : "moon";
-
-    setMode(targetMode);
-  });
+  /* ----------------------------------------
+     INIT
+  ---------------------------------------- */
+  setMode("moon");
 });
-
-/* -----------------------------------------------------
-   INIT (default = moon)
------------------------------------------------------ */
-setMode("moon");
