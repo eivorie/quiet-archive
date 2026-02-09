@@ -2,89 +2,89 @@
    SUN — IDENTITÉ SOLAIRE
    Lumière, clarté, présence
    ===================================================== */
+
+/* -----------------------------
+   TITRE
+----------------------------- */
 .card-sun .card-title {
- color: rgba(180, 130, 60, 0.95);
+  color: rgba(180,130,60,0.95);
   font-weight: 700;
-  text-shadow:
-    1px 1px 0 rgba(120, 80, 30, 0.9),
-    2px 2px 4px rgba(0, 0, 0, 0.35);
 }
 
 /* -----------------------------
-   CARTE — FOND SOLAIRE LUMINEUX
+   CARTE — MATIÈRE SOLAIRE
 ----------------------------- */
 .card-sun .card-content {
   position: relative;
   overflow: hidden;
 
   background:
-    radial-gradient(circle at 45% 18%, rgba(255,245,220,0.95), transparent 60%),
-    linear-gradient(to bottom, #f6e9d6, #e7d4b6);
+    radial-gradient(circle at 50% 22%, rgba(255,255,245,0.9), transparent 45%),
+    radial-gradient(circle at 50% 85%, rgba(220,180,120,0.28), transparent 60%),
+    linear-gradient(to bottom, #f7ecd9, #e2cba8);
 
   box-shadow:
-    0 30px 70px rgba(0,0,0,0.35),
-    inset 0 0 0 1px rgba(255,255,255,0.6);
+    0 35px 80px rgba(0,0,0,0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.65);
 }
 
 /* -----------------------------
-   CADRE INTÉRIEUR — LUMIÈRE DOUCE
+   CADRE INTÉRIEUR — PAGE SOLAIRE
 ----------------------------- */
 .card-sun .card-content::before {
   content: "";
   position: absolute;
-  inset: 16px;
+  inset: 14px;
   border-radius: 18px;
 
-  border: 1px solid rgba(230,200,150,0.45);
+  border: 1px solid rgba(200,150,80,0.45);
+  box-shadow:
+    inset 0 0 12px rgba(255,240,200,0.35);
+
   pointer-events: none;
+  z-index: 1;
 }
 
 /* -----------------------------
-   HALO SOLAIRE — RESPIRATION
+   HALO SOLAIRE — SOURCE DE LUMIÈRE
 ----------------------------- */
 .card-sun .card-content::after {
   content: "";
   position: absolute;
-  inset: 0;
-  border-radius: 26px;
+  inset: -20%;
+  border-radius: 50%;
 
   background:
-    radial-gradient(circle at 50% 8%, rgba(255,255,255,0.65), transparent 45%),
-    radial-gradient(circle at 15% 85%, rgba(255,235,200,0.55), transparent 55%),
-    radial-gradient(circle at 85% 90%, rgba(255,225,180,0.45), transparent 60%);
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,0.55), transparent 55%),
+    radial-gradient(circle at 50% 30%, rgba(255,230,180,0.35), transparent 60%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.015),
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 3px
+    );
 
-  opacity: 0.7;
+  opacity: 0.6;
   pointer-events: none;
-  animation: sun-breath 26s ease-in-out infinite;
-}
-
-@keyframes sun-breath {
-  0% {
-    background-position:
-      50% 8%,
-      15% 85%,
-      85% 90%;
-  }
-  50% {
-    background-position:
-      52% 10%,
-      18% 82%,
-      82% 92%;
-  }
-  100% {
-    background-position:
-      50% 8%,
-      15% 85%,
-      85% 90%;
-  }
+  animation: sun-shift 28s ease-in-out infinite;
 }
 
 /* -----------------------------
-   TEXTE — CHALEUR & LISIBILITÉ
+   MOUVEMENT SOLAIRE
+----------------------------- */
+@keyframes sun-shift {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-2%); }
+  100% { transform: translateY(0); }
+}
+
+/* -----------------------------
+   TEXTE — CHALEUR & CONTRASTE
 ----------------------------- */
 .card-sun .card-content p {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 
   color: rgba(85,65,40,0.9);
   letter-spacing: 0.02em;
@@ -124,7 +124,6 @@
 body.mode-sun .nav {
   background: rgba(255,250,240,0.75);
   backdrop-filter: blur(12px);
-
   border-bottom: 1px solid rgba(200,180,140,0.35);
 }
 
@@ -145,7 +144,7 @@ body.mode-sun .nav a:hover {
   .card-sun.is-active {
     background:
       radial-gradient(circle at 50% 25%, rgba(255,240,210,0.55), transparent 65%),
-      linear-gradient(to bottom, #f6e9d6, #e7d4b6);
+      linear-gradient(to bottom, #f7ecd9, #e2cba8);
 
     transition: background 1.2s ease;
   }
