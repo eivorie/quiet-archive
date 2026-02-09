@@ -131,6 +131,22 @@
   transform: translateY(-2px);
 }
 
+/* Moon switch style */
+.card-moon .sunmoon-switch {
+  color: rgba(230,235,245,0.85);
+}
+
+/* Sun switch style */
+.card-sun .sunmoon-switch {
+  color: rgba(120,80,40,0.85);
+}
+
+/* hover subtil */
+.sunmoon-switch:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
 /* -----------------------------------------------------
    TITLES
 ----------------------------------------------------- */
