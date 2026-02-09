@@ -140,6 +140,34 @@ body.mode-sun .nav a:hover {
 }
 
 /* =====================================================
+   ORNEMENT SOUS TITRE — RYTHME VERTICAL
+===================================================== */
+
+.card-ornament {
+  position: relative;
+
+  width: 88px;
+  height: 1px;
+  margin: 18px auto 22px;
+
+  opacity: .75;
+  filter: blur(.3px);
+
+  animation: ornament-breath 7.5s ease-in-out infinite;
+}
+
+@keyframes ornament-breath {
+  0%,100% {
+    width: 72px;
+    opacity: .45;
+  }
+  50% {
+    width: 112px;
+    opacity: .95;
+  }
+}
+
+/* =====================================================
    TRANSITIONS — JOUR / NUIT
 ===================================================== */
 
