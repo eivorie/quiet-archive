@@ -37,60 +37,46 @@
   position: absolute;
   inset: 16px;
   border-radius: 18px;
-
   border: 1px solid rgba(210,220,235,0.18);
-
   pointer-events: none;
+  z-index: 0;
 }
 
 /* -----------------------------
-   HALO LUNAIRE INTERNE
+   HALO + LUNE LENTE (UNE SEULE COUCHE)
 ----------------------------- */
 .card-moon .card-content::after {
   content: "";
   position: absolute;
-  inset: 0;
-  border-radius: 26px;
+  inset: -10%;
+  border-radius: 50%;
 
   background:
-    radial-gradient(circle at 50% 8%, rgba(200,215,240,0.18), transparent 45%),
-    radial-gradient(circle at 15% 85%, rgba(160,180,210,0.12), transparent 50%),
-    radial-gradient(circle at 85% 90%, rgba(160,180,210,0.10), transparent 55%);
+    radial-gradient(circle at 50% 10%, rgba(200,215,240,0.22), transparent 45%),
+    radial-gradient(circle at 18% 82%, rgba(160,180,210,0.14), transparent 55%),
+    radial-gradient(circle at 82% 88%, rgba(160,180,210,0.12), transparent 60%);
 
-  opacity: 0.6;
+  opacity: 0.65;
   pointer-events: none;
-}
+  z-index: 0;
 
-/* -----------------------------
-   LUNE VIVANTE — MOUVEMENT NOCTURNE
------------------------------ */
-.card-moon .card-content::after {
-  animation: moon-drift 38s ease-in-out infinite;
+  animation: moon-drift 42s ease-in-out infinite;
 }
 
 @keyframes moon-drift {
   0% {
-    background-position:
-      50% 8%,
-      15% 85%,
-      85% 90%;
+    transform: translate(0, 0);
   }
   50% {
-    background-position:
-      52% 10%,
-      18% 82%,
-      82% 92%;
+    transform: translate(1.5%, -1%);
   }
   100% {
-    background-position:
-      50% 8%,
-      15% 85%,
-      85% 90%;
+    transform: translate(0, 0);
   }
 }
 
 /* -----------------------------
-   TEXTE — CENTRALITÉ & RESPIRATION
+   TEXTE — CENTRALITÉ
 ----------------------------- */
 .card-moon .card-content p {
   position: relative;
@@ -100,36 +86,25 @@
   letter-spacing: 0.02em;
 }
 
-.card-moon .card-content p:first-of-type {
-  margin-top: 0.6em;
-}
-
 /* -----------------------------
    LETTRINES — OUVERTURE DISCRÈTE
 ----------------------------- */
 .card-moon .card-content p::first-letter {
   float: left;
-  font-size: 1.6em;          /* ↓ beaucoup plus sobre */
-  line-height: 1.2;
-  margin: 0.08em 0.16em 0 0;
+  font-size: 1.45em;     /* volontairement modeste */
+  line-height: 1.25;
+  margin: 0.06em 0.14em 0 0;
 
   font-weight: 500;
   color: rgba(235,240,250,0.9);
 
   text-shadow:
-    0 0 4px rgba(200,215,240,0.35),
-    0 0 10px rgba(180,200,230,0.2);
-}
-
-@media (max-width: 768px) {
-  .card-moon .card-content p::first-letter {
-    font-size: 1.4em;
-    margin-right: 0.14em;
-  }
+    0 0 4px rgba(200,215,240,0.3),
+    0 0 8px rgba(180,200,230,0.18);
 }
 
 /* -----------------------------
-   EMPHASES — SCINTILLEMENT DOUX
+   EMPHASES
 ----------------------------- */
 .card-moon em {
   color: #f4f7fa;
@@ -149,10 +124,14 @@
       radial-gradient(circle at 50% 25%, rgba(140,160,190,0.35), transparent 65%),
       linear-gradient(to bottom, #1a1f27, #0f1217);
 
-    transition: background 1.2s ease;
+    transition: background 1.4s ease;
   }
 
   .card-moon:not(.is-active) {
     background: none;
+  }
+
+  .card-moon .card-content p::first-letter {
+    font-size: 1.35em;
   }
 }
