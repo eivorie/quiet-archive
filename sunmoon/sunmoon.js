@@ -1,5 +1,4 @@
 const body = document.body;
-const cards = document.querySelectorAll(".sunmoon-card");
 const switches = document.querySelectorAll(".sunmoon-switch");
 
 let currentMode = "moon";
@@ -13,19 +12,19 @@ function setMode(mode) {
   const nextCard = document.querySelector(`.card-${mode}`);
   const prevCard = document.querySelector(`.card-${currentMode}`);
 
-  // 1. changer le monde (fond, nav)
+  // 1. changer le monde
   body.classList.remove(`mode-${currentMode}`);
   body.classList.add(`mode-${mode}`);
 
   // 2. faire apparaître la nouvelle carte
   nextCard.classList.add("is-active");
 
-  // 3. laisser l’ancienne se dissoudre
+  // 3. laisser l’ancienne disparaître lentement
   setTimeout(() => {
     prevCard.classList.remove("is-active");
     currentMode = mode;
     isTransitioning = false;
-  }, 1800); // durée du fondu croisé
+  }, 2200);
 }
 
 switches.forEach(btn => {
@@ -34,6 +33,6 @@ switches.forEach(btn => {
   });
 });
 
-// init — une seule carte visible au départ
-document.querySelector(".card-moon").classList.add("is-active");
+// INIT
 body.classList.add("mode-moon");
+document.querySelector(".card-moon").classList.add("is-active");
