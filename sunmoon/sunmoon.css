@@ -1,42 +1,36 @@
 /* =====================================================
-   SUNMOON — CORE STAGE (NO SWIPE)
-   Desktop & Mobile unified
-   Navbar inherited from global .nav
-   ===================================================== */
+   SUNMOON — CORE STAGE (TRANSITIONNEL)
+===================================================== */
 
-/* -----------------------------------------------------
-   GLOBAL
------------------------------------------------------ */
 .sunmoon {
   font-family: "Cormorant Garamond", serif;
   overflow-x: hidden;
 }
 
 /* =====================================================
-   GLOBAL BACKGROUNDS BY MODE
+   BACKGROUNDS
 ===================================================== */
 
-/* 🌙 NIGHT */
+body {
+  transition: background 4.8s ease, color 3.2s ease;
+}
+
 body.mode-moon {
   background:
     radial-gradient(circle at 30% 20%, rgba(120,140,165,0.18), transparent 60%),
     linear-gradient(to bottom, #1a1f27, #0f1217);
-  transition: background 2.6s ease;
 }
 
-/* ☀️ DAY */
 body.mode-sun {
   background:
     radial-gradient(circle at 50% 10%, rgba(255,220,170,0.45), transparent 65%),
     linear-gradient(to bottom, #e6bf8f, #b3824f);
-  transition: background 2.6s ease;
 }
 
 /* =====================================================
-   NAVBAR — ADAPTATION (GLOBAL .nav)
+   NAVBAR
 ===================================================== */
 
-/* Moon */
 body.mode-moon .nav {
   background: rgba(28,34,40,0.55);
   backdrop-filter: blur(14px);
@@ -47,23 +41,14 @@ body.mode-moon .nav a {
   color: rgba(200,215,230,0.75);
 }
 
-body.mode-moon .nav a:hover {
-  color: rgba(235,245,255,0.95);
-}
-
-/* Sun */
 body.mode-sun .nav {
-  background: rgba(255,235,205,0.55);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(120,90,60,0.18);
+  background: rgba(255,250,240,0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200,180,140,0.35);
 }
 
 body.mode-sun .nav a {
-  color: rgba(90,60,30,0.75);
-}
-
-body.mode-sun .nav a:hover {
-  color: rgba(60,40,20,0.95);
+  color: rgba(120,85,40,0.85);
 }
 
 /* =====================================================
@@ -71,102 +56,74 @@ body.mode-sun .nav a:hover {
 ===================================================== */
 
 .sunmoon-stage {
+  position: relative;
   min-height: calc(100vh - 64px);
-  display: flex;
-  justify-content: center;
 }
 
 /* =====================================================
-   CARDS
+   CARDS — FADING CROISÉ
 ===================================================== */
 
 .sunmoon-card {
-  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+
+  display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transform: translateY(32px) scale(0.97);
+  filter: blur(8px) brightness(0.85);
+
+  transition:
+    opacity 3.2s ease,
+    transform 3.8s cubic-bezier(.22,.61,.36,1),
+    filter 3.8s ease;
 }
 
 .sunmoon-card.is-active {
-  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+
+  transform: translateY(0) scale(1);
+  filter: blur(0) brightness(1);
 }
 
 /* =====================================================
-   TITLES & SWITCH
+   HEADER
 ===================================================== */
 
 .card-header {
-  margin: 0 0 28px;
+  margin: 24px 0 28px;
   text-align: center;
 }
 
 .card-title {
   font-size: 2rem;
-  font-weight: 500;
   letter-spacing: 0.05em;
-  margin: 0;
 }
 
-/* Switch sous le titre */
+/* =====================================================
+   SWITCH
+===================================================== */
+
 .sunmoon-switch {
   margin-top: 18px;
   background: none;
   border: none;
-  padding: 6px 14px;
-
   font-size: 1.1rem;
   cursor: pointer;
-  line-height: 1;
-
-  opacity: 0.75;
-  transition:
-    opacity 0.8s ease,
-    transform 1.4s ease;
-}
-
-/* Moon switch */
-.card-moon .sunmoon-switch {
-  color: rgba(230,235,245,0.9);
-}
-
-/* Sun switch */
-.card-sun .sunmoon-switch {
-  color: rgba(90,60,30,0.85);
+  opacity: 0.7;
+  transition: opacity 1.2s ease, transform 1.6s ease;
 }
 
 .sunmoon-switch:hover {
   opacity: 1;
-  transform: translateY(-1px);
-}
-
-/* =====================================================
-   TRANSITIONS — JOUR / NUIT
-===================================================== */
-
-body.mode-sun .sunmoon-stage {
-  animation: dawn 3s ease forwards;
-}
-
-body.mode-moon .sunmoon-stage {
-  animation: dusk 3s ease forwards;
-}
-
-@keyframes dawn {
-  from {
-    filter: brightness(0.75) saturate(0.85);
-  }
-  to {
-    filter: brightness(1.05) saturate(1);
-  }
-}
-
-@keyframes dusk {
-  from {
-    filter: brightness(1.05) saturate(1);
-  }
-  to {
-    filter: brightness(0.8) saturate(0.8);
-  }
+  transform: translateY(-2px);
 }
 
 /* =====================================================
@@ -178,41 +135,7 @@ body.mode-moon .sunmoon-stage {
   max-width: 520px;
   padding: 44px 38px;
   border-radius: 26px;
-
-  box-shadow:
-    0 30px 70px rgba(0,0,0,0.6),
-    inset 0 0 0 1px rgba(255,245,235,0.10);
-
   box-sizing: border-box;
-}
-
-/* =====================================================
-   TEXT
-===================================================== */
-
-.card-content p {
-  margin-bottom: 1.5em;
-  font-size: 1.05rem;
-  line-height: 1.75;
-}
-
-/* =====================================================
-   SUN & MOON — NAVBAR ALIGNMENT
-===================================================== */
-
-.sunmoon .nav {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-
-  height: 64px;
-  display: flex;
-  align-items: center;
-}
-
-.sunmoon-stage > .sunmoon-card.is-active > .card-header {
-  margin-top: 24px;
 }
 
 /* =====================================================
@@ -229,14 +152,6 @@ body.mode-moon .sunmoon-stage {
   }
 
   .card-content {
-    max-width: none;
-    width: 100%;
     padding: 36px 26px;
-    border-radius: 22px;
-  }
-
-  .card-content p {
-    font-size: 1rem;
-    line-height: 1.7;
   }
 }
