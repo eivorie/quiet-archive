@@ -12,10 +12,11 @@
   overflow-x: hidden;
 }
 
-/* ===============================
+/* =====================================================
    GLOBAL BACKGROUNDS BY MODE
-================================ */
+===================================================== */
 
+/* 🌙 NIGHT */
 body.mode-moon {
   background:
     radial-gradient(circle at 30% 20%, rgba(120,140,165,0.18), transparent 60%),
@@ -23,6 +24,7 @@ body.mode-moon {
   transition: background 2.6s ease;
 }
 
+/* ☀️ DAY */
 body.mode-sun {
   background:
     radial-gradient(circle at 50% 10%, rgba(255,220,170,0.45), transparent 65%),
@@ -30,9 +32,9 @@ body.mode-sun {
   transition: background 2.6s ease;
 }
 
-/* -----------------------------------------------------
-   NAVBAR — MODE ADAPTATION (HERITED .nav)
------------------------------------------------------ */
+/* =====================================================
+   NAVBAR — ADAPTATION (GLOBAL .nav)
+===================================================== */
 
 /* Moon */
 body.mode-moon .nav {
@@ -64,36 +66,38 @@ body.mode-sun .nav a:hover {
   color: rgba(60,40,20,0.95);
 }
 
-/* -----------------------------------------------------
+/* =====================================================
    STAGE
------------------------------------------------------ */
+===================================================== */
+
 .sunmoon-stage {
-  position: relative;
   min-height: 100vh;
-  padding-top: 120px; /* hauteur navbar globale */
+  padding-top: 120px; /* hauteur réelle de .nav */
+  display: flex;
+  justify-content: center;
 }
 
-/* -----------------------------------------------------
-   CARD — BASE
------------------------------------------------------ */
+/* =====================================================
+   CARDS
+===================================================== */
+
 .sunmoon-card {
   display: none;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
-/* -----------------------------------------------------
-   CARD — ACTIVE
------------------------------------------------------ */
 .sunmoon-card.is-active {
   display: flex;
 }
 
-/* -----------------------------------------------------
-   TITLES
------------------------------------------------------ */
+/* =====================================================
+   TITLES & SWITCH
+===================================================== */
+
 .card-header {
-  margin: 48px 0 18px;
+  margin: 48px 0 28px;
   text-align: center;
 }
 
@@ -104,21 +108,15 @@ body.mode-sun .nav a:hover {
   margin: 0;
 }
 
-/* -----------------------------------------------------
-   SWITCH BUTTON — SOUS LE TITRE
------------------------------------------------------ */
+/* Switch sous le titre */
 .sunmoon-switch {
-  margin: 16px auto 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
+  margin-top: 18px;
   background: none;
   border: none;
   padding: 6px 14px;
 
-  cursor: pointer;
   font-size: 1.1rem;
+  cursor: pointer;
   line-height: 1;
 
   opacity: 0.75;
@@ -142,32 +140,40 @@ body.mode-sun .nav a:hover {
   transform: translateY(-1px);
 }
 
-/* -----------------------------------------------------
-   TRANSITIONS — LEVER / COUCHER
------------------------------------------------------ */
+/* =====================================================
+   TRANSITIONS — JOUR / NUIT
+===================================================== */
+
 body.mode-sun .sunmoon-stage {
-  animation: dawn 2.8s ease forwards;
+  animation: dawn 3s ease forwards;
 }
 
 body.mode-moon .sunmoon-stage {
-  animation: dusk 2.8s ease forwards;
+  animation: dusk 3s ease forwards;
 }
 
 @keyframes dawn {
-  0%   { filter: brightness(0.75) saturate(0.85); }
-  50%  { filter: brightness(0.9)  saturate(0.95); }
-  100% { filter: brightness(1.05) saturate(1); }
+  from {
+    filter: brightness(0.75) saturate(0.85);
+  }
+  to {
+    filter: brightness(1.05) saturate(1);
+  }
 }
 
 @keyframes dusk {
-  0%   { filter: brightness(1.05) saturate(1); }
-  50%  { filter: brightness(0.95) saturate(0.9); }
-  100% { filter: brightness(0.8)  saturate(0.8); }
+  from {
+    filter: brightness(1.05) saturate(1);
+  }
+  to {
+    filter: brightness(0.8) saturate(0.8);
+  }
 }
 
-/* -----------------------------------------------------
+/* =====================================================
    CARD CONTENT
------------------------------------------------------ */
+===================================================== */
+
 .card-content {
   width: 100%;
   max-width: 520px;
@@ -181,9 +187,10 @@ body.mode-moon .sunmoon-stage {
   box-sizing: border-box;
 }
 
-/* -----------------------------------------------------
+/* =====================================================
    TEXT
------------------------------------------------------ */
+===================================================== */
+
 .card-content p {
   margin-bottom: 1.5em;
   font-size: 1.05rem;
@@ -193,6 +200,7 @@ body.mode-moon .sunmoon-stage {
 /* =====================================================
    MOBILE
 ===================================================== */
+
 @media (max-width: 768px) {
 
   .sunmoon-stage {
