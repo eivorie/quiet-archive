@@ -97,7 +97,7 @@ body.mode-sun .nav a:hover {
 ===================================================== */
 
 .card-header {
-  margin: 48px 0 28px;
+  margin: 0 0 28px;
   text-align: center;
 }
 
@@ -210,6 +210,10 @@ body.mode-moon .sunmoon-stage {
   height: 64px;
   display: flex;
   align-items: center;
+}
+
+.sunmoon-stage > .sunmoon-card.is-active > .card-header {
+  margin-top: 0;
 }
 
 /* =====================================================
