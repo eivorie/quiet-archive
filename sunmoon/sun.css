@@ -63,7 +63,7 @@
 }
 
 /* -----------------------------
-   HALO SOLAIRE — SOURCE DE LUMIÈRE
+   HALO SOLAIRE — SOURCE DE LUMIÈRE + MIROITEMENT
 ----------------------------- */
 .card-sun .card-content::after {
   content: "";
@@ -72,19 +72,39 @@
   border-radius: 50%;
 
   background:
+    /* halo principal */
     radial-gradient(circle at 50% 0%, rgba(255,255,255,0.55), transparent 55%),
     radial-gradient(circle at 50% 30%, rgba(255,230,180,0.35), transparent 60%),
-    repeating-linear-gradient(
-      45deg,
-      rgba(255,255,255,0.015),
-      rgba(255,255,255,0.015) 1px,
+
+    /* ✨ mica solaire (pailleté diffus) */
+    repeating-radial-gradient(
+      circle,
+      rgba(255,255,255,0.035) 0px,
+      rgba(255,255,255,0.035) 1px,
       transparent 1px,
-      transparent 3px
+      transparent 7px
     );
 
   opacity: 0.6;
   pointer-events: none;
-  animation: sun-shift 28s ease-in-out infinite;
+
+  animation:
+    sun-shift 28s ease-in-out infinite,
+    sun-sparkle 24s ease-in-out infinite;
+}
+
+/* -----------------------------
+   MIROITEMENT SOLAIRE — VIBRATION MINÉRALE
+----------------------------- */
+@keyframes sun-sparkle {
+  0%, 100% {
+    opacity: 0.55;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.7;
+    filter: brightness(1.06);
+  }
 }
 
 /* -----------------------------
@@ -257,6 +277,9 @@ body.mode-sun .nav a:hover {
       linear-gradient(to bottom, #f7ecd9, #e2cba8);
 
     transition: background 1.2s ease;
+  }
+     .card-sun .card-content::after {
+    opacity: 0.45;
   }
 
   .card-sun:not(.is-active) {
