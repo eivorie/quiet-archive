@@ -41,29 +41,15 @@
     linear-gradient(to bottom, #f7ecd9, #e2cba8);
 
   box-shadow:
+    /* profondeur globale */
     0 35px 80px rgba(0,0,0,0.35),
-    inset 0 0 0 1px rgba(255,255,255,0.65);
+
+    /* 🔥 lumière solaire sur les bords */
+    inset 0 0 12px rgba(160,135,0,0.35),
 }
 
 /* -----------------------------
-   CADRE INTÉRIEUR — PAGE SOLAIRE
------------------------------ */
-.card-sun .card-content::before {
-  content: "";
-  position: absolute;
-  inset: 14px;
-  border-radius: 18px;
-
-  border: 1px solid rgba(200,150,80,0.45);
-  box-shadow:
-    inset 0 0 12px rgba(255,240,200,0.35);
-
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* -----------------------------
-   HALO SOLAIRE — SOURCE DE LUMIÈRE + MIROITEMENT
+   HALO SOLAIRE — SOURCE DE LUMIÈRE
 ----------------------------- */
 .card-sun .card-content::after {
   content: "";
@@ -72,39 +58,19 @@
   border-radius: 50%;
 
   background:
-    /* halo principal */
     radial-gradient(circle at 50% 0%, rgba(255,255,255,0.55), transparent 55%),
     radial-gradient(circle at 50% 30%, rgba(255,230,180,0.35), transparent 60%),
-
-    /* ✨ mica solaire (pailleté diffus) */
-    repeating-radial-gradient(
-      circle,
-      rgba(255,255,255,0.035) 0px,
-      rgba(255,255,255,0.035) 1px,
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.015),
+      rgba(255,255,255,0.015) 1px,
       transparent 1px,
-      transparent 7px
+      transparent 3px
     );
 
   opacity: 0.6;
   pointer-events: none;
-
-  animation:
-    sun-shift 28s ease-in-out infinite,
-    sun-sparkle 24s ease-in-out infinite;
-}
-
-/* -----------------------------
-   MIROITEMENT SOLAIRE — VIBRATION MINÉRALE
------------------------------ */
-@keyframes sun-sparkle {
-  0%, 100% {
-    opacity: 0.55;
-    filter: brightness(1);
-  }
-  50% {
-    opacity: 0.7;
-    filter: brightness(1.06);
-  }
+  animation: sun-shift 28s ease-in-out infinite;
 }
 
 /* -----------------------------
@@ -277,9 +243,6 @@ body.mode-sun .nav a:hover {
       linear-gradient(to bottom, #f7ecd9, #e2cba8);
 
     transition: background 1.2s ease;
-  }
-     .card-sun .card-content::after {
-    opacity: 0.45;
   }
 
   .card-sun:not(.is-active) {
