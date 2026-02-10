@@ -7,8 +7,8 @@
    TITRE
 ----------------------------- */
 .card-sun .card-title {
-  color: rgba(180,130,60,0.95);
-  font-weight: 700;
+  color: rgba(120, 85, 60, 0.95);
+  font-weight: 600;
 }
 
 /* =====================================================
@@ -16,16 +16,15 @@
 ===================================================== */
 
 .card-sun .card-ornament {
-  background: linear-gradient(
+   background: linear-gradient(
     to right,
-    rgba(255,210,150,0),
-    rgba(255,220,170,.95),
-    rgba(255,210,150,0)
+    rgba(180,140,110,0),
+    rgba(180,140,110,.75),
+    rgba(180,140,110,0)
   );
 
   box-shadow:
-    0 0 10px rgba(255,200,130,.45),
-    0 0 26px rgba(255,180,100,.25);
+    0 0 8px rgba(150,110,80,.35);
 }
 
 /* -----------------------------
@@ -36,38 +35,31 @@
   overflow: hidden;
 
   background:
-    radial-gradient(circle at 50% 22%, rgba(255,255,245,0.9), transparent 45%),
-    radial-gradient(circle at 50% 85%, rgba(220,180,120,0.28), transparent 60%),
-    linear-gradient(to bottom, #f7ecd9, #e2cba8);
+    radial-gradient(circle at 50% 22%, rgba(245,235,220,0.55), transparent 45%),
+    radial-gradient(circle at 50% 85%, rgba(160,130,100,0.22), transparent 60%),
+    linear-gradient(to bottom, #cbb8a2, #b09a82);
 
   box-shadow:
-    0 35px 80px rgba(0,0,0,0.35),
-    inset 0 0 14px rgba(60, 50, 40, 0.38)
+    0 35px 80px rgba(0,0,0,0.4),
+    inset 0 0 14px rgba(70,55,40,0.35);
 }
 
 /* -----------------------------
    HALO SOLAIRE — SOURCE DE LUMIÈRE
 ----------------------------- */
 .card-sun .card-content::after {
-  content: "";
-  position: absolute;
-  inset: -20%;
-  border-radius: 50%;
-
   background:
-    radial-gradient(circle at 50% 0%, rgba(255,255,255,0.55), transparent 55%),
-    radial-gradient(circle at 50% 30%, rgba(255,230,180,0.35), transparent 60%),
+    radial-gradient(circle at 50% 0%, rgba(245,235,220,0.45), transparent 55%),
+    radial-gradient(circle at 50% 30%, rgba(200,170,140,0.25), transparent 60%),
     repeating-linear-gradient(
       45deg,
-      rgba(255,255,255,0.015),
-      rgba(255,255,255,0.015) 1px,
+      rgba(255,255,255,0.01),
+      rgba(255,255,255,0.01) 1px,
       transparent 1px,
       transparent 3px
     );
 
-  opacity: 0.6;
-  pointer-events: none;
-  animation: sun-shift 28s ease-in-out infinite;
+  opacity: 0.5;
 }
 
 /* -----------------------------
@@ -83,10 +75,7 @@
    TEXTE — CHALEUR & CONTRASTE
 ----------------------------- */
 .card-sun .card-content p {
-  position: relative;
-  z-index: 2;
-
-  color: rgba(85,65,40,0.9);
+  color: rgba(70,55,40,0.9);
   letter-spacing: 0.02em;
 }
 
@@ -100,21 +89,20 @@
   margin: 0.06em 0.14em 0 0;
 
   font-weight: 600;
-  color: rgba(180,130,60,0.95);
+  color: rgba(140, 95, 65, 0.95);
 
   text-shadow:
-    0 0 4px rgba(255,230,180,0.85),
-    0 0 10px rgba(255,215,150,0.55);
+    0 0 3px rgba(200,170,140,0.4);
 }
 
 /* -----------------------------
    EMPHASES — OR CLAIR
 ----------------------------- */
 .card-sun em {
-  color: rgba(160,115,50,0.95);
   font-style: italic;
+  color: rgba(130,90,60,0.95);
   text-shadow:
-    0 0 4px rgba(255,225,170,0.6);
+    0 0 4px rgba(200,170,140,0.4);
 }
 
 /* =====================================================
@@ -160,11 +148,11 @@ body.mode-sun .nav a:hover {
 
   position: relative;
 
-  background: rgba(255,215,150,0.85);
+   background: rgba(200,165,130,0.85);
 
   box-shadow:
-    0 0 6px rgba(255,200,130,0.45),
-    0 0 18px rgba(255,190,110,0.25);
+    0 0 6px rgba(170,135,100,0.45),
+    0 0 16px rgba(140,105,80,0.25);
 
   opacity: 0.85;
   animation: solar-pulse 8s ease-in-out infinite;
