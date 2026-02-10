@@ -24,24 +24,12 @@ body.mode-moon {
   transition: background 2.6s ease;
 }
 
-/* =====================================================
-   MODE SUN — ENVIRONNEMENT LUMINEUX
-   Ciel clair, recul visuel, contraste
-===================================================== */
-
+/* ☀️ DAY */
 body.mode-sun {
   background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(160,190,225,0.55),
-      rgba(90,120,165,0.85) 55%,
-      rgba(45,60,90,0.95)
-    ),
-    linear-gradient(
-      to bottom,
-      #6f8fb8,
-      #2b3548
-    );
+    radial-gradient(circle at 50% 10%, rgba(255,220,170,0.45), transparent 65%),
+    linear-gradient(to bottom, #e6bf8f, #b3824f);
+  transition: background 2.6s ease;
 }
 
 /* =====================================================
