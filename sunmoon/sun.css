@@ -41,12 +41,10 @@
     linear-gradient(to bottom, #f7ecd9, #e2cba8);
 
   box-shadow:
-    /* profondeur globale */
     0 35px 80px rgba(0,0,0,0.35),
-
-    /* 🔥 lumière solaire sur les bords */
-    inset 0 0 12px rgba(160,135,0,0.35),
+    inset 0 0 12px rgba(160,135,0,0.35);
 }
+
 
 /* -----------------------------
    HALO SOLAIRE — SOURCE DE LUMIÈRE
