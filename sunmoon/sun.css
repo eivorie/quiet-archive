@@ -1,13 +1,13 @@
 /* =====================================================
    SUN — IDENTITÉ SOLAIRE
-   Lumière, clarté, présence (non divine)
-===================================================== */
+   Lumière, clarté, présence
+   ===================================================== */
 
 /* -----------------------------
    TITRE
 ----------------------------- */
 .card-sun .card-title {
-  color: rgba(165,120,70,0.95);
+  color: rgba(180,130,60,0.95);
   font-weight: 700;
 }
 
@@ -18,14 +18,14 @@
 .card-sun .card-ornament {
   background: linear-gradient(
     to right,
-    rgba(255,220,180,0),
-    rgba(255,230,200,0.85),
-    rgba(255,220,180,0)
+    rgba(255,210,150,0),
+    rgba(255,220,170,.95),
+    rgba(255,210,150,0)
   );
 
   box-shadow:
-    0 0 10px rgba(255,210,160,0.35),
-    0 0 22px rgba(255,190,140,0.25);
+    0 0 10px rgba(255,200,130,.45),
+    0 0 26px rgba(255,180,100,.25);
 }
 
 /* -----------------------------
@@ -36,13 +36,13 @@
   overflow: hidden;
 
   background:
-    radial-gradient(circle at 50% 18%, rgba(255,250,240,0.95), transparent 48%),
-    radial-gradient(circle at 50% 88%, rgba(230,180,130,0.38), transparent 62%),
-    linear-gradient(to bottom, #efd8b9, #d6b287);
+    radial-gradient(circle at 50% 22%, rgba(255,255,245,0.9), transparent 45%),
+    radial-gradient(circle at 50% 85%, rgba(220,180,120,0.28), transparent 60%),
+    linear-gradient(to bottom, #f7ecd9, #e2cba8);
 
   box-shadow:
-    0 40px 90px rgba(0,0,0,0.45),
-    inset 0 0 14px rgba(80,65,45,0.35);
+    0 35px 80px rgba(0,0,0,0.35),
+    inset 0 0 14px rgba(60, 50, 40, 0.38)
 }
 
 /* -----------------------------
@@ -51,14 +51,21 @@
 .card-sun .card-content::after {
   content: "";
   position: absolute;
-  inset: -18%;
+  inset: -20%;
   border-radius: 50%;
 
   background:
-    radial-gradient(circle at 50% 0%, rgba(255,255,255,0.65), transparent 52%),
-    radial-gradient(circle at 50% 32%, rgba(255,210,160,0.45), transparent 65%);
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,0.55), transparent 55%),
+    radial-gradient(circle at 50% 30%, rgba(255,230,180,0.35), transparent 60%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.015),
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 3px
+    );
 
-  opacity: 0.65;
+  opacity: 0.6;
   pointer-events: none;
   animation: sun-shift 28s ease-in-out infinite;
 }
@@ -79,12 +86,12 @@
   position: relative;
   z-index: 2;
 
-  color: rgba(70,55,40,0.92);
+  color: rgba(85,65,40,0.9);
   letter-spacing: 0.02em;
 }
 
 /* -----------------------------
-   LETTRINES — ENLUMINURE DOUCE
+   LETTRINES — ENLUMINURE SOLAIRE
 ----------------------------- */
 .card-sun .card-content p::first-letter {
   float: left;
@@ -93,19 +100,149 @@
   margin: 0.06em 0.14em 0 0;
 
   font-weight: 600;
-  color: rgba(165,120,70,0.95);
+  color: rgba(180,130,60,0.95);
 
   text-shadow:
-    0 0 4px rgba(255,225,180,0.65),
-    0 0 8px rgba(255,200,150,0.45);
+    0 0 4px rgba(255,230,180,0.85),
+    0 0 10px rgba(255,215,150,0.55);
 }
 
 /* -----------------------------
-   EMPHASES — CHALEUR HUMAINE
+   EMPHASES — OR CLAIR
 ----------------------------- */
 .card-sun em {
-  color: rgba(145,105,60,0.95);
+  color: rgba(160,115,50,0.95);
   font-style: italic;
   text-shadow:
-    0 0 4px rgba(255,215,170,0.45);
+    0 0 4px rgba(255,225,170,0.6);
+}
+
+/* =====================================================
+   NAVBAR — MODE SUN (LUMINEUSE)
+===================================================== */
+
+body.mode-sun .nav {
+  background: rgba(255,250,240,0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200,180,140,0.35);
+}
+
+body.mode-sun .nav a {
+  color: rgba(120,85,40,0.85);
+}
+
+body.mode-sun .nav a:hover {
+  color: rgba(90,60,25,1);
+}
+
+/* =====================================================
+   CYCLE SOLAIRE — CONCLUSION LUMINEUSE
+===================================================== */
+
+.solar-cycle {
+  margin: 46px auto 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* -----------------------------
+   BASE — SOLEIL
+----------------------------- */
+.sun-phase {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+
+  position: relative;
+
+  background: rgba(255,215,150,0.85);
+
+  box-shadow:
+    0 0 6px rgba(255,200,130,0.45),
+    0 0 18px rgba(255,190,110,0.25);
+
+  opacity: 0.85;
+  animation: solar-pulse 8s ease-in-out infinite;
+}
+
+/* décalage rythmique */
+.sun-phase:nth-child(2) { animation-delay: 1.6s; }
+.sun-phase:nth-child(3) { animation-delay: 3.2s; }
+.sun-phase:nth-child(4) { animation-delay: 4.8s; }
+
+/* -----------------------------
+   PHASES
+----------------------------- */
+
+/* 🌅 Aube */
+.sun-phase.dawn {
+  background: linear-gradient(
+    to top,
+    rgba(255,200,130,0.45),
+    rgba(255,235,190,0.85)
+  );
+}
+
+/* 🌞 Zénith — contraste renforcé */
+.sun-phase.zenith {
+  background: rgba(255,210,130,0.92);
+
+ box-shadow:
+    0 0 8px rgba(255,190,110,0.65),
+    0 0 18px rgba(255,175,90,0.35);
+
+   animation: none;
+}
+
+
+/* 🌤️ Lumière douce */
+.sun-phase.soft {
+  background: rgba(255,220,160,0.75);
+}
+
+/* 🌇 Crépuscule */
+.sun-phase.dusk {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,190,120,0.75),
+    rgba(210,140,90,0.65)
+  );
+}
+
+/* -----------------------------
+   RESPIRATION SOLAIRE
+----------------------------- */
+@keyframes solar-pulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+/* =====================================================
+   MOBILE — MONDE SOLAIRE ACTIF
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .card-sun.is-active {
+    background:
+      radial-gradient(circle at 50% 25%, rgba(255,240,210,0.55), transparent 65%),
+      linear-gradient(to bottom, #f7ecd9, #e2cba8);
+
+    transition: background 1.2s ease;
+  }
+
+  .card-sun:not(.is-active) {
+    background: none;
+  }
 }
