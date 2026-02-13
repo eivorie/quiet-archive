@@ -288,7 +288,8 @@ body.mode-moon .sunmoon-stage {
   }
 
   .sunmoon-stage {
-    padding-top: 32px;
+   min-height: auto;
+  padding-top: 0;
   }
    
   .sunmoon-card {
