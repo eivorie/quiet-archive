@@ -71,7 +71,10 @@ body.mode-sun .nav a:hover {
 ===================================================== */
 
 .sunmoon-stage {
-  min-height: calc(100vh - 64px);
+  min-height: 100vh;
+  padding-top: 120px; /* comme weather */
+  padding-bottom: 80px;
+
   display: flex;
   justify-content: center;
 }
@@ -225,22 +228,25 @@ body.mode-moon .sunmoon-stage {
 }
 
 /* =====================================================
-   SUN & MOON — NAVBAR ALIGNMENT
+   SUNMOON — NAVBAR ALIGNÉE COMME WEATHER
 ===================================================== */
 
 .sunmoon .nav {
-  font-family: "Cormorant Garamond", serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  gap: 28px;
+
+  padding: 14px 24px;
+
   font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 
-  height: 64px;
-  display: flex;
-  align-items: center;
-}
-
-.sunmoon-stage > .sunmoon-card.is-active > .card-header {
-  margin-top: 24px;
+  z-index: 20;
 }
 
 /* =====================================================
@@ -269,6 +275,22 @@ body.mode-moon .sunmoon-stage {
 ===================================================== */
 
 @media (max-width: 768px) {
+
+   .sunmoon .nav {
+    position: sticky;
+    top: 0;
+
+    padding: 12px 18px;
+    padding-top: calc(env(safe-area-inset-top) + 10px);
+
+    gap: 18px;
+    font-size: 0.75rem;
+  }
+
+  .sunmoon-stage {
+    padding-top: 32px;
+  }
+   
   .sunmoon-card {
     padding: 0 16px 100px;
   }
