@@ -229,19 +229,19 @@ body.mode-moon .sunmoon-stage {
 ===================================================== */
 
 .sunmoon .nav {
-  font-family: "Cormorant Garamond", serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  padding: 14px 24px;
+
   font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 
-  height: 64px;
-  display: flex;
-  align-items: center;
+  gap: 20px 28px;
 }
 
-.sunmoon-stage > .sunmoon-card.is-active > .card-header {
-  margin-top: 24px;
-}
 
 /* =====================================================
    TRANSITION JOUR / NUIT — APPARITION DOUCE
