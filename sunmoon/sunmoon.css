@@ -71,7 +71,10 @@ body.mode-sun .nav a:hover {
 ===================================================== */
 
 .sunmoon-stage {
-  min-height: calc(100vh - 64px);
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 90px;
+
   display: flex;
   justify-content: center;
 }
@@ -269,6 +272,12 @@ body.mode-moon .sunmoon-stage {
 ===================================================== */
 
 @media (max-width: 768px) {
+
+   .sunmoon-stage {
+    padding-top: 48px;
+    padding-bottom: 60px;
+  }
+
   .sunmoon-card {
     padding: 0 16px 100px;
   }
