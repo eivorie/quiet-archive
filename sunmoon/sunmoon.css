@@ -269,6 +269,9 @@ body.mode-moon .sunmoon-stage {
 ===================================================== */
 
 @media (max-width: 768px) {
+    .sunmoon-stage {
+    min-height: auto;
+  }
   .sunmoon-card {
     padding: 0 16px 100px;
   }
