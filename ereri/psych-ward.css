@@ -1,0 +1,160 @@
+/* =====================================================
+   Psych Ward — Ereri
+   Atmosphère clinique, lumière froide, calme contrôlé
+   ===================================================== */
+
+/* =====================================================
+   CARD BACKGROUND
+===================================================== */
+
+.ereri-story.psych-ward .ereri-card {
+  background:
+    radial-gradient(
+      circle at 25% 15%,
+      rgba(180, 200, 220, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 80% 85%,
+      rgba(210, 220, 235, 0.06),
+      transparent 70%
+    ),
+    linear-gradient(
+      to bottom,
+      #f4f6f9,
+      #e9edf2
+    );
+}
+
+/* -----------------------------------------------------
+   TITRES
+----------------------------------------------------- */
+
+.ereri-story.psych-ward h1 {
+  color: rgba(40, 55, 75, 0.95);
+}
+
+.ereri-story.psych-ward .subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: rgba(80, 95, 120, 0.65);
+}
+
+/* -----------------------------------------------------
+   TEXTE — BASE
+----------------------------------------------------- */
+
+.ereri-story.psych-ward .ereri-content {
+  color: rgba(50, 65, 85, 0.92);
+}
+
+.ereri-story.psych-ward .ereri-content p {
+  margin-bottom: 1.5em;
+}
+
+/* TEXTE QUIET — neutre, presque clinique */
+.ereri-story.psych-ward .ereri-content p.quiet {
+  color: rgba(90, 105, 125, 0.6);
+}
+
+/* TEXTE SOFT — vulnérabilité douce */
+.ereri-story.psych-ward .ereri-content p.soft {
+  color: rgba(75, 90, 115, 0.75);
+}
+
+/* -----------------------------------------------------
+   DIALOGUES — structurés, nets
+----------------------------------------------------- */
+
+.ereri-story.psych-ward .ereri-content p.dialogue {
+  margin: 1.4em 0;
+  padding-left: 1.4em;
+  position: relative;
+
+  font-size: 0.95rem;
+  line-height: 1.8;
+  letter-spacing: 0.015em;
+
+  color: rgba(35, 50, 70, 0.95);
+}
+
+/* Tiret discret */
+.ereri-story.psych-ward .ereri-content p.dialogue::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  color: rgba(130, 150, 175, 0.5);
+}
+
+/* -----------------------------------------------------
+   TRANSITIONS
+----------------------------------------------------- */
+
+.ereri-story.psych-ward .transition {
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: rgba(100, 120, 145, 0.85);
+}
+
+/* -----------------------------------------------------
+   ILLUSTRATION — lumière froide
+----------------------------------------------------- */
+
+.story-illustration {
+  margin: 40px auto 60px;
+  text-align: center;
+}
+
+.ereri-story.psych-ward .story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(120, 140, 165, 0.15);
+}
+
+/* -----------------------------------------------------
+   ENDING — léger relâchement
+----------------------------------------------------- */
+
+.ereri-story.psych-ward .ereri-content p.ending {
+  margin-top: 3em;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: rgba(70, 85, 110, 0.75);
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .ereri-story.psych-ward .ereri-card {
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+  .ereri-story.psych-ward .ereri-content {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .ereri-story.psych-ward .ereri-content p {
+    margin-bottom: 1.6em;
+  }
+
+  .ereri-story.psych-ward .story-illustration {
+    margin: 36px auto 54px;
+  }
+
+  .ereri-story.psych-ward .story-illustration img {
+    max-width: 320px;
+  }
+}
