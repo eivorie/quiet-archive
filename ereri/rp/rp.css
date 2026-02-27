@@ -1,55 +1,36 @@
-/* ===== RETURN LINK ===== */
+/* ===== RESET ===== */
 
-.rp-top {
-  padding: 1rem 1.5rem 0;
-}
-
-.rp-exit {
-  text-decoration: none;
-  color: #c2a982;
-  font-size: 0.85rem;
-  opacity: 0.5;
-  transition: opacity 0.3s ease, color 0.3s ease;
-}
-
-.rp-exit:hover {
-  opacity: 1;
-  color: #e6d5b8;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #1f130d;
 }
 
 /* ===== WORLD ===== */
 
 body.rp-world {
-  margin: 0;
   font-family: "Cormorant Garamond", serif;
   background:
     radial-gradient(
-      circle at 50% 15%,
-      rgba(168,106,44,0.25),
-      rgba(47,29,20,0.6) 40%,
-      #24160f 75%
+      circle at 50% 12%,
+      rgba(180,110,50,0.18) 0%,
+      rgba(60,35,20,0.8) 45%,
+      #1b120c 100%
     );
   color: #e8d7b5;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
-body.rp-world::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("wood-grain.png");
-  opacity: 0.04;
-  mix-blend-mode: overlay;
-  pointer-events: none;
-}
-
+/* Subtle candle glow */
 body.rp-world::before {
   content: "";
   position: fixed;
   inset: 0;
   background: radial-gradient(
-    circle at 50% 10%,
-    rgba(192,122,50,0.15),
+    circle at 50% 8%,
+    rgba(200,130,60,0.12),
     transparent 60%
   );
   animation: candleGlow 6s ease-in-out infinite alternate;
@@ -61,25 +42,47 @@ body.rp-world::before {
   to { opacity: 1; }
 }
 
+/* ===== RETURN LINK ===== */
+
+.rp-top {
+  padding: 1.2rem 1.5rem 0;
+}
+
+.rp-exit {
+  text-decoration: none;
+  color: #c5a97d;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.rp-exit:hover {
+  opacity: 1;
+  color: #e8d7b5;
+}
+
 /* ===== HEADER ===== */
 
 .rp-header {
-  padding: 4rem 1.5rem 2rem;
+  padding: 3rem 1.5rem 1.5rem;
   text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .rp-header h1 {
+  margin: 0;
   font-size: 2.1rem;
   font-weight: 500;
   letter-spacing: 0.08em;
-  text-shadow: 0 0 12px rgba(192,122,50,0.25);
+  text-shadow: 0 0 12px rgba(200,130,60,0.25);
 }
 
 .rp-sub {
   margin-top: 0.5rem;
   font-size: 0.9rem;
-  opacity: 0.6;
-  color: #c2a982;
+  color: #c5a97d;
+  opacity: 0.8;
 }
 
 /* ===== ARCHIVE ===== */
@@ -96,6 +99,14 @@ body.rp-world::before {
 /* ===== ENTRY ===== */
 
 .rp-entry {
+  text-decoration: none;
+  color: #e8d7b5;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(232,215,181,0.12);
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+
   opacity: 0;
   transform: translateY(8px);
   animation: fadeUp 0.8s ease forwards;
@@ -114,13 +125,15 @@ body.rp-world::before {
 
 .rp-entry:hover {
   color: #f0c78a;
-  border-color: rgba(184,121,60,0.4);
+  border-color: rgba(200,130,60,0.4);
 }
+
+/* ===== ENTRY CONTENT ===== */
 
 .rp-number {
   font-size: 0.85rem;
-  color: #b8793c;
-  opacity: 0.8;
+  color: #c07a32;
+  opacity: 0.9;
   min-width: 1.5rem;
 }
 
