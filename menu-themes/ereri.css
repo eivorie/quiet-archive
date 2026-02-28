@@ -9,11 +9,11 @@
 
 .ereri-index .ereri-title {
   font-family: "Cormorant Garamond", serif;
-  font-style: italic;
+  //font-style: italic;
   font-weight: 400;
 
   font-size: clamp(1.4rem, 3.2vw, 2rem);
-  letter-spacing: 0.05em;
+  //letter-spacing: 0.05em;
 
   color: rgba(235, 240, 238, 0.95);
 
@@ -26,6 +26,16 @@
   text-shadow:
     0 1px 0 rgba(0,0,0,0.45),
     0 8px 22px rgba(0,0,0,0.5);
+}
+
+.ereri-secret {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.4s ease;
+}
+
+.ereri-secret:hover {
+  opacity: 0.6;
 }
 
 /* ornement délicat */
