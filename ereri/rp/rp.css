@@ -3,8 +3,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  background: #1f130d;
+  min-height: 100%;
 }
 
 /* ===== WORLD ===== */
@@ -13,130 +12,129 @@ body.rp-world {
   font-family: "Cormorant Garamond", serif;
   background:
     radial-gradient(
-      circle at 50% 12%,
-      rgba(180,110,50,0.18) 0%,
-      rgba(60,35,20,0.8) 45%,
-      #1b120c 100%
+      circle at 50% 10%,
+      #4a2e20 0%,
+      #3a2418 60%,
+      #2f1d14 100%
     );
-  color: #e8d7b5;
+  color: #f2e4c8;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-}
-
-/* Subtle candle glow */
-body.rp-world::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(
-    circle at 50% 8%,
-    rgba(200,130,60,0.12),
-    transparent 60%
-  );
-  animation: candleGlow 6s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-
-@keyframes candleGlow {
-  from { opacity: 0.6; }
-  to { opacity: 1; }
+  letter-spacing: 0.02em;
 }
 
 /* ===== RETURN LINK ===== */
 
 .rp-top {
-  padding: 1.2rem 1.5rem 0;
+  padding: 2rem 1.8rem 0;
 }
 
 .rp-exit {
   text-decoration: none;
-  color: #c5a97d;
+  color: #d4b88c;
   font-size: 0.85rem;
   opacity: 0.6;
-  transition: opacity 0.3s ease, color 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .rp-exit:hover {
   opacity: 1;
-  color: #e8d7b5;
 }
 
 /* ===== HEADER ===== */
 
 .rp-header {
-  padding: 3rem 1.5rem 1.5rem;
+  padding: 4rem 1.8rem 2.5rem;
   text-align: center;
-  max-width: 680px;
+  max-width: 760px;
   margin: 0 auto;
 }
 
 .rp-header h1 {
   margin: 0;
-  font-size: 2.1rem;
+  font-size: 2.4rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
-  text-shadow: 0 0 12px rgba(200,130,60,0.25);
+  letter-spacing: 0.12em;
 }
 
 .rp-sub {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #c5a97d;
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  color: #d4b88c;
   opacity: 0.8;
+}
+
+/* ===== READING LAYOUT ===== */
+
+.rp-reading {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+}
+
+.rp-chapter-title {
+  text-align: center;
+  font-size: 1.9rem;
+  margin-bottom: 4rem;
+  letter-spacing: 0.12em;
+}
+
+/* ===== POV ===== */
+
+.rp-pov {
+  margin-bottom: 4.5rem;
+}
+
+.rp-pov-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #c68642;
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
+}
+
+/* ===== TEXT ===== */
+
+.rp-text p {
+  line-height: 2;
+  margin-bottom: 1.6rem;
+  font-size: 1.15rem;
+  max-width: 42em;
 }
 
 /* ===== ARCHIVE ===== */
 
 .rp-archive {
-  padding: 1rem 1.5rem 4rem;
-  max-width: 680px;
+  padding: 2rem 1.8rem 5rem;
+  max-width: 760px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.8rem;
 }
-
-/* ===== ENTRY ===== */
 
 .rp-entry {
   text-decoration: none;
-  color: #e8d7b5;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(232,215,181,0.12);
+  color: #f2e4c8;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(242,228,200,0.15);
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   align-items: baseline;
-
-  opacity: 0;
-  transform: translateY(8px);
-  animation: fadeUp 0.8s ease forwards;
-}
-
-.rp-entry:nth-child(1) { animation-delay: 0.2s; }
-.rp-entry:nth-child(2) { animation-delay: 0.35s; }
-.rp-entry:nth-child(3) { animation-delay: 0.5s; }
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transition: opacity 0.3s ease;
 }
 
 .rp-entry:hover {
-  color: #f0c78a;
-  border-color: rgba(200,130,60,0.4);
+  opacity: 0.7;
 }
-
-/* ===== ENTRY CONTENT ===== */
 
 .rp-number {
   font-size: 0.85rem;
-  color: #c07a32;
-  opacity: 0.9;
-  min-width: 1.5rem;
+  color: #c68642;
+  min-width: 1.8rem;
 }
 
 .rp-title {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
 }
