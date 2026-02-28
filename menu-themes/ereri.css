@@ -28,16 +28,6 @@
     0 8px 22px rgba(0,0,0,0.5);
 }
 
-.ereri-secret {
-  text-decoration: none;
-  color: inherit;
-  transition: opacity 0.4s ease;
-}
-
-.ereri-secret:hover {
-  opacity: 0.6;
-}
-
 /* ornement délicat */
 .ereri-index .ereri-title::after {
   content: "✦";
