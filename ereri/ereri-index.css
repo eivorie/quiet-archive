@@ -285,62 +285,50 @@ Mobile — alignement Home / Memories
     font-size: 0.75rem;
   }
 
- body.ereri-index .ereri-page {
+  body.ereri-index .ereri-page {
     padding-top: 24px;
     padding-bottom: 40px;
   }
 
-  body.ereri-index .ereri-card {
-    margin: 0;
-  }
-
+  /* Carte plus large */
   .ereri-card {
-    margin: 0;
-    padding: 42px 26px;
+    margin: 0 10px;
+    padding: 32px 16px;
     border-radius: 22px;
   }
 
-  /* === CAPSULE MODE MOBILE === */
+  /* Grille 3 colonnes */
+  .ereri-index .ereri-toc ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
 
-@media (max-width: 768px) {
+  .ereri-index .ereri-toc li {
+    margin: 0;
+  }
 
- .ereri-index .ereri-toc ul {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  max-width: none;
-}
+  /* Capsules plus grandes */
+  .ereri-index .ereri-toc a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
-.ereri-index .ereri-toc li {
-  margin: 0;
-}
+    height: 72px;
+    padding: 10px;
 
-.ereri-index .ereri-toc a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
 
-  height: 60px;
-  padding: 8px 6px;
+    border-radius: 18px;
 
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  line-height: 1.15;
+    background: rgba(70, 85, 80, 0.12);
+    border: 1px solid rgba(70, 85, 80, 0.22);
 
-  border-radius: 16px;
-
-  background: rgba(70, 85, 80, 0.12);
-  border: 1px solid rgba(70, 85, 80, 0.22);
-
-  color: rgba(60, 75, 70, 0.9);
-
-  transition:
-    background 0.3s ease,
-    transform 0.2s ease,
-    color 0.3s ease;
-}
+    color: rgba(60, 75, 70, 0.95);
+  }
 
   .ereri-index .ereri-toc a::before,
   .ereri-index .ereri-toc a::after {
