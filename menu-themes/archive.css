@@ -344,6 +344,57 @@ body.archive .nav a:hover::after {
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
 
+   /* === ARCHIVE CAPSULE MODE === */
+
+.archive-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.archive-list li {
+  margin: 0;
+}
+
+.archive-list a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  height: 72px;
+  padding: 14px;
+
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+
+  border-radius: 24px;
+
+  background: rgba(200,175,120,0.12);
+  border: 1px solid rgba(200,175,120,0.35);
+
+  color: rgba(240,235,225,0.92);
+
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease,
+    color 0.3s ease;
+}
+
+/* on supprime le tiret narratif */
+.archive-list a::before,
+.archive-list a::after {
+  display: none;
+}
+
+.archive-list a:hover {
+  background: rgba(200,175,120,0.22);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
   /* IMPORTANT : on coupe le décor fixed sur mobile */
   body.archive::before,
   body.archive::after {
