@@ -353,6 +353,28 @@ body.weather-index::before {
 
 @media (max-width: 768px) {
 
+   .weather-index .weather-nav {
+    position: sticky;
+    top: 0;
+
+    padding: 12px 18px;
+    padding-top: calc(env(safe-area-inset-top) + 10px);
+
+    gap: 18px;
+    font-size: 0.75rem;
+  }
+
+  .weather-page {
+    padding-top: 32px;
+  }
+
+  .weather-card {
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+
   .weather-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
