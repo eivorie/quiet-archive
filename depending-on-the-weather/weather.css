@@ -353,24 +353,47 @@ body.weather-index::before {
 
 @media (max-width: 768px) {
 
-  .weather-index .weather-nav {
-    position: sticky;
-    top: 0;
-
-    padding: 12px 18px;
-    padding-top: calc(env(safe-area-inset-top) + 10px);
-
-    gap: 18px;
-    font-size: 0.75rem;
+  .weather-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
   }
 
-  .weather-page {
-    padding-top: 32px;
+  .weather-list li {
+    margin: 0;
   }
 
-  .weather-card {
-    margin: 0 14px;
-    padding: 44px 28px;
-    border-radius: 22px;
+  .weather-list a {
+    display: block;
+    text-align: center;
+    padding: 10px 12px;
+
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    font-variant: normal;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    color: rgba(220,225,215,0.85);
+
+    transition: 
+      background 0.3s ease,
+      transform 0.2s ease,
+      color 0.3s ease;
   }
+
+  .weather-list a::before,
+  .weather-list a::after {
+    display: none;
+  }
+
+  .weather-list a:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-2px);
+    color: rgba(245,250,240,0.95);
+  }
+
 }
