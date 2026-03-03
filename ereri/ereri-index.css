@@ -291,14 +291,10 @@ Mobile — alignement Home / Memories
   }
 
   body.ereri-index .ereri-card {
-    margin: 0;
-  }
-
-  .ereri-card {
-    margin: 0;
-    padding: 36px 16px;
-    border-radius: 22px;
-  }
+  padding: 36px 18px;
+  margin: 0;
+  border-radius: 22px;
+}
 
   .ereri-index .ereri-toc ul {
     display: grid;
