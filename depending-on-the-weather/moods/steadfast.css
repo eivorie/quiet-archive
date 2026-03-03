@@ -154,7 +154,7 @@ body.weather-steadfast .weather-card::after {
    ===================================================== */
 
 body.weather-steadfast .weather-title {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Cormorant Garamond", serif;
   font-weight: 300;
 
   font-size: 2.05rem;
@@ -201,9 +201,8 @@ body.weather-steadfast .weather-title::after {
 body.weather-steadfast .weather-text p {
   font-family: "IBM Plex Mono", monospace;
   font-style: normal;
-  font-style: italic;
   font-size: 0.92rem;
-  line-height: 1.95;
+  line-height: 1.8;
   font-weight: 400;
 
   color: rgba(235,230,220,0.88);
