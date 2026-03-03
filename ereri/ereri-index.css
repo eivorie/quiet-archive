@@ -296,18 +296,14 @@ Mobile — alignement Home / Memories
 
   .ereri-card {
     margin: 0;
-    padding: 42px 26px;
+    padding: 36px 16px;
     border-radius: 22px;
   }
-
-  /* === CAPSULE MODE MOBILE === */
-
-@media (max-width: 768px) {
 
   .ereri-index .ereri-toc ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: 12px;
     max-width: none;
   }
 
@@ -322,7 +318,7 @@ Mobile — alignement Home / Memories
     justify-content: center;
     text-align: center;
 
-    height: 70px; /* 👈 hauteur FIXE */
+    height: 64px; /* 👈 hauteur FIXE */
     padding: 12px;
 
     font-size: 0.8rem; /* légèrement plus grand */
@@ -335,7 +331,7 @@ Mobile — alignement Home / Memories
     background: rgba(70, 85, 80, 0.12);
     border: 1px solid rgba(70, 85, 80, 0.25);
 
-    color: #808986 
+    color: #808986; 
 
     transition:
       background 0.3s ease,
@@ -354,3 +350,4 @@ Mobile — alignement Home / Memories
     color: #1e2a27;
   }
 }
+
