@@ -304,44 +304,43 @@ Mobile — alignement Home / Memories
 
 @media (max-width: 768px) {
 
-  .ereri-index .ereri-toc ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    max-width: none;
-  }
+ .ereri-index .ereri-toc ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: none;
+}
 
-  .ereri-index .ereri-toc li {
-    margin: 0;
-  }
+.ereri-index .ereri-toc li {
+  margin: 0;
+}
 
-  .ereri-index .ereri-toc a {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.ereri-index .ereri-toc a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
-    height: 70px; /* 👈 hauteur FIXE */
-    padding: 12px;
+  height: 60px;
+  padding: 8px 6px;
 
-    font-size: 0.8rem; /* légèrement plus grand */
-    font-weight: 500;
-    letter-spacing: 0.02em; /* beaucoup plus lisible */
-    line-height: 1.3;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
 
-    border-radius: 20px; /* moins “pilule géante” */
+  border-radius: 16px;
 
-    background: rgba(70, 85, 80, 0.12);
-    border: 1px solid rgba(70, 85, 80, 0.25);
+  background: rgba(70, 85, 80, 0.12);
+  border: 1px solid rgba(70, 85, 80, 0.22);
 
-    color: #808986 
+  color: rgba(60, 75, 70, 0.9);
 
-    transition:
-      background 0.3s ease,
-      transform 0.2s ease,
-      color 0.3s ease;
-  }
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease,
+    color 0.3s ease;
+}
 
   .ereri-index .ereri-toc a::before,
   .ereri-index .ereri-toc a::after {
