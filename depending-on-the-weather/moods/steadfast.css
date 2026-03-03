@@ -154,7 +154,7 @@ body.weather-steadfast .weather-card::after {
    ===================================================== */
 
 body.weather-steadfast .weather-title {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 300;
 
   font-size: 2.05rem;
@@ -199,7 +199,8 @@ body.weather-steadfast .weather-title::after {
    ===================================================== */
 
 body.weather-steadfast .weather-text p {
-  font-family: "Spectral", serif;
+  font-family: "IBM Plex Mono", monospace;
+  font-style: normal;
   font-style: italic;
   font-size: 0.92rem;
   line-height: 1.95;
@@ -209,8 +210,8 @@ body.weather-steadfast .weather-text p {
 }
 
 body.weather-steadfast .weather-lead {
+  font-family: "IBM Plex Mono", monospace;
   font-style: normal;
-  font-weight: 500;
 }
 
 body.weather-steadfast .weather-ending {
