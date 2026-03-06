@@ -45,11 +45,24 @@ body.rp-world {
    Chapter navigation
    ============================== */
 
+/* ==============================
+   Chapter navigation logic
+   ============================== */
+
 .rp-navigation {
-  margin-top: 80px;
+  margin-top: 100px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.08);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  opacity: 0;
+  animation: rpFadeNav 0.8s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes rpFadeNav {
+  to { opacity: 1; }
 }
 
 .rp-navigation a {
@@ -65,6 +78,16 @@ body.rp-world {
 
 .rp-navigation a:visited {
   color: inherit;
+}
+
+/* Hide previous on first chapter */
+.rp-first .rp-prev {
+  visibility: hidden;
+}
+
+/* Hide next on last chapter */
+.rp-last .rp-next {
+  visibility: hidden;
 }
 
 /* ===== HEADER ===== */
