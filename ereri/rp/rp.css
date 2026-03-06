@@ -42,20 +42,19 @@ body.rp-world {
 }
 
 /* ==============================
-   Chapter navigation (prev/next)
+   Chapter navigation
    ============================== */
 
 .rp-navigation {
-  margin-top: 60px;
+  margin-top: 80px;
   display: flex;
   justify-content: space-between;
-  font-size: 0.9rem;
+  align-items: center;
 }
 
 .rp-navigation a {
   text-decoration: none;
   color: inherit;
-  position: relative;
   opacity: 0.8;
   transition: opacity 0.3s ease;
 }
@@ -64,7 +63,6 @@ body.rp-world {
   opacity: 1;
 }
 
-/* empêcher le violet des liens visités */
 .rp-navigation a:visited {
   color: inherit;
 }
