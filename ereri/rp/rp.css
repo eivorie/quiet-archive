@@ -159,7 +159,6 @@ body.rp-world {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
 }
 
 .rp-entry {
