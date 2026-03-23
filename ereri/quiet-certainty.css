@@ -1,0 +1,157 @@
+/* =====================================================
+   Quiet Certainty — Ereri
+   Early morning calm, muted blue-grey,
+   soft phone-light warmth
+   Same structure as other stories
+   ===================================================== */
+
+/* -----------------------------------------------------
+   CARD — cool dawn with subtle warmth
+----------------------------------------------------- */
+
+.ereri-story.quiet-certainty .ereri-card {
+  background:
+    radial-gradient(
+      circle at 28% 18%,
+      rgba(255, 215, 160, 0.06),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 75% 80%,
+      rgba(160, 185, 215, 0.08),
+      transparent 65%
+    ),
+    linear-gradient(
+      to bottom,
+      #2c323c,
+      #1e232b
+    );
+}
+
+/* -----------------------------------------------------
+   TITRES
+----------------------------------------------------- */
+
+.ereri-story.quiet-certainty h1 {
+  color: rgba(235, 240, 245, 0.95);
+}
+
+.ereri-story.quiet-certainty .subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: rgba(200, 210, 225, 0.7);
+}
+
+/* -----------------------------------------------------
+   TEXTE — base
+----------------------------------------------------- */
+
+.ereri-story.quiet-certainty .ereri-content {
+  color: rgba(220, 230, 240, 0.88);
+}
+
+.ereri-story.quiet-certainty .ereri-content p {
+  margin-bottom: 1.6em;
+}
+
+/* SOFT TEXT — vulnerability */
+.ereri-story.quiet-certainty .ereri-content p.soft {
+  color: rgba(200, 215, 230, 0.7);
+}
+
+/* -----------------------------------------------------
+   DIALOGUES
+----------------------------------------------------- */
+
+.ereri-story.quiet-certainty .ereri-content p.dialogue {
+  margin: 1.4em 0;
+  padding-left: 1.4em;
+  position: relative;
+
+  font-size: 0.95rem;
+  line-height: 1.8;
+  letter-spacing: 0.015em;
+
+  color: rgba(235, 240, 245, 0.92);
+}
+
+/* subtle dialogue dash */
+.ereri-story.quiet-certainty .ereri-content p.dialogue::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  color: rgba(180, 195, 210, 0.4);
+}
+
+/* -----------------------------------------------------
+   TRANSITION / EMPHASIS
+----------------------------------------------------- */
+
+.ereri-story.quiet-certainty .transition {
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: rgba(210, 220, 235, 0.8);
+}
+
+/* -----------------------------------------------------
+   ILLUSTRATION — standard Ereri
+----------------------------------------------------- */
+
+.ereri-story.quiet-certainty .story-illustration {
+  margin: 40px auto 60px;
+  text-align: center;
+}
+
+.ereri-story.quiet-certainty .story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 20px 26px 22px 28px;
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(220, 230, 240, 0.18);
+}
+
+/* -----------------------------------------------------
+   ENDING — soft certainty
+----------------------------------------------------- */
+
+.ereri-story.quiet-certainty .ereri-content p.ending {
+  margin-top: 3em;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: rgba(210, 220, 235, 0.75);
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .ereri-story.quiet-certainty .ereri-card {
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+  .ereri-story.quiet-certainty .ereri-content {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .ereri-story.quiet-certainty .ereri-content p {
+    margin-bottom: 1.6em;
+  }
+
+  .ereri-story.quiet-certainty .story-illustration {
+    margin: 36px auto 54px;
+  }
+
+  .ereri-story.quiet-certainty .story-illustration img {
+    max-width: 320px;
+  }
+}
