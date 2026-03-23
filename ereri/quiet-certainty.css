@@ -11,19 +11,19 @@
 .ereri-story.quiet-certainty .ereri-card {
   background:
     radial-gradient(
-      circle at 30% 20%,
-      rgba(255, 210, 170, 0.07),
+      circle at 30% 18%,
+      rgba(255, 220, 190, 0.10),
       transparent 60%
     ),
     radial-gradient(
-      circle at 80% 85%,
-      rgba(190, 110, 85, 0.08),
+      circle at 75% 85%,
+      rgba(190, 120, 95, 0.12),
       transparent 65%
     ),
     linear-gradient(
       to bottom,
-      #4a2f2a,
-      #2f1e1a
+      #6a4036,
+      #4b2c26
     );
 }
 
