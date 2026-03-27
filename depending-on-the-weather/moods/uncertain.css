@@ -1,34 +1,34 @@
 /* =====================================================
-   UNCERTAIN — warm haze / fragile but holding
+   UNCERTAIN — warm cocoon / soft reassurance
    ===================================================== */
 
 /* =====================================================
-   FOND — chaud, doux, légèrement instable
+   BACKGROUND — chaud, enveloppant (exit taupe fade)
    ===================================================== */
 
 body.weather-uncertain {
   background:
     radial-gradient(
       circle at 30% 20%,
-      rgba(220, 200, 170, 0.38),
+      rgba(255, 170, 130, 0.25),
       transparent 55%
     ),
     radial-gradient(
       circle at 70% 75%,
-      rgba(180, 160, 130, 0.30),
+      rgba(255, 130, 110, 0.20),
       transparent 60%
     ),
     linear-gradient(
       to bottom,
-      #5a5248 0%,
-      #403a32 50%,
-      #26221d 100%
+      #3a2624 0%,
+      #241816 50%,
+      #120c0c 100%
     );
 
   background-size: 140% 140%;
   animation: uncertainBreath 24s ease-in-out infinite;
 
-  color: rgba(240, 235, 225, 0.9);
+  color: rgba(255, 235, 225, 0.92);
 }
 
 @keyframes uncertainBreath {
@@ -46,7 +46,7 @@ body.weather-uncertain .page {
 }
 
 /* =====================================================
-   NAVBAR — IDENTIQUE STRUCTURE (safe desktop/mobile)
+   NAVBAR — inchangée (safe desktop/mobile)
    ===================================================== */
 
 body.weather-uncertain .nav {
@@ -60,47 +60,60 @@ body.weather-uncertain .nav {
   padding: 18px 28px;
   gap: 32px;
 
-  background: rgba(42, 38, 32, 0.55);
+  background: rgba(45, 30, 28, 0.55);
   backdrop-filter: blur(10px);
 
   box-shadow:
     0 10px 28px rgba(0,0,0,.55),
-    inset 0 0 0 1px rgba(210,190,150,.10);
+    inset 0 0 0 1px rgba(255,180,140,.08);
 }
 
 body.weather-uncertain .nav a {
-  color: rgba(235,225,205,.82);
+  color: rgba(255,225,205,.82);
   text-decoration: none;
   transition: color .25s ease;
 }
 
 body.weather-uncertain .nav a:hover {
-  color: rgba(255,245,225,.95);
+  color: rgba(255,245,235,.95);
 }
 
 /* =====================================================
-   CARTE — cocon chaud mais fragile
+   PAGE — centrage (clé du fix desktop)
+   ===================================================== */
+
+body.weather-uncertain .weather-page {
+  display: flex;
+  justify-content: center;
+}
+
+/* =====================================================
+   CARD — largeur FIXÉE desktop + cocoon
    ===================================================== */
 
 body.weather-uncertain .weather-card {
   position: relative;
   overflow: hidden;
 
+  width: 100%;
+  max-width: 760px; /* 👈 FIX largeur desktop */
+
   margin-top: 48px;
+  padding: 64px 58px;
 
   background:
     linear-gradient(
       to bottom,
-      rgba(88, 80, 70, 0.88),
-      rgba(50, 44, 38, 0.94)
+      rgba(70, 45, 40, 0.92),
+      rgba(40, 25, 22, 0.96)
     );
 
-  border-radius: 26px 24px 28px 22px;
+  border-radius: 28px;
 
   box-shadow:
-    0 55px 140px rgba(0,0,0,.72),
-    0 18px 48px rgba(0,0,0,.50),
-    inset 0 0 0 1px rgba(255,245,225,.05);
+    0 60px 140px rgba(0,0,0,.75),
+    0 20px 60px rgba(0,0,0,.55),
+    inset 0 0 0 1px rgba(255,200,170,.06);
 
   animation:
     uncertainAppear 1.6s ease-out both,
@@ -108,8 +121,8 @@ body.weather-uncertain .weather-card {
 }
 
 @keyframes uncertainAppear {
-  from { opacity: 0; transform: translateY(20px) scale(.985); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes uncertainFloat {
@@ -117,63 +130,66 @@ body.weather-uncertain .weather-card {
   50%     { transform: translateY(-4px); }
 }
 
-/* voile doux intérieur */
+/* glow intérieur chaud */
+
 body.weather-uncertain .weather-card::before {
   content: "";
   position: absolute;
-  inset: -18%;
+  inset: -20%;
   pointer-events: none;
 
   background:
     radial-gradient(
-      circle at 40% 25%,
-      rgba(230, 210, 175, 0.25),
+      circle at 35% 25%,
+      rgba(255, 160, 120, 0.22),
       transparent 60%
     ),
     radial-gradient(
       circle at 75% 80%,
-      rgba(190, 170, 140, 0.22),
+      rgba(255, 120, 110, 0.18),
       transparent 65%
     );
 
-  filter: blur(28px);
-  opacity: .55;
+  filter: blur(32px);
+  opacity: .6;
 }
 
-/* liseret subtil */
+/* contour subtil */
+
 body.weather-uncertain .weather-card::after {
   content: "";
   position: absolute;
   inset: 14px;
-  border-radius: 20px;
+  border-radius: 22px;
 
-  border: 1px solid rgba(215,190,145,.22);
+  border: 1px solid rgba(255,180,140,.18);
 
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.07),
-    0 0 0 1px rgba(140,120,85,.16);
+    inset 0 0 0 1px rgba(255,255,255,.06);
 
   pointer-events: none;
 }
 
 /* =====================================================
-   TITRE — posé, légèrement fragile
+   TITLE — doux, lumineux
    ===================================================== */
 
 body.weather-uncertain .weather-title {
   font-family: "Cormorant Garamond", serif;
   font-weight: 300;
 
-  font-size: 2.05rem;
+  font-size: 2.1rem;
   letter-spacing: .04em;
   margin-bottom: 30px;
 
-  color: rgba(245, 238, 225, 0.9);
+  color: rgba(255, 230, 220, 0.92);
 
   text-shadow:
-    0 1px 0 rgba(0,0,0,.55),
-    0 12px 34px rgba(0,0,0,.55);
+    0 2px 10px rgba(255,140,120,.15),
+    0 10px 30px rgba(0,0,0,.6);
 }
+
+/* underline respirante */
 
 body.weather-uncertain .weather-title::after {
   content: "";
@@ -185,23 +201,21 @@ body.weather-uncertain .weather-title::after {
 
   background: linear-gradient(
     to right,
-    rgba(210,175,125,0),
-    rgba(210,175,125,.7),
-    rgba(210,175,125,0)
+    rgba(255,170,140,0),
+    rgba(255,170,140,.7),
+    rgba(255,170,140,0)
   );
-
-  opacity: .7;
 
   animation: uncertainUnderline 7s ease-in-out infinite;
 }
 
 @keyframes uncertainUnderline {
   0%,100% { width: 42px; opacity: .5; }
-  50%     { width: 60px; opacity: .9; }
+  50%     { width: 62px; opacity: .9; }
 }
 
 /* =====================================================
-   TEXTE — doux, respirant
+   TEXT — typo améliorée (plus émotionnelle)
    ===================================================== */
 
 body.weather-uncertain .weather-content {
@@ -209,44 +223,46 @@ body.weather-uncertain .weather-content {
 }
 
 body.weather-uncertain .weather-content p {
-  font-family: "Spectral", serif;
+  font-family: "EB Garamond", serif;
   font-style: italic;
-  font-size: 0.88rem;
+  font-size: 1rem;
   line-height: 1.9;
-  font-weight: 300;
+  font-weight: 400;
 
-  color: rgba(235,230,220,0.82);
+  color: rgba(255, 230, 220, 0.88);
 }
 
 body.weather-uncertain .weather-content p:nth-child(odd) {
-  color: rgba(245,240,230,.92);
+  color: rgba(255, 240, 230, 0.95);
 }
 
 /* blocs émotionnels */
+
 body.weather-uncertain .weather-content p.emphasis,
 body.weather-uncertain .weather-content p[class*="shift"] {
   background: linear-gradient(
     to bottom,
-    rgba(170,150,110,.28),
-    rgba(120,105,80,.30)
+    rgba(255,160,120,.18),
+    rgba(255,120,100,.20)
   );
 
   border-radius: 12px;
   padding: 10px 14px;
 
   box-shadow:
-    inset 0 0 0 1px rgba(215,190,150,.14),
+    inset 0 0 0 1px rgba(255,180,140,.14),
     0 10px 24px rgba(0,0,0,.35);
 }
 
 /* fin */
+
 body.weather-uncertain .weather-ending {
-  color: rgba(250,245,235,.96);
+  color: rgba(255,245,235,.96);
   letter-spacing: .03em;
 }
 
 /* =====================================================
-   MOBILE — IDENTIQUE SYSTEM
+   MOBILE — ne touche PAS à la largeur
    ===================================================== */
 
 @media (max-width: 768px) {
@@ -259,5 +275,6 @@ body.weather-uncertain .weather-ending {
 
   body.weather-uncertain .weather-card {
     margin-top: 32px;
+    padding: 40px 22px;
   }
 }
