@@ -5,163 +5,158 @@
    ===================================================== */
 
 /* -----------------------------------------------------
-   AMBIANCE FOND
------------------------------------------------------ */
-
-.ereri-story.bright-noise {
-  background:
-    radial-gradient(circle at 20% 15%, rgba(255, 200, 120, 0.18), transparent 60%),
-    radial-gradient(circle at 80% 25%, rgba(255, 120, 160, 0.14), transparent 65%),
-    radial-gradient(circle at 50% 85%, rgba(120, 180, 255, 0.12), transparent 70%),
-    linear-gradient(to bottom, #1a1418, #0e0b0d);
-}
-
-
-/* -----------------------------------------------------
-   AMBIENT PARTICLES
------------------------------------------------------ */
-
-.bright-noise .ereri-ambient span {
-  background: radial-gradient(circle, rgba(255, 210, 140, 0.35), transparent 70%);
-  animation: floatBright 14s infinite ease-in-out;
-}
-
-.bright-noise .ereri-ambient span:nth-child(2n) {
-  background: radial-gradient(circle, rgba(255, 120, 180, 0.25), transparent 70%);
-  animation-duration: 18s;
-}
-
-.bright-noise .ereri-ambient span:nth-child(3n) {
-  background: radial-gradient(circle, rgba(120, 180, 255, 0.25), transparent 70%);
-  animation-duration: 22s;
-}
-
-@keyframes floatBright {
-  0%   { transform: translateY(0) scale(1); opacity: 0.25; }
-  50%  { transform: translateY(-40px) scale(1.2); opacity: 0.5; }
-  100% { transform: translateY(0) scale(1); opacity: 0.25; }
-}
-
-
-/* -----------------------------------------------------
-   CARTE PRINCIPALE
+   CARTE — palette lumineuse, nuit vibrante
 ----------------------------------------------------- */
 
 .ereri-story.bright-noise .ereri-card {
   background:
-    radial-gradient(circle at 30% 20%, rgba(255, 200, 120, 0.08), transparent 60%),
-    radial-gradient(circle at 70% 80%, rgba(255, 120, 180, 0.08), transparent 70%),
-    linear-gradient(to bottom, #2a1f24, #1a1418);
-
-  border: 1px solid rgba(255, 200, 150, 0.08);
-  box-shadow:
-    0 0 40px rgba(255, 150, 120, 0.08),
-    0 20px 60px rgba(0, 0, 0, 0.6);
-
-  backdrop-filter: blur(14px);
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(255, 200, 120, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 70% 80%,
+      rgba(255, 120, 180, 0.08),
+      transparent 70%
+    ),
+    linear-gradient(
+      to bottom,
+      #2a1f24,
+      #1a1418
+    );
 }
 
 
 /* -----------------------------------------------------
-   HEADER
+   TITRES
 ----------------------------------------------------- */
 
-.bright-noise .story-header h1 {
-  color: #ffdca8;
-  letter-spacing: 0.08em;
-  text-shadow:
-    0 0 12px rgba(255, 200, 120, 0.25),
-    0 0 30px rgba(255, 120, 160, 0.12);
+.ereri-story.bright-noise h1 {
+  color: rgba(255, 220, 170, 0.95);
 }
 
-.bright-noise .subtitle {
-  color: rgba(255, 200, 180, 0.6);
-  letter-spacing: 0.25em;
+.ereri-story.bright-noise .subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 200, 180, 0.65);
 }
 
 
 /* -----------------------------------------------------
-   IMAGE
+   TEXTE — base
 ----------------------------------------------------- */
 
-.bright-noise .story-illustration img {
-  border-radius: 14px;
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.6),
-    0 0 25px rgba(255, 180, 120, 0.15);
+.ereri-story.bright-noise .ereri-content {
+  color: rgba(240, 225, 210, 0.9);
+}
 
-  filter: saturate(1.05) contrast(1.05);
+.ereri-story.bright-noise .ereri-content p {
+  margin-bottom: 1.5em;
 }
 
 
 /* -----------------------------------------------------
-   TEXTE
+   DIALOGUES — EXACT même structure que les autres
 ----------------------------------------------------- */
 
-.bright-noise .ereri-content {
-  color: #f3e9df;
-  line-height: 1.85;
-  font-size: 17px;
-}
-
-.bright-noise .ereri-content p {
-  margin-bottom: 1.2em;
-}
-
-
-/* -----------------------------------------------------
-   DIALOGUES
------------------------------------------------------ */
-
-.bright-noise .dialogue {
-  color: #ffd2a8;
-  padding-left: 14px;
-  border-left: 2px solid rgba(255, 180, 120, 0.25);
+.ereri-story.bright-noise .ereri-content p.dialogue {
   margin: 1.4em 0;
+  padding-left: 1.4em;
+  position: relative;
 
-  text-shadow: 0 0 8px rgba(255, 180, 120, 0.15);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  letter-spacing: 0.015em;
+
+  color: rgba(255, 225, 200, 0.92);
+}
+
+.ereri-story.bright-noise .ereri-content p.dialogue::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  color: rgba(255, 190, 150, 0.45);
 }
 
 
 /* -----------------------------------------------------
-   ENDING
+   ILLUSTRATION — STANDARD (NE PAS TOUCHER STRUCTURE)
 ----------------------------------------------------- */
 
-.bright-noise .ending {
-  margin-top: 2.5em;
-  color: rgba(255, 220, 180, 0.75);
+.story-illustration {
+  margin: 40px auto 60px;
   text-align: center;
-  font-style: italic;
-
-  text-shadow:
-    0 0 10px rgba(255, 200, 150, 0.2),
-    0 0 30px rgba(255, 120, 160, 0.1);
 }
 
+.story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
 
-/* -----------------------------------------------------
-   HOVER / INTERACTION (léger)
------------------------------------------------------ */
+  border-radius: 18px 24px 20px 26px;
 
-.bright-noise .ereri-card:hover {
   box-shadow:
-    0 0 60px rgba(255, 150, 120, 0.12),
-    0 30px 80px rgba(0, 0, 0, 0.7);
-  transition: 0.4s ease;
+    0 30px 70px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(255, 180, 120, 0.12);
 }
 
 
 /* -----------------------------------------------------
-   RESPONSIVE (léger)
+   AMBIENT — garde ton effet (adapté au style global)
 ----------------------------------------------------- */
+
+.bright-noise .ereri-ambient span {
+  background: radial-gradient(
+    circle,
+    rgba(255, 210, 140, 0.18) 0%,
+    rgba(255, 210, 140, 0.04) 70%,
+    transparent 100%
+  );
+  opacity: 0.4;
+  filter: blur(18px);
+}
+
+
+/* -----------------------------------------------------
+   ENDING — aligné autres fichiers
+----------------------------------------------------- */
+
+.ereri-story.bright-noise .ereri-content p.ending {
+  margin-top: 3em;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: rgba(255, 210, 180, 0.7);
+}
+
+
+/* =====================================================
+   MOBILE — EXACT même logique
+===================================================== */
 
 @media (max-width: 768px) {
-  .bright-noise .ereri-content {
-    font-size: 16px;
+
+  .ereri-story.bright-noise .ereri-card {
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+  .ereri-story.bright-noise .ereri-content {
+    font-size: 1rem;
     line-height: 1.75;
   }
 
-  .bright-noise .story-header h1 {
-    font-size: 28px;
+  .ereri-story.bright-noise .ereri-content p {
+    margin-bottom: 1.6em;
+  }
+
+  .story-illustration {
+    margin: 36px auto 54px;
+  }
+
+  .story-illustration img {
+    max-width: 320px;
   }
 }
