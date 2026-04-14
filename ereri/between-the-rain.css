@@ -1,0 +1,181 @@
+/* =====================================================
+   BETWEEN THE RAIN — Ereri
+   Pluie, chaleur intérieure, proximité douce
+   ===================================================== */
+
+/* -----------------------------------------------------
+   CARTE — nuit humide, reflets doux
+----------------------------------------------------- */
+
+.ereri-story.between-the-rain .ereri-card {
+  background:
+    radial-gradient(
+      circle at 25% 20%,
+      rgba(120, 150, 180, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 75% 80%,
+      rgba(200, 180, 160, 0.06),
+      transparent 65%
+    ),
+    linear-gradient(
+      to bottom,
+      #2a2f33,
+      #1b1f22
+    );
+
+  box-shadow:
+    0 40px 110px rgba(0, 0, 0, 0.65),
+    0 15px 40px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* -----------------------------------------------------
+   TITRES
+----------------------------------------------------- */
+
+.ereri-story.between-the-rain h1 {
+  color: rgba(220, 230, 235, 0.92);
+}
+
+.ereri-story.between-the-rain .subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  color: rgba(170, 185, 195, 0.7);
+}
+
+/* -----------------------------------------------------
+   TEXTE — base
+----------------------------------------------------- */
+
+.ereri-story.between-the-rain .ereri-content {
+  color: rgba(225, 235, 240, 0.88);
+}
+
+.ereri-story.between-the-rain .ereri-content p {
+  margin-bottom: 1.5em;
+}
+
+/* TEXTE CALME */
+.ereri-story.between-the-rain .ereri-content p.quiet {
+  color: rgba(190, 205, 215, 0.65);
+}
+
+/* TEXTE TENDRE */
+.ereri-story.between-the-rain .ereri-content p.soft {
+  color: rgba(210, 225, 235, 0.78);
+}
+
+/* -----------------------------------------------------
+   DIALOGUES — cohérent avec tes autres fichiers
+----------------------------------------------------- */
+
+.ereri-story.between-the-rain .ereri-content p.dialogue {
+  margin: 1.4em 0;
+  padding-left: 1.4em;
+  position: relative;
+
+  font-size: 0.95rem;
+  line-height: 1.8;
+  letter-spacing: 0.015em;
+
+  color: rgba(235, 245, 250, 0.92);
+}
+
+/* tiret discret */
+.ereri-story.between-the-rain .ereri-content p.dialogue::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  color: rgba(170, 190, 205, 0.45);
+}
+
+/* -----------------------------------------------------
+   TRANSITIONS
+----------------------------------------------------- */
+
+.ereri-story.between-the-rain .transition {
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: rgba(200, 215, 225, 0.8);
+}
+
+/* -----------------------------------------------------
+   ILLUSTRATION
+----------------------------------------------------- */
+
+.story-illustration {
+  margin: 40px auto 60px;
+  text-align: center;
+}
+
+.story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 18px 22px 20px 24px;
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.65),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+/* -----------------------------------------------------
+   AMBIENT — pluie douce / buée
+----------------------------------------------------- */
+
+.between-the-rain .ereri-ambient span {
+  background: radial-gradient(
+    circle,
+    rgba(180, 200, 220, 0.12) 0%,
+    rgba(180, 200, 220, 0.02) 70%,
+    transparent 100%
+  );
+
+  filter: blur(20px);
+  opacity: 0.4;
+}
+
+/* -----------------------------------------------------
+   ENDING
+----------------------------------------------------- */
+
+.ereri-story.between-the-rain .ereri-content p.ending {
+  margin-top: 3em;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  color: rgba(190, 205, 215, 0.7);
+}
+
+/* -----------------------------------------------------
+   MOBILE
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .ereri-story.between-the-rain .ereri-card {
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+  .ereri-story.between-the-rain .ereri-content {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .ereri-story.between-the-rain .ereri-content p {
+    margin-bottom: 1.6em;
+  }
+
+  .story-illustration {
+    margin: 36px auto 54px;
+  }
+
+  .story-illustration img {
+    max-width: 320px;
+  }
+}
