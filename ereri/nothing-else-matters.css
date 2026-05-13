@@ -103,6 +103,28 @@
 }
 
 /* -----------------------------------------------------
+   ILLUSTRATION
+----------------------------------------------------- */
+
+.story-illustration {
+  margin: 40px auto 60px;
+  text-align: center;
+}
+
+.story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 18px 22px 20px 24px;
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.65),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+
+/* -----------------------------------------------------
    ENDING — plus posé, plus dense
 ----------------------------------------------------- */
 
@@ -139,5 +161,9 @@
 
   .ereri-story.nothing-else-matters .ereri-content p {
     margin-bottom: 1.7em;
+  }
+
+   .story-illustration img {
+    max-width: 320px;
   }
 }
