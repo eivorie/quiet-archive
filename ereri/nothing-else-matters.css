@@ -77,6 +77,31 @@
 }
 
 /* -----------------------------------------------------
+   DIALOGUES — cohérent avec les autres Ereri
+----------------------------------------------------- */
+
+.ereri-story.nothing-else-matters .ereri-content p.dialogue {
+  margin: 1.4em 0;
+  padding-left: 1.4em;
+  position: relative;
+
+  font-size: 0.95rem;
+  line-height: 1.8;
+  letter-spacing: 0.015em;
+
+  color: rgba(235, 245, 250, 0.92);
+}
+
+/* tiret discret */
+.ereri-story.nothing-else-matters .ereri-content p.dialogue::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  color: rgba(170, 190, 205, 0.45);
+}
+
+/* -----------------------------------------------------
    TRANSITIONS
 ----------------------------------------------------- */
 
