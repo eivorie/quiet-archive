@@ -1,0 +1,216 @@
+/* =====================================================
+   DEVOTION — Weather
+   Intime, profond, exclusif, ancré
+   ===================================================== */
+
+/* -----------------------------------------------------
+   FOND — chaleur sombre, presque velours
+----------------------------------------------------- */
+
+body.devotion {
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(180, 120, 110, 0.25),
+      transparent 60%
+    ),
+
+    radial-gradient(
+      circle at 30% 40%,
+      rgba(120, 70, 65, 0.35),
+      transparent 65%
+    ),
+    radial-gradient(
+      circle at 70% 60%,
+      rgba(90, 50, 45, 0.25),
+      transparent 70%
+    ),
+
+    #1f1412;
+
+  color: #f6efe9;
+}
+
+/* =====================================================
+   CARTE — ivoire chaud / contraste doux
+   ===================================================== */
+
+body.devotion .weather-card {
+  position: relative;
+  overflow: hidden;
+
+  background: rgba(255, 248, 244, 0.94);
+  border-radius: 22px;
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.55),
+    0 12px 30px rgba(120, 60, 50, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8),
+    inset 0 10px 20px rgba(255, 255, 255, 0.6);
+
+  animation:
+    devotionSettle 2.8s ease-out both,
+    devotionBreath 18s ease-in-out infinite;
+}
+
+/* =====================================================
+   TEXTURE — chaleur interne
+   ===================================================== */
+
+body.devotion .weather-card::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(200, 140, 130, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 65% 70%,
+      rgba(255, 230, 220, 0.3),
+      transparent 60%
+    );
+
+  opacity: 0.35;
+  filter: blur(28px);
+
+  animation: devotionGlow 24s ease-in-out infinite;
+}
+
+/* =====================================================
+   LISERET — fin, élégant
+   ===================================================== */
+
+body.devotion .weather-card::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 18px;
+  pointer-events: none;
+
+  border: 1px solid rgba(160, 100, 90, 0.5);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4),
+    0 0 0 1px rgba(120, 70, 60, 0.25);
+}
+
+/* =====================================================
+   TYPOGRAPHIE
+   ===================================================== */
+
+body.devotion h1 {
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #6a3a34;
+}
+
+body.devotion .weather-text p {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+  color: #5c3530;
+}
+
+/* LEAD */
+
+body.devotion .weather-lead {
+  color: #8a4b44;
+}
+
+/* ENDING */
+
+body.devotion .weather-ending {
+  color: #6f3d37;
+  font-style: italic;
+}
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+
+body.devotion .nav {
+  font-family: "Cormorant Garamond", serif;
+
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+
+  padding: 18px 28px;
+  gap: 34px;
+
+  background: rgba(255, 240, 235, 0.9);
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 10px 26px rgba(70, 35, 30, 0.45);
+}
+
+body.devotion .nav a {
+  color: rgba(110, 60, 55, 0.9);
+  text-decoration: none;
+}
+
+body.devotion .nav a:hover {
+  color: rgba(110, 60, 55, 1);
+}
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes devotionSettle {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes devotionBreath {
+  0%, 100% {
+    box-shadow:
+      0 30px 70px rgba(0, 0, 0, 0.55),
+      0 12px 30px rgba(120, 60, 50, 0.35);
+  }
+  50% {
+    box-shadow:
+      0 36px 85px rgba(0, 0, 0, 0.65),
+      0 16px 38px rgba(140, 70, 60, 0.45);
+  }
+}
+
+@keyframes devotionGlow {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-3%, -2%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 768px) {
+  body.devotion .nav {
+    padding: 14px 18px;
+    gap: 18px;
+    font-size: 0.65rem;
+    letter-spacing: 0.24em;
+  }
+}
