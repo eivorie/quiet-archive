@@ -4,6 +4,33 @@
    ===================================================== */
 
 /* -----------------------------------------------------
+   TITRE — liseret discret
+----------------------------------------------------- */
+
+body.devotion .weather-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+body.devotion .weather-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 60%;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    rgba(220, 200, 210, 0.6),
+    rgba(220, 200, 210, 0.15),
+    transparent
+  );
+}
+
+/* -----------------------------------------------------
    FOND — chaleur sombre, presque velours
 ----------------------------------------------------- */
 
