@@ -4,30 +4,37 @@
    ===================================================== */
 
 /* -----------------------------------------------------
-   TITRE — liseret discret
+   TITRE — liseret visible centré
 ----------------------------------------------------- */
 
 body.devotion .weather-title {
   position: relative;
   display: inline-block;
-  padding-bottom: 10px;
+  padding-bottom: 14px;
+}
+
+body.devotion .weather-header {
+  text-align: center;
 }
 
 body.devotion .weather-title::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
 
-  width: 60%;
-  height: 1px;
+  width: 90px;
+  height: 2px;
 
   background: linear-gradient(
     to right,
-    rgba(220, 200, 210, 0.6),
-    rgba(220, 200, 210, 0.15),
-    transparent
+    rgba(120, 70, 60, 0),
+    rgba(120, 70, 60, 0.55),
+    rgba(120, 70, 60, 0)
   );
+
+  border-radius: 2px;
 }
 
 /* -----------------------------------------------------
