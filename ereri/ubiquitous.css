@@ -1,76 +1,191 @@
-/* === BACKGROUND GLOBAL === */
-body.ubiquitous {
-  background: linear-gradient(180deg, #1a1512 0%, #0f0c0a 100%);
-  color: #e8ddd3;
+/* =====================================================
+   UBIQUITOUS — Ereri
+   Chaleur, calme, intimité, feu doux
+   ===================================================== */
+
+/* -----------------------------------------------------
+   CARTE — bois chaud + feu discret
+----------------------------------------------------- */
+
+.ereri-story.ubiquitous .ereri-card {
+  background:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(255, 160, 90, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 80% 85%,
+      rgba(120, 80, 50, 0.08),
+      transparent 65%
+    ),
+    linear-gradient(
+      to bottom,
+      #2a1f1a,
+      #171210
+    );
+
+  box-shadow:
+    0 45px 120px rgba(0, 0, 0, 0.7),
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px rgba(255, 200, 150, 0.05);
 }
 
-/* === CARD === */
-.ereri-card {
-  background: rgba(34, 26, 22, 0.75);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 180, 120, 0.08);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+/* -----------------------------------------------------
+   TITRES
+----------------------------------------------------- */
+
+.ereri-story.ubiquitous h1 {
+  color: rgba(255, 210, 160, 0.9);
 }
 
-/* === TITRE === */
-.story-header h1 {
-  color: #f2c38b;
+.ereri-story.ubiquitous .subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  color: rgba(210, 170, 140, 0.6);
 }
 
-.story-header h1::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 2px;
-  margin: 12px auto 0;
-  background: linear-gradient(90deg, transparent, #f2a65a, transparent);
-  opacity: 0.8;
+/* -----------------------------------------------------
+   TEXTE
+----------------------------------------------------- */
+
+.ereri-story.ubiquitous .ereri-content {
+  color: rgba(235, 220, 210, 0.88);
 }
 
-/* === SUBTITLE === */
-.subtitle {
-  color: #c7a88a;
+.ereri-story.ubiquitous .ereri-content p {
+  margin-bottom: 1.6em;
 }
 
-/* === TEXTE === */
-.ereri-content p {
-  color: #e8ddd3;
+/* soft */
+.ereri-story.ubiquitous .ereri-content p.soft {
+  color: rgba(210, 190, 180, 0.65);
 }
 
-/* === DIALOGUES === */
-.dialogue {
-  color: #f2a65a;
-  font-weight: 500;
+/* strong */
+.ereri-story.ubiquitous .ereri-content p.strong {
+  color: rgba(255, 235, 220, 0.95);
 }
 
-/* === ENDING === */
-.ending {
-  color: #f2c38b;
+/* -----------------------------------------------------
+   EMPHASE
+----------------------------------------------------- */
+
+.ereri-story.ubiquitous em {
   font-style: italic;
+  color: rgba(255, 230, 210, 0.95);
 }
 
-/* === LIENS NAV === */
-.nav a {
-  color: #d6c2b0;
+/* -----------------------------------------------------
+   DIALOGUES
+----------------------------------------------------- */
+
+.ereri-story.ubiquitous .ereri-content p.dialogue {
+  margin: 1.4em 0;
+  padding-left: 1.4em;
+  position: relative;
+
+  font-size: 0.95rem;
+  line-height: 1.8;
+  letter-spacing: 0.015em;
+
+  color: rgba(255, 220, 190, 0.92);
 }
 
-.nav a:hover {
-  color: #f2a65a;
+.ereri-story.ubiquitous .ereri-content p.dialogue::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  color: rgba(255, 180, 120, 0.4);
 }
 
-/* === AMBIENT PARTICLES === */
-.ereri-ambient span {
-  background: radial-gradient(circle, rgba(255, 140, 80, 0.4), transparent);
+/* -----------------------------------------------------
+   TRANSITIONS
+----------------------------------------------------- */
+
+.ereri-story.ubiquitous .transition {
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: rgba(220, 190, 170, 0.7);
+}
+
+/* -----------------------------------------------------
+   AMBIENT — feu doux
+----------------------------------------------------- */
+
+.ubiquitous .ereri-ambient span {
+  background: radial-gradient(
+    circle,
+    rgba(255, 140, 90, 0.12) 0%,
+    rgba(255, 140, 90, 0.02) 70%,
+    transparent 100%
+  );
+
+  filter: blur(24px);
   opacity: 0.4;
 }
 
-/* === IMAGE === */
-.story-illustration img {
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+/* -----------------------------------------------------
+   ILLUSTRATION (FIX SAFE)
+----------------------------------------------------- */
+
+.ereri-story.ubiquitous .story-illustration {
+  margin: 40px auto 60px;
+  text-align: center;
 }
 
-/* === SELECTION (petit détail cool) === */
-::selection {
-  background: rgba(242, 166, 90, 0.3);
+.ereri-story.ubiquitous .story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 18px 22px 20px 24px;
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.65),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+/* -----------------------------------------------------
+   ENDING
+----------------------------------------------------- */
+
+.ereri-story.ubiquitous .ereri-content p.ending {
+  margin-top: 2.4em;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+
+  color: rgba(235, 210, 190, 0.8);
+}
+
+.ereri-story.ubiquitous .ereri-content p.ending:last-of-type {
+  color: rgba(255, 230, 210, 0.92);
+}
+
+/* -----------------------------------------------------
+   MOBILE
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .ereri-story.ubiquitous .ereri-card {
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+  .ereri-story.ubiquitous .ereri-content {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .ereri-story.ubiquitous .ereri-content p {
+    margin-bottom: 1.7em;
+  }
+
+  .ereri-story.ubiquitous .story-illustration img {
+    max-width: 320px;
+  }
 }
