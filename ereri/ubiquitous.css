@@ -1,0 +1,76 @@
+/* === BACKGROUND GLOBAL === */
+body.ubiquitous {
+  background: linear-gradient(180deg, #1a1512 0%, #0f0c0a 100%);
+  color: #e8ddd3;
+}
+
+/* === CARD === */
+.ereri-card {
+  background: rgba(34, 26, 22, 0.75);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 180, 120, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* === TITRE === */
+.story-header h1 {
+  color: #f2c38b;
+}
+
+.story-header h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  margin: 12px auto 0;
+  background: linear-gradient(90deg, transparent, #f2a65a, transparent);
+  opacity: 0.8;
+}
+
+/* === SUBTITLE === */
+.subtitle {
+  color: #c7a88a;
+}
+
+/* === TEXTE === */
+.ereri-content p {
+  color: #e8ddd3;
+}
+
+/* === DIALOGUES === */
+.dialogue {
+  color: #f2a65a;
+  font-weight: 500;
+}
+
+/* === ENDING === */
+.ending {
+  color: #f2c38b;
+  font-style: italic;
+}
+
+/* === LIENS NAV === */
+.nav a {
+  color: #d6c2b0;
+}
+
+.nav a:hover {
+  color: #f2a65a;
+}
+
+/* === AMBIENT PARTICLES === */
+.ereri-ambient span {
+  background: radial-gradient(circle, rgba(255, 140, 80, 0.4), transparent);
+  opacity: 0.4;
+}
+
+/* === IMAGE === */
+.story-illustration img {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* === SELECTION (petit détail cool) === */
+::selection {
+  background: rgba(242, 166, 90, 0.3);
+}
