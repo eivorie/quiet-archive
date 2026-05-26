@@ -80,16 +80,24 @@
    DIALOGUES
 ----------------------------------------------------- */
 
-
-
 .ereri-story.ubiquitous .ereri-content p.dialogue {
+  margin: 1.4em 0;
+  padding-left: 1.4em;
+  position: relative;
+
+  font-size: 0.95rem;
+  line-height: 1.8;
+
+  color: rgba(235, 245, 235, 0.95);
+}
+
+.ereri-story.ubiquitous .ereri-content p.dialogue::before {
   content: "—";
   position: absolute;
   left: 0;
   top: 0.05em;
-  color: rgba(255, 180, 120, 0.4);
+  color: rgba(190, 215, 200, 0.55);
 }
-
 /* -----------------------------------------------------
    TRANSITIONS
 ----------------------------------------------------- */
