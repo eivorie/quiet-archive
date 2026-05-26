@@ -82,7 +82,7 @@
 
 
 
-.ereri-story.ubiquitous .ereri-content p.dialogue::before {
+.ereri-story.ubiquitous .ereri-content p.dialogue {
   content: "—";
   position: absolute;
   left: 0;
