@@ -1,86 +1,86 @@
 /* =====================================================
-   UBIQUITOUS — Ereri
-   Chaleur, calme, intimité, feu doux
+   ANOTHER WAY — Ereri
+   Nuit douce, proximité, tension apaisée
    ===================================================== */
 
 /* -----------------------------------------------------
-   CARTE — bois chaud + feu discret
+   CARTE — même structure, nouvelle palette
 ----------------------------------------------------- */
 
-.ereri-story.ubiquitous .ereri-card {
+.ereri-story.another-way .ereri-card {
   background:
     radial-gradient(
       circle at 20% 15%,
-      rgba(255, 160, 90, 0.08),
+      rgba(140, 120, 255, 0.08),
       transparent 60%
     ),
     radial-gradient(
       circle at 80% 85%,
-      rgba(120, 80, 50, 0.08),
+      rgba(255, 180, 160, 0.06),
       transparent 65%
     ),
     linear-gradient(
       to bottom,
-      #2a1f1a,
-      #171210
+      #1f2030,
+      #12131a
     );
 
   box-shadow:
     0 45px 120px rgba(0, 0, 0, 0.7),
     0 20px 50px rgba(0, 0, 0, 0.5),
-    inset 0 0 0 1px rgba(255, 200, 150, 0.05);
+    inset 0 0 0 1px rgba(200, 190, 255, 0.05);
 }
 
 /* -----------------------------------------------------
    TITRES
 ----------------------------------------------------- */
 
-.ereri-story.ubiquitous h1 {
-  color: rgba(235, 220, 210, 0.88);
+.ereri-story.another-way h1 {
+  color: rgba(230, 230, 255, 0.9);
 }
 
-.ereri-story.ubiquitous .subtitle {
+.ereri-story.another-way .subtitle {
   font-size: 0.9rem;
   letter-spacing: 0.05em;
-  color: rgba(210, 170, 140, 0.6);
+  color: rgba(180, 170, 220, 0.6);
 }
 
 /* -----------------------------------------------------
    TEXTE
 ----------------------------------------------------- */
 
-.ereri-story.ubiquitous .ereri-content {
-  color: rgba(235, 220, 210, 0.88);
+.ereri-story.another-way .ereri-content {
+  color: rgba(230, 230, 245, 0.9);
 }
 
-.ereri-story.ubiquitous .ereri-content p {
+.ereri-story.another-way .ereri-content p {
   margin-bottom: 1.6em;
 }
 
 /* soft */
-.ereri-story.ubiquitous .ereri-content p.soft {
-  color: rgba(210, 190, 180, 0.65);
+.ereri-story.another-way .ereri-content p.soft {
+  color: rgba(190, 190, 210, 0.65);
 }
 
 /* strong */
-.ereri-story.ubiquitous .ereri-content p.strong {
-  color: rgba(255, 235, 220, 0.95);
+.ereri-story.another-way .ereri-content p.strong {
+  color: rgba(255, 240, 235, 0.95);
 }
 
 /* -----------------------------------------------------
    EMPHASE
 ----------------------------------------------------- */
 
-.ereri-story.ubiquitous em {
+.ereri-story.another-way em {
   font-style: italic;
-  color: rgba(255, 230, 210, 0.95);
+  color: rgba(255, 220, 210, 0.95);
 }
 
 /* -----------------------------------------------------
    DIALOGUES
 ----------------------------------------------------- */
 
-.ereri-story.ubiquitous .ereri-content p.dialogue {
+.ereri-story.another-way .ereri-content p.dialogue {
   margin: 1.4em 0;
   padding-left: 1.4em;
   position: relative;
@@ -88,35 +88,36 @@
   font-size: 0.95rem;
   line-height: 1.8;
 
-  color: rgba(235, 245, 235, 0.95);
+  color: rgba(240, 240, 255, 0.96);
 }
 
-.ereri-story.ubiquitous .ereri-content p.dialogue::before {
+.ereri-story.another-way .ereri-content p.dialogue::before {
   content: "—";
   position: absolute;
   left: 0;
   top: 0.05em;
-  color: rgba(190, 215, 200, 0.55);
+  color: rgba(170, 170, 220, 0.55);
 }
+
 /* -----------------------------------------------------
    TRANSITIONS
 ----------------------------------------------------- */
 
-.ereri-story.ubiquitous .transition {
+.ereri-story.another-way .transition {
   font-style: italic;
   letter-spacing: 0.04em;
-  color: rgba(220, 190, 170, 0.7);
+  color: rgba(200, 180, 200, 0.7);
 }
 
 /* -----------------------------------------------------
-   AMBIENT — feu doux
+   AMBIENT — version nuit
 ----------------------------------------------------- */
 
-.ubiquitous .ereri-ambient span {
+.another-way .ereri-ambient span {
   background: radial-gradient(
     circle,
-    rgba(255, 140, 90, 0.12) 0%,
-    rgba(255, 140, 90, 0.02) 70%,
+    rgba(140, 120, 255, 0.12) 0%,
+    rgba(140, 120, 255, 0.02) 70%,
     transparent 100%
   );
 
@@ -125,15 +126,15 @@
 }
 
 /* -----------------------------------------------------
-   ILLUSTRATION (FIX SAFE)
+   ILLUSTRATION (inchangé)
 ----------------------------------------------------- */
 
-.ereri-story.ubiquitous .story-illustration {
+.ereri-story.another-way .story-illustration {
   margin: 40px auto 60px;
   text-align: center;
 }
 
-.ereri-story.ubiquitous .story-illustration img {
+.ereri-story.another-way .story-illustration img {
   max-width: 380px;
   width: 100%;
   height: auto;
@@ -149,41 +150,41 @@
    ENDING
 ----------------------------------------------------- */
 
-.ereri-story.ubiquitous .ereri-content p.ending {
+.ereri-story.another-way .ereri-content p.ending {
   margin-top: 2.4em;
   font-style: italic;
   letter-spacing: 0.03em;
   line-height: 1.7;
 
-  color: rgba(235, 210, 190, 0.8);
+  color: rgba(210, 200, 220, 0.8);
 }
 
-.ereri-story.ubiquitous .ereri-content p.ending:last-of-type {
-  color: rgba(255, 230, 210, 0.92);
+.ereri-story.another-way .ereri-content p.ending:last-of-type {
+  color: rgba(255, 235, 230, 0.92);
 }
 
 /* -----------------------------------------------------
-   MOBILE
+   MOBILE (inchangé)
 ----------------------------------------------------- */
 
 @media (max-width: 768px) {
 
-  .ereri-story.ubiquitous .ereri-card {
+  .ereri-story.another-way .ereri-card {
     margin: 0 14px;
     padding: 44px 28px;
     border-radius: 22px;
   }
 
-  .ereri-story.ubiquitous .ereri-content {
+  .ereri-story.another-way .ereri-content {
     font-size: 1rem;
     line-height: 1.75;
   }
 
-  .ereri-story.ubiquitous .ereri-content p {
+  .ereri-story.another-way .ereri-content p {
     margin-bottom: 1.7em;
   }
 
-  .ereri-story.ubiquitous .story-illustration img {
+  .ereri-story.another-way .story-illustration img {
     max-width: 320px;
   }
 }
