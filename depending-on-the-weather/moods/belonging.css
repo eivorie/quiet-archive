@@ -217,11 +217,14 @@ body.belonging .weather-ending {
 MOBILE
 ===================================================== */
 
-/* =====================================================
-MOBILE
-===================================================== */
-
 @media (max-width: 768px) {
+
+   body.belonging .nav {
+    padding: 14px 18px;
+    gap: 18px;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+  }
 
   /* Même ambiance que desktop, un peu plus lumineuse */
   body.belonging {
