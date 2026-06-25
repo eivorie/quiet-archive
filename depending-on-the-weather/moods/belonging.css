@@ -201,9 +201,9 @@ color: rgba(245, 245, 250, 0.95);
 /* emphasis */
 
 body.belonging em {
-  font-style: normal;
+  font-style: italic;
   font-weight: 500;
-  color: rgba(255, 180, 200, 0.95);
+  color: rgba(210, 225, 235, 0.95);
 }
 
 /* fin */
@@ -217,9 +217,54 @@ letter-spacing: .03em;
 MOBILE
 ===================================================== */
 
+/* =====================================================
+MOBILE
+===================================================== */
+
 @media (max-width: 768px) {
-body.belonging .weather-card {
-margin-top: 32px;
-padding: 40px 22px;
-}
+
+  /* 🌒 Background plus lisible */
+  body.belonging {
+    background:
+      radial-gradient(
+        circle at 30% 20%,
+        rgba(140, 170, 190, 0.18),
+        transparent 55%
+      ),
+      radial-gradient(
+        circle at 75% 75%,
+        rgba(100, 130, 150, 0.16),
+        transparent 60%
+      ),
+      linear-gradient(
+        to bottom,
+        #131a20 0%,
+        #0d1318 50%,
+        #080c10 100%
+      );
+  }
+
+  /* 📦 Card plus claire */
+  body.belonging .weather-card {
+    margin-top: 32px;
+    padding: 40px 22px;
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(28, 34, 40, 0.95),
+        rgba(15, 18, 22, 0.98)
+      );
+
+    box-shadow:
+      0 30px 80px rgba(0,0,0,.6),
+      inset 0 0 0 1px rgba(255,255,255,.04);
+  }
+
+  /* ✍️ Texte plus lisible */
+  body.belonging .weather-content p {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
 }
