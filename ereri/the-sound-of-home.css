@@ -1,0 +1,192 @@
+/* =====================================================
+   THE SOUND OF HOME — Ereri
+   Chaleur, foyer, lumière dorée
+   Palette ambre / crème
+   ===================================================== */
+
+/* -----------------------------------------------------
+   CARTE
+----------------------------------------------------- */
+
+.ereri-story.three-hours .ereri-card {
+  background:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(225, 195, 150, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 80% 85%,
+      rgba(185, 155, 120, 0.08),
+      transparent 65%
+    ),
+    linear-gradient(
+      to bottom,
+      #2b2623,
+      #1d1917
+    );
+
+  box-shadow:
+    0 45px 120px rgba(0, 0, 0, 0.7),
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px rgba(230, 210, 180, 0.06);
+}
+
+/* -----------------------------------------------------
+   TITRES
+----------------------------------------------------- */
+
+.ereri-story.three-hours h1 {
+  color: rgba(248, 240, 228, 0.94);
+}
+
+.ereri-story.three-hours .subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  color: rgba(205, 185, 160, 0.7);
+}
+
+/* -----------------------------------------------------
+   TEXTE
+----------------------------------------------------- */
+
+.ereri-story.three-hours .ereri-content {
+  color: rgba(235, 228, 220, 0.9);
+}
+
+.ereri-story.three-hours .ereri-content p {
+  margin-bottom: 1.6em;
+}
+
+.ereri-story.three-hours .ereri-content p.soft {
+  color: rgba(195, 185, 175, 0.65);
+}
+
+.ereri-story.three-hours .ereri-content p.strong {
+  color: rgba(255, 245, 230, 0.96);
+}
+
+/* -----------------------------------------------------
+   EMPHASE
+----------------------------------------------------- */
+
+.ereri-story.three-hours em {
+  font-style: italic;
+  color: rgba(235, 205, 165, 0.95);
+}
+
+/* -----------------------------------------------------
+   DIALOGUES
+----------------------------------------------------- */
+
+.ereri-story.three-hours .ereri-content p.dialogue {
+  margin: 1.4em 0;
+  padding-left: 1.4em;
+  position: relative;
+
+  font-size: 0.95rem;
+  line-height: 1.8;
+
+  color: rgba(248, 245, 240, 0.96);
+}
+
+.ereri-story.three-hours .ereri-content p.dialogue::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+
+  color: rgba(210, 185, 150, 0.55);
+}
+
+/* -----------------------------------------------------
+   TRANSITIONS
+----------------------------------------------------- */
+
+.ereri-story.three-hours .transition {
+  font-style: italic;
+  letter-spacing: 0.04em;
+
+  color: rgba(205, 190, 170, 0.72);
+}
+
+/* -----------------------------------------------------
+   AMBIENT — lueurs dorées
+----------------------------------------------------- */
+
+.three-hours .ereri-ambient span {
+  background: radial-gradient(
+    circle,
+    rgba(230, 200, 160, 0.12) 0%,
+    rgba(230, 200, 160, 0.02) 70%,
+    transparent 100%
+  );
+
+  filter: blur(24px);
+  opacity: 0.35;
+}
+
+/* -----------------------------------------------------
+   ILLUSTRATION
+----------------------------------------------------- */
+
+.ereri-story.three-hours .story-illustration {
+  margin: 40px auto 60px;
+  text-align: center;
+}
+
+.ereri-story.three-hours .story-illustration img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+
+  border-radius: 18px 22px 20px 24px;
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.65),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+/* -----------------------------------------------------
+   ENDING
+----------------------------------------------------- */
+
+.ereri-story.three-hours .ereri-content p.ending {
+  margin-top: 2.4em;
+
+  font-style: italic;
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+
+  color: rgba(220, 200, 175, 0.82);
+}
+
+.ereri-story.three-hours .ereri-content p.ending:last-of-type {
+  color: rgba(245, 225, 185, 0.96);
+}
+
+/* -----------------------------------------------------
+   MOBILE
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .ereri-story.three-hours .ereri-card {
+    margin: 0 14px;
+    padding: 44px 28px;
+    border-radius: 22px;
+  }
+
+  .ereri-story.three-hours .ereri-content {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .ereri-story.three-hours .ereri-content p {
+    margin-bottom: 1.7em;
+  }
+
+  .ereri-story.three-hours .story-illustration img {
+    max-width: 320px;
+  }
+}
