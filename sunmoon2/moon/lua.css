@@ -3,6 +3,65 @@
    Manuscrit nocturne, sacré, intime
    ===================================================== */
 
+/* =====================================================
+   LAYOUT
+===================================================== */
+
+body{
+
+    margin:0;
+    min-height:100vh;
+
+    font-family:"Cormorant Garamond",serif;
+
+    background:
+        radial-gradient(circle at 45% 15%, rgba(120,140,170,.18), transparent 55%),
+        linear-gradient(to bottom,#181c24,#0b0d12);
+
+    color:#edf1fb;
+}
+
+.sunmoon-stage{
+
+    width:min(760px,92%);
+    margin:0 auto;
+
+    padding:90px 0 80px;
+}
+
+.sunmoon-card{
+
+    width:100%;
+}
+
+.card-header{
+
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+.card-title{
+
+    margin:0;
+
+    font-size:3rem;
+    font-weight:500;
+}
+
+.card-content{
+
+    max-width:620px;
+
+    margin:0 auto;
+
+    padding:52px;
+
+    border-radius:30px;
+
+    box-sizing:border-box;
+}
+
 /* -----------------------------
    TITRE
 ----------------------------- */
