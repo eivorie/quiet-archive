@@ -1,0 +1,198 @@
+body.sunmoon-home{
+
+    margin:0;
+    font-family:"Cormorant Garamond",serif;
+
+    background:
+    radial-gradient(circle at top,#31364b 0%,transparent 45%),
+    linear-gradient(#11131b,#06070b);
+
+    color:#eceff7;
+
+    min-height:100vh;
+}
+
+.home{
+
+    width:min(1100px,90%);
+    margin:auto;
+
+    padding:120px 0 80px;
+}
+
+.hero{
+
+    text-align:center;
+
+    margin-bottom:70px;
+}
+
+.hero-star{
+
+    display:block;
+
+    font-size:2rem;
+
+    color:#d8dff7;
+
+    margin-bottom:18px;
+
+    animation:twinkle 5s infinite;
+}
+
+.hero h1{
+
+    font-size:3rem;
+
+    font-weight:500;
+
+    margin:0;
+}
+
+.divider{
+
+    width:90px;
+    height:1px;
+
+    margin:24px auto;
+
+    background:linear-gradient(to right,transparent,#d8dff7,transparent);
+}
+
+.intro{
+
+    max-width:550px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    color:#cdd3e3;
+
+    font-size:1.1rem;
+}
+
+.library{
+
+    display:grid;
+
+    gap:24px;
+}
+
+.card{
+
+    text-decoration:none;
+
+    color:inherit;
+
+    border-radius:24px;
+
+    padding:34px 30px;
+
+    backdrop-filter:blur(14px);
+
+    transition:.35s;
+
+    border:1px solid rgba(255,255,255,.06);
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+}
+
+.symbol{
+
+    font-size:2rem;
+
+    display:block;
+
+    margin-bottom:18px;
+}
+
+.card h2{
+
+    margin:0 0 16px;
+
+    font-weight:500;
+
+    font-size:1.8rem;
+}
+
+.card p{
+
+    line-height:1.8;
+
+    opacity:.85;
+}
+
+.read{
+
+    display:inline-block;
+
+    margin-top:22px;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    font-size:.8rem;
+}
+
+.moon{
+
+    background:
+    radial-gradient(circle at top left,rgba(170,190,240,.18),transparent 60%),
+    rgba(33,37,49,.92);
+}
+
+.sun{
+
+    background:
+    radial-gradient(circle at top,rgba(255,220,170,.20),transparent 55%),
+    rgba(69,53,31,.92);
+}
+
+.eclipse{
+
+    background:
+    radial-gradient(circle at center,rgba(230,170,255,.12),transparent 60%),
+    rgba(26,24,31,.92);
+}
+
+.moon:hover{
+
+    box-shadow:0 0 35px rgba(170,190,240,.18);
+}
+
+.sun:hover{
+
+    box-shadow:0 0 35px rgba(255,205,120,.18);
+}
+
+.eclipse:hover{
+
+    box-shadow:0 0 35px rgba(210,170,255,.18);
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+
+        opacity:.45;
+    }
+
+    50%{
+
+        opacity:1;
+    }
+}
+
+@media(min-width:850px){
+
+    .library{
+
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
