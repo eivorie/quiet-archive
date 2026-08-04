@@ -1,4 +1,3 @@
-const track = document.querySelector(".carousel-track");
 const cards = document.querySelectorAll(".card");
 const dots = document.querySelectorAll(".dot");
 
@@ -6,10 +5,19 @@ let current = 0;
 
 function updateCarousel() {
 
-    const card = cards[current];
+    cards.forEach(card => {
+        card.classList.remove("left", "active", "right");
+    });
 
-    track.style.transform =
-        `translateX(calc(-${current} * (${card.offsetWidth + 24}px)))`;
+    const left =
+        (current - 1 + cards.length) % cards.length;
+
+    const right =
+        (current + 1) % cards.length;
+
+    cards[current].classList.add("active");
+    cards[left].classList.add("left");
+    cards[right].classList.add("right");
 
     dots.forEach((dot, i) => {
         dot.classList.toggle("active", i === current);
@@ -19,22 +27,26 @@ function updateCarousel() {
 
 document.querySelector(".next").addEventListener("click", () => {
 
-    if (current < cards.length - 1) {
-        current++;
-        updateCarousel();
+    current++;
+
+    if(current >= cards.length){
+        current = 0;
     }
+
+    updateCarousel();
 
 });
 
 document.querySelector(".prev").addEventListener("click", () => {
 
-    if (current > 0) {
-        current--;
-        updateCarousel();
+    current--;
+
+    if(current < 0){
+        current = cards.length - 1;
     }
 
-});
+    updateCarousel();
 
-window.addEventListener("resize", updateCarousel);
+});
 
 updateCarousel();
