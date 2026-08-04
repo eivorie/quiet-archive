@@ -264,8 +264,18 @@ body.sunmoon-home{
     font-size:2.1rem;
     font-weight:500;
     line-height:1.2;
+}
 
+.card.sun h2{
     color:#8d5d34;
+}
+
+.card.moon h2{
+    color:#aebedc;
+}
+
+.card.eclipse h2{
+    color:#9f8ab9;
 }
 
 .read{
