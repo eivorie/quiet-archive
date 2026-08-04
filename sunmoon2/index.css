@@ -16,6 +16,25 @@ body.sunmoon-home{
 }
 
 /* ==========================================================
+   NAVBAR
+========================================================== */
+
+.sunmoon-home .nav{
+
+    margin-bottom:0;
+
+    padding-top:14px;
+    padding-bottom:14px;
+
+    background:rgba(16,18,25,.42);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+/* ==========================================================
    LAYOUT
 ========================================================== */
 
@@ -24,7 +43,7 @@ body.sunmoon-home{
     width:min(1300px,92%);
     margin:auto;
 
-    padding:90px 0 70px;
+    padding:32px 0 60px;
 
     display:flex;
     flex-direction:column;
@@ -35,7 +54,7 @@ body.sunmoon-home{
 
     text-align:center;
 
-    margin-bottom:55px;
+    margin-bottom:24px;
 }
 
 .hero h1{
@@ -45,7 +64,11 @@ body.sunmoon-home{
     font-size:3.2rem;
     font-weight:500;
 
-    color:#7a4d27;
+    color:#edf1fb;
+
+    text-shadow:
+        0 0 18px rgba(255,255,255,.06);
+
 }
 
 .divider{
@@ -53,7 +76,7 @@ body.sunmoon-home{
     width:120px;
     height:1px;
 
-    margin:18px auto 0;
+    margin:12px auto 0;
 
     background:linear-gradient(
         to right,
@@ -74,7 +97,7 @@ body.sunmoon-home{
     width:100%;
     max-width:1150px;
 
-    height:620px;
+    height:560px;
 
     display:flex;
     justify-content:center;
@@ -108,7 +131,7 @@ body.sunmoon-home{
     position:absolute;
 
     left:50%;
-    top:50%;
+    top:46%;
 
     width:360px;
     height:520px;
@@ -190,10 +213,17 @@ body.sunmoon-home{
 .card.sun{
 
     background:
-        radial-gradient(circle at top,
-        rgba(255,220,170,.18),
-        transparent 60%),
-        rgba(77,57,31,.95);
+
+    radial-gradient(circle at top,
+    rgba(255,214,150,.25),
+    transparent 58%),
+
+    linear-gradient(
+    160deg,
+    #6b512d,
+    #5b4225
+    );
+
 }
 
 .card.eclipse{
@@ -307,7 +337,7 @@ body.sunmoon-home{
 
     gap:12px;
 
-    margin-top:26px;
+    margin-top:16px;
 }
 
 .dot{
@@ -339,30 +369,30 @@ body.sunmoon-home{
 
     .home{
 
-        padding:78px 0 40px;
+        padding:18px 0 26px;
     }
 
     .hero{
 
-        margin-bottom:22px;
+        margin-bottom:12px;
     }
 
     .hero h1{
 
-        font-size:2.3rem;
+        font-size:2.15rem;
     }
 
     .carousel{
 
-        height:520px;
+        height:430px;
     }
 
     .card{
 
-        width:76vw;
-        height:430px;
+        width:74vw;
+        height:360px;
 
-        padding:28px;
+        padding:24px;
     }
 
     .card.left{
