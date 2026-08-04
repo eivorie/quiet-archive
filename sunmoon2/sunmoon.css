@@ -1,0 +1,223 @@
+/* =====================================================
+   SUNMOON — CORE STAGE (NO SWIPE)
+   Desktop & Mobile unified
+   Navbar inherited from global .nav
+   ===================================================== */
+
+/* -----------------------------------------------------
+   GLOBAL
+----------------------------------------------------- */
+.sunmoon {
+  font-family: "Cormorant Garamond", serif;
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.sunmoon-card {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* =====================================================
+   TITLES & SWITCH
+===================================================== */
+
+.card-header {
+  margin: 0 0 28px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* Switch sous le titre */
+.sunmoon-switch {
+  margin-top: 18px;
+  background: none;
+  border: none;
+  padding: 6px 14px;
+
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+
+  opacity: 0.75;
+  transition:
+    opacity 0.8s ease,
+    transform 1.4s ease;
+}
+
+/* Moon switch */
+.card-moon .sunmoon-switch {
+  color: rgba(230,235,245,0.9);
+}
+
+/* Sun switch */
+.card-sun .sunmoon-switch {
+  color: rgba(90,60,30,0.85);
+}
+
+.sunmoon-switch:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* =====================================================
+   ORNEMENT SOUS TITRE — RYTHME VERTICAL
+===================================================== */
+
+.card-ornament {
+  position: relative;
+
+  width: 88px;
+  height: 1px;
+  margin: 18px auto 22px;
+
+  opacity: .75;
+  filter: blur(.3px);
+
+  animation: ornament-breath 7.5s ease-in-out infinite;
+}
+
+@keyframes ornament-breath {
+  0%,100% {
+    width: 72px;
+    opacity: .45;
+  }
+  50% {
+    width: 112px;
+    opacity: .95;
+  }
+}
+
+/* =====================================================
+   TRANSITIONS — JOUR / NUIT
+===================================================== */
+
+body.mode-sun .sunmoon-stage {
+  animation: dawn 3s ease forwards;
+}
+
+body.mode-moon .sunmoon-stage {
+  animation: dusk 3s ease forwards;
+}
+
+@keyframes dawn {
+  from {
+    filter: brightness(0.75) saturate(0.85);
+  }
+  to {
+    filter: brightness(1.05) saturate(1);
+  }
+}
+
+@keyframes dusk {
+  from {
+    filter: brightness(1.05) saturate(1);
+  }
+  to {
+    filter: brightness(0.8) saturate(0.8);
+  }
+}
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.card-content {
+  width: 100%;
+  max-width: 520px;
+  padding: 44px 38px;
+  border-radius: 26px;
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,245,235,0.10);
+
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.card-content p {
+  margin-bottom: 1.5em;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* =====================================================
+   SUN & MOON — NAVBAR ALIGNMENT
+===================================================== */
+
+.sunmoon .nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  //padding: 14px 24px;
+
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  gap: 20px 28px;
+}
+
+
+/* =====================================================
+   TRANSITION JOUR / NUIT — APPARITION DOUCE
+===================================================== */
+
+.sunmoon-card.is-active {
+  animation: card-switch 2.8s ease forwards;
+}
+
+@keyframes card-switch {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  .sunmoon-card {
+    padding: 0 16px 100px;
+  }
+
+  .card-title {
+    font-size: 1.7rem;
+  }
+
+  .card-content {
+    max-width: none;
+    width: 100%;
+    padding: 36px 26px;
+    border-radius: 22px;
+  }
+
+  .card-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
