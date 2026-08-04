@@ -1,89 +1,103 @@
 /* ==========================================================
-   SUN & MOON — HOME
+   SUN & MOON HOME
 ========================================================== */
 
 body.sunmoon-home{
-
     margin:0;
     min-height:100vh;
+    overflow-x:hidden;
 
     font-family:"Cormorant Garamond",serif;
-
     color:#edf1fb;
 
     background:
-        radial-gradient(circle at top,#31364b 0%,transparent 45%),
+        radial-gradient(circle at top,#32374c 0%,transparent 45%),
         linear-gradient(#11131b,#06070b);
-
-    overflow-x:hidden;
 }
 
-/* ==========================================================
-   LAYOUT
-========================================================== */
-
 .home{
-
     width:min(1200px,92%);
     margin:auto;
 
-    padding:110px 0 70px;
+    padding:90px 0 60px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
+/* ==========================================================
+   HERO
+========================================================== */
+
 .hero{
-
     text-align:center;
-
-    margin-bottom:55px;
+    margin-bottom:28px;
 }
 
 .hero-star{
-
     display:block;
-
     font-size:2rem;
-
-    color:#dbe1f5;
-
-    margin-bottom:18px;
-
-    animation:twinkle 6s ease-in-out infinite;
+    margin-bottom:12px;
+    color:#dce3f8;
+    animation:twinkle 6s infinite;
 }
 
 .hero h1{
-
     margin:0;
-
     font-size:3rem;
     font-weight:500;
 }
 
 .divider{
-
-    width:90px;
+    width:100px;
     height:1px;
+    margin:18px auto;
 
-    margin:24px auto;
-
-    background:linear-gradient(
-        to right,
-        transparent,
-        rgba(235,240,255,.8),
-        transparent
-    );
+    background:
+    linear-gradient(to right,
+    transparent,
+    rgba(255,255,255,.8),
+    transparent);
 }
 
 .intro{
-
     max-width:560px;
-
     margin:auto;
 
     line-height:1.8;
+    color:#cfd4e4;
+}
 
-    color:#cfd5e7;
+/* ==========================================================
+   DOTS
+========================================================== */
 
-    font-size:1.08rem;
+.carousel-dots{
+    display:flex;
+    gap:10px;
+
+    margin:22px 0 38px;
+}
+
+.dot{
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.22);
+
+    transition:.4s;
+}
+
+.dot.active{
+
+    width:28px;
+    border-radius:999px;
+
+    background:white;
 }
 
 /* ==========================================================
@@ -93,28 +107,24 @@ body.sunmoon-home{
 .carousel{
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
-    gap:18px;
+    width:100%;
 }
 
 .carousel-window{
 
     overflow:hidden;
 
-    width:340px;
+    width:min(420px,82vw);
 }
 
 .carousel-track{
 
     display:flex;
 
-    gap:24px;
-
-    transition:transform .75s cubic-bezier(.22,.61,.36,1);
+    transition:transform .7s cubic-bezier(.2,.8,.2,1);
 }
 
 /* ==========================================================
@@ -123,95 +133,63 @@ body.sunmoon-home{
 
 .card{
 
-    flex:0 0 340px;
+    flex:0 0 min(420px,82vw);
 
-    min-height:470px;
+    min-height:560px;
 
     box-sizing:border-box;
 
-    border-radius:28px;
+    border-radius:30px;
 
-    padding:34px;
+    padding:40px 34px;
 
     text-decoration:none;
-
     color:inherit;
 
     border:1px solid rgba(255,255,255,.08);
 
-    backdrop-filter:blur(16px);
+    backdrop-filter:blur(18px);
 
-    transition:
-        transform .4s,
-        box-shadow .4s;
+    transition:.35s;
 }
 
 .card:hover{
 
-    transform:translateY(-6px);
+    transform:translateY(-5px);
 }
 
 /* ==========================================================
-   MOON
+   THEMES
 ========================================================== */
 
 .card.moon{
 
     background:
+    radial-gradient(circle at top left,
+    rgba(170,190,240,.18),
+    transparent 60%),
 
-        radial-gradient(circle at top left,
-        rgba(160,185,245,.16),
-        transparent 60%),
-
-        rgba(33,37,49,.93);
+    rgba(35,40,56,.94);
 }
-
-.card.moon:hover{
-
-    box-shadow:
-        0 0 40px rgba(170,190,255,.18);
-}
-
-/* ==========================================================
-   SUN
-========================================================== */
 
 .card.sun{
 
     background:
+    radial-gradient(circle at top,
+    rgba(255,220,170,.18),
+    transparent 60%),
 
-        radial-gradient(circle at top,
-        rgba(255,220,170,.20),
-        transparent 60%),
-
-        rgba(75,56,32,.92);
+    rgba(74,56,31,.94);
 }
-
-.card.sun:hover{
-
-    box-shadow:
-        0 0 40px rgba(255,210,120,.20);
-}
-
-/* ==========================================================
-   ECLIPSE
-========================================================== */
 
 .card.eclipse{
 
     background:
+    radial-gradient(circle,
+    rgba(210,170,255,.12),
+    transparent 60%),
 
-        radial-gradient(circle,
-        rgba(220,180,255,.10),
-        transparent 60%),
-
-        rgba(28,25,36,.94);
-}
-
-.card.eclipse:hover{
-
-    box-shadow:
-        0 0 40px rgba(220,170,255,.18);
+    rgba(28,25,37,.94);
 }
 
 /* ==========================================================
@@ -224,34 +202,34 @@ body.sunmoon-home{
 
     font-size:2rem;
 
-    margin-bottom:22px;
+    margin-bottom:26px;
 }
 
 .card h2{
 
-    margin:0 0 20px;
-
     font-size:2rem;
+
+    margin-bottom:20px;
 
     font-weight:500;
 }
 
 .card p{
 
-    line-height:1.85;
+    line-height:1.8;
 
-    color:rgba(240,240,240,.88);
+    color:rgba(255,255,255,.85);
 }
 
 .read{
 
     display:inline-block;
 
-    margin-top:30px;
-
-    letter-spacing:.14em;
+    margin-top:34px;
 
     text-transform:uppercase;
+
+    letter-spacing:.14em;
 
     font-size:.82rem;
 }
@@ -262,103 +240,49 @@ body.sunmoon-home{
 
 .carousel-btn{
 
-    width:48px;
-    height:48px;
+    width:54px;
+    height:54px;
+
+    margin:0 14px;
 
     border:none;
-
     border-radius:50%;
-
-    cursor:pointer;
-
-    font-size:1.3rem;
-
-    color:white;
 
     background:rgba(255,255,255,.08);
 
-    transition:.35s;
+    color:white;
+
+    cursor:pointer;
+
+    font-size:1.4rem;
+
+    transition:.3s;
 }
 
 .carousel-btn:hover{
 
-    background:rgba(255,255,255,.16);
-
     transform:scale(1.08);
+
+    background:rgba(255,255,255,.18);
 }
 
 /* ==========================================================
-   DOTS
-========================================================== */
-
-.carousel-dots{
-
-    margin-top:34px;
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:12px;
-}
-
-.dot{
-
-    width:9px;
-    height:9px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.22);
-
-    transition:.4s;
-}
-
-.dot.active{
-
-    width:24px;
-
-    border-radius:999px;
-
-    background:white;
-}
-
-/* ==========================================================
-   STARS
+   STAR
 ========================================================== */
 
 @keyframes twinkle{
 
     0%,100%{
 
-        opacity:.45;
+        opacity:.4;
         transform:scale(1);
     }
 
     50%{
 
         opacity:1;
-        transform:scale(1.1);
+        transform:scale(1.08);
     }
-
-}
-
-/* ==========================================================
-   DESKTOP
-========================================================== */
-
-@media(min-width:900px){
-
-    .carousel-window{
-
-        width:760px;
-    }
-
-    .card{
-
-        flex:0 0 360px;
-    }
-
 }
 
 /* ==========================================================
@@ -367,34 +291,58 @@ body.sunmoon-home{
 
 @media(max-width:768px){
 
+    .home{
+
+        padding-top:100px;
+    }
+
+    .hero{
+
+        margin-bottom:18px;
+    }
+
     .hero h1{
 
         font-size:2.4rem;
     }
 
+    .intro{
+
+        font-size:1rem;
+
+        padding:0 10px;
+    }
+
+    .carousel-dots{
+
+        margin:18px 0 24px;
+    }
+
     .carousel{
 
-        gap:10px;
-    }
-
-    .carousel-window{
-
-        width:300px;
-    }
-
-    .card{
-
-        flex:0 0 300px;
-
-        min-height:440px;
-
-        padding:30px;
+        gap:6px;
     }
 
     .carousel-btn{
 
-        width:40px;
-        height:40px;
+        width:46px;
+        height:46px;
+
+        flex-shrink:0;
+    }
+
+    .carousel-window{
+
+        width:78vw;
+    }
+
+    .card{
+
+        flex:0 0 78vw;
+
+        min-height:500px;
+
+        padding:32px 26px;
     }
 
 }
