@@ -22,6 +22,7 @@ body.sunmoon-home{
 .sunmoon-home .nav{
 
     margin-bottom:0;
+      text-transform: uppercase;
 
     padding-top:14px;
     padding-bottom:14px;
@@ -239,44 +240,49 @@ body.sunmoon-home{
    CONTENT
 ========================================================== */
 
+.card{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
 .symbol{
 
-    display:block;
+    font-size:2.2rem;
 
-    font-size:2rem;
-
-    margin-bottom:28px;
+    margin:0 0 28px;
 }
 
 .card h2{
 
-    margin:0 0 22px;
+    margin:0;
 
-    font-size:2rem;
+    font-size:2.1rem;
     font-weight:500;
+    line-height:1.2;
 
-    color:#7a4d27;
-}
-
-.card p{
-
-    line-height:1.9;
-
-    color:rgba(255,255,255,.88);
+    color:#8d5d34;
 }
 
 .read{
 
     position:absolute;
 
-    left:36px;
-    bottom:36px;
+    bottom:42px;
+    left:50%;
+
+    transform:translateX(-50%);
 
     letter-spacing:.18em;
-
     text-transform:uppercase;
 
     font-size:.78rem;
+
+    color:rgba(255,255,255,.85);
 }
 
 /* ==========================================================
