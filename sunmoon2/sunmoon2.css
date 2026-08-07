@@ -1,0 +1,199 @@
+/* =====================================================
+   SUNMOON — CORE
+   Commun à Moon et Sun
+   ===================================================== */
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+.sunmoon{
+    font-family:"Cormorant Garamond",serif;
+    overflow-x:hidden;
+}
+
+/* =====================================================
+   STAGE
+===================================================== */
+
+.sunmoon-stage{
+
+    min-height:calc(100vh - 64px);
+
+    display:flex;
+    justify-content:center;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.sunmoon-card{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    width:100%;
+
+    animation:card-switch 2.8s ease forwards;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.card-header{
+
+    margin:0 0 28px;
+
+    text-align:center;
+}
+
+.card-title{
+
+    margin:0;
+
+    font-size:2rem;
+    font-weight:500;
+
+    letter-spacing:.05em;
+}
+
+/* =====================================================
+   ORNEMENT
+===================================================== */
+
+.card-ornament{
+
+    position:relative;
+
+    width:88px;
+    height:1px;
+
+    margin:18px auto 22px;
+
+    opacity:.75;
+
+    filter:blur(.3px);
+
+    animation:ornament-breath 7.5s ease-in-out infinite;
+}
+
+@keyframes ornament-breath{
+
+    0%,100%{
+
+        width:72px;
+        opacity:.45;
+    }
+
+    50%{
+
+        width:112px;
+        opacity:.95;
+    }
+}
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.card-content{
+
+    width:100%;
+    max-width:520px;
+
+    padding:44px 38px;
+
+    box-sizing:border-box;
+
+    border-radius:26px;
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.60),
+        inset 0 0 0 1px rgba(255,245,235,.10);
+}
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.card-content p{
+
+    margin-bottom:1.5em;
+
+    font-size:1.05rem;
+    line-height:1.75;
+}
+
+/* =====================================================
+   NAV
+===================================================== */
+
+.sunmoon .nav{
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:20px 28px;
+
+    text-transform:uppercase;
+    letter-spacing:.12em;
+}
+
+/* =====================================================
+   APPARITION
+===================================================== */
+
+@keyframes card-switch{
+
+    from{
+
+        opacity:0;
+        transform:translateY(32px);
+        filter:blur(6px);
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+        filter:blur(0);
+    }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:768px){
+
+    .sunmoon-card{
+
+        padding:0 16px 100px;
+    }
+
+    .card-title{
+
+        font-size:1.7rem;
+    }
+
+    .card-content{
+
+        width:100%;
+        max-width:none;
+
+        padding:36px 26px;
+
+        border-radius:22px;
+    }
+
+    .card-content p{
+
+        font-size:1rem;
+        line-height:1.7;
+    }
+
+}
