@@ -1,389 +1,50 @@
-/* =====================================================
-   ECLIPSE
-   Between Sun & Moon
-===================================================== */
-
-
-/* =====================================================
-   PAGE
-===================================================== */
-
 .eclipse{
 
-    width:min(1500px,96%);
-    margin:auto;
-
-    padding:30px 0 100px;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.eclipse-header{
-
-    position:relative;
-
-    width:100%;
-
-    padding:40px 0 90px;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-
-    overflow:hidden;
-}
-
-
-/* immense halo */
-
-.eclipse-header::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-    top:250px;
-
-    width:900px;
-    height:900px;
-
-    transform:translate(-50%,-50%);
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(
-
-            circle,
-
-            rgba(255,185,70,.18),
-
-            rgba(255,165,30,.10) 24%,
-
-            rgba(255,140,0,.04) 48%,
-
-            transparent 74%
-        );
-
-    filter:blur(55px);
-
-    pointer-events:none;
-}
-
-
-/* petites poussières */
-
-.eclipse-header::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background-image:
-
-        radial-gradient(circle,rgba(255,220,160,.45) 1px,transparent 1px),
-        radial-gradient(circle,rgba(255,170,70,.25) 1px,transparent 1px);
-
-    background-size:
-
-        180px 180px,
-        260px 260px;
-
-    opacity:.25;
-
-    pointer-events:none;
-}
-
-
-/* =====================================================
-   TITLE
-===================================================== */
-
-.eclipse-header h1{
-
-    position:relative;
-
-    z-index:5;
-
-    margin:0;
-
-    color:#f7f1e5;
-
-    font-size:4rem;
-
-    font-weight:500;
-
-    letter-spacing:.32em;
-
-    text-transform:uppercase;
-
-    text-shadow:
-
-        0 0 20px rgba(255,255,255,.08),
-        0 0 60px rgba(255,210,120,.08);
-}
-
-
-/* =====================================================
-   SUN
-===================================================== */
-
-.eclipse-sun{
-
-    position:relative;
-
-    z-index:5;
-
-    width:180px;
-    height:180px;
-
-    margin-top:35px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-
-/* =====================================================
-   DISC
-===================================================== */
-
-.eclipse-disc{
-
-    position:relative;
-
-    width:112px;
-    height:112px;
-
-    border-radius:50%;
-
-    background:#040404;
-
-    box-shadow:
-
-        0 0 0 3px rgba(255,195,90,.22),
-        0 0 40px rgba(255,170,50,.30);
-}
-
-
-/* couronne */
-
-.eclipse-disc::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:-16px;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(
-
-            circle,
-
-            transparent 58%,
-
-            rgba(255,235,180,.95) 62%,
-
-            rgba(255,175,70,.82) 66%,
-
-            rgba(255,120,0,.25) 70%,
-
-            transparent 76%
-        );
-
-    animation:eclipseGlow 8s ease-in-out infinite;
-}
-
-
-/* flare */
-
-.eclipse-disc::after{
-
-    content:"";
-
-    position:absolute;
-
-    right:-28px;
-    top:20px;
-
-    width:90px;
-    height:16px;
-
-    background:
-
-        linear-gradient(
-
-            to right,
-
-            rgba(255,235,180,.95),
-
-            transparent
-        );
-
-    filter:blur(3px);
-
-    transform:rotate(-7deg);
-}
-
-
-/* =====================================================
-   INTRO
-===================================================== */
-
-.eclipse-intro{
-
-    position:relative;
-
-    z-index:5;
-
-    max-width:720px;
-
-    margin-bottom:70px;
-
-    text-align:center;
-}
-
-.eclipse-intro p{
-
-    margin:0;
-
-    color:rgba(240,236,228,.78);
-
-    font-size:1.25rem;
-
-    line-height:1.9;
-
-    font-style:italic;
-}
-
-
-/* =====================================================
-   LETTER
-===================================================== */
-
-.eclipse-letter{
-
-    position:relative;
-
-    z-index:5;
-
-    width:100%;
-
     display:flex;
     justify-content:center;
 
-    margin:0;
+    padding:0 0 80px;
 }
 
-.eclipse-letter img{
+.eclipse-hero{
 
-    width:min(1100px,100%);
+    position:relative;
+
+    width:min(1200px,100%);
+}
+
+.eclipse-background{
+
+    width:100%;
 
     display:block;
-
-    border-radius:14px;
-
-    box-shadow:
-
-        0 45px 120px rgba(0,0,0,.65),
-        0 0 60px rgba(255,175,70,.10);
 }
 
+.eclipse-content{
 
-/* =====================================================
-   ANIMATION
-===================================================== */
+    position:absolute;
+    inset:0;
 
-@keyframes eclipseGlow{
-
-    0%,100%{
-
-        transform:scale(1);
-
-        filter:blur(2px);
-
-        opacity:.92;
-    }
-
-    50%{
-
-        transform:scale(1.03);
-
-        filter:blur(4px);
-
-        opacity:1;
-    }
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
+.eclipse-content h1{
 
-/* =====================================================
-   MOBILE
-===================================================== */
+    margin-top:180px;
+}
 
-@media (max-width:768px){
+.eclipse-content p{
 
-    .eclipse{
+    margin-top:240px;
 
-        width:94%;
+    max-width:650px;
+}
 
-        padding-bottom:50px;
-    }
+.letter{
 
-    .eclipse-header{
+    width:min(760px,72%);
 
-        padding:20px 0 55px;
-    }
-
-    .eclipse-header h1{
-
-        font-size:2.4rem;
-
-        letter-spacing:.22em;
-    }
-
-    .eclipse-sun{
-
-        width:140px;
-        height:140px;
-    }
-
-    .eclipse-disc{
-
-        width:84px;
-        height:84px;
-    }
-
-    .eclipse-intro{
-
-        margin-bottom:40px;
-    }
-
-    .eclipse-intro p{
-
-        font-size:1rem;
-
-        line-height:1.7;
-    }
-
-    .eclipse-letter img{
-
-        border-radius:10px;
-    }
-
+    margin-top:110px;
 }
