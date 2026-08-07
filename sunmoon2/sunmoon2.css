@@ -3,297 +3,282 @@
    Commun à Moon et Sun
    ===================================================== */
 
+
 /* =====================================================
    GLOBAL
 ===================================================== */
 
-.sunmoon{
-    font-family:"Cormorant Garamond",serif;
-    overflow-x:hidden;
+.sunmoon {
+  font-family: "Cormorant Garamond", serif;
+  overflow-x: hidden;
 }
 
+
 /* =====================================================
-   GLOBAL BACKGROUND
+   MOON
 ===================================================== */
 
 body.sunmoon-moon {
   background:
-    radial-gradient(circle at 30% 20%, rgba(120,140,165,0.18), transparent 60%),
+    radial-gradient(circle at 30% 20%, rgba(120,140,165,.18), transparent 60%),
     linear-gradient(to bottom, #1a1f27, #0f1217);
+
   transition: background 2.6s ease;
 }
 
-/* =====================================================
-   SUN
-===================================================== */
-
-body.sunmoon-sun {
-
-    background:
-        radial-gradient(circle at 50% 10%, rgba(255,220,170,.45), transparent 65%),
-        linear-gradient(to bottom,#e6bf8f,#b3824f);
-
-    transition:background 2.6s ease;
-
-}
-
-body.sunmoon-sun .nav{
-
-    background:rgba(255,250,240,.75);
-
-    backdrop-filter:blur(12px);
-
-    border-bottom:1px solid rgba(200,180,140,.35);
-
-}
-
-body.sunmoon-sun .nav a{
-
-    color:rgba(120,85,40,.85);
-
-}
-
-body.sunmoon-sun .nav a:hover{
-
-    color:rgba(90,60,25,1);
-
-}
-
-body.sunmoon-sun .sunmoon-stage{
-
-    animation:dawn 3s ease forwards;
-
-}
-
-@keyframes dawn{
-
-    from{
-
-        filter:brightness(.75) saturate(.85);
-
-    }
-
-    to{
-
-        filter:brightness(1.05) saturate(1);
-
-    }
-
-}
-
-/* =====================================================
-   NAVBAR
-===================================================== */
+/* ---------- Navbar ---------- */
 
 body.sunmoon-moon .nav {
-  background: rgba(28,34,40,0.55);
+  background: rgba(28,34,40,.55);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(200,210,225,0.08);
+  border-bottom: 1px solid rgba(200,210,225,.08);
 }
 
 body.sunmoon-moon .nav a {
-  color: rgba(200,215,230,0.75);
+  color: rgba(200,215,230,.75);
 }
 
 body.sunmoon-moon .nav a:hover {
-  color: rgba(235,245,255,0.95);
+  color: rgba(235,245,255,.95);
 }
 
-/* =====================================================
-   STAGE
-===================================================== */
+/* ---------- Stage ---------- */
 
 body.sunmoon-moon .sunmoon-stage {
   animation: dusk 3s ease forwards;
 }
 
 @keyframes dusk {
+
   from {
     filter: brightness(1.05) saturate(1);
   }
+
   to {
-    filter: brightness(0.8) saturate(0.8);
+    filter: brightness(.8) saturate(.8);
   }
 }
 
-.sunmoon-stage{
 
-    min-height:calc(100vh - 64px);
+/* =====================================================
+   SUN
+===================================================== */
 
-    display:flex;
-    justify-content:center;
+body.sunmoon-sun {
+  background:
+    radial-gradient(circle at 50% 10%, rgba(255,220,170,.45), transparent 65%),
+    linear-gradient(to bottom, #e6bf8f, #b3824f);
+
+  transition: background 2.6s ease;
 }
+
+/* ---------- Navbar ---------- */
+
+body.sunmoon-sun .nav {
+  background: rgba(255,250,240,.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200,180,140,.35);
+}
+
+body.sunmoon-sun .nav a {
+  color: rgba(120,85,40,.85);
+}
+
+body.sunmoon-sun .nav a:hover {
+  color: rgba(90,60,25,1);
+}
+
+/* ---------- Stage ---------- */
+
+body.sunmoon-sun .sunmoon-stage {
+  animation: dawn 3s ease forwards;
+}
+
+@keyframes dawn {
+
+  from {
+    filter: brightness(.75) saturate(.85);
+  }
+
+  to {
+    filter: brightness(1.05) saturate(1);
+  }
+}
+
+
+/* =====================================================
+   STAGE
+===================================================== */
+
+.sunmoon-stage {
+  min-height: calc(100vh - 64px);
+
+  display: flex;
+  justify-content: center;
+}
+
 
 /* =====================================================
    CARD
 ===================================================== */
 
-.sunmoon-card{
+.sunmoon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+  width: 100%;
 
-    width:100%;
-
-    animation:card-switch 2.8s ease forwards;
+  animation: card-switch 2.8s ease forwards;
 }
+
 
 /* =====================================================
    HEADER
 ===================================================== */
 
-.card-header{
-
-    margin:0 0 28px;
-
-    text-align:center;
+.card-header {
+  margin: 0 0 28px;
+  text-align: center;
 }
 
-.card-title{
+.card-title {
+  margin: 0;
 
-    margin:0;
+  font-size: 2rem;
+  font-weight: 500;
 
-    font-size:2rem;
-    font-weight:500;
-
-    letter-spacing:.05em;
+  letter-spacing: .05em;
 }
+
 
 /* =====================================================
    ORNEMENT
 ===================================================== */
 
-.card-ornament{
+.card-ornament {
+  position: relative;
 
-    position:relative;
+  width: 88px;
+  height: 1px;
 
-    width:88px;
-    height:1px;
+  margin: 18px auto 22px;
 
-    margin:18px auto 22px;
+  opacity: .75;
 
-    opacity:.75;
+  filter: blur(.3px);
 
-    filter:blur(.3px);
-
-    animation:ornament-breath 7.5s ease-in-out infinite;
+  animation: ornament-breath 7.5s ease-in-out infinite;
 }
 
-@keyframes ornament-breath{
+@keyframes ornament-breath {
 
-    0%,100%{
+  0%,100% {
+    width: 72px;
+    opacity: .45;
+  }
 
-        width:72px;
-        opacity:.45;
-    }
-
-    50%{
-
-        width:112px;
-        opacity:.95;
-    }
+  50% {
+    width: 112px;
+    opacity: .95;
+  }
 }
+
 
 /* =====================================================
    CONTENT
 ===================================================== */
 
-.card-content{
+.card-content {
+  width: 100%;
+  max-width: 520px;
 
-    width:100%;
-    max-width:520px;
+  padding: 44px 38px;
 
-    padding:44px 38px;
+  box-sizing: border-box;
 
-    box-sizing:border-box;
+  border-radius: 26px;
 
-    border-radius:26px;
-
-    box-shadow:
-        0 30px 70px rgba(0,0,0,.60),
-        inset 0 0 0 1px rgba(255,245,235,.10);
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.60),
+    inset 0 0 0 1px rgba(255,245,235,.10);
 }
+
 
 /* =====================================================
    TEXT
 ===================================================== */
 
-.card-content p{
+.card-content p {
+  margin-bottom: 1.5em;
 
-    margin-bottom:1.5em;
-
-    font-size:1.05rem;
-    line-height:1.75;
+  font-size: 1.05rem;
+  line-height: 1.75;
 }
+
 
 /* =====================================================
-   NAV
+   NAVIGATION
 ===================================================== */
 
-.sunmoon .nav{
+.sunmoon .nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
+  gap: 20px 28px;
 
-    gap:20px 28px;
-
-    text-transform:uppercase;
-    letter-spacing:.12em;
+  text-transform: uppercase;
+  letter-spacing: .12em;
 }
+
 
 /* =====================================================
    APPARITION
 ===================================================== */
 
-@keyframes card-switch{
+@keyframes card-switch {
 
-    from{
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+    filter: blur(6px);
+  }
 
-        opacity:0;
-        transform:translateY(32px);
-        filter:blur(6px);
-    }
-
-    to{
-
-        opacity:1;
-        transform:translateY(0);
-        filter:blur(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
+
 
 /* =====================================================
    MOBILE
 ===================================================== */
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
-    .sunmoon-card{
+  .sunmoon-card {
+    padding: 0 16px 100px;
+  }
 
-        padding:0 16px 100px;
-    }
+  .card-title {
+    font-size: 1.7rem;
+  }
 
-    .card-title{
+  .card-content {
+    width: 100%;
+    max-width: none;
 
-        font-size:1.7rem;
-    }
+    padding: 36px 26px;
 
-    .card-content{
+    border-radius: 22px;
+  }
 
-        width:100%;
-        max-width:none;
-
-        padding:36px 26px;
-
-        border-radius:22px;
-    }
-
-    .card-content p{
-
-        font-size:1rem;
-        line-height:1.7;
-    }
+  .card-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
 
 }
