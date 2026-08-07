@@ -260,15 +260,11 @@ box-shadow:
 ===================================================== */
 @media (max-width: 768px) {
 
-  .card-moon.is-active {
+  .card-moon {
     background:
       radial-gradient(circle at 50% 25%, rgba(140,160,190,0.35), transparent 65%),
       linear-gradient(to bottom, #1a1f27, #0f1217);
 
     transition: background 1.2s ease;
-  }
-
-  .card-moon:not(.is-active) {
-    background: none;
   }
 }
