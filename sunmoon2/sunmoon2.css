@@ -109,14 +109,34 @@ body.sunmoon-sun .sunmoon-stage {
    ECLIPSE
 ===================================================== */
 
-body.sunmoon-eclipse {
+body.sunmoon-eclipse{
 
     background:
-        radial-gradient(circle at 50% 18%, rgba(210,190,145,.10), transparent 45%),
-        radial-gradient(circle at 30% 20%, rgba(120,140,165,.12), transparent 60%),
-        linear-gradient(to bottom, #221f22, #121214);
 
-    transition: background 2.6s ease;
+        radial-gradient(
+            circle at 50% 14%,
+            rgba(255,214,120,.07),
+            transparent 10%
+        ),
+
+        radial-gradient(
+            circle at 50% 14%,
+            rgba(0,0,0,.95),
+            transparent 16%
+        ),
+
+        radial-gradient(
+            circle at 50% 14%,
+            rgba(255,215,150,.04),
+            transparent 34%
+        ),
+
+        linear-gradient(
+            to bottom,
+            #0a0a0c,
+            #050506
+        );
+
 }
 
 /* ---------- Navbar ---------- */
