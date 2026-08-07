@@ -1,0 +1,160 @@
+/* =====================================================
+   ECLIPSE — THE LETTER
+   Between Moon and Sun
+   ===================================================== */
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.eclipse{
+
+    width:min(980px,92%);
+    margin:auto;
+
+    padding:40px 0 80px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.eclipse-header{
+
+    text-align:center;
+
+    margin-bottom:36px;
+}
+
+.eclipse-header h1{
+
+    margin:0;
+
+    font-size:3rem;
+    font-weight:500;
+
+    color:#e7e1d4;
+
+    text-shadow:
+        0 0 18px rgba(255,245,220,.12);
+}
+
+.divider{
+
+    width:120px;
+    height:1px;
+
+    margin:14px auto 0;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        rgba(255,235,200,.7),
+        transparent
+    );
+}
+
+/* =====================================================
+   INTRODUCTION
+===================================================== */
+
+.eclipse-intro{
+
+    max-width:620px;
+
+    text-align:center;
+
+    margin-bottom:48px;
+}
+
+.eclipse-intro p{
+
+    margin:0 0 1.4em;
+
+    color:rgba(235,232,225,.82);
+
+    font-size:1.08rem;
+    line-height:1.8;
+    letter-spacing:.02em;
+}
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.eclipse-letter{
+
+    width:100%;
+
+    margin:0;
+
+    display:flex;
+    justify-content:center;
+}
+
+.eclipse-letter img{
+
+    width:100%;
+    max-width:900px;
+
+    display:block;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55),
+        0 0 40px rgba(255,230,170,.06);
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease;
+}
+
+.eclipse-letter img:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 40px 95px rgba(0,0,0,.6),
+        0 0 55px rgba(255,230,170,.12);
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:768px){
+
+    .eclipse{
+
+        width:92%;
+
+        padding:28px 0 50px;
+    }
+
+    .eclipse-header h1{
+
+        font-size:2.2rem;
+    }
+
+    .eclipse-intro{
+
+        margin-bottom:32px;
+    }
+
+    .eclipse-intro p{
+
+        font-size:1rem;
+        line-height:1.7;
+    }
+
+    .eclipse-letter img{
+
+        border-radius:12px;
+    }
+
+}
