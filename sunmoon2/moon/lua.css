@@ -4,40 +4,6 @@
    ===================================================== */
 
 /* -----------------------------
-   SUNMOON
------------------------------ */
-
-.sunmoon {
-    font-family: "Cormorant Garamond", serif;
-    overflow-x: hidden;
-}
-
-.sunmoon-stage {
-    min-height: calc(100vh - 64px);
-
-    display: flex;
-    justify-content: center;
-}
-
-.sunmoon-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.sunmoon .nav{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-
-    gap:20px 28px;
-
-    text-transform:uppercase;
-    letter-spacing:.12em;
-}
-
-/* -----------------------------
    TITRE
 ----------------------------- */
 .card-moon .card-title {
@@ -294,13 +260,12 @@ box-shadow:
 ===================================================== */
 @media (max-width: 768px) {
 
-  .card-moon{
+   .card-moon{
+
         background:
             radial-gradient(circle at 50% 25%, rgba(140,160,190,.35), transparent 65%),
             linear-gradient(to bottom,#1a1f27,#0f1217);
-    }
 
-    .sunmoon-card{
-        padding:0 16px 100px;
+        transition:background 1.2s ease;
     }
 }
