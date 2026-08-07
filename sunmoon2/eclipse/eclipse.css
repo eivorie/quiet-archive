@@ -32,30 +32,43 @@
 
 .eclipse-header h1{
 
-    margin:0;
+    color:#f4efe3;
 
-    font-size:3rem;
-    font-weight:500;
+    font-size:3.3rem;
 
-    color:#e7e1d4;
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
 
     text-shadow:
-        0 0 18px rgba(255,245,220,.12);
+
+        0 0 14px rgba(255,255,255,.12),
+
+        0 0 36px rgba(255,215,120,.08);
 }
 
 .divider{
 
-    width:120px;
-    height:1px;
+    width:54px;
 
-    margin:14px auto 0;
+    height:54px;
 
-    background:linear-gradient(
-        to right,
-        transparent,
-        rgba(255,235,200,.7),
-        transparent
-    );
+    margin:22px auto 40px;
+
+    border-radius:50%;
+
+    background:#080808;
+
+    border:
+
+        2px solid rgba(255,218,150,.45);
+
+    box-shadow:
+
+        0 0 22px rgba(255,210,120,.15),
+
+        inset 0 0 22px rgba(0,0,0,.85);
+
 }
 
 /* =====================================================
@@ -64,22 +77,20 @@
 
 .eclipse-intro{
 
-    max-width:620px;
+    max-width:540px;
 
-    text-align:center;
-
-    margin-bottom:48px;
+    margin-bottom:60px;
 }
 
 .eclipse-intro p{
 
-    margin:0 0 1.4em;
+    color:rgba(240,236,228,.72);
 
-    color:rgba(235,232,225,.82);
+    font-size:1.15rem;
 
-    font-size:1.08rem;
-    line-height:1.8;
-    letter-spacing:.02em;
+    line-height:2;
+
+    font-style:italic;
 }
 
 /* =====================================================
@@ -88,12 +99,25 @@
 
 .eclipse-letter{
 
-    width:100%;
+    padding:28px;
 
-    margin:0;
+    border-radius:30px;
 
-    display:flex;
-    justify-content:center;
+    background:
+
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,.02),
+            rgba(255,255,255,.01)
+        );
+
+    border:
+
+        1px solid rgba(255,215,150,.06);
+
+    box-shadow:
+
+        0 40px 90px rgba(0,0,0,.55);
 }
 
 .eclipse-letter img{
