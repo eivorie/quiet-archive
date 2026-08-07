@@ -1,50 +1,153 @@
+/* =====================================================
+   ECLIPSE — THE LETTER
+   Between Moon and Sun
+   ===================================================== */
+
+/* =====================================================
+   PAGE
+===================================================== */
+
 .eclipse{
 
-    display:flex;
-    justify-content:center;
+    width:min(1400px,96%);
+    margin:auto;
 
-    padding:0 0 80px;
-}
-
-.eclipse-hero{
-
-    position:relative;
-
-    width:min(1200px,100%);
-}
-
-.eclipse-background{
-
-    width:100%;
-
-    display:block;
-}
-
-.eclipse-content{
-
-    position:absolute;
-    inset:0;
+    padding:40px 0 80px;
 
     display:flex;
     flex-direction:column;
     align-items:center;
 }
 
-.eclipse-content h1{
+/* =====================================================
+   HEADER
+===================================================== */
 
-    margin-top:180px;
+.eclipse-header{
+
+    text-align:center;
 }
 
-.eclipse-content p{
+.eclipse-header h1{
 
-    margin-top:240px;
+    color:#f4efe3;
 
-    max-width:650px;
+    font-size:3.3rem;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    text-shadow:
+
+        0 0 14px rgba(255,255,255,.12),
+
+        0 0 36px rgba(255,215,120,.08);
 }
 
-.letter{
+.divider{
 
-    width:min(760px,72%);
+    width:54px;
 
-    margin-top:110px;
+    height:54px;
+
+    margin:22px auto 40px;
+
+    border-radius:50%;
+
+    background:#080808;
+
+    border:
+
+        2px solid rgba(255,218,150,.45);
+
+    box-shadow:
+
+        0 0 22px rgba(255,210,120,.15),
+
+        inset 0 0 22px rgba(0,0,0,.85);
+
+}
+
+/* =====================================================
+   INTRODUCTION
+===================================================== */
+
+.eclipse-intro{
+
+    max-width:540px;
+
+    margin-bottom:60px;
+}
+
+.eclipse-intro p{
+
+    color:rgba(240,236,228,.72);
+
+    font-size:1.15rem;
+
+    line-height:2;
+
+    font-style:italic;
+}
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.eclipse-letter{
+
+    width:100%;
+    margin:0;
+
+    display:flex;
+    justify-content:center;
+}
+
+.eclipse-letter img{
+
+    width:min(100%,1100px);
+
+    display:block;
+
+    border-radius:14px;
+
+    box-shadow:
+        0 45px 90px rgba(0,0,0,.55);
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:768px){
+
+    .eclipse{
+
+        width:92%;
+
+        padding:28px 0 50px;
+    }
+
+    .eclipse-header h1{
+
+        font-size:2.2rem;
+    }
+
+    .eclipse-intro{
+
+        margin-bottom:32px;
+    }
+
+    .eclipse-intro p{
+
+        font-size:1rem;
+        line-height:1.7;
+    }
+
+    .eclipse-letter img{
+
+        border-radius:12px;
+    }
+
 }
