@@ -32,30 +32,32 @@
 
 .eclipse-header h1{
 
-    margin:0;
+    color:#f0ebe0;
 
-    font-size:3rem;
-    font-weight:500;
-
-    color:#e7e1d4;
+    letter-spacing:.08em;
 
     text-shadow:
-        0 0 18px rgba(255,245,220,.12);
+        0 0 10px rgba(255,240,210,.12),
+        0 0 35px rgba(255,210,120,.08);
 }
 
 .divider{
 
-    width:120px;
+    width:140px;
+
     height:1px;
 
-    margin:14px auto 0;
+    background:
 
-    background:linear-gradient(
-        to right,
-        transparent,
-        rgba(255,235,200,.7),
-        transparent
-    );
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(255,220,170,.85),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(255,220,170,.15);
 }
 
 /* =====================================================
@@ -98,20 +100,16 @@
 
 .eclipse-letter img{
 
-    width:100%;
-    max-width:900px;
+    border-radius:10px;
 
-    display:block;
-
-    border-radius:18px;
+    border:1px solid rgba(255,225,170,.10);
 
     box-shadow:
-        0 30px 80px rgba(0,0,0,.55),
-        0 0 40px rgba(255,230,170,.06);
 
-    transition:
-        transform .45s ease,
-        box-shadow .45s ease;
+        0 35px 80px rgba(0,0,0,.65),
+
+        0 0 60px rgba(255,220,140,.08);
+
 }
 
 .eclipse-letter img:hover{
