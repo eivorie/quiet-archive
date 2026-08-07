@@ -9,7 +9,7 @@
 
 .eclipse{
 
-    width:min(980px,92%);
+    width:min(1400px,96%);
     margin:auto;
 
     padding:40px 0 80px;
@@ -99,52 +99,23 @@
 
 .eclipse-letter{
 
-    padding:28px;
+    width:100%;
+    margin:0;
 
-    border-radius:30px;
-
-    background:
-
-        linear-gradient(
-            to bottom,
-            rgba(255,255,255,.02),
-            rgba(255,255,255,.01)
-        );
-
-    border:
-
-        1px solid rgba(255,215,150,.06);
-
-    box-shadow:
-
-        0 40px 90px rgba(0,0,0,.55);
+    display:flex;
+    justify-content:center;
 }
 
 .eclipse-letter img{
 
-    width:100%;
-    max-width:900px;
+    width:min(100%,1100px);
 
     display:block;
 
-    border-radius:18px;
+    border-radius:14px;
 
     box-shadow:
-        0 30px 80px rgba(0,0,0,.55),
-        0 0 40px rgba(255,230,170,.06);
-
-    transition:
-        transform .45s ease,
-        box-shadow .45s ease;
-}
-
-.eclipse-letter img:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 40px 95px rgba(0,0,0,.6),
-        0 0 55px rgba(255,230,170,.12);
+        0 45px 90px rgba(0,0,0,.55);
 }
 
 /* =====================================================
