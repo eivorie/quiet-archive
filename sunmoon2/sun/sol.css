@@ -119,24 +119,6 @@
 }
 
 /* =====================================================
-   NAVBAR — MODE SUN (LUMINEUSE)
-===================================================== */
-
-body.mode-sun .nav {
-  background: rgba(255,250,240,0.75);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(200,180,140,0.35);
-}
-
-body.mode-sun .nav a {
-  color: rgba(120,85,40,0.85);
-}
-
-body.mode-sun .nav a:hover {
-  color: rgba(90,60,25,1);
-}
-
-/* =====================================================
    CYCLE SOLAIRE — CONCLUSION LUMINEUSE
 ===================================================== */
 
@@ -233,17 +215,12 @@ body.mode-sun .nav a:hover {
    MOBILE — MONDE SOLAIRE ACTIF
 ===================================================== */
 
-@media (max-width: 768px) {
+.card-sun{
 
-  .card-sun.is-active {
     background:
-      radial-gradient(circle at 50% 25%, rgba(255,240,210,0.55), transparent 65%),
-      linear-gradient(to bottom, #f7ecd9, #e2cba8);
+        radial-gradient(circle at 50% 25%, rgba(255,240,210,.55), transparent 65%),
+        linear-gradient(to bottom,#f7ecd9,#e2cba8);
 
-    transition: background 1.2s ease;
-  }
+    transition:background 1.2s ease;
 
-  .card-sun:not(.is-active) {
-    background: none;
-  }
 }
