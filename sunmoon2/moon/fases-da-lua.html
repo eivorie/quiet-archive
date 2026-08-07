@@ -10,35 +10,43 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Global Styles -->
+  <!-- Global -->
   <link rel="stylesheet" href="../../style.css">
 
-  <!-- Module Styles -->
+  <!-- Moon -->
   <link rel="stylesheet" href="lua.css">
 </head>
 
-<body class="sunmoon">
+<body class="sunmoon mode-moon">
 
-  <!-- NAVBAR UNIQUE -->
- <nav class="nav">
+  <!-- NAVBAR -->
+  <nav class="nav">
     <a href="../../index.html">Home</a>
     <a href="../../memories.html">Memories</a>
     <a href="../../ereri/index.html">Ereri</a>
     <a href="../../depending-on-the-weather/index.html">Depending on the weather</a>
     <a href="../../archive.html">Our Archive</a>
     <a href="../index.html">Sun & Moon</a>
-</nav>
+  </nav>
 
   <main class="sunmoon-stage">
-    
+
     <!-- 🌙 MOON -->
-    <article class="sunmoon-card card-moon">
+    <article class="sunmoon-card card-moon is-active">
+
       <header class="card-header">
         <h1 class="card-title">Fases da Lua</h1>
+
         <div class="card-ornament" aria-hidden="true"></div>
+
+        <!-- Ancien switch supprimé -->
+        <!--
+        <button class="sunmoon-switch" data-target="sun">☀︎</button>
+        -->
       </header>
 
       <div class="card-content">
+
         <p>
           Existe uma fase da vida em que você se vê perdido<br>
           Perdido no tempo, na monotonia, na sua própria mente<br>
@@ -78,8 +86,10 @@
         </div>
 
       </div>
+
     </article>
 
-     </main>
+  </main>
+
 </body>
 </html>
