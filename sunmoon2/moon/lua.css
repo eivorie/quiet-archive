@@ -236,6 +236,28 @@ body.sunmoon{
         0 0 14px rgba(180,200,230,.25);
 }
 
+.card-ornament{
+    position: relative;
+
+    width: 88px;
+    height: 1px;
+
+    margin: 18px auto 22px;
+
+    background: linear-gradient(
+        to right,
+        rgba(200,215,240,0),
+        rgba(200,215,240,.85),
+        rgba(200,215,240,0)
+    );
+
+    opacity: .75;
+    filter: blur(.3px);
+
+    box-shadow:
+        0 0 8px rgba(180,200,230,.35);
+}
+
 /* =====================================================
    LUNAR CYCLE
 ===================================================== */
