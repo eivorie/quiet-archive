@@ -226,10 +226,8 @@ body.sunmoon-sun .sunmoon-stage {
   justify-content: center;
   flex-wrap: wrap;
 
-  gap: 20px 28px;
-
   text-transform: uppercase;
-  letter-spacing: .12em;
+  letter-spacing: .08em;
 }
 
 
