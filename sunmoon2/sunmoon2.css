@@ -141,23 +141,38 @@ body.sunmoon-eclipse{
 
 /* ---------- Navbar ---------- */
 
-body.sunmoon-eclipse .nav {
+body.sunmoon-eclipse .nav{
 
-    background: rgba(34,34,36,.60);
+    background:rgba(8,8,10,.88);
 
-    backdrop-filter: blur(14px);
+    backdrop-filter:blur(18px);
 
-    border-bottom: 1px solid rgba(220,210,185,.10);
+    border-bottom:
+
+        1px solid rgba(255,215,150,.08);
+
+    box-shadow:
+
+        0 18px 40px rgba(0,0,0,.45);
+
 }
 
-body.sunmoon-eclipse .nav a {
+body.sunmoon-eclipse .nav a{
 
-    color: rgba(225,220,205,.82);
+    color:#d9d5cb;
+
+    letter-spacing:.12em;
+
+    transition:.35s;
 }
 
-body.sunmoon-eclipse .nav a:hover {
+body.sunmoon-eclipse .nav a:hover{
 
-    color: rgba(255,245,225,.96);
+    color:#fff;
+
+    text-shadow:
+
+        0 0 8px rgba(255,215,150,.25);
 }
 
 /* ---------- Stage ---------- */
