@@ -35,103 +35,35 @@
         0 0 18px rgba(200,220,255,.15);
 }
 
+/* =====================================================
+SHOOTING STAR
+===================================================== */
+
 .stars-ornament{
-    position:relative;
-    width:180px;
-    height:40px;
+    width:220px;
+    height:60px;
     margin:18px auto 0;
 }
 
-/* étoile */
-
-.stars-ornament::before{
-    content:"✷";
-    position:absolute;
-    left:0;
-    top:50%;
-    color:#f8fbff;
-    font-size:.55rem;
-    text-shadow:
-        0 0 5px rgba(255,255,255,.85),
-        0 0 12px rgba(205,220,255,.45);
-    animation:shootingStar 8s ease-in-out infinite;
+.shooting-star{
+    width:100%;
+    height:100%;
+    overflow:visible;
 }
 
-/* traînée */
-
-.stars-ornament::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:8px;
-    top:50%;
-
-    width:145px;
-    height:18px;
-
-    border-top:1px solid rgba(220,232,255,.38);
-
-    border-radius:100% 100% 0 0;
-
-    transform:
-        translateY(-55%)
-        rotate(-4deg);
-
-    transform-origin:left center;
-
-    opacity:.9;
-
-    mask-image:linear-gradient(
-        to right,
-        rgba(0,0,0,1),
-        rgba(0,0,0,.55),
-        transparent
-    );
-
-    -webkit-mask-image:linear-gradient(
-        to right,
-        rgba(0,0,0,1),
-        rgba(0,0,0,.55),
-        transparent
-    );
-
-    filter:blur(.2px);
+#shooting-path{
+    fill:none;
+    stroke:rgba(215,228,255,.20);
+    stroke-width:1.2;
+    stroke-linecap:round;
 }
 
-@keyframes shootingStar{
-    0%{
-        opacity:0;
-        transform:
-            translate(0px,0px);
-    }
-    8%{
-        opacity:1;
-    }
-
-    25%{
-        transform:
-            translate(35px,-2px);
-    }
-    50%{
-        transform:
-            translate(70px,-5px);
-    }
-    75%{
-        transform:
-            translate(110px,-8px);
-    }
-    92%{
-        opacity:1;
-        transform:
-            translate(145px,-11px);
-    }
-    100%{
-        opacity:0;
-        transform:
-            translate(152px,-12px);
-    }
+.shooting-dot{
+    fill:#ffffff;
+    filter:
+        drop-shadow(0 0 3px rgba(255,255,255,.95))
+        drop-shadow(0 0 8px rgba(190,215,255,.65))
+        drop-shadow(0 0 18px rgba(180,205,255,.35));
 }
 
 /* =====================================================
