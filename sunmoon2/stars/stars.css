@@ -23,6 +23,7 @@
 
     text-align:center;
     margin-bottom:50px;
+    animation:card-switch .8s ease both;
 }
 
 .stars-header h1{
@@ -76,6 +77,7 @@ CONSTELLATION
     display:flex;
     flex-direction:column;
     align-items:center;
+    animation:card-switch .9s ease .2s both;
 }
 
 .chapter-link{
@@ -83,13 +85,20 @@ CONSTELLATION
     display:flex;
     flex-direction:column;
     align-items:center;
-
     text-decoration:none;
-
+    opacity:0;
+    animation:card-switch .8s ease forwards;
     transition:
         transform .35s ease,
         opacity .35s ease;
 }
+
+.chapter-link:nth-of-type(1){ animation-delay:.30s; }
+.chapter-link:nth-of-type(2){ animation-delay:.55s; }
+.chapter-link:nth-of-type(3){ animation-delay:.80s; }
+.chapter-link:nth-of-type(4){ animation-delay:1.05s; }
+.chapter-link:nth-of-type(5){ animation-delay:1.30s; }
+.chapter-link:nth-of-type(6){ animation-delay:1.55s; }
 
 .chapter-link:hover{
 
@@ -117,14 +126,34 @@ CONSTELLATION
 
     width:1px;
     height:24px;
-
     margin:8px 0;
-
     background:linear-gradient(
         to bottom,
         rgba(170,195,255,.35),
         rgba(170,195,255,.05)
     );
+    opacity:0;
+    animation:card-switch .6s ease forwards;
+}
+
+.chapter-link:nth-of-type(1)+.constellation-line{
+    animation-delay:.42s;
+}
+
+.chapter-link:nth-of-type(2)+.constellation-line{
+    animation-delay:.67s;
+}
+
+.chapter-link:nth-of-type(3)+.constellation-line{
+    animation-delay:.92s;
+}
+
+.chapter-link:nth-of-type(4)+.constellation-line{
+    animation-delay:1.17s;
+}
+
+.chapter-link:nth-of-type(5)+.constellation-line{
+    animation-delay:1.42s;
 }
 
 .chapter{
