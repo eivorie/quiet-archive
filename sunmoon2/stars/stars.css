@@ -36,50 +36,35 @@
 
 .stars-ornament{
 
-    width:8px;
-    height:8px;
+    margin:30px auto 50px;
 
-    margin:34px auto 55px;
+    font-size:2.3rem;
 
-    border-radius:50%;
+    color:#edf4ff;
 
-    background:#ffffff;
+    line-height:1;
 
-    box-shadow:
-
-        0 0 6px rgba(255,255,255,.9),
-        0 0 18px rgba(190,210,255,.8),
-        0 0 45px rgba(170,190,255,.45),
-        0 0 80px rgba(170,190,255,.20);
+    text-shadow:
+        0 0 6px rgba(255,255,255,.95),
+        0 0 18px rgba(200,220,255,.7),
+        0 0 40px rgba(160,190,255,.35);
 
     animation:starTwinkle 5s ease-in-out infinite;
 }
 
-.stars-ornament::before,
-.stars-ornament::after{
+@keyframes starTwinkle{
 
-    content:"";
+    0%,100%{
 
-    position:absolute;
+        opacity:.75;
+        transform:scale(1);
+    }
 
-    left:50%;
-    top:50%;
+    50%{
 
-    background:rgba(255,255,255,.75);
-
-    transform:translate(-50%,-50%);
-}
-
-.stars-ornament::before{
-
-    width:1px;
-    height:34px;
-}
-
-.stars-ornament::after{
-
-    width:34px;
-    height:1px;
+        opacity:1;
+        transform:scale(1.15);
+    }
 }
 
 /* =====================================================
