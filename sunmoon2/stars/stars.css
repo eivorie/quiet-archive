@@ -1,0 +1,79 @@
+/* =====================================================
+   STARS
+   The Sky Between Us
+===================================================== */
+
+.stars{
+
+    width:min(980px,92%);
+    margin:auto;
+
+    padding:50px 0 100px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.stars-header{
+
+    text-align:center;
+
+    margin-bottom:50px;
+}
+
+.stars-header h1{
+
+    margin:0;
+
+    color:#eef2ff;
+
+    font-size:3rem;
+    font-weight:500;
+    letter-spacing:.08em;
+
+    text-shadow:
+        0 0 18px rgba(200,220,255,.15);
+}
+
+.stars-ornament{
+
+    width:90px;
+    height:90px;
+
+    margin:26px auto 0;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(255,255,255,.9) 0,
+            rgba(210,220,255,.35) 18%,
+            transparent 70%);
+}
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.stars-intro{
+
+    max-width:650px;
+
+    text-align:center;
+}
+
+.stars-intro p{
+
+    margin-bottom:1.8em;
+
+    color:rgba(220,226,240,.82);
+
+    font-size:1.1rem;
+
+    line-height:1.9;
+}
