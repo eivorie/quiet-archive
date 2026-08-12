@@ -51,26 +51,22 @@
 
 .stars-ornament::before{
 
-    content:"";
+    content:"✷";
 
     position:absolute;
 
     left:0;
     top:50%;
 
-    width:5px;
-    height:5px;
+    transform:translateY(-55%);
 
-    border-radius:50%;
+    color:#f8fbff;
 
-    background:#f7fbff;
+    font-size:.55rem;
 
-    transform:translateY(-50%);
-
-    box-shadow:
-     0 0 5px rgba(255,255,255,.85),
-     0 0 12px rgba(205,220,255,.45),
-     0 0 24px rgba(180,205,255,.20);
+    text-shadow:
+        0 0 5px rgba(255,255,255,.9),
+        0 0 10px rgba(200,220,255,.45);
 }
 
 /* traînée */
@@ -121,30 +117,26 @@
     0%{
         opacity:0;
         transform:
-            translateX(-12px)
-            translateY(4px);
+            translateX(-18px)
+            translateY(6px);
     }
 
-    12%{
+    8%{
         opacity:1;
     }
 
-    40%{
+    85%{
         opacity:1;
         transform:
-            translateX(0)
-            translateY(0);
-    }
-
-    70%{
-        opacity:.35;
+            translateX(118px)
+            translateY(-3px);
     }
 
     100%{
         opacity:0;
         transform:
-            translateX(14px)
-            translateY(-3px);
+            translateX(138px)
+            translateY(-4px);
     }
 }
 
