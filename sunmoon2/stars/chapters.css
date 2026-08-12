@@ -284,6 +284,34 @@
         0 0 10px rgba(210,225,255,.18);
 }
 
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+.chapter-header{
+    animation:chapterFade .7s ease-out both;
+}
+
+.chapter-page{
+    animation:chapterFade .9s ease-out .12s both;
+}
+
+.chapter-navigation{
+    animation:chapterFade .9s ease-out .24s both;
+}
+
+@keyframes chapterFade{
+
+    from{
+        opacity:0;
+        transform:translateY(18px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
 
 /* =====================================================
    MOBILE
