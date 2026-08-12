@@ -35,50 +35,77 @@
         <h1>The Sky Between Us</h1>
         
           <div class="stars-ornament">
-            <svg viewBox="0 0 220 34" class="shooting-star">
-        
-                <!-- Trajectoire -->
-                <path
-                    id="shooting-path"
-                    d="M20 26 C70 4 145 4 200 18">
-        
-                    <animate
-                        attributeName="opacity"
-                        values="0;0;1;1;0"
-                        keyTimes="0;0.08;0.15;0.90;1"
-                        dur="8s"
-                        repeatCount="indefinite"/>
-        
-                </path>
-        
-                <!-- Étoile -->
-                <polygon
-                    class="shooting-dot"
-                    points="
-                        0,-4
-                        1.2,-1.2
-                        4,0
-                        1.2,1.2
-                        0,4
-                        -1.2,1.2
-                        -4,0
-                        -1.2,-1.2">
-        
+           <svg viewBox="0 0 220 34" class="shooting-star">
+
+                <defs>
+            
+                    <!-- Dégradé de la traînée -->
+                    <linearGradient
+                        id="tailGradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="0%">
+            
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity=".95"/>
+                        <stop offset="18%" stop-color="#eef5ff" stop-opacity=".65"/>
+                        <stop offset="55%" stop-color="#b9d0ff" stop-opacity=".20"/>
+                        <stop offset="100%" stop-color="#b9d0ff" stop-opacity="0"/>
+            
+                    </linearGradient>
+            
+                    <!-- Chemin que suivra la comète -->
+                    <path
+                        id="shooting-path"
+                        d="M20 26 C70 4 145 4 200 18"/>
+            
+                </defs>
+            
+                <!-- Tout le groupe se déplace -->
+                <g class="shooting-group">
+            
+                    <!-- Traînée -->
+                    <path
+                        d="
+                            M-42 0
+                            C-32 -1 -18 -1 0 0
+                        "
+                        fill="none"
+                        stroke="url(#tailGradient)"
+                        stroke-width="1.8"
+                        stroke-linecap="round"/>
+            
+                    <!-- Étoile -->
+                    <polygon
+                        class="shooting-dot"
+                        points="
+                            0,-4
+                            1.2,-1.2
+                            4,0
+                            1.2,1.2
+                            0,4
+                            -1.2,1.2
+                            -4,0
+                            -1.2,-1.2"/>
+            
                     <animateMotion
                         dur="8s"
                         repeatCount="indefinite"
-                        rotate="auto"
-                        path="M20 26 C70 4 145 4 200 18"/>
-        
+                        rotate="auto">
+            
+                        <mpath href="#shooting-path"/>
+            
+                    </animateMotion>
+            
                     <animate
                         attributeName="opacity"
                         values="0;1;1;0"
                         keyTimes="0;0.08;0.90;1"
                         dur="8s"
                         repeatCount="indefinite"/>
-        
-                </polygon>
-        
+            
+                </g>
+            
             </svg>
         </div>
 
