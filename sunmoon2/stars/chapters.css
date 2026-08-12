@@ -3,6 +3,7 @@
    The Sky Between Us
 ===================================================== */
 
+
 /* =====================================================
    PAGE
 ===================================================== */
@@ -12,12 +13,15 @@
     width:min(980px,92%);
     margin:auto;
 
-    padding:50px 0 100px;
+    padding:50px 0 90px;
 
     display:flex;
     flex-direction:column;
     align-items:center;
+
+    position:relative;
 }
+
 
 /* =====================================================
    HEADER
@@ -34,15 +38,15 @@
 
     display:block;
 
-    margin-bottom:12px;
+    margin-bottom:14px;
 
     color:rgba(170,190,220,.65);
 
+    font-size:.82rem;
+
     text-transform:uppercase;
 
-    letter-spacing:.22em;
-
-    font-size:.82rem;
+    letter-spacing:.28em;
 }
 
 .chapter-header h1{
@@ -57,22 +61,27 @@
     letter-spacing:.08em;
 
     text-shadow:
-        0 0 16px rgba(200,220,255,.12);
+        0 0 14px rgba(210,225,255,.14);
 }
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
 
 .chapter-divider{
 
     position:relative;
 
-    width:110px;
+    width:120px;
     height:1px;
 
-    margin:28px auto 0;
+    margin:30px auto 0;
 
     background:linear-gradient(
         to right,
         transparent,
-        rgba(170,200,255,.45),
+        rgba(170,200,255,.40),
         transparent
     );
 }
@@ -86,9 +95,9 @@
     left:50%;
     top:50%;
 
-    transform:translate(-50%,-55%);
+    transform:translate(-50%,-58%);
 
-    padding:0 10px;
+    padding:0 12px;
 
     background:#090b12;
 
@@ -97,39 +106,84 @@
     font-size:.9rem;
 
     text-shadow:
-        0 0 8px rgba(220,230,255,.5);
+        0 0 8px rgba(220,230,255,.4);
 }
 
+
 /* =====================================================
-   PAGE CONTENT
+   PAGE
 ===================================================== */
 
 .chapter-page{
 
     width:min(720px,100%);
 
-    padding:56px 54px;
+    padding:58px 56px;
 
     box-sizing:border-box;
 
-    border-radius:28px;
+    border-radius:30px;
 
     background:
 
+        radial-gradient(
+            circle at top,
+            rgba(210,225,255,.04),
+            transparent 45%
+        ),
+
         linear-gradient(
             to bottom,
-            rgba(17,22,34,.62),
-            rgba(8,11,20,.76)
+            rgba(18,22,35,.68),
+            rgba(9,12,20,.82)
         );
 
     border:
-        1px solid rgba(170,200,255,.08);
+        1px solid rgba(180,205,255,.08);
 
-    backdrop-filter:blur(16px);
+    backdrop-filter:blur(18px);
 
     box-shadow:
-        0 30px 80px rgba(0,0,0,.55);
+        0 35px 90px rgba(0,0,0,.55);
 }
+
+
+/* =====================================================
+   ASPECT
+===================================================== */
+
+.chapter-aspect{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+
+    gap:16px;
+
+    margin:0 0 42px;
+}
+
+.planet{
+
+    color:#eef4ff;
+
+    font-size:.96rem;
+
+    letter-spacing:.08em;
+}
+
+.orb{
+
+    color:rgba(165,185,220,.65);
+
+    font-size:.82rem;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+}
+
 
 /* =====================================================
    TYPOGRAPHY
@@ -137,7 +191,7 @@
 
 .chapter-page p{
 
-    margin:0 0 2.1em;
+    margin:0 0 2em;
 
     color:rgba(228,232,242,.86);
 
@@ -148,18 +202,49 @@
     text-align:justify;
 }
 
-.chapter-page p:first-child{
+.chapter-page p:last-child{
 
-    font-size:1.28rem;
+    margin-bottom:0;
+}
+
+.chapter-page p:first-child{
 
     text-align:center;
 
-    color:#f2f5ff;
+    font-size:1.3rem;
 
-    margin-bottom:2.6em;
+    color:#f2f6ff;
 
     font-style:italic;
+
+    margin-bottom:2.8em;
 }
+
+
+/* =====================================================
+   QUOTES
+===================================================== */
+
+.chapter-quote{
+
+    max-width:520px;
+
+    margin:3.4rem auto !important;
+
+    color:#f4f7ff !important;
+
+    font-size:1.35rem !important;
+
+    line-height:1.8 !important;
+
+    text-align:center !important;
+
+    font-style:italic;
+
+    text-shadow:
+        0 0 16px rgba(210,225,255,.12);
+}
+
 
 /* =====================================================
    NAVIGATION
@@ -171,9 +256,24 @@
 
     margin-top:42px;
 
-    display:flex;
-    justify-content:space-between;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
     align-items:center;
+}
+
+.chapter-previous{
+
+    justify-self:start;
+}
+
+.chapter-back{
+
+    justify-self:center;
+}
+
+.chapter-next{
+
+    justify-self:end;
 }
 
 .chapter-navigation a{
@@ -184,7 +284,9 @@
 
     letter-spacing:.08em;
 
-    transition:.35s;
+    transition:
+        color .35s ease,
+        transform .35s ease;
 }
 
 .chapter-navigation a:hover{
@@ -194,8 +296,9 @@
     transform:translateY(-2px);
 
     text-shadow:
-        0 0 12px rgba(210,225,255,.2);
+        0 0 10px rgba(210,225,255,.18);
 }
+
 
 /* =====================================================
    MOBILE
@@ -207,35 +310,40 @@
 
         width:92%;
 
-        padding:30px 0 70px;
+        padding:30px 0 60px;
     }
 
     .chapter-header{
 
-        margin-bottom:36px;
+        margin-bottom:34px;
     }
 
     .chapter-header h1{
 
-        font-size:2.2rem;
+        font-size:2.15rem;
+    }
+
+    .chapter-divider{
+
+        width:90px;
     }
 
     .chapter-page{
 
         width:100%;
 
-        padding:34px 26px;
+        padding:34px 28px;
 
         border-radius:22px;
     }
 
     .chapter-page p{
 
+        text-align:left;
+
         font-size:1rem;
 
         line-height:1.9;
-
-        text-align:left;
     }
 
     .chapter-page p:first-child{
@@ -243,12 +351,25 @@
         font-size:1.18rem;
     }
 
+    .chapter-quote{
+
+        font-size:1.18rem !important;
+    }
+
     .chapter-navigation{
 
-        width:100%;
+        grid-template-columns:1fr;
 
-        margin-top:34px;
+        gap:18px;
 
-        font-size:.95rem;
+        justify-items:center;
     }
+
+    .chapter-previous,
+    .chapter-back,
+    .chapter-next{
+
+        justify-self:center;
+    }
+
 }
