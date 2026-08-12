@@ -161,7 +161,7 @@
 
     gap:16px;
 
-    margin:0 0 42px;
+    margin:0 0 30px;
 }
 
 .planet{
@@ -188,18 +188,13 @@
 /* =====================================================
    TYPOGRAPHY
 ===================================================== */
-
 .chapter-page p{
 
-    margin:0 0 2em;
-
+    margin:0 0 1.15rem;
     color:rgba(228,232,242,.86);
-
     font-size:1.08rem;
-
-    line-height:2;
-
-    text-align:justify;
+    line-height:1.85;
+    text-align:left;
 }
 
 .chapter-page p:last-child{
@@ -210,14 +205,11 @@
 .chapter-page p:first-child{
 
     text-align:center;
-
-    font-size:1.3rem;
-
+    font-size:1.35rem;
     color:#f2f6ff;
-
     font-style:italic;
-
-    margin-bottom:2.8em;
+    line-height:1.7;
+    margin-bottom:2.2rem;
 }
 
 
@@ -228,19 +220,12 @@
 .chapter-quote{
 
     max-width:520px;
-
-    margin:3.4rem auto !important;
-
+    margin:2.4rem auto !important;
     color:#f4f7ff !important;
-
     font-size:1.35rem !important;
-
-    line-height:1.8 !important;
-
+    line-height:1.7 !important;
     text-align:center !important;
-
     font-style:italic;
-
     text-shadow:
         0 0 16px rgba(210,225,255,.12);
 }
