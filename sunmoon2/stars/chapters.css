@@ -236,50 +236,46 @@
 ===================================================== */
 
 .chapter-navigation{
-
     width:min(720px,100%);
-
     margin-top:42px;
-
     display:grid;
     grid-template-columns:1fr auto 1fr;
     align-items:center;
 }
 
-.chapter-previous{
+.chapter-navigation-single{
+    display:flex;
+    justify-content:flex-end;
+}
 
+.chapter-navigation-single .chapter-next{
+    justify-self:auto;
+}
+
+.chapter-previous{
     justify-self:start;
 }
 
 .chapter-back{
-
     justify-self:center;
 }
 
 .chapter-next{
-
     justify-self:end;
 }
 
 .chapter-navigation a{
-
     color:rgba(215,225,245,.82);
-
     text-decoration:none;
-
     letter-spacing:.08em;
-
     transition:
         color .35s ease,
         transform .35s ease;
 }
 
 .chapter-navigation a:hover{
-
     color:white;
-
     transform:translateY(-2px);
-
     text-shadow:
         0 0 10px rgba(210,225,255,.18);
 }
