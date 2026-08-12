@@ -77,3 +77,114 @@
 
     line-height:1.9;
 }
+
+/* =====================================================
+CONSTELLATION
+===================================================== */
+
+.stars-index{
+
+    width:min(520px,100%);
+
+    margin-top:60px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.chapter-link{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    text-decoration:none;
+
+    transition:
+        transform .35s ease,
+        opacity .35s ease;
+}
+
+.chapter-link:hover{
+
+    transform:translateY(-2px);
+}
+
+.star{
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#eef5ff;
+
+    box-shadow:
+        0 0 6px rgba(220,235,255,.7),
+        0 0 16px rgba(180,210,255,.45),
+        0 0 34px rgba(180,210,255,.25);
+
+    animation:starPulse 5s ease-in-out infinite;
+}
+
+.constellation-line{
+
+    width:1px;
+    height:54px;
+
+    margin:8px 0;
+
+    background:linear-gradient(
+        to bottom,
+        rgba(170,195,255,.35),
+        rgba(170,195,255,.05)
+    );
+}
+
+.chapter{
+
+    margin-top:18px;
+
+    color:rgba(170,190,220,.78);
+
+    font-size:.82rem;
+
+    letter-spacing:.26em;
+
+    text-transform:uppercase;
+}
+
+.title{
+
+    margin-top:6px;
+
+    color:#eef2ff;
+
+    font-size:1.45rem;
+
+    transition:color .35s ease;
+}
+
+.chapter-link:hover .title{
+
+    color:white;
+
+    text-shadow:
+        0 0 14px rgba(210,225,255,.22);
+}
+
+@keyframes starPulse{
+
+    0%,100%{
+
+        transform:scale(1);
+        opacity:.75;
+    }
+
+    50%{
+
+        transform:scale(1.35);
+        opacity:1;
+    }
+}
