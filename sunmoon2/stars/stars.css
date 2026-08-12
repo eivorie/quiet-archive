@@ -22,20 +22,14 @@
 .stars-header{
 
     text-align:center;
-
     margin-bottom:50px;
 }
 
 .stars-header h1{
 
     margin:0;
-
     color:#eef2ff;
-
-    font-size:3rem;
-    font-weight:500;
     letter-spacing:.08em;
-
     text-shadow:
         0 0 18px rgba(200,220,255,.15);
 }
@@ -63,18 +57,14 @@
 .stars-intro{
 
     max-width:650px;
-
     text-align:center;
 }
 
 .stars-intro p{
 
     margin-bottom:1.8em;
-
     color:rgba(220,226,240,.82);
-
     font-size:1.1rem;
-
     line-height:1.9;
 }
 
@@ -85,8 +75,6 @@ CONSTELLATION
 .stars-index{
 
     width:min(520px,100%);
-
-    margin-top:60px;
 
     display:flex;
     flex-direction:column;
@@ -131,7 +119,7 @@ CONSTELLATION
 .constellation-line{
 
     width:1px;
-    height:54px;
+    height:24px;
 
     margin:8px 0;
 
@@ -158,18 +146,14 @@ CONSTELLATION
 .title{
 
     margin-top:6px;
-
     color:#eef2ff;
-
-    font-size:1.45rem;
-
+    font-size:1.15rem;
     transition:color .35s ease;
 }
 
 .chapter-link:hover .title{
 
     color:white;
-
     text-shadow:
         0 0 14px rgba(210,225,255,.22);
 }
