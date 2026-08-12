@@ -198,6 +198,58 @@ body.sunmoon-eclipse .sunmoon-stage {
 }
 
 /* =====================================================
+   STARS
+===================================================== */
+
+body.sunmoon-stars{
+
+    background:
+
+        radial-gradient(circle at 50% 15%,
+            rgba(150,180,255,.08),
+            transparent 35%),
+
+        radial-gradient(circle at 20% 10%,
+            rgba(255,255,255,.04),
+            transparent 30%),
+
+        linear-gradient(
+            to bottom,
+            #090b12,
+            #030407
+        );
+
+    transition:background 2.6s ease;
+}
+
+/* ---------- Navbar ---------- */
+
+body.sunmoon-stars .nav{
+
+    background:rgba(8,10,18,.82);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(160,185,255,.12);
+
+    box-shadow:
+        0 10px 28px rgba(0,0,0,.45);
+}
+
+body.sunmoon-stars .nav a{
+
+    color:rgba(220,228,245,.82);
+}
+
+body.sunmoon-stars .nav a:hover{
+
+    color:white;
+
+    text-shadow:
+        0 0 10px rgba(180,205,255,.45);
+}
+
+/* =====================================================
    STAGE
 ===================================================== */
 
