@@ -31,12 +31,24 @@
 </nav>
 
 <main class="stars">
-
     <header class="stars-header">
-
         <h1>The Sky Between Us</h1>
-
-        <div class="stars-ornament"></div>
+       <div class="stars-ornament">
+    <svg viewBox="0 0 220 60" class="shooting-star">
+        <!-- la traînée -->
+        <path
+            id="shooting-path"
+            d="M20 42 Q100 18 200 28"
+        />
+        <!-- l'étoile -->
+        <circle class="shooting-dot" r="2.8">
+            <animateMotion
+                dur="7s"
+                repeatCount="indefinite"
+                path="M20 42 Q100 18 200 28"/>
+        </circle>
+    </svg>
+</div>
 
     </header>
 
