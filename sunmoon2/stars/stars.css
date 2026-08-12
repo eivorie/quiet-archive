@@ -55,8 +55,8 @@ SHOOTING STAR
 
 #shooting-path{
     fill:none;
-    stroke:rgba(215,228,255,.14);
-    stroke-width:.9;
+    stroke:rgba(215,228,255,.10);
+    stroke-width:.7;
     stroke-linecap:round;
 }
 
