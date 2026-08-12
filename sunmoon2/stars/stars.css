@@ -40,11 +40,9 @@ SHOOTING STAR
 ===================================================== */
 
 .stars-ornament{
-
     width:220px;
     height:60px;
-
-    margin:22px auto 0;
+    margin:10px auto 0;
 }
 
 .shooting-star{
@@ -56,17 +54,10 @@ SHOOTING STAR
 }
 
 #shooting-path{
-
     fill:none;
-
     stroke:rgba(215,228,255,.14);
     stroke-width:.9;
     stroke-linecap:round;
-
-    stroke-dasharray:220;
-    stroke-dashoffset:220;
-
-    animation:pathAppear 8s ease-in-out infinite;
 }
 
 .shooting-dot{
@@ -77,29 +68,6 @@ SHOOTING STAR
         drop-shadow(0 0 2px rgba(255,255,255,.95))
         drop-shadow(0 0 8px rgba(210,225,255,.65))
         drop-shadow(0 0 16px rgba(180,205,255,.28));
-}
-
-@keyframes pathAppear{
-
-    0%{
-        stroke-dashoffset:220;
-        opacity:0;
-    }
-
-    8%{
-        opacity:1;
-    }
-
-    70%{
-        stroke-dashoffset:0;
-        opacity:1;
-    }
-
-    100%{
-        stroke-dashoffset:0;
-        opacity:0;
-    }
-
 }
 
 /* =====================================================
