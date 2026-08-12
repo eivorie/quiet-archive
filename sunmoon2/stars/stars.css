@@ -37,15 +37,102 @@
 
 .stars-ornament{
 
-    width:90px;
-    height:90px;
-    margin:26px auto 0;
+    position:relative;
+
+    width:180px;
+    height:40px;
+
+    margin:32px auto 0;
+
+    animation:shootingStar 8s ease-in-out infinite;
+}
+
+/* étoile */
+
+.stars-ornament::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:50%;
+
+    width:5px;
+    height:5px;
+
     border-radius:50%;
-    background:
-        radial-gradient(circle,
-            rgba(255,255,255,.9) 0,
-            rgba(210,220,255,.35) 18%,
-            transparent 70%);
+
+    background:#f7fbff;
+
+    transform:translateY(-50%);
+
+    box-shadow:
+     0 0 5px rgba(255,255,255,.85),
+     0 0 12px rgba(205,220,255,.45),
+     0 0 24px rgba(180,205,255,.20);
+}
+
+/* traînée */
+
+.stars-ornament::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:6px;
+    top:50%;
+
+    width:165px;
+    height:1px;
+
+    transform:
+        translateY(-50%)
+        rotate(-10deg);
+
+    transform-origin:left center;
+
+    background:linear-gradient(
+       to right,
+       rgba(230,238,255,.55),
+       rgba(185,205,255,.22),
+       transparent
+);
+
+    filter:blur(.35px);
+}
+
+@keyframes shootingStar{
+
+    0%{
+        opacity:0;
+        transform:
+            translateX(-12px)
+            translateY(4px);
+    }
+
+    12%{
+        opacity:1;
+    }
+
+    40%{
+        opacity:1;
+        transform:
+            translateX(0)
+            translateY(0);
+    }
+
+    70%{
+        opacity:.35;
+    }
+
+    100%{
+        opacity:0;
+        transform:
+            translateX(14px)
+            translateY(-3px);
+    }
 }
 
 /* =====================================================
