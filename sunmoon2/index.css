@@ -236,6 +236,30 @@ body.sunmoon-home{
         rgba(31,27,42,.95);
 }
 
+.card.stars{
+
+    background:
+
+        radial-gradient(
+            circle at top,
+            rgba(190,220,255,.16),
+            transparent 55%
+        ),
+
+        radial-gradient(
+            circle at 70% 20%,
+            rgba(255,255,255,.06),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            160deg,
+            #1c2438,
+            #111726
+        );
+
+}
+
 /* ==========================================================
    CONTENT
 ========================================================== */
@@ -276,6 +300,10 @@ body.sunmoon-home{
 
 .card.eclipse h2{
     color:#9f8ab9;
+}
+
+.card.stars h2{
+    color:#dfe9ff;
 }
 
 .read{
