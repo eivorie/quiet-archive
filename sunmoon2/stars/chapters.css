@@ -1,0 +1,254 @@
+/* =====================================================
+   STARS — CHAPTERS
+   The Sky Between Us
+===================================================== */
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.stars-chapter{
+
+    width:min(980px,92%);
+    margin:auto;
+
+    padding:50px 0 100px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.chapter-header{
+
+    text-align:center;
+
+    margin-bottom:52px;
+}
+
+.chapter-number{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    color:rgba(170,190,220,.65);
+
+    text-transform:uppercase;
+
+    letter-spacing:.22em;
+
+    font-size:.82rem;
+}
+
+.chapter-header h1{
+
+    margin:0;
+
+    color:#eef4ff;
+
+    font-size:3rem;
+    font-weight:500;
+
+    letter-spacing:.08em;
+
+    text-shadow:
+        0 0 16px rgba(200,220,255,.12);
+}
+
+.chapter-divider{
+
+    position:relative;
+
+    width:110px;
+    height:1px;
+
+    margin:28px auto 0;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        rgba(170,200,255,.45),
+        transparent
+    );
+}
+
+.chapter-divider::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-55%);
+
+    padding:0 10px;
+
+    background:#090b12;
+
+    color:#eef4ff;
+
+    font-size:.9rem;
+
+    text-shadow:
+        0 0 8px rgba(220,230,255,.5);
+}
+
+/* =====================================================
+   PAGE CONTENT
+===================================================== */
+
+.chapter-page{
+
+    width:min(720px,100%);
+
+    padding:56px 54px;
+
+    box-sizing:border-box;
+
+    border-radius:28px;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            rgba(17,22,34,.62),
+            rgba(8,11,20,.76)
+        );
+
+    border:
+        1px solid rgba(170,200,255,.08);
+
+    backdrop-filter:blur(16px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55);
+}
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+
+.chapter-page p{
+
+    margin:0 0 2.1em;
+
+    color:rgba(228,232,242,.86);
+
+    font-size:1.08rem;
+
+    line-height:2;
+
+    text-align:justify;
+}
+
+.chapter-page p:first-child{
+
+    font-size:1.28rem;
+
+    text-align:center;
+
+    color:#f2f5ff;
+
+    margin-bottom:2.6em;
+
+    font-style:italic;
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.chapter-navigation{
+
+    width:min(720px,100%);
+
+    margin-top:42px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.chapter-navigation a{
+
+    color:rgba(215,225,245,.82);
+
+    text-decoration:none;
+
+    letter-spacing:.08em;
+
+    transition:.35s;
+}
+
+.chapter-navigation a:hover{
+
+    color:white;
+
+    transform:translateY(-2px);
+
+    text-shadow:
+        0 0 12px rgba(210,225,255,.2);
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:768px){
+
+    .stars-chapter{
+
+        width:92%;
+
+        padding:30px 0 70px;
+    }
+
+    .chapter-header{
+
+        margin-bottom:36px;
+    }
+
+    .chapter-header h1{
+
+        font-size:2.2rem;
+    }
+
+    .chapter-page{
+
+        width:100%;
+
+        padding:34px 26px;
+
+        border-radius:22px;
+    }
+
+    .chapter-page p{
+
+        font-size:1rem;
+
+        line-height:1.9;
+
+        text-align:left;
+    }
+
+    .chapter-page p:first-child{
+
+        font-size:1.18rem;
+    }
+
+    .chapter-navigation{
+
+        width:100%;
+
+        margin-top:34px;
+
+        font-size:.95rem;
+    }
+}
