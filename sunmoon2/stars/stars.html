@@ -34,15 +34,25 @@
     <header class="stars-header">
         <h1>The Sky Between Us</h1>
         
-           <div class="stars-ornament">
-            <svg viewBox="0 0 220 60" class="shooting-star">
+          <div class="stars-ornament">
+            <svg viewBox="0 0 220 34" class="shooting-star">
+        
                 <!-- Trajectoire -->
                 <path
                     id="shooting-path"
-                    d="M20 40 C70 12 145 12 200 30" />
+                    d="M20 26 C70 4 145 4 200 18">
+        
+                    <animate
+                        attributeName="opacity"
+                        values="0;0;1;1;0"
+                        keyTimes="0;0.08;0.15;0.90;1"
+                        dur="8s"
+                        repeatCount="indefinite"/>
+        
+                </path>
         
                 <!-- Étoile -->
-               <polygon
+                <polygon
                     class="shooting-dot"
                     points="
                         0,-4
@@ -53,22 +63,23 @@
                         -1.2,1.2
                         -4,0
                         -1.2,-1.2">
-                
+        
                     <animateMotion
                         dur="8s"
                         repeatCount="indefinite"
                         rotate="auto"
-                        path="M20 40 C70 12 145 12 200 30"/>
-                
+                        path="M20 26 C70 4 145 4 200 18"/>
+        
                     <animate
                         attributeName="opacity"
                         values="0;1;1;0"
                         keyTimes="0;0.08;0.90;1"
                         dur="8s"
                         repeatCount="indefinite"/>
-                
+        
                 </polygon>
-            </svg>        
+        
+            </svg>
         </div>
 
     </header>
