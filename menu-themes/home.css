@@ -116,13 +116,10 @@ body::before{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-    gap:18px 34px;
+    gap:12px 22px;
     padding-top:14px;
     padding-bottom:14px;
-    background:rgba(16,18,25,.42);
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,225,185,.08);
     text-transform:uppercase;
 }
 
@@ -155,7 +152,7 @@ body::before{
 
 .home-hero{
     text-align:center;
-    margin-top:10px;
+    transform: translateY(-30px);
     margin-bottom:24px;
 }
 
