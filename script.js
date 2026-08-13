@@ -422,156 +422,193 @@ const memories = [
 }
 ];
 
+
+/* ==========================================================
+   Memories
+========================================================== */
+
 let shuffledMemories = [];
 let score = 0;
 let round = 0;
 let lastMemory = null;
+
 const totalRounds = 10;
+
+/* ==========================================================
+   DOM
+========================================================== */
 
 const generateBtn = document.getElementById("generate");
 const result = document.getElementById("result");
-const container = document.querySelector(".container");
+const memoryChest = document.getElementById("memoryChest");
+const lastScore = document.getElementById("lastScore");
 
-const lastScore = localStorage.getItem("memoriesLastScore");
-
-/* ---------------------------
-   ÉCRAN INITIAL
---------------------------- */
+/* ==========================================================
+   INIT
+========================================================== */
 
 showIntro();
 
-function showIntro() {
-  result.innerHTML = "";
-
-  // supprimer ancien score affiché
-  const existing = document.querySelector(".last-score");
-  if (existing) existing.remove();
-
-  if (lastScore) {
-    const p = document.createElement("p");
-    p.className = "last-score";
-    p.textContent = `Last time, you remembered ${lastScore}.`;
-    container.insertBefore(p, result);
-  }
-
-  generateBtn.style.display = "block";
-  generateBtn.textContent = "Remember";
-}
-
-/* ---------------------------
-   DÉMARRAGE QUIZ
---------------------------- */
-
 generateBtn.addEventListener("click", startQuiz);
 
-function startQuiz() {
-  score = 0;
-  round = 0;
+/* ==========================================================
+   INTRO
+========================================================== */
 
-  generateBtn.style.display = "none";
-
-  do {
-    shuffledMemories = [...memories]
-      .sort(() => Math.random() - 0.5)
-      .slice(0, totalRounds);
-  } while (
-    lastMemory &&
-    shuffledMemories[0] === lastMemory
-  );
-
-  nextMemory();
+function showIntro() {
+    result.innerHTML = "";
+    const savedScore = localStorage.getItem("memoriesLastScore");
+    lastScore.textContent = savedScore
+        ? savedScore
+        : "No memories opened yet.";
+    generateBtn.style.display = "inline-flex";
+    generateBtn.textContent = "Remember?";
 }
 
-/* ---------------------------
-   QUESTIONS
---------------------------- */
+/* ==========================================================
+   CHEST
+========================================================== */
+
+function openChest() {
+    memoryChest.src = "assets/memory-box-open.png";
+    memoryChest.classList.remove("closed");
+    memoryChest.classList.add("open");
+}
+
+function closeChest() {
+    memoryChest.src = "assets/memory-box-closed.png";
+    memoryChest.classList.remove("open");
+    memoryChest.classList.add("closed");
+}
+
+/* ==========================================================
+   START
+========================================================== */
+
+function startQuiz() {
+    score = 0;
+    round = 0;
+    generateBtn.style.display = "none";
+    openChest();
+    do {
+        shuffledMemories = [...memories]
+            .sort(() => Math.random() - 0.5)
+            .slice(0, totalRounds);
+    }
+    while (
+        lastMemory &&
+        shuffledMemories[0] === lastMemory
+    );
+    setTimeout(nextMemory, 450);
+}
+
+/* ==========================================================
+   NEXT MEMORY
+========================================================== */
 
 function nextMemory() {
-  if (round >= shuffledMemories.length) {
-    endQuiz();
-    return;
-  }
+    if (round >= shuffledMemories.length) {
+        endQuiz();
+        return;
+    }
+    const memory = shuffledMemories[round];
+    lastMemory = memory;
+    round++;
+    result.innerHTML = `
 
-  const memory = shuffledMemories[round];
-  lastMemory = memory;
-  round++;
+        <p class="memory-question">
+            Who said that?
+        </p>
 
-  result.innerHTML = `
-    <p class="memory-question">Who said that?</p>
+        <p class="memory-text">
+            “${memory.text.replace(/\n/g,"<br>")}”
+        </p>
 
-    <p class="memory-text">
-      “${memory.text.replace(/\n/g, "<br>")}”
-    </p>
+        <div class="choices">
 
-    <div class="choices">
-      <button data-choice="me">L.</button>
-      <button data-choice="you">J.</button>
-      <button data-choice="us">Us</button>
-    </div>
+            <button data-choice="me">
+                L.
+            </button>
 
-    <p class="progress">Memory ${round} / ${totalRounds}</p>
-  `;
+            <button data-choice="you">
+                J.
+            </button>
 
-  document.querySelectorAll(".choices button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      handleAnswer(btn, memory.author, memory.note);
-    });
-  });
+            <button data-choice="us">
+                Us
+            </button>
+        </div>
+        <p class="progress">
+            Memory ${round} / ${totalRounds}
+        </p>
+    `;
+    document
+        .querySelectorAll(".choices button")
+        .forEach(button => {
+            button.addEventListener("click", () => {
+                handleAnswer(
+                    button,
+                    memory.author,
+                    memory.note
+                );
+            });
+        });
 }
 
-/* ---------------------------
-   RÉPONSE
---------------------------- */
+/* ==========================================================
+   ANSWER
+========================================================== */
 
 function handleAnswer(button, correctAuthor, note) {
-  const choice = button.dataset.choice;
-  const isCorrect = choice === correctAuthor;
-
-  if (isCorrect) score++;
-
-  /* feedback visuel */
-  result.classList.add(isCorrect ? "correct" : "wrong");
-
-  /* désactiver les boutons + révéler la bonne réponse */
-  document.querySelectorAll(".choices button").forEach(b => {
-    b.disabled = true;
-
-    if (b.dataset.choice === correctAuthor) {
-      b.classList.add("right-answer");
+    const choice = button.dataset.choice;
+    const correct = choice === correctAuthor;
+    if (correct) {
+        score++;
+        result.classList.add("correct");
+    } else {
+        result.classList.add("wrong");
     }
-  });
-
-  /* afficher la note si elle existe */
-  if (note) {
-    const noteEl = document.createElement("p");
-    noteEl.className = "memory-note";
-    noteEl.textContent = note;
-    result.appendChild(noteEl);
-  }
-
-  /* timing adaptatif */
-  const delay = note ? 2200 : 1200;
-
-  setTimeout(() => {
-    result.classList.remove("correct", "wrong");
-    nextMemory();
-  }, delay);
+    document
+        .querySelectorAll(".choices button")
+        .forEach(btn => {
+            btn.disabled = true;
+            if (btn.dataset.choice === correctAuthor) {
+                btn.classList.add("right-answer");
+            }
+        });
+    if (note) {
+        const p = document.createElement("p");
+        p.className = "memory-note";
+        p.textContent = note;
+        result.appendChild(p);
+    }
+    setTimeout(() => {
+        result.classList.remove("correct");
+        result.classList.remove("wrong");
+        nextMemory();
+    }, note ? 2200 : 1200);
 }
 
-/* ---------------------------
-   FIN
---------------------------- */
+/* ==========================================================
+   END
+========================================================== */
 
 function endQuiz() {
-  const finalScore = `${score} / ${totalRounds}`;
-  localStorage.setItem("memoriesLastScore", finalScore);
-
-  result.innerHTML = `
-    <p class="final-score">
-      You remembered <strong>${score}</strong> out of ${totalRounds}.
-    </p>
-  `;
-
-  generateBtn.style.display = "block";
-  generateBtn.textContent = "Back to memories";
+    closeChest();
+    const finalScore = `${score} / ${totalRounds}`;
+    localStorage.setItem(
+        "memoriesLastScore",
+        finalScore
+    );
+    lastScore.textContent = finalScore;
+    result.innerHTML = `
+        <p class="final-score">
+            You remembered
+            <strong>${score}</strong>
+            out of
+            ${totalRounds}.
+        </p>
+    `;
+    generateBtn.style.display = "inline-flex";
+    generateBtn.textContent = "Open another memory";
 }
