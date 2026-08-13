@@ -156,7 +156,6 @@ body::before{
 .home-hero{
     text-align:center;
     transform: translateY(-45px);
-    margin-bottom:70px;
 }
 
 .home-hero h1{
