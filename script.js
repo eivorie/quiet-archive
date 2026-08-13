@@ -470,22 +470,40 @@ function showIntro() {
 
 function openChest() {
     memoryChest.classList.add("switching");
+    // 1. Le coffre fermé s'efface doucement
     setTimeout(() => {
+        // 2. On change l'image pendant qu'elle est presque invisible
         memoryChest.src = "assets/memory-box-open.png";
-        memoryChest.classList.remove("switching");
         memoryChest.classList.add("open");
-        result.classList.add("show");
-    },180);
+        // 3. On laisse le navigateur afficher le nouveau PNG
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                memoryChest.classList.remove("switching");
+            });
+        });
+        // 4. Le souvenir apparaît APRÈS le coffre
+        setTimeout(() => {
+            result.classList.add("show");
+        }, 420);
+    }, 420);
 }
 
+
 function closeChest() {
-    memoryChest.classList.add("switching");
+    // Le panneau disparaît d'abord
+    result.classList.remove("show");
     setTimeout(() => {
-        memoryChest.src = "assets/memory-box-closed.png";
-        memoryChest.classList.remove("switching");
-        memoryChest.classList.remove("open");
-        result.classList.remove("show");
-    }, 180);
+        memoryChest.classList.add("switching");
+        setTimeout(() => {
+            memoryChest.src = "assets/memory-box-closed.png";
+            memoryChest.classList.remove("open");
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    memoryChest.classList.remove("switching");
+                });
+            });
+        }, 350);
+    }, 300);
 }
 
 /* ==========================================================
