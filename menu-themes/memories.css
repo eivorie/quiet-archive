@@ -3,11 +3,6 @@
    01 • ROOT
 ===================================================== */
 
-/* =====================================================
-   NAVBAR — MEMORIES
-   Same identity as Home
-===================================================== */
-
 
 /* ==========================================================
    NAVBAR
@@ -880,83 +875,3 @@ body.memories{
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 768px) {
-
-    /* NAV */
-
-    .nav {
-        column-gap: 18px;
-        row-gap: 10px;
-
-        padding:
-            11px 12px
-            10px;
-    }
-
-    .nav a {
-        font-size: .60rem;
-
-        letter-spacing: .15em;
-    }
-
-
-    /* PAGE */
-
-    .memories-page {
-        padding:
-            48px 16px
-            80px;
-    }
-
-
-    /* PANEL */
-
-    .memory-panel-inner {
-        padding:
-            42px 24px;
-    }
-
-
-    /* CHEST */
-
-    .memory-chest img {
-        width: 200px;
-    }
-
-    .memory-chest img.open {
-        transform:
-            translateY(-7px)
-            scale(1.42);
-    }
-
-
-    /* QUESTION */
-
-    .memory-result {
-        width: 100%;
-    }
-
-    .memory-result.show {
-        padding:
-            30px 22px
-            26px;
-    }
-
-
-    /* CHOICES */
-
-    .choices {
-        gap: 8px;
-    }
-
-    .choices button {
-        min-width: 54px;
-
-        padding:
-            9px 14px;
-    }
-}
