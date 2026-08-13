@@ -478,13 +478,14 @@ function openChest() {
     },180);
 }
 
-function closeChest(){
+function closeChest() {
     memoryChest.classList.add("switching");
-    setTimeout(()=>{
-        memoryChest.src="assets/memory-box-closed.png";
+    setTimeout(() => {
+        memoryChest.src = "assets/memory-box-closed.png";
         memoryChest.classList.remove("switching");
         memoryChest.classList.remove("open");
-    },180);
+        result.classList.remove("show");
+    }, 180);
 }
 
 /* ==========================================================
