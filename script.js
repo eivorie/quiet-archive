@@ -509,7 +509,7 @@ function startQuiz() {
         lastMemory &&
         shuffledMemories[0] === lastMemory
     );
-    setTimeout(nextMemory, 450);
+    setTimeout(nextMemory, 620);
 }
 
 /* ==========================================================
