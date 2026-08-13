@@ -143,17 +143,20 @@ body::before{
 .page.home{
     position:relative;
     z-index:2;
-    min-height:100vh;
+    width:100%;
+    max-width:520px;
+    margin:0 auto;
     display:flex;
     flex-direction:column;
     align-items:center;
     padding:60px 20px 90px;
+    box-sizing:border-box;
 }
 
 .home-hero{
     text-align:center;
-    transform: translateY(-30px);
-    margin-bottom:24px;
+    transform: translateY(-45px);
+    margin-bottom:70px;
 }
 
 .home-hero h1{
@@ -194,7 +197,7 @@ body::before{
 
 .home-card{
     position:relative;
-    width:min(480px,90vw);
+    width:width:100%;
     padding:22px 26px 28px;
     border-radius:26px;
     background:rgba(23,20,42,.48);
@@ -235,6 +238,7 @@ body::before{
 }
 
 .home-clocks{
+    position:relative;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -257,11 +261,6 @@ body::before{
             rgba(255,214,175,.75),
             transparent
         );
-}
-
-.home-clocks{
-    position:relative;
-    padding-bottom:24px;
 }
 
 .home-clocks::before{
