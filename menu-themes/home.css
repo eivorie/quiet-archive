@@ -396,12 +396,6 @@ body::before{
     margin:0 0 2rem;
 }
 
-.weather-lead{
-    font-size:1.35rem;
-    line-height:1.8;
-    color:#f4edf5;
-}
-
 .weather-ending{
     text-align:center;
     font-style:italic;
