@@ -150,13 +150,16 @@ body::before{
     font-size:1.05rem;
     line-height:1.7;
 }
+.home-moon{
+    margin-top:28px;
+    display:flex;
+    justify-content:center;
+}
 
 .home-moon span{
-    margin-top:28px;
     font-size:1.6rem;
     color:var(--gold);
-    filter:
-        drop-shadow(0 0 12px rgba(255,210,160,.35));
+    filter:drop-shadow(0 0 12px rgba(255,210,160,.35));
 }
 
 /* ==========================================================
@@ -334,4 +337,59 @@ body::before{
             rgba(255,225,185,.75),
             transparent
         );
+}
+
+.hidden-letter{
+    max-height:0;
+    max-width:700px;
+    margin:0 auto;
+
+    opacity:0;
+    visibility:hidden;
+    overflow:hidden;
+
+    color:rgba(235,230,238,.88);
+    font-size:1.15rem;
+    line-height:1.9;
+
+    transition:
+        max-height .8s ease,
+        opacity .5s ease,
+        visibility .5s;
+}
+
+.hidden-letter.is-visible{
+    max-height:1000vh;
+    margin-top:60px;
+    padding-top:20px;
+
+    opacity:1;
+    visibility:visible;
+}
+
+.hidden-letter p{
+    margin:0 0 2rem;
+}
+
+.weather-lead{
+    font-size:1.35rem;
+    line-height:1.8;
+    color:#f4edf5;
+}
+
+.weather-ending{
+    text-align:center;
+    font-style:italic;
+    color:#efe5dc;
+}
+
+.hidden-letter strong{
+    color:#fff6ec;
+    font-weight:500;
+}
+
+.hidden-letter i,
+.hidden-letter em{
+    color:#d7bfd3;
+    font-style:italic;
 }
