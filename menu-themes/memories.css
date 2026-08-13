@@ -547,7 +547,7 @@ body.memories{
 
 /* petite lueur supérieure, très discrète */
 
-.memory-result::before {
+#result.memory-result::before {
     content: "";
 
     position: absolute;
@@ -570,13 +570,12 @@ body.memories{
 
     opacity: 0;
 
-    transition:
-        opacity .6s ease .2s;
+    transition: opacity .6s ease .2s;
 
     pointer-events: none;
 }
 
-.memory-result.show::before {
+#result.memory-result.show::before {
     opacity: 1;
 }
 
@@ -751,15 +750,12 @@ body.memories{
 }
 
 
-.memory-result.correct {
-    border-color:
-        rgba(211,205,190,.22);
+#result.memory-result.correct {
+    border-color: rgba(211,205,190,.22);
 }
 
-
-.memory-result.wrong {
-    border-color:
-        rgba(190,174,171,.20);
+#result.memory-result.wrong {
+    border-color: rgba(190,174,171,.20);
 }
 
 /* =====================================================
