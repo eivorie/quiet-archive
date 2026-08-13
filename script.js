@@ -438,9 +438,8 @@ const totalRounds = 10;
    DOM
 ========================================================== */
 
-const generateBtn = document.getElementById("generate");
-const result = document.getElementById("result");
 const memoryChest = document.getElementById("memoryChest");
+const result = document.getElementById("result");
 const lastScore = document.getElementById("lastScore");
 
 /* ==========================================================
@@ -449,7 +448,7 @@ const lastScore = document.getElementById("lastScore");
 
 showIntro();
 
-generateBtn.addEventListener("click", startQuiz);
+memoryChest.addEventListener("click", startQuiz);
 
 /* ==========================================================
    INTRO
@@ -461,8 +460,8 @@ function showIntro() {
     lastScore.textContent = savedScore
         ? savedScore
         : "No memories opened yet.";
-    generateBtn.style.display = "inline-flex";
-    generateBtn.textContent = "Remember?";
+    closeChest();
+    result.classList.remove("show");
 }
 
 /* ==========================================================
@@ -470,15 +469,22 @@ function showIntro() {
 ========================================================== */
 
 function openChest() {
-    memoryChest.src = "assets/memory-box-open.png";
-    memoryChest.classList.remove("closed");
-    memoryChest.classList.add("open");
+    memoryChest.classList.add("switching");
+    setTimeout(() => {
+        memoryChest.src = "assets/memory-box-open.png";
+        memoryChest.classList.remove("switching");
+        memoryChest.classList.add("open");
+        result.classList.add("show");
+    },180);
 }
 
-function closeChest() {
-    memoryChest.src = "assets/memory-box-closed.png";
-    memoryChest.classList.remove("open");
-    memoryChest.classList.add("closed");
+function closeChest(){
+    memoryChest.classList.add("switching");
+    setTimeout(()=>{
+        memoryChest.src="assets/memory-box-closed.png";
+        memoryChest.classList.remove("switching");
+        memoryChest.classList.remove("open");
+    },180);
 }
 
 /* ==========================================================
@@ -486,16 +492,19 @@ function closeChest() {
 ========================================================== */
 
 function startQuiz() {
+    memoryChest.style.pointerEvents = "none";
     score = 0;
     round = 0;
-    generateBtn.style.display = "none";
-    openChest();
+    if (!memoryChest.classList.contains("open")) {
+        openChest();
+    } else {
+        result.classList.add("show");
+    }
     do {
         shuffledMemories = [...memories]
             .sort(() => Math.random() - 0.5)
             .slice(0, totalRounds);
-    }
-    while (
+    } while (
         lastMemory &&
         shuffledMemories[0] === lastMemory
     );
@@ -594,7 +603,6 @@ function handleAnswer(button, correctAuthor, note) {
 ========================================================== */
 
 function endQuiz() {
-    closeChest();
     const finalScore = `${score} / ${totalRounds}`;
     localStorage.setItem(
         "memoriesLastScore",
@@ -609,6 +617,8 @@ function endQuiz() {
             ${totalRounds}.
         </p>
     `;
-    generateBtn.style.display = "inline-flex";
-    generateBtn.textContent = "Open another memory";
+    memoryChest.style.pointerEvents = "auto";
+    setTimeout(() => {
+        closeChest();
+    }, 1200);
 }
