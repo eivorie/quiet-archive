@@ -471,7 +471,9 @@ body.memories{
 .memory-chest img.open {
     width: 284px;
 
-    transform: translateY(-2px);
+    transform:
+        translateX(-6px)
+        translateY(-2px);
 
     filter:
         drop-shadow(0 18px 24px rgba(0,0,0,.48))
