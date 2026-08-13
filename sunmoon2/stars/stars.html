@@ -63,49 +63,38 @@
             
                 <!-- Tout le groupe se déplace -->
                 <g class="shooting-group">
-            
-                    <!-- Traînée -->
+
+                    <!-- Halo très diffus -->
                     <path
-                       d="
-                            M-100 2
-                            C-70 -1 -35 -2 0 0
-                        "
-                        fill="none"
-                        stroke="url(#tailGradient)"
-                        stroke-width="0.7"
-                        stroke-linecap="round"/>
-            
-                    <!-- Étoile -->
-                    <polygon
-                        class="shooting-dot"
-                        points="
-                            0,-4
-                            1.2,-1.2
-                            4,0
-                            1.2,1.2
-                            0,4
-                            -1.2,1.2
-                            -4,0
-                            -1.2,-1.2"/>
-            
+                        class="tail-blur"
+                        d="M-80 0 C-55 -1 -25 -1 0 0"/>
+                
+                    <!-- Cœur lumineux -->
+                    <path
+                        class="tail-core"
+                        d="M-55 0 C-35 -.4 -15 -.2 0 0"/>
+                
+                    <!-- Petite étincelle -->
+                    <circle class="shooting-dot" r="2.4"/>
+                
                     <animateMotion
                         dur="8s"
                         repeatCount="indefinite"
                         rotate="auto">
-            
+                
                         <mpath href="#shooting-path"/>
-            
+                
                     </animateMotion>
-            
+                
                     <animate
                         attributeName="opacity"
                         values="0;1;1;0"
                         keyTimes="0;0.08;0.90;1"
                         dur="8s"
                         repeatCount="indefinite"/>
-            
+                
                 </g>
-            
+                            
             </svg>
         </div>
 
