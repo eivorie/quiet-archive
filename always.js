@@ -5,28 +5,18 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!toggle || !letter) return;
 
   toggle.addEventListener("click", () => {
-    const isOpen = letter.classList.contains("is-visible");
+    const isOpen = letter.classList.toggle("is-visible");
+
+    toggle.setAttribute("aria-expanded", isOpen);
+    letter.setAttribute("aria-hidden", !isOpen);
 
     if (isOpen) {
-      // Fermer
-      letter.classList.remove("is-visible");
-      letter.style.display = "none";
-
-      toggle.setAttribute("aria-expanded", "false");
-      letter.setAttribute("aria-hidden", "true");
-    } else {
-      // Ouvrir
-      letter.style.display = "block";
-      letter.classList.add("is-visible");
-
-      toggle.setAttribute("aria-expanded", "true");
-      letter.setAttribute("aria-hidden", "false");
-
-      // Scroll doux vers la lettre
-      letter.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+      setTimeout(() => {
+        letter.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 150);
     }
   });
 });
