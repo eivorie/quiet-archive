@@ -194,11 +194,8 @@ body::before{
 
 .home-card{
     position:relative;
-    width:min(520px,92vw);
-    padding:
-        28px
-        30px
-        34px;
+    width:min(480px,90vw);
+    padding:22px 26px 28px;
     border-radius:26px;
     background:rgba(23,20,42,.48);
     backdrop-filter:blur(18px);
@@ -242,7 +239,8 @@ body::before{
     justify-content:center;
     align-items:center;
     gap:22px;
-    margin-bottom:26px;
+    margin-bottom:18px;
+    padding-bottom:18px;
     font-size:.63rem;
     letter-spacing:.22em;
     text-transform:uppercase;
@@ -284,10 +282,7 @@ body::before{
 }
 
 .home-card h1{
-    margin:
-        18px
-        0
-        22px;
+    margin:12px 0 16px;
     text-align:center;
     font-size:2.05rem;
     font-weight:400;
@@ -308,12 +303,12 @@ body::before{
     max-width:340px;
     color:rgba(230,223,231,.70);
     font-size:1rem;
-    line-height:1.8;
+    line-height:1.65;
     font-style:italic;
 }
 
 .home-footnote{
-    margin-top:42px;
+    margin-top:28px;
     text-align:center;
 }
 
