@@ -37,27 +37,13 @@
     text-transform: uppercase;
 }
 
-.nav a {
-    color:
-        rgba(235,228,232,.68);
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: .62rem;
-    font-weight: 400;
-
-    line-height: 1;
-
-    letter-spacing: .16em;
-    text-transform: uppercase;
-
-    text-decoration: none;
-
-    transition:
-        color .3s ease,
-        opacity .3s ease;
+.nav a{
+    color:rgba(235,228,232,.78);
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.72rem;
+    text-decoration:none;
+    transition:color .3s;
 }
 
 .nav a:hover {
