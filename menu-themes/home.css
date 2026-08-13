@@ -151,7 +151,7 @@ body::before{
     line-height:1.7;
 }
 
-.home-moon{
+.home-moon span{
     margin-top:28px;
     font-size:1.6rem;
     color:var(--gold);
@@ -220,7 +220,7 @@ body::before{
     color:rgba(235,228,232,.52);
 }
 
-.clock-separator{
+.clock-divider{
     width:16px;
     height:1px;
     background:
