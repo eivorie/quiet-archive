@@ -271,67 +271,87 @@ body.memories{
 
 .memory-chest{
 
+    position:relative;
+
     display:flex;
 
     justify-content:center;
 
-    margin-bottom:30px;
-   
-    margin:
+    align-items:center;
 
-        10px
-        0
-        28px;
+    margin:40px auto 24px;
 
+    cursor:pointer;
+
+    transition:
+        transform .35s ease,
+        filter .35s ease;
+
+}
+
+.memory-chest:hover{
+
+    transform:translateY(-4px);
+
+    filter:brightness(1.05);
+
+}
+
+.memory-chest::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:8px;
+
+    width:170px;
+    height:36px;
+
+    transform:translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,205,130,.18),
+            transparent 72%
+        );
+
+    filter:blur(18px);
+
+    pointer-events:none;
 
 }
 
 .memory-chest img{
 
-    width:190px;
+    width:230px;
 
     display:block;
 
-}
+    filter:
+        drop-shadow(0 20px 40px rgba(0,0,0,.45));
 
-
-/* =====================================================
-   BUTTON
-===================================================== */
-#generate{
-
-    display:block;
-
-    margin:0 auto 28px;
-
-    padding:12px 36px;
-
-    background:none;
-
-    border:1px solid rgba(255,235,205,.35);
-
-    border-radius:999px;
-
-    color:#efe7da;
-
-    font-family:"Cormorant Garamond",serif;
-
-    letter-spacing:.14em;
-
-    cursor:pointer;
-
-    transition:.35s;
+    transition:
+        transform .45s ease,
+        opacity .35s ease;
 
 }
 
-#generate:hover{
+.memory-chest img.open{
 
-    transform:translateY(-2px);
-
-    background:rgba(255,255,255,.05);
+    transform:translateY(-6px);
 
 }
 
+.memory-chest img.switching{
+
+    opacity:.2;
+
+    transform:scale(.96);
+
+}
 
 /* =====================================================
    RESULT
@@ -339,13 +359,28 @@ body.memories{
 
 .memory-result{
 
-    min-height:80px;
+    max-height:0;
 
-    margin-top:28px;
+    opacity:0;
 
-    text-align:center;
+    overflow:hidden;
+
+    transition:
+        opacity .5s ease,
+        max-height .6s ease;
 
 }
+
+.memory-result.show{
+
+    opacity:1;
+
+    max-height:700px;
+
+    margin-top:30px;
+
+}
+
 /* =====================================================
    SCORE
 ===================================================== */
