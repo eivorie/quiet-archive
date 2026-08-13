@@ -235,21 +235,6 @@ body::before{
         );
 }
 
-.home-clocks::after{
-    content:"";
-    position:absolute;
-    top:58px;
-    left:50%;
-    width:5px;
-    height:5px;
-    border-radius:50%;
-    transform:translateX(-50%);
-    background:#ffe8bc;
-    box-shadow:
-        0 0 10px rgba(255,220,180,.85),
-        0 0 25px rgba(255,220,180,.45);
-}
-
 .home-clocks{
     position:relative;
     padding-bottom:24px;
