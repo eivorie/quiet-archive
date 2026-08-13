@@ -1,42 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Memories</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="menu-themes/memories.css">
+    <meta charset="UTF-8">
+    <title>Memories</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu-themes/memories.css">
 </head>
-<body>
 
-  <div class="ambient">
-  <span></span><span></span><span></span><span></span><span></span>
-  <span></span><span></span><span></span><span></span><span></span>
-  <span></span><span></span><span></span><span></span><span></span>
-  <span></span><span></span><span></span><span></span><span></span>
-</div>
+<body class="memories">
 
-<nav class="nav">
-  <a href="index.html">Home</a>
-  <a href="memories.html">Memories</a>
-  <a href="ereri/index.html">Ereri</a>
-  <a href="depending-on-the-weather/index.html">Depending on the weather</a>
-  <a href="archive.html">Our Archive</a>
-  <a href="sunmoon2/index.html">Sun & Moon</a>
-</nav>
+    <div class="ambient">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
 
-<main class="page">
-  <section class="container home-card">
-  <h1>Memories</h1>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="memories.html">Memories</a>
+        <a href="ereri/index.html">Ereri</a>
+        <a href="depending-on-the-weather/index.html">Depending on the weather</a>
+        <a href="archive.html">Our Archive</a>
+        <a href="sunmoon2/index.html">Sun & Moon</a>
+    </nav>
 
-  <button id="generate">Remember ?</button>
+    <main class="page memories-page">
 
-  <div id="result"></div>
-  </section>
-</main>
+        <header class="memories-hero">
 
-<script src="script.js"></script>
+            <h1>Memories</h1>
+
+            <p class="subtitle">
+                Some things survive<br>
+                because we keep remembering them.
+            </p>
+
+            <div class="hero-ornament">
+                ❈
+            </div>
+
+        </header>
+
+
+        <section class="memory-box">
+
+            <div class="memory-box-inner">
+
+                <p class="box-title">
+                    OPEN THE BOX.
+                </p>
+
+                <div class="divider"></div>
+
+                <p class="box-description">
+                    Every memory is a little piece<br>
+                    of our story.
+                </p>
+
+                <button id="generate">
+                    Remember?
+                </button>
+
+                <div class="memory-chest">
+
+                    <img
+                        src="assets/memory-box.png"
+                        alt="Memory box">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <aside class="memory-score">
+
+            <div class="score-content">
+
+                <p class="score-label">
+                    Last time,
+                </p>
+
+                <p class="last-score">
+                </p>
+
+                <div class="divider small"></div>
+
+            </div>
+
+        </aside>
+
+
+        <section id="result" class="memory-result">
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
