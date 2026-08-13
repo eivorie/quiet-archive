@@ -505,20 +505,17 @@ body.memories{
     transform-origin: top center;
 
     background:
-        linear-gradient(
-            145deg,
-            rgba(64, 69, 68, .78),
-            rgba(43, 49, 49, .86)
-        );
+    linear-gradient(
+        145deg,
+        rgba(35, 42, 48, .82),
+        rgba(24, 31, 38, .90)
+    );
 
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 
-    border:
-        1px solid rgba(220, 218, 208, .13);
-
-    border-left:
-        1px solid rgba(220, 218, 208, .13);
+   border:
+    1px solid rgba(205, 195, 180, .14);
 
     border-radius: 22px;
 
@@ -670,15 +667,15 @@ body.memories{
         18px;
 
     border:
-        1px solid rgba(220, 220, 214, .16);
+        1px solid rgba(210, 201, 188, .15);
 
     border-radius: 999px;
 
     background:
         linear-gradient(
             180deg,
-            rgba(105, 109, 106, .46),
-            rgba(72, 77, 76, .52)
+            rgba(67, 75, 80, .58),
+            rgba(43, 51, 57, .68)
         );
 
     color:
@@ -691,8 +688,8 @@ body.memories{
     font-size: .9rem;
 
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.04),
-        0 5px 12px rgba(0,0,0,.16);
+        inset 0 1px 0 rgba(255,255,255,.035),
+        0 5px 12px rgba(0,0,0,.18);
 
     cursor: pointer;
 
@@ -704,26 +701,25 @@ body.memories{
         box-shadow .25s ease;
 }
 
-
 .choices button:hover:not(:disabled) {
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 
     color:
-        rgba(248,246,239,.96);
+        rgba(248,244,235,.96);
 
     background:
         linear-gradient(
             180deg,
-            rgba(121,124,119,.55),
-            rgba(82,87,85,.62)
+            rgba(83, 79, 70, .66),
+            rgba(52, 51, 48, .74)
         );
 
     border-color:
-        rgba(224,216,202,.28);
+        rgba(215, 188, 148, .28);
 
     box-shadow:
-        0 6px 16px rgba(0,0,0,.20);
+        0 6px 16px rgba(0,0,0,.22),
+        0 0 12px rgba(205,160,100,.05);
 }
 
 
@@ -737,20 +733,20 @@ body.memories{
 
 .choices button.right-answer {
     color:
-        rgba(245,241,232,.95);
+        rgba(250,243,230,.96);
 
     border-color:
-        rgba(205,190,165,.38);
+        rgba(213,181,132,.34);
 
     background:
         linear-gradient(
             180deg,
-            rgba(116,113,103,.58),
-            rgba(77,77,72,.64)
+            rgba(91, 78, 61, .72),
+            rgba(55, 50, 45, .78)
         );
 
     box-shadow:
-        0 0 13px rgba(210,195,170,.08),
+        0 0 16px rgba(213,170,105,.10),
         inset 0 1px 0 rgba(255,255,255,.05);
 }
 
