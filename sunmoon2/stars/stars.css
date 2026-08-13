@@ -39,28 +39,23 @@
 SHOOTING STAR
 ===================================================== */
 
-.tail-blur{
-
-    fill:none;
-    stroke:rgba(225,235,255,.12);
-    stroke-width:4;
-
-    stroke-linecap:round;
-
-    filter:blur(4px);
-
+.tail{
+    fill:#dfeaff;
 }
 
-.tail-core{
+.tail-1{
+    opacity:.05;
+    filter:blur(8px);
+}
 
-    fill:none;
-    stroke:rgba(245,248,255,.35);
-    stroke-width:.8;
+.tail-2{
+    opacity:.10;
+    filter:blur(4px);
+}
 
-    stroke-linecap:round;
-
-    filter:blur(.4px);
-
+.tail-3{
+    opacity:.18;
+    filter:blur(1.5px);
 }
 
 .stars-ornament{
