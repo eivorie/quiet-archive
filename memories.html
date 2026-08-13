@@ -27,77 +27,69 @@
         <a href="sunmoon2/index.html">Sun & Moon</a>
     </nav>
 
-    <main class="page memories-page">
-
+        <main class="memories-page">
+    
         <header class="memories-hero">
-
+    
             <h1>Memories</h1>
-
+    
             <p class="subtitle">
                 Some things survive<br>
                 because we keep remembering them.
             </p>
-
-            <div class="hero-ornament">
-                ❈
-            </div>
-
+    
+            <div class="hero-divider"></div>
+    
         </header>
-
-
-        <section class="memory-box">
-
-            <div class="memory-box-inner">
-
-                <p class="box-title">
-                    OPEN THE BOX.
-                </p>
-
+    
+    
+        <section class="memory-panel">
+    
+            <div class="memory-panel-inner">
+    
+                <span class="panel-title">
+                    OPEN THE BOX
+                </span>
+    
                 <div class="divider"></div>
-
-                <p class="box-description">
-                    Every memory is a little piece<br>
+    
+                <p class="panel-text">
+                    Every memory is a little piece
                     of our story.
                 </p>
-
+    
                 <button id="generate">
                     Remember?
                 </button>
-
+    
                 <div class="memory-chest">
-
+    
                     <img
-                        src="assets/memory-box.png"
-                        alt="Memory box">
-
+                        id="memoryChest"
+                        src="assets/memory-box-closed.png"
+                        alt="Memory chest">
+    
                 </div>
-
+    
             </div>
-
+    
         </section>
-
-
+    
+    
         <aside class="memory-score">
-
-            <div class="score-content">
-
-                <p class="score-label">
-                    Last time,
-                </p>
-
-                <p class="last-score">
-                </p>
-
-                <div class="divider small"></div>
-
-            </div>
-
+    
+            <span>Last time</span>
+    
+            <p class="last-score"></p>
+    
         </aside>
-
-
-        <section id="result" class="memory-result">
+    
+    
+        <section
+            id="result"
+            class="memory-result">
         </section>
-
+    
     </main>
 
     <script src="script.js"></script>
