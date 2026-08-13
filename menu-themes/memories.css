@@ -4,6 +4,160 @@
 ===================================================== */
 
 /* =====================================================
+   NAVBAR — MEMORIES
+   Same identity as Home
+===================================================== */
+
+.memories .nav {
+    position: relative;
+    z-index: 20;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    column-gap: 30px;
+    row-gap: 14px;
+
+    width: calc(100% - 40px);
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    padding:
+        22px 0
+        18px;
+
+    box-sizing: border-box;
+
+    border-bottom:
+        1px solid rgba(219, 202, 180, .13);
+}
+
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+.memories .nav a {
+    position: relative;
+
+    display: inline-block;
+
+    padding:
+        3px 0
+        7px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: .70rem;
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: .22em;
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    color:
+        rgba(224, 216, 205, .58);
+
+    text-shadow:
+        0 1px 7px rgba(0, 0, 0, .28);
+
+    transition:
+        color .3s ease,
+        text-shadow .3s ease;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.memories .nav a:hover {
+    color:
+        rgba(239, 229, 215, .85);
+
+    text-shadow:
+        0 0 10px rgba(218, 180, 124, .12);
+}
+
+
+/* =====================================================
+   ACTIVE — MEMORIES
+===================================================== */
+
+.memories .nav a[href="memories.html"] {
+    color:
+        rgba(226, 205, 177, .86);
+
+    text-shadow:
+        0 0 10px rgba(216, 173, 111, .10);
+}
+
+
+/* ligne dorée sous Memories */
+
+.memories .nav a[href="memories.html"]::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -3px;
+
+    width: 62px;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(208, 165, 105, .22) 15%,
+            rgba(225, 183, 119, .70) 50%,
+            rgba(208, 165, 105, .22) 85%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 6px rgba(222, 177, 111, .16);
+}
+
+
+/* petite étoile centrale */
+
+.memories .nav a[href="memories.html"]::before {
+    content: "✦";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -6px;
+
+    z-index: 2;
+
+    transform: translateX(-50%);
+
+    padding: 0 3px;
+
+    font-size: .34rem;
+    line-height: 1;
+
+    color:
+        rgba(229, 190, 132, .86);
+
+    text-shadow:
+        0 0 5px rgba(225, 177, 108, .30);
+}
+
+/* =====================================================
    BACKGROUND
 ===================================================== */
 
@@ -428,100 +582,6 @@ body.memories{
         drop-shadow(0 0 18px rgba(235,165,75,.18));
 }
 
-/* =====================================================
-   MEMORY CONTENT
-===================================================== */
-
-.memory-question {
-    margin:
-        0 0
-        20px;
-
-    font-size: 1rem;
-    font-weight: 600;
-
-    color: rgba(224,180,120,.92);
-
-    letter-spacing: .04em;
-}
-
-.memory-text {
-    margin:
-        0 0
-        24px;
-
-    font-size: 1.08rem;
-    line-height: 1.55;
-
-    font-style: italic;
-
-    color: rgba(239,232,222,.92);
-}
-
-
-/* -----------------------------
-   CHOICES
------------------------------ */
-
-.choices {
-    display: flex;
-
-    gap: 8px;
-
-    margin-top: 22px;
-}
-
-.choices button {
-    min-width: 54px;
-
-    padding:
-        10px
-        16px;
-
-    border:
-        1px solid rgba(218,166,103,.22);
-
-    border-radius: 7px;
-
-    background:
-        rgba(112,77,49,.72);
-
-    color:
-        rgba(250,241,229,.95);
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: .95rem;
-
-    cursor: pointer;
-
-    transition:
-        transform .2s ease,
-        background .2s ease,
-        border-color .2s ease,
-        box-shadow .2s ease;
-}
-
-.choices button:hover:not(:disabled) {
-    transform:
-        translateY(-2px);
-
-    background:
-        rgba(138,92,52,.88);
-
-    border-color:
-        rgba(232,182,113,.42);
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,.18);
-}
-
-.choices button:disabled {
-    cursor: default;
-}
-
 
 /* -----------------------------
    ANSWER
@@ -549,131 +609,90 @@ body.memories{
 }
 
 
-/* -----------------------------
-   NOTE / PROGRESS
------------------------------ */
-
-.memory-note {
-    margin:
-        22px 0
-        0;
-
-    padding-top:
-        18px;
-
-    border-top:
-        1px solid rgba(255,255,255,.06);
-
-    line-height:
-        1.55;
-
-    color:
-        rgba(221,213,204,.72);
-
-    font-style:
-        italic;
-}
-
-.progress {
-    margin:
-        22px 0
-        0;
-
-    font-size:
-        .72rem;
-
-    letter-spacing:
-        .12em;
-
-    color:
-        rgba(210,196,180,.48);
-}
-
 /* =====================================================
-   RESULT
+   RESULT — DARK MEMORY CARD
 ===================================================== */
 
 .memory-result {
     position: relative;
-
     z-index: 2;
 
     width: min(100%, 390px);
-
-    margin:
-        -8px auto
-        0;
-
-    padding:
-        0 26px;
-
     box-sizing: border-box;
 
+    margin: -12px auto 0;
+    padding: 0 30px;
+
     max-height: 0;
-
     opacity: 0;
-
     overflow: hidden;
 
     transform:
-        translateY(-34px)
-        scale(.94);
+        translateY(-30px)
+        scale(.96);
 
     transform-origin: top center;
 
+    /* même univers que le panneau du screen 2 */
     background:
         linear-gradient(
             145deg,
-            rgba(38,35,36,.90),
-            rgba(24,28,34,.94)
+            rgba(39, 48, 52, .72),
+            rgba(24, 32, 37, .82)
         );
 
-    border:
-        1px solid rgba(219,170,105,.16);
+    backdrop-filter: blur(12px);
 
-    border-radius: 4px 4px 14px 14px;
+    border:
+        1px solid rgba(221, 205, 178, .16);
+
+    border-radius: 18px;
 
     box-shadow:
-        0 22px 45px rgba(0,0,0,.28),
-        inset 0 1px 0 rgba(255,255,255,.035);
+        0 18px 45px rgba(0, 0, 0, .22),
+        inset 0 1px 0 rgba(255, 255, 255, .04),
+        inset 0 0 35px rgba(190, 170, 140, .025);
 
     transition:
-        max-height .8s cubic-bezier(.2,.8,.2,1),
-        opacity .5s ease,
-        transform .8s cubic-bezier(.16,1,.3,1),
+        max-height .8s cubic-bezier(.16, 1, .3, 1),
+        opacity .55s ease,
+        transform .8s cubic-bezier(.16, 1, .3, 1),
         padding .7s ease,
         margin .7s ease;
 }
 
 
-/* petite lumière entre le coffre et le souvenir */
+/* fine lumière qui relie visuellement
+   la boîte au souvenir */
+
 .memory-result::before {
     content: "";
 
     position: absolute;
 
-    top: -20px;
+    top: 0;
     left: 50%;
 
-    width: 180px;
-    height: 55px;
+    width: 65%;
+    height: 1px;
 
     transform: translateX(-50%);
 
     background:
-        radial-gradient(
-            ellipse,
-            rgba(235,168,86,.22),
-            transparent 70%
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(226, 190, 137, .42),
+            transparent
         );
 
-    filter: blur(15px);
+    box-shadow:
+        0 0 14px rgba(215, 168, 105, .10);
 
     opacity: 0;
 
-    transition: opacity .7s ease .15s;
-
-    pointer-events: none;
+    transition:
+        opacity .7s ease .2s;
 }
 
 
@@ -682,10 +701,10 @@ body.memories{
 
     opacity: 1;
 
-    margin-top: -2px;
+    margin-top: 14px;
 
     padding:
-        34px 26px
+        34px 30px
         28px;
 
     transform:
@@ -693,8 +712,256 @@ body.memories{
         scale(1);
 }
 
+
 .memory-result.show::before {
     opacity: 1;
+}
+
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+.memory-question {
+    margin: 0 0 24px;
+
+    text-align: center;
+
+    font-size: .78rem;
+    font-weight: 400;
+
+    letter-spacing: .20em;
+    text-transform: uppercase;
+
+    color: rgba(224, 211, 191, .72);
+}
+
+
+/* petit ornement sous le titre */
+
+.memory-question::after {
+    content: "✦";
+
+    display: block;
+
+    margin-top: 12px;
+
+    font-size: .52rem;
+
+    color: rgba(218, 172, 105, .72);
+
+    text-shadow:
+        0 0 8px rgba(218, 172, 105, .30);
+}
+
+
+/* =====================================================
+   MEMORY TEXT
+===================================================== */
+
+.memory-text {
+    margin:
+        0 auto
+        30px;
+
+    max-width: 310px;
+
+    text-align: center;
+
+    font-size: 1.05rem;
+    line-height: 1.65;
+
+    font-style: italic;
+
+    color: rgba(232, 226, 216, .82);
+
+    text-shadow:
+        0 1px 8px rgba(0, 0, 0, .18);
+}
+
+
+/* =====================================================
+   CHOICES
+===================================================== */
+
+.choices {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+
+.choices button {
+    min-width: 58px;
+
+    padding:
+        10px
+        17px;
+
+    border:
+        1px solid rgba(218, 195, 161, .20);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(70, 77, 77, .55),
+            rgba(47, 57, 61, .68)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .035),
+        0 5px 14px rgba(0, 0, 0, .12);
+
+    color:
+        rgba(235, 226, 213, .82);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: .9rem;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.choices button:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(225, 190, 137, .42);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(83, 87, 82, .68),
+            rgba(53, 62, 63, .78)
+        );
+
+    box-shadow:
+        0 0 18px rgba(211, 167, 103, .08);
+}
+
+
+.choices button:disabled {
+    cursor: default;
+}
+
+
+/* =====================================================
+   ANSWERS
+===================================================== */
+
+.choices button.right-answer {
+    border-color:
+        rgba(208, 176, 124, .55);
+
+    background:
+        rgba(101, 92, 72, .46);
+
+    color:
+        rgba(245, 230, 204, .92);
+
+    box-shadow:
+        0 0 15px rgba(210, 169, 103, .10);
+}
+
+
+.memory-result.correct {
+    border-color:
+        rgba(207, 180, 136, .26);
+}
+
+
+.memory-result.wrong {
+    border-color:
+        rgba(171, 132, 124, .24);
+}
+
+
+/* =====================================================
+   NOTE
+===================================================== */
+
+.memory-note {
+    margin:
+        26px 0
+        0;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid rgba(224, 208, 185, .09);
+
+    text-align: center;
+
+    font-size: .9rem;
+    line-height: 1.55;
+
+    font-style: italic;
+
+    color:
+        rgba(220, 211, 199, .62);
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.progress {
+    position: relative;
+
+    margin:
+        27px 0
+        0;
+
+    padding-top: 18px;
+
+    text-align: center;
+
+    font-size: .68rem;
+
+    letter-spacing: .16em;
+    text-transform: uppercase;
+
+    color:
+        rgba(211, 201, 187, .43);
+}
+
+
+.progress::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 50px;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(216, 185, 143, .25),
+            transparent
+        );
 }
 
 /* =====================================================
@@ -735,3 +1002,84 @@ body.memories{
 /* =====================================================
    MOBILE
 ===================================================== */
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .memories .nav {
+        width: calc(100% - 32px);
+
+        column-gap: 24px;
+        row-gap: 15px;
+
+        padding:
+            20px 4px
+            17px;
+    }
+
+    .memories .nav a {
+        font-size: .66rem;
+
+        letter-spacing: .19em;
+
+        padding-bottom: 7px;
+    }
+
+    .memories .nav a[href="memories.html"]::after {
+        width: 56px;
+    }
+
+
+    /* PAGE */
+
+    .memories-page {
+        padding:
+            48px 16px
+            80px;
+    }
+
+
+    /* PANEL */
+
+    .memory-panel-inner {
+        padding:
+            42px 24px;
+    }
+
+
+    /* CHEST */
+
+    .memory-chest img {
+        width: 200px;
+    }
+
+
+    /* QUESTION */
+
+    .memory-result {
+        width: 100%;
+    }
+
+    .memory-result.show {
+        padding:
+            30px 22px
+            26px;
+    }
+
+
+    /* CHOICES */
+
+    .choices {
+        gap: 8px;
+    }
+
+    .choices button {
+        min-width: 54px;
+
+        padding:
+            9px 14px;
+    }
+}
