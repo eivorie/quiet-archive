@@ -456,14 +456,25 @@ memoryChest.addEventListener("click", startQuiz);
 
 function showIntro() {
     result.innerHTML = "";
-    const savedScore = localStorage.getItem("memoriesLastScore");
+    const savedScore =
+        localStorage.getItem("memoriesLastScore");
     lastScore.textContent = savedScore
         ? `you remembered ${savedScore}.`
         : "No memories opened yet.";
-    result.classList.remove("show");
-    // État initial immédiat, sans animation
-    memoryChest.src = "assets/memory-box-closed.png";
-    memoryChest.classList.remove("open", "switching");
+    result.classList.remove(
+        "show",
+        "correct",
+        "wrong",
+        "parchment-a",
+        "parchment-b",
+        "parchment-c"
+    );
+    memoryChest.src =
+        "assets/memory-box-closed.png";
+    memoryChest.classList.remove(
+        "open",
+        "switching"
+    );
     memoryChest.style.pointerEvents = "auto";
 }
 
@@ -528,28 +539,66 @@ function nextMemory() {
         return;
     }
     const memory = shuffledMemories[round];
+
     lastMemory = memory;
     round++;
-    result.innerHTML = `
 
+    /* ------------------------------------------------------
+       PARCHMENT SHAPE
+       La forme dépend légèrement de la longueur du souvenir
+    ------------------------------------------------------ */
+
+    result.classList.remove(
+        "parchment-a",
+        "parchment-b",
+        "parchment-c"
+    );
+
+    const textLength = memory.text.length;
+    let parchmentShape;
+  
+    if (textLength < 90) {
+        // Petit souvenir → papier A ou B
+        parchmentShape =
+            Math.random() > 0.5
+                ? "parchment-a"
+                : "parchment-b";
+    } else if (textLength < 180) {
+        // Souvenir moyen → les trois possibles
+        const shapes = [
+            "parchment-a",
+            "parchment-b",
+            "parchment-c"
+        ];
+        parchmentShape =
+            shapes[
+                Math.floor(Math.random() * shapes.length)
+            ];
+    } else {
+        // Long souvenir → papier C
+        parchmentShape = "parchment-c";
+    }
+    result.classList.add(parchmentShape);
+
+
+    /* ------------------------------------------------------
+       MEMORY CONTENT
+    ------------------------------------------------------ */
+
+    result.innerHTML = `
         <p class="memory-question">
             Who said that?
         </p>
-
         <p class="memory-text">
-            “${memory.text.replace(/\n/g,"<br>")}”
+            “${memory.text.replace(/\n/g, "<br>")}”
         </p>
-
         <div class="choices">
-
             <button data-choice="me">
                 L.
             </button>
-
             <button data-choice="you">
                 J.
             </button>
-
             <button data-choice="us">
                 Us
             </button>
@@ -558,6 +607,12 @@ function nextMemory() {
             Memory ${round} / ${totalRounds}
         </p>
     `;
+
+
+    /* ------------------------------------------------------
+       ANSWERS
+    ------------------------------------------------------ */
+
     document
         .querySelectorAll(".choices button")
         .forEach(button => {
