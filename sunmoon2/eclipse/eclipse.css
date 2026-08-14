@@ -58,112 +58,6 @@
 
 
 /* =====================================================
-   ECLIPSE SYMBOL
-===================================================== */
-
-.divider {
-  position: relative;
-
-  width: 58px;
-  height: 58px;
-
-  margin: 30px auto 36px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle at 45% 42%,
-      #090908 0%,
-      #050505 60%,
-      #000 100%
-    );
-
-  border:
-    1px solid rgba(255, 210, 132, .28);
-
-  box-shadow:
-    0 0 4px rgba(255, 225, 168, .75),
-    0 0 13px rgba(236, 178, 87, .62),
-    0 0 32px rgba(218, 145, 53, .36),
-    0 0 72px rgba(192, 116, 38, .16);
-
-  animation:
-    eclipseGlow 7s ease-in-out infinite;
-}
-
-
-/* halo diffus */
-
-.divider::before {
-  content: "";
-
-  position: absolute;
-  inset: -36px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(235, 177, 89, .12) 0%,
-      rgba(208, 136, 50, .06) 32%,
-      transparent 70%
-    );
-
-  filter: blur(8px);
-
-  pointer-events: none;
-}
-
-
-/* petite étoile sous l'éclipse */
-
-.divider::after {
-  content: "✦";
-
-  position: absolute;
-
-  left: 50%;
-  top: calc(100% + 21px);
-
-  transform: translateX(-50%);
-
-  color: rgba(203, 156, 89, .72);
-
-  font-size: .48rem;
-
-  text-shadow:
-    0 0 8px rgba(229, 181, 107, .42);
-}
-
-
-@keyframes eclipseGlow {
-
-  0%,
-  100% {
-    transform: scale(1);
-
-    box-shadow:
-      0 0 4px rgba(255, 225, 168, .70),
-      0 0 13px rgba(236, 178, 87, .55),
-      0 0 32px rgba(218, 145, 53, .30),
-      0 0 72px rgba(192, 116, 38, .13);
-  }
-
-  50% {
-    transform: scale(1.025);
-
-    box-shadow:
-      0 0 5px rgba(255, 229, 176, .90),
-      0 0 16px rgba(240, 184, 94, .70),
-      0 0 42px rgba(220, 148, 55, .42),
-      0 0 90px rgba(192, 116, 38, .18);
-  }
-}
-
-
-/* =====================================================
    INTRODUCTION
 ===================================================== */
 
@@ -492,23 +386,6 @@
   .eclipse-header h1 {
     font-size: 2rem;
     letter-spacing: .22em;
-  }
-
-
-  /* ---------- Eclipse ---------- */
-
-  .divider {
-    width: 48px;
-    height: 48px;
-
-    margin:
-      25px
-      auto
-      32px;
-  }
-
-  .divider::before {
-    inset: -28px;
   }
 
 
