@@ -327,7 +327,7 @@ const memories = [
 },
   {
   text: "I'm not corny, I swear to God",
-  author: "him",
+  author: "you",
   note: "You still talked about Céline Dion…"
 },
 {
@@ -460,8 +460,11 @@ function showIntro() {
     lastScore.textContent = savedScore
         ? `you remembered ${savedScore}.`
         : "No memories opened yet.";
-    closeChest();
     result.classList.remove("show");
+    // État initial immédiat, sans animation
+    memoryChest.src = "assets/memory-box-closed.png";
+    memoryChest.classList.remove("open", "switching");
+    memoryChest.style.pointerEvents = "auto";
 }
 
 /* ==========================================================
@@ -470,38 +473,25 @@ function showIntro() {
 
 function openChest() {
     memoryChest.classList.add("switching");
-    // 1. Le coffre fermé s'efface doucement
     setTimeout(() => {
-        // 2. On change l'image pendant qu'elle est presque invisible
         memoryChest.src = "assets/memory-box-open.png";
         memoryChest.classList.add("open");
-        // 3. On laisse le navigateur afficher le nouveau PNG
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                memoryChest.classList.remove("switching");
-            });
-        });
-        // 4. Le souvenir apparaît APRÈS le coffre
+        memoryChest.classList.remove("switching");
         setTimeout(() => {
             result.classList.add("show");
-        }, 420);
-    }, 420);
+        }, 300);
+    }, 350);
 }
 
 
 function closeChest() {
-    // Le panneau disparaît d'abord
     result.classList.remove("show");
     setTimeout(() => {
         memoryChest.classList.add("switching");
         setTimeout(() => {
             memoryChest.src = "assets/memory-box-closed.png";
             memoryChest.classList.remove("open");
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    memoryChest.classList.remove("switching");
-                });
-            });
+            memoryChest.classList.remove("switching");
         }, 350);
     }, 300);
 }
@@ -514,11 +504,6 @@ function startQuiz() {
     memoryChest.style.pointerEvents = "none";
     score = 0;
     round = 0;
-    if (!memoryChest.classList.contains("open")) {
-        openChest();
-    } else {
-        result.classList.add("show");
-    }
     do {
         shuffledMemories = [...memories]
             .sort(() => Math.random() - 0.5)
@@ -527,7 +512,10 @@ function startQuiz() {
         lastMemory &&
         shuffledMemories[0] === lastMemory
     );
-    setTimeout(nextMemory, 620);
+    openChest();
+    setTimeout(() => {
+        nextMemory();
+    }, 700);
 }
 
 /* ==========================================================
