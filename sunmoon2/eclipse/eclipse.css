@@ -367,69 +367,83 @@
 }
 
 
+/* =====================================================
+   MOBILE
+===================================================== */
+@media (max-width: 768px) {
 @media (max-width: 768px) {
 
+
   .eclipse {
-    width: 100%;
-
-    padding:
-      30px
-      20px
-      70px;
-
-    box-sizing: border-box;
+  .eclipse {
+@@ -385,37 +381,36 @@
   }
+}
 
-
+  /* ---------- Title ---------- */
+  .eclipse-header h1 {
   .eclipse-header h1 {
     font-size: 2rem;
+    font-size: 2rem;
+    letter-spacing: .22em;
     letter-spacing: .22em;
   }
+}
 
-
+  /* ---------- Intro ---------- */
   .eclipse-intro {
+  .eclipse-intro {
+    width: min(310px, 92%);
     width: min(330px, 92%);
 
+
+    margin-bottom: 45px;
     margin:
       105px
       auto
       45px;
 
+
+    padding: 0 10px;
     padding: 0 10px;
   }
-
+}
 
   .eclipse-intro p {
+  .eclipse-intro p {
+    font-size: .94rem;
     font-size: .94rem;
     line-height: 1.62;
-  }
-
-
-  .eclipse-intro::after {
-    top: calc(100% + 11px);
-    height: 27px;
-  }
-
-
-  .eclipse-letter {
-    width: 100%;
-
-    padding: 6px;
-
-    border-radius: 15px;
-  }
-
-  .eclipse-letter::before {
-    inset: 3px;
-    border-radius: 12px;
-  }
-
-  .eclipse-letter::after {
-    top: -11px;
-    font-size: .68rem;
-  }
-
-  .eclipse-letter img {
-    border-radius: 9px;
+    line-height: 1.62;
   }
 }
+
+  .eclipse-intro::after {
+  .eclipse-intro::after {
+    top: calc(100% + 11px);
+    top: calc(100% + 11px);
+    height: 27px;
+    height: 27px;
+  }
+}
+
+
+  /* ---------- Letter ---------- */
+  .eclipse-letter {
+  .eclipse-letter {
+    width: 100%;
+    width: 100%;
+
+
+@@ -431,7 +426,6 @@
+
+
+  .eclipse-letter::after {
+  .eclipse-letter::after {
+    top: -11px;
+    top: -11px;
+    font-size: .68rem;
+    font-size: .68rem;
+  } 
+}
+
