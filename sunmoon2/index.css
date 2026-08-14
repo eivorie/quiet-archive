@@ -479,131 +479,47 @@ body.sunmoon-home::after{
 ========================================================== */
 
 /*
-   Carte centrale :
-   elle remonte légèrement depuis l'obscurité.
+   On anime le DECK entier à l'arrivée sur la page,
+   jamais les états active / left / right individuellement.
+
+   Ainsi les transitions normales des cartes restent
+   disponibles ensuite pour le carousel.
 */
 
-.card.active{
+.carousel {
+    opacity: 0;
+
     animation:
-        tarot-center-arrival
-        1.15s
+        deck-arrival
+        1.25s
         cubic-bezier(.16,1,.3,1)
         .75s
-        backwards;
+        forwards;
 }
 
-@keyframes tarot-center-arrival{
+@keyframes deck-arrival {
 
-    from{
-        opacity:0;
+    from {
+        opacity: 0;
 
         transform:
-            translate(-50%, calc(-50% + 38px))
-            scale(.91);
+            translateY(32px)
+            scale(.96);
 
         filter:
-            brightness(.45)
-            saturate(.55)
+            brightness(.6)
             blur(5px);
     }
 
-    to{
-        opacity:1;
+    to {
+        opacity: 1;
 
         transform:
-            translate(-50%,-50%)
+            translateY(0)
             scale(1);
 
         filter:
             brightness(1)
-            saturate(1)
-            blur(0);
-    }
-}
-
-
-/*
-   Carte gauche :
-   arrive légèrement depuis l'extérieur.
-*/
-
-.card.left{
-    animation:
-        tarot-left-arrival
-        1.25s
-        cubic-bezier(.16,1,.3,1)
-        1.05s
-        backwards;
-}
-
-@keyframes tarot-left-arrival{
-
-    from{
-        opacity:0;
-
-        transform:
-            translate(calc(-50% - 320px),-50%)
-            scale(.72);
-
-        filter:
-            brightness(.35)
-            saturate(.45)
-            blur(5px);
-    }
-
-    to{
-        opacity:.48;
-
-        transform:
-            translate(calc(-50% - 245px),-50%)
-            scale(.82);
-
-        filter:
-            brightness(.58)
-            saturate(.68)
-            blur(0);
-    }
-}
-
-
-/*
-   Carte droite
-*/
-
-.card.right{
-    animation:
-        tarot-right-arrival
-        1.25s
-        cubic-bezier(.16,1,.3,1)
-        1.05s
-        backwards;
-}
-
-@keyframes tarot-right-arrival{
-
-    from{
-        opacity:0;
-
-        transform:
-            translate(calc(-50% + 320px),-50%)
-            scale(.72);
-
-        filter:
-            brightness(.35)
-            saturate(.45)
-            blur(5px);
-    }
-
-    to{
-        opacity:.48;
-
-        transform:
-            translate(calc(-50% + 245px),-50%)
-            scale(.82);
-
-        filter:
-            brightness(.58)
-            saturate(.68)
             blur(0);
     }
 }
@@ -926,63 +842,5 @@ body.sunmoon-home::after{
 
     .carousel-dots {
         margin-top: -4px;
-    }
-
-   @keyframes tarot-left-arrival{
-
-        from{
-            opacity:0;
-
-            transform:
-                translate(calc(-50% - 245px),-50%)
-                scale(.68);
-
-            filter:
-                brightness(.35)
-                saturate(.45)
-                blur(5px);
-        }
-
-        to{
-            opacity:.42;
-
-            transform:
-                translate(calc(-50% - 185px),-50%)
-                scale(.78);
-
-            filter:
-                brightness(.58)
-                saturate(.68)
-                blur(0);
-        }
-    }
-
-    @keyframes tarot-right-arrival{
-
-        from{
-            opacity:0;
-
-            transform:
-                translate(calc(-50% + 245px),-50%)
-                scale(.68);
-
-            filter:
-                brightness(.35)
-                saturate(.45)
-                blur(5px);
-        }
-
-        to{
-            opacity:.42;
-
-            transform:
-                translate(calc(-50% + 185px),-50%)
-                scale(.78);
-
-            filter:
-                brightness(.58)
-                saturate(.68)
-                blur(0);
-        }
     }
 }
