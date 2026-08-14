@@ -629,16 +629,24 @@ function endQuiz() {
     );
     lastScore.textContent =
         `you remembered ${finalScore}.`;
-    result.innerHTML = `
-        <p class="final-score">
-            You remembered
-            <strong>${score}</strong>
-            out of
-            ${totalRounds}.
-        </p>
-    `;
+     result.innerHTML = `
+      <div class="final-score">
+          <span class="final-label">
+              You remembered
+          </span>
+  
+          <div class="final-number">
+              <strong>${score}</strong>
+              <span>/ ${totalRounds}</span>
+          </div>
+  
+          <span class="final-message">
+              of our memories.
+          </span>
+      </div>
+  `;
     memoryChest.style.pointerEvents = "auto";
     setTimeout(() => {
         closeChest();
-    }, 1200);
+    }, 2400);
 }
