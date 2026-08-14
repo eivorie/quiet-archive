@@ -214,7 +214,6 @@ body.sunmoon-home{
     transform:
         translate(calc(-50% - 245px), -50%)
         scale(.82)
-        rotate(-5deg);
 }
 
 
@@ -234,7 +233,6 @@ body.sunmoon-home{
     transform:
         translate(calc(-50% + 245px), -50%)
         scale(.82)
-        rotate(5deg);
 }
 
 
@@ -424,7 +422,6 @@ body.sunmoon-home{
         transform:
             translate(calc(-50% - 185px), -50%)
             scale(.78)
-            rotate(-6deg);
     }
 
 
@@ -438,7 +435,6 @@ body.sunmoon-home{
         transform:
             translate(calc(-50% + 185px), -50%)
             scale(.78)
-            rotate(6deg);
     }
 
 
