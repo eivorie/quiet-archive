@@ -583,51 +583,6 @@ function nextMemory() {
 }
 
 
-    /* ------------------------------------------------------
-       MEMORY CONTENT
-    ------------------------------------------------------ */
-
-    result.innerHTML = `
-        <p class="memory-question">
-            Who said that?
-        </p>
-        <p class="memory-text">
-            “${memory.text.replace(/\n/g, "<br>")}”
-        </p>
-        <div class="choices">
-            <button data-choice="me">
-                L.
-            </button>
-            <button data-choice="you">
-                J.
-            </button>
-            <button data-choice="us">
-                Us
-            </button>
-        </div>
-        <p class="progress">
-            Memory ${round} / ${totalRounds}
-        </p>
-    `;
-
-
-    /* ------------------------------------------------------
-       ANSWERS
-    ------------------------------------------------------ */
-
-    document
-        .querySelectorAll(".choices button")
-        .forEach(button => {
-            button.addEventListener("click", () => {
-                handleAnswer(
-                    button,
-                    memory.author,
-                    memory.note
-                );
-            });
-        });
-}
-
 /* ==========================================================
    ANSWER
 ========================================================== */
