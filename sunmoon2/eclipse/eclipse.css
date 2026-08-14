@@ -67,8 +67,13 @@
 
   width: min(460px, 88%);
 
+  /*
+     L'espace entre le titre et le texte
+     est volontaire : il accueille l'éclipse
+     présente dans le background.
+  */
   margin:
-    4px
+    145px
     auto
     52px;
 
@@ -95,7 +100,6 @@
     0 2px 5px rgba(0, 0, 0, .80),
     0 0 12px rgba(220, 172, 105, .08);
 }
-
 
 /* =====================================================
    CELESTIAL THREAD
