@@ -59,47 +59,30 @@ body.sunmoon-home::before{
    NAVBAR
 ========================================================== */
 
-.sunmoon-home .nav{
-    position:relative;
-    z-index:50;
-
-    margin-bottom:0;
-
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-
-    gap:12px 22px;
-
-    padding-top:14px;
-    padding-bottom:14px;
-
-    background:rgba(5,9,19,.26);
-
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-
-    border-bottom:
-        1px solid rgba(225,195,145,.10);
-
-    text-transform:uppercase;
+.nav {
+  margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 22px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 225, 185, .08);
+    text-transform: uppercase;
 }
 
-.sunmoon-home .nav a{
-    color:rgba(231,218,201,.76);
-    font-size:.72rem;
+.nav a{
+    color:rgba(235,228,232,.78);
+    text-transform:uppercase;
     letter-spacing:.18em;
-    text-transform:uppercase;
+    font-size:.72rem;
     text-decoration:none;
-    transition:
-        color .3s ease,
-        text-shadow .3s ease;
+    transition:color .3s;
 }
 
-.sunmoon-home .nav a:hover{
-    color:#fff6e8;
-    text-shadow:
-        0 0 12px rgba(226,190,130,.28);
+.nav a:hover {
+    color:
+        rgba(245,238,230,.92);
 }
 
 /* ==========================================================
@@ -487,30 +470,6 @@ body.sunmoon-home::before{
                 rgba(3,7,16,.14) 38%,
                 rgba(1,4,10,.34) 100%
             );
-    }
-
-
-    /* ======================================================
-       NAVBAR
-    ====================================================== */
-
-    .sunmoon-home .nav {
-        gap: 10px 18px;
-
-        padding:
-            14px
-            16px;
-
-        background:
-            rgba(5,8,17,.32);
-
-        backdrop-filter: blur(9px);
-        -webkit-backdrop-filter: blur(9px);
-    }
-
-    .sunmoon-home .nav a {
-        font-size: .68rem;
-        letter-spacing: .14em;
     }
 
 
