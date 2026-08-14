@@ -52,10 +52,8 @@ body.sunmoon-home{
 }
 
 .hero{
-
     text-align:center;
-
-    margin-bottom:24px;
+    margin-bottom:8px;
 }
 
 .hero h1{
@@ -91,236 +89,160 @@ body.sunmoon-home{
    CAROUSEL
 ========================================================== */
 
-.carousel{
+.carousel {
+    position: relative;
 
-    position:relative;
+    width: 100%;
+    max-width: 1150px;
+    height: 620px;
 
-    width:100%;
-    max-width:1150px;
-
-    height:560px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.carousel-window{
+.carousel-window {
+    position: relative;
 
-    position:relative;
+    width: 100%;
+    height: 100%;
 
-    width:100%;
-    height:100%;
-
-    overflow:hidden;
+    overflow: hidden;
 }
 
-.carousel-track{
+.carousel-track {
+    position: relative;
 
-    position:relative;
-
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
 }
+
 
 /* ==========================================================
-   CARDS
+   TAROT CARDS
 ========================================================== */
 
-.card{
+.card {
+    position: absolute;
 
-    position:absolute;
+    left: 50%;
+    top: 50%;
 
-    left:50%;
-    top:46%;
+    width: 340px;
+    height: 500px;
 
-    width:360px;
-    height:520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    transform:translate(-50%,-50%);
+    padding: 0;
 
-    padding:36px;
+    box-sizing: border-box;
 
-    box-sizing:border-box;
+    text-decoration: none;
+    color: inherit;
 
-    border-radius:28px;
+    background: none;
+    border: none;
+    border-radius: 0;
 
-    text-decoration:none;
-    color:inherit;
-
-    border:1px solid rgba(255,255,255,.07);
-
-    backdrop-filter:blur(18px);
+    transform:
+        translate(-50%, -50%);
 
     transition:
-        transform .8s,
-        opacity .8s,
-        filter .8s,
-        box-shadow .8s;
+        transform .9s cubic-bezier(.22,.61,.36,1),
+        opacity .8s ease,
+        filter .8s ease;
 }
+
+
+/* ==========================================================
+   TAROT IMAGE
+========================================================== */
+
+.card img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 24px 32px rgba(0,0,0,.48));
+
+    transition:
+        filter .8s ease,
+        transform .8s cubic-bezier(.22,.61,.36,1);
+}
+
 
 /* ==========================================================
    POSITIONS
 ========================================================== */
 
-.card.active{
+.card.active {
+    z-index: 5;
 
-    z-index:5;
-
-    opacity:1;
-
-    filter:none;
+    opacity: 1;
 
     transform:
-        translate(-50%,-50%)
+        translate(-50%, -50%)
         scale(1);
 }
 
-.card.left{
+.card.left {
+    z-index: 2;
 
-    opacity:.28;
-
-    z-index:2;
-
-    transform:
-        translate(calc(-50% - 260px),-50%)
-        scale(.90);
-}
-
-.card.right{
-
-    opacity:.28;
-
-    z-index:2;
+    opacity: .30;
 
     transform:
-        translate(calc(-50% + 260px),-50%)
-        scale(.90);
+        translate(calc(-50% - 270px), -50%)
+        scale(.84);
+
+    filter:
+        brightness(.58)
+        saturate(.72);
 }
+
+.card.right {
+    z-index: 2;
+
+    opacity: .30;
+
+    transform:
+        translate(calc(-50% + 270px), -50%)
+        scale(.84);
+
+    filter:
+        brightness(.58)
+        saturate(.72);
+}
+
 
 /* ==========================================================
-   THEMES
+   ACTIVE GLOW
 ========================================================== */
 
-.card.moon{
-
-    background:
-        radial-gradient(circle at top left,
-        rgba(180,200,255,.18),
-        transparent 60%),
-        rgba(36,41,57,.95);
+.card.active img {
+    filter:
+        drop-shadow(0 28px 38px rgba(0,0,0,.52))
+        drop-shadow(0 0 18px rgba(225,195,145,.10));
 }
 
-.card.sun{
-
-    background:
-
-    radial-gradient(circle at top,
-    rgba(255,214,150,.25),
-    transparent 58%),
-
-    linear-gradient(
-    160deg,
-    #6b512d,
-    #5b4225
-    );
-
-}
-
-.card.eclipse{
-
-    background:
-        radial-gradient(circle,
-        rgba(190,170,255,.14),
-        transparent 60%),
-        rgba(31,27,42,.95);
-}
-
-.card.stars{
-
-    background:
-
-        radial-gradient(
-            circle at top,
-            rgba(190,220,255,.16),
-            transparent 55%
-        ),
-
-        radial-gradient(
-            circle at 70% 20%,
-            rgba(255,255,255,.06),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            160deg,
-            #1c2438,
-            #111726
-        );
-
-}
 
 /* ==========================================================
-   CONTENT
+   HOVER
 ========================================================== */
 
-.card{
+.card.active:hover img {
+    transform:
+        translateY(-5px)
+        scale(1.012);
 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-}
-
-.symbol{
-
-    font-size:2.2rem;
-
-    margin:0 0 28px;
-}
-
-.card h2{
-
-    margin:0;
-
-    font-size:2.1rem;
-    font-weight:500;
-    line-height:1.2;
-}
-
-.card.sun h2{
-    color:#8d5d34;
-}
-
-.card.moon h2{
-    color:#aebedc;
-}
-
-.card.eclipse h2{
-    color:#9f8ab9;
-}
-
-.card.stars h2{
-    color:#dfe9ff;
-}
-
-.read{
-
-    position:absolute;
-
-    bottom:22px;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    letter-spacing:.18em;
-    text-transform:uppercase;
-
-    font-size:.78rem;
-
-    color:rgba(255,255,255,.85);
+    filter:
+        drop-shadow(0 34px 42px rgba(0,0,0,.58))
+        drop-shadow(0 0 24px rgba(225,195,145,.16));
 }
 
 /* ==========================================================
@@ -409,71 +331,61 @@ body.sunmoon-home{
    MOBILE
 ========================================================== */
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
-    .home{
-
-        padding:18px 0 26px;
+    .home {
+        padding: 18px 0 34px;
     }
 
-    .hero{
-
-        margin-bottom:12px;
+    .hero {
+        margin-bottom: 4px;
     }
 
-    .hero h1{
-
-        font-size:2.15rem;
+    .hero h1 {
+        font-size: 2.15rem;
     }
 
-    .carousel{
-
-        height:430px;
+    .carousel {
+        height: 510px;
     }
 
-    .card{
+    .card {
+        width: min(72vw, 300px);
+        height: 450px;
 
-        width:74vw;
-        height:360px;
-
-        padding:24px;
+        padding: 0;
     }
 
-    .card.left{
-
+    .card.left {
         transform:
-            translate(calc(-50% - 88vw),-50%)
-            scale(.92);
+            translate(calc(-50% - 82vw), -50%)
+            scale(.86);
     }
 
-    .card.right{
-
+    .card.right {
         transform:
-            translate(calc(-50% + 88vw),-50%)
-            scale(.92);
+            translate(calc(-50% + 82vw), -50%)
+            scale(.86);
     }
 
-    .carousel-btn{
+    .carousel-btn {
+        width: 44px;
+        height: 44px;
 
-        width:48px;
-        height:48px;
+        top: 50%;
 
-        top:calc(50% + 15px);
+        font-size: 1.15rem;
     }
 
-    .prev{
-
-        left:8px;
+    .prev {
+        left: 5px;
     }
 
-    .next{
-
-        right:8px;
+    .next {
+        right: 5px;
     }
 
-    .carousel-dots{
-
-        margin-top:16px;
+    .carousel-dots {
+        margin-top: 8px;
     }
-
 }
