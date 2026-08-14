@@ -171,6 +171,159 @@ body.sunmoon-home::before{
 }
 
 /* ==========================================================
+   PAGE ENTRANCE
+========================================================== */
+
+/* ---------- Background reveal ---------- */
+
+body.sunmoon-home::after{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    z-index:1000;
+    pointer-events:none;
+
+    background:#02050c;
+
+    animation:
+        celestial-reveal 1.4s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+@keyframes celestial-reveal{
+
+    0%{
+        opacity:1;
+    }
+
+    35%{
+        opacity:.82;
+    }
+
+    100%{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+
+/* ---------- Navbar ---------- */
+
+.nav{
+    opacity:0;
+
+    animation:
+        nav-arrival .9s ease .25s forwards;
+}
+
+@keyframes nav-arrival{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+        filter:blur(4px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+        filter:blur(0);
+    }
+}
+
+
+/* ---------- Title ---------- */
+
+.hero h1{
+    opacity:0;
+
+    animation:
+        title-arrival 1.2s cubic-bezier(.16,1,.3,1) .45s forwards;
+}
+
+@keyframes title-arrival{
+
+    from{
+        opacity:0;
+
+        transform:
+            translateY(14px)
+            scale(.97);
+
+        filter:blur(7px);
+
+        letter-spacing:.13em;
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:blur(0);
+
+        letter-spacing:.08em;
+    }
+}
+
+
+/* ---------- Divider ---------- */
+
+.divider{
+    transform:scaleX(0);
+    opacity:0;
+
+    animation:
+        divider-arrival 1s ease .85s forwards;
+}
+
+@keyframes divider-arrival{
+
+    0%{
+        opacity:0;
+        transform:scaleX(0);
+    }
+
+    100%{
+        opacity:1;
+        transform:scaleX(1);
+    }
+}
+
+.divider::after{
+    opacity:0;
+
+    animation:
+        star-arrival .8s ease 1.15s forwards;
+}
+
+@keyframes star-arrival{
+
+    from{
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.3);
+
+        filter:blur(4px);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+
+        filter:blur(0);
+    }
+}
+
+/* ==========================================================
    CAROUSEL — TAROT DECK
 ========================================================== */
 
@@ -320,6 +473,169 @@ body.sunmoon-home::before{
         scale(.82);
 }
 
+
+/* ==========================================================
+   TAROT ENTRANCE
+========================================================== */
+
+/*
+   Carte centrale :
+   elle remonte légèrement depuis l'obscurité.
+*/
+
+.card.active{
+    animation:
+        tarot-center-arrival
+        1.15s
+        cubic-bezier(.16,1,.3,1)
+        .75s
+        backwards;
+}
+
+@keyframes tarot-center-arrival{
+
+    from{
+        opacity:0;
+
+        transform:
+            translate(-50%, calc(-50% + 38px))
+            scale(.91);
+
+        filter:
+            brightness(.45)
+            saturate(.55)
+            blur(5px);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+
+        filter:
+            brightness(1)
+            saturate(1)
+            blur(0);
+    }
+}
+
+
+/*
+   Carte gauche :
+   arrive légèrement depuis l'extérieur.
+*/
+
+.card.left{
+    animation:
+        tarot-left-arrival
+        1.25s
+        cubic-bezier(.16,1,.3,1)
+        1.05s
+        backwards;
+}
+
+@keyframes tarot-left-arrival{
+
+    from{
+        opacity:0;
+
+        transform:
+            translate(calc(-50% - 320px),-50%)
+            scale(.72);
+
+        filter:
+            brightness(.35)
+            saturate(.45)
+            blur(5px);
+    }
+
+    to{
+        opacity:.48;
+
+        transform:
+            translate(calc(-50% - 245px),-50%)
+            scale(.82);
+
+        filter:
+            brightness(.58)
+            saturate(.68)
+            blur(0);
+    }
+}
+
+
+/*
+   Carte droite
+*/
+
+.card.right{
+    animation:
+        tarot-right-arrival
+        1.25s
+        cubic-bezier(.16,1,.3,1)
+        1.05s
+        backwards;
+}
+
+@keyframes tarot-right-arrival{
+
+    from{
+        opacity:0;
+
+        transform:
+            translate(calc(-50% + 320px),-50%)
+            scale(.72);
+
+        filter:
+            brightness(.35)
+            saturate(.45)
+            blur(5px);
+    }
+
+    to{
+        opacity:.48;
+
+        transform:
+            translate(calc(-50% + 245px),-50%)
+            scale(.82);
+
+        filter:
+            brightness(.58)
+            saturate(.68)
+            blur(0);
+    }
+}
+
+/* ==========================================================
+   CONTROLS ENTRANCE
+========================================================== */
+
+.carousel-btn,
+.carousel-dots{
+    opacity:0;
+
+    animation:
+        controls-arrival
+        .8s
+        ease
+        1.55s
+        forwards;
+}
+
+@keyframes controls-arrival{
+
+    from{
+        opacity:0;
+        filter:blur(3px);
+    }
+
+    to{
+        opacity:1;
+        filter:blur(0);
+    }
+}
 
 /* ==========================================================
    HIDDEN CARD
@@ -610,5 +926,63 @@ body.sunmoon-home::before{
 
     .carousel-dots {
         margin-top: -4px;
+    }
+
+   @keyframes tarot-left-arrival{
+
+        from{
+            opacity:0;
+
+            transform:
+                translate(calc(-50% - 245px),-50%)
+                scale(.68);
+
+            filter:
+                brightness(.35)
+                saturate(.45)
+                blur(5px);
+        }
+
+        to{
+            opacity:.42;
+
+            transform:
+                translate(calc(-50% - 185px),-50%)
+                scale(.78);
+
+            filter:
+                brightness(.58)
+                saturate(.68)
+                blur(0);
+        }
+    }
+
+    @keyframes tarot-right-arrival{
+
+        from{
+            opacity:0;
+
+            transform:
+                translate(calc(-50% + 245px),-50%)
+                scale(.68);
+
+            filter:
+                brightness(.35)
+                saturate(.45)
+                blur(5px);
+        }
+
+        to{
+            opacity:.42;
+
+            transform:
+                translate(calc(-50% + 185px),-50%)
+                scale(.78);
+
+            filter:
+                brightness(.58)
+                saturate(.68)
+                blur(0);
+        }
     }
 }
