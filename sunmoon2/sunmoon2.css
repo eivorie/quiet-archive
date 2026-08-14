@@ -176,15 +176,27 @@ body.sunmoon-sun .nav {
   padding-top: 14px;
   padding-bottom: 14px;
 
-  border-bottom: 1px solid rgba(104, 70, 82, .10);
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(76, 57, 69, .42),
+      rgba(92, 64, 73, .32)
+    );
 
-  background: transparent;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  border-bottom:
+    1px solid rgba(255, 205, 183, .12);
+
+  box-shadow:
+    0 6px 20px rgba(48, 31, 40, .08);
 
   text-transform: uppercase;
 }
 
 body.sunmoon-sun .nav a {
-  color: rgba(73, 48, 61, .82);
+  color: rgba(255, 224, 207, .88);
 
   text-transform: uppercase;
   letter-spacing: .18em;
@@ -193,16 +205,20 @@ body.sunmoon-sun .nav a {
 
   text-decoration: none;
 
+  text-shadow:
+    0 1px 5px rgba(45, 27, 38, .55),
+    0 0 10px rgba(255, 184, 151, .10);
+
   transition:
     color .3s ease,
     text-shadow .3s ease;
 }
 
 body.sunmoon-sun .nav a:hover {
-  color: rgba(58, 37, 49, .96);
+  color: rgba(255, 241, 230, 1);
 
   text-shadow:
-    0 0 12px rgba(224, 145, 116, .24);
+    0 0 10px rgba(255, 189, 158, .38);
 }
 
 /* =====================================================
