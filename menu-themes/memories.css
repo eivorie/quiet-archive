@@ -113,7 +113,7 @@ body.memories{
     margin:0 auto;
 
     padding:
-        50px
+        30px
         20px
         100px;
 
@@ -486,6 +486,9 @@ body.memories{
     position: relative;
     z-index: 2;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     /*
        On profite vraiment de la largeur disponible.
     */
@@ -539,14 +542,15 @@ body.memories{
 
 #result.memory-result.show {
     max-height: 900px;
+    min-height: 430px;
 
     opacity: 1;
     margin-top: 10px;
 
     padding:
-        34px
+        42px
         48px
-        30px;
+        36px;
 
     transform:
         translateY(0)
@@ -817,6 +821,110 @@ body.memories{
             rgba(104, 59, 27, .82) 75%,
             transparent
         );
+}
+
+/* =====================================================
+   FINAL SCORE
+===================================================== */
+
+.final-score {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: rgba(62, 38, 24, .94);
+}
+
+
+.final-score::before {
+    content: "✦";
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: .6rem;
+
+    color: rgba(105, 60, 28, .78);
+}
+
+
+.final-label {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: .78rem;
+    font-weight: 600;
+
+    letter-spacing: .18em;
+    text-transform: uppercase;
+
+    color: rgba(66, 40, 24, .90);
+}
+
+
+.final-number {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    gap: 8px;
+
+    margin: 8px 0 10px;
+
+    color: rgba(54, 31, 18, .98);
+}
+
+
+.final-number strong {
+    font-family: "Lavishly Yours", cursive;
+
+    font-size: 3.8rem;
+    line-height: 1;
+
+    font-weight: 400;
+}
+
+
+.final-number span {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+    font-style: italic;
+
+    opacity: .72;
+}
+
+
+.final-message {
+    display: block;
+
+    font-family: "Lavishly Yours", cursive;
+
+    font-size: 1.45rem;
+    line-height: 1.2;
+
+    color: rgba(58, 34, 21, .90);
+}
+
+
+.final-score::after {
+    content: "────  ✦  ────";
+
+    display: block;
+
+    margin-top: 19px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: .4rem;
+    letter-spacing: .04em;
+
+    color: rgba(105, 60, 28, .72);
 }
 
 /* =====================================================
