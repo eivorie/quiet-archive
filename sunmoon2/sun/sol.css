@@ -9,16 +9,19 @@
 ===================================================== */
 
 .card-sun .card-title {
-  margin-top: 28px;
+  margin-top: 52px;
 
-  color: #8f541c;
+  padding: 0 20px;
 
-  font-weight: 600;
-  letter-spacing: .035em;
+  color: #704114;
+
+  font-size: 2.15rem;
+  font-weight: 500;
+  letter-spacing: .025em;
 
   text-shadow:
-    0 1px 0 rgba(255, 247, 220, .75),
-    0 0 20px rgba(255, 225, 155, .35);
+    0 1px 0 rgba(255, 244, 211, .85),
+    0 0 18px rgba(255, 214, 128, .28);
 }
 
 
@@ -64,45 +67,43 @@
 
 
 /* =====================================================
-   MANUSCRIT
+   MANUSCRIT — MAQUETTE
 ===================================================== */
 
 .card-sun .card-content {
   position: relative;
   overflow: hidden;
 
-  max-width: 520px;
+  width: calc(100% - 40px);
+  max-width: 560px;
 
-  padding:
-    48px
-    42px
-    38px;
+  padding: 52px 48px 38px;
 
-  border-radius: 18px;
+  box-sizing: border-box;
 
-  border:
-    1px solid rgba(177, 107, 29, .50);
+  border-radius: 20px;
+
+  border: 1px solid rgba(184, 111, 27, .68);
 
   background:
     radial-gradient(
-      ellipse at 50% 4%,
-      rgba(255, 255, 245, .92),
-      transparent 34%
+      ellipse at 50% 0%,
+      rgba(255, 255, 250, .98) 0%,
+      rgba(255, 252, 238, .97) 42%,
+      transparent 72%
     ),
     linear-gradient(
-      180deg,
-      rgba(255, 250, 228, .96) 0%,
-      rgba(250, 237, 201, .96) 48%,
-      rgba(244, 221, 175, .97) 100%
+      to bottom,
+      #fffbed 0%,
+      #fff8e7 55%,
+      #fdf2d8 100%
     );
 
   box-shadow:
-    0 24px 55px rgba(92, 49, 5, .28),
-    0 0 32px rgba(255, 215, 135, .18),
-    inset 0 0 0 3px rgba(255, 249, 224, .42),
-    inset 0 0 35px rgba(194, 123, 37, .08);
+    0 8px 24px rgba(103, 56, 8, .16),
+    0 0 18px rgba(255, 222, 157, .12),
+    inset 0 0 24px rgba(210, 137, 46, .045);
 }
-
 
 /* =====================================================
    DOUBLE CADRE INTÉRIEUR
@@ -112,20 +113,18 @@
   content: "";
 
   position: absolute;
-  inset: 8px;
+  inset: 7px;
 
   z-index: 1;
   pointer-events: none;
 
-  border-radius: 12px;
+  border-radius: 14px;
 
-  border:
-    1px solid rgba(186, 116, 34, .23);
+  border: 1px solid rgba(183, 105, 22, .28);
 
   box-shadow:
-    inset 0 0 18px rgba(191, 117, 28, .05);
+    inset 0 0 0 1px rgba(255, 247, 218, .65);
 }
-
 
 /* =====================================================
    LUMIÈRE DU MANUSCRIT
@@ -142,35 +141,17 @@
 
   background:
     radial-gradient(
-      circle at 50% 0%,
-      rgba(255, 255, 255, .48),
-      transparent 28%
+      ellipse at 50% 0%,
+      rgba(255, 255, 255, .38),
+      transparent 30%
     ),
     radial-gradient(
-      circle at 10% 18%,
-      rgba(255, 208, 115, .10),
-      transparent 25%
-    ),
-    radial-gradient(
-      circle at 90% 72%,
-      rgba(215, 139, 42, .08),
-      transparent 28%
+      ellipse at 50% 100%,
+      rgba(221, 153, 59, .055),
+      transparent 38%
     );
 
-  animation:
-    sun-paper-glow 12s ease-in-out infinite;
-}
-
-@keyframes sun-paper-glow {
-
-  0%,
-  100% {
-    opacity: .65;
-  }
-
-  50% {
-    opacity: 1;
-  }
+  opacity: 1;
 }
 
 
@@ -415,117 +396,182 @@
 
 
 /* =====================================================
-   MOBILE
+   MOBILE — MAQUETTE SOLAIRE
 ===================================================== */
 
 @media (max-width: 768px) {
 
-  /*
-     Important :
-     on supprime l'ancien background de .card-sun.
-     C'est le BODY qui porte maintenant le ciel.
-  */
+  /* ===================================================
+     CARTE GÉNÉRALE
+  =================================================== */
+
   .card-sun {
     background: none;
+
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
 
-  /* ---------- Header ---------- */
+  /* ===================================================
+     HEADER
+  =================================================== */
 
   .card-sun .card-header {
-    margin-bottom: 20px;
+    margin-bottom: 6px;
   }
 
   .card-sun .card-title {
-    margin-top: 34px;
+    margin-top: 50px;
 
-    padding: 0 12px;
+    padding: 0 8px;
 
-    font-size: 1.85rem;
-    line-height: 1.1;
+    color: #704114;
 
-    color: #854a13;
+    font-size: 1.95rem;
+    line-height: 1.08;
+    font-weight: 500;
+    letter-spacing: .025em;
 
     text-shadow:
-      0 1px 0 rgba(255, 245, 210, .85),
-      0 0 16px rgba(255, 211, 119, .40);
+      0 1px 0 rgba(255, 244, 211, .85),
+      0 0 18px rgba(255, 214, 128, .28);
   }
 
 
-  /* ---------- Ornament ---------- */
+  /* ===================================================
+     ORNEMENT
+  =================================================== */
 
   .card-sun .card-ornament {
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin: 13px auto 8px;
   }
 
 
-  /* ---------- Manuscrit ---------- */
+  /* ===================================================
+     MANUSCRIT
+  =================================================== */
 
   .card-sun .card-content {
-    width: calc(100% - 14px);
+    width: calc(100% - 12px);
     max-width: 430px;
 
     padding:
-      38px
-      28px
-      32px;
+      34px
+      30px
+      28px;
 
-    border-radius: 16px;
+    border-radius: 18px;
 
     border:
-      1px solid rgba(165, 94, 20, .55);
+      1px solid rgba(177, 99, 18, .65);
+
+    background:
+      linear-gradient(
+        to bottom,
+        #fffcef 0%,
+        #fff9e9 55%,
+        #fdf3dc 100%
+      );
 
     box-shadow:
-      0 22px 45px rgba(87, 44, 3, .30),
-      0 0 26px rgba(255, 211, 125, .16),
-      inset 0 0 0 3px rgba(255, 249, 223, .45);
+      0 7px 22px rgba(89, 45, 4, .16),
+      inset 0 0 22px rgba(205, 128, 34, .04);
   }
+
+
+  /* ===================================================
+     CADRE INTÉRIEUR
+  =================================================== */
 
   .card-sun .card-content::before {
-    inset: 7px;
+    inset: 6px;
 
-    border-radius: 10px;
+    border-radius: 13px;
+
+    border:
+      1px solid rgba(183, 105, 22, .28);
   }
 
 
-  /* ---------- Texte ---------- */
+  /* ===================================================
+     TEXTE
+  =================================================== */
 
   .card-sun .card-content p {
-    margin-bottom: 1.9em;
+    position: relative;
+    z-index: 2;
 
-    font-size: .98rem;
-    line-height: 1.57;
+    margin: 0 0 1.55em;
 
-    letter-spacing: .006em;
+    color: rgba(72, 45, 20, .94);
+
+    font-size: .94rem;
+    line-height: 1.43;
+
+    letter-spacing: 0;
+
+    text-shadow: none;
+  }
+
+  .card-sun .card-content p:last-of-type {
+    margin-bottom: 0;
   }
 
 
-  /* ---------- Lettrines ---------- */
+  /* ===================================================
+     LETTRINES
+  =================================================== */
 
   .card-sun .card-content p::first-letter {
-    font-size: 2.35em;
+    float: left;
 
-    margin-right: .10em;
+    margin:
+      .04em
+      .10em
+      0
+      0;
 
-    color: #a55f17;
+    font-size: 2.55em;
+    line-height: .82;
+
+    font-weight: 500;
+
+    color: #a66018;
+
+    text-shadow:
+      0 0 5px rgba(255, 220, 145, .70),
+      0 0 12px rgba(226, 154, 59, .18);
   }
 
 
-  /* ---------- Séparateurs ---------- */
+  /* ===================================================
+     SÉPARATEURS
+  =================================================== */
 
   .card-sun .card-content p:not(:last-of-type)::after {
-    margin-top: 21px;
+    content: "—  ✦  —";
 
-    font-size: .55rem;
+    display: block;
+
+    margin: 17px auto 0;
+
+    color: rgba(177, 105, 25, .52);
+
+    text-align: center;
+
+    font-size: .50rem;
+    letter-spacing: .18em;
   }
 
 
-  /* ---------- Cycle ---------- */
+  /* ===================================================
+     CYCLE SOLAIRE
+  =================================================== */
 
   .solar-cycle {
-    margin-top: 36px;
+    margin-top: 30px;
 
-    gap: 21px;
+    gap: 23px;
   }
 }
