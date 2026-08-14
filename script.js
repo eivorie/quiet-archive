@@ -458,7 +458,7 @@ function showIntro() {
     result.innerHTML = "";
     const savedScore = localStorage.getItem("memoriesLastScore");
     lastScore.textContent = savedScore
-        ? savedScore
+        ? `you remembered ${savedScore}.`
         : "No memories opened yet.";
     closeChest();
     result.classList.remove("show");
@@ -627,7 +627,8 @@ function endQuiz() {
         "memoriesLastScore",
         finalScore
     );
-    lastScore.textContent = finalScore;
+    lastScore.textContent =
+        `you remembered ${finalScore}.`;
     result.innerHTML = `
         <p class="final-score">
             You remembered
