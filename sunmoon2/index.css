@@ -86,15 +86,15 @@ body.sunmoon-home{
 }
 
 /* ==========================================================
-   CAROUSEL
+   CAROUSEL — TAROT DECK
 ========================================================== */
 
 .carousel {
     position: relative;
 
     width: 100%;
-    max-width: 1150px;
-    height: 620px;
+    max-width: 1050px;
+    height: 570px;
 
     display: flex;
     justify-content: center;
@@ -107,7 +107,11 @@ body.sunmoon-home{
     width: 100%;
     height: 100%;
 
-    overflow: hidden;
+    /*
+       IMPORTANT :
+       les cartes latérales doivent rester visibles.
+    */
+    overflow: visible;
 }
 
 .carousel-track {
@@ -128,8 +132,8 @@ body.sunmoon-home{
     left: 50%;
     top: 50%;
 
-    width: 340px;
-    height: 500px;
+    width: 310px;
+    height: 465px;
 
     display: flex;
     justify-content: center;
@@ -137,27 +141,22 @@ body.sunmoon-home{
 
     padding: 0;
 
-    box-sizing: border-box;
-
     text-decoration: none;
-    color: inherit;
 
-    background: none;
-    border: none;
-    border-radius: 0;
+    background: transparent;
+    border: 0;
 
-    transform:
-        translate(-50%, -50%);
+    transform-origin: center center;
 
     transition:
-        transform .9s cubic-bezier(.22,.61,.36,1),
-        opacity .8s ease,
+        transform .9s cubic-bezier(.16,1,.3,1),
+        opacity .7s ease,
         filter .8s ease;
 }
 
 
 /* ==========================================================
-   TAROT IMAGE
+   IMAGE
 ========================================================== */
 
 .card img {
@@ -168,66 +167,96 @@ body.sunmoon-home{
 
     object-fit: contain;
 
-    filter:
-        drop-shadow(0 24px 32px rgba(0,0,0,.48));
-
     transition:
-        filter .8s ease,
-        transform .8s cubic-bezier(.22,.61,.36,1);
+        transform .8s cubic-bezier(.16,1,.3,1),
+        filter .8s ease;
 }
 
 
 /* ==========================================================
-   POSITIONS
+   ACTIVE
 ========================================================== */
 
 .card.active {
-    z-index: 5;
+    z-index: 10;
 
     opacity: 1;
+
+    filter:
+        brightness(1)
+        saturate(1);
 
     transform:
         translate(-50%, -50%)
         scale(1);
 }
 
-.card.left {
-    z-index: 2;
-
-    opacity: .30;
-
-    transform:
-        translate(calc(-50% - 270px), -50%)
-        scale(.84);
-
+.card.active img {
     filter:
-        brightness(.58)
-        saturate(.72);
-}
-
-.card.right {
-    z-index: 2;
-
-    opacity: .30;
-
-    transform:
-        translate(calc(-50% + 270px), -50%)
-        scale(.84);
-
-    filter:
-        brightness(.58)
-        saturate(.72);
+        drop-shadow(0 28px 38px rgba(0,0,0,.58))
+        drop-shadow(0 0 24px rgba(230,200,155,.12));
 }
 
 
 /* ==========================================================
-   ACTIVE GLOW
+   LEFT
 ========================================================== */
 
-.card.active img {
+.card.left {
+    z-index: 4;
+
+    opacity: .48;
+
     filter:
-        drop-shadow(0 28px 38px rgba(0,0,0,.52))
-        drop-shadow(0 0 18px rgba(225,195,145,.10));
+        brightness(.58)
+        saturate(.68);
+
+    transform:
+        translate(calc(-50% - 245px), -50%)
+        scale(.82)
+        rotate(-5deg);
+}
+
+
+/* ==========================================================
+   RIGHT
+========================================================== */
+
+.card.right {
+    z-index: 4;
+
+    opacity: .48;
+
+    filter:
+        brightness(.58)
+        saturate(.68);
+
+    transform:
+        translate(calc(-50% + 245px), -50%)
+        scale(.82)
+        rotate(5deg);
+}
+
+
+/* ==========================================================
+   HIDDEN CARD
+========================================================== */
+
+/*
+   La quatrième carte n'a aucune classe de position.
+   On la cache donc derrière le deck.
+*/
+
+.card:not(.active):not(.left):not(.right) {
+    z-index: 1;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.72);
 }
 
 
@@ -237,14 +266,13 @@ body.sunmoon-home{
 
 .card.active:hover img {
     transform:
-        translateY(-5px)
-        scale(1.012);
+        translateY(-6px)
+        scale(1.015);
 
     filter:
-        drop-shadow(0 34px 42px rgba(0,0,0,.58))
-        drop-shadow(0 0 24px rgba(225,195,145,.16));
+        drop-shadow(0 34px 44px rgba(0,0,0,.62))
+        drop-shadow(0 0 28px rgba(230,200,155,.18));
 }
-
 /* ==========================================================
    BUTTONS
 ========================================================== */
@@ -328,17 +356,24 @@ body.sunmoon-home{
 }
 
 /* ==========================================================
-   MOBILE
+   MOBILE — TAROT DECK
 ========================================================== */
 
 @media (max-width:768px) {
 
     .home {
-        padding: 18px 0 34px;
+        width: 100%;
+
+        padding:
+            22px
+            0
+            36px;
+
+        overflow: hidden;
     }
 
     .hero {
-        margin-bottom: 4px;
+        margin-bottom: 0;
     }
 
     .hero h1 {
@@ -346,46 +381,100 @@ body.sunmoon-home{
     }
 
     .carousel {
-        height: 510px;
+        width: 100%;
+        height: 480px;
     }
+
+    .carousel-window {
+        width: 100%;
+        overflow: visible;
+    }
+
+
+    /* -------------------------
+       CARDS
+    ------------------------- */
 
     .card {
-        width: min(72vw, 300px);
-        height: 450px;
-
-        padding: 0;
+        width: 245px;
+        height: 390px;
     }
+
+
+    /* -------------------------
+       CENTER
+    ------------------------- */
+
+    .card.active {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+        opacity: 1;
+    }
+
+
+    /* -------------------------
+       LEFT
+    ------------------------- */
 
     .card.left {
+        opacity: .42;
+
         transform:
-            translate(calc(-50% - 82vw), -50%)
-            scale(.86);
+            translate(calc(-50% - 185px), -50%)
+            scale(.78)
+            rotate(-6deg);
     }
+
+
+    /* -------------------------
+       RIGHT
+    ------------------------- */
 
     .card.right {
+        opacity: .42;
+
         transform:
-            translate(calc(-50% + 82vw), -50%)
-            scale(.86);
+            translate(calc(-50% + 185px), -50%)
+            scale(.78)
+            rotate(6deg);
     }
 
-    .carousel-btn {
-        width: 44px;
-        height: 44px;
 
+    /* -------------------------
+       ARROWS
+    ------------------------- */
+
+    .carousel-btn {
         top: 50%;
 
-        font-size: 1.15rem;
+        width: 40px;
+        height: 40px;
+
+        background:
+            rgba(10,12,20,.48);
+
+        backdrop-filter:
+            blur(8px);
+
+        font-size: 1rem;
     }
 
     .prev {
-        left: 5px;
+        left: 14px;
     }
 
     .next {
-        right: 5px;
+        right: 14px;
     }
 
+
+    /* -------------------------
+       DOTS
+    ------------------------- */
+
     .carousel-dots {
-        margin-top: 8px;
+        margin-top: -4px;
     }
 }
