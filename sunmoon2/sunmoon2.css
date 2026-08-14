@@ -15,48 +15,95 @@
 
 
 /* =====================================================
-   MOON
+   MOON — PAGE BACKGROUND
 ===================================================== */
 
 body.sunmoon-moon {
-  background:
-    radial-gradient(circle at 30% 20%, rgba(120,140,165,.18), transparent 60%),
-    linear-gradient(to bottom, #1a1f27, #0f1217);
+  position: relative;
 
-  transition: background 2.6s ease;
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      rgba(2, 7, 17, .10),
+      rgba(2, 7, 17, .22)
+    ),
+    url("assets/lua-background.png");
+
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: #eee7dc;
 }
 
-/* ---------- Navbar ---------- */
+/* voile très léger pour conserver la lisibilité */
+body.sunmoon-moon::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 34%,
+      transparent 0%,
+      rgba(1, 5, 14, .04) 48%,
+      rgba(1, 4, 11, .18) 100%
+    );
+}
+
+
+/* =====================================================
+   NAVBAR — SAME IDENTITY AS SUN & MOON INDEX
+===================================================== */
 
 body.sunmoon-moon .nav {
-  background: rgba(28,34,40,.55);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(200,210,225,.08);
+  position: relative;
+  z-index: 50;
+
+  margin-bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 12px 22px;
+
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid rgba(255, 225, 185, .08);
+
+  background: transparent;
+
+  text-transform: uppercase;
 }
 
 body.sunmoon-moon .nav a {
-  color: rgba(200,215,230,.75);
+  color: rgba(235, 228, 232, .78);
+
+  text-transform: uppercase;
+  letter-spacing: .18em;
+
+  font-size: .72rem;
+
+  text-decoration: none;
+
+  transition:
+    color .3s ease,
+    text-shadow .3s ease;
 }
 
 body.sunmoon-moon .nav a:hover {
-  color: rgba(235,245,255,.95);
-}
+  color: rgba(245, 238, 230, .92);
 
-/* ---------- Stage ---------- */
-
-body.sunmoon-moon .sunmoon-stage {
-  animation: dusk 3s ease forwards;
-}
-
-@keyframes dusk {
-
-  from {
-    filter: brightness(1.05) saturate(1);
-  }
-
-  to {
-    filter: brightness(.8) saturate(.8);
-  }
+  text-shadow:
+    0 0 12px rgba(220, 185, 125, .20);
 }
 
 
