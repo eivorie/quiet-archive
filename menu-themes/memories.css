@@ -493,7 +493,7 @@ body.memories{
     box-sizing: border-box;
 
     margin: -10px auto 0;
-    padding: 0 58px;
+    padding: 0 48px;
 
     max-height: 0;
     opacity: 0;
@@ -541,23 +541,17 @@ body.memories{
     max-height: 900px;
 
     opacity: 1;
+    margin-top: 10px;
 
-    margin-top: 14px;
-
-    /*
-       Beaucoup d'espace pour ne jamais écrire
-       sur les bords / ornements du parchemin.
-    */
     padding:
+        34px
         48px
-        48px
-        42px;
+        30px;
 
     transform:
         translateY(0)
         scale(1);
 }
-
 
 /*
    On désactive complètement les anciens
@@ -583,17 +577,20 @@ body.memories{
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: .76rem;
+    font-size: .82rem;
     font-weight: 600;
     line-height: 1.4;
 
-    letter-spacing: .26em;
+    letter-spacing: .22em;
     text-transform: uppercase;
 
-    /* encre brune */
-    color: rgba(76, 49, 31, .82);
+    /*
+       Beaucoup plus sombre et quasiment opaque.
+    */
+    color: rgba(66, 40, 24, .96);
 
-    text-shadow: none;
+    text-shadow:
+        0 1px 0 rgba(255, 225, 180, .18);
 }
 
 
@@ -602,44 +599,41 @@ body.memories{
 
     display: block;
 
-    margin: 12px auto 26px;
+    margin: 9px auto 18px;
 
-    font-size: .38rem;
-    letter-spacing: .04em;
+    font-size: .42rem;
+    font-weight: 600;
+    letter-spacing: .05em;
 
-    color: rgba(117, 72, 38, .55);
+    color: rgba(105, 60, 28, .88);
 }
 
-
 /* =====================================================
-   MEMORY TEXT — HANDWRITTEN
+   MEMORY TEXT
 ===================================================== */
 
 .memory-text {
     position: relative;
     z-index: 2;
 
-    margin: 0 auto 32px;
+    margin: 0 auto 24px;
 
     max-width: 310px;
 
     text-align: center;
 
-    /*
-       La phrase à deviner devient manuscrite.
-    */
     font-family: "Lavishly Yours", cursive;
 
-    font-size: 1.9rem;
-    line-height: 1.16;
+    font-size: 1.5rem;
+    line-height: 1.2;
 
     font-weight: 400;
     font-style: normal;
 
-    /* vraie couleur d'encre sur le papier */
-    color: rgba(62, 40, 27, .92);
+    color: rgba(55, 34, 22, .96);
 
-    text-shadow: none;
+    text-shadow:
+        0 .5px 0 rgba(40, 22, 12, .10);
 }
 
 
@@ -669,30 +663,24 @@ body.memories{
     padding: 9px 12px;
 
     border:
-        1px solid rgba(100, 61, 32, .42);
+        1px solid rgba(91, 52, 27, .62);
 
     border-radius: 999px;
 
-    /*
-       Très léger brun transparent :
-       on continue à voir le parchemin dessous.
-    */
     background:
-        rgba(74, 45, 26, .10);
+        rgba(86, 52, 30, .10);
 
     color:
-        rgba(69, 43, 27, .88);
+        rgba(59, 36, 23, .96);
 
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 
     font-size: .94rem;
     font-weight: 600;
 
     box-shadow:
-        0 3px 7px rgba(50, 29, 16, .10),
-        inset 0 1px 0 rgba(255, 231, 194, .10);
+        0 3px 7px rgba(50, 29, 16, .12),
+        inset 0 1px 0 rgba(255, 231, 194, .14);
 
     cursor: pointer;
 
@@ -703,7 +691,6 @@ body.memories{
         border-color .25s ease,
         box-shadow .25s ease;
 }
-
 
 .choices button:hover:not(:disabled) {
     transform: translateY(-2px);
@@ -762,8 +749,8 @@ body.memories{
     position: relative;
     z-index: 2;
 
-    margin: 25px auto 0;
-    padding-top: 18px;
+    margin: 18px auto 0;
+    padding-top: 13px;
 
     max-width: 290px;
 
@@ -793,23 +780,20 @@ body.memories{
     position: relative;
     z-index: 2;
 
-    margin: 30px 0 0;
-    padding-top: 17px;
+    margin: 20px 0 0;
+    padding-top: 12px;
 
     text-align: center;
 
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 
-    font-size: .63rem;
+    font-size: .69rem;
     font-weight: 600;
 
-    letter-spacing: .21em;
+    letter-spacing: .18em;
     text-transform: uppercase;
 
-    color:
-        rgba(91, 55, 29, .66);
+    color: rgba(72, 43, 24, .92);
 }
 
 
@@ -821,17 +805,17 @@ body.memories{
     top: 0;
     left: 50%;
 
-    width: 58px;
+    width: 72px;
     height: 1px;
 
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
     background:
         linear-gradient(
             to right,
             transparent,
-            rgba(100, 59, 29, .42),
+            rgba(104, 59, 27, .82) 25%,
+            rgba(104, 59, 27, .82) 75%,
             transparent
         );
 }
