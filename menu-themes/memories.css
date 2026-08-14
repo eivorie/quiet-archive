@@ -130,7 +130,7 @@ body.memories{
 
     text-align:center;
 
-    margin-bottom:28px;
+    margin-bottom:18px;
 
 }
 
@@ -151,9 +151,9 @@ body.memories{
 
 .subtitle{
 
-    margin-top:18px;
+    margin-top:10px;
 
-    line-height:1.7;
+    line-height:1.5;
 
     color:rgba(238,235,228,.72);
 
