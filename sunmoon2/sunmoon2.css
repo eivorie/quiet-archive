@@ -31,7 +31,7 @@ body.sunmoon-moon {
     url("assets/lua-background.png");
 
   background-size: cover;
-  background-position: center top !important;
+  background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
@@ -275,7 +275,7 @@ body.sunmoon-eclipse {
     url("assets/eclipse-background.png");
 
   background-size: cover;
-  background-position: center top;
+  background-position: center top !important;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
