@@ -73,6 +73,195 @@ body::before{
 }
 
 /* ==========================================================
+   HOME — PAGE ENTRANCE
+========================================================== */
+
+/* -----------------------------
+   VEIL
+----------------------------- */
+
+body::after {
+    content: "";
+
+    position: fixed;
+    z-index: 9999;
+
+    inset: 0;
+
+    background:
+        rgba(9, 10, 24, .94);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    pointer-events: none;
+
+    animation:
+        home-veil-out
+        2s
+        cubic-bezier(.22,.61,.36,1)
+        forwards;
+}
+
+
+/* -----------------------------
+   NAV
+----------------------------- */
+
+.nav {
+    opacity: 0;
+
+    animation:
+        home-nav-in
+        1.2s
+        ease-out
+        .2s
+        forwards;
+}
+
+
+/* -----------------------------
+   HERO
+----------------------------- */
+
+.home-hero {
+    opacity: 0;
+
+    filter: blur(8px);
+
+    animation:
+        home-hero-in
+        1.8s
+        cubic-bezier(.22,.61,.36,1)
+        .35s
+        forwards;
+}
+
+
+/* -----------------------------
+   CARD
+----------------------------- */
+
+.home-card {
+    opacity: 0;
+
+    transform:
+        translateY(22px)
+        scale(.985);
+
+    filter: blur(7px);
+
+    animation:
+        home-card-in
+        1.7s
+        cubic-bezier(.16,1,.3,1)
+        .75s
+        forwards;
+}
+
+
+/* ==========================================================
+   HOME — ENTRANCE KEYFRAMES
+========================================================== */
+
+@keyframes home-veil-out {
+
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: .92;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+@keyframes home-nav-in {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes home-hero-in {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-18px)
+            scale(.985);
+
+        filter:
+            blur(8px);
+    }
+
+    55% {
+        opacity: .72;
+    }
+
+    to {
+        opacity: 1;
+
+        /*
+           On conserve ton -30px actuel.
+        */
+        transform:
+            translateY(-30px)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+}
+
+
+@keyframes home-card-in {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(22px)
+            scale(.985);
+
+        filter:
+            blur(7px);
+    }
+
+    55% {
+        opacity: .76;
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+}
+
+/* ==========================================================
    STARS
 ========================================================== */
 
@@ -81,6 +270,15 @@ body::before{
     inset:0;
     pointer-events:none;
     overflow:hidden;
+
+    opacity:0;
+
+    animation:
+        home-stars-in
+        2.4s
+        ease-out
+        .45s
+        forwards;
 }
 
 .ambient span{
