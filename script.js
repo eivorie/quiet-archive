@@ -461,13 +461,10 @@ function showIntro() {
     lastScore.textContent = savedScore
         ? `you remembered ${savedScore}.`
         : "No memories opened yet.";
-    result.classList.remove(
-        "show",
-        "correct",
-        "wrong",
-        "parchment-a",
-        "parchment-b",
-        "parchment-c"
+      result.classList.remove(
+      "show",
+      "correct",
+      "wrong"
     );
     memoryChest.src =
         "assets/memory-box-closed.png";
@@ -538,47 +535,52 @@ function nextMemory() {
         endQuiz();
         return;
     }
+
     const memory = shuffledMemories[round];
 
     lastMemory = memory;
     round++;
 
-    /* ------------------------------------------------------
-       PARCHMENT SHAPE
-       La forme dépend légèrement de la longueur du souvenir
-    ------------------------------------------------------ */
+    result.innerHTML = `
+        <p class="memory-question">
+            Who said that?
+        </p>
 
-    result.classList.remove(
-        "parchment-a",
-        "parchment-b",
-        "parchment-c"
-    );
+        <p class="memory-text">
+            “${memory.text.replace(/\n/g, "<br>")}”
+        </p>
 
-    const textLength = memory.text.length;
-    let parchmentShape;
-  
-    if (textLength < 90) {
-        // Petit souvenir → papier A ou B
-        parchmentShape =
-            Math.random() > 0.5
-                ? "parchment-a"
-                : "parchment-b";
-    } else if (textLength < 180) {
-        // Souvenir moyen → les trois possibles
-        const shapes = [
-            "parchment-a",
-            "parchment-b",
-            "parchment-c"
-        ];
-        parchmentShape =
-            shapes[
-                Math.floor(Math.random() * shapes.length)
-            ];
-    } else {
-        // Long souvenir → papier C
-        parchmentShape = "parchment-c";
-    }
-    result.classList.add(parchmentShape);
+        <div class="choices">
+            <button data-choice="me">
+                L.
+            </button>
+
+            <button data-choice="you">
+                J.
+            </button>
+
+            <button data-choice="us">
+                Us
+            </button>
+        </div>
+
+        <p class="progress">
+            Memory ${round} / ${totalRounds}
+        </p>
+    `;
+
+    document
+        .querySelectorAll(".choices button")
+        .forEach(button => {
+            button.addEventListener("click", () => {
+                handleAnswer(
+                    button,
+                    memory.author,
+                    memory.note
+                );
+            });
+        });
+}
 
 
     /* ------------------------------------------------------
