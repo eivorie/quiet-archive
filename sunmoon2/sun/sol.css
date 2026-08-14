@@ -10,20 +10,18 @@
 
 .card-sun .card-title {
   margin-top: 52px;
-
   padding: 0 20px;
 
-  color: #704114;
+  color: #694753;
 
   font-size: 2.15rem;
   font-weight: 500;
   letter-spacing: .025em;
 
   text-shadow:
-    0 1px 0 rgba(255, 244, 211, .85),
-    0 0 18px rgba(255, 214, 128, .28);
+    0 1px 0 rgba(255, 225, 207, .45),
+    0 0 18px rgba(223, 143, 116, .22);
 }
-
 
 /* =====================================================
    ORNEMENT SOUS LE TITRE
@@ -36,12 +34,12 @@
     linear-gradient(
       to right,
       transparent,
-      rgba(174, 105, 27, .55),
+      rgba(173, 105, 92, .48),
       transparent
     );
 
   box-shadow:
-    0 0 10px rgba(255, 200, 105, .28);
+    0 0 12px rgba(224, 145, 113, .20);
 }
 
 .card-sun .card-ornament::after {
@@ -55,19 +53,20 @@
 
   padding: 0 8px;
 
-  color: #b56d1e;
+  color: #a9685d;
 
   font-size: .55rem;
 
-  background: rgba(255, 230, 178, .72);
+  /* transparent, surtout plus le rectangle jaune */
+  background: rgba(238, 190, 169, .18);
 
   text-shadow:
-    0 0 8px rgba(255, 198, 94, .55);
+    0 0 8px rgba(230, 151, 120, .30);
 }
 
-
 /* =====================================================
-   MANUSCRIT — MAQUETTE
+   CARTE — VERRE SOLAIRE
+   Pêche fumée, translucide, céleste
 ===================================================== */
 
 .card-sun .card-content {
@@ -83,30 +82,46 @@
 
   border-radius: 20px;
 
-  border: 1px solid rgba(184, 111, 27, .68);
+  /* cuivre rosé, plus d'or religieux */
+  border: 1px solid rgba(173, 105, 78, .38);
 
+  /*
+     IMPORTANT :
+     la carte n'est plus opaque.
+     Le ciel reste perceptible dessous.
+  */
   background:
     radial-gradient(
       ellipse at 50% 0%,
-      rgba(255, 255, 250, .98) 0%,
-      rgba(255, 252, 238, .97) 42%,
+      rgba(255, 239, 224, .46) 0%,
+      rgba(250, 218, 201, .30) 42%,
       transparent 72%
     ),
     linear-gradient(
-      to bottom,
-      #fffbed 0%,
-      #fff8e7 55%,
-      #fdf2d8 100%
+      155deg,
+      rgba(255, 238, 222, .68) 0%,
+      rgba(244, 207, 191, .58) 48%,
+      rgba(221, 181, 174, .52) 100%
     );
 
+  backdrop-filter:
+    blur(10px)
+    saturate(.82);
+
+  -webkit-backdrop-filter:
+    blur(10px)
+    saturate(.82);
+
   box-shadow:
-    0 8px 24px rgba(103, 56, 8, .16),
-    0 0 18px rgba(255, 222, 157, .12),
-    inset 0 0 24px rgba(210, 137, 46, .045);
+    0 14px 34px rgba(66, 38, 48, .18),
+    0 0 30px rgba(235, 158, 120, .10),
+    inset 0 1px 0 rgba(255, 246, 235, .45),
+    inset 0 0 28px rgba(112, 70, 91, .06);
 }
 
+
 /* =====================================================
-   DOUBLE CADRE INTÉRIEUR
+   CADRE INTÉRIEUR
 ===================================================== */
 
 .card-sun .card-content::before {
@@ -120,14 +135,15 @@
 
   border-radius: 14px;
 
-  border: 1px solid rgba(183, 105, 22, .28);
+  border: 1px solid rgba(160, 93, 83, .22);
 
   box-shadow:
-    inset 0 0 0 1px rgba(255, 247, 218, .65);
+    inset 0 0 0 1px rgba(255, 224, 207, .18);
 }
 
+
 /* =====================================================
-   LUMIÈRE DU MANUSCRIT
+   REFLETS DU CIEL
 ===================================================== */
 
 .card-sun .card-content::after {
@@ -141,14 +157,19 @@
 
   background:
     radial-gradient(
-      ellipse at 50% 0%,
-      rgba(255, 255, 255, .38),
-      transparent 30%
+      ellipse at 15% 8%,
+      rgba(255, 224, 196, .20),
+      transparent 34%
     ),
     radial-gradient(
-      ellipse at 50% 100%,
-      rgba(221, 153, 59, .055),
+      ellipse at 90% 38%,
+      rgba(169, 123, 146, .10),
       transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 35% 100%,
+      rgba(108, 91, 121, .08),
+      transparent 42%
     );
 
   opacity: 1;
@@ -163,20 +184,15 @@
   position: relative;
   z-index: 2;
 
-  margin:
-    0
-    0
-    2.2em;
+  margin: 0 0 2.2em;
 
-  color: rgba(83, 53, 25, .92);
+  color: rgba(66, 46, 51, .94);
 
   font-size: 1.05rem;
   line-height: 1.68;
-
   letter-spacing: .012em;
 
-  text-shadow:
-    0 1px 0 rgba(255, 250, 230, .50);
+  text-shadow: none;
 }
 
 .card-sun .card-content p:last-of-type {
@@ -191,22 +207,16 @@
 .card-sun .card-content p::first-letter {
   float: left;
 
-  margin:
-    .02em
-    .12em
-    -.04em
-    0;
+  margin: .02em .12em -.04em 0;
 
   font-size: 2.45em;
   line-height: .9;
-
   font-weight: 500;
 
-  color: #ad681b;
+  color: #b36f58;
 
   text-shadow:
-    0 0 5px rgba(255, 220, 145, .85),
-    0 0 14px rgba(226, 154, 59, .22);
+    0 0 8px rgba(235, 156, 119, .28);
 }
 
 
@@ -218,15 +228,11 @@
   content: "—  ✦  —";
 
   display: block;
-
   width: 100%;
 
-  margin:
-    25px
-    auto
-    0;
+  margin: 25px auto 0;
 
-  color: rgba(177, 105, 25, .58);
+  color: rgba(161, 98, 89, .48);
 
   text-align: center;
 
@@ -234,7 +240,7 @@
   letter-spacing: .22em;
 
   text-shadow:
-    0 0 7px rgba(255, 198, 95, .35);
+    0 0 8px rgba(225, 145, 116, .20);
 }
 
 
@@ -243,15 +249,13 @@
 ===================================================== */
 
 .card-sun em {
-  color: #985817;
+  color: #8f5865;
 
   font-style: italic;
 
   text-shadow:
-    0 0 5px rgba(255, 210, 125, .35);
+    0 0 6px rgba(206, 126, 119, .20);
 }
-
-
 /* =====================================================
    CYCLE SOLAIRE
 ===================================================== */
@@ -421,22 +425,20 @@
     margin-bottom: 6px;
   }
 
-  .card-sun .card-title {
-    margin-top: 50px;
+ .card-sun .card-title {
+  margin-top: 52px;
+  padding: 0 20px;
 
-    padding: 0 8px;
+  color: #694753;
 
-    color: #704114;
+  font-size: 2.15rem;
+  font-weight: 500;
+  letter-spacing: .025em;
 
-    font-size: 1.95rem;
-    line-height: 1.08;
-    font-weight: 500;
-    letter-spacing: .025em;
-
-    text-shadow:
-      0 1px 0 rgba(255, 244, 211, .85),
-      0 0 18px rgba(255, 214, 128, .28);
-  }
+  text-shadow:
+    0 1px 0 rgba(255, 225, 207, .45),
+    0 0 18px rgba(223, 143, 116, .22);
+}
 
 
   /* ===================================================
@@ -452,46 +454,24 @@
      MANUSCRIT
   =================================================== */
 
-  .card-sun .card-content {
-    width: calc(100% - 12px);
-    max-width: 430px;
+ .card-sun .card-content {
+  width: calc(100% - 12px);
+  max-width: 430px;
 
-    padding:
-      34px
-      30px
-      28px;
+  padding: 34px 30px 28px;
 
-    border-radius: 18px;
-
-    border:
-      1px solid rgba(177, 99, 18, .65);
-
-    background:
-      linear-gradient(
-        to bottom,
-        #fffcef 0%,
-        #fff9e9 55%,
-        #fdf3dc 100%
-      );
-
-    box-shadow:
-      0 7px 22px rgba(89, 45, 4, .16),
-      inset 0 0 22px rgba(205, 128, 34, .04);
-  }
+  border-radius: 18px;
+}
 
 
   /* ===================================================
      CADRE INTÉRIEUR
   =================================================== */
 
-  .card-sun .card-content::before {
-    inset: 6px;
-
-    border-radius: 13px;
-
-    border:
-      1px solid rgba(183, 105, 22, .28);
-  }
+.card-sun .card-content::before {
+  inset: 6px;
+  border-radius: 13px;
+}
 
 
   /* ===================================================
@@ -499,20 +479,19 @@
   =================================================== */
 
   .card-sun .card-content p {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 
-    margin: 0 0 1.55em;
+  margin: 0 0 2.2em;
 
-    color: rgba(72, 45, 20, .94);
+  color: rgba(66, 46, 51, .94);
 
-    font-size: .94rem;
-    line-height: 1.43;
+  font-size: 1.05rem;
+  line-height: 1.68;
+  letter-spacing: .012em;
 
-    letter-spacing: 0;
-
-    text-shadow: none;
-  }
+  text-shadow: none;
+}
 
   .card-sun .card-content p:last-of-type {
     margin-bottom: 0;
@@ -523,46 +502,43 @@
      LETTRINES
   =================================================== */
 
-  .card-sun .card-content p::first-letter {
-    float: left;
+ .card-sun .card-content p::first-letter {
+  float: left;
 
-    margin:
-      .04em
-      .10em
-      0
-      0;
+  margin: .02em .12em -.04em 0;
 
-    font-size: 2.55em;
-    line-height: .82;
+  font-size: 2.45em;
+  line-height: .9;
+  font-weight: 500;
 
-    font-weight: 500;
+  color: #b36f58;
 
-    color: #a66018;
-
-    text-shadow:
-      0 0 5px rgba(255, 220, 145, .70),
-      0 0 12px rgba(226, 154, 59, .18);
-  }
-
+  text-shadow:
+    0 0 8px rgba(235, 156, 119, .28);
+}
 
   /* ===================================================
      SÉPARATEURS
   =================================================== */
 
-  .card-sun .card-content p:not(:last-of-type)::after {
-    content: "—  ✦  —";
+ .card-sun .card-content p:not(:last-of-type)::after {
+  content: "—  ✦  —";
 
-    display: block;
+  display: block;
+  width: 100%;
 
-    margin: 17px auto 0;
+  margin: 25px auto 0;
 
-    color: rgba(177, 105, 25, .52);
+  color: rgba(161, 98, 89, .48);
 
-    text-align: center;
+  text-align: center;
 
-    font-size: .50rem;
-    letter-spacing: .18em;
-  }
+  font-size: .62rem;
+  letter-spacing: .22em;
+
+  text-shadow:
+    0 0 8px rgba(225, 145, 116, .20);
+}
 
 
   /* ===================================================
