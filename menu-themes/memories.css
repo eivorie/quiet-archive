@@ -834,38 +834,119 @@ body.memories{
             transparent
         );
 }
+
 /* =====================================================
-   SCORE
+   SCORE — LAST TIME
 ===================================================== */
 
-.memory-score{
+.memory-score {
+    position: relative;
 
-    margin-top:28px;
+    width: min(100%, 330px);
+    box-sizing: border-box;
 
-    text-align:center;
+    margin: 34px auto 0;
+    padding: 20px 26px 18px;
 
-    color:rgba(230,224,215,.65);
+    text-align: center;
 
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35, 42, 48, .48),
+            rgba(24, 31, 38, .62)
+        );
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border:
+        1px solid rgba(205, 195, 180, .10);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 14px 32px rgba(0,0,0,.14),
+        inset 0 1px 0 rgba(255,255,255,.025);
 }
 
-.memory-score span{
 
-    display:block;
+/* petite lumière en haut du cadre */
 
-    font-size:.72rem;
+.memory-score::before {
+    content: "";
 
-    letter-spacing:.25em;
+    position: absolute;
 
-    text-transform:uppercase;
+    top: 0;
+    left: 50%;
 
+    width: 42%;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(218, 191, 151, .22),
+            transparent
+        );
 }
 
-#lastScore{
 
-    margin-top:10px;
+/* -----------------------------
+   LABEL
+----------------------------- */
 
-    font-style:italic;
+.score-label {
+    display: block;
 
+    margin: 0 0 8px;
+
+    font-size: .68rem;
+    font-weight: 400;
+    line-height: 1;
+
+    letter-spacing: .12em;
+
+    text-transform: none;
+
+    color:
+        rgba(224, 217, 207, .52);
+}
+
+
+/* -----------------------------
+   LAST SCORE
+----------------------------- */
+
+#lastScore {
+    margin: 0;
+
+    font-size: .92rem;
+    line-height: 1.45;
+
+    font-style: italic;
+
+    color:
+        rgba(235, 230, 221, .72);
+}
+
+
+/* -----------------------------
+   ORNAMENT
+----------------------------- */
+
+.score-ornament {
+    margin-top: 11px;
+
+    font-size: .42rem;
+    line-height: 1;
+
+    color:
+        rgba(202, 169, 119, .48);
 }
 
 
