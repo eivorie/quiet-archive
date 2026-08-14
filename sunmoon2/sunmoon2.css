@@ -553,32 +553,7 @@ body.sunmoon-stars .nav a:hover{
    MOBILE
 ===================================================== */
 
-@media (max-width:768px) {
-
-  body.sunmoon-sun {
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(92, 47, 5, .01),
-        rgba(72, 34, 3, .06)
-      ),
-      url("assets/sol-background.png");
-
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-  }
-
-  body.sunmoon-sun::before {
-    background:
-      radial-gradient(
-        ellipse at 50% 16%,
-        rgba(255, 250, 220, .03) 0%,
-        transparent 45%,
-        rgba(82, 38, 3, .08) 100%
-      );
-  }
+@media (max-width: 768px) {
 
   .sunmoon-card {
     padding: 0 16px 100px;
