@@ -159,7 +159,6 @@ body.sunmoon-sun::before {
 
 /* =====================================================
    SUN — NAVBAR
-   Même logique que l'index : intégrée au décor
 ===================================================== */
 
 body.sunmoon-sun .nav {
@@ -177,24 +176,15 @@ body.sunmoon-sun .nav {
   padding-top: 14px;
   padding-bottom: 14px;
 
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255, 244, 218, .28),
-      rgba(255, 232, 190, .14)
-    );
+  border-bottom: 1px solid rgba(104, 70, 82, .10);
 
-  border-bottom:
-    1px solid rgba(171, 104, 28, .18);
-
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: transparent;
 
   text-transform: uppercase;
 }
 
 body.sunmoon-sun .nav a {
-  color: rgba(77, 51, 65, .92);
+  color: rgba(73, 48, 61, .82);
 
   text-transform: uppercase;
   letter-spacing: .18em;
@@ -203,21 +193,17 @@ body.sunmoon-sun .nav a {
 
   text-decoration: none;
 
-  text-shadow:
-    0 1px 4px rgba(255, 219, 198, .28);
-
   transition:
     color .3s ease,
     text-shadow .3s ease;
 }
 
 body.sunmoon-sun .nav a:hover {
-  color: #3f2935;
+  color: rgba(58, 37, 49, .96);
 
   text-shadow:
-    0 0 10px rgba(226, 145, 120, .30);
+    0 0 12px rgba(224, 145, 116, .24);
 }
-
 
 /* =====================================================
    SUN — STAGE
