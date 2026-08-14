@@ -755,7 +755,7 @@ body.memories{
     max-width: 290px;
 
     border-top:
-        1px solid rgba(98, 59, 31, .20);
+        1px solid rgba(82, 46, 24, .34);
 
     text-align: center;
 
@@ -768,9 +768,8 @@ body.memories{
     font-style: italic;
 
     color:
-        rgba(72, 46, 30, .72);
+        rgba(58, 34, 21, .92);
 }
-
 
 /* =====================================================
    PROGRESS
