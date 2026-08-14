@@ -367,10 +367,6 @@
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
-
 @media (max-width: 768px) {
 
   .eclipse {
@@ -385,36 +381,35 @@
   }
 
 
-  /* ---------- Title ---------- */
-
   .eclipse-header h1 {
     font-size: 2rem;
     letter-spacing: .22em;
   }
 
 
-  /* ---------- Intro ---------- */
-
   .eclipse-intro {
-    width: min(310px, 92%);
+    width: min(330px, 92%);
 
-    margin-bottom: 45px;
+    margin:
+      105px
+      auto
+      45px;
 
     padding: 0 10px;
   }
+
 
   .eclipse-intro p {
     font-size: .94rem;
     line-height: 1.62;
   }
 
+
   .eclipse-intro::after {
     top: calc(100% + 11px);
     height: 27px;
   }
 
-
-  /* ---------- Letter ---------- */
 
   .eclipse-letter {
     width: 100%;
@@ -431,7 +426,6 @@
 
   .eclipse-letter::after {
     top: -11px;
-
     font-size: .68rem;
   }
 
