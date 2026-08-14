@@ -492,7 +492,7 @@ body.memories{
     box-sizing: border-box;
 
     margin: -12px auto 0;
-    padding: 0 38px;
+    padding: 0 34px;
 
     max-height: 0;
     opacity: 0;
@@ -501,105 +501,115 @@ body.memories{
     transform:
         translateY(-32px)
         scale(.96)
-        rotate(-.25deg);
+        rotate(-.18deg);
 
     transform-origin: top center;
 
-    /*
-       Papier sombre :
-       plusieurs couches pour éviter un simple aplat brun.
-    */
+    /* papier sombre avec lumière centrale */
     background:
         radial-gradient(
-            ellipse at 50% 10%,
-            rgba(190, 135, 75, .14),
-            transparent 38%
+            ellipse at 50% 42%,
+            rgba(184, 137, 83, .17) 0%,
+            rgba(128, 88, 49, .08) 37%,
+            transparent 67%
         ),
         radial-gradient(
-            ellipse at 18% 72%,
-            rgba(151, 102, 57, .10),
+            ellipse at 12% 20%,
+            rgba(192, 137, 72, .10),
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 88% 78%,
+            rgba(95, 58, 31, .18),
             transparent 42%
         ),
-        radial-gradient(
-            ellipse at 84% 58%,
-            rgba(95, 61, 35, .14),
-            transparent 45%
-        ),
         linear-gradient(
-            145deg,
-            #45382a 0%,
-            #382d22 38%,
-            #30271e 70%,
-            #29231c 100%
+            137deg,
+            #4a3a29 0%,
+            #3b2f23 32%,
+            #35291f 65%,
+            #2b231b 100%
         );
 
     /*
-       BORDS CROOKED / DÉCHIRÉS
+       Beaucoup moins régulier.
+       Les côtés n'ondulent plus selon un motif répétitif.
     */
     clip-path: polygon(
-        4% 1%,
-        10% 0%,
-        16% 1.5%,
-        22% .5%,
-        29% 1%,
-        36% 0%,
-        43% 1%,
-        51% .3%,
-        58% 1.2%,
-        65% 0%,
-        72% 1%,
-        79% .3%,
-        86% 1.5%,
-        94% .5%,
-        99% 4%,
+        3% 3%,
+        7% 1%,
+        13% 2%,
+        18% .6%,
+        25% 1.8%,
+        31% .7%,
+        38% 1.3%,
+        45% .3%,
+        52% 1.5%,
+        59% .4%,
+        67% 1.8%,
+        74% .5%,
+        81% 1.1%,
+        88% .4%,
+        95% 2%,
+        98% 5%,
 
-        98% 10%,
-        100% 16%,
-        98% 23%,
-        99.5% 30%,
-        98% 37%,
-        100% 44%,
-        98.5% 51%,
-        100% 58%,
-        98% 65%,
-        99.5% 72%,
-        97.5% 79%,
-        99% 86%,
-        96% 94%,
+        97% 11%,
+        99% 17%,
+        97.5% 24%,
+        99% 29%,
+        96.8% 36%,
+        98.5% 43%,
+        97.2% 49%,
+        99% 57%,
+        96.5% 63%,
+        98.2% 69%,
+        97% 76%,
+        99% 82%,
+        96.5% 89%,
+        97% 95%,
 
-        91% 98%,
-        84% 97%,
-        77% 100%,
-        70% 98%,
-        63% 99.5%,
-        56% 98%,
-        49% 100%,
-        42% 98%,
-        35% 99.5%,
-        28% 98%,
-        21% 100%,
-        14% 98%,
-        7% 99%,
-        2% 95%,
+        93% 98%,
+        86% 97%,
+        80% 99%,
+        73% 98%,
+        66% 99.4%,
+        59% 97.8%,
+        52% 99%,
+        45% 98%,
+        38% 99.5%,
+        31% 97.7%,
+        24% 99%,
+        17% 97.8%,
+        10% 99%,
+        5% 97%,
+        2% 93%,
 
-        3% 89%,
-        .5% 83%,
-        2.5% 76%,
-        0% 69%,
-        2% 62%,
-        .5% 55%,
-        2% 48%,
-        0% 41%,
-        2.5% 34%,
-        .5% 27%,
-        2% 20%,
-        .5% 13%,
-        2% 6%
+        3.5% 87%,
+        1% 81%,
+        3% 74%,
+        .8% 68%,
+        3.2% 61%,
+        1.3% 54%,
+        3% 47%,
+        .7% 40%,
+        3.4% 34%,
+        1.2% 27%,
+        3% 21%,
+        1% 15%,
+        2.5% 9%
     );
 
+    /*
+       Ombre extérieure + profondeur du papier
+    */
+    filter:
+        drop-shadow(0 13px 10px rgba(0,0,0,.34))
+        drop-shadow(0 2px 1px rgba(176,115,57,.12));
+
     box-shadow:
-        inset 0 0 45px rgba(0,0,0,.42),
-        inset 0 0 0 2px rgba(193,137,76,.20);
+        inset 0 0 42px rgba(7,5,3,.50),
+        inset 8px 0 20px rgba(18,11,6,.18),
+        inset -8px 0 20px rgba(18,11,6,.22);
 
     transition:
         max-height .75s cubic-bezier(.16,1,.3,1),
@@ -615,24 +625,24 @@ body.memories{
 ===================================================== */
 
 #result.memory-result.show {
-    max-height: 800px;
+    max-height: 850px;
     opacity: 1;
 
     margin-top: 18px;
 
     padding:
-        40px 38px
-        32px;
+        43px 34px
+        35px;
 
     transform:
         translateY(0)
         scale(1)
-        rotate(-.25deg);
+        rotate(-.18deg);
 }
 
 
 /* =====================================================
-   PARCHMENT INNER BORDER
+   INNER AGED FRAME
 ===================================================== */
 
 #result.memory-result::before {
@@ -640,20 +650,25 @@ body.memories{
 
     position: absolute;
 
-    inset: 9px;
+    inset:
+        13px
+        12px
+        14px
+        13px;
+
+    border:
+        1px solid rgba(180, 121, 61, .22);
 
     /*
-       Ce contour reste volontairement irrégulier.
+       volontairement asymétrique
     */
-    border:
-        1px solid rgba(198,143,80,.30);
-
     border-radius:
-        13px 8px 15px 10px /
-        9px 15px 8px 13px;
+        18px 9px 14px 7px /
+        10px 16px 8px 14px;
 
     box-shadow:
-        inset 0 0 18px rgba(0,0,0,.18);
+        inset 0 0 22px rgba(0,0,0,.16),
+        0 0 8px rgba(199,139,72,.035);
 
     opacity: 0;
 
@@ -669,32 +684,55 @@ body.memories{
 
 
 /* =====================================================
-   PARCHMENT AGING / EDGE BURN
+   AGING / BURN / TEXTURE
 ===================================================== */
 
 #result.memory-result::after {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     pointer-events: none;
 
+    /*
+       Pas seulement des bords noirs :
+       quelques taches très diffuses dans le papier.
+    */
     background:
+        radial-gradient(
+            circle at 15% 28%,
+            rgba(20,12,7,.18),
+            transparent 16%
+        ),
+        radial-gradient(
+            circle at 78% 18%,
+            rgba(211,146,75,.055),
+            transparent 19%
+        ),
+        radial-gradient(
+            ellipse at 71% 67%,
+            rgba(19,11,6,.16),
+            transparent 25%
+        ),
+        radial-gradient(
+            ellipse at 33% 83%,
+            rgba(173,107,52,.06),
+            transparent 22%
+        ),
         linear-gradient(
             90deg,
-            rgba(13,9,6,.30) 0%,
-            transparent 7%,
-            transparent 93%,
-            rgba(13,9,6,.32) 100%
+            rgba(12,8,5,.34),
+            transparent 8%,
+            transparent 91%,
+            rgba(11,7,4,.38)
         ),
         linear-gradient(
             180deg,
-            rgba(117,74,39,.20) 0%,
-            transparent 10%,
-            transparent 88%,
-            rgba(10,7,5,.28) 100%
+            rgba(18,11,6,.22),
+            transparent 9%,
+            transparent 89%,
+            rgba(9,6,4,.32)
         );
 
     opacity: 0;
@@ -720,19 +758,25 @@ body.memories{
 
     text-align: center;
 
-    font-size: .72rem;
+    font-size: .69rem;
     font-weight: 500;
 
     line-height: 1.4;
 
-    letter-spacing: .27em;
+    letter-spacing: .30em;
     text-transform: uppercase;
 
     color:
-        rgba(230,207,177,.82);
+        rgba(222, 197, 163, .79);
 
+    /*
+       Moins "texte informatique blanc".
+       L'ombre le fond légèrement dans le papier.
+    */
     text-shadow:
-        0 1px 2px rgba(0,0,0,.75);
+        0 1px 0 rgba(255,220,174,.04),
+        0 2px 3px rgba(0,0,0,.72),
+        0 0 7px rgba(202,143,75,.06);
 }
 
 
@@ -742,18 +786,18 @@ body.memories{
     display: block;
 
     margin:
-        12px auto
-        24px;
+        13px auto
+        29px;
 
-    font-size: .42rem;
+    font-size: .40rem;
 
-    letter-spacing: .08em;
+    letter-spacing: .04em;
 
     color:
-        rgba(197,137,72,.65);
+        rgba(185, 121, 58, .62);
 
     text-shadow:
-        0 0 8px rgba(205,142,71,.15);
+        0 0 8px rgba(205,142,71,.18);
 }
 
 
@@ -767,22 +811,36 @@ body.memories{
 
     margin:
         0 auto
-        28px;
+        36px;
 
-    max-width: 285px;
+    max-width: 275px;
 
     text-align: center;
 
+    /*
+       Plus "manuscrit / impression"
+       et moins gros bloc blanc.
+    */
     font-size: 1.02rem;
-    line-height: 1.45;
+    line-height: 1.52;
 
+    font-weight: 400;
     font-style: italic;
 
     color:
-        rgba(238,222,200,.90);
+        rgba(224, 205, 179, .87);
 
+    /*
+       C'est surtout ça qui va enlever
+       l'effet Malabar actuel.
+    */
     text-shadow:
-        0 1px 2px rgba(0,0,0,.68);
+        0 2px 2px rgba(10,6,3,.72),
+        0 0 5px rgba(10,6,3,.34),
+        1px 0 0 rgba(91,55,29,.16);
+
+    filter:
+        drop-shadow(0 1px 1px rgba(0,0,0,.18));
 }
 
 
@@ -798,43 +856,57 @@ body.memories{
     justify-content: center;
     align-items: center;
 
-    gap: 11px;
+    /*
+       Plus d'air entre les trois.
+    */
+    gap: 17px;
 
-    margin-top: 24px;
+    margin-top: 30px;
+    margin-bottom: 5px;
 }
 
 
 .choices button {
-    min-width: 62px;
+    min-width: 72px;
 
     padding:
-        9px
-        18px;
+        10px
+        20px;
 
     border:
-        1px solid rgba(184,130,70,.46);
+        1px solid rgba(177, 117, 56, .50);
 
     border-radius: 999px;
 
     background:
+        radial-gradient(
+            ellipse at 50% 20%,
+            rgba(113,79,46,.20),
+            transparent 60%
+        ),
         linear-gradient(
             180deg,
-            rgba(60,47,35,.94),
-            rgba(39,32,25,.98)
+            rgba(59,45,33,.90),
+            rgba(37,29,22,.96)
         );
 
     color:
-        rgba(235,217,193,.86);
+        rgba(224, 204, 178, .88);
 
     font-family:
         "Cormorant Garamond",
         serif;
 
-    font-size: .9rem;
+    font-size: .92rem;
+    font-weight: 500;
+
+    text-shadow:
+        0 1px 2px rgba(0,0,0,.75);
 
     box-shadow:
-        inset 0 1px 0 rgba(235,190,130,.07),
-        0 5px 12px rgba(0,0,0,.25);
+        inset 0 1px 0 rgba(238,190,128,.06),
+        inset 0 -4px 8px rgba(0,0,0,.12),
+        0 6px 10px rgba(0,0,0,.26);
 
     cursor: pointer;
 
@@ -848,24 +920,32 @@ body.memories{
 
 
 .choices button:hover:not(:disabled) {
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px)
+        scale(1.025);
 
     color:
-        rgba(255,239,216,.98);
+        rgba(246,225,197,.98);
 
     background:
+        radial-gradient(
+            ellipse at 50% 20%,
+            rgba(155,105,53,.24),
+            transparent 60%
+        ),
         linear-gradient(
             180deg,
-            rgba(79,59,40,.97),
-            rgba(46,36,27,.99)
+            rgba(74,54,37,.96),
+            rgba(43,33,25,.99)
         );
 
     border-color:
-        rgba(213,157,88,.70);
+        rgba(205,145,75,.72);
 
     box-shadow:
-        0 7px 15px rgba(0,0,0,.30),
-        0 0 14px rgba(205,143,72,.09);
+        inset 0 1px 0 rgba(247,205,147,.08),
+        0 8px 15px rgba(0,0,0,.30),
+        0 0 15px rgba(205,143,72,.08);
 }
 
 
@@ -880,16 +960,16 @@ body.memories{
 
 .choices button.right-answer {
     color:
-        rgba(255,239,211,.98);
+        rgba(250,229,199,.98);
 
     border-color:
-        rgba(220,166,95,.78);
+        rgba(218,158,87,.78);
 
     background:
         linear-gradient(
             180deg,
-            rgba(100,72,43,.92),
-            rgba(58,43,30,.96)
+            rgba(98,68,40,.94),
+            rgba(55,40,28,.97)
         );
 
     box-shadow:
@@ -900,12 +980,14 @@ body.memories{
 
 #result.memory-result.correct {
     filter:
-        drop-shadow(0 0 7px rgba(198,151,89,.10));
+        drop-shadow(0 13px 10px rgba(0,0,0,.34))
+        drop-shadow(0 0 9px rgba(198,151,89,.11));
 }
 
 #result.memory-result.wrong {
     filter:
-        drop-shadow(0 0 5px rgba(130,93,76,.10));
+        drop-shadow(0 13px 10px rgba(0,0,0,.34))
+        drop-shadow(0 0 6px rgba(130,93,76,.10));
 }
 
 
@@ -918,15 +1000,15 @@ body.memories{
     z-index: 2;
 
     margin:
-        24px auto
+        27px auto
         0;
 
-    padding-top: 19px;
+    padding-top: 20px;
 
-    max-width: 280px;
+    max-width: 275px;
 
     border-top:
-        1px solid rgba(190,134,73,.22);
+        1px solid rgba(180,119,58,.20);
 
     text-align: center;
 
@@ -936,7 +1018,10 @@ body.memories{
     font-style: italic;
 
     color:
-        rgba(211,190,162,.67);
+        rgba(202,180,151,.68);
+
+    text-shadow:
+        0 1px 2px rgba(0,0,0,.55);
 }
 
 
@@ -949,47 +1034,65 @@ body.memories{
     z-index: 2;
 
     margin:
-        27px 0
+        33px 0
         0;
 
-    padding-top: 18px;
+    padding-top: 21px;
 
     text-align: center;
 
-    font-size: .61rem;
+    font-size: .59rem;
 
-    letter-spacing: .20em;
+    letter-spacing: .23em;
     text-transform: uppercase;
 
     color:
-        rgba(195,150,94,.62);
+        rgba(184,135,77,.68);
+
+    text-shadow:
+        0 1px 2px rgba(0,0,0,.55);
 }
 
 
 .progress::before {
-    content: "";
+    content: "✦";
 
     position: absolute;
 
     top: 0;
     left: 50%;
 
-    width: 68%;
+    width: 74%;
     height: 1px;
 
     transform:
         translateX(-50%);
 
+    /*
+       Ligne + petit losange central,
+       plus proche de ta maquette.
+    */
+    line-height: 1px;
+
+    font-size: .40rem;
+
+    color:
+        rgba(194,132,65,.66);
+
     background:
         linear-gradient(
             to right,
-            transparent,
-            rgba(188,130,68,.12),
-            rgba(201,145,78,.42),
-            rgba(188,130,68,.12),
-            transparent
+            transparent 0%,
+            rgba(181,118,57,.10) 10%,
+            rgba(194,132,65,.38) 42%,
+            transparent 43%,
+            transparent 57%,
+            rgba(194,132,65,.38) 58%,
+            rgba(181,118,57,.10) 90%,
+            transparent 100%
         );
 }
+
 /* =====================================================
    SCORE — LAST TIME
 ===================================================== */
