@@ -114,43 +114,15 @@ body.archive-letter-page {
   content: "";
 
   position: absolute;
-
-  top: 88px;
-  left: 8px;
-  right: 8px;
-  bottom: 8px;
+  inset: 8px;
 
   pointer-events: none;
 
-  background:
+  border:
+    1px solid rgba(181, 132, 73, .045);
 
-    /* quelques lignes légèrement plus visibles */
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 83px,
-      rgba(177, 128, 69, .055) 83px,
-      rgba(177, 128, 69, .055) 84px
-    ),
-
-    /* lignes principales */
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 27px,
-      rgba(172, 126, 70, .045) 27px,
-      rgba(172, 126, 70, .045) 28px
-    );
-
-  opacity: .8;
-
-  border-left:
-    1px solid rgba(181, 132, 73, .035);
-
-  border-right:
-    1px solid rgba(181, 132, 73, .035);
+  border-radius: 2px;
 }
-
 
 /* =====================================================
    DATE
