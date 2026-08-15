@@ -33,7 +33,7 @@ body.archive {
     url("../assets/archives-background.png");
 
   background-size: cover;
-  background-position: center top;
+  background-position: center top !important;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
