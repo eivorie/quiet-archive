@@ -254,7 +254,8 @@ body.archive .nav a:hover {
 .archive-timeline {
   position: relative;
 
-  width: 100%;
+  width: min(100%, 360px);
+  margin: 0 auto;
 
   animation:
     archive-timeline-entry
@@ -264,7 +265,6 @@ body.archive .nav a:hover {
     both;
 }
 
-
 /* =====================================================
    YEAR
 ===================================================== */
@@ -273,7 +273,6 @@ body.archive .nav a:hover {
   margin-top: 46px;
 }
 
-
 .archive-year-title {
   display: flex;
   align-items: center;
@@ -281,7 +280,7 @@ body.archive .nav a:hover {
 
   gap: 12px;
 
-  margin-bottom: 23px;
+  margin-bottom: 14px; /* 23px -> 14px */
 }
 
 
@@ -334,10 +333,10 @@ body.archive .nav a:hover {
 
   position: absolute;
 
-  top: 9px;
-  bottom: 9px;
+  top: 7px;
+  bottom: 7px;
 
-  left: 62px;
+  left: 60px; /* et non 62px */
 
   width: 1px;
 
@@ -359,13 +358,13 @@ body.archive .nav a:hover {
 .archive-entry {
   position: relative;
 
-  min-height: 55px;
+  min-height: 43px;
 
   display: grid;
 
   grid-template-columns:
     46px
-    32px
+    28px
     minmax(0, 1fr)
     20px;
 
@@ -380,7 +379,6 @@ body.archive .nav a:hover {
     transform .3s ease,
     opacity .3s ease;
 }
-
 
 /* =====================================================
    DATE — LEFT
@@ -613,24 +611,35 @@ body.archive .nav a:hover {
   }
 
 
+  /* Timeline légèrement plus large,
+     mais toujours centrée */
+  .archive-timeline {
+    width: min(100%, 390px);
+  }
+
+
+  /* Année plus proche de la première date */
   .archive-year-title {
-    margin-bottom: 27px;
+    margin-bottom: 16px;
   }
 
 
+  /* Axe :
+     52px de date + moitié des 28px du node = 66px */
   .archive-entries::before {
-    left: 82px;
+    left: 66px;
   }
 
 
+  /* Dates volontairement compactes */
   .archive-entry {
-    min-height: 62px;
+    min-height: 45px;
 
     grid-template-columns:
-      62px
-      40px
+      52px
+      28px
       minmax(0, 1fr)
-      28px;
+      24px;
   }
 
 
@@ -645,19 +654,18 @@ body.archive .nav a:hover {
 
 
   .archive-label {
-    padding-left: 6px;
+    padding-left: 4px;
 
-    font-size: .94rem;
+    font-size: .90rem;
   }
 
 
   .archive-heart {
-    right: 34px;
+    right: 28px;
 
     font-size: 1rem;
   }
 }
-
 
 /* =====================================================
    VERY SMALL MOBILE
