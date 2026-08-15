@@ -115,9 +115,6 @@ body.archive-letter-page {
 
   position: absolute;
 
-  /*
-     Les lignes ne commencent plus au sommet de la feuille.
-  */
   top: 88px;
   left: 8px;
   right: 8px;
@@ -126,52 +123,32 @@ body.archive-letter-page {
   pointer-events: none;
 
   background:
+
+    /* quelques lignes légèrement plus visibles */
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 83px,
+      rgba(177, 128, 69, .055) 83px,
+      rgba(177, 128, 69, .055) 84px
+    ),
+
+    /* lignes principales */
     repeating-linear-gradient(
       to bottom,
       transparent 0,
       transparent 27px,
-      rgba(172, 126, 70, .09) 27px,
-      rgba(172, 126, 70, .09) 28px
+      rgba(172, 126, 70, .045) 27px,
+      rgba(172, 126, 70, .045) 28px
     );
+
+  opacity: .8;
 
   border-left:
-    1px solid rgba(181, 132, 73, .045);
+    1px solid rgba(181, 132, 73, .035);
 
   border-right:
-    1px solid rgba(181, 132, 73, .045);
-}
-
-/* =====================================================
-   NOTEBOOK MARGIN
-===================================================== */
-
-/*
-   La petite ligne verticale du cahier.
-
-   Elle est volontairement très discrète.
-*/
-.archive-letter::after {
-  content: "";
-
-  position: absolute;
-
-  top: 30px;
-  bottom: 30px;
-
-  left: 36px;
-
-  width: 1px;
-
-  pointer-events: none;
-
-  background:
-    linear-gradient(
-      to bottom,
-      transparent,
-      rgba(157, 103, 55, .17) 5%,
-      rgba(157, 103, 55, .17) 95%,
-      transparent
-    );
+    1px solid rgba(181, 132, 73, .035);
 }
 
 
@@ -267,6 +244,33 @@ body.archive-letter-page {
   z-index: 1;
 }
 
+.archive-entry-content::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: -1;
+
+  top: -12px;
+  right: -12px;
+  bottom: -12px;
+  left: -12px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(17, 12, 9, .34) 8%,
+      rgba(17, 12, 9, .48) 18%,
+      rgba(17, 12, 9, .48) 82%,
+      rgba(17, 12, 9, .34) 92%,
+      transparent 100%
+    );
+
+  filter: blur(7px);
+
+  pointer-events: none;
+}
 
 /* =====================================================
    PARAGRAPHS
@@ -288,7 +292,7 @@ body.archive-letter-page {
   font-size: .82rem;
   font-weight: 400;
 
-  line-height: 28px;
+  line-height: 15px;
 
   letter-spacing: .005em;
 
@@ -328,10 +332,7 @@ body.archive-letter-page {
   margin:
     32px
     12px;
-
-  color: rgba(224, 201, 166, .91);
-
-  font-size: 1rem;
+   
   font-style: italic;
 
   text-align: center;
@@ -427,12 +428,6 @@ body.archive-letter-page {
       86px;
   }
 
-
-  .archive-letter::after {
-    left: 40px;
-  }
-
-
   .archive-entry-content p {
     font-size: .96rem;
     line-height: 1.78;
@@ -463,24 +458,9 @@ body.archive-letter-page {
       68px;
   }
 
-
-  .archive-letter::after {
-    left: 25px;
-  }
-
-
   .archive-entry-header {
     margin-bottom: 38px;
   }
-
-
-  .archive-entry-content p {
-    margin-bottom: 22px;
-
-    font-size: .87rem;
-    line-height: 1.75;
-  }
-
 
   .archive-entry-content .weather-lead,
   .archive-entry-content .dialogue {
