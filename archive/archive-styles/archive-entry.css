@@ -76,10 +76,10 @@ body.archive-letter-page {
       transparent 34%
     ),
      
-    linear-gradient(
+   linear-gradient(
      145deg,
-     rgba(25, 19, 14, .78),
-     rgba(14, 11, 9, .84)
+     rgba(25, 19, 14, .70),
+     rgba(14, 11, 9, .77)
    );
 
   border:
