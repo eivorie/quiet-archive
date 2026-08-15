@@ -402,57 +402,134 @@ body.sunmoon-eclipse .eclipse {
   }
 }
 /* =====================================================
-   STARS
+   STARS — PAGE BACKGROUND
 ===================================================== */
 
-body.sunmoon-stars{
+body.sunmoon-stars {
+  position: relative;
 
-    background:
+  min-height: 100vh;
 
-        radial-gradient(circle at 50% 15%,
-            rgba(150,180,255,.08),
-            transparent 35%),
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(3, 6, 13, .04),
+      rgba(2, 4, 10, .12)
+    ),
+    url("assets/stars-background.png");
 
-        radial-gradient(circle at 20% 10%,
-            rgba(255,255,255,.04),
-            transparent 30%),
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
-        linear-gradient(
-            to bottom,
-            #090b12,
-            #030407
-        );
-
-    transition:background 2.6s ease;
+  color: #eef2ff;
 }
 
-/* ---------- Navbar ---------- */
 
-body.sunmoon-stars .nav{
+/* =====================================================
+   STARS — VOILE
+===================================================== */
 
-    background:rgba(8,10,18,.82);
+body.sunmoon-stars::before {
+  content: "";
 
-    backdrop-filter:blur(18px);
+  position: fixed;
+  inset: 0;
 
-    border-bottom:1px solid rgba(160,185,255,.12);
+  z-index: 0;
+  pointer-events: none;
 
-    box-shadow:
-        0 10px 28px rgba(0,0,0,.45);
+  /*
+     Assombrit très légèrement le centre pour que
+     les chapitres restent parfaitement lisibles,
+     sans effacer les nébuleuses du background.
+  */
+  background:
+    radial-gradient(
+      ellipse at 50% 42%,
+      rgba(3, 7, 16, .05) 0%,
+      rgba(3, 7, 16, .08) 42%,
+      rgba(1, 3, 8, .16) 100%
+    );
 }
 
-body.sunmoon-stars .nav a{
 
-    color:rgba(220,228,245,.82);
+/* =====================================================
+   STARS — CONTENT
+===================================================== */
+
+body.sunmoon-stars .stars {
+  position: relative;
+  z-index: 2;
 }
 
-body.sunmoon-stars .nav a:hover{
 
-    color:white;
+/* =====================================================
+   STARS — NAVBAR
+===================================================== */
 
-    text-shadow:
-        0 0 10px rgba(180,205,255,.45);
+body.sunmoon-stars .nav {
+  position: relative;
+  z-index: 100;
+
+  margin-bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 12px 22px;
+
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(4, 8, 17, .54),
+      rgba(5, 9, 19, .30)
+    );
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  border-bottom:
+    1px solid rgba(164, 188, 225, .13);
+
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, .14);
+
+  text-transform: uppercase;
 }
 
+
+body.sunmoon-stars .nav a {
+  color: rgba(220, 228, 245, .82);
+
+  text-transform: uppercase;
+  letter-spacing: .18em;
+
+  font-size: .72rem;
+
+  text-decoration: none;
+
+  text-shadow:
+    0 1px 5px rgba(0, 0, 0, .75),
+    0 0 10px rgba(175, 202, 245, .10);
+
+  transition:
+    color .3s ease,
+    text-shadow .3s ease;
+}
+
+
+body.sunmoon-stars .nav a:hover {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 12px rgba(190, 215, 255, .38);
+}
 /* =====================================================
    STAGE
 ===================================================== */
