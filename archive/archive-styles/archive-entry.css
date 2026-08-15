@@ -13,10 +13,10 @@ body.archive-letter-page {
 }
 
 
-/*
-   Zone réservée à la lettre.
-   Elle reste indépendante de .archive-page de l'index.
-*/
+/* =====================================================
+   LETTER AREA
+===================================================== */
+
 .archive-entry-page {
   position: relative;
   z-index: 2;
@@ -27,9 +27,9 @@ body.archive-letter-page {
   justify-content: center;
 
   padding:
-    46px
+    48px
     18px
-    100px;
+    110px;
 
   box-sizing: border-box;
 }
@@ -37,55 +37,132 @@ body.archive-letter-page {
 
 /* =====================================================
    LETTER
+   Dark notebook paper
 ===================================================== */
 
 .archive-letter {
   position: relative;
 
-  /*
-     Beaucoup plus étroite.
-     On retrouve les proportions de la maquette.
-  */
   width: min(100%, 430px);
 
   margin: 0 auto;
 
   padding:
-    74px
-    58px
-    88px;
+    62px
+    54px
+    76px;
 
   box-sizing: border-box;
 
   /*
-     La feuille devient une TEXTURE,
-     pas un énorme parchemin étiré.
+     La feuille elle-même.
 
-     On garde la texture centrée et on évite
-     l'effet "illustration Skyrim".
+     1. léger éclairage central
+     2. nuances irrégulières du papier
+     3. lignes horizontales
+     4. couleur de fond
   */
   background:
-    linear-gradient(
-      to bottom,
-      rgba(9, 6, 4, .10),
-      rgba(9, 6, 4, .20)
+    radial-gradient(
+      ellipse at 48% 18%,
+      rgba(137, 96, 51, .055),
+      transparent 42%
     ),
-    url("../../assets/letters.png");
 
-  background-size:
-    100% 100%,
-    100% 100%;
+    radial-gradient(
+      ellipse at 78% 68%,
+      rgba(109, 72, 37, .025),
+      transparent 34%
+    ),
 
-  background-repeat: no-repeat;
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 27px,
+      rgba(172, 126, 70, .105) 27px,
+      rgba(172, 126, 70, .105) 28px
+    ),
 
-  filter:
-    drop-shadow(0 14px 28px rgba(0, 0, 0, .28));
+    linear-gradient(
+      145deg,
+      rgba(25, 19, 14, .94),
+      rgba(14, 11, 9, .96)
+    );
+
+  border:
+    1px solid rgba(175, 126, 67, .16);
+
+  border-radius: 3px;
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, .30),
+    0 3px 10px rgba(0, 0, 0, .34),
+    inset 0 0 35px rgba(0, 0, 0, .18);
 
   animation:
     letter-entry
     1.2s
     cubic-bezier(.16, 1, .3, 1)
     both;
+}
+
+
+/* =====================================================
+   PAPER INNER EDGE
+===================================================== */
+
+/*
+   Très fine bordure intérieure.
+
+   Elle donne une vraie limite au papier sans créer
+   l'effet "cadre fantasy".
+*/
+.archive-letter::before {
+  content: "";
+
+  position: absolute;
+  inset: 8px;
+
+  pointer-events: none;
+
+  border:
+    1px solid rgba(181, 132, 73, .055);
+
+  border-radius: 2px;
+}
+
+
+/* =====================================================
+   NOTEBOOK MARGIN
+===================================================== */
+
+/*
+   La petite ligne verticale du cahier.
+
+   Elle est volontairement très discrète.
+*/
+.archive-letter::after {
+  content: "";
+
+  position: absolute;
+
+  top: 30px;
+  bottom: 30px;
+
+  left: 36px;
+
+  width: 1px;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(157, 103, 55, .17) 5%,
+      rgba(157, 103, 55, .17) 95%,
+      transparent
+    );
 }
 
 
@@ -97,46 +174,78 @@ body.archive-letter-page {
   position: relative;
   z-index: 1;
 
-  margin-bottom: 48px;
+  margin-bottom: 44px;
 
   text-align: center;
 }
 
 
 .archive-entry-date {
-  color: rgba(202, 155, 91, .78);
+  color: rgba(196, 143, 76, .78);
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: .68rem;
+  font-size: .67rem;
   font-weight: 500;
 
-  letter-spacing: .28em;
+  letter-spacing: .30em;
 
   text-transform: uppercase;
 
   text-shadow:
-    0 1px 5px rgba(0, 0, 0, .70);
+    0 1px 4px rgba(0, 0, 0, .72);
+}
+
+
+/* =====================================================
+   DATE ORNAMENT
+===================================================== */
+
+.archive-entry-header::after {
+  content: "";
+
+  display: block;
+
+  width: 72px;
+  height: 1px;
+
+  margin:
+    18px
+    auto
+    0;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(180, 126, 62, .30),
+      transparent
+    );
 }
 
 
 /*
-   Petit détail de correspondance,
-   beaucoup plus fin que l'ancien séparateur.
+   Petit diamant central.
 */
-.archive-entry-header::after {
-  content: "✦";
+.archive-entry-header::before {
+  content: "◆";
 
-  display: block;
+  position: absolute;
 
-  margin-top: 16px;
+  left: 50%;
+  bottom: -3px;
 
-  color: rgba(181, 126, 59, .48);
+  z-index: 2;
 
-  font-size: .38rem;
+  transform: translateX(-50%);
 
-  text-shadow:
-    0 0 7px rgba(203, 143, 67, .28);
+  padding: 0 5px;
+
+  color: rgba(192, 139, 71, .50);
+
+  background: #17110d;
+
+  font-size: .27rem;
 }
 
 
@@ -150,61 +259,61 @@ body.archive-letter-page {
 }
 
 
-/*
-   Texte de lettre :
-   fin, doux, légèrement ivoire.
+/* =====================================================
+   PARAGRAPHS
+===================================================== */
 
-   Surtout PAS Courier New.
-*/
 .archive-entry-content p {
   margin:
     0
     0
-    22px;
+    24px;
 
-  color: rgba(211, 195, 169, .80);
+  color: rgba(210, 195, 171, .78);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  font-size: .93rem;
+  font-size: .92rem;
   font-weight: 400;
 
-  line-height: 1.72;
+  /*
+     Proche de l'espacement des lignes du papier.
+  */
+  line-height: 1.78;
 
   letter-spacing: .012em;
 
   text-shadow:
-    0 1px 3px rgba(0, 0, 0, .68);
+    0 1px 2px rgba(0, 0, 0, .70);
 }
 
 
-/*
-   On supprime complètement l'ancien effet
-   pair / impair.
-*/
 .archive-entry-content p:nth-child(odd) {
-  color: rgba(211, 195, 169, .80);
+  color: rgba(210, 195, 171, .78);
 }
 
 
 /* =====================================================
-   LEAD
+   OPENING
 ===================================================== */
 
 .archive-entry-content .weather-lead,
 .archive-entry-content .dialogue {
   margin-bottom: 34px;
 
-  color: rgba(216, 171, 105, .88);
+  color: rgba(216, 174, 112, .88);
 
-  font-size: 1.02rem;
-  line-height: 1.75;
-
+  font-size: 1rem;
   font-style: italic;
 
+  line-height: 1.78;
+
   text-shadow:
-    0 1px 4px rgba(0, 0, 0, .78),
-    0 0 10px rgba(181, 119, 54, .08);
+    0 1px 3px rgba(0, 0, 0, .76),
+    0 0 10px rgba(181, 119, 54, .06);
 }
 
 
@@ -214,10 +323,10 @@ body.archive-letter-page {
 
 .archive-entry-content .strong {
   margin:
-    31px
-    0;
+    32px
+    12px;
 
-  color: rgba(225, 203, 168, .92);
+  color: rgba(224, 201, 166, .91);
 
   font-size: 1rem;
   font-style: italic;
@@ -227,36 +336,55 @@ body.archive-letter-page {
 
 
 /* =====================================================
-   ENDINGS
+   ENDING
 ===================================================== */
 
 .archive-entry-content .weather-ending {
-  margin-top: 31px;
+  margin-top: 32px;
 
-  color: rgba(216, 197, 167, .86);
+  color: rgba(215, 195, 163, .85);
 
   font-style: italic;
 }
 
 
 .archive-entry-content .ending {
+  position: relative;
+
   margin:
-    42px
+    48px
     0
-    6px;
+    8px;
 
-  color: rgba(214, 163, 94, .92);
+  padding-top: 24px;
 
-  font-size: 1.18rem;
+  color: rgba(211, 162, 96, .91);
+
+  font-size: 1.16rem;
   font-style: italic;
 
-  line-height: 1.45;
+  line-height: 1.5;
 
   text-align: center;
 
   text-shadow:
-    0 1px 4px rgba(0, 0, 0, .72),
-    0 0 11px rgba(190, 125, 55, .12);
+    0 1px 3px rgba(0, 0, 0, .75);
+}
+
+
+.archive-entry-content .ending::before {
+  content: "✦";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: rgba(185, 129, 62, .42);
+
+  font-size: .42rem;
 }
 
 
@@ -296,9 +424,14 @@ body.archive-letter-page {
     width: 440px;
 
     padding:
-      82px
-      64px
-      96px;
+      68px
+      62px
+      86px;
+  }
+
+
+  .archive-letter::after {
+    left: 40px;
   }
 
 
@@ -318,18 +451,23 @@ body.archive-letter-page {
   .archive-entry-page {
     padding:
       36px
-      14px
-      80px;
+      16px
+      82px;
   }
 
 
   .archive-letter {
-    width: min(100%, 390px);
+    width: min(100%, 380px);
 
     padding:
-      62px
-      42px
-      76px;
+      54px
+      38px
+      68px;
+  }
+
+
+  .archive-letter::after {
+    left: 25px;
   }
 
 
@@ -339,16 +477,16 @@ body.archive-letter-page {
 
 
   .archive-entry-content p {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 
-    font-size: .88rem;
-    line-height: 1.68;
+    font-size: .87rem;
+    line-height: 1.75;
   }
 
 
   .archive-entry-content .weather-lead,
   .archive-entry-content .dialogue {
-    font-size: .96rem;
+    font-size: .95rem;
   }
 }
 
@@ -359,11 +497,22 @@ body.archive-letter-page {
 
 @media (max-width: 360px) {
 
+  .archive-entry-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
   .archive-letter {
     padding:
-      54px
-      34px
-      68px;
+      50px
+      32px
+      62px;
+  }
+
+
+  .archive-letter::after {
+    left: 21px;
   }
 
 
