@@ -22,7 +22,7 @@
 .stars-header{
 
     text-align:center;
-    margin-bottom:50px;
+    margin-bottom:15px;
     animation:card-switch .8s ease both;
 }
 
