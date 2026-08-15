@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
 /* =====================================================
    ARCHIVE LETTER
    Private correspondence
 ===================================================== */
-
 
 /* =====================================================
    PAGE
@@ -75,7 +76,7 @@ body.archive-letter-page {
       transparent 34%
     ),
 
-    repeating-linear-gradient(
+     repeating-linear-gradient(
       to bottom,
       transparent 0,
       transparent 27px,
@@ -267,29 +268,25 @@ body.archive-letter-page {
   margin:
     0
     0
-    24px;
+    28px;
 
   color: rgba(210, 195, 171, .78);
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Courier Prime",
+    "Courier New",
+    monospace;
 
-  font-size: .92rem;
+  font-size: .82rem;
   font-weight: 400;
 
-  /*
-     Proche de l'espacement des lignes du papier.
-  */
-  line-height: 1.78;
+  line-height: 28px;
 
-  letter-spacing: .012em;
+  letter-spacing: .005em;
 
   text-shadow:
     0 1px 2px rgba(0, 0, 0, .70);
 }
-
 
 .archive-entry-content p:nth-child(odd) {
   color: rgba(210, 195, 171, .78);
@@ -302,6 +299,8 @@ body.archive-letter-page {
 
 .archive-entry-content .weather-lead,
 .archive-entry-content .dialogue {
+  font-family: "Cormorant Garamond", serif;
+
   margin-bottom: 34px;
 
   color: rgba(216, 174, 112, .88);
@@ -309,11 +308,7 @@ body.archive-letter-page {
   font-size: 1rem;
   font-style: italic;
 
-  line-height: 1.78;
-
-  text-shadow:
-    0 1px 3px rgba(0, 0, 0, .76),
-    0 0 10px rgba(181, 119, 54, .06);
+  line-height: 28px;
 }
 
 
