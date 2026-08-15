@@ -1,7 +1,6 @@
 /* =====================================================
-   ARCHIVE ENTRY
+   ARCHIVE LETTER
    Private correspondence
-   Shared letter layout
 ===================================================== */
 
 
@@ -9,11 +8,15 @@
    PAGE
 ===================================================== */
 
-body.archive-entry {
-  color: rgba(218, 190, 148, .88);
+body.archive-letter-page {
+  color: rgba(219, 199, 166, .88);
 }
 
 
+/*
+   Zone réservée à la lettre.
+   Elle reste indépendante de .archive-page de l'index.
+*/
 .archive-entry-page {
   position: relative;
   z-index: 2;
@@ -24,9 +27,9 @@ body.archive-entry {
   justify-content: center;
 
   padding:
-    34px
-    14px
-    90px;
+    46px
+    18px
+    100px;
 
   box-sizing: border-box;
 }
@@ -39,141 +42,101 @@ body.archive-entry {
 .archive-letter {
   position: relative;
 
-  width: min(100%, 660px);
+  /*
+     Beaucoup plus étroite.
+     On retrouve les proportions de la maquette.
+  */
+  width: min(100%, 430px);
 
   margin: 0 auto;
 
   padding:
-    92px
-    clamp(42px, 9vw, 92px)
-    110px;
+    74px
+    58px
+    88px;
 
   box-sizing: border-box;
 
   /*
-     La feuille remplace complètement l'ancienne card.
-  */
+     La feuille devient une TEXTURE,
+     pas un énorme parchemin étiré.
 
-  background-image:
+     On garde la texture centrée et on évite
+     l'effet "illustration Skyrim".
+  */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(9, 6, 4, .10),
+      rgba(9, 6, 4, .20)
+    ),
     url("../../assets/letters.png");
 
-  background-size: 100% 100%;
-  background-position: center top;
+  background-size:
+    100% 100%,
+    100% 100%;
+
   background-repeat: no-repeat;
 
-  /*
-     Pas de border-radius.
-     Pas de border.
-     Pas de background CSS opaque.
-     Tout le contour vient du PNG.
-  */
-
   filter:
-    drop-shadow(0 22px 30px rgba(0, 0, 0, .40))
-    drop-shadow(0 5px 10px rgba(0, 0, 0, .30));
+    drop-shadow(0 14px 28px rgba(0, 0, 0, .28));
 
   animation:
     letter-entry
-    1.25s
+    1.2s
     cubic-bezier(.16, 1, .3, 1)
     both;
 }
 
 
 /* =====================================================
-   HEADER
+   DATE
 ===================================================== */
 
 .archive-entry-header {
   position: relative;
+  z-index: 1;
 
-  margin:
-    0
-    auto
-    54px;
+  margin-bottom: 48px;
 
   text-align: center;
 }
 
 
-.archive-entry-number {
-  display: block;
-
-  margin-bottom: 9px;
-
-  color: rgba(171, 119, 60, .60);
-
-  font-family: "Cormorant Garamond", serif;
-  font-size: .58rem;
-
-  letter-spacing: .26em;
-  text-transform: uppercase;
-}
-
-
 .archive-entry-date {
-  display: block;
-
-  color: rgba(215, 170, 106, .94);
+  color: rgba(202, 155, 91, .78);
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 1rem;
+
+  font-size: .68rem;
   font-weight: 500;
 
-  letter-spacing: .24em;
+  letter-spacing: .28em;
+
   text-transform: uppercase;
 
   text-shadow:
-    0 0 9px rgba(187, 120, 47, .15);
+    0 1px 5px rgba(0, 0, 0, .70);
 }
 
 
-/* =====================================================
-   HEADER ORNAMENT
-===================================================== */
+/*
+   Petit détail de correspondance,
+   beaucoup plus fin que l'ancien séparateur.
+*/
+.archive-entry-header::after {
+  content: "✦";
 
-.archive-entry-ornament {
-  width: 108px;
+  display: block;
 
-  margin:
-    18px
-    auto
-    0;
+  margin-top: 16px;
 
-  display: flex;
-  align-items: center;
+  color: rgba(181, 126, 59, .48);
 
-  gap: 8px;
-
-  color: rgba(194, 137, 68, .62);
-}
-
-
-.archive-entry-ornament span {
-  flex: 1;
-
-  height: 1px;
-
-  background:
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(179, 123, 57, .50)
-    );
-}
-
-
-.archive-entry-ornament span:last-child {
-  transform: scaleX(-1);
-}
-
-
-.archive-entry-ornament i {
   font-size: .38rem;
-  font-style: normal;
 
   text-shadow:
-    0 0 8px rgba(210, 148, 70, .40);
+    0 0 7px rgba(203, 143, 67, .28);
 }
 
 
@@ -187,104 +150,113 @@ body.archive-entry {
 }
 
 
+/*
+   Texte de lettre :
+   fin, doux, légèrement ivoire.
+
+   Surtout PAS Courier New.
+*/
 .archive-entry-content p {
   margin:
     0
     0
-    25px;
+    22px;
 
-  color: rgba(218, 198, 169, .86);
+  color: rgba(211, 195, 169, .80);
 
-  /*
-     On abandonne Courier.
-     Cormorant donne beaucoup plus l'impression
-     de correspondance ancienne.
-  */
   font-family: "Cormorant Garamond", serif;
 
-  font-size: 1.04rem;
+  font-size: .93rem;
   font-weight: 400;
 
   line-height: 1.72;
 
-  letter-spacing: .015em;
+  letter-spacing: .012em;
 
   text-shadow:
-    0 1px 2px rgba(0, 0, 0, .88);
+    0 1px 3px rgba(0, 0, 0, .68);
+}
+
+
+/*
+   On supprime complètement l'ancien effet
+   pair / impair.
+*/
+.archive-entry-content p:nth-child(odd) {
+  color: rgba(211, 195, 169, .80);
 }
 
 
 /* =====================================================
-   FIRST PARAGRAPH
+   LEAD
 ===================================================== */
 
-.archive-entry-content p:first-child {
-  margin-bottom: 32px;
-
-  color: rgba(226, 185, 116, .94);
-
-  font-size: 1.08rem;
-  font-style: italic;
-
-  text-shadow:
-    0 0 10px rgba(188, 120, 46, .14);
-}
-
-
-/* =====================================================
-   SPECIAL TEXT
-===================================================== */
-
+.archive-entry-content .weather-lead,
 .archive-entry-content .dialogue {
-  color: rgba(230, 188, 116, .96);
+  margin-bottom: 34px;
+
+  color: rgba(216, 171, 105, .88);
+
+  font-size: 1.02rem;
+  line-height: 1.75;
 
   font-style: italic;
+
+  text-shadow:
+    0 1px 4px rgba(0, 0, 0, .78),
+    0 0 10px rgba(181, 119, 54, .08);
 }
 
+
+/* =====================================================
+   EMPHASIS
+===================================================== */
 
 .archive-entry-content .strong {
-  color: rgba(232, 207, 170, .96);
+  margin:
+    31px
+    0;
 
-  font-size: 1.08rem;
-  font-weight: 500;
-}
+  color: rgba(225, 203, 168, .92);
 
-
-.archive-entry-content .ending,
-.archive-entry-content .weather-ending {
-  position: relative;
-
-  margin-top: 46px;
-  margin-bottom: 0;
-
-  padding-top: 30px;
-
-  color: rgba(224, 184, 119, .94);
-
-  font-size: 1.08rem;
+  font-size: 1rem;
   font-style: italic;
 
   text-align: center;
 }
 
 
-.archive-entry-content .ending::before,
-.archive-entry-content .weather-ending::before {
-  content: "✦";
+/* =====================================================
+   ENDINGS
+===================================================== */
 
-  position: absolute;
+.archive-entry-content .weather-ending {
+  margin-top: 31px;
 
-  top: 0;
-  left: 50%;
+  color: rgba(216, 197, 167, .86);
 
-  transform: translateX(-50%);
+  font-style: italic;
+}
 
-  color: rgba(185, 127, 60, .62);
 
-  font-size: .48rem;
+.archive-entry-content .ending {
+  margin:
+    42px
+    0
+    6px;
+
+  color: rgba(214, 163, 94, .92);
+
+  font-size: 1.18rem;
+  font-style: italic;
+
+  line-height: 1.45;
+
+  text-align: center;
 
   text-shadow:
-    0 0 8px rgba(211, 148, 68, .34);
+    0 1px 4px rgba(0, 0, 0, .72),
+    0 0 11px rgba(190, 125, 55, .12);
 }
 
 
@@ -296,7 +268,7 @@ body.archive-entry {
 
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(14px);
   }
 
   to {
@@ -314,25 +286,25 @@ body.archive-entry {
 
   .archive-entry-page {
     padding:
-      54px
-      28px
-      120px;
-  }
-
-
-  .archive-letter {
-    width: min(660px, 90vw);
-
-    padding:
-      108px
-      100px
+      64px
+      24px
       130px;
   }
 
 
+  .archive-letter {
+    width: 440px;
+
+    padding:
+      82px
+      64px
+      96px;
+  }
+
+
   .archive-entry-content p {
-    font-size: 1.08rem;
-    line-height: 1.76;
+    font-size: .96rem;
+    line-height: 1.78;
   }
 }
 
@@ -341,42 +313,42 @@ body.archive-entry {
    MOBILE
 ===================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 520px) {
 
   .archive-entry-page {
     padding:
-      24px
-      8px
-      70px;
+      36px
+      14px
+      80px;
   }
 
 
   .archive-letter {
-    width: 100%;
+    width: min(100%, 390px);
 
     padding:
-      72px
-      46px
-      90px;
+      62px
+      42px
+      76px;
   }
 
 
   .archive-entry-header {
-    margin-bottom: 40px;
-  }
-
-
-  .archive-entry-date {
-    font-size: .84rem;
-    letter-spacing: .18em;
+    margin-bottom: 38px;
   }
 
 
   .archive-entry-content p {
-    margin-bottom: 21px;
+    margin-bottom: 20px;
 
-    font-size: .96rem;
+    font-size: .88rem;
     line-height: 1.68;
+  }
+
+
+  .archive-entry-content .weather-lead,
+  .archive-entry-content .dialogue {
+    font-size: .96rem;
   }
 }
 
@@ -385,17 +357,17 @@ body.archive-entry {
    VERY SMALL MOBILE
 ===================================================== */
 
-@media (max-width: 380px) {
+@media (max-width: 360px) {
 
   .archive-letter {
     padding:
-      64px
-      38px
-      82px;
+      54px
+      34px
+      68px;
   }
 
 
   .archive-entry-content p {
-    font-size: .91rem;
+    font-size: .84rem;
   }
 }
