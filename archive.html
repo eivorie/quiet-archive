@@ -1,173 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Our Archive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- styles globaux -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- thème archive -->
   <link rel="stylesheet" href="menu-themes/archive.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+    rel="stylesheet">
 </head>
 
 <body class="archive">
 
-<nav class="nav">
-  <a href="index.html">Home</a>
-  <a href="memories.html">Memories</a>
-  <a href="ereri/index.html">Ereri</a>
-  <a href="depending-on-the-weather/index.html">Depending on the weather</a>
-  <a href="archive.html">Our Archive</a>
-  <a href="sunmoon2/index.html">Sun & Moon</a>
-</nav>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="memories.html">Memories</a>
+    <a href="ereri/index.html">Ereri</a>
+    <a href="depending-on-the-weather/index.html">Depending on the weather</a>
+    <a href="archive.html">Our Archive</a>
+    <a href="sunmoon2/index.html">Sun & Moon</a>
+  </nav>
 
-<main class="archive-page">
-  <section class="archive-card">
 
-    <h1>Unsaid things</h1>
+  <main class="archive-page">
 
-    <ul class="archive-list">
-        <li>
-        <a href="archive/2026-08-02.html">
-          August 2, 2026 ♥
-        </a>
-      </li>
-       <li>
-        <a href="archive/2026-07-07.html">
-          July 7, 2026
-        </a>
-      </li>
-      <li>
-        <a href="archive/2026-07-02.html">
-          July 2, 2026
-        </a>
-      </li>
-       <li>
-        <a href="archive/2026-06-26.html">
-          June 26, 2026
-        </a>
-      </li>
-       <li>
-        <a href="archive/2026-06-22.html">
-          June 22, 2026
-        </a>
-      </li>
-      <li>
-        <a href="archive/2026-06-04.html">
-          June 4, 2026
-        </a>
-      </li>
-       <li>
-        <a href="archive/2026-06-02.html">
-          June 2, 2026
-        </a>
-      </li>
-      <li>
-        <a href="archive/2026-04-27.html">
-          April 27, 2026
-        </a>
-      </li>
-       <li>
-        <a href="archive/2026-04-17.html">
-          April 17, 2026
-        </a>
-      </li>
-      <li>
-        <a href="archive/2026-04-14.html">
-          April 14, 2026
-        </a>
-      </li>
-       <li>
-        <a href="archive/2026-04-01.html">
-          April 1, 2026
-        </a>
-      </li>
-      <li>
-        <a href="archive/2026-03-23.html">
-          March 23, 2026
-        </a>
-      </li>
-       <li>
-        <a href="archive/2026-03-17.html">
-          March 17, 2026
-        </a>
-      </li>
-       <li>
-        <a href="archive/2026-03-10.html">
-          March 10, 2026 ♥
-        </a>
-      </li>
-       <li>
-        <a href="archive/2026-02-13.html">
-          February 13, 2026
-        </a>
-      </li>
-        <li>
-        <a href="archive/2026-02-11.html">
-          February 11, 2026
-        </a>
-      </li>
-        <li>
-        <a href="archive/2026-01-29.html">
-          January 29, 2026
-        </a>
-      </li>
-      <li>
-        <a href="archive/2026-01-23.html">
-          January 23, 2026
-        </a>
-      </li>
-      <li>
-        <a href="archive/2026-01-15.html">
-          January 15, 2026
-        </a>
-      </li>
-       <li>
-        <a href="archive/2026-01-12.html">
-          January 12, 2026
-        </a>
-      </li>
-       <li>
-        <a href="archive/2026-01-07.html">
-          January 7, 2026
-        </a>
-      </li>
-      <li>
-        <a href="archive/2026-01-06.html">
-          January 6, 2026
-        </a>
-      </li>
-       <li>
-        <a href="archive/2026-01-05.html">
-          January 5, 2026
-        </a>
-      </li>
-      <li>
-        <a href="archive/2026-01-02.html">
-          January 2, 2026
-        </a>
-      </li>
-      <li>
-        <a href="archive/2025-12-31.html">
-          December 31, 2025
-        </a>
-      </li>
-      <li>
-        <a href="archive/2025-12-29.html">
-          December 29, 2025
-        </a>
-      </li>
-      <li>
-        <a href="archive/2025-12-27.html">
-          December 27, 2025
-        </a>
-      </li>
-    </ul>
+    <!-- ==========================================
+         HEADER
+    =========================================== -->
 
-  </section>
-</main>
+    <header class="archive-header">
+
+      <h1>Our Archive</h1>
+
+      <p>
+        Unsaid things,<br>
+        kept somewhere safe.
+      </p>
+
+      <div class="archive-header-ornament" aria-hidden="true">
+        <span></span>
+        <i>◆</i>
+        <span></span>
+      </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         TIMELINE
+    =========================================== -->
+
+    <section class="archive-timeline">
+
+
+      <!-- ========================================
+           2026
+      ========================================= -->
+
+      <div class="archive-year">
+
+        <div class="archive-year-title">
+          <span></span>
+          <h2>2026</h2>
+          <span></span>
+        </div>
+
+
+        <div class="archive-entries">
+
+          <a href="archive/2026-08-02.html" class="archive-entry is-special">
+            <span class="archive-date">
+              <span class="month">Aug</span>
+              <span class="day">02</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">August 2, 2026</span>
+
+            <span class="archive-heart">♡</span>
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-07-07.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Jul</span>
+              <span class="day">07</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">July 7, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-07-02.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Jul</span>
+              <span class="day">02</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">July 2, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-06-26.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Jun</span>
+              <span class="day">26</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">June 26, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-06-22.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Jun</span>
+              <span class="day">22</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">June 22, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-06-04.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Jun</span>
+              <span class="day">04</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">June 4, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-06-02.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Jun</span>
+              <span class="day">02</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">June 2, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-04-27.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Apr</span>
+              <span class="day">27</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">April 27, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-04-17.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Apr</span>
+              <span class="day">17</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">April 17, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-04-14.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Apr</span>
+              <span class="day">14</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">April 14, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-04-01.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Apr</span>
+              <span class="day">01</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">April 1, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-03-23.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Mar</span>
+              <span class="day">23</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">March 23, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-03-17.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Mar</span>
+              <span class="day">17</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">March 17, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-03-10.html" class="archive-entry is-special">
+            <span class="archive-date">
+              <span class="month">Mar</span>
+              <span class="day">10</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">March 10, 2026</span>
+
+            <span class="archive-heart">♡</span>
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-02-13.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Feb</span>
+              <span class="day">13</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">February 13, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-02-11.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Feb</span>
+              <span class="day">11</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">February 11, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-01-29.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Jan</span>
+              <span class="day">29</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">January 29, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-01-23.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Jan</span>
+              <span class="day">23</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">January 23, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-01-15.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Jan</span>
+              <span class="day">15</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">January 15, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-01-12.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Jan</span>
+              <span class="day">12</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">January 12, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-01-07.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Jan</span>
+              <span class="day">07</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">January 7, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-01-06.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Jan</span>
+              <span class="day">06</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">January 6, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-01-05.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Jan</span>
+              <span class="day">05</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">January 5, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2026-01-02.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Jan</span>
+              <span class="day">02</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">January 2, 2026</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+        </div>
+      </div>
+
+
+      <!-- ========================================
+           2025
+      ========================================= -->
+
+      <div class="archive-year">
+
+        <div class="archive-year-title">
+          <span></span>
+          <h2>2025</h2>
+          <span></span>
+        </div>
+
+
+        <div class="archive-entries">
+
+          <a href="archive/2025-12-31.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Dec</span>
+              <span class="day">31</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">December 31, 2025</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2025-12-29.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Dec</span>
+              <span class="day">29</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">December 29, 2025</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+
+          <a href="archive/2025-12-27.html" class="archive-entry">
+            <span class="archive-date">
+              <span class="month">Dec</span>
+              <span class="day">27</span>
+            </span>
+
+            <span class="archive-node"></span>
+
+            <span class="archive-label">December 27, 2025</span>
+
+            <span class="archive-arrow">→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
 
 </body>
 </html>
