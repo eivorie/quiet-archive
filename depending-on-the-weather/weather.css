@@ -624,12 +624,9 @@ body.weather::after {
 
 /* =====================================================
    MOOD GRID
-   Botanical frame
 ===================================================== */
 
 .weather-grid {
-  position: relative;
-
   display: grid;
 
   grid-template-columns:
@@ -639,61 +636,8 @@ body.weather::after {
 }
 
 
-/*
-   Quelques feuillages sortent légèrement de la grille.
-   Ils servent de liaison visuelle entre les cartes
-   et l'univers forestier du background.
-*/
-
-.weather-grid::before,
-.weather-grid::after {
-  content: "❧";
-
-  position: absolute;
-
-  z-index: 0;
-
-  color:
-    rgba(178, 143, 78, .12);
-
-  font-size: 4.8rem;
-  line-height: 1;
-
-  pointer-events: none;
-}
-
-
-.weather-grid::before {
-  left: -25px;
-  top: 18%;
-
-  transform:
-    rotate(-48deg)
-    scaleX(.68);
-}
-
-
-.weather-grid::after {
-  right: -25px;
-  bottom: 16%;
-
-  transform:
-    rotate(48deg)
-    scaleX(-.68);
-}
-
-
-/*
-   Les cartes restent au-dessus du décor botanique.
-*/
-
-.weather-mood {
-  z-index: 1;
-}
-
 /* =====================================================
    MOOD CARD
-   Small botanical journal entries
 ===================================================== */
 
 .weather-mood {
@@ -720,36 +664,82 @@ body.weather::after {
   text-decoration: none;
 
   border:
-    1px solid rgba(201, 164, 106, .24);
+    1px solid rgba(201, 164, 106, .28);
 
   border-radius: 8px;
 
-  background:
-    radial-gradient(
-      ellipse at 50% 32%,
-      rgba(185, 143, 76, .055),
-      transparent 52%
-    ),
-    linear-gradient(
-      145deg,
-      rgba(44, 39, 29, .42),
-      rgba(18, 18, 14, .58)
-    );
+  /*
+     Fond de secours.
+     L'image propre à l'émotion sera ajoutée
+     par mood-joy / mood-sad.
+  */
+  background-color:
+    rgba(16, 17, 13, .82);
 
   box-shadow:
-    inset 0 0 22px rgba(203, 160, 91, .025),
-    0 8px 20px rgba(0, 0, 0, .12);
+    inset 0 0 22px rgba(203, 160, 91, .035),
+    0 8px 20px rgba(0, 0, 0, .18);
 
   transition:
     transform .35s ease,
     border-color .35s ease,
-    background .35s ease,
     box-shadow .35s ease;
 }
 
 
+/* =====================================================
+   MOOD BACKGROUNDS
+===================================================== */
+
 /*
-   Fine bordure intérieure.
+   POSITIVE / WARM
+
+   L'image est volontairement assombrie par le gradient
+   placé devant elle afin qu'elle reste intégrée au module
+   et ne devienne pas une miniature trop lumineuse.
+*/
+
+.weather-mood.mood-joy {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(15, 15, 10, .36),
+      rgba(13, 14, 10, .60)
+    ),
+    url("../assets/mood-joy.png")
+    center / cover
+    no-repeat;
+}
+
+
+/*
+   SAD / UNCERTAIN / ANXIOUS
+
+   Même principe, avec un voile légèrement plus dense
+   pour conserver l'atmosphère sombre.
+*/
+
+.weather-mood.mood-sad {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(8, 11, 10, .32),
+      rgba(8, 10, 9, .62)
+    ),
+    url("../assets/mood-sad.png")
+    center / cover
+    no-repeat;
+}
+
+
+/* =====================================================
+   INNER FRAME
+===================================================== */
+
+/*
+   On conserve uniquement le cadre intérieur très fin.
+   Plus de faux feuillage CSS : le végétal appartient
+   maintenant directement aux images.
 */
 
 .weather-mood::before {
@@ -758,95 +748,17 @@ body.weather::after {
   position: absolute;
   inset: 5px;
 
-  z-index: 0;
+  z-index: 1;
 
   pointer-events: none;
 
   border:
-    1px solid rgba(201, 164, 106, .045);
+    1px solid rgba(201, 164, 106, .08);
 
   border-radius: 5px;
-}
 
-
-/*
-   Petite branche botanique.
-
-   On la construit directement en CSS afin de ne pas
-   avoir besoin d'ajouter une image dans chaque carte.
-*/
-
-.weather-mood::after {
-  content: "❧";
-
-  position: absolute;
-
-  left: 8px;
-  bottom: 5px;
-
-  z-index: 0;
-
-  color: rgba(177, 143, 79, .20);
-
-  font-size: 2.7rem;
-  line-height: 1;
-
-  transform:
-    rotate(-34deg)
-    scaleX(.72);
-
-  transform-origin: bottom left;
-
-  pointer-events: none;
-
-  text-shadow:
-    0 0 8px rgba(181, 142, 75, .04);
-}
-
-
-/* =====================================================
-   BOTANICAL VARIATIONS
-===================================================== */
-
-/*
-   On varie légèrement les ornements d'une carte
-   à l'autre pour éviter l'effet copier/coller.
-*/
-
-.weather-mood:nth-child(even)::after {
-  left: auto;
-  right: 7px;
-
-  transform:
-    rotate(34deg)
-    scaleX(-.72);
-
-  transform-origin: bottom right;
-}
-
-
-.weather-mood:nth-child(3n)::after {
-  opacity: .72;
-
-  font-size: 2.35rem;
-
-  bottom: 8px;
-}
-
-
-.weather-mood:nth-child(4n)::after {
-  opacity: .5;
-
-  transform:
-    rotate(-24deg)
-    scaleX(.62);
-}
-
-
-.weather-mood:nth-child(4n):nth-child(even)::after {
-  transform:
-    rotate(24deg)
-    scaleX(-.62);
+  box-shadow:
+    inset 0 0 18px rgba(0, 0, 0, .10);
 }
 
 
@@ -876,18 +788,20 @@ body.weather::after {
   align-items: center;
   justify-content: center;
 
-  color: rgba(207, 165, 95, .84);
+  color:
+    rgba(222, 181, 108, .92);
 
   font-size: 1.08rem;
   line-height: 1;
 
   text-shadow:
-    0 0 8px rgba(202, 155, 81, .18);
+    0 0 8px rgba(202, 155, 81, .26),
+    0 2px 4px rgba(0, 0, 0, .72);
 }
 
 
 /*
-   Minuscule halo autour du symbole.
+   Petit halo derrière le symbole.
 */
 
 .weather-mood-icon::before {
@@ -898,18 +812,20 @@ body.weather::after {
   left: 50%;
   top: 50%;
 
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
 
   transform:
     translate(-50%, -50%);
+
+  z-index: -1;
 
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(204, 161, 91, .08),
+      rgba(213, 170, 95, .12),
       transparent 68%
     );
 
@@ -924,7 +840,8 @@ body.weather::after {
 .weather-mood strong {
   display: block;
 
-  color: rgba(217, 187, 137, .90);
+  color:
+    rgba(230, 205, 162, .94);
 
   font-size: .71rem;
   font-weight: 500;
@@ -936,7 +853,8 @@ body.weather::after {
   text-transform: uppercase;
 
   text-shadow:
-    0 1px 3px rgba(0, 0, 0, .72);
+    0 2px 4px rgba(0, 0, 0, .88),
+    0 0 10px rgba(0, 0, 0, .40);
 }
 
 
@@ -950,32 +868,46 @@ body.weather::after {
     translateY(-3px);
 
   border-color:
-    rgba(210, 169, 99, .52);
-
-  background:
-    radial-gradient(
-      ellipse at 50% 32%,
-      rgba(199, 153, 79, .09),
-      transparent 54%
-    ),
-    linear-gradient(
-      145deg,
-      rgba(57, 48, 34, .55),
-      rgba(22, 21, 16, .66)
-    );
+    rgba(218, 178, 108, .58);
 
   box-shadow:
-    0 10px 26px rgba(0, 0, 0, .22),
-    inset 0 0 26px rgba(206, 160, 88, .055);
+    0 12px 28px rgba(0, 0, 0, .30),
+    inset 0 0 24px rgba(209, 164, 91, .06);
 
   outline: none;
 }
 
 
-.weather-mood:hover::after,
-.weather-mood:focus-visible::after {
-  color:
-    rgba(193, 154, 86, .32);
+/*
+   Au hover, on laisse légèrement davantage respirer
+   l'image sans changer brutalement l'ambiance.
+*/
+
+.weather-mood.mood-joy:hover,
+.weather-mood.mood-joy:focus-visible {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(15, 15, 10, .25),
+      rgba(13, 14, 10, .52)
+    ),
+    url("../assets/mood-joy.png")
+    center / cover
+    no-repeat;
+}
+
+
+.weather-mood.mood-sad:hover,
+.weather-mood.mood-sad:focus-visible {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(8, 11, 10, .22),
+      rgba(8, 10, 9, .54)
+    ),
+    url("../assets/mood-sad.png")
+    center / cover
+    no-repeat;
 }
 
 
@@ -1218,12 +1150,6 @@ body.weather::after {
   .weather-mood strong {
     font-size: .82rem;
   }
-
-
-  .weather-mood small {
-    font-size: .87rem;
-  }
-
 
   .weather-mood-wide {
     min-height: 145px;
