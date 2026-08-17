@@ -31,15 +31,23 @@ body.mood-joy {
 
   color: #4c4035;
 
-  background:
-    url("../../assets/mood-joy-background.png")
-    center top / cover
-    no-repeat
+  background-image:
+    url("../../assets/mood-joy-background.png") !important;
+
+  background-position:
+    center top !important;
+
+  background-size:
+    cover;
+
+  background-repeat:
+    no-repeat;
+
+  background-attachment:
     fixed;
 
   isolation: isolate;
 }
-
 
 /*
    Voile très léger :
@@ -158,27 +166,37 @@ body.mood-joy .weather-card {
 
   border-radius: 26px;
 
+  /*
+     Verre ivoire chaud :
+     le décor reste visible derrière la carte.
+  */
   background:
     linear-gradient(
       145deg,
-      rgba(251, 247, 238, .88),
-      rgba(241, 235, 224, .84)
+      rgba(250, 245, 233, .68),
+      rgba(235, 229, 215, .58)
     );
 
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter:
+    blur(3px)
+    saturate(.92);
+
+  -webkit-backdrop-filter:
+    blur(3px)
+    saturate(.92);
 
   border:
-    1px solid rgba(154, 126, 91, .24);
+    1px solid rgba(181, 151, 108, .28);
 
   box-shadow:
-    0 30px 80px rgba(55, 48, 39, .18),
-    0 8px 24px rgba(55, 48, 39, .10),
-    inset 0 1px 0 rgba(255, 255, 255, .62);
+    0 30px 80px rgba(45, 39, 31, .20),
+    0 8px 24px rgba(45, 39, 31, .10),
+    inset 0 1px 0 rgba(255, 252, 242, .50);
 
   animation:
     joyAppear 1.25s ease-out both;
 }
+
 /* ==========================================================
    CARD — INNER LIGHT
 ========================================================== */
@@ -194,18 +212,18 @@ body.mood-joy .weather-card::before {
   background:
     radial-gradient(
       circle at 22% 16%,
-      rgba(255, 226, 169, .14),
+      rgba(255, 226, 169, .10),
       transparent 31%
     ),
     radial-gradient(
       circle at 82% 76%,
-      rgba(193, 204, 185, .10),
+      rgba(193, 204, 185, .07),
       transparent 35%
     );
 
   filter: blur(34px);
 
-  opacity: .68;
+  opacity: .42;
 
   animation:
     joyGlow 18s ease-in-out infinite;
