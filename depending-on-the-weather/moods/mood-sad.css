@@ -78,7 +78,7 @@ body.mood-sad .nav {
   padding-bottom: 14px;
 
   border-bottom:
-    1px solid rgba(234, 222, 197, .09);
+    1px solid rgba(156, 119, 67, .10);
 
   background: transparent;
 
@@ -89,15 +89,12 @@ body.mood-sad .nav {
 body.mood-sad .nav a {
   color: rgba(226, 218, 205, .78);
 
-  text-transform: uppercase;
+   text-transform: uppercase;
   letter-spacing: .18em;
 
   font-size: .72rem;
 
   text-decoration: none;
-
-  text-shadow:
-    0 1px 5px rgba(28, 28, 27, .55);
 
   transition:
     color .3s ease,
