@@ -118,7 +118,7 @@
         ================================================ -->
 
         <div
-          class="weather-panel is-active"
+          class="weather-index-page weather-panel is-active"
           data-weather-page="1"
         >
 
@@ -272,11 +272,10 @@
              PAGE 2
         ================================================ -->
 
-        <div
-          class="weather-panel"
-          data-weather-page="2"
-          hidden
-        >
+      <div
+        class="weather-index-page weather-panel"
+        data-weather-page="2"
+      >
 
           <div class="weather-grid">
 
@@ -432,15 +431,17 @@
         <div class="weather-page-status">
 
           <span class="weather-page-number">
-            <b>1</b> / 2
+            <b class="weather-page-current">1</b>
+            /
+            <span class="weather-page-total">2</span>
           </span>
 
           <div
             class="weather-page-dots"
             aria-hidden="true"
           >
-            <span class="is-active"></span>
-            <span></span>
+            <span class="is-active" data-page="0"></span>
+            <span data-page="1"></span>
           </div>
 
         </div>
