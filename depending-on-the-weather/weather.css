@@ -577,15 +577,48 @@ body.weather::after {
    PAGES
 ===================================================== */
 
-.weather-pages,
-.weather-panel {
+.weather-pages {
   position: relative;
   z-index: 1;
 }
 
 
-.weather-panel[hidden] {
+/*
+   Les différentes pages de l'index existent toutes
+   dans le DOM, mais une seule est affichée à la fois.
+*/
+
+.weather-index-page {
   display: none;
+}
+
+
+.weather-index-page.is-active {
+  display: block;
+
+  animation:
+    weather-page-arrival
+    .55s
+    cubic-bezier(.16, 1, .3, 1)
+    both;
+}
+
+
+@keyframes weather-page-arrival {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
 }
 
 
