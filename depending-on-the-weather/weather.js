@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextButton = document.querySelector(".weather-page-next");
   const pageCurrent = document.querySelector(".weather-page-current");
   const pageTotal = document.querySelector(".weather-page-total");
+  const pageDots = document.querySelectorAll(".weather-page-dots span");
 
   /*
      Si on n'est pas sur l'index Weather,
@@ -77,37 +78,47 @@ document.addEventListener("DOMContentLoaded", () => {
       if (index < 0 || index >= totalPages) {
         return;
       }
-
-
+    
+    
       weatherPages.forEach((page, pageIndex) => {
-
+    
         page.classList.toggle(
           "is-active",
           pageIndex === index
         );
       });
-
-
+    
+    
       currentPage = index;
-
-
+    
+    
       /* ---------- compteur ---------- */
-
+    
       if (pageCurrent) {
         pageCurrent.textContent = currentPage + 1;
       }
-
+    
       if (pageTotal) {
         pageTotal.textContent = totalPages;
       }
-
-
+    
+    
+      /* ---------- dots ---------- */
+    
+      pageDots.forEach((dot, dotIndex) => {
+        dot.classList.toggle(
+          "is-active",
+          dotIndex === currentPage
+        );
+      });
+    
+    
       /* ---------- boutons ---------- */
-
+    
       if (prevButton) {
         prevButton.disabled = currentPage === 0;
       }
-
+    
       if (nextButton) {
         nextButton.disabled =
           currentPage === totalPages - 1;
