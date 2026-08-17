@@ -48,8 +48,6 @@ body.weather {
     Georgia,
     serif;
 
-  background-color: #10110d;
-
   background-image:
     url("../assets/weather-background.png");
 
@@ -81,14 +79,6 @@ body.weather::before {
   z-index: 0;
 
   pointer-events: none;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(8, 10, 7, .28) 0%,
-      rgba(10, 11, 8, .42) 42%,
-      rgba(8, 9, 7, .68) 100%
-    );
 }
 
 
@@ -105,14 +95,6 @@ body.weather::after {
   z-index: 0;
 
   pointer-events: none;
-
-  background:
-    radial-gradient(
-      ellipse at center,
-      transparent 28%,
-      rgba(3, 4, 3, .22) 72%,
-      rgba(3, 4, 3, .48) 100%
-    );
 }
 
 
@@ -649,8 +631,8 @@ body.weather::after {
   background:
     linear-gradient(
       to bottom,
-      rgba(15, 15, 10, .22),
-      rgba(13, 14, 10, .42)
+      rgba(15, 15, 10, .04),
+      rgba(13, 14, 10, .12)
     ),
     url("../assets/mood-joy.png")
     center / cover
@@ -668,8 +650,8 @@ body.weather::after {
   background:
     linear-gradient(
       to bottom,
-      rgba(8, 11, 10, .20),
-      rgba(8, 10, 9, .44)
+      rgba(8, 11, 10, .06),
+      rgba(8, 10, 9, .16)
     ),
     url("../assets/mood-sad.png")
     center / cover
@@ -823,18 +805,13 @@ body.weather::after {
 }
 
 
-/*
-   Au hover, on laisse légèrement davantage respirer
-   l'image sans changer brutalement l'ambiance.
-*/
-
 .weather-mood.mood-joy:hover,
 .weather-mood.mood-joy:focus-visible {
   background:
     linear-gradient(
       to bottom,
-      rgba(15, 15, 10, .14),
-      rgba(13, 14, 10, .34)
+      rgba(15, 15, 10, .01),
+      rgba(13, 14, 10, .06)
     ),
     url("../assets/mood-joy.png")
     center / cover
@@ -847,8 +824,8 @@ body.weather::after {
   background:
     linear-gradient(
       to bottom,
-      rgba(8, 11, 10, .12),
-      rgba(8, 10, 9, .36)
+      rgba(8, 11, 10, .02),
+      rgba(8, 10, 9, .08)
     ),
     url("../assets/mood-sad.png")
     center / cover
