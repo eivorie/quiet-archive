@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Rest with me for a minute ?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- fonts spécifiques au mood -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
-    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
     rel="stylesheet"
   >
 
-  <!-- styles globaux -->
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="weather.css">
-
-  <!-- mood -->
-  <link rel="stylesheet" href="moods/down.css">
+  <link rel="stylesheet" href="moods/mood-sad.css">
 </head>
 
-<body class="weather weather-story down">
+<body class="weather weather-story mood-sad">
+
+  <div class="ambient weather-ambient" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
 
   <nav class="nav weather-nav">
     <a href="../index.html">Home</a>
@@ -33,13 +36,16 @@
   </nav>
 
   <main class="weather-page">
+
     <section class="weather-card">
 
-      <h1 class="weather-title">
-        Rest with me for a minute ?
-      </h1>
+      <header class="weather-header">
+        <h1 class="weather-title">
+          Rest with me for a minute ?
+        </h1>
+      </header>
 
-      <article class="weather-text">
+      <article class="weather-content">
 
         <p class="weather-lead">
           If you’re reading this today, it means the world felt heavy again —<br>
@@ -153,6 +159,7 @@
       </article>
 
     </section>
+
   </main>
 
 </body>
