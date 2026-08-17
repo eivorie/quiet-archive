@@ -624,9 +624,12 @@ body.weather::after {
 
 /* =====================================================
    MOOD GRID
+   Botanical frame
 ===================================================== */
 
 .weather-grid {
+  position: relative;
+
   display: grid;
 
   grid-template-columns:
@@ -636,8 +639,61 @@ body.weather::after {
 }
 
 
+/*
+   Quelques feuillages sortent légèrement de la grille.
+   Ils servent de liaison visuelle entre les cartes
+   et l'univers forestier du background.
+*/
+
+.weather-grid::before,
+.weather-grid::after {
+  content: "❧";
+
+  position: absolute;
+
+  z-index: 0;
+
+  color:
+    rgba(178, 143, 78, .12);
+
+  font-size: 4.8rem;
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+
+.weather-grid::before {
+  left: -25px;
+  top: 18%;
+
+  transform:
+    rotate(-48deg)
+    scaleX(.68);
+}
+
+
+.weather-grid::after {
+  right: -25px;
+  bottom: 16%;
+
+  transform:
+    rotate(48deg)
+    scaleX(-.68);
+}
+
+
+/*
+   Les cartes restent au-dessus du décor botanique.
+*/
+
+.weather-mood {
+  z-index: 1;
+}
+
 /* =====================================================
    MOOD CARD
+   Small botanical journal entries
 ===================================================== */
 
 .weather-mood {
@@ -647,9 +703,9 @@ body.weather::after {
   min-height: 146px;
 
   padding:
-    19px
-    10px
-    16px;
+    22px
+    14px
+    18px;
 
   box-sizing: border-box;
 
@@ -657,6 +713,8 @@ body.weather::after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  overflow: hidden;
 
   text-align: center;
   text-decoration: none;
@@ -667,10 +725,15 @@ body.weather::after {
   border-radius: 8px;
 
   background:
+    radial-gradient(
+      ellipse at 50% 32%,
+      rgba(185, 143, 76, .055),
+      transparent 52%
+    ),
     linear-gradient(
       145deg,
       rgba(44, 39, 29, .42),
-      rgba(18, 18, 14, .56)
+      rgba(18, 18, 14, .58)
     );
 
   box-shadow:
@@ -685,18 +748,116 @@ body.weather::after {
 }
 
 
+/*
+   Fine bordure intérieure.
+*/
+
 .weather-mood::before {
   content: "";
 
   position: absolute;
   inset: 5px;
 
+  z-index: 0;
+
   pointer-events: none;
 
   border:
-    1px solid rgba(201, 164, 106, .035);
+    1px solid rgba(201, 164, 106, .045);
 
   border-radius: 5px;
+}
+
+
+/*
+   Petite branche botanique.
+
+   On la construit directement en CSS afin de ne pas
+   avoir besoin d'ajouter une image dans chaque carte.
+*/
+
+.weather-mood::after {
+  content: "❧";
+
+  position: absolute;
+
+  left: 8px;
+  bottom: 5px;
+
+  z-index: 0;
+
+  color: rgba(177, 143, 79, .20);
+
+  font-size: 2.7rem;
+  line-height: 1;
+
+  transform:
+    rotate(-34deg)
+    scaleX(.72);
+
+  transform-origin: bottom left;
+
+  pointer-events: none;
+
+  text-shadow:
+    0 0 8px rgba(181, 142, 75, .04);
+}
+
+
+/* =====================================================
+   BOTANICAL VARIATIONS
+===================================================== */
+
+/*
+   On varie légèrement les ornements d'une carte
+   à l'autre pour éviter l'effet copier/coller.
+*/
+
+.weather-mood:nth-child(even)::after {
+  left: auto;
+  right: 7px;
+
+  transform:
+    rotate(34deg)
+    scaleX(-.72);
+
+  transform-origin: bottom right;
+}
+
+
+.weather-mood:nth-child(3n)::after {
+  opacity: .72;
+
+  font-size: 2.35rem;
+
+  bottom: 8px;
+}
+
+
+.weather-mood:nth-child(4n)::after {
+  opacity: .5;
+
+  transform:
+    rotate(-24deg)
+    scaleX(.62);
+}
+
+
+.weather-mood:nth-child(4n):nth-child(even)::after {
+  transform:
+    rotate(24deg)
+    scaleX(-.62);
+}
+
+
+/* =====================================================
+   MOOD CONTENT
+===================================================== */
+
+.weather-mood-icon,
+.weather-mood strong {
+  position: relative;
+  z-index: 2;
 }
 
 
@@ -705,20 +866,54 @@ body.weather::after {
 ===================================================== */
 
 .weather-mood-icon {
-  min-height: 24px;
+  position: relative;
 
-  margin-bottom: 10px;
+  min-height: 25px;
+
+  margin-bottom: 11px;
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  color: rgba(207, 165, 95, .82);
+  color: rgba(207, 165, 95, .84);
 
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   line-height: 1;
 
   text-shadow:
-    0 0 8px rgba(202, 155, 81, .16);
+    0 0 8px rgba(202, 155, 81, .18);
+}
+
+
+/*
+   Minuscule halo autour du symbole.
+*/
+
+.weather-mood-icon::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 34px;
+  height: 34px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(204, 161, 91, .08),
+      transparent 68%
+    );
+
+  pointer-events: none;
 }
 
 
@@ -739,31 +934,9 @@ body.weather::after {
   letter-spacing: .12em;
 
   text-transform: uppercase;
-}
 
-
-/* =====================================================
-   MOOD DESCRIPTION
-===================================================== */
-
-.weather-mood small {
-  display: block;
-
-  margin-top: 11px;
-
-  color: rgba(213, 198, 173, .68);
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: .75rem;
-  font-style: italic;
-
-  line-height: 1.25;
-
-  letter-spacing: .01em;
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, .72);
 }
 
 
@@ -773,12 +946,18 @@ body.weather::after {
 
 .weather-mood:hover,
 .weather-mood:focus-visible {
-  transform: translateY(-3px);
+  transform:
+    translateY(-3px);
 
   border-color:
     rgba(210, 169, 99, .52);
 
   background:
+    radial-gradient(
+      ellipse at 50% 32%,
+      rgba(199, 153, 79, .09),
+      transparent 54%
+    ),
     linear-gradient(
       145deg,
       rgba(57, 48, 34, .55),
@@ -793,12 +972,22 @@ body.weather::after {
 }
 
 
+.weather-mood:hover::after,
+.weather-mood:focus-visible::after {
+  color:
+    rgba(193, 154, 86, .32);
+}
+
+
+/* =====================================================
+   WIDE CARD
+===================================================== */
+
 .weather-mood-wide {
   grid-column: 1 / -1;
 
   min-height: 125px;
 }
-
 
 /* =====================================================
    PAGINATION
