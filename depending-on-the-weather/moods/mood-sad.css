@@ -1,16 +1,9 @@
 /* ==========================================================
    WEATHER — MOOD SAD
    Base commune des entrées plus fragiles / introspectives
-
-   unsure
-   down
-   moody
-   angry
-   jealous
-   reassurance
-   anxious
 ========================================================== */
 
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap");
 
 /* ==========================================================
    PAGE
@@ -20,13 +13,12 @@ html {
   min-height: 100%;
 }
 
-
 body.mood-sad {
   position: relative;
 
   min-height: 100vh;
 
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Quicksand", sans-serif;
 
   color: #4d4a45;
 
@@ -36,18 +28,12 @@ body.mood-sad {
   background-position:
     center top !important;
 
-  background-size:
-    cover;
-
-  background-repeat:
-    no-repeat;
-
-  background-attachment:
-    fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
   isolation: isolate;
 }
-
 
 /*
    Très léger voile atmosphérique.
@@ -330,7 +316,6 @@ body.mood-sad .weather-header {
   text-align: center;
 }
 
-
 /* ==========================================================
    TITLE
 ========================================================== */
@@ -338,23 +323,22 @@ body.mood-sad .weather-header {
 body.mood-sad .weather-title {
   margin: 0;
 
-  color: rgba(244, 235, 219, .94);
+  color: rgba(247, 240, 226, .96);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Quicksand", sans-serif;
 
-  font-size: 1.75rem;
+  font-size: 1.55rem;
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 1.4;
 
-  letter-spacing: .055em;
+  letter-spacing: .025em;
 
   text-align: center;
 
   text-shadow:
-    0 2px 5px rgba(17, 18, 18, .48),
+    0 2px 6px rgba(17, 18, 18, .52),
     0 0 18px rgba(239, 217, 178, .08);
 }
-
 
 body.mood-sad .weather-title::after {
   content: "";
@@ -397,17 +381,19 @@ body.mood-sad .weather-content p {
   margin:
     0
     0
-    11px;
+    16px;
 
-  color: rgba(239, 234, 224, .88);
+  color: rgba(242, 239, 232, .92);
 
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Quicksand", sans-serif;
 
-  font-size: 1.02rem;
+  font-size: .94rem;
   font-weight: 400;
-  line-height: 1.82;
+  line-height: 1.72;
 
-  font-style: italic;
+  font-style: normal;
+
+  letter-spacing: .005em;
 
   text-shadow:
     0 1px 3px rgba(16, 17, 17, .46);
@@ -419,11 +405,16 @@ body.mood-sad .weather-content p {
 ========================================================== */
 
 body.mood-sad .weather-lead {
-  margin-bottom: 32px !important;
+  margin-bottom: 30px !important;
 
-  color: rgba(247, 237, 218, .94) !important;
+  color: rgba(249, 244, 234, .97) !important;
 
-  font-size: 1.07rem !important;
+  font-size: .98rem !important;
+  font-weight: 500;
+
+  line-height: 1.76 !important;
+
+  font-style: normal !important;
 }
 
 
@@ -480,9 +471,11 @@ body.mood-sad .weather-ending {
 
   margin-top: 36px !important;
 
-  color: rgba(247, 238, 221, .94) !important;
-}
+  color: rgba(249, 244, 234, .97) !important;
 
+  font-weight: 500;
+  font-style: normal !important;
+}
 
 body.mood-sad .weather-ending:first-of-type {
   margin-top: 42px !important;
@@ -496,6 +489,9 @@ body.mood-sad .weather-ending:first-of-type {
 body.mood-sad .weather-content em {
   color: rgba(250, 225, 184, .96);
 
+  font-style: normal;
+  font-weight: 500;
+
   text-shadow:
     0 1px 3px rgba(17, 18, 18, .42);
 }
@@ -504,7 +500,7 @@ body.mood-sad .weather-content em {
 body.mood-sad .weather-content strong {
   color: rgba(255, 235, 201, .98);
 
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* ==========================================================
