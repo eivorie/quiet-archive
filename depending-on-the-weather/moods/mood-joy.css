@@ -1,0 +1,761 @@
+/* ==========================================================
+   WEATHER — MOOD JOY
+   Base commune des entrées lumineuses
+
+   happy
+   love
+   needy
+   enough
+   steadfast
+   uncertain
+   belonging
+   devotion
+========================================================== */
+
+
+/* ==========================================================
+   PAGE
+========================================================== */
+
+body.mood-joy {
+  min-height: 100vh;
+
+  font-family: "Cormorant Garamond", serif;
+
+  color: #4c4035;
+
+  background:
+    radial-gradient(
+      circle at 18% 12%,
+      rgba(255, 238, 196, .58),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 82% 24%,
+      rgba(214, 229, 205, .46),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 50% 82%,
+      rgba(231, 202, 166, .30),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      #e8ddca 0%,
+      #d8d8c5 48%,
+      #d8c8b4 100%
+    );
+
+  background-attachment: fixed;
+}
+
+
+/* ==========================================================
+   NAVIGATION
+========================================================== */
+
+body.mood-joy .weather-nav {
+  position: relative;
+  z-index: 10;
+
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+
+  text-transform: uppercase;
+  letter-spacing: .28em;
+  font-size: .72rem;
+
+  padding: 18px 28px;
+  gap: 32px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(250, 246, 237, .90),
+      rgba(244, 237, 225, .84)
+    );
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom:
+    1px solid rgba(150, 121, 82, .14);
+
+  box-shadow:
+    0 10px 34px rgba(88, 68, 47, .13);
+}
+
+
+body.mood-joy .weather-nav a {
+  color: rgba(105, 81, 57, .82);
+
+  text-decoration: none;
+
+  transition:
+    color .25s ease,
+    text-shadow .25s ease;
+}
+
+
+body.mood-joy .weather-nav a:hover {
+  color: #795d3d;
+
+  text-shadow:
+    0 0 12px rgba(184, 142, 83, .22);
+}
+
+
+/* ==========================================================
+   WEATHER PAGE
+========================================================== */
+
+body.mood-joy .weather-page {
+  position: relative;
+  z-index: 2;
+
+  width: min(100%, 980px);
+
+  margin: 0 auto;
+
+  padding:
+    52px
+    24px
+    100px;
+
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+body.mood-joy .weather-card {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+
+  padding:
+    72px
+    72px
+    78px;
+
+  box-sizing: border-box;
+
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 252, 245, .94),
+      rgba(248, 241, 229, .92)
+    );
+
+  border:
+    1px solid rgba(166, 132, 87, .24);
+
+  box-shadow:
+    0 32px 80px rgba(79, 59, 39, .18),
+    0 8px 24px rgba(79, 59, 39, .10),
+    inset 0 1px 0 rgba(255, 255, 255, .85);
+
+  animation:
+    joyAppear 1.25s ease-out both;
+}
+
+
+/* ==========================================================
+   CARD — INNER LIGHT
+========================================================== */
+
+body.mood-joy .weather-card::before {
+  content: "";
+
+  position: absolute;
+  inset: -25%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 22% 18%,
+      rgba(255, 224, 161, .22),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 82% 76%,
+      rgba(180, 206, 174, .18),
+      transparent 34%
+    );
+
+  filter: blur(30px);
+
+  opacity: .72;
+
+  animation:
+    joyGlow 18s ease-in-out infinite;
+}
+
+
+/* ==========================================================
+   CARD — FINE ORNAMENT
+========================================================== */
+
+body.mood-joy .weather-card::after {
+  content: "";
+
+  position: absolute;
+  inset: 15px;
+
+  border-radius: 19px;
+
+  pointer-events: none;
+
+  border:
+    1px solid rgba(179, 143, 94, .17);
+
+  background:
+    linear-gradient(
+      rgba(185, 145, 91, .58),
+      rgba(185, 145, 91, .58)
+    ) top left / 30px 1px no-repeat,
+
+    linear-gradient(
+      rgba(185, 145, 91, .58),
+      rgba(185, 145, 91, .58)
+    ) top left / 1px 30px no-repeat,
+
+    linear-gradient(
+      rgba(185, 145, 91, .58),
+      rgba(185, 145, 91, .58)
+    ) top right / 30px 1px no-repeat,
+
+    linear-gradient(
+      rgba(185, 145, 91, .58),
+      rgba(185, 145, 91, .58)
+    ) top right / 1px 30px no-repeat,
+
+    linear-gradient(
+      rgba(185, 145, 91, .58),
+      rgba(185, 145, 91, .58)
+    ) bottom left / 30px 1px no-repeat,
+
+    linear-gradient(
+      rgba(185, 145, 91, .58),
+      rgba(185, 145, 91, .58)
+    ) bottom left / 1px 30px no-repeat,
+
+    linear-gradient(
+      rgba(185, 145, 91, .58),
+      rgba(185, 145, 91, .58)
+    ) bottom right / 30px 1px no-repeat,
+
+    linear-gradient(
+      rgba(185, 145, 91, .58),
+      rgba(185, 145, 91, .58)
+    ) bottom right / 1px 30px no-repeat;
+
+  opacity: .55;
+}
+
+
+/* ==========================================================
+   CONTENT LAYER
+========================================================== */
+
+body.mood-joy .weather-header,
+body.mood-joy .weather-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+body.mood-joy .weather-header {
+  width: min(100%, 610px);
+
+  margin:
+    0
+    auto
+    38px;
+
+  text-align: center;
+}
+
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+body.mood-joy .weather-title {
+  margin: 0;
+
+  color: #725a3f;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.25;
+
+  letter-spacing: .055em;
+
+  text-shadow:
+    0 2px 14px rgba(177, 130, 72, .12);
+}
+
+
+body.mood-joy .weather-title::after {
+  content: "";
+
+  display: block;
+
+  width: 52px;
+  height: 1px;
+
+  margin:
+    20px
+    auto
+    0;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(179, 137, 82, .70),
+      transparent
+    );
+}
+
+
+/* ==========================================================
+   TEXT
+========================================================== */
+
+body.mood-joy .weather-content {
+  width: min(100%, 590px);
+
+  margin: 0 auto;
+}
+
+
+body.mood-joy .weather-content p {
+  margin:
+    0
+    0
+    22px;
+
+  color: rgba(70, 57, 46, .90);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 1.02rem;
+  font-weight: 400;
+  line-height: 1.82;
+
+  font-style: italic;
+}
+
+
+/* ==========================================================
+   LEAD
+========================================================== */
+
+body.mood-joy .weather-lead {
+  margin-bottom: 32px !important;
+
+  color: #806748 !important;
+
+  font-size: 1.07rem !important;
+}
+
+
+/* ==========================================================
+   ENDING
+========================================================== */
+
+body.mood-joy .weather-ending {
+  position: relative;
+
+  margin-top: 36px !important;
+
+  color: #765d40 !important;
+}
+
+
+body.mood-joy .weather-ending:first-of-type {
+  margin-top: 42px !important;
+}
+
+
+/* ==========================================================
+   EMPHASIS
+========================================================== */
+
+body.mood-joy .weather-content em {
+  color: #775b3b;
+}
+
+
+body.mood-joy .weather-content strong {
+  color: #684d30;
+
+  font-weight: 500;
+}
+
+
+/* ==========================================================
+   AMBIENT
+========================================================== */
+
+body.mood-joy .weather-ambient {
+  position: fixed;
+  inset: 0;
+
+  z-index: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+body.mood-joy .weather-ambient span {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 244, 211, .92) 0%,
+      rgba(218, 177, 111, .40) 42%,
+      transparent 72%
+    );
+
+  box-shadow:
+    0 0 12px rgba(235, 194, 126, .28);
+
+  opacity: .40;
+
+  animation:
+    joyAmbient 16s ease-in-out infinite;
+}
+
+
+/* ==========================================================
+   AMBIENT — POSITIONS
+========================================================== */
+
+body.mood-joy .weather-ambient span:nth-child(1) {
+  top: 13%;
+  left: 8%;
+}
+
+body.mood-joy .weather-ambient span:nth-child(2) {
+  top: 28%;
+  left: 18%;
+
+  animation-delay: -3s;
+}
+
+body.mood-joy .weather-ambient span:nth-child(3) {
+  top: 52%;
+  left: 7%;
+
+  animation-delay: -7s;
+}
+
+body.mood-joy .weather-ambient span:nth-child(4) {
+  top: 76%;
+  left: 15%;
+
+  animation-delay: -11s;
+}
+
+body.mood-joy .weather-ambient span:nth-child(5) {
+  top: 88%;
+  left: 36%;
+
+  animation-delay: -5s;
+}
+
+body.mood-joy .weather-ambient span:nth-child(6) {
+  top: 16%;
+  left: 83%;
+
+  animation-delay: -9s;
+}
+
+body.mood-joy .weather-ambient span:nth-child(7) {
+  top: 36%;
+  left: 92%;
+
+  animation-delay: -2s;
+}
+
+body.mood-joy .weather-ambient span:nth-child(8) {
+  top: 58%;
+  left: 86%;
+
+  animation-delay: -13s;
+}
+
+body.mood-joy .weather-ambient span:nth-child(9) {
+  top: 79%;
+  left: 94%;
+
+  animation-delay: -6s;
+}
+
+body.mood-joy .weather-ambient span:nth-child(10) {
+  top: 91%;
+  left: 69%;
+
+  animation-delay: -10s;
+}
+
+
+body.mood-joy .weather-ambient span:nth-child(3n) {
+  width: 7px;
+  height: 7px;
+
+  opacity: .28;
+}
+
+
+body.mood-joy .weather-ambient span:nth-child(2n) {
+  width: 3px;
+  height: 3px;
+}
+
+
+/* ==========================================================
+   LANGUAGE SWITCH
+   Utilisé actuellement par Extra Love
+========================================================== */
+
+body.mood-joy .lang-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 22px;
+}
+
+
+body.mood-joy .lang-switch button {
+  appearance: none;
+
+  padding:
+    5px
+    9px;
+
+  border: 0;
+  border-bottom:
+    1px solid transparent;
+
+  background: transparent;
+
+  color: rgba(111, 86, 58, .48);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: .70rem;
+  font-weight: 500;
+
+  letter-spacing: .22em;
+
+  cursor: pointer;
+
+  transition:
+    color .25s ease,
+    border-color .25s ease,
+    text-shadow .25s ease;
+}
+
+
+body.mood-joy .lang-switch button:hover {
+  color: rgba(111, 86, 58, .82);
+}
+
+
+body.mood-joy .lang-switch button.active {
+  color: #765735;
+
+  border-bottom-color:
+    rgba(175, 132, 77, .55);
+
+  text-shadow:
+    0 0 10px rgba(194, 151, 91, .16);
+}
+
+
+/* ==========================================================
+   LANGUAGES
+========================================================== */
+
+body.mood-joy .lang {
+  display: none;
+}
+
+
+body.mood-joy .lang.active {
+  display: block;
+
+  animation:
+    joyLanguageAppear .45s ease-out both;
+}
+
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes joyAppear {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+@keyframes joyGlow {
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      scale(1);
+
+    opacity: .58;
+  }
+
+  50% {
+    transform:
+      translate(-2%, -1%)
+      scale(1.05);
+
+    opacity: .78;
+  }
+}
+
+
+@keyframes joyAmbient {
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+
+    opacity: .22;
+  }
+
+  50% {
+    transform:
+      translate(8px, -14px);
+
+    opacity: .48;
+  }
+}
+
+
+@keyframes joyLanguageAppear {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+  body.mood-joy .weather-nav {
+    padding:
+      14px
+      18px;
+
+    gap: 18px;
+
+    font-size: .65rem;
+    letter-spacing: .22em;
+  }
+
+
+  body.mood-joy .weather-page {
+    padding:
+      32px
+      14px
+      70px;
+  }
+
+
+  body.mood-joy .weather-card {
+    padding:
+      50px
+      25px
+      54px;
+
+    border-radius: 20px;
+  }
+
+
+  body.mood-joy .weather-card::after {
+    inset: 10px;
+
+    border-radius: 15px;
+  }
+
+
+  body.mood-joy .weather-header {
+    margin-bottom: 30px;
+  }
+
+
+  body.mood-joy .weather-title {
+    font-size: 1.48rem;
+  }
+
+
+  body.mood-joy .weather-content p {
+    font-size: .98rem;
+    line-height: 1.76;
+
+    margin-bottom: 20px;
+  }
+
+
+  body.mood-joy .weather-lead {
+    font-size: 1.02rem !important;
+  }
+
+}
