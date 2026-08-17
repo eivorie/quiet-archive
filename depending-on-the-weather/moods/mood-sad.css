@@ -1,0 +1,879 @@
+/* ==========================================================
+   WEATHER — MOOD SAD
+   Base commune des entrées plus fragiles / introspectives
+
+   unsure
+   down
+   moody
+   angry
+   jealous
+   reassurance
+   anxious
+========================================================== */
+
+
+/* ==========================================================
+   PAGE
+========================================================== */
+
+html {
+  min-height: 100%;
+}
+
+
+body.mood-sad {
+  position: relative;
+
+  min-height: 100vh;
+
+  font-family: "Cormorant Garamond", serif;
+
+  color: #4d4a45;
+
+  background-image:
+    url("../../assets/mood-sad-background.png") !important;
+
+  background-position:
+    center top !important;
+
+  background-size:
+    cover;
+
+  background-repeat:
+    no-repeat;
+
+  background-attachment:
+    fixed;
+
+  isolation: isolate;
+}
+
+
+/*
+   Très léger voile atmosphérique.
+   On conserve les nuages, les rayons et la lanterne
+   presque intacts.
+*/
+body.mood-sad::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(224, 220, 210, .03),
+      rgba(85, 82, 76, .06)
+    );
+}
+
+
+/* ==========================================================
+   NAVBAR
+   Même structure que les autres modules du site
+========================================================== */
+
+body.mood-sad .nav {
+  position: relative;
+  z-index: 50;
+
+  margin-bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 12px 22px;
+
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+  border-bottom:
+    1px solid rgba(234, 222, 197, .09);
+
+  background: transparent;
+
+  text-transform: uppercase;
+}
+
+
+body.mood-sad .nav a {
+  color: rgba(226, 218, 205, .78);
+
+  text-transform: uppercase;
+  letter-spacing: .18em;
+
+  font-size: .72rem;
+
+  text-decoration: none;
+
+  text-shadow:
+    0 1px 5px rgba(28, 28, 27, .55);
+
+  transition:
+    color .3s ease,
+    text-shadow .3s ease;
+}
+
+
+body.mood-sad .nav a:hover {
+  color: rgba(250, 242, 226, .96);
+
+  text-shadow:
+    0 0 12px rgba(239, 213, 165, .30);
+}
+
+
+/* ==========================================================
+   WEATHER PAGE
+========================================================== */
+
+body.mood-sad .weather-page {
+  position: relative;
+  z-index: 2;
+
+  width: min(100%, 980px);
+
+  margin: 0 auto;
+
+  padding:
+    52px
+    24px
+    100px;
+
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+body.mood-sad .weather-card {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+
+  padding:
+    72px
+    72px
+    78px;
+
+  box-sizing: border-box;
+
+  border-radius: 26px;
+
+  /*
+     Verre gris perle chaud.
+
+     Beaucoup moins opaque qu'une vraie carte :
+     les nuages et la lumière du background doivent
+     rester perceptibles derrière.
+  */
+  background:
+    linear-gradient(
+      145deg,
+      rgba(226, 222, 212, .54),
+      rgba(194, 193, 186, .43)
+    );
+
+  backdrop-filter:
+    blur(3px)
+    saturate(.82);
+
+  -webkit-backdrop-filter:
+    blur(3px)
+    saturate(.82);
+
+  border:
+    1px solid rgba(226, 211, 183, .24);
+
+  box-shadow:
+    0 30px 80px rgba(26, 27, 27, .24),
+    0 8px 26px rgba(26, 27, 27, .13),
+    inset 0 1px 0 rgba(255, 250, 237, .34);
+
+  animation:
+    sadAppear 1.25s ease-out both;
+}
+
+
+/* ==========================================================
+   CARD — INNER LIGHT
+========================================================== */
+
+body.mood-sad .weather-card::before {
+  content: "";
+
+  position: absolute;
+  inset: -25%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 84% 12%,
+      rgba(255, 238, 201, .12),
+      transparent 31%
+    ),
+    radial-gradient(
+      circle at 14% 78%,
+      rgba(183, 187, 181, .09),
+      transparent 34%
+    );
+
+  filter: blur(36px);
+
+  opacity: .48;
+
+  animation:
+    sadGlow 20s ease-in-out infinite;
+}
+
+
+/* ==========================================================
+   CARD — FINE ORNAMENT
+========================================================== */
+
+body.mood-sad .weather-card::after {
+  content: "";
+
+  position: absolute;
+  inset: 15px;
+
+  border-radius: 19px;
+
+  pointer-events: none;
+
+  border:
+    1px solid rgba(207, 190, 159, .16);
+
+  background:
+
+    linear-gradient(
+      rgba(216, 194, 156, .46),
+      rgba(216, 194, 156, .46)
+    ) top left / 30px 1px no-repeat,
+
+    linear-gradient(
+      rgba(216, 194, 156, .46),
+      rgba(216, 194, 156, .46)
+    ) top left / 1px 30px no-repeat,
+
+    linear-gradient(
+      rgba(216, 194, 156, .46),
+      rgba(216, 194, 156, .46)
+    ) top right / 30px 1px no-repeat,
+
+    linear-gradient(
+      rgba(216, 194, 156, .46),
+      rgba(216, 194, 156, .46)
+    ) top right / 1px 30px no-repeat,
+
+    linear-gradient(
+      rgba(216, 194, 156, .46),
+      rgba(216, 194, 156, .46)
+    ) bottom left / 30px 1px no-repeat,
+
+    linear-gradient(
+      rgba(216, 194, 156, .46),
+      rgba(216, 194, 156, .46)
+    ) bottom left / 1px 30px no-repeat,
+
+    linear-gradient(
+      rgba(216, 194, 156, .46),
+      rgba(216, 194, 156, .46)
+    ) bottom right / 30px 1px no-repeat,
+
+    linear-gradient(
+      rgba(216, 194, 156, .46),
+      rgba(216, 194, 156, .46)
+    ) bottom right / 1px 30px no-repeat;
+
+  opacity: .48;
+}
+
+
+/* ==========================================================
+   CONTENT LAYER
+========================================================== */
+
+body.mood-sad .weather-header,
+body.mood-sad .weather-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+body.mood-sad .weather-header {
+  width: min(100%, 610px);
+
+  margin:
+    0
+    auto
+    38px;
+
+  text-align: center;
+}
+
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+body.mood-sad .weather-title {
+  margin: 0;
+
+  color: #514a40;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.25;
+
+  letter-spacing: .055em;
+
+  text-align: center;
+
+  text-shadow:
+    0 1px 10px rgba(255, 244, 220, .22),
+    0 2px 16px rgba(45, 43, 39, .10);
+}
+
+
+body.mood-sad .weather-title::after {
+  content: "";
+
+  display: block;
+
+  width: 52px;
+  height: 1px;
+
+  margin:
+    20px
+    auto
+    0;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(174, 149, 111, .68),
+      transparent
+    );
+}
+
+
+/* ==========================================================
+   TEXT
+========================================================== */
+
+body.mood-sad .weather-content {
+  width: min(100%, 590px);
+
+  margin: 0 auto;
+}
+
+
+body.mood-sad .weather-content p {
+  margin:
+    0
+    0
+    22px;
+
+  color: rgba(58, 56, 52, .91);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 1.02rem;
+  font-weight: 400;
+  line-height: 1.82;
+
+  font-style: italic;
+
+  text-shadow:
+    0 1px 2px rgba(245, 240, 228, .16);
+}
+
+
+/* ==========================================================
+   LEAD
+========================================================== */
+
+body.mood-sad .weather-lead {
+  margin-bottom: 32px !important;
+
+  color: #62594d !important;
+
+  font-size: 1.07rem !important;
+}
+
+
+/* ==========================================================
+   WARNING
+   Utilisé notamment par "Let's breathe"
+========================================================== */
+
+body.mood-sad .weather-warning {
+  position: relative;
+
+  margin-bottom: 34px !important;
+
+  padding:
+    18px
+    22px;
+
+  color: rgba(65, 59, 51, .94) !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(239, 230, 211, .18),
+      rgba(170, 169, 162, .12)
+    );
+
+  border-left:
+    1px solid rgba(193, 163, 117, .52);
+
+  border-right:
+    1px solid rgba(193, 163, 117, .10);
+
+  border-radius: 3px;
+
+  box-shadow:
+    inset 0 0 24px rgba(245, 232, 204, .06);
+}
+
+
+/* ==========================================================
+   ENDING
+========================================================== */
+
+body.mood-sad .weather-ending {
+  position: relative;
+
+  margin-top: 36px !important;
+
+  color: #554e44 !important;
+}
+
+
+body.mood-sad .weather-ending:first-of-type {
+  margin-top: 42px !important;
+}
+
+
+/* ==========================================================
+   EMPHASIS
+========================================================== */
+
+body.mood-sad .weather-content em {
+  color: #5c5042;
+}
+
+
+body.mood-sad .weather-content strong {
+  color: #4b4135;
+
+  font-weight: 500;
+}
+
+
+/* ==========================================================
+   AMBIENT
+========================================================== */
+
+body.mood-sad .weather-ambient {
+  position: fixed;
+  inset: 0;
+
+  z-index: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+/*
+   Ici, pas les particules franchement dorées de Joy.
+
+   On reste sur de minuscules points de lumière :
+   comme les éclats déjà présents dans le ciel du background.
+*/
+body.mood-sad .weather-ambient span {
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 245, 218, .86) 0%,
+      rgba(218, 202, 173, .30) 40%,
+      transparent 72%
+    );
+
+  box-shadow:
+    0 0 12px rgba(237, 219, 181, .22);
+
+  opacity: .30;
+
+  animation:
+    sadAmbient 19s ease-in-out infinite;
+}
+
+
+/* ==========================================================
+   AMBIENT — POSITIONS
+========================================================== */
+
+body.mood-sad .weather-ambient span:nth-child(1) {
+  top: 12%;
+  left: 9%;
+}
+
+
+body.mood-sad .weather-ambient span:nth-child(2) {
+  top: 27%;
+  left: 19%;
+
+  animation-delay: -4s;
+}
+
+
+body.mood-sad .weather-ambient span:nth-child(3) {
+  top: 48%;
+  left: 8%;
+
+  animation-delay: -8s;
+}
+
+
+body.mood-sad .weather-ambient span:nth-child(4) {
+  top: 72%;
+  left: 14%;
+
+  animation-delay: -13s;
+}
+
+
+body.mood-sad .weather-ambient span:nth-child(5) {
+  top: 89%;
+  left: 38%;
+
+  animation-delay: -6s;
+}
+
+
+body.mood-sad .weather-ambient span:nth-child(6) {
+  top: 15%;
+  left: 84%;
+
+  animation-delay: -10s;
+}
+
+
+body.mood-sad .weather-ambient span:nth-child(7) {
+  top: 34%;
+  left: 93%;
+
+  animation-delay: -3s;
+}
+
+
+body.mood-sad .weather-ambient span:nth-child(8) {
+  top: 57%;
+  left: 87%;
+
+  animation-delay: -15s;
+}
+
+
+body.mood-sad .weather-ambient span:nth-child(9) {
+  top: 78%;
+  left: 94%;
+
+  animation-delay: -7s;
+}
+
+
+body.mood-sad .weather-ambient span:nth-child(10) {
+  top: 92%;
+  left: 70%;
+
+  animation-delay: -12s;
+}
+
+
+body.mood-sad .weather-ambient span:nth-child(3n) {
+  width: 6px;
+  height: 6px;
+
+  opacity: .22;
+}
+
+
+body.mood-sad .weather-ambient span:nth-child(2n) {
+  width: 3px;
+  height: 3px;
+}
+
+
+/* ==========================================================
+   LANGUAGE SWITCH
+========================================================== */
+
+body.mood-sad .lang-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 22px;
+}
+
+
+body.mood-sad .lang-switch button {
+  appearance: none;
+
+  padding:
+    5px
+    9px;
+
+  border: 0;
+  border-bottom:
+    1px solid transparent;
+
+  background: transparent;
+
+  color: rgba(81, 74, 64, .48);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: .70rem;
+  font-weight: 500;
+
+  letter-spacing: .22em;
+
+  cursor: pointer;
+
+  transition:
+    color .25s ease,
+    border-color .25s ease,
+    text-shadow .25s ease;
+}
+
+
+body.mood-sad .lang-switch button:hover {
+  color: rgba(76, 68, 58, .82);
+}
+
+
+body.mood-sad .lang-switch button.active {
+  color: #554a3c;
+
+  border-bottom-color:
+    rgba(170, 144, 105, .58);
+
+  text-shadow:
+    0 0 10px rgba(224, 201, 162, .18);
+}
+
+
+/* ==========================================================
+   LANGUAGES
+========================================================== */
+
+body.mood-sad .lang {
+  display: none;
+}
+
+
+body.mood-sad .lang.active {
+  display: block;
+
+  animation:
+    sadLanguageAppear .45s ease-out both;
+}
+
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes sadAppear {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes sadGlow {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      scale(1);
+
+    opacity: .38;
+  }
+
+  50% {
+    transform:
+      translate(2%, -1%)
+      scale(1.04);
+
+    opacity: .58;
+  }
+
+}
+
+
+@keyframes sadAmbient {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+
+    opacity: .16;
+  }
+
+  50% {
+    transform:
+      translate(6px, -11px);
+
+    opacity: .36;
+  }
+
+}
+
+
+@keyframes sadLanguageAppear {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+  body.mood-sad .nav {
+    gap:
+      10px
+      18px;
+
+    padding:
+      13px
+      14px;
+
+    box-sizing: border-box;
+  }
+
+
+  body.mood-sad .nav a {
+    font-size: .65rem;
+
+    letter-spacing: .16em;
+  }
+
+
+  body.mood-sad .weather-page {
+    padding:
+      32px
+      14px
+      70px;
+  }
+
+
+  body.mood-sad .weather-card {
+    padding:
+      50px
+      25px
+      54px;
+
+    border-radius: 20px;
+  }
+
+
+  body.mood-sad .weather-card::after {
+    inset: 10px;
+
+    border-radius: 15px;
+  }
+
+
+  body.mood-sad .weather-header {
+    margin-bottom: 30px;
+  }
+
+
+  body.mood-sad .weather-title {
+    font-size: 1.48rem;
+  }
+
+
+  body.mood-sad .weather-content p {
+    font-size: .98rem;
+    line-height: 1.76;
+
+    margin-bottom: 20px;
+  }
+
+
+  body.mood-sad .weather-lead {
+    font-size: 1.02rem !important;
+  }
+
+
+  body.mood-sad .weather-warning {
+    padding:
+      16px
+      18px;
+  }
+
+}
