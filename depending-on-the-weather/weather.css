@@ -332,6 +332,7 @@ body.weather::after {
 
 /* =====================================================
    MAIN SHELL
+   Layout only — no global card
 ===================================================== */
 
 .weather-shell {
@@ -340,57 +341,33 @@ body.weather::after {
   width: min(100%, 430px);
 
   padding:
-    48px
+    42px
     18px
     22px;
 
   box-sizing: border-box;
 
-  overflow: hidden;
+  /*
+     Le shell ne constitue plus une carte.
+     Le décor de forêt appartient directement à la page.
+  */
+  border: 0;
+  border-radius: 0;
 
-  border:
-    1px solid rgba(201, 164, 106, .28);
+  background: transparent;
 
-  border-radius: 22px;
+  box-shadow: none;
 
-  background:
-    linear-gradient(
-      155deg,
-      rgba(19, 20, 15, .72),
-      rgba(10, 11, 9, .86)
-    );
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 
-  box-shadow:
-    0 24px 55px rgba(0, 0, 0, .42),
-    inset 0 0 45px rgba(195, 148, 79, .025);
-
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  overflow: visible;
 
   animation:
     weather-entry
     1s
     cubic-bezier(.16, 1, .3, 1)
     both;
-}
-
-
-/*
-   Fine bordure intérieure.
-*/
-
-.weather-shell::before {
-  content: "";
-
-  position: absolute;
-  inset: 7px;
-
-  pointer-events: none;
-
-  border:
-    1px solid rgba(201, 164, 106, .06);
-
-  border-radius: 17px;
 }
 
 
@@ -1079,23 +1056,14 @@ body.weather::after {
   }
 
 
-  .weather-shell {
-    width: min(92vw, 680px);
-
-    padding:
-      68px
-      42px
-      32px;
-
-    border-radius: 28px;
-  }
-
-
-  .weather-shell::before {
-    inset: 10px;
-
-    border-radius: 21px;
-  }
+   .weather-shell {
+     width: min(92vw, 680px);
+   
+     padding:
+       68px
+       42px
+       32px;
+   }
 
 
   .weather-header {
