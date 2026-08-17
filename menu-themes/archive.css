@@ -596,6 +596,54 @@ body.archive .nav a:hover {
     0 0 8px rgba(205, 139, 61, .25);
 }
 
+/* =====================================================
+   MONTH — BACK TO ARCHIVE
+===================================================== */
+
+.archive-month-back {
+  width: fit-content;
+
+  margin:
+    22px
+    auto
+    0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color: rgba(185, 134, 72, .66);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: .72rem;
+  font-weight: 500;
+
+  letter-spacing: .12em;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  text-shadow:
+    0 1px 4px rgba(0, 0, 0, .78);
+
+  transition:
+    color .3s ease,
+    text-shadow .3s ease,
+    transform .3s ease;
+}
+
+
+.archive-month-back:hover {
+  color: rgba(229, 190, 132, .94);
+
+  text-shadow:
+    0 0 10px rgba(201, 143, 69, .20);
+
+  transform: translateX(-3px);
+}
 
 /* =====================================================
    ENTRANCE
