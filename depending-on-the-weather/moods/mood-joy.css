@@ -17,7 +17,14 @@
    PAGE
 ========================================================== */
 
+html {
+  min-height: 100%;
+}
+
+
 body.mood-joy {
+  position: relative;
+
   min-height: 100vh;
 
   font-family: "Cormorant Garamond", serif;
@@ -25,31 +32,37 @@ body.mood-joy {
   color: #4c4035;
 
   background:
-    radial-gradient(
-      circle at 18% 12%,
-      rgba(255, 238, 196, .58),
-      transparent 34%
-    ),
-    radial-gradient(
-      circle at 82% 24%,
-      rgba(214, 229, 205, .46),
-      transparent 38%
-    ),
-    radial-gradient(
-      circle at 50% 82%,
-      rgba(231, 202, 166, .30),
-      transparent 42%
-    ),
-    linear-gradient(
-      145deg,
-      #e8ddca 0%,
-      #d8d8c5 48%,
-      #d8c8b4 100%
-    );
+    url("../../assets/mood-joy-background.png")
+    center top / cover
+    no-repeat
+    fixed;
 
-  background-attachment: fixed;
+  isolation: isolate;
 }
 
+
+/*
+   Voile très léger :
+   il harmonise l'image sans la blanchir
+   ni tuer les détails du décor.
+*/
+body.mood-joy::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(245, 239, 226, .05),
+      rgba(219, 210, 193, .08)
+    );
+}
 
 /* ==========================================================
    NAVIGATION
@@ -72,23 +85,23 @@ body.mood-joy .weather-nav {
   background:
     linear-gradient(
       to bottom,
-      rgba(250, 246, 237, .90),
-      rgba(244, 237, 225, .84)
+      rgba(247, 242, 232, .54),
+      rgba(236, 229, 216, .38)
     );
 
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
   border-bottom:
-    1px solid rgba(150, 121, 82, .14);
+    1px solid rgba(124, 101, 73, .14);
 
   box-shadow:
-    0 10px 34px rgba(88, 68, 47, .13);
+    0 8px 30px rgba(60, 51, 42, .08);
 }
 
 
 body.mood-joy .weather-nav a {
-  color: rgba(105, 81, 57, .82);
+  color: rgba(87, 70, 53, .82);
 
   text-decoration: none;
 
@@ -99,12 +112,11 @@ body.mood-joy .weather-nav a {
 
 
 body.mood-joy .weather-nav a:hover {
-  color: #795d3d;
+  color: #654d35;
 
   text-shadow:
-    0 0 12px rgba(184, 142, 83, .22);
+    0 0 12px rgba(184, 142, 83, .24);
 }
-
 
 /* ==========================================================
    WEATHER PAGE
@@ -149,23 +161,24 @@ body.mood-joy .weather-card {
   background:
     linear-gradient(
       145deg,
-      rgba(255, 252, 245, .94),
-      rgba(248, 241, 229, .92)
+      rgba(251, 247, 238, .88),
+      rgba(241, 235, 224, .84)
     );
 
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
   border:
-    1px solid rgba(166, 132, 87, .24);
+    1px solid rgba(154, 126, 91, .24);
 
   box-shadow:
-    0 32px 80px rgba(79, 59, 39, .18),
-    0 8px 24px rgba(79, 59, 39, .10),
-    inset 0 1px 0 rgba(255, 255, 255, .85);
+    0 30px 80px rgba(55, 48, 39, .18),
+    0 8px 24px rgba(55, 48, 39, .10),
+    inset 0 1px 0 rgba(255, 255, 255, .62);
 
   animation:
     joyAppear 1.25s ease-out both;
 }
-
-
 /* ==========================================================
    CARD — INNER LIGHT
 ========================================================== */
@@ -180,19 +193,19 @@ body.mood-joy .weather-card::before {
 
   background:
     radial-gradient(
-      circle at 22% 18%,
-      rgba(255, 224, 161, .22),
-      transparent 30%
+      circle at 22% 16%,
+      rgba(255, 226, 169, .14),
+      transparent 31%
     ),
     radial-gradient(
       circle at 82% 76%,
-      rgba(180, 206, 174, .18),
-      transparent 34%
+      rgba(193, 204, 185, .10),
+      transparent 35%
     );
 
-  filter: blur(30px);
+  filter: blur(34px);
 
-  opacity: .72;
+  opacity: .68;
 
   animation:
     joyGlow 18s ease-in-out infinite;
