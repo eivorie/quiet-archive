@@ -135,12 +135,6 @@ body.realm-world::before {
 
   margin: 0 auto;
 
-  padding:
-    clamp(70px, 11vh, 130px)
-    22px
-    70px;
-}
-
 
 /* ==========================================================
    HEADER
@@ -242,7 +236,12 @@ body.realm-world::before {
 ========================================================== */
 
 .realm-chapters {
-  margin-top: clamp(80px, 13vh, 125px);
+  width: min(82%, 480px);
+
+  margin:
+    clamp(58px, 9vh, 85px)
+    auto
+    0;
 
   animation: realmReveal .9s .18s ease both;
 }
@@ -256,16 +255,15 @@ body.realm-world::before {
   margin:
     0
     0
-    14px;
+    10px;
 
   color: rgba(194, 174, 128, .50);
 
-  font-size: .65rem;
-  letter-spacing: .3em;
+  font-size: .58rem;
+  letter-spacing: .28em;
 
   text-transform: uppercase;
 }
-
 
 /* ==========================================================
    CHAPTER
@@ -274,18 +272,18 @@ body.realm-world::before {
 .realm-chapter {
   position: relative;
 
-  min-height: 70px;
+  min-height: 52px;
 
-  padding: 18px 4px;
+  padding: 11px 2px;
 
   display: grid;
 
   grid-template-columns:
-    42px
+    30px
     1fr
     auto;
 
-  gap: 12px;
+  gap: 9px;
 
   align-items: center;
 
@@ -294,7 +292,7 @@ body.realm-world::before {
   text-decoration: none;
 
   border-bottom:
-    1px solid rgba(201, 187, 151, .14);
+    1px solid rgba(201, 187, 151, .13);
 
   transition:
     padding .35s ease,
@@ -345,10 +343,9 @@ body.realm-world::before {
 .realm-title {
   color: rgba(228, 219, 195, .88);
 
-  font-size: 1.15rem;
-  letter-spacing: .04em;
+  font-size: .98rem;
+  letter-spacing: .035em;
 }
-
 
 /* ==========================================================
    ARROW
@@ -357,14 +354,12 @@ body.realm-world::before {
 .realm-arrow {
   color: rgba(180, 150, 94, .48);
 
-  font-size: 1rem;
+  font-size: .82rem;
 
   transition:
     color .3s ease,
     transform .3s ease;
 }
-
-
 /* ==========================================================
    CHAPTER HOVER
 ========================================================== */
@@ -442,18 +437,24 @@ body.realm-world::before {
     padding-right: 30px;
   }
 
-  .realm-chapter {
-    min-height: 76px;
+ .realm-chapters {
+  width: min(72%, 500px);
+}
 
-    grid-template-columns:
-      52px
-      1fr
-      auto;
-  }
+.realm-chapter {
+  min-height: 56px;
 
-  .realm-title {
-    font-size: 1.25rem;
-  }
+  padding: 12px 4px;
+
+  grid-template-columns:
+    34px
+    1fr
+    auto;
+}
+
+.realm-title {
+  font-size: 1.05rem;
+}
 
 }
 
