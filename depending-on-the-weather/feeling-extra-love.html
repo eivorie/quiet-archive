@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Am I sleeping, amor ?</title>
@@ -7,48 +8,59 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="weather.css">
-  <link rel="stylesheet" href="moods/mood-base.css">
-  <link rel="stylesheet" href="moods/love.css">
+  <link rel="stylesheet" href="moods/mood-joy.css">
 </head>
 
-<body class="weather mood love">
+<body class="weather weather-story mood-joy">
 
-<div class="ambient ambient-love">
-  <span></span><span></span><span></span><span></span><span></span>
-  <span></span><span></span><span></span><span></span><span></span>
-  <span></span><span></span><span></span><span></span><span></span>
-</div>
+  <div class="ambient weather-ambient" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
 
-<nav class="nav">
-  <a href="../index.html">Home</a>
-  <a href="../memories.html">Memories</a>
-  <a href="../ereri/index.html">Ereri</a>
-  <a href="index.html">Depending on the weather</a>
-  <a href="../archive.html">Our Archive</a>
-  <a href="../sunmoon2/index.html">Sun & Moon</a>
-</nav>
+  <nav class="nav weather-nav">
+    <a href="../index.html">Home</a>
+    <a href="../memories.html">Memories</a>
+    <a href="../ereri/index.html">Ereri</a>
+    <a href="index.html">Depending on the weather</a>
+    <a href="../archive.html">Our Archive</a>
+    <a href="../sunmoon2/index.html">Sun & Moon</a>
+  </nav>
 
-<main class="page">
-  <section class="container home-card weather-card">
+  <main class="weather-page">
+
+    <section class="weather-card">
 
       <header class="weather-header">
-        <h1>Am I sleeping, amor ?</h1>
+
+        <h1 class="weather-title">
+          Am I sleeping, amor ?
+        </h1>
 
         <div class="lang-switch" aria-label="Language selector">
           <button type="button" data-lang="fr" class="active">FR</button>
           <button type="button" data-lang="en">EN</button>
           <button type="button" data-lang="pt">BR</button>
         </div>
+
       </header>
 
-      <article class="weather-text">
+      <article class="weather-content">
 
-        <!-- 🇫🇷 FR -->
+        <!-- ==========================================
+             FR
+        =========================================== -->
+
         <div class="lang lang-fr active">
+
           <p class="weather-lead">
             Si tu lis ça, mon amour, c’est peut-être parce que tu avais besoin d’un rappel —
             pas un rappel de toi-même, mais un rappel de nous, et de ce que tu représentes pour moi.
@@ -114,10 +126,16 @@
             je t’aime pour ce que tu es, entièrement.
             Et je continuerai d’aimer chaque chose que tu deviendras.
           </p>
+
         </div>
 
-        <!-- 🇬🇧 EN -->
+
+        <!-- ==========================================
+             EN
+        =========================================== -->
+
         <div class="lang lang-en">
+
           <p class="weather-lead">
             If you’re reading this, my love, it’s probably because you needed a reminder —
             not a reminder of yourself, but a reminder of us, and of what you mean to me.
@@ -164,10 +182,16 @@
             I love you for who you are, entirely.<br>
             And I will keep loving every version of you still to come.
           </p>
+
         </div>
 
-        <!-- 🇧🇷 PT -->
+
+        <!-- ==========================================
+             BR
+        =========================================== -->
+
         <div class="lang lang-pt">
+
           <p class="weather-lead">
             Se você está lendo isso, meu amor, é provavelmente porque você precisava de um lembrete —
             não um lembrete de você mesmo, mas um lembrete de nós dois, e do que você significa pra mim.
@@ -207,13 +231,16 @@
             eu te amo pelo que você é, inteiramente.<br>
             E vou continuar amando cada versão sua que ainda está por vir.
           </p>
+
         </div>
 
       </article>
 
     </section>
+
   </main>
 
   <script src="weather.js"></script>
+
 </body>
 </html>
