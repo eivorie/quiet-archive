@@ -213,6 +213,100 @@ body.weather::after {
   }
 }
 
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.nav {
+  position: relative;
+  z-index: 10;
+
+  margin-bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 12px 22px;
+
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+  border-bottom:
+    1px solid rgba(201, 164, 106, .08);
+
+  background:
+    rgba(10, 12, 9, .48);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  text-transform: uppercase;
+
+  opacity: 0;
+
+  animation:
+    weather-nav-arrival
+    .9s
+    ease
+    .25s
+    forwards;
+}
+
+
+.nav a {
+  color:
+    rgba(220, 207, 183, .76);
+
+  font-size: .72rem;
+
+  letter-spacing: .18em;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    color .3s ease,
+    text-shadow .3s ease;
+}
+
+
+.nav a:hover {
+  color:
+    rgba(239, 222, 190, .94);
+
+  text-shadow:
+    0 0 10px rgba(201, 164, 106, .16);
+}
+
+
+/* =====================================================
+   NAVBAR ENTRANCE
+===================================================== */
+
+@keyframes weather-nav-arrival {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-10px);
+
+    filter:
+      blur(4px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+    filter:
+      blur(0);
+  }
+}
+
 
 /* =====================================================
    PAGE
