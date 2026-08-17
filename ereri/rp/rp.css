@@ -1,187 +1,631 @@
-/* ===== RESET ===== */
+/* ==========================================================
+   ERERI — PRIVATE STORIES
+   Hidden archive
+========================================================== */
 
-html, body {
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
   min-height: 100%;
 }
 
-/* ===== WORLD ===== */
+html {
+  background: #080b0c;
+}
+
+
+/* ==========================================================
+   WORLD
+========================================================== */
 
 body.rp-world {
+  position: relative;
+
+  min-height: 100svh;
+
+  overflow-x: hidden;
+
   font-family: "Cormorant Garamond", serif;
+
+  color: rgba(231, 224, 207, .92);
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(4, 7, 8, .16) 0%,
+      rgba(4, 7, 8, .04) 35%,
+      rgba(4, 7, 8, .22) 70%,
+      rgba(4, 7, 8, .76) 100%
+    ),
+    url("../images/ereri-rp-background.png")
+    center top / cover
+    no-repeat
+    fixed;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ==========================================================
+   VEIL
+   Assombrit seulement les bords pour garder l'image visible
+========================================================== */
+
+.rp-veil {
+  position: fixed;
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
   background:
     radial-gradient(
-      circle at 50% 10%,
-      #4a2e20 0%,
-      #3a2418 60%,
-      #2f1d14 100%
+      ellipse at center,
+      transparent 25%,
+      rgba(3, 5, 6, .08) 52%,
+      rgba(3, 5, 6, .54) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(4, 6, 7, .22),
+      transparent 18%,
+      transparent 66%,
+      rgba(4, 6, 7, .64)
     );
-  color: #f2e4c8;
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  letter-spacing: 0.02em;
 }
 
-/* ===== RETURN LINK ===== */
+
+/* ==========================================================
+   TOP
+========================================================== */
 
 .rp-top {
-  padding: 2rem 1.8rem 0;
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  padding:
+    max(22px, env(safe-area-inset-top))
+    22px
+    0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+
+/* ==========================================================
+   EXIT
+========================================================== */
+
 .rp-exit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: rgba(205, 194, 169, .68);
+
+  font-size: .78rem;
+  letter-spacing: .14em;
+
   text-decoration: none;
-  color: #d4b88c;
-  font-size: 0.85rem;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+  text-transform: uppercase;
+
+  transition:
+    color .3s ease,
+    opacity .3s ease;
 }
 
 .rp-exit:hover {
-  opacity: 1;
+  color: rgba(239, 230, 208, .96);
 }
 
-/* ==============================
-   Chapter navigation
-   ============================== */
 
-/* ==============================
-   Chapter navigation logic
-   ============================== */
+/* ==========================================================
+   PRIVATE ARCHIVE
+========================================================== */
 
-.rp-navigation {
-  margin-top: 100px;
-  padding-top: 40px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  opacity: 0;
-  animation: rpFadeNav 0.8s ease forwards;
-  animation-delay: 0.4s;
+.rp-secret {
+  color: rgba(187, 174, 148, .38);
+
+  font-size: .62rem;
+  letter-spacing: .22em;
+
+  text-transform: uppercase;
 }
 
-@keyframes rpFadeNav {
-  to { opacity: 1; }
+
+/* ==========================================================
+   HOME
+========================================================== */
+
+.rp-home {
+  position: relative;
+  z-index: 1;
+
+  width: min(100%, 680px);
+
+  margin: 0 auto;
+
+  padding:
+    clamp(80px, 13vh, 150px)
+    22px
+    70px;
 }
 
-.rp-navigation a {
-  text-decoration: none;
-  color: inherit;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
 
-.rp-navigation a:hover {
-  opacity: 1;
-}
-
-.rp-navigation a:visited {
-  color: inherit;
-}
-
-/* Hide previous on first chapter */
-.rp-first .rp-prev {
-  visibility: hidden;
-}
-
-/* Hide next on last chapter */
-.rp-last .rp-next {
-  visibility: hidden;
-}
-
-/* ===== HEADER ===== */
+/* ==========================================================
+   HEADER
+========================================================== */
 
 .rp-header {
-  padding: 4rem 1.8rem 2.5rem;
   text-align: center;
-  max-width: 760px;
-  margin: 0 auto;
+
+  animation: rpReveal .9s ease both;
 }
+
+
+/* ==========================================================
+   KICKER
+========================================================== */
+
+.rp-kicker {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: rgba(191, 169, 128, .60);
+
+  font-size: .64rem;
+  letter-spacing: .52em;
+
+  text-indent: .52em;
+
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   TITLE
+========================================================== */
 
 .rp-header h1 {
   margin: 0;
-  font-size: 2.4rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+
+  color: rgba(239, 233, 218, .96);
+
+  font-size: clamp(2.8rem, 13vw, 4.8rem);
+  font-weight: 400;
+  line-height: .9;
+
+  letter-spacing: -.025em;
+
+  font-style: italic;
+
+  text-shadow:
+    0 3px 18px rgba(0, 0, 0, .82),
+    0 0 28px rgba(201, 177, 130, .08);
 }
+
+
+/* ==========================================================
+   SUBTITLE
+========================================================== */
 
 .rp-sub {
-  margin-top: 0.8rem;
-  font-size: 0.95rem;
-  color: #d4b88c;
-  opacity: 0.8;
+  margin:
+    20px
+    auto
+    0;
+
+  color: rgba(218, 210, 192, .67);
+
+  font-size: 1rem;
+  line-height: 1.55;
+
+  font-style: italic;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, .92);
 }
 
-/* ===== READING LAYOUT ===== */
 
-.rp-reading {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 3rem 2rem 6rem;
+/* ==========================================================
+   ORNAMENT
+========================================================== */
+
+.rp-feather {
+  display: block;
+
+  margin-top: 28px;
+
+  color: rgba(187, 158, 108, .56);
+
+  font-size: .9rem;
 }
 
-.rp-chapter-title {
-  text-align: center;
-  font-size: 1.9rem;
-  margin-bottom: 4rem;
-  letter-spacing: 0.12em;
+
+/* ==========================================================
+   STORIES
+========================================================== */
+
+.rp-stories {
+  margin-top: clamp(90px, 16vh, 150px);
+
+  animation: rpReveal .9s .18s ease both;
 }
 
-/* ===== POV ===== */
 
-.rp-pov {
-  margin-bottom: 4.5rem;
-}
+/* ==========================================================
+   SECTION LABEL
+========================================================== */
 
-.rp-pov-label {
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
+.rp-section-label {
+  margin:
+    0
+    0
+    14px;
+
+  color: rgba(193, 177, 146, .45);
+
+  font-size: .66rem;
+  letter-spacing: .28em;
+
   text-transform: uppercase;
-  color: #c68642;
-  margin-bottom: 1.5rem;
-  opacity: 0.85;
 }
 
-/* ===== TEXT ===== */
 
-.rp-text p {
-  margin-bottom: 1.2rem;
-  font-size: 1.15rem;
-  max-width: 42em;
-}
+/* ==========================================================
+   STORY
+========================================================== */
 
-/* ===== ARCHIVE ===== */
+.rp-story {
+  position: relative;
 
-.rp-archive {
-  padding: 2rem 1.8rem 5rem;
-  max-width: 760px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
+  display: block;
 
-.rp-entry {
+  color: inherit;
+
   text-decoration: none;
-  color: #f2e4c8;
-  padding: 1.2rem 0;
-  border-bottom: 1px solid rgba(242,228,200,0.15);
+
+  border-top:
+    1px solid rgba(203, 187, 154, .19);
+
+  border-bottom:
+    1px solid rgba(203, 187, 154, .19);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 15, 16, .48),
+      rgba(11, 15, 16, .22)
+    );
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+  transition:
+    border-color .35s ease,
+    background .35s ease,
+    transform .35s ease;
+}
+
+
+/* subtle manuscript glow */
+
+.rp-story::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  background:
+    radial-gradient(
+      circle at 30% 50%,
+      rgba(191, 153, 91, .11),
+      transparent 58%
+    );
+
+  transition: opacity .4s ease;
+}
+
+
+/* ==========================================================
+   STORY INNER
+========================================================== */
+
+.rp-story-inner {
+  position: relative;
+  z-index: 1;
+
+  min-height: 142px;
+
+  padding: 24px 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    30px
+    1fr
+    auto;
+
+  gap: 15px;
+
+  align-items: center;
+}
+
+
+/* ==========================================================
+   STORY NUMBER
+========================================================== */
+
+.rp-story-number {
+  align-self: start;
+
+  padding-top: 5px;
+
+  color: rgba(190, 151, 91, .68);
+
+  font-size: .78rem;
+  letter-spacing: .12em;
+}
+
+
+/* ==========================================================
+   STORY CONTENT
+========================================================== */
+
+.rp-story-content h2 {
+  margin: 0;
+
+  color: rgba(237, 229, 211, .96);
+
+  font-size: 1.75rem;
+  font-weight: 500;
+
+  letter-spacing: .08em;
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.rp-story-description {
+  max-width: 340px;
+
+  margin:
+    8px
+    0
+    0;
+
+  color: rgba(211, 202, 184, .63);
+
+  font-size: .93rem;
+  line-height: 1.45;
+
+  font-style: italic;
+}
+
+
+/* ==========================================================
+   META
+========================================================== */
+
+.rp-story-meta {
+  margin-top: 14px;
+
   display: flex;
-  gap: 1.2rem;
-  align-items: baseline;
-  transition: opacity 0.3s ease;
+  align-items: center;
+  gap: 8px;
+
+  color: rgba(184, 169, 142, .46);
+
+  font-size: .63rem;
+  letter-spacing: .16em;
+
+  text-transform: uppercase;
 }
 
-.rp-entry:hover {
-  opacity: 0.7;
+.rp-dot {
+  opacity: .5;
 }
 
-.rp-number {
-  font-size: 0.85rem;
-  color: #c68642;
-  min-width: 1.8rem;
+
+/* ==========================================================
+   ARROW
+========================================================== */
+
+.rp-story-arrow {
+  color: rgba(196, 165, 112, .58);
+
+  font-size: 1.15rem;
+
+  transition:
+    transform .35s ease,
+    color .35s ease;
 }
 
-.rp-title {
-  font-size: 1.2rem;
+
+/* ==========================================================
+   STORY INTERACTION
+========================================================== */
+
+.rp-story:hover {
+  border-color: rgba(205, 174, 119, .38);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(14, 18, 19, .62),
+      rgba(14, 18, 19, .28)
+    );
+}
+
+.rp-story:hover::before {
+  opacity: 1;
+}
+
+.rp-story:hover .rp-story-arrow {
+  color: rgba(224, 198, 151, .92);
+
+  transform: translateX(5px);
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.rp-footer {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+
+  padding:
+    0
+    24px
+    max(34px, env(safe-area-inset-bottom));
+
+  text-align: center;
+}
+
+
+/* ==========================================================
+   FOOTER LINE
+========================================================== */
+
+.rp-footer-line {
+  display: block;
+
+  width: 44px;
+  height: 1px;
+
+  margin:
+    0
+    auto
+    18px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(193, 160, 104, .46),
+      transparent
+    );
+}
+
+
+/* ==========================================================
+   FOOTER TEXT
+========================================================== */
+
+.rp-footer p {
+  margin: 0;
+
+  color: rgba(194, 182, 158, .43);
+
+  font-size: .78rem;
+  line-height: 1.55;
+
+  font-style: italic;
+}
+
+
+/* ==========================================================
+   REVEAL
+========================================================== */
+
+@keyframes rpReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ==========================================================
+   DESKTOP
+========================================================== */
+
+@media (min-width: 768px) {
+
+  body.rp-world {
+    background-position: center 38%;
+  }
+
+  .rp-top {
+    padding:
+      30px
+      38px
+      0;
+  }
+
+  .rp-home {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .rp-story-inner {
+    min-height: 156px;
+
+    padding:
+      28px
+      24px;
+
+    grid-template-columns:
+      40px
+      1fr
+      auto;
+  }
+
+  .rp-story-content h2 {
+    font-size: 2rem;
+  }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .rp-header,
+  .rp-stories {
+    animation: none;
+  }
+
+  .rp-story,
+  .rp-story::before,
+  .rp-story-arrow {
+    transition: none;
+  }
+
 }
