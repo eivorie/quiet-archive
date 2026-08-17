@@ -158,40 +158,38 @@ body.mood-joy .weather-card {
   width: 100%;
 
   padding:
-    72px
+    68px
     72px
     78px;
 
   box-sizing: border-box;
 
-  border-radius: 26px;
+  border-radius: 24px;
 
   /*
-     Verre ivoire chaud :
-     le décor reste visible derrière la carte.
+     Ce n'est plus une feuille crème.
+     Juste un voile chaud au-dessus du décor.
   */
   background:
     linear-gradient(
       145deg,
-      rgba(250, 245, 233, .68),
-      rgba(235, 229, 215, .58)
-    );
+      rgba(246, 237, 216, .20),
+      rgba(224, 216, 197, .12)
+    ) !important;
 
-  backdrop-filter:
-    blur(3px)
-    saturate(.92);
-
-  -webkit-backdrop-filter:
-    blur(3px)
-    saturate(.92);
+  /*
+     Pas de blur :
+     on VEUT voir le background.
+  */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 
   border:
-    1px solid rgba(181, 151, 108, .28);
+    1px solid rgba(190, 151, 87, .30);
 
   box-shadow:
-    0 30px 80px rgba(45, 39, 31, .20),
-    0 8px 24px rgba(45, 39, 31, .10),
-    inset 0 1px 0 rgba(255, 252, 242, .50);
+    0 20px 55px rgba(42, 35, 27, .11),
+    inset 0 0 40px rgba(255, 242, 207, .06);
 
   animation:
     joyAppear 1.25s ease-out both;
@@ -205,25 +203,24 @@ body.mood-joy .weather-card::before {
   content: "";
 
   position: absolute;
-  inset: -25%;
+  inset: 0;
 
   pointer-events: none;
 
+  /*
+     Simple lumière intérieure,
+     principalement derrière le titre.
+  */
   background:
     radial-gradient(
-      circle at 22% 16%,
-      rgba(255, 226, 169, .10),
-      transparent 31%
-    ),
-    radial-gradient(
-      circle at 82% 76%,
-      rgba(193, 204, 185, .07),
-      transparent 35%
+      ellipse at 50% 12%,
+      rgba(255, 234, 186, .14),
+      transparent 42%
     );
 
-  filter: blur(34px);
+  filter: none;
 
-  opacity: .42;
+  opacity: .65;
 
   animation:
     joyGlow 18s ease-in-out infinite;
@@ -238,57 +235,57 @@ body.mood-joy .weather-card::after {
   content: "";
 
   position: absolute;
-  inset: 15px;
+  inset: 14px;
 
-  border-radius: 19px;
+  border-radius: 18px;
 
   pointer-events: none;
 
   border:
-    1px solid rgba(179, 143, 94, .17);
+    1px solid rgba(184, 139, 73, .24);
 
   background:
     linear-gradient(
-      rgba(185, 145, 91, .58),
-      rgba(185, 145, 91, .58)
-    ) top left / 30px 1px no-repeat,
+      rgba(188, 142, 72, .72),
+      rgba(188, 142, 72, .72)
+    ) top left / 28px 1px no-repeat,
 
     linear-gradient(
-      rgba(185, 145, 91, .58),
-      rgba(185, 145, 91, .58)
-    ) top left / 1px 30px no-repeat,
+      rgba(188, 142, 72, .72),
+      rgba(188, 142, 72, .72)
+    ) top left / 1px 28px no-repeat,
 
     linear-gradient(
-      rgba(185, 145, 91, .58),
-      rgba(185, 145, 91, .58)
-    ) top right / 30px 1px no-repeat,
+      rgba(188, 142, 72, .72),
+      rgba(188, 142, 72, .72)
+    ) top right / 28px 1px no-repeat,
 
     linear-gradient(
-      rgba(185, 145, 91, .58),
-      rgba(185, 145, 91, .58)
-    ) top right / 1px 30px no-repeat,
+      rgba(188, 142, 72, .72),
+      rgba(188, 142, 72, .72)
+    ) top right / 1px 28px no-repeat,
 
     linear-gradient(
-      rgba(185, 145, 91, .58),
-      rgba(185, 145, 91, .58)
-    ) bottom left / 30px 1px no-repeat,
+      rgba(188, 142, 72, .72),
+      rgba(188, 142, 72, .72)
+    ) bottom left / 28px 1px no-repeat,
 
     linear-gradient(
-      rgba(185, 145, 91, .58),
-      rgba(185, 145, 91, .58)
-    ) bottom left / 1px 30px no-repeat,
+      rgba(188, 142, 72, .72),
+      rgba(188, 142, 72, .72)
+    ) bottom left / 1px 28px no-repeat,
 
     linear-gradient(
-      rgba(185, 145, 91, .58),
-      rgba(185, 145, 91, .58)
-    ) bottom right / 30px 1px no-repeat,
+      rgba(188, 142, 72, .72),
+      rgba(188, 142, 72, .72)
+    ) bottom right / 28px 1px no-repeat,
 
     linear-gradient(
-      rgba(185, 145, 91, .58),
-      rgba(185, 145, 91, .58)
-    ) bottom right / 1px 30px no-repeat;
+      rgba(188, 142, 72, .72),
+      rgba(188, 142, 72, .72)
+    ) bottom right / 1px 28px no-repeat;
 
-  opacity: .55;
+  opacity: .58;
 }
 
 
@@ -313,11 +310,10 @@ body.mood-joy .weather-header {
   margin:
     0
     auto
-    38px;
+    48px;
 
   text-align: center;
 }
-
 
 /* ==========================================================
    TITLE
