@@ -48,12 +48,18 @@ body.weather {
     Georgia,
     serif;
 
-  background:
-    #10110d
-    url("../assets/weather-background.png")
-    center top / cover
-    fixed
-    no-repeat;
+  background-color: #10110d;
+
+  background-image:
+    url("../assets/weather-background.png");
+
+  background-size: cover;
+
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+  background-position: center top !important;
 }
 
 
@@ -680,14 +686,13 @@ body.weather::after {
   background:
     linear-gradient(
       to bottom,
-      rgba(15, 15, 10, .36),
-      rgba(13, 14, 10, .60)
+      rgba(15, 15, 10, .22),
+      rgba(13, 14, 10, .42)
     ),
     url("../assets/mood-joy.png")
     center / cover
     no-repeat;
 }
-
 
 /*
    SAD / UNCERTAIN / ANXIOUS
@@ -700,8 +705,8 @@ body.weather::after {
   background:
     linear-gradient(
       to bottom,
-      rgba(8, 11, 10, .32),
-      rgba(8, 10, 9, .62)
+      rgba(8, 11, 10, .20),
+      rgba(8, 10, 9, .44)
     ),
     url("../assets/mood-sad.png")
     center / cover
@@ -865,8 +870,8 @@ body.weather::after {
   background:
     linear-gradient(
       to bottom,
-      rgba(15, 15, 10, .25),
-      rgba(13, 14, 10, .52)
+      rgba(15, 15, 10, .14),
+      rgba(13, 14, 10, .34)
     ),
     url("../assets/mood-joy.png")
     center / cover
@@ -879,14 +884,13 @@ body.weather::after {
   background:
     linear-gradient(
       to bottom,
-      rgba(8, 11, 10, .22),
-      rgba(8, 10, 9, .54)
+      rgba(8, 11, 10, .12),
+      rgba(8, 10, 9, .36)
     ),
     url("../assets/mood-sad.png")
     center / cover
     no-repeat;
 }
-
 
 /* =====================================================
    WIDE CARD
@@ -1126,29 +1130,6 @@ body.weather::after {
 
   .weather-pagination {
     margin-top: 32px;
-  }
-}
-
-
-/* =====================================================
-   LARGE DESKTOP
-===================================================== */
-
-@media (min-width: 1100px) {
-
-  body.weather {
-    background-position:
-      center 35%;
-  }
-
-
-  .weather-page {
-    padding-top: 70px;
-  }
-
-
-  .weather-shell {
-    width: 720px;
   }
 }
 
