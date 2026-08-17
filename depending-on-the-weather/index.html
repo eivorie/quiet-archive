@@ -1,61 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+
   <title>Depending on the weather</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../menu-themes/ereri.css">
   <link rel="stylesheet" href="weather.css">
 </head>
 
+
 <body class="weather weather-index">
 
-<div class="ambient weather-ambient">
-  <span></span><span></span><span></span><span></span><span></span>
-  <span></span><span></span><span></span><span></span><span></span>
-</div>
 
-<nav class="nav weather-nav">
-  <a href="../index.html">Home</a>
-  <a href="../memories.html">Memories</a>
-  <a href="../ereri/index.html">Ereri</a>
-  <a href="index.html">Depending on the weather</a>
-  <a href="../archive.html">Our Archive</a>
-  <a href="../sunmoon2/index.html">Sun & Moon</a>
-</nav>
+  <!-- =====================================================
+       AMBIENT
+  ====================================================== -->
 
-<main class="weather-page">
-  <section class="weather-card">
+  <div class="weather-ambient" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
-    <h1 class="weather-title">Depending on the weather</h1>
 
-    <p class="weather-intro">
-      Not every day feels the same.<br>
-      What is fitting today, sunshine?
-    </p>
+  <!-- =====================================================
+       NAVIGATION
+       Même navbar que le reste du site
+  ====================================================== -->
 
-    <ul class="weather-list">
-      <li><a href="belonging.html">when you need to hear it again</a></li>
-      <li><a href="feeling-devoted.html">when you forget how this feels</a></li>
-      <li><a href="feeling-unsure.html">when you think I could leave</a></li>
-      <li><a href="feeling-down.html">when you feel down</a></li>
-      <li><a href="feeling-happy.html">when you're happy</a></li>
-      <li><a href="feeling-moody.html">when you're moody</a></li>
-      <li><a href="feeling-extra-love.html">when you need a little more</a></li>
-      <li><a href="feeling-angry.html">when you're angry</a></li>
-      <li><a href="feeling-jealous.html">when you feel jealous</a></li>
-      <li><a href="feeling-needy.html">when you feel needy</a></li>
-      <li><a href="feeling-reassured.html">when you think my love is quieter</a></li>
-      <li><a href="feeling-anxious.html">when you're anxious</a></li>
-      <li><a href="feeling-enough.html">when you forget how gentle you are</a></li>
-      <li><a href="feeling-steadfast.html">when you forget your steadiness</a></li>
-      <li><a href="feeling-uncertain.html">when we're healing</a></li>
-    </ul>
+  <nav class="nav">
+    <a href="../index.html">Home</a>
+    <a href="../memories.html">Memories</a>
+    <a href="../ereri/index.html">Ereri</a>
+    <a href="index.html">Depending on the weather</a>
+    <a href="../archive.html">Our Archive</a>
+    <a href="../sunmoon2/index.html">Sun & Moon</a>
+  </nav>
 
-  </section>
-</main>
+
+  <!-- =====================================================
+       WEATHER
+  ====================================================== -->
+
+  <main class="weather-page">
+
+    <section class="weather-shell">
+
+
+      <!-- =================================================
+           HEADER
+      ================================================== -->
+
+      <header class="weather-header">
+
+        <h1 class="weather-title">
+          Depending<br>
+          on the weather
+        </h1>
+
+        <div class="weather-title-ornament" aria-hidden="true">
+          <span></span>
+          <i>◆</i>
+          <span></span>
+        </div>
+
+        <p class="weather-intro">
+          Not every day feels the same.<br>
+          What is fitting today, sunshine?
+        </p>
+
+        <span
+          class="weather-header-star"
+          aria-hidden="true"
+        >
+          ✦
+        </span>
+
+      </header>
+
+
+      <!-- =================================================
+           QUESTION
+      ================================================== -->
+
+      <div class="weather-question">
+
+        <span></span>
+
+        <p>How are you feeling today?</p>
+
+        <span></span>
+
+      </div>
+
+
+      <!-- =================================================
+           PAGES
+      ================================================== -->
+
+      <div class="weather-pages">
+
+
+        <!-- ===============================================
+             PAGE 1
+        ================================================ -->
+
+        <div
+          class="weather-panel is-active"
+          data-weather-page="1"
+        >
+
+          <div class="weather-grid">
+
+
+            <a
+              class="weather-mood"
+              href="feeling-unsure.html"
+            >
+              <span class="weather-mood-icon">☾</span>
+
+              <strong>
+                I need<br>
+                reassurance
+              </strong>
+
+              <small>
+                when you think<br>
+                I could leave
+              </small>
+            </a>
+
+
+            <a
+              class="weather-mood"
+              href="feeling-happy.html"
+            >
+              <span class="weather-mood-icon">☀</span>
+
+              <strong>
+                I'm happy
+              </strong>
+
+              <small>
+                when you're<br>
+                happy
+              </small>
+            </a>
+
+
+            <a
+              class="weather-mood"
+              href="feeling-down.html"
+            >
+              <span class="weather-mood-icon">♦</span>
+
+              <strong>
+                I feel down
+              </strong>
+
+              <small>
+                when you feel<br>
+                down
+              </small>
+            </a>
+
+
+            <a
+              class="weather-mood"
+              href="feeling-moody.html"
+            >
+              <span class="weather-mood-icon">≋</span>
+
+              <strong>
+                I'm moody
+              </strong>
+
+              <small>
+                when you're<br>
+                moody
+              </small>
+            </a>
+
+
+            <a
+              class="weather-mood"
+              href="feeling-extra-love.html"
+            >
+              <span class="weather-mood-icon">♡</span>
+
+              <strong>
+                I need a little<br>
+                more love
+              </strong>
+
+              <small>
+                when you need<br>
+                a little more
+              </small>
+            </a>
+
+
+            <a
+              class="weather-mood"
+              href="feeling-angry.html"
+            >
+              <span class="weather-mood-icon">—</span>
+
+              <strong>
+                I'm angry
+              </strong>
+
+              <small>
+                when you're<br>
+                angry
+              </small>
+            </a>
+
+
+            <a
+              class="weather-mood"
+              href="feeling-jealous.html"
+            >
+              <span class="weather-mood-icon">✦</span>
+
+              <strong>
+                I feel jealous
+              </strong>
+
+              <small>
+                when you feel<br>
+                jealous
+              </small>
+            </a>
+
+
+            <a
+              class="weather-mood"
+              href="feeling-needy.html"
+            >
+              <span class="weather-mood-icon">○</span>
+
+              <strong>
+                I feel needy
+              </strong>
+
+              <small>
+                when you feel<br>
+                needy
+              </small>
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+        <!-- ===============================================
+             PAGE 2
+        ================================================ -->
+
+        <div
+          class="weather-panel"
+          data-weather-page="2"
+          hidden
+        >
+
+          <div class="weather-grid">
+
+
+            <a
+              class="weather-mood"
+              href="feeling-reassured.html"
+            >
+              <span class="weather-mood-icon">✦</span>
+
+              <strong>
+                I think your<br>
+                love is quieter
+              </strong>
+
+              <small>
+                when you think<br>
+                my love is quieter
+              </small>
+            </a>
+
+
+            <a
+              class="weather-mood"
+              href="feeling-anxious.html"
+            >
+              <span class="weather-mood-icon">☁</span>
+
+              <strong>
+                I'm anxious
+              </strong>
+
+              <small>
+                when you're<br>
+                anxious
+              </small>
+            </a>
+
+
+            <a
+              class="weather-mood"
+              href="feeling-enough.html"
+            >
+              <span class="weather-mood-icon">❧</span>
+
+              <strong>
+                You forget how<br>
+                gentle you are
+              </strong>
+
+              <small>
+                when you forget<br>
+                how gentle you are
+              </small>
+            </a>
+
+
+            <a
+              class="weather-mood"
+              href="feeling-steadfast.html"
+            >
+              <span class="weather-mood-icon">⌃</span>
+
+              <strong>
+                You forget your<br>
+                steadiness
+              </strong>
+
+              <small>
+                when you forget<br>
+                your steadiness
+              </small>
+            </a>
+
+
+            <a
+              class="weather-mood"
+              href="feeling-uncertain.html"
+            >
+              <span class="weather-mood-icon">⌁</span>
+
+              <strong>
+                We're healing
+              </strong>
+
+              <small>
+                when we're<br>
+                healing
+              </small>
+            </a>
+
+
+            <a
+              class="weather-mood"
+              href="belonging.html"
+            >
+              <span class="weather-mood-icon">⌂</span>
+
+              <strong>
+                I need to<br>
+                hear it again
+              </strong>
+
+              <small>
+                when you need<br>
+                to hear it again
+              </small>
+            </a>
+
+
+            <a
+              class="weather-mood weather-mood-wide"
+              href="feeling-devoted.html"
+            >
+              <span class="weather-mood-icon">♡</span>
+
+              <strong>
+                I forget<br>
+                how this feels
+              </strong>
+
+              <small>
+                when you forget<br>
+                how this feels
+              </small>
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- =================================================
+           PAGINATION
+      ================================================== -->
+
+      <footer class="weather-pagination">
+
+        <button
+          class="weather-page-arrow weather-page-prev"
+          type="button"
+          aria-label="Previous page"
+          disabled
+        >
+          ←
+        </button>
+
+
+        <div class="weather-page-status">
+
+          <span class="weather-page-number">
+            <b>1</b> / 2
+          </span>
+
+          <div
+            class="weather-page-dots"
+            aria-hidden="true"
+          >
+            <span class="is-active"></span>
+            <span></span>
+          </div>
+
+        </div>
+
+
+        <button
+          class="weather-page-arrow weather-page-next"
+          type="button"
+          aria-label="Next page"
+        >
+          →
+        </button>
+
+      </footer>
+
+
+    </section>
+
+  </main>
+
+
+  <script src="weather.js"></script>
 
 </body>
 </html>
