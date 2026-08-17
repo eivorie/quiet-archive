@@ -616,44 +616,17 @@ body.weather::after {
 
 
 /* =====================================================
-   MOOD BACKGROUNDS
+   MOOD BACKGROUND
 ===================================================== */
 
-/*
-   POSITIVE / WARM
-
-   L'image est volontairement assombrie par le gradient
-   placé devant elle afin qu'elle reste intégrée au module
-   et ne devienne pas une miniature trop lumineuse.
-*/
-
-.weather-mood.mood-joy {
+.weather-mood {
   background:
     linear-gradient(
       to bottom,
-      rgba(15, 15, 10, .04),
-      rgba(13, 14, 10, .12)
+      rgba(8, 11, 8, .08),
+      rgba(8, 10, 8, .18)
     ),
-    url("../assets/mood-joy.png")
-    center / cover
-    no-repeat;
-}
-
-/*
-   SAD / UNCERTAIN / ANXIOUS
-
-   Même principe, avec un voile légèrement plus dense
-   pour conserver l'atmosphère sombre.
-*/
-
-.weather-mood.mood-sad {
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(8, 11, 10, .06),
-      rgba(8, 10, 9, .16)
-    ),
-    url("../assets/mood-sad.png")
+    url("../assets/mood.png")
     center / cover
     no-repeat;
 }
@@ -804,33 +777,6 @@ body.weather::after {
   outline: none;
 }
 
-
-.weather-mood.mood-joy:hover,
-.weather-mood.mood-joy:focus-visible {
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(15, 15, 10, .01),
-      rgba(13, 14, 10, .06)
-    ),
-    url("../assets/mood-joy.png")
-    center / cover
-    no-repeat;
-}
-
-
-.weather-mood.mood-sad:hover,
-.weather-mood.mood-sad:focus-visible {
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(8, 11, 10, .02),
-      rgba(8, 10, 9, .08)
-    ),
-    url("../assets/mood-sad.png")
-    center / cover
-    no-repeat;
-}
 
 /* =====================================================
    WIDE CARD
