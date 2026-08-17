@@ -329,12 +329,6 @@ body.weather::after {
 .weather-header {
   position: relative;
   z-index: 1;
-
-  padding:
-    8px
-    8px
-    38px;
-
   text-align: center;
 }
 
