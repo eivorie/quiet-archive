@@ -397,7 +397,7 @@ body.mood-sad .weather-content p {
   margin:
     0
     0
-    22px;
+    11px;
 
   color: rgba(239, 234, 224, .88);
 
@@ -865,7 +865,7 @@ body.mood-sad .lang.active {
 
 
   body.mood-sad .weather-header {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
 
 
@@ -876,7 +876,7 @@ body.mood-sad .lang.active {
 
   body.mood-sad .weather-content p {
     font-size: .98rem;
-    line-height: 1.76;
+    line-height: 1.6;
 
     margin-bottom: 20px;
   }
