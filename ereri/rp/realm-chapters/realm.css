@@ -1,0 +1,478 @@
+/* ==========================================================
+   REALM
+   Medieval fantasy — forest, herbs, old kingdom
+========================================================== */
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+html {
+  background: #0b0e0b;
+}
+
+
+/* ==========================================================
+   WORLD
+========================================================== */
+
+body.realm-world {
+  position: relative;
+
+  min-height: 100svh;
+
+  overflow-x: hidden;
+
+  font-family: "Cormorant Garamond", serif;
+
+  color: rgba(232, 224, 199, .92);
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(6, 9, 7, .18),
+      rgba(6, 9, 7, .32) 55%,
+      rgba(6, 9, 7, .86) 100%
+    ),
+    url("../../images/realm-background.png")
+    center top / cover
+    no-repeat
+    fixed;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ==========================================================
+   AMBIENT VEIL
+========================================================== */
+
+body.realm-world::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 24%,
+      rgba(175, 151, 101, .07),
+      transparent 42%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(4, 7, 5, .48),
+      transparent 24%,
+      transparent 76%,
+      rgba(4, 7, 5, .48)
+    );
+}
+
+
+/* ==========================================================
+   TOP
+========================================================== */
+
+.realm-top {
+  position: relative;
+  z-index: 2;
+
+  padding:
+    max(24px, env(safe-area-inset-top))
+    22px
+    0;
+}
+
+.realm-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  color: rgba(204, 190, 153, .62);
+
+  font-size: .72rem;
+  letter-spacing: .18em;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    color .3s ease,
+    transform .3s ease;
+}
+
+.realm-back:hover {
+  color: rgba(236, 222, 185, .94);
+  transform: translateX(-3px);
+}
+
+
+/* ==========================================================
+   HOME
+========================================================== */
+
+.realm-home {
+  position: relative;
+  z-index: 1;
+
+  width: min(100%, 680px);
+
+  margin: 0 auto;
+
+  padding:
+    clamp(70px, 11vh, 130px)
+    22px
+    70px;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.realm-header {
+  text-align: center;
+
+  animation: realmReveal .9s ease both;
+}
+
+
+/* ==========================================================
+   KICKER
+========================================================== */
+
+.realm-kicker {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: rgba(184, 156, 101, .68);
+
+  font-size: .62rem;
+  letter-spacing: .38em;
+
+  text-indent: .38em;
+
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.realm-header h1 {
+  position: relative;
+
+  margin: 0;
+
+  color: rgba(239, 228, 198, .96);
+
+  font-size: clamp(3.4rem, 17vw, 6rem);
+  font-weight: 400;
+  line-height: .9;
+
+  letter-spacing: .04em;
+
+  text-shadow:
+    0 3px 16px rgba(0, 0, 0, .9),
+    0 0 30px rgba(180, 145, 82, .11);
+}
+
+
+/* small ornament */
+
+.realm-header h1::after {
+  content: "❦";
+
+  display: block;
+
+  margin-top: 23px;
+
+  color: rgba(172, 142, 87, .58);
+
+  font-size: 1rem;
+
+  letter-spacing: 0;
+}
+
+
+/* ==========================================================
+   SUBTITLE
+========================================================== */
+
+.realm-sub {
+  max-width: 340px;
+
+  margin:
+    19px
+    auto
+    0;
+
+  color: rgba(214, 205, 180, .67);
+
+  font-size: .98rem;
+  line-height: 1.55;
+
+  font-style: italic;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, .9);
+}
+
+
+/* ==========================================================
+   CHAPTERS
+========================================================== */
+
+.realm-chapters {
+  margin-top: clamp(80px, 13vh, 125px);
+
+  animation: realmReveal .9s .18s ease both;
+}
+
+
+/* ==========================================================
+   SECTION LABEL
+========================================================== */
+
+.realm-section-label {
+  margin:
+    0
+    0
+    14px;
+
+  color: rgba(194, 174, 128, .50);
+
+  font-size: .65rem;
+  letter-spacing: .3em;
+
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   CHAPTER
+========================================================== */
+
+.realm-chapter {
+  position: relative;
+
+  min-height: 70px;
+
+  padding: 18px 4px;
+
+  display: grid;
+
+  grid-template-columns:
+    42px
+    1fr
+    auto;
+
+  gap: 12px;
+
+  align-items: center;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  border-bottom:
+    1px solid rgba(201, 187, 151, .14);
+
+  transition:
+    padding .35s ease,
+    border-color .35s ease,
+    background .35s ease;
+}
+
+
+/* faint parchment glow */
+
+.realm-chapter::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+
+  opacity: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(159, 133, 79, .08),
+      transparent 72%
+    );
+
+  transition: opacity .35s ease;
+}
+
+
+/* ==========================================================
+   NUMBER
+========================================================== */
+
+.realm-number {
+  color: rgba(181, 146, 84, .72);
+
+  font-size: .75rem;
+  letter-spacing: .1em;
+}
+
+
+/* ==========================================================
+   CHAPTER TITLE
+========================================================== */
+
+.realm-title {
+  color: rgba(228, 219, 195, .88);
+
+  font-size: 1.15rem;
+  letter-spacing: .04em;
+}
+
+
+/* ==========================================================
+   ARROW
+========================================================== */
+
+.realm-arrow {
+  color: rgba(180, 150, 94, .48);
+
+  font-size: 1rem;
+
+  transition:
+    color .3s ease,
+    transform .3s ease;
+}
+
+
+/* ==========================================================
+   CHAPTER HOVER
+========================================================== */
+
+.realm-chapter:hover {
+  padding-left: 10px;
+  padding-right: 10px;
+
+  border-color: rgba(196, 163, 103, .34);
+}
+
+.realm-chapter:hover::before {
+  opacity: 1;
+}
+
+.realm-chapter:hover .realm-title {
+  color: rgba(243, 233, 207, .98);
+}
+
+.realm-chapter:hover .realm-arrow {
+  color: rgba(218, 186, 124, .9);
+
+  transform: translateX(4px);
+}
+
+
+/* ==========================================================
+   FIRST CHAPTER
+========================================================== */
+
+.realm-chapter:first-of-type {
+  border-top:
+    1px solid rgba(201, 187, 151, .14);
+}
+
+
+/* ==========================================================
+   REVEAL
+========================================================== */
+
+@keyframes realmReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ==========================================================
+   DESKTOP
+========================================================== */
+
+@media (min-width: 768px) {
+
+  body.realm-world {
+    background-position: center 35%;
+  }
+
+  .realm-top {
+    padding:
+      30px
+      38px
+      0;
+  }
+
+  .realm-home {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .realm-chapter {
+    min-height: 76px;
+
+    grid-template-columns:
+      52px
+      1fr
+      auto;
+  }
+
+  .realm-title {
+    font-size: 1.25rem;
+  }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .realm-header,
+  .realm-chapters {
+    animation: none;
+  }
+
+  .realm-chapter,
+  .realm-chapter::before,
+  .realm-arrow {
+    transition: none;
+  }
+
+}
