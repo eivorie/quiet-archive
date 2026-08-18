@@ -1,0 +1,906 @@
+/* ==========================================================
+   ERERI — INDEX
+   Fragmenta Memoriae
+========================================================== */
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+html {
+  background: #071113;
+}
+
+
+/* ==========================================================
+   WORLD
+========================================================== */
+
+body.ereri-index {
+  position: relative;
+
+  min-height: 100svh;
+  overflow-x: hidden;
+
+  font-family: "Cormorant Garamond", serif;
+
+  color: rgba(230, 224, 204, .92);
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(3, 12, 15, .12),
+      rgba(3, 12, 15, .25) 55%,
+      rgba(3, 10, 12, .68) 100%
+    ),
+    url("images/ereri-background.png")
+    center top / cover
+    no-repeat
+    fixed;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ==========================================================
+   ATMOSPHERIC VEIL
+========================================================== */
+
+body.ereri-index::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 76% 12%,
+      rgba(209, 190, 129, .09),
+      transparent 36%
+    ),
+    radial-gradient(
+      ellipse at 42% 48%,
+      transparent 20%,
+      rgba(2, 10, 12, .15) 75%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(2, 9, 11, .34),
+      transparent 24%,
+      transparent 76%,
+      rgba(2, 9, 11, .30)
+    );
+}
+
+
+/* ==========================================================
+   AMBIENT PARTICLES
+========================================================== */
+
+.ereri-ambient {
+  position: fixed;
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ereri-ambient span {
+  position: absolute;
+
+  width: 2px;
+  height: 2px;
+
+  border-radius: 50%;
+
+  background: rgba(220, 195, 132, .55);
+
+  box-shadow:
+    0 0 6px rgba(220, 195, 132, .30);
+
+  opacity: 0;
+
+  animation:
+    ereriDust
+    12s
+    linear
+    infinite;
+}
+
+.ereri-ambient span:nth-child(1)  { left: 12%; top: 22%; animation-delay: -2s; }
+.ereri-ambient span:nth-child(2)  { left: 24%; top: 48%; animation-delay: -7s; }
+.ereri-ambient span:nth-child(3)  { left: 37%; top: 17%; animation-delay: -4s; }
+.ereri-ambient span:nth-child(4)  { left: 51%; top: 34%; animation-delay: -9s; }
+.ereri-ambient span:nth-child(5)  { left: 66%; top: 19%; animation-delay: -1s; }
+.ereri-ambient span:nth-child(6)  { left: 78%; top: 42%; animation-delay: -6s; }
+.ereri-ambient span:nth-child(7)  { left: 89%; top: 27%; animation-delay: -3s; }
+.ereri-ambient span:nth-child(8)  { left: 18%; top: 68%; animation-delay: -8s; }
+.ereri-ambient span:nth-child(9)  { left: 43%; top: 73%; animation-delay: -5s; }
+.ereri-ambient span:nth-child(10) { left: 72%; top: 64%; animation-delay: -10s; }
+.ereri-ambient span:nth-child(11) { left: 84%; top: 78%; animation-delay: -4s; }
+.ereri-ambient span:nth-child(12) { left: 29%; top: 84%; animation-delay: -11s; }
+.ereri-ambient span:nth-child(13) { left: 56%; top: 88%; animation-delay: -7s; }
+.ereri-ambient span:nth-child(14) { left: 93%; top: 53%; animation-delay: -9s; }
+.ereri-ambient span:nth-child(15) { left: 8%;  top: 91%; animation-delay: -5s; }
+
+
+@keyframes ereriDust {
+
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  25% {
+    opacity: .45;
+  }
+
+  70% {
+    opacity: .18;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(8px, -28px);
+  }
+
+}
+
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
+.nav {
+  position: relative;
+  z-index: 5;
+
+  margin-bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 12px 22px;
+
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+  border-bottom:
+    1px solid rgba(255, 225, 185, .08);
+
+  text-transform: uppercase;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(3, 11, 13, .38),
+      rgba(3, 11, 13, .12)
+    );
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.nav a {
+  position: relative;
+
+  color: rgba(235, 228, 232, .78);
+
+  text-transform: uppercase;
+  letter-spacing: .18em;
+
+  font-size: .72rem;
+
+  text-decoration: none;
+
+  transition:
+    color .3s ease,
+    text-shadow .3s ease;
+}
+
+.nav a:hover {
+  color: rgba(245, 238, 230, .92);
+
+  text-shadow:
+    0 0 12px rgba(215, 188, 125, .18);
+}
+
+
+/* active Ereri */
+
+.nav a[href="index.html"]::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -8px;
+
+  width: 18px;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    rgba(191, 158, 96, .58);
+
+  box-shadow:
+    0 0 7px rgba(191, 158, 96, .28);
+}
+
+
+/* ==========================================================
+   PAGE
+========================================================== */
+
+.ereri-page {
+  position: relative;
+  z-index: 1;
+
+  width: min(100%, 720px);
+
+  margin: 0 auto;
+
+  padding:
+    clamp(58px, 8vh, 90px)
+    24px
+    70px;
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.ereri-card {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    48px
+    clamp(26px, 6vw, 58px)
+    34px;
+
+  border:
+    1px solid rgba(192, 163, 105, .20);
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8, 25, 29, .72),
+      rgba(4, 16, 19, .82)
+    );
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, .42),
+    inset 0 0 45px rgba(185, 153, 91, .025);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  animation:
+    ereriReveal
+    .9s
+    ease
+    both;
+}
+
+
+/* fine inner frame */
+
+.ereri-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 7px;
+
+  pointer-events: none;
+
+  border:
+    1px solid rgba(212, 184, 126, .035);
+
+  border-radius: 5px;
+}
+
+
+/* ==========================================================
+   TITLE
+   FRAGMENTA MEMORIAE
+========================================================== */
+
+.ereri-title {
+  position: relative;
+
+  margin:
+    0
+    auto
+    56px;
+
+  text-align: center;
+}
+
+.ereri-secret {
+  display: inline-block;
+
+  color: rgba(235, 225, 199, .96);
+
+  font-size:
+    clamp(1.75rem, 6vw, 2.7rem);
+
+  font-weight: 400;
+
+  letter-spacing: .20em;
+  text-indent: .20em;
+
+  text-transform: uppercase;
+  text-decoration: none;
+
+  text-shadow:
+    0 2px 14px rgba(0, 0, 0, .85),
+    0 0 22px rgba(205, 173, 108, .08);
+
+  transition:
+    color .4s ease,
+    text-shadow .4s ease;
+}
+
+.ereri-secret:hover {
+  color: rgba(248, 236, 207, 1);
+
+  text-shadow:
+    0 2px 14px rgba(0, 0, 0, .9),
+    0 0 18px rgba(211, 177, 106, .22);
+}
+
+
+/* Fragmenta ornament */
+
+.ereri-title::before {
+  content: "❧";
+
+  display: block;
+
+  margin-bottom: 17px;
+
+  color: rgba(181, 150, 91, .50);
+
+  font-size: .85rem;
+
+  letter-spacing: 0;
+}
+
+
+/* little line under title */
+
+.ereri-title::after {
+  content: "✦";
+
+  display: block;
+
+  width: 150px;
+
+  margin:
+    18px
+    auto
+    0;
+
+  color: rgba(201, 169, 106, .60);
+
+  font-size: .55rem;
+
+  line-height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(190, 159, 99, .32) 38%,
+      transparent 38%,
+      transparent 62%,
+      rgba(190, 159, 99, .32) 62%,
+      transparent
+    );
+}
+
+
+/* ==========================================================
+   OPTIONAL SUBTITLE
+========================================================== */
+
+.ereri-title + .ereri-subtitle {
+  max-width: 330px;
+
+  margin:
+    -34px
+    auto
+    45px;
+
+  color: rgba(206, 199, 178, .56);
+
+  font-size: .78rem;
+  line-height: 1.5;
+
+  text-align: center;
+  font-style: italic;
+}
+
+
+/* ==========================================================
+   LAYOUT
+========================================================== */
+
+.ereri-layout {
+  display: block;
+}
+
+
+/* ==========================================================
+   TABLE OF CONTENTS
+========================================================== */
+
+.ereri-toc ul {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ==========================================================
+   STORY
+========================================================== */
+
+.ereri-toc li {
+  position: relative;
+
+  opacity: 0;
+
+  transform:
+    translateY(6px);
+
+  animation:
+    ereriStoryReveal
+    .65s
+    ease
+    forwards;
+
+  animation-delay:
+    calc(var(--i) * .07s + .15s);
+}
+
+
+/* Since old --i values are reversed,
+   don't let huge values delay page appearance */
+
+.ereri-toc li:nth-child(1) { animation-delay: .18s; }
+.ereri-toc li:nth-child(2) { animation-delay: .25s; }
+.ereri-toc li:nth-child(3) { animation-delay: .32s; }
+.ereri-toc li:nth-child(4) { animation-delay: .39s; }
+.ereri-toc li:nth-child(5) { animation-delay: .46s; }
+.ereri-toc li:nth-child(6) { animation-delay: .53s; }
+
+
+.ereri-toc a {
+  position: relative;
+
+  min-height: 58px;
+
+  padding:
+    14px
+    36px
+    14px
+    52px;
+
+  display: flex;
+  align-items: center;
+
+  color: rgba(221, 216, 198, .78);
+
+  font-size: .84rem;
+  font-weight: 500;
+
+  letter-spacing: .16em;
+
+  text-transform: uppercase;
+  text-decoration: none;
+
+  border-bottom:
+    1px solid rgba(195, 173, 127, .10);
+
+  transition:
+    color .35s ease,
+    padding .35s ease,
+    background .35s ease,
+    border-color .35s ease;
+}
+
+
+/* dash before title */
+
+.ereri-toc a::before {
+  content: "—";
+
+  position: absolute;
+  left: 26px;
+
+  color: rgba(185, 151, 88, .48);
+
+  font-size: .75rem;
+
+  transition:
+    color .35s ease,
+    transform .35s ease;
+}
+
+
+/* arrow */
+
+.ereri-toc a::after {
+  content: "→";
+
+  position: absolute;
+  right: 8px;
+
+  color: rgba(188, 157, 98, .45);
+
+  font-size: .75rem;
+
+  transition:
+    color .35s ease,
+    transform .35s ease;
+}
+
+
+/* ==========================================================
+   STORY NUMBER
+========================================================== */
+
+/*
+   Numbers are generated automatically.
+   No need to put 01, 02... in your HTML.
+*/
+
+.ereri-toc {
+  counter-reset: ereriStory;
+}
+
+.ereri-toc li {
+  counter-increment: ereriStory;
+}
+
+.ereri-toc li::before {
+  content:
+    counter(ereriStory, decimal-leading-zero);
+
+  position: absolute;
+
+  z-index: 2;
+
+  left: 5px;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  color: rgba(184, 151, 87, .66);
+
+  font-size: .62rem;
+
+  letter-spacing: .08em;
+
+  pointer-events: none;
+}
+
+
+/* ==========================================================
+   STORY HOVER
+========================================================== */
+
+.ereri-toc li:hover a {
+  padding-left: 58px;
+
+  color: rgba(244, 235, 211, .96);
+
+  border-color:
+    rgba(199, 166, 101, .25);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(183, 151, 91, .055),
+      transparent 72%
+    );
+}
+
+.ereri-toc li:hover a::before {
+  color: rgba(214, 181, 115, .78);
+
+  transform:
+    translateX(3px);
+}
+
+.ereri-toc li:hover a::after {
+  color: rgba(224, 194, 132, .86);
+
+  transform:
+    translateX(4px);
+}
+
+
+/* ==========================================================
+   PAGINATION
+========================================================== */
+
+.ereri-pagination {
+  margin-top: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  color: rgba(190, 167, 121, .46);
+
+  font-size: .60rem;
+
+  letter-spacing: .14em;
+
+  text-transform: uppercase;
+}
+
+.ereri-pagination a {
+  color: rgba(199, 179, 137, .55);
+
+  text-decoration: none;
+
+  transition:
+    color .3s ease,
+    transform .3s ease;
+}
+
+.ereri-pagination a:hover {
+  color: rgba(232, 209, 161, .92);
+}
+
+.ereri-pagination .page-number {
+  display: inline-flex;
+
+  width: 27px;
+  height: 27px;
+
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(197, 175, 129, .48);
+
+  text-decoration: none;
+
+  border:
+    1px solid transparent;
+
+  border-radius: 50%;
+
+  transition:
+    color .3s ease,
+    border-color .3s ease,
+    background .3s ease;
+}
+
+.ereri-pagination .page-number:hover {
+  color: rgba(234, 212, 167, .9);
+}
+
+.ereri-pagination .page-number.current {
+  color: rgba(222, 195, 140, .92);
+
+  border-color:
+    rgba(190, 155, 91, .36);
+
+  background:
+    rgba(174, 140, 77, .05);
+
+  box-shadow:
+    0 0 12px rgba(188, 151, 85, .08);
+}
+
+
+/* ==========================================================
+   BOTTOM ORNAMENT
+========================================================== */
+
+.ereri-card::after {
+  content: "❧";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -48px;
+
+  transform:
+    translateX(-50%);
+
+  color: rgba(187, 153, 91, .40);
+
+  font-size: .8rem;
+
+  text-shadow:
+    0 0 10px rgba(196, 161, 96, .12);
+}
+
+
+/* ==========================================================
+   REVEALS
+========================================================== */
+
+@keyframes ereriReveal {
+
+  from {
+    opacity: 0;
+    transform:
+      translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes ereriStoryReveal {
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+  .nav {
+    gap: 10px 16px;
+
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .nav a {
+    font-size: .61rem;
+    letter-spacing: .13em;
+  }
+
+
+  .ereri-page {
+    padding:
+      42px
+      15px
+      65px;
+  }
+
+
+  .ereri-card {
+    padding:
+      39px
+      18px
+      27px;
+
+    border-radius: 8px;
+  }
+
+
+  .ereri-title {
+    margin-bottom: 44px;
+  }
+
+
+  .ereri-secret {
+    font-size:
+      clamp(1.35rem, 7vw, 1.85rem);
+
+    letter-spacing: .13em;
+    text-indent: .13em;
+  }
+
+
+  .ereri-title::after {
+    width: 115px;
+  }
+
+
+  .ereri-toc a {
+    min-height: 55px;
+
+    padding:
+      12px
+      28px
+      12px
+      42px;
+
+    font-size: .72rem;
+    line-height: 1.35;
+
+    letter-spacing: .10em;
+  }
+
+
+  .ereri-toc a::before {
+    left: 21px;
+  }
+
+
+  .ereri-toc a::after {
+    right: 3px;
+  }
+
+
+  .ereri-toc li::before {
+    left: 1px;
+
+    font-size: .57rem;
+  }
+
+
+  .ereri-toc li:hover a {
+    padding-left: 46px;
+  }
+
+
+  .ereri-pagination {
+    gap: 11px;
+
+    font-size: .55rem;
+  }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ereri-card,
+  .ereri-toc li,
+  .ereri-ambient span {
+    animation: none;
+  }
+
+  .ereri-toc li {
+    opacity: 1;
+    transform: none;
+  }
+
+}
