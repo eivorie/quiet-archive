@@ -301,26 +301,123 @@ body.ereri.ereri-story {
   text-align: center;
 }
 
+/* ==========================================================
+   TITLE — MOVING GOLD DUST
+========================================================== */
+
 .ereri-story-header::after {
   content: "";
 
   display: block;
 
-  width: 46px;
-  height: 1px;
+  width: 150px;
+  height: 18px;
 
   margin:
-    19px
+    12px
     auto
     0;
 
   background:
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(191, 164, 116, .52),
-      transparent
+    /* petites poussières */
+    radial-gradient(
+      circle at 8% 52%,
+      rgba(226, 193, 126, .55) 0 1px,
+      transparent 1.6px
+    ),
+    radial-gradient(
+      circle at 19% 40%,
+      rgba(244, 218, 158, .80) 0 1.2px,
+      transparent 1.8px
+    ),
+    radial-gradient(
+      circle at 31% 58%,
+      rgba(215, 177, 103, .48) 0 .8px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 43% 46%,
+      rgba(250, 225, 166, .90) 0 1.3px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 55% 55%,
+      rgba(224, 188, 116, .62) 0 .9px,
+      transparent 1.6px
+    ),
+    radial-gradient(
+      circle at 67% 42%,
+      rgba(247, 220, 157, .78) 0 1.1px,
+      transparent 1.8px
+    ),
+    radial-gradient(
+      circle at 79% 59%,
+      rgba(211, 169, 94, .48) 0 .8px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 91% 47%,
+      rgba(239, 207, 142, .64) 0 1px,
+      transparent 1.7px
+    ),
+
+    /* halo horizontal très fin */
+    radial-gradient(
+      ellipse at center,
+      rgba(213, 174, 101, .18) 0%,
+      rgba(190, 145, 75, .07) 38%,
+      transparent 72%
     );
+
+  background-repeat: no-repeat;
+
+  filter:
+    drop-shadow(0 0 3px rgba(230, 194, 124, .38))
+    drop-shadow(0 0 9px rgba(184, 136, 67, .18));
+
+  transform-origin: center;
+
+  animation:
+    ereri-title-dust
+    4.8s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes ereri-title-dust {
+
+  0% {
+    opacity: .30;
+
+    transform:
+      translateX(-4px)
+      scaleX(.94);
+  }
+
+  25% {
+    opacity: .72;
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      translateX(3px)
+      scaleX(1.03);
+  }
+
+  75% {
+    opacity: .55;
+  }
+
+  100% {
+    opacity: .30;
+
+    transform:
+      translateX(-4px)
+      scaleX(.94);
+  }
 }
 
 
