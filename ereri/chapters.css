@@ -382,26 +382,27 @@ body.ereri.ereri-story {
 
 
 /* ==========================================================
-   ILLUSTRATION — ERERI FRAME
+   ILLUSTRATION — ERERI DECORATIVE FRAME
 ========================================================== */
 
 .ereri-story-illustration {
   position: relative;
 
-  width: min(100%, 330px);
-
   /*
-     IMPORTANT :
-     on ne force PLUS de ratio.
-     Le décor garde une hauteur naturelle.
+     Même taille d'image que l'ancien design :
+     max 380px, mais responsive si nécessaire.
   */
-  height: 455px;
+  width: fit-content;
+  max-width: 100%;
 
   margin:
-    8px auto
-    clamp(54px, 7vw, 72px);
+    40px auto
+    60px;
 
-  padding: 0;
+  padding:
+    34px
+    36px
+    38px;
 
   display: flex;
   align-items: center;
@@ -412,60 +413,84 @@ body.ereri.ereri-story {
 
 
 /* ==========================================================
-   DECORATIVE BACKGROUND
+   DECORATIVE FRAME
+   Le PNG s'adapte autour de la vraie image
 ========================================================== */
 
 .ereri-story-illustration::before {
   content: "";
 
   position: absolute;
-  inset: 0;
+
+  /*
+     Le décor dépasse légèrement autour de l'image.
+     Il ne détermine PAS sa taille.
+  */
+  inset:
+    -12px
+    -16px
+    -14px;
 
   z-index: 0;
 
-  background:
-    url("images/ereri-img-background.png")
-    center / contain
-    no-repeat;
+  background-image:
+    url("images/ereri-img-background.png");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 
   pointer-events: none;
 
   filter:
-    drop-shadow(0 16px 24px rgba(0, 0, 0, .32));
+    drop-shadow(
+      0 18px 30px
+      rgba(0, 0, 0, .32)
+    );
 }
 
 
 /* ==========================================================
-   IMAGE INSIDE FRAME
+   IMAGE
+   Ratio original — aucun crop
 ========================================================== */
 
 .ereri-story-illustration img {
   position: relative;
   z-index: 1;
 
-  /*
-     Là est la grosse différence.
-     La photo n'occupe PLUS tout le figure.
-  */
-  width: 258px;
-  height: 344px;
-
   display: block;
 
-  object-fit: cover;
-  object-position: center;
+  /*
+     EXACTEMENT le principe de ton ancien CSS.
+  */
+  width: 100%;
+  max-width: 380px;
+
+  height: auto;
+
+  /*
+     Aucun object-fit.
+     Aucun ratio imposé.
+     L'image reste ENTIÈRE.
+  */
 
   margin: 0;
 
-  border-radius: 2px;
+  border-radius:
+    10px
+    14px
+    12px
+    16px;
 
   filter:
-    saturate(.88)
-    contrast(1.03)
-    brightness(.92);
+    saturate(.9)
+    contrast(1.025)
+    brightness(.94);
 
   box-shadow:
-    0 18px 42px rgba(0, 0, 0, .44);
+    0 26px 60px rgba(0, 0, 0, .52),
+    0 0 0 1px rgba(215, 191, 145, .09);
 
   transition:
     transform .45s ease,
@@ -475,21 +500,29 @@ body.ereri.ereri-story {
 
 
 /* ==========================================================
-   FRAME OVERLAY
+   FRAME FOREGROUND
+   Deuxième passage pour que les ornements restent
+   visuellement devant l'image.
 ========================================================== */
 
 .ereri-story-illustration::after {
   content: "";
 
   position: absolute;
-  inset: 0;
+
+  inset:
+    -12px
+    -16px
+    -14px;
 
   z-index: 2;
 
-  background:
-    url("images/ereri-img-background.png")
-    center / contain
-    no-repeat;
+  background-image:
+    url("images/ereri-img-background.png");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 
   pointer-events: none;
 }
@@ -500,17 +533,18 @@ body.ereri.ereri-story {
 ========================================================== */
 
 .ereri-story-illustration:hover img {
-  transform: scale(1.012);
+  transform:
+    translateY(-2px);
 
   filter:
-    saturate(.95)
-    contrast(1.025)
-    brightness(.97);
+    saturate(.96)
+    contrast(1.02)
+    brightness(.98);
 
   box-shadow:
-    0 22px 48px rgba(0, 0, 0, .50);
+    0 32px 68px rgba(0, 0, 0, .56),
+    0 0 18px rgba(190, 154, 91, .05);
 }
-
 /* ==========================================================
    CONTENT
    ========================================================== */
@@ -1121,6 +1155,22 @@ body.ereri.ereri-story {
   border-radius: 10px;
 }
 
+   .ereri-story-illustration {
+  margin:
+    36px auto
+    54px;
+
+  padding:
+    30px
+    32px
+    34px;
+}
+
+.ereri-story-illustration img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
 
   .ereri-story-header {
     margin-bottom: 36px;
@@ -1138,21 +1188,6 @@ body.ereri.ereri-story {
   .ereri-story-header .subtitle {
     font-size: 0.78rem;
   }
-
-
- .ereri-story-illustration {
-  width: min(100%, 300px);
-  height: 414px;
-
-  margin-bottom: 50px;
-
-  padding: 0;
-}
-
-.ereri-story-illustration img {
-  width: 234px;
-  height: 312px;
-}
 
   .ereri-story-content {
     font-size: 1rem;
@@ -1251,19 +1286,25 @@ body.ereri.ereri-story {
     border-radius: 8px;
   }
 
+    .ereri-story-illustration {
+    width: 100%;
 
-  .ereri-story-illustration {
-  width: min(100%, 270px);
-  height: 373px;
+    margin:
+      32px auto
+      48px;
 
-  padding: 0;
-}
+    padding:
+      26px
+      28px
+      30px;
+  }
 
-.ereri-story-illustration img {
-  width: 210px;
-  height: 280px;
-}
-   
+  .ereri-story-illustration img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
   .ereri-story-content {
     line-height: 1.72;
   }
