@@ -57,7 +57,7 @@ body.rp-world {
 
 
 /* ==========================================================
-   SUBTLE TEXTURE
+   GOLDEN LIGHT + DUST
 ========================================================== */
 
 body.rp-world::before {
@@ -66,18 +66,16 @@ body.rp-world::before {
   position: fixed;
   inset: 0;
 
+  z-index: 0;
+
   pointer-events: none;
 
-  opacity: .32;
-
   background:
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,.012),
-      transparent 18%,
-      transparent 82%,
-      rgba(255,255,255,.012)
-    );
+    url("../images/chapters-glow.png")
+    top right / cover
+    no-repeat;
+
+  opacity: .42;
 }
 
 
