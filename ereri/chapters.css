@@ -44,8 +44,7 @@ body.ereri.ereri-story {
     no-repeat;
 
   background-position:
-    center top,
-    center top;
+    center top !important;
 
   background-size:
     100% 100%,
@@ -56,6 +55,12 @@ body.ereri.ereri-story {
     scroll;
 }
 
+
+.ereri-story-header,
+.ereri-story-title,
+.ereri-story-header .subtitle {
+  font-family: "Cormorant Garamond", serif;
+}
 
 /* ==========================================================
    AMBIENT
@@ -185,38 +190,41 @@ body.ereri.ereri-story {
   position: relative;
   z-index: 5;
 
-  margin: 0;
+  margin-bottom: 0;
 
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 
-  gap:
-    9px
-    18px;
+  gap: 9px 18px;
 
-  padding:
-    14px
-    12px;
+  padding: 14px 12px;
+
+  font-family: "Cormorant Garamond", serif;
 
   border-bottom:
-    1px solid rgba(255, 225, 185, .06);
+    1px solid rgba(255, 225, 185, .08);
 
   text-transform: uppercase;
 
   background:
     linear-gradient(
       to bottom,
-      rgba(3, 11, 13, .24),
-      rgba(3, 11, 13, .04)
+      rgba(3, 11, 13, .38),
+      rgba(3, 11, 13, .12)
     );
+
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
 }
 
 .ereri-story .nav a {
   position: relative;
 
-  color: rgba(235, 228, 232, .78);
+  color:
+    rgba(235, 228, 232, .78);
 
+  font-family: "Cormorant Garamond", serif;
   font-size: .72rem;
 
   text-transform: uppercase;
@@ -227,17 +235,6 @@ body.ereri.ereri-story {
   transition:
     color .3s ease,
     text-shadow .3s ease;
-}
-
-.ereri-story .nav a:hover {
-  color: rgba(245, 238, 230, .94);
-
-  text-shadow:
-    0 0 12px rgba(215, 188, 125, .18);
-}
-
-.ereri-story .nav a::after {
-  display: none;
 }
 
 
