@@ -250,7 +250,7 @@ body.realm-world::before {
      pour libérer les visages.
   */
   margin:
-    clamp(180px, 27vh, 235px)
+    clamp(220px, 27vh, 235px)
     auto
     0;
 
