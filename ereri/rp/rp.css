@@ -263,7 +263,7 @@ body.rp-world {
 ========================================================== */
 
 .rp-stories {
-  margin-top: clamp(90px, 16vh, 150px);
+  margin-top: clamp(42px, 7vh, 65px);
 
   animation: rpReveal .9s .18s ease both;
 }
@@ -277,11 +277,11 @@ body.rp-world {
   margin:
     0
     0
-    14px;
+    8px;
 
   color: rgba(193, 177, 146, .45);
 
-  font-size: .66rem;
+  font-size: .62rem;
   letter-spacing: .28em;
 
   text-transform: uppercase;
@@ -355,18 +355,18 @@ body.rp-world {
   position: relative;
   z-index: 1;
 
-  min-height: 142px;
+  min-height: 0;
 
-  padding: 24px 18px;
+  padding: 15px 12px;
 
   display: grid;
 
   grid-template-columns:
-    30px
+    24px
     1fr
     auto;
 
-  gap: 15px;
+  gap: 11px;
 
   align-items: center;
 }
@@ -379,11 +379,11 @@ body.rp-world {
 .rp-story-number {
   align-self: start;
 
-  padding-top: 5px;
+  padding-top: 4px;
 
   color: rgba(190, 151, 91, .68);
 
-  font-size: .78rem;
+  font-size: .7rem;
   letter-spacing: .12em;
 }
 
@@ -397,7 +397,7 @@ body.rp-world {
 
   color: rgba(237, 229, 211, .96);
 
-  font-size: 1.75rem;
+  font-size: 1.45rem;
   font-weight: 500;
 
   letter-spacing: .08em;
@@ -409,17 +409,17 @@ body.rp-world {
 ========================================================== */
 
 .rp-story-description {
-  max-width: 340px;
+  max-width: 300px;
 
   margin:
-    8px
+    5px
     0
     0;
 
   color: rgba(211, 202, 184, .63);
 
-  font-size: .93rem;
-  line-height: 1.45;
+  font-size: .84rem;
+  line-height: 1.35;
 
   font-style: italic;
 }
@@ -430,22 +430,18 @@ body.rp-world {
 ========================================================== */
 
 .rp-story-meta {
-  margin-top: 14px;
+  margin-top: 8px;
 
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
 
   color: rgba(184, 169, 142, .46);
 
-  font-size: .63rem;
-  letter-spacing: .16em;
+  font-size: .58rem;
+  letter-spacing: .15em;
 
   text-transform: uppercase;
-}
-
-.rp-dot {
-  opacity: .5;
 }
 
 
@@ -573,43 +569,102 @@ body.rp-world {
    DESKTOP
 ========================================================== */
 
-@media (min-width: 768px) {
+/* ==========================================================
+   STORY INNER
+========================================================== */
 
-  body.rp-world {
-    background-position: center 38%;
-  }
+.rp-story-inner {
+  position: relative;
+  z-index: 1;
 
-  .rp-top {
-    padding:
-      30px
-      38px
-      0;
-  }
+  min-height: 0;
 
-  .rp-home {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
+  padding: 15px 12px;
 
-  .rp-story-inner {
-    min-height: 156px;
+  display: grid;
 
-    padding:
-      28px
-      24px;
+  grid-template-columns:
+    24px
+    1fr
+    auto;
 
-    grid-template-columns:
-      40px
-      1fr
-      auto;
-  }
+  gap: 11px;
 
-  .rp-story-content h2 {
-    font-size: 2rem;
-  }
-
+  align-items: center;
 }
 
+
+/* ==========================================================
+   STORY NUMBER
+========================================================== */
+
+.rp-story-number {
+  align-self: start;
+
+  padding-top: 4px;
+
+  color: rgba(190, 151, 91, .68);
+
+  font-size: .7rem;
+  letter-spacing: .12em;
+}
+
+
+/* ==========================================================
+   STORY CONTENT
+========================================================== */
+
+.rp-story-content h2 {
+  margin: 0;
+
+  color: rgba(237, 229, 211, .96);
+
+  font-size: 1.45rem;
+  font-weight: 500;
+
+  letter-spacing: .08em;
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.rp-story-description {
+  max-width: 300px;
+
+  margin:
+    5px
+    0
+    0;
+
+  color: rgba(211, 202, 184, .63);
+
+  font-size: .84rem;
+  line-height: 1.35;
+
+  font-style: italic;
+}
+
+
+/* ==========================================================
+   META
+========================================================== */
+
+.rp-story-meta {
+  margin-top: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: rgba(184, 169, 142, .46);
+
+  font-size: .58rem;
+  letter-spacing: .15em;
+
+  text-transform: uppercase;
+}
 
 /* ==========================================================
    REDUCED MOTION
