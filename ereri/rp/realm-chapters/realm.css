@@ -392,6 +392,54 @@ body.realm-world::before {
     1px solid rgba(201, 187, 151, .14);
 }
 
+   /* ==========================================================
+   PAGINATION
+========================================================== */
+
+.realm-pagination {
+  margin-top: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  font-size: .58rem;
+  letter-spacing: .18em;
+}
+
+.realm-page-current {
+  color: rgba(211, 184, 130, .78);
+}
+
+.realm-page-line {
+  width: 26px;
+  height: 1px;
+
+  background:
+    rgba(190, 163, 111, .28);
+}
+
+.realm-page-next {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: rgba(190, 176, 145, .45);
+
+  text-decoration: none;
+
+  transition:
+    color .3s ease,
+    transform .3s ease;
+}
+
+.realm-page-next:hover {
+  color: rgba(229, 207, 163, .9);
+  transform: translateX(2px);
+}
+
 
 /* ==========================================================
    REVEAL
