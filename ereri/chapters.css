@@ -20,17 +20,31 @@ body.ereri.ereri-story {
 
   overflow-x: hidden;
 
+  font-family: "Cormorant Garamond", serif;
   color: rgba(224, 225, 220, 0.88);
 
-  background:
+  background-color: #07100f !important;
+
+  background-image:
     linear-gradient(
-      rgba(10, 13, 13, 0.18),
-      rgba(10, 13, 13, 0.32)
+      to bottom,
+      rgba(7, 9, 8, 0.04),
+      rgba(7, 9, 8, 0.10)
     ),
-    url("images/chapters-background.png")
-    center top / cover
-    fixed
-    no-repeat;
+    url("images/chapters-background.png") !important;
+
+  background-repeat:
+    no-repeat !important;
+
+  background-position:
+    center top !important;
+
+  background-size:
+    100% 100%,
+    cover !important;
+
+  background-attachment:
+    fixed !important;
 }
 
 
@@ -160,63 +174,66 @@ body.ereri.ereri-story {
 
 /* ==========================================================
    NAVBAR
-   ========================================================== */
+========================================================== */
 
 .ereri-story .nav {
   position: relative;
-  z-index: 20;
+  z-index: 5;
+
+  margin-bottom: 0;
 
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
 
-  gap: 12px 28px;
+  gap: 12px 22px;
 
-  width: 100%;
+  padding-top: 14px;
+  padding-bottom: 14px;
 
-  padding:
-    22px
-    24px
-    8px;
+  border-bottom:
+    1px solid rgba(255, 225, 185, .08);
 
-  font-family: "Cormorant Garamond", serif;
+  text-transform: uppercase;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(3, 11, 13, .38),
+      rgba(3, 11, 13, .12)
+    );
+
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
 }
-
 
 .ereri-story .nav a {
   position: relative;
 
-  color: rgba(221, 218, 205, 0.66);
+  color: rgba(235, 228, 232, .78);
 
-  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: .18em;
 
-  font-weight: 400;
-
-  letter-spacing: 0.08em;
+  font-size: .72rem;
 
   text-decoration: none;
 
   transition:
-    color 0.3s ease,
-    text-shadow 0.3s ease;
+    color .3s ease,
+    text-shadow .3s ease;
 }
-
 
 .ereri-story .nav a:hover {
-  color: rgba(239, 235, 218, 0.94);
+  color: rgba(245, 238, 230, .92);
 
   text-shadow:
-    0 0 14px rgba(218, 211, 185, 0.22);
+    0 0 12px rgba(215, 188, 125, .18);
 }
-
-
-/* no active underline on Ereri */
 
 .ereri-story .nav a::after {
   display: none;
 }
-
 
 /* ==========================================================
    STORY PAGE
@@ -239,14 +256,14 @@ body.ereri.ereri-story {
 
 
 /* ==========================================================
-   STORY CARD
-   ========================================================== */
+   STORY — TRANSPARENT READING VEIL
+========================================================== */
 
 .ereri-story-card {
   position: relative;
 
   width: 100%;
-  max-width: 860px;
+  max-width: 820px;
 
   margin: 0 auto;
 
@@ -255,54 +272,33 @@ body.ereri.ereri-story {
     clamp(34px, 7vw, 82px)
     clamp(68px, 7vw, 94px);
 
+  /*
+     Ce n'est plus vraiment une carte.
+     Juste un voile très léger pour conserver
+     la lisibilité du texte sur le background.
+  */
   background:
-    radial-gradient(
-      ellipse at 50% 0%,
-      rgba(176, 187, 176, 0.065),
-      transparent 38%
-    ),
     linear-gradient(
       155deg,
-      rgba(30, 35, 33, 0.94),
-      rgba(17, 21, 20, 0.965)
+      rgba(8, 14, 13, .16),
+      rgba(5, 11, 11, .24)
     );
 
   border:
-    1px solid rgba(194, 202, 192, 0.11);
+    1px solid rgba(205, 187, 150, .045);
 
-  border-radius: 18px;
+  border-radius: 14px;
 
   box-shadow:
-    0 35px 90px rgba(0, 0, 0, 0.52),
-    0 0 0 1px rgba(255, 255, 255, 0.015),
-    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+    0 28px 80px rgba(0, 0, 0, .10);
 
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(.6px);
+  -webkit-backdrop-filter: blur(.6px);
 }
-
-
-/* subtle top ornament */
 
 .ereri-story-card::before {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  left: 14%;
-  right: 14%;
-
-  height: 1px;
-
-  background:
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(196, 204, 192, 0.22),
-      transparent
-    );
+  content: none;
 }
-
 
 /* ==========================================================
    HEADER
@@ -1037,13 +1033,20 @@ body.ereri.ereri-story {
 
 
   .ereri-story-card {
-    padding:
-      44px
-      28px
-      60px;
+  padding:
+    44px
+    26px
+    60px;
 
-    border-radius: 14px;
-  }
+  background:
+    linear-gradient(
+      155deg,
+      rgba(8, 14, 13, .20),
+      rgba(5, 11, 11, .28)
+    );
+
+  border-radius: 10px;
+}
 
 
   .ereri-story-header {
@@ -1165,7 +1168,7 @@ body.ereri.ereri-story {
       20px
       52px;
 
-    border-radius: 12px;
+    border-radius: 8px;
   }
 
 
