@@ -734,6 +734,13 @@ body.ereri-index::before {
   counter-reset: ereriStory 6;
 }
 
+.page-3 .ereri-toc {
+  counter-reset: ereriStory 12;
+}
+
+.page-4 .ereri-toc {
+  counter-reset: ereriStory 18;
+}
 
 /* ==========================================================
    BOTTOM ORNAMENT
