@@ -303,7 +303,7 @@ body.ereri-index::before {
 .ereri-secret {
   display: inline-block;
 
-  color: rgba(236, 224, 195, .94);
+  color: rgba(192, 176, 143, .94);
 
   font-size: clamp(1.55rem, 4.5vw, 2.15rem);
   font-weight: 400;
@@ -314,9 +314,10 @@ body.ereri-index::before {
   text-transform: uppercase;
   text-decoration: none;
 
-  text-shadow:
-    0 2px 14px rgba(0, 0, 0, .82),
-    0 0 22px rgba(205, 173, 108, .08);
+ text-shadow:
+    0 2px 14px rgba(0, 0, 0, .88),
+    0 0 18px rgba(192, 176, 143, .08);
+}
 
   transition:
     color .4s ease,
@@ -324,11 +325,11 @@ body.ereri-index::before {
 }
 
 .ereri-secret:hover {
-  color: rgba(248, 236, 207, 1);
+  color: rgba(211, 198, 169, 1);
 
   text-shadow:
     0 2px 14px rgba(0, 0, 0, .9),
-    0 0 18px rgba(211, 177, 106, .22);
+    0 0 18px rgba(192, 176, 143, .16);
 }
 
 /* ==========================================================
