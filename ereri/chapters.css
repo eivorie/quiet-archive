@@ -4,6 +4,11 @@
    Mobile First
 ========================================================== */
 
+/* ==========================================================
+   FONTS
+========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lancelot&display=swap");
 
 /* ==========================================================
    PAGE
@@ -21,7 +26,7 @@ body.ereri.ereri-story {
 
   overflow-x: hidden;
 
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Lancelot", serif;
   color: rgba(224, 225, 220, .88);
 
   background-color: #07100f;
@@ -469,7 +474,6 @@ body.ereri.ereri-story {
 
 /* ==========================================================
    CONTENT
-   Open reading area — NO CARD
 ========================================================== */
 
 .ereri-story-content {
@@ -486,17 +490,18 @@ body.ereri.ereri-story {
     14px
     30px;
 
-  color: rgba(228, 226, 218, .91);
+  color:
+    rgba(228, 226, 218, .91);
 
   font-family:
-    "Cormorant Garamond",
+    "Lancelot",
     serif;
 
-  font-size: 1.04rem;
+  font-size: 1.08rem;
   font-weight: 400;
 
-  line-height: 1.76;
-  letter-spacing: .006em;
+  line-height: 1.78;
+  letter-spacing: .008em;
 
   background: transparent;
 
@@ -510,7 +515,6 @@ body.ereri.ereri-story {
 
   isolation: isolate;
 }
-
 
 /* ==========================================================
    CONTENT — SOFT READABILITY HALO
@@ -567,24 +571,60 @@ body.ereri.ereri-story {
 ========================================================== */
 
 .ereri-story-content .dialogue {
+  position: relative;
+
   margin:
-    1.35em
-    0;
+    1.55em
+    0
+    1.55em
+    1.35em;
 
-  padding: 0;
+  padding-left: 1.45em;
 
-  color: rgba(240, 236, 226, .96);
+  color:
+    rgba(241, 237, 226, .96);
 
-  font-family: inherit;
-  font-size: inherit;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
-  font-weight: 400;
+  font-size: 1.06em;
+  font-weight: 500;
   font-style: normal;
 
-  line-height: inherit;
-  letter-spacing: inherit;
+  line-height: 1.65;
+  letter-spacing: .012em;
 
   border: 0;
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, .22);
+}
+
+
+/* ----------------------------------------------------------
+   DIALOGUE MARK
+---------------------------------------------------------- */
+
+.ereri-story-content .dialogue::before {
+  content: "—";
+
+  position: absolute;
+
+  top: -.02em;
+  left: 0;
+
+  color:
+    rgba(190, 159, 111, .68);
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 1.15em;
+  font-weight: 400;
+
+  line-height: 1.4;
 }
 
 
