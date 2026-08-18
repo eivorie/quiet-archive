@@ -25,11 +25,14 @@ body.ereri.ereri-story {
 
   background-color: #07100f;
 
+ 
   background-image:
     linear-gradient(
       to bottom,
-      rgba(7, 9, 8, .01),
-      rgba(7, 9, 8, .04)
+      rgba(7, 9, 8, 0) 0%,
+      rgba(7, 13, 11, .04) 35%,
+      rgba(6, 14, 12, .20) 65%,
+      rgba(8, 14, 12, .34) 100%
     ),
     url("images/chapters-background.png");
 
@@ -71,18 +74,74 @@ body.ereri.ereri-story {
   pointer-events: none;
 }
 
+.ereri-ambient::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 18% 28%,
+      rgba(77, 101, 78, .09) 0%,
+      rgba(45, 70, 55, .035) 30%,
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse at 84% 64%,
+      rgba(116, 91, 53, .07) 0%,
+      rgba(83, 68, 43, .025) 30%,
+      transparent 57%
+    ),
+    radial-gradient(
+      ellipse at 46% 92%,
+      rgba(55, 85, 68, .075) 0%,
+      transparent 52%
+    );
+
+  pointer-events: none;
+}
+
+.ereri-ambient::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  opacity: .55;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 22%,
+      rgba(164, 145, 103, .018) 38%,
+      transparent 54%
+    ),
+    linear-gradient(
+      245deg,
+      transparent 0%,
+      transparent 28%,
+      rgba(89, 120, 94, .025) 46%,
+      transparent 66%
+    );
+
+  pointer-events: none;
+}
+
 .ereri-ambient span {
   position: absolute;
 
-  width: 3px;
-  height: 3px;
+  width: 2px;
+  height: 2px;
 
   border-radius: 50%;
 
-  background: rgba(210, 217, 205, .25);
+  background: rgba(211, 205, 177, .34);
 
   box-shadow:
-    0 0 8px rgba(202, 212, 198, .15);
+    0 0 7px rgba(192, 181, 145, .20),
+    0 0 14px rgba(119, 143, 118, .08);
 
   opacity: 0;
 
