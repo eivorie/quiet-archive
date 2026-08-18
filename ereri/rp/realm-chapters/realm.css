@@ -144,30 +144,34 @@ body.realm-world::before {
 
 .realm-header {
   text-align: center;
+  margin-top: 24px;
 
   animation: realmReveal .9s ease both;
 }
 
-
 /* ==========================================================
-   KICKER
+   KICKER — MANUSCRIPT I · REALM
 ========================================================== */
 
 .realm-kicker {
   display: block;
 
-  margin-bottom: 18px;
+  margin: 0;
 
-  color: rgba(184, 156, 101, .68);
+  color: rgba(201, 174, 119, .76);
 
-  font-size: .62rem;
-  letter-spacing: .38em;
+  font-size: .72rem;
+  font-weight: 500;
 
-  text-indent: .38em;
+  letter-spacing: .34em;
+  text-indent: .34em;
 
   text-transform: uppercase;
-}
 
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, .9),
+    0 0 14px rgba(180, 137, 73, .12);
+}
 
 /* ==========================================================
    TITLE
@@ -240,13 +244,19 @@ body.realm-world::before {
 .realm-chapters {
   width: min(72%, 400px);
 
+  /*
+     Le header a été retiré visuellement de l'équation :
+     on garde volontairement les chapitres plus bas
+     pour libérer les visages.
+  */
   margin:
-    clamp(150px, 23vh, 210px)
+    clamp(180px, 27vh, 235px)
     auto
     0;
 
   animation: realmReveal .9s .18s ease both;
 }
+
 /* ==========================================================
    SECTION LABEL
 ========================================================== */
