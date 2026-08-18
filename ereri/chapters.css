@@ -5,12 +5,6 @@
 ========================================================== */
 
 /* ==========================================================
-   FONTS
-========================================================== */
-
-@import url("https://fonts.googleapis.com/css2?family=Bellefair&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
-
-/* ==========================================================
    PAGE
 ========================================================== */
 
@@ -26,7 +20,7 @@ body.ereri.ereri-story {
 
   overflow-x: hidden;
 
-  font-family: "Bellefair", serif;
+  font-family: "Cormorant Garamond", serif;
   color: rgba(224, 225, 220, .88);
 
   background-color: #07100f;
@@ -490,7 +484,7 @@ body.ereri.ereri-story {
   color:
     rgba(228, 226, 218, .91);
 
-  font-family: "Bellefair", serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 1.12rem;
   font-weight: 400;
@@ -569,26 +563,26 @@ body.ereri.ereri-story {
   position: relative;
 
   margin:
-    1.55em
+    1.15em
     0
-    1.55em
-    1.35em;
+    1.15em
+    1.15em;
 
-  padding-left: 1.45em;
+  padding-left: 1.5em;
 
   color:
-    rgba(241, 237, 226, .96);
+    rgba(242, 237, 225, .97);
 
   font-family:
     "Cormorant Garamond",
     serif;
 
-  font-size: 1.06em;
+  font-size: 1.04em;
   font-weight: 500;
   font-style: normal;
 
-  line-height: 1.65;
-  letter-spacing: .012em;
+  line-height: 1.58;
+  letter-spacing: .008em;
 
   border: 0;
 
@@ -606,22 +600,26 @@ body.ereri.ereri-story {
 
   position: absolute;
 
-  top: -.02em;
+  top: 0;
   left: 0;
 
   color:
-    rgba(190, 159, 111, .68);
+    rgba(190, 159, 111, .72);
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 1.15em;
+  font-size: 1.08em;
   font-weight: 400;
 
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
+
+/* ----------------------------------------------------------
+   CONSECUTIVE DIALOGUES
+---------------------------------------------------------- */
+
+.ereri-story-content .dialogue + .dialogue {
+  margin-top: .45em;
+}
 
 /* ==========================================================
    SOFT
@@ -1304,10 +1302,12 @@ body.ereri.ereri-story {
     filter: blur(24px);
   }
 
-  .ereri-story-content p {
-    margin-bottom: 1.5em;
-  }
-
+    .ereri-story-content p {
+     margin:
+       0
+       0
+       1.42em;
+   }
 
   /* ========================================================
      SPECIAL TEXT
