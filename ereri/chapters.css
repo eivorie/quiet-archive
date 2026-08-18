@@ -21,18 +21,18 @@ body.ereri.ereri-story {
   overflow-x: hidden;
 
   font-family: "Cormorant Garamond", serif;
-  color: rgba(224, 225, 220, .88);
+  color: rgba(224, 220, 210, .88);
 
-  background-color: #07100f;
+  /* continuation naturelle du background */
+  background-color: #17130f;
 
- 
   background-image:
     linear-gradient(
       to bottom,
-      rgba(7, 9, 8, 0) 0%,
-      rgba(7, 13, 11, .04) 35%,
-      rgba(6, 14, 12, .20) 65%,
-      rgba(8, 14, 12, .34) 100%
+      rgba(12, 10, 8, .02) 0%,
+      rgba(18, 15, 11, .04) 35%,
+      rgba(22, 18, 13, .08) 70%,
+      rgba(24, 19, 14, .14) 100%
     ),
     url("images/chapters-background.png");
 
@@ -51,7 +51,6 @@ body.ereri.ereri-story {
     scroll,
     scroll;
 }
-
 
 .ereri-story-header,
 .ereri-story-title,
@@ -83,19 +82,19 @@ body.ereri.ereri-story {
   background:
     radial-gradient(
       ellipse at 18% 28%,
-      rgba(77, 101, 78, .09) 0%,
-      rgba(45, 70, 55, .035) 30%,
+      rgba(116, 91, 61, .07) 0%,
+      rgba(83, 65, 44, .025) 30%,
       transparent 58%
     ),
     radial-gradient(
       ellipse at 84% 64%,
-      rgba(116, 91, 53, .07) 0%,
-      rgba(83, 68, 43, .025) 30%,
+      rgba(143, 108, 66, .08) 0%,
+      rgba(96, 72, 44, .03) 30%,
       transparent 57%
     ),
     radial-gradient(
       ellipse at 46% 92%,
-      rgba(55, 85, 68, .075) 0%,
+      rgba(92, 70, 47, .055) 0%,
       transparent 52%
     );
 
@@ -115,14 +114,41 @@ body.ereri.ereri-story {
       115deg,
       transparent 0%,
       transparent 22%,
-      rgba(164, 145, 103, .018) 38%,
+      rgba(164, 132, 88, .022) 38%,
       transparent 54%
     ),
     linear-gradient(
       245deg,
       transparent 0%,
       transparent 28%,
-      rgba(89, 120, 94, .025) 46%,
+      rgba(121, 92, 59, .018) 46%,
+      transparent 66%
+    );
+
+  pointer-events: none;
+}
+
+.ereri-ambient::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  opacity: .55;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 22%,
+      rgba(164, 132, 88, .022) 38%,
+      transparent 54%
+    ),
+    linear-gradient(
+      245deg,
+      transparent 0%,
+      transparent 28%,
+      rgba(121, 92, 59, .018) 46%,
       transparent 66%
     );
 
@@ -137,11 +163,11 @@ body.ereri.ereri-story {
 
   border-radius: 50%;
 
-  background: rgba(211, 205, 177, .34);
+  background: rgba(205, 169, 111, .30);
 
   box-shadow:
-    0 0 7px rgba(192, 181, 145, .20),
-    0 0 14px rgba(119, 143, 118, .08);
+    0 0 7px rgba(190, 146, 89, .18),
+    0 0 14px rgba(128, 94, 58, .08);
 
   opacity: 0;
 
@@ -1191,40 +1217,6 @@ body.ereri.ereri-story {
 
 @media (min-width: 769px) {
 
-  /* ========================================================
-     BACKGROUND
-  ======================================================== */
-
-  body.ereri.ereri-story {
-    background-image:
-      linear-gradient(
-        to bottom,
-        rgba(7, 9, 8, .01),
-        rgba(7, 9, 8, .035)
-      ),
-      url("images/chapters-background.png");
-
-    background-repeat:
-      no-repeat,
-      no-repeat;
-
-    background-position:
-      center top,
-      center top;
-
-    background-size:
-      100% 100%,
-      cover;
-
-    background-attachment:
-      fixed,
-      fixed;
-  }
-
-
-  /* ========================================================
-     NAVBAR
-  ======================================================== */
 
   .ereri-story .nav {
     gap:
