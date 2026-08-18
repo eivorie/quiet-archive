@@ -17,22 +17,24 @@ body.ereri.ereri-story {
   margin: 0;
 
   position: relative;
-
   overflow-x: hidden;
 
   font-family: "Cormorant Garamond", serif;
-  color: rgba(224, 220, 210, .88);
+  color: rgba(64, 51, 38, .94);
 
-  /* continuation naturelle du background */
-  background-color: #17130f;
+  /*
+   * Couleur prélevée dans l'esprit du mur du nouveau background.
+   * Elle prend naturellement le relais sous l'image.
+   */
+  background-color: #9b8567;
 
   background-image:
     linear-gradient(
       to bottom,
-      rgba(12, 10, 8, .02) 0%,
-      rgba(18, 15, 11, .04) 35%,
-      rgba(22, 18, 13, .08) 70%,
-      rgba(24, 19, 14, .14) 100%
+      rgba(67, 52, 37, .03) 0%,
+      rgba(67, 52, 37, .04) 55%,
+      rgba(73, 57, 40, .08) 82%,
+      rgba(74, 58, 41, .12) 100%
     ),
     url("images/chapters-background.png");
 
@@ -608,15 +610,6 @@ body.ereri.ereri-story {
   right: -18px;
   bottom: -36px;
   left: -18px;
-
-  background:
-    radial-gradient(
-      ellipse at 50% 42%,
-      rgba(2, 7, 6, .34) 0%,
-      rgba(2, 7, 6, .22) 42%,
-      rgba(2, 7, 6, .09) 62%,
-      transparent 80%
-    );
 
   filter: blur(18px);
 
@@ -1320,23 +1313,30 @@ body.ereri.ereri-story {
     line-height: 1.76;
   }
 
-  .ereri-story-content::before {
-    top: -55px;
-    right: -70px;
-    bottom: -55px;
-    left: -70px;
+ .ereri-story-content::before {
+  content: "";
 
-    background:
-      radial-gradient(
-        ellipse at 50% 42%,
-        rgba(2, 7, 6, .30) 0%,
-        rgba(2, 7, 6, .18) 43%,
-        rgba(2, 7, 6, .07) 64%,
-        transparent 82%
-      );
+  position: absolute;
+  z-index: -1;
 
-    filter: blur(24px);
-  }
+  top: -36px;
+  right: -18px;
+  bottom: -36px;
+  left: -18px;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 42%,
+      rgba(205, 185, 151, .18) 0%,
+      rgba(190, 166, 130, .10) 44%,
+      rgba(157, 132, 99, .04) 66%,
+      transparent 82%
+    );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
 
     .ereri-story-content p {
      margin:
