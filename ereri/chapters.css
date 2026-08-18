@@ -1,0 +1,938 @@
+/* ==========================================================
+   ERERI — CHAPTERS
+   Common story layout
+   ========================================================== */
+
+
+/* ==========================================================
+   PAGE
+   ========================================================== */
+
+.ereri-story {
+  min-height: 100vh;
+
+  color: rgba(224, 225, 220, 0.88);
+
+  overflow-x: hidden;
+}
+
+
+/* ==========================================================
+   STORY PAGE
+   ========================================================== */
+
+.ereri-story-page {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding:
+    clamp(48px, 7vh, 90px)
+    clamp(20px, 4vw, 52px)
+    100px;
+}
+
+
+/* ==========================================================
+   STORY CARD
+   ========================================================== */
+
+.ereri-story-card {
+  position: relative;
+
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding:
+    clamp(48px, 6vw, 78px)
+    clamp(32px, 7vw, 88px)
+    clamp(60px, 7vw, 90px);
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(178, 187, 177, 0.055),
+      transparent 38%
+    ),
+    linear-gradient(
+      160deg,
+      rgba(31, 35, 34, 0.94),
+      rgba(18, 21, 20, 0.97)
+    );
+
+  border:
+    1px solid rgba(196, 202, 193, 0.10);
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+
+/* fine ligne supérieure */
+
+.ereri-story-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 12%;
+  right: 12%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(190, 198, 188, 0.22),
+      transparent
+    );
+}
+
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.ereri-story-header {
+  position: relative;
+
+  margin-bottom: 44px;
+
+  text-align: center;
+}
+
+
+/* petit ornement */
+
+.ereri-story-header::after {
+  content: "";
+
+  display: block;
+
+  width: 42px;
+  height: 1px;
+
+  margin: 22px auto 0;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(180, 190, 178, 0.48),
+      transparent
+    );
+}
+
+
+/* ==========================================================
+   TITLE
+   ========================================================== */
+
+.ereri-story-title {
+  margin: 0;
+
+  color: rgba(226, 228, 222, 0.92);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size:
+    clamp(2.4rem, 5vw, 4rem);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: 0.035em;
+
+  text-wrap: balance;
+
+  text-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.38);
+}
+
+
+/* ==========================================================
+   SUBTITLE
+   ========================================================== */
+
+.ereri-story-subtitle {
+  margin: 14px 0 0;
+
+  color: rgba(175, 184, 176, 0.56);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 0.88rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   ILLUSTRATION
+   ========================================================== */
+
+.ereri-story-illustration {
+  position: relative;
+
+  width: min(100%, 620px);
+
+  margin:
+    0 auto
+    clamp(52px, 7vw, 72px);
+
+  text-align: center;
+}
+
+
+.ereri-story-illustration img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  margin: 0 auto;
+
+  border-radius: 2px;
+
+  filter:
+    saturate(0.84)
+    contrast(1.03)
+    brightness(0.92);
+
+  box-shadow:
+    0 26px 55px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(211, 216, 207, 0.08);
+
+  transition:
+    filter 0.5s ease,
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+
+.ereri-story-illustration img:hover {
+  filter:
+    saturate(0.94)
+    contrast(1.02)
+    brightness(0.98);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 32px 65px rgba(0, 0, 0, 0.48),
+    0 0 0 1px rgba(211, 216, 207, 0.11);
+}
+
+
+/* ==========================================================
+   CONTENT
+   ========================================================== */
+
+.ereri-story-content {
+  width: 100%;
+  max-width: 690px;
+
+  margin: 0 auto;
+
+  color: rgba(216, 219, 212, 0.84);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size:
+    clamp(1.05rem, 1.5vw, 1.16rem);
+
+  font-weight: 400;
+
+  line-height: 1.82;
+
+  letter-spacing: 0.012em;
+}
+
+
+/* ==========================================================
+   PARAGRAPHS
+   ========================================================== */
+
+.ereri-story-content p {
+  margin:
+    0
+    0
+    1.45em;
+}
+
+
+.ereri-story-content p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ==========================================================
+   DIALOGUE
+   ========================================================== */
+
+.ereri-story-content .dialogue {
+  margin-top: 1.7em;
+  margin-bottom: 1.7em;
+
+  padding-left: 22px;
+
+  color: rgba(230, 231, 225, 0.91);
+
+  font-style: italic;
+
+  border-left:
+    1px solid rgba(163, 176, 163, 0.25);
+}
+
+
+/* ==========================================================
+   SOFT
+   ========================================================== */
+
+.ereri-story-content .soft {
+  color: rgba(195, 202, 194, 0.76);
+
+  font-style: italic;
+}
+
+
+/* ==========================================================
+   QUIET
+   ========================================================== */
+
+.ereri-story-content .quiet {
+  color: rgba(181, 188, 181, 0.62);
+
+  font-style: italic;
+
+  letter-spacing: 0.025em;
+}
+
+
+/* ==========================================================
+   EMPHASIS
+   ========================================================== */
+
+.ereri-story-content .emphasis {
+  margin:
+    2.4em
+    0;
+
+  color: rgba(225, 227, 219, 0.92);
+
+  font-size: 1.12em;
+
+  font-style: italic;
+
+  text-align: center;
+
+  letter-spacing: 0.04em;
+}
+
+
+/* ==========================================================
+   STRONG MOMENT
+   ========================================================== */
+
+.ereri-story-content .strong {
+  margin:
+    2.3em
+    0;
+
+  color: rgba(226, 229, 221, 0.92);
+
+  font-size: 1.18em;
+
+  font-style: italic;
+
+  text-align: center;
+
+  letter-spacing: 0.06em;
+}
+
+
+/* ==========================================================
+   TRANSITIONS
+   ========================================================== */
+
+.ereri-story-content .transition {
+  position: relative;
+
+  margin:
+    4.5em
+    0
+    3em;
+
+  color: rgba(174, 184, 174, 0.65);
+
+  font-size: 0.92em;
+
+  font-style: italic;
+
+  text-align: center;
+
+  letter-spacing: 0.13em;
+}
+
+
+.ereri-story-content .transition::before {
+  content: "";
+
+  display: block;
+
+  width: 52px;
+  height: 1px;
+
+  margin:
+    0 auto
+    24px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(171, 183, 170, 0.32),
+      transparent
+    );
+}
+
+
+/* ==========================================================
+   ENDING
+   ========================================================== */
+
+.ereri-story-content .ending {
+  position: relative;
+
+  margin-top: 4.8em;
+
+  padding-top: 3.2em;
+
+  color: rgba(222, 225, 217, 0.88);
+
+  font-size: 1.08em;
+
+  font-style: italic;
+
+  line-height: 1.9;
+
+  text-align: center;
+}
+
+
+.ereri-story-content .ending::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 70px;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(178, 190, 177, 0.42),
+      transparent
+    );
+}
+
+
+/* ==========================================================
+   FINAL LINE
+   ========================================================== */
+
+.ereri-story-content .final-line {
+  margin-top: 3.5em;
+
+  color: rgba(230, 232, 225, 0.94);
+
+  font-size: 1.15em;
+
+  font-style: italic;
+
+  text-align: center;
+
+  letter-spacing: 0.04em;
+}
+
+
+/* ==========================================================
+   TEXT MESSAGE
+   Used by stories such as "Toi et moi"
+   ========================================================== */
+
+.ereri-story-content .text-message {
+  width: fit-content;
+  max-width: 82%;
+
+  margin:
+    2.4em auto;
+
+  padding:
+    14px 18px;
+
+  color: rgba(225, 230, 224, 0.86);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Inter,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-size: 0.88em;
+
+  font-style: normal;
+
+  line-height: 1.55;
+
+  letter-spacing: 0;
+
+  background:
+    rgba(185, 198, 187, 0.08);
+
+  border:
+    1px solid rgba(202, 211, 202, 0.08);
+
+  border-radius:
+    16px
+    16px
+    16px
+    5px;
+}
+
+
+/* ==========================================================
+   TIME SHIFT
+   Used by "Toi et moi"
+   ========================================================== */
+
+.time-shift {
+  margin:
+    5em 0
+    4em;
+
+  text-align: center;
+}
+
+
+.time-shift .time-line {
+  max-width: 540px;
+
+  margin:
+    0 auto
+    1.2em;
+
+  color: rgba(193, 201, 192, 0.68);
+
+  font-style: italic;
+}
+
+
+.time-shift .time-divider {
+  display: block;
+
+  width: 76px;
+  height: 1px;
+
+  margin:
+    3em auto
+    0;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(178, 190, 177, 0.38),
+      transparent
+    );
+}
+
+
+/* ==========================================================
+   ZOO DAY — INTERACTIVE PHOTO
+   ========================================================== */
+
+.photo-trigger {
+  margin:
+    2.3em
+    0;
+
+  color: rgba(180, 193, 180, 0.64);
+
+  font-size: 0.9em;
+
+  font-style: italic;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    letter-spacing 0.25s ease;
+}
+
+
+.photo-trigger:hover {
+  color: rgba(221, 225, 216, 0.9);
+
+  letter-spacing: 0.015em;
+}
+
+
+.zoo-photo {
+  display: none;
+
+  margin-top: 2em;
+
+  animation:
+    ereri-photo-reveal
+    0.6s
+    ease
+    both;
+}
+
+
+.zoo-photo.active {
+  display: block;
+}
+
+
+@keyframes ereri-photo-reveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(10px)
+      scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* ==========================================================
+   WHITE THINGS — TEXT THREAD
+   Keep the original SMS identity
+   ========================================================== */
+
+.text-thread {
+  margin: 36px 0 42px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+/* JS controlled */
+
+.text-thread .text {
+  opacity: 0;
+
+  transform:
+    translateY(6px);
+
+  pointer-events: none;
+}
+
+
+.text-thread .text {
+  max-width: 75%;
+}
+
+
+.text-thread .text span {
+  display: inline-block;
+
+  padding:
+    10px
+    14px;
+
+  border-radius: 14px;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Inter,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-size: 0.95rem;
+
+  font-weight: 400;
+
+  line-height: 1.45;
+
+  letter-spacing: 0.01em;
+}
+
+
+/* Eren */
+
+.text-thread .text.eren {
+  align-self: flex-start;
+}
+
+
+.text-thread .text.eren span {
+  color: rgba(240, 245, 240, 0.9);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border-bottom-left-radius: 4px;
+}
+
+
+/* Levi */
+
+.text-thread .text.levi {
+  align-self: flex-end;
+
+  text-align: right;
+}
+
+
+.text-thread .text.levi span {
+  color: rgba(30, 40, 35, 0.95);
+
+  background:
+    rgba(180, 200, 190, 0.18);
+
+  border-bottom-right-radius: 4px;
+}
+
+
+/* typing animation */
+
+.typing-cursor {
+  display: inline-block;
+
+  width: 6px;
+
+  margin-left: 2px;
+
+  opacity: 0.7;
+
+  animation:
+    ereri-message-blink
+    1s
+    step-end
+    infinite;
+}
+
+
+@keyframes ereri-message-blink {
+
+  50% {
+    opacity: 0;
+  }
+
+}
+
+
+/* ==========================================================
+   WHITE THINGS — FLOWERS
+   ========================================================== */
+
+.flowers {
+  margin:
+    48px
+    0;
+
+  color: rgba(220, 230, 225, 0.65);
+
+  font-style: italic;
+
+  text-align: center;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+  .ereri-story-page {
+    padding:
+      36px
+      14px
+      70px;
+  }
+
+
+  .ereri-story-card {
+    padding:
+      42px
+      26px
+      58px;
+
+    border-radius: 3px;
+  }
+
+
+  .ereri-story-header {
+    margin-bottom: 36px;
+  }
+
+
+  .ereri-story-title {
+    font-size:
+      clamp(2.1rem, 11vw, 3rem);
+
+    line-height: 1.05;
+  }
+
+
+  .ereri-story-subtitle {
+    font-size: 0.78rem;
+
+    letter-spacing: 0.15em;
+  }
+
+
+  .ereri-story-illustration {
+    margin-bottom: 48px;
+  }
+
+
+  .ereri-story-content {
+    font-size: 1rem;
+
+    line-height: 1.75;
+  }
+
+
+  .ereri-story-content p {
+    margin-bottom: 1.35em;
+  }
+
+
+  .ereri-story-content .dialogue {
+    padding-left: 16px;
+  }
+
+
+  .ereri-story-content .transition {
+    margin:
+      3.8em
+      0
+      2.7em;
+  }
+
+
+  .ereri-story-content .ending {
+    margin-top: 4em;
+
+    padding-top: 2.8em;
+  }
+
+
+  /* White Things */
+
+  .text-thread {
+    margin:
+      28px
+      0
+      34px;
+
+    gap: 10px;
+  }
+
+
+  .text-thread .text {
+    max-width: 85%;
+  }
+
+
+  .text-thread .text span {
+    padding:
+      9px
+      13px;
+
+    font-size: 0.9rem;
+  }
+
+
+  .flowers {
+    margin:
+      36px
+      0;
+
+    font-size: 0.9rem;
+  }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL SCREENS
+   ========================================================== */
+
+@media (max-width: 480px) {
+
+  .ereri-story-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+  .ereri-story-card {
+    padding:
+      38px
+      20px
+      50px;
+  }
+
+
+  .ereri-story-content {
+    line-height: 1.72;
+  }
+
+
+  .text-thread .text {
+    max-width: 90%;
+  }
+
+}
