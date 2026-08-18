@@ -235,30 +235,6 @@ body.ereri-index::before {
     0 0 12px rgba(215, 188, 125, .18);
 }
 
-
-/* active Ereri */
-
-.nav a[href="index.html"]::after {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  bottom: -8px;
-
-  width: 18px;
-  height: 1px;
-
-  transform: translateX(-50%);
-
-  background:
-    rgba(191, 158, 96, .58);
-
-  box-shadow:
-    0 0 7px rgba(191, 158, 96, .28);
-}
-
-
 /* ==========================================================
    PAGE
 ========================================================== */
@@ -267,14 +243,14 @@ body.ereri-index::before {
   position: relative;
   z-index: 1;
 
-  width: min(100%, 680px);
+  width: min(100%, 650px);
 
   margin: 0 auto;
 
   padding:
-    clamp(85px, 12vh, 135px)
+    clamp(52px, 7vh, 72px)
     38px
-    80px;
+    38px;
 }
 
 /* ==========================================================
@@ -319,7 +295,7 @@ body.ereri-index::before {
   margin:
     0
     auto
-    clamp(105px, 15vh, 145px);
+    clamp(62px, 8vh, 82px);
 
   text-align: center;
 }
@@ -389,8 +365,8 @@ body.ereri-index::before {
   position: relative;
 
   padding:
-    14px
-    28px;
+    7px
+    24px;
 
   border:
     1px solid rgba(191, 161, 103, .28);
@@ -457,20 +433,20 @@ body.ereri-index::before {
 .ereri-toc a {
   position: relative;
 
-  min-height: 62px;
+  min-height: 50px;
 
   padding:
-    16px
-    36px
-    16px
-    52px;
+    11px
+    34px
+    11px
+    48px;
 
   display: flex;
   align-items: center;
 
   color: rgba(221, 216, 198, .78);
 
-  font-size: .78rem;
+  font-size: .76rem;
   font-weight: 500;
 
   letter-spacing: .14em;
@@ -498,17 +474,16 @@ body.ereri-index::before {
   content: "—";
 
   position: absolute;
-  left: 26px;
+  left: 23px;
 
   color: rgba(185, 151, 88, .48);
 
-  font-size: .75rem;
+  font-size: .72rem;
 
   transition:
     color .35s ease,
     transform .35s ease;
 }
-
 
 /* arrow */
 
@@ -609,13 +584,13 @@ body.ereri-index::before {
 ========================================================== */
 
 .ereri-pagination {
-  margin-top: 30px;
+  margin-top: 20px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  gap: 18px;
+  gap: 16px;
 
   color: rgba(190, 167, 121, .46);
 
@@ -769,9 +744,9 @@ body.ereri-index::before {
 
   .ereri-page {
     padding:
-      65px
+      42px
       18px
-      60px;
+      30px;
   }
 
   .ereri-card {
@@ -783,13 +758,35 @@ body.ereri-index::before {
   }
 
   .ereri-title {
-    margin-bottom: 100px;
+    margin-bottom: 58px;
   }
 
   .ereri-toc {
     padding:
+      6px
+      16px;
+  }
+
+  .ereri-toc a {
+    min-height: 48px;
+
+    padding:
       10px
-      18px;
+      30px
+      10px
+      44px;
+
+    font-size: .72rem;
+    line-height: 1.25;
+  }
+
+  .ereri-toc a::before {
+    left: 21px;
+  }
+
+  .ereri-pagination {
+    margin-top: 18px;
+    gap: 11px;
   }
 
 }
