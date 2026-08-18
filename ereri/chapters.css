@@ -249,11 +249,10 @@ body.ereri.ereri-story {
   margin: 0 auto;
 
   padding:
-    clamp(42px, 6vh, 72px)
+    22px
     clamp(20px, 4vw, 52px)
-    110px;
+    100px;
 }
-
 
 /* ==========================================================
    STORY — TRANSPARENT READING VEIL
@@ -310,26 +309,6 @@ body.ereri.ereri-story {
   margin-bottom: 42px;
 
   text-align: center;
-}
-
-
-.ereri-story-header::after {
-  content: "";
-
-  display: block;
-
-  width: 46px;
-  height: 1px;
-
-  margin: 24px auto 0;
-
-  background:
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(190, 199, 186, 0.48),
-      transparent
-    );
 }
 
 
@@ -393,8 +372,8 @@ body.ereri.ereri-story {
   max-width: 100%;
 
   margin:
-    42px auto
-    66px;
+    30px auto
+    54px;
 
   padding: 10px;
 
@@ -1103,20 +1082,36 @@ body.ereri.ereri-story {
   }
 
 
-  .ereri-story-card {
+.ereri-story-card {
+  position: relative;
+
+  width: 100%;
+  max-width: 820px;
+
+  margin: 0 auto;
+
   padding:
-    44px
-    26px
-    60px;
+    28px
+    clamp(34px, 7vw, 82px)
+    clamp(68px, 7vw, 94px);
 
   background:
     linear-gradient(
       155deg,
-      rgba(8, 14, 13, .20),
-      rgba(5, 11, 11, .28)
+      rgba(8, 14, 13, .16),
+      rgba(5, 11, 11, .24)
     );
 
-  border-radius: 10px;
+  border:
+    1px solid rgba(205, 187, 150, .045);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, .10);
+
+  backdrop-filter: blur(.6px);
+  -webkit-backdrop-filter: blur(.6px);
 }
 
  .ereri-story-illustration {
@@ -1131,9 +1126,32 @@ body.ereri.ereri-story {
     max-width: 320px;
   }
 
-  .ereri-story-header {
-    margin-bottom: 36px;
-  }
+ .ereri-story-header {
+  position: relative;
+
+  margin-bottom: 30px;
+
+  text-align: center;
+}
+
+.ereri-story-header::after {
+  content: "";
+
+  display: block;
+
+  width: 42px;
+  height: 1px;
+
+  margin: 18px auto 0;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(190, 199, 186, .42),
+      transparent
+    );
+}
 
 
   .ereri-story-title {
