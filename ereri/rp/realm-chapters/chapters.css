@@ -71,7 +71,7 @@ body.rp-world::before {
   pointer-events: none;
 
   background:
-    url("../images/chapters-glow.png")
+    url("../../images/chapters-glow.png")
     top right / cover
     no-repeat;
 
