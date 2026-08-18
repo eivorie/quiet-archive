@@ -35,24 +35,35 @@ body.ereri-index {
   overflow-x: hidden;
 
   font-family: "Cormorant Garamond", serif;
-
   color: rgba(230, 224, 204, .92);
 
-  background:
+  background-color: #061012;
+
+  background-image:
     linear-gradient(
       to bottom,
-      rgba(3, 12, 15, .12),
-      rgba(3, 12, 15, .25) 55%,
-      rgba(3, 10, 12, .68) 100%
+      rgba(3, 10, 12, .04),
+      rgba(3, 10, 12, .08) 60%,
+      rgba(3, 10, 12, .22) 100%
     ),
-    url("images/ereri-background.png")
-    center top / cover
-    no-repeat
+    url("images/ereri-background.png");
+
+  background-repeat:
+    no-repeat,
+    no-repeat;
+
+  background-position: center top !important;
+
+  background-size:
+  100% 100%,
+  100% auto !important;
+
+  background-attachment:
+    fixed,
     fixed;
 
   -webkit-font-smoothing: antialiased;
 }
-
 
 /* ==========================================================
    ATMOSPHERIC VEIL
@@ -256,19 +267,18 @@ body.ereri-index::before {
   position: relative;
   z-index: 1;
 
-  width: min(100%, 720px);
+  width: min(100%, 680px);
 
   margin: 0 auto;
 
   padding:
-    clamp(58px, 8vh, 90px)
-    24px
-    70px;
+    clamp(85px, 12vh, 135px)
+    38px
+    80px;
 }
 
-
 /* ==========================================================
-   CARD
+   CONTENT — NO CARD
 ========================================================== */
 
 .ereri-card {
@@ -276,29 +286,17 @@ body.ereri-index::before {
 
   width: 100%;
 
-  padding:
-    48px
-    clamp(26px, 6vw, 58px)
-    34px;
+  padding: 0;
 
-  border:
-    1px solid rgba(192, 163, 105, .20);
+  border: 0;
+  border-radius: 0;
 
-  border-radius: 9px;
+  background: transparent;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(8, 25, 29, .72),
-      rgba(4, 16, 19, .82)
-    );
+  box-shadow: none;
 
-  box-shadow:
-    0 30px 90px rgba(0, 0, 0, .42),
-    inset 0 0 45px rgba(185, 153, 91, .025);
-
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 
   animation:
     ereriReveal
@@ -307,27 +305,12 @@ body.ereri-index::before {
     both;
 }
 
-
-/* fine inner frame */
-
 .ereri-card::before {
-  content: "";
-
-  position: absolute;
-  inset: 7px;
-
-  pointer-events: none;
-
-  border:
-    1px solid rgba(212, 184, 126, .035);
-
-  border-radius: 5px;
+  content: none;
 }
 
-
 /* ==========================================================
-   TITLE
-   FRAGMENTA MEMORIAE
+   TITLE — FRAGMENTA MEMORIAE
 ========================================================== */
 
 .ereri-title {
@@ -336,7 +319,7 @@ body.ereri-index::before {
   margin:
     0
     auto
-    56px;
+    clamp(105px, 15vh, 145px);
 
   text-align: center;
 }
@@ -344,21 +327,19 @@ body.ereri-index::before {
 .ereri-secret {
   display: inline-block;
 
-  color: rgba(235, 225, 199, .96);
+  color: rgba(236, 224, 195, .94);
 
-  font-size:
-    clamp(1.75rem, 6vw, 2.7rem);
-
+  font-size: clamp(1.55rem, 4.5vw, 2.15rem);
   font-weight: 400;
 
-  letter-spacing: .20em;
-  text-indent: .20em;
+  letter-spacing: .18em;
+  text-indent: .18em;
 
   text-transform: uppercase;
   text-decoration: none;
 
   text-shadow:
-    0 2px 14px rgba(0, 0, 0, .85),
+    0 2px 14px rgba(0, 0, 0, .82),
     0 0 22px rgba(205, 173, 108, .08);
 
   transition:
@@ -373,57 +354,6 @@ body.ereri-index::before {
     0 2px 14px rgba(0, 0, 0, .9),
     0 0 18px rgba(211, 177, 106, .22);
 }
-
-
-/* Fragmenta ornament */
-
-.ereri-title::before {
-  content: "❧";
-
-  display: block;
-
-  margin-bottom: 17px;
-
-  color: rgba(181, 150, 91, .50);
-
-  font-size: .85rem;
-
-  letter-spacing: 0;
-}
-
-
-/* little line under title */
-
-.ereri-title::after {
-  content: "✦";
-
-  display: block;
-
-  width: 150px;
-
-  margin:
-    18px
-    auto
-    0;
-
-  color: rgba(201, 169, 106, .60);
-
-  font-size: .55rem;
-
-  line-height: 1px;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(190, 159, 99, .32) 38%,
-      transparent 38%,
-      transparent 62%,
-      rgba(190, 159, 99, .32) 62%,
-      transparent
-    );
-}
-
 
 /* ==========================================================
    OPTIONAL SUBTITLE
@@ -448,17 +378,39 @@ body.ereri-index::before {
 
 
 /* ==========================================================
-   LAYOUT
+   STORIES FRAME
 ========================================================== */
 
 .ereri-layout {
   display: block;
 }
 
+.ereri-toc {
+  position: relative;
 
-/* ==========================================================
-   TABLE OF CONTENTS
-========================================================== */
+  padding:
+    14px
+    28px;
+
+  border:
+    1px solid rgba(191, 161, 103, .28);
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(3, 18, 21, .34),
+      rgba(3, 14, 17, .48)
+    );
+
+  box-shadow:
+    0 18px 55px rgba(0, 0, 0, .18),
+    inset 0 0 28px rgba(194, 158, 91, .018);
+
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+}
 
 .ereri-toc ul {
   list-style: none;
@@ -505,12 +457,12 @@ body.ereri-index::before {
 .ereri-toc a {
   position: relative;
 
-  min-height: 58px;
+  min-height: 62px;
 
   padding:
-    14px
+    16px
     36px
-    14px
+    16px
     52px;
 
   display: flex;
@@ -518,10 +470,10 @@ body.ereri-index::before {
 
   color: rgba(221, 216, 198, .78);
 
-  font-size: .84rem;
+  font-size: .78rem;
   font-weight: 500;
 
-  letter-spacing: .16em;
+  letter-spacing: .14em;
 
   text-transform: uppercase;
   text-decoration: none;
@@ -536,6 +488,9 @@ body.ereri-index::before {
     border-color .35s ease;
 }
 
+.ereri-toc li:last-child a {
+  border-bottom: 0;
+}
 
 /* dash before title */
 
@@ -747,7 +702,6 @@ body.ereri-index::before {
 ========================================================== */
 
 .ereri-card::after {
-  content: "❧";
 
   position: absolute;
 
@@ -813,102 +767,32 @@ body.ereri-index::before {
 
 @media (max-width: 600px) {
 
-  .nav {
-    gap: 10px 16px;
-
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .nav a {
-    font-size: .61rem;
-    letter-spacing: .13em;
-  }
-
-
   .ereri-page {
     padding:
-      42px
-      15px
-      65px;
+      65px
+      18px
+      60px;
   }
-
 
   .ereri-card {
-    padding:
-      39px
-      18px
-      27px;
-
-    border-radius: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
   }
-
 
   .ereri-title {
-    margin-bottom: 44px;
+    margin-bottom: 100px;
   }
 
-
-  .ereri-secret {
-    font-size:
-      clamp(1.35rem, 7vw, 1.85rem);
-
-    letter-spacing: .13em;
-    text-indent: .13em;
-  }
-
-
-  .ereri-title::after {
-    width: 115px;
-  }
-
-
-  .ereri-toc a {
-    min-height: 55px;
-
+  .ereri-toc {
     padding:
-      12px
-      28px
-      12px
-      42px;
-
-    font-size: .72rem;
-    line-height: 1.35;
-
-    letter-spacing: .10em;
-  }
-
-
-  .ereri-toc a::before {
-    left: 21px;
-  }
-
-
-  .ereri-toc a::after {
-    right: 3px;
-  }
-
-
-  .ereri-toc li::before {
-    left: 1px;
-
-    font-size: .57rem;
-  }
-
-
-  .ereri-toc li:hover a {
-    padding-left: 46px;
-  }
-
-
-  .ereri-pagination {
-    gap: 11px;
-
-    font-size: .55rem;
+      10px
+      18px;
   }
 
 }
-
 
 /* ==========================================================
    REDUCED MOTION
