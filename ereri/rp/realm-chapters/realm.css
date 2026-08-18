@@ -135,6 +135,8 @@ body.realm-world::before {
 
   margin: 0 auto;
 
+}
+
 
 /* ==========================================================
    HEADER
@@ -239,13 +241,12 @@ body.realm-world::before {
   width: min(72%, 400px);
 
   margin:
-    clamp(68px, 10vh, 92px)
+    clamp(150px, 23vh, 210px)
     auto
     0;
 
   animation: realmReveal .9s .18s ease both;
 }
-
 /* ==========================================================
    SECTION LABEL
 ========================================================== */
@@ -482,27 +483,26 @@ body.realm-world::before {
     padding-right: 30px;
   }
 
- .realm-chapters {
-  width: min(72%, 500px);
+  .realm-chapters {
+    width: min(68%, 420px);
+  }
+
+  .realm-chapter {
+    min-height: 46px;
+
+    padding: 9px 3px;
+
+    grid-template-columns:
+      30px
+      1fr
+      auto;
+  }
+
+  .realm-title {
+    font-size: .94rem;
+  }
+
 }
-
-.realm-chapter {
-  min-height: 56px;
-
-  padding: 12px 4px;
-
-  grid-template-columns:
-    34px
-    1fr
-    auto;
-}
-
-.realm-title {
-  font-size: 1.05rem;
-}
-
-}
-
 
 /* ==========================================================
    REDUCED MOTION
