@@ -583,77 +583,92 @@ body.ereri-index::before {
    PAGINATION
 ========================================================== */
 
-.ereri-pagination {
-  margin-top: 20px;
+.ereri-pagination{
+    margin-top:20px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-  gap: 16px;
+    gap:16px;
 
-  color: rgba(190, 167, 121, .46);
-
-  font-size: .60rem;
-
-  letter-spacing: .14em;
-
-  text-transform: uppercase;
+    font-size:.60rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
 }
 
-.ereri-pagination a {
-  color: rgba(199, 179, 137, .55);
+/* liens ET boutons */
 
-  text-decoration: none;
+.ereri-pagination a,
+.ereri-pagination button{
 
-  transition:
-    color .3s ease,
-    transform .3s ease;
+    font:inherit;
+    letter-spacing:inherit;
+    text-transform:inherit;
+
+    background:none;
+    border:none;
+    padding:0;
+
+    color:rgba(199,179,137,.55);
+
+    cursor:pointer;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
 }
 
-.ereri-pagination a:hover {
-  color: rgba(232, 209, 161, .92);
+.ereri-pagination a:hover,
+.ereri-pagination button:hover{
+    color:rgba(232,209,161,.92);
 }
 
-.ereri-pagination .page-number {
-  display: inline-flex;
 
-  width: 27px;
-  height: 27px;
+/* numéros */
 
-  align-items: center;
-  justify-content: center;
+.ereri-pagination .page-number{
 
-  color: rgba(197, 175, 129, .48);
+    display:inline-flex;
 
-  text-decoration: none;
+    justify-content:center;
+    align-items:center;
 
-  border:
-    1px solid transparent;
+    width:27px;
+    height:27px;
 
-  border-radius: 50%;
+    border-radius:50%;
+    border:1px solid transparent;
 
-  transition:
-    color .3s ease,
-    border-color .3s ease,
-    background .3s ease;
+    color:rgba(197,175,129,.48);
 }
 
-.ereri-pagination .page-number:hover {
-  color: rgba(234, 212, 167, .9);
+.ereri-pagination .page-number.current{
+
+    color:rgba(222,195,140,.92);
+
+    border-color:rgba(190,155,91,.36);
+
+    background:rgba(174,140,77,.05);
+
+    box-shadow:
+        0 0 12px rgba(188,151,85,.08);
 }
 
-.ereri-pagination .page-number.current {
-  color: rgba(222, 195, 140, .92);
 
-  border-color:
-    rgba(190, 155, 91, .36);
+/* Previous / Next */
 
-  background:
-    rgba(174, 140, 77, .05);
+.ereri-pagination-prev,
+.ereri-pagination-next{
 
-  box-shadow:
-    0 0 12px rgba(188, 151, 85, .08);
+    color:rgba(199,179,137,.55);
+}
+
+.ereri-pagination-prev:disabled,
+.ereri-pagination-next:disabled{
+
+    opacity:.25;
+    cursor:default;
 }
 
 /* ==========================================================
