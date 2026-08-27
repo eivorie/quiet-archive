@@ -37,8 +37,6 @@ body.ereri-index {
   font-family: "Cormorant Garamond", serif;
   color: rgba(230, 224, 204, .92);
 
-  background-color: #061012;
-
   background-image:
     linear-gradient(
       to bottom,
@@ -56,7 +54,7 @@ body.ereri-index {
 
   background-size:
   100% 100%,
-  100% auto !important;
+  cover;
 
   background-attachment:
     fixed,
