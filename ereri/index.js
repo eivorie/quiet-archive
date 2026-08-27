@@ -20,8 +20,11 @@ function showPage(index) {
     pageButtons[index].classList.add("current");
     pageButtons[index].setAttribute("aria-current", "page");
 
-    prevButton.disabled = index === 0;
-    nextButton.disabled = index === pages.length - 1;
+    prevButton.style.visibility =
+        index === 0 ? "hidden" : "visible";
+
+    nextButton.style.visibility =
+        index === pages.length - 1 ? "hidden" : "visible";
 
     currentPage = index;
 }
