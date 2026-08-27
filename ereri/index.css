@@ -314,10 +314,9 @@ body.ereri-index::before {
   text-transform: uppercase;
   text-decoration: none;
 
- text-shadow:
+  text-shadow:
     0 2px 14px rgba(0, 0, 0, .88),
     0 0 18px rgba(192, 176, 143, .08);
-}
 
   transition:
     color .4s ease,
@@ -658,19 +657,15 @@ body.ereri-index::before {
 }
 
 /* ==========================================================
-   STORY COUNTERS — PAGINATION
+   STORIES PAGES
 ========================================================== */
 
-.page-2 .ereri-toc {
-  counter-reset: ereriStory 6;
+.stories-page {
+  display: none;
 }
 
-.page-3 .ereri-toc {
-  counter-reset: ereriStory 12;
-}
-
-.page-4 .ereri-toc {
-  counter-reset: ereriStory 18;
+.stories-page.active {
+  display: block;
 }
 
 /* ==========================================================
