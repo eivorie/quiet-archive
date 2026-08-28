@@ -54,6 +54,18 @@ body.realm-world {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ==========================================================
+   PAGES
+========================================================== */
+
+.realm-page {
+  display: none;
+}
+
+.realm-page.active {
+  display: block;
+}
+
 
 /* ==========================================================
    AMBIENT VEIL
