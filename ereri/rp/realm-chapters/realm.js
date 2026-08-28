@@ -1,0 +1,45 @@
+const pages = document.querySelectorAll(".realm-page");
+const pageButtons = document.querySelectorAll(".realm-page-number");
+
+const prevButton = document.getElementById("prevPage");
+const nextButton = document.getElementById("nextPage");
+
+let currentPage = 0;
+
+function showPage(index) {
+
+    pages.forEach(page => page.classList.remove("active"));
+
+    pageButtons.forEach(button => {
+        button.classList.remove("current");
+        button.removeAttribute("aria-current");
+    });
+
+    pages[index].classList.add("active");
+
+    pageButtons[index].classList.add("current");
+    pageButtons[index].setAttribute("aria-current", "page");
+
+    prevButton.style.visibility = index === 0 ? "hidden" : "visible";
+    nextButton.style.visibility = index === pages.length - 1 ? "hidden" : "visible";
+
+    currentPage = index;
+}
+
+pageButtons.forEach((button, index) => {
+    button.addEventListener("click", () => showPage(index));
+});
+
+prevButton.addEventListener("click", () => {
+    if (currentPage > 0) {
+        showPage(currentPage - 1);
+    }
+});
+
+nextButton.addEventListener("click", () => {
+    if (currentPage < pages.length - 1) {
+        showPage(currentPage + 1);
+    }
+});
+
+showPage(0);
