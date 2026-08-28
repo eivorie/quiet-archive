@@ -30,60 +30,106 @@
   <main class="realm-home">
 
     <header class="realm-header">
-
       <span class="realm-kicker">MANUSCRIPT I · REALM</span>
-
     </header>
 
-    <section class="realm-chapters">
+    <!-- ==================================================
+         PAGE 1
+    =================================================== -->
 
-      <p class="realm-section-label">Chapters</p>
+    <div class="realm-page active" id="page-1">
 
-      <a href="01.html" class="realm-chapter">
-        <span class="realm-number">I</span>
-        <span class="realm-title">Chapter 1</span>
-        <span class="realm-arrow">→</span>
-      </a>
+      <section class="realm-chapters">
 
-      <a href="02.html" class="realm-chapter">
-        <span class="realm-number">II</span>
-        <span class="realm-title">Chapter 2</span>
-        <span class="realm-arrow">→</span>
-      </a>
+        <p class="realm-section-label">Chapters</p>
 
-      <a href="03.html" class="realm-chapter">
-        <span class="realm-number">III</span>
-        <span class="realm-title">Chapter 3</span>
-        <span class="realm-arrow">→</span>
-      </a>
+        <a href="01.html" class="realm-chapter">
+          <span class="realm-number">I</span>
+          <span class="realm-title">Chapter 1</span>
+          <span class="realm-arrow">→</span>
+        </a>
 
-      <a href="04.html" class="realm-chapter">
-        <span class="realm-number">IV</span>
-        <span class="realm-title">Chapter 4</span>
-        <span class="realm-arrow">→</span>
-      </a>
+        <a href="02.html" class="realm-chapter">
+          <span class="realm-number">II</span>
+          <span class="realm-title">Chapter 2</span>
+          <span class="realm-arrow">→</span>
+        </a>
 
-      <a href="05.html" class="realm-chapter">
-        <span class="realm-number">V</span>
-        <span class="realm-title">Chapter 5</span>
-        <span class="realm-arrow">→</span>
-      </a>
+        <a href="03.html" class="realm-chapter">
+          <span class="realm-number">III</span>
+          <span class="realm-title">Chapter 3</span>
+          <span class="realm-arrow">→</span>
+        </a>
 
-      <a href="06.html" class="realm-chapter">
-        <span class="realm-number">VI</span>
-        <span class="realm-title">Chapter 6</span>
-        <span class="realm-arrow">→</span>
-      </a>
+        <a href="04.html" class="realm-chapter">
+          <span class="realm-number">IV</span>
+          <span class="realm-title">Chapter 4</span>
+          <span class="realm-arrow">→</span>
+        </a>
 
-      <nav class="realm-pagination" aria-label="Chapter pages">
-        <span class="realm-page-line"></span>
-        <span class="realm-page-current">01</span>
-        <span class="realm-page-line"></span>
-      </nav>
+        <a href="05.html" class="realm-chapter">
+          <span class="realm-number">V</span>
+          <span class="realm-title">Chapter 5</span>
+          <span class="realm-arrow">→</span>
+        </a>
 
-    </section>
+        <a href="06.html" class="realm-chapter">
+          <span class="realm-number">VI</span>
+          <span class="realm-title">Chapter 6</span>
+          <span class="realm-arrow">→</span>
+        </a>
+
+      </section>
+
+    </div>
+
+    <!-- ==================================================
+         PAGE 2
+    =================================================== -->
+
+    <div class="realm-page" id="page-2">
+
+      <section class="realm-chapters">
+
+        <p class="realm-section-label">Chapters</p>
+
+        <a href="07.html" class="realm-chapter">
+          <span class="realm-number">VII</span>
+          <span class="realm-title">Chapter 7</span>
+          <span class="realm-arrow">→</span>
+        </a>
+
+      </section>
+
+    </div>
+
+    <!-- ==================================================
+         PAGINATION
+    =================================================== -->
+
+    <nav class="realm-pagination" aria-label="Chapter pages">
+
+      <button id="prevPage" class="realm-page-prev">
+        ‹ Previous
+      </button>
+
+      <button class="realm-page-number current" data-page="1">
+        01
+      </button>
+
+      <button class="realm-page-number" data-page="2">
+        02
+      </button>
+
+      <button id="nextPage" class="realm-page-next">
+        Next ›
+      </button>
+
+    </nav>
 
   </main>
+
+  <script src="realm.js"></script>
 
 </body>
 
