@@ -211,7 +211,7 @@ body.rp-world::before {
 .rp-pov {
   position: relative;
 
-  margin-bottom: 72px;
+  margin-bottom: 52px;
 }
 
 
@@ -284,8 +284,6 @@ body.rp-world::before {
   content: "·  ·  ·";
 
   display: block;
-
-  margin-top: 58px;
 
   color: rgba(171, 140, 83, .30);
 
