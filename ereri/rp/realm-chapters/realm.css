@@ -415,54 +415,90 @@ body.realm-world::before {
     1px solid rgba(201, 187, 151, .14);
 }
 
-   /* ==========================================================
+ /* ==========================================================
    PAGINATION
 ========================================================== */
 
-.realm-pagination {
-  margin-top: 22px;
+.realm-pagination{
+    margin-top:22px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-  gap: 12px;
+    gap:12px;
 
-  font-size: .58rem;
-  letter-spacing: .18em;
+    font-size:.58rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
 }
 
-.realm-page-current {
-  color: rgba(211, 184, 130, .78);
+/* boutons */
+
+.realm-pagination button{
+
+    font:inherit;
+    letter-spacing:inherit;
+    text-transform:inherit;
+
+    background:none;
+    border:none;
+    padding:0;
+
+    color:rgba(190,176,145,.45);
+
+    cursor:pointer;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
 }
 
-.realm-page-line {
-  width: 26px;
-  height: 1px;
-
-  background:
-    rgba(190, 163, 111, .28);
+.realm-pagination button:hover{
+    color:rgba(229,207,163,.9);
 }
 
-.realm-page-next {
-  display: flex;
-  align-items: center;
-  gap: 7px;
+/* numéros */
 
-  color: rgba(190, 176, 145, .45);
+.realm-pagination .page-number{
 
-  text-decoration: none;
+    display:inline-flex;
 
-  transition:
-    color .3s ease,
-    transform .3s ease;
+    justify-content:center;
+    align-items:center;
+
+    width:28px;
+    height:28px;
+
+    border-radius:50%;
+    border:1px solid transparent;
+
+    color:rgba(190,176,145,.45);
 }
 
-.realm-page-next:hover {
-  color: rgba(229, 207, 163, .9);
-  transform: translateX(2px);
+.realm-pagination .page-number.current{
+
+    color:rgba(229,207,163,.92);
+
+    border-color:rgba(190,155,91,.36);
+
+    background:rgba(174,140,77,.05);
+
+    box-shadow:
+        0 0 12px rgba(188,151,85,.08);
 }
 
+/* Previous / Next */
+
+.realm-pagination-prev,
+.realm-pagination-next{
+    color:rgba(190,176,145,.45);
+}
+
+.realm-pagination-prev:disabled,
+.realm-pagination-next:disabled{
+    visibility:hidden;
+}
 
 /* ==========================================================
    REVEAL
