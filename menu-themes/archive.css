@@ -443,6 +443,10 @@ body.archive .nav a:hover {
     display:none;
 }
 
+.archive-entry-part::after{
+    display:none;
+}
+
 /* Sous-entrées */
 
 .archive-entry-part{
@@ -462,7 +466,8 @@ body.archive .nav a:hover {
 
 /* On garde la place de la date mais on la cache */
 
-.archive-entry-part .archive-date{
+.archive-entry-part .archive-date,
+.archive-entry-part .archive-node{
     visibility:hidden;
 }
 
@@ -470,7 +475,7 @@ body.archive .nav a:hover {
 
 .archive-entry-part .archive-label{
 
-    padding-left:24px;
+    padding-left:14px;
 
     font-size:.74rem;
 
