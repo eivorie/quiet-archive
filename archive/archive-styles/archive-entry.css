@@ -452,7 +452,6 @@ body.archive-letter-page {
     padding-right: 10px;
   }
 
-
   .archive-letter {
     padding:
       50px
@@ -460,13 +459,7 @@ body.archive-letter-page {
       62px;
   }
 
-
   .archive-letter::after {
     left: 21px;
-  }
-
-
-  .archive-entry-content p {
-    font-size: .84rem;
   }
 }
