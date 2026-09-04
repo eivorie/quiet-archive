@@ -434,33 +434,66 @@ body.archive .nav a:hover {
    SPECIAL ENTRIES - MULTIPLE FOR A DAY
 ===================================================== */
 
-.archive-entry-group {
-    position: relative;
+.archive-entry-group{
+    position:relative;
 }
 
-.archive-entry-part {
-    margin-left: 66px;
+/* Première entrée du jour */
+.archive-entry-master::after{
+    display:none;
+}
 
-    display: grid;
+/* Sous-entrées */
+
+.archive-entry-part{
+
+    min-height:30px;
+
+    display:grid;
+
     grid-template-columns:
+        42px
+        24px
         minmax(0,1fr)
         18px;
 
-    min-height: 28px;
+    align-items:center;
 }
 
-.archive-entry-part::before {
-    content: "└";
-    position: absolute;
-    left: -18px;
-    color: rgba(175,125,70,.45);
+/* On garde la place de la date mais on la cache */
+
+.archive-entry-part .archive-date{
+    visibility:hidden;
 }
 
-.archive-entry-part .archive-label {
-    padding-left: 0;
-    font-size: .74rem;
-    color: rgba(200,180,150,.72);
+/* Petit retrait du texte */
+
+.archive-entry-part .archive-label{
+
+    padding-left:24px;
+
+    font-size:.74rem;
+
+    color:rgba(200,180,150,.72);
 }
+
+/* Petit trait décoratif */
+
+.archive-entry-part .archive-label::before{
+
+    content:"";
+
+    display:inline-block;
+
+    width:12px;
+    height:1px;
+
+    margin-right:10px;
+    margin-bottom:4px;
+
+    background:rgba(175,125,70,.35);
+}
+
 /* =====================================================
    DATE — LEFT
 ===================================================== */
