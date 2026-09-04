@@ -431,6 +431,37 @@ body.archive .nav a:hover {
 }
 
 /* =====================================================
+   SPECIAL ENTRIES - MULTIPLE FOR A DAY
+===================================================== */
+
+.archive-entry-group {
+    position: relative;
+}
+
+.archive-entry-part {
+    margin-left: 66px;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0,1fr)
+        18px;
+
+    min-height: 28px;
+}
+
+.archive-entry-part::before {
+    content: "└";
+    position: absolute;
+    left: -18px;
+    color: rgba(175,125,70,.45);
+}
+
+.archive-entry-part .archive-label {
+    padding-left: 0;
+    font-size: .74rem;
+    color: rgba(200,180,150,.72);
+}
+/* =====================================================
    DATE — LEFT
 ===================================================== */
 
