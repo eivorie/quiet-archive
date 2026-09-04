@@ -451,8 +451,8 @@ body.archive .nav a:hover {
 
 .archive-entry-part{
 
-    min-height:30px;
-
+   min-height:22px;
+    margin-top:-4px;
     display:grid;
 
     grid-template-columns:
@@ -475,11 +475,10 @@ body.archive .nav a:hover {
 
 .archive-entry-part .archive-label{
 
-    padding-left:14px;
-
-    font-size:.74rem;
-
-    color:rgba(200,180,150,.72);
+    padding-left:12px;
+    font-size:.67rem;
+    letter-spacing:.08em;
+    color:rgba(192,172,144,.60);
 }
 
 /* Petit trait décoratif */
