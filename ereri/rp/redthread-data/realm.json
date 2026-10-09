@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "story": {
+    "Id": "c18b2637-4016-4c3d-b6b4-3e5e480d08c7",
+    "Title": "Realm",
+    "Subtitle": "",
+    "Description": "A kingdom, a village, and two lives that were never supposed to cross.",
+    "Status": "Ongoing",
+    "ArchiveSlug": "realm",
+    "CoverPath": "",
+    "BackgroundPath": "ereri/images/realm-background.png",
+    "ReadingBackgroundPath": "",
+    "BackgroundPosition": "center top",
+    "Overlay": 0.32
+  },
+  "chapters": [
+    {
+      "Id": "9e2430de-423e-4b36-9d1c-228d1bc09f5c",
+      "Title": "Chapter I \u2014 ",
+      "Position": 1,
+      "ArchivePath": "ereri/rp/realm-chapters/01.html",
+      "messages": []
+    },
+    {
+      "Id": "4ed19994-c3de-4845-8073-4df5681223a4",
+      "Title": "Chapter II",
+      "Position": 2,
+      "ArchivePath": "ereri/rp/realm-chapters/02.html",
+      "messages": []
+    },
+    {
+      "Id": "3697df97-0dda-4898-8b25-11ff0e887286",
+      "Title": "Chapter III",
+      "Position": 3,
+      "ArchivePath": "ereri/rp/realm-chapters/03.html",
+      "messages": []
+    },
+    {
+      "Id": "c2a24a4a-25ae-4f6d-8ae8-8b78dc1113fa",
+      "Title": "Chapter IV",
+      "Position": 4,
+      "ArchivePath": "ereri/rp/realm-chapters/04.html",
+      "messages": []
+    },
+    {
+      "Id": "e0df9530-b0a8-44d7-9753-84546a7a37cb",
+      "Title": "Chapter V",
+      "Position": 5,
+      "ArchivePath": "ereri/rp/realm-chapters/05.html",
+      "messages": []
+    },
+    {
+      "Id": "be156b91-6998-46d4-b69a-7a750205489e",
+      "Title": "Chapter VI",
+      "Position": 6,
+      "ArchivePath": "ereri/rp/realm-chapters/06.html",
+      "messages": []
+    },
+    {
+      "Id": "55ee901d-eb09-4861-b02e-519ae692d9dc",
+      "Title": "Chapter VII",
+      "Position": 7,
+      "ArchivePath": "ereri/rp/realm-chapters/07.html",
+      "messages": []
+    },
+    {
+      "Id": "465fbed8-b3d5-40f2-8c0d-dc143c459b04",
+      "Title": "Chapter VIII",
+      "Position": 8,
+      "ArchivePath": "ereri/rp/realm-chapters/08.html",
+      "messages": []
+    },
+    {
+      "Id": "69dd2ac2-1cf9-47c7-9cb2-40149fdf946b",
+      "Title": "Chapter IX",
+      "Position": 9,
+      "ArchivePath": "ereri/rp/realm-chapters/09.html",
+      "messages": [
+        {
+          "Id": "7ee3b668-749d-4089-9131-e08e473c92b9",
+          "AccountId": "Pauline",
+          "Character": "Levi",
+          "Text": "test testI was lostand that\u0027s all.",
+          "Position": 1,
+          "Submitted": "2026-10-09T17:34:13.230267+00:00",
+          "Edited": null,
+          "FinalizedAt": "2026-10-09T17:34:21.145264+00:00",
+          "Flashbacks": [
+            {
+              "Start": 9,
+              "Length": 10,
+              "Label": "a minute ago"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
