@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "story": {
+    "Id": "c18b2637-4016-4c3d-b6b4-3e5e480d08c7",
+    "Title": "Realm",
+    "Subtitle": "",
+    "Description": "A kingdom, a village, and two lives that were never supposed to cross.",
+    "Status": "Ongoing",
+    "ArchiveSlug": "realm",
+    "CoverPath": "",
+    "BackgroundPath": "ereri/images/realm-background.png",
+    "ReadingBackgroundPath": "",
+    "BackgroundPosition": "center top",
+    "Overlay": 0.32
+  },
+  "chapters": [
+    {
+      "Id": "9e2430de-423e-4b36-9d1c-228d1bc09f5c",
+      "Title": "Chapter I \u2014 ",
+      "Position": 1,
+      "ArchivePath": "ereri/rp/realm-chapters/01.html",
+      "messages": []
+    },
+    {
+      "Id": "4ed19994-c3de-4845-8073-4df5681223a4",
+      "Title": "Chapter II",
+      "Position": 2,
+      "ArchivePath": "ereri/rp/realm-chapters/02.html",
+      "messages": []
+    },
+    {
+      "Id": "3697df97-0dda-4898-8b25-11ff0e887286",
+      "Title": "Chapter III",
+      "Position": 3,
+      "ArchivePath": "ereri/rp/realm-chapters/03.html",
+      "messages": []
+    },
+    {
+      "Id": "c2a24a4a-25ae-4f6d-8ae8-8b78dc1113fa",
+      "Title": "Chapter IV",
+      "Position": 4,
+      "ArchivePath": "ereri/rp/realm-chapters/04.html",
+      "messages": []
+    },
+    {
+      "Id": "e0df9530-b0a8-44d7-9753-84546a7a37cb",
+      "Title": "Chapter V",
+      "Position": 5,
+      "ArchivePath": "ereri/rp/realm-chapters/05.html",
+      "messages": []
+    },
+    {
+      "Id": "be156b91-6998-46d4-b69a-7a750205489e",
+      "Title": "Chapter VI",
+      "Position": 6,
+      "ArchivePath": "ereri/rp/realm-chapters/06.html",
+      "messages": []
+    },
+    {
+      "Id": "55ee901d-eb09-4861-b02e-519ae692d9dc",
+      "Title": "Chapter VII",
+      "Position": 7,
+      "ArchivePath": "ereri/rp/realm-chapters/07.html",
+      "messages": []
+    },
+    {
+      "Id": "465fbed8-b3d5-40f2-8c0d-dc143c459b04",
+      "Title": "Chapter VIII",
+      "Position": 8,
+      "ArchivePath": "ereri/rp/realm-chapters/08.html",
+      "messages": []
+    },
+    {
+      "Id": "939fbe6a-c884-4754-899b-1641f316d755",
+      "Title": "Chapter IX",
+      "Position": 9,
+      "ArchivePath": "ereri/rp/realm-chapters/09.html",
+      "messages": [
+        {
+          "Id": "162dc653-4d45-4218-b56d-ad7cf96ce434",
+          "AccountId": "Ju",
+          "Character": "Eren",
+          "Text": "Eren said nothing; he merely watched Levi give the order concerning Floch. The guard withdrew, and Eren swallowed hard. Levi was examining his wrist, Eren\u2019s eyes remaining on Levi\u2019s face until he felt Levi\u2019s gaze meet his own, prompting him to quickly look away and down at his wrists.\n\nHe listened attentively to Levi until he watched him rise, and then he reached out and firmly grabbed his arm.\n\n\u2014 Wait\u2026\n\nEren released Levi\u2019s arm when he noticed him yield, lowering himself back into the same position. Eren\u2019s head remained resting against the wall, and only his gaze shifted toward Levi.\n\n\u2014 I know you\u2019re exhausted, and believe me, so am I\u2026 \u2014Eren  sighed softly but kept his eyes on Levi.\n\n\u2014 Your concern\u2026 \u2014 He paused, reconsidering his words, but continued. \u2014 Does your concern for Petra go beyond the duties of your squad?\n\nHe noticed the confused look in Levi\u2019s eyes, but before he could open his mouth, Eren cut him off.\n\n\u2014 Just answer me, please.",
+          "Position": 1,
+          "Submitted": "2026-10-09T23:39:06.161442+00:00",
+          "Edited": null,
+          "FinalizedAt": null,
+          "Flashbacks": []
+        },
+        {
+          "Id": "523c4a27-fc3f-46ac-a35e-2840590bb375",
+          "AccountId": "Pauline",
+          "Character": "Levi",
+          "Text": "Levi looked down at the hand around his arm.\n\nHe could have pulled away. Instead, when Eren released him, he stayed where he was.\n\nThe question wasn\u0027t what he\u0027d expected.\n\n\u2014 No.\n\nThere was no hesitation.\n\n\u2014 Petra is one of my soldiers. She\u0027s under my command, and that makes her my responsibility. That\u0027s all.\n\nLevi studied Eren for another second.\n\n\u2014 Now explain to me why that matters.\n\nHis expression hardened before Eren could turn the question into another mystery.\n\n\u2014 Actually, don\u0027t.\n\nHe was tired of this.\n\n\u2014 Whatever you\u0027re doing with Petra, whatever purpose she\u0027s supposed to serve, stop treating people like pieces on a board.\n\nLevi lowered himself slightly again, enough that Eren didn\u0027t have to look up at him.\n\n\u2014 You keep asking me to understand your people. To trust that there\u0027s a reason behind everything you do. Fine. I\u0027ve seen enough to know you\u0027re not doing all of this for the pleasure of causing trouble.\n\nThat was perhaps more credit than Levi had given him aloud until now.\n\n\u2014 But you don\u0027t get to demand that I see the value in every life you\u0027re protecting while acting as though mine only matter when they\u0027re useful to whatever plan you\u0027re running.\n\nHis eyes stayed on Eren\u0027s.\n\n\u2014 That\u0027s what I\u0027m done with.\n\nA brief silence passed.\n\n\u2014 And the stupidest part is that I don\u0027t think we\u0027re nearly as far apart as you seem determined to make us.\n\nLevi had seen Ashvale. He\u0027d seen what the villagers lacked, what the Crown ignored and what Eren was trying to keep alive despite it. None of that required blind obedience to understand.\n\n\u2014 You want to protect your people. So do I. That should be the simplest fucking thing between us.\n\nHis jaw tightened.\n\n\u2014 Instead, every time I think we\u0027re getting somewhere, you arrange another little game behind my back and somebody ends up tied up, missing or sitting in a cell.\n\nLevi straightened.\n\n\u2014 So no. I\u0027m not in love with Petra, if that\u0027s what you\u0027re trying to establish.\n\nDry irritation slipped into his voice.\n\n\u2014 I shouldn\u0027t have to be for her life to matter.\n\nHis gaze remained on Eren.\n\n\u2014 Neither should you.",
+          "Position": 2,
+          "Submitted": "2026-10-09T23:52:21.580627+00:00",
+          "Edited": null,
+          "FinalizedAt": "2026-10-09T23:54:43.528064+00:00",
+          "Flashbacks": []
+        },
+        {
+          "Id": "ca3d1ef0-c1b5-4211-8df7-c35130d3193d",
+          "AccountId": "Ju",
+          "Character": "Eren",
+          "Text": "Eren kept his head resting against the wall and swallowed hard after hearing Levi, but his eyes never left him.\n\n\u2014 I need you to trust me, and yes, I know it\u2019s not easy for you, but it\u2019s the only way to bring Petra back safe and sound.\n\nEren glanced around as if making sure there was no one nearby, and then, looking Levi in the eyes, he spoke in a low voice.\n\n\u2014 I need you to let me out. You have two options. You let me go, and as a guarantee, you\u2019ll find my key among the belongings your guards took from us. That key opens the hideout in the tavern. I wouldn\u2019t give it to you if I weren\u2019t certain I\u2019d come back for it. The second option is that you come with me, but I need you to wait until we reach a certain point. They can\u2019t see that you\u2019re with me, or I can guarantee you we won\u2019t be leaving there in good shape.\n\nEren held Levi\u2019s gaze a little longer, his eyes serious.\n\n\u2014 Levi, I\u2019m the only one who can kill Petra or bring her back.",
+          "Position": 3,
+          "Submitted": "2026-10-10T00:06:23.615674+00:00",
+          "Edited": null,
+          "FinalizedAt": "2026-10-10T00:07:28.272243+00:00",
+          "Flashbacks": []
+        },
+        {
+          "Id": "a5694a25-1ec4-4d55-8263-a4b25321f8ab",
+          "AccountId": "Pauline",
+          "Character": "Levi",
+          "Text": "Levi stared at him. For several seconds, he genuinely said nothing.\n\nThen he exhaled through his nose.\n\n\u2014 Option three.\n\nHe crouched again, forearms resting loosely against his thighs.\n\n\u2014 You stay exactly where you are and, for once in your life, follow a simple fucking instruction.\n\nHis voice wasn\u0027t raised. If anything, he sounded tired.\n\n\u2014 Let me make sure I understand what you just offered me. I release a prisoner who has now openly admitted that Petra\u0027s life depends on him, and I trust that he\u0027ll wander back because he left me a key.\n\nA pause.\n\n\u2014 Or I leave the castle with that same prisoner, secretly follow him somewhere his associates can\u0027t know I\u0027m going, wait wherever he tells me to wait and trust that this time I won\u0027t wake up drugged and tied to something. Brilliant choices.\n\nThe key, at least, was something. Eren wouldn\u0027t surrender access to the tavern lightly, and Levi knew it. He filed that away without allowing it to change the answer.\n\n\u2014 No. You\u0027re staying here.\n\nLevi held his gaze.\n\n\u2014 And you\u0027re going to tell me what needs to happen for Petra to come back. Names aren\u0027t necessary. I don\u0027t need the location of your hideouts. I don\u0027t need you to hand me every person involved. If there\u0027s something I need to do, tell me what it is. If there\u0027s something I need to stop doing, tell me that.\n\nHe leaned a fraction closer.\n\n\u2014 But I\u0027m not handing you the keys to your cell every time you tell me somebody might die if I don\u0027t obey.\n\nThen Eren\u0027s final words settled properly.\n\n\u0022I\u0027m the only one who can kill Petra or bring her back.\u0022\n\nLevi went very still.\n\n\u2014 And you should probably think very carefully before you phrase anything like that again.\n\nThere was no threat in his voice. Just exhaustion now, and something considerably colder underneath it.\n\n\u2014 Because I\u0027m trying very hard to believe that Petra is alive because you arranged for her to be kept that way.\n\nHis eyes stayed fixed on Eren\u0027s.\n\n\u2014 Don\u0027t make me start wondering whether she\u0027s alive because you decided she was useful that way.\n\nLevi straightened.\n\n\u2014 You want me to trust you? Start with something smaller than asking me to put my life, my soldier and half the fucking castle in your hands again.\n\nHe glanced toward the cell door.\n\n\u2014 Tell me what you need. From here.",
+          "Position": 4,
+          "Submitted": "2026-10-10T00:20:09.472945+00:00",
+          "Edited": null,
+          "FinalizedAt": "2026-10-10T00:22:15.392699+00:00",
+          "Flashbacks": []
+        },
+        {
+          "Id": "d3ec1a8e-52dc-472b-b75c-221c1be1bc3f",
+          "AccountId": "Ju",
+          "Character": "Eren",
+          "Text": "Eren listened to everything attentively. He felt the urge to interrupt Levi, but he didn\u2019t. He kept looking into Levi\u2019s eyes, his voice low, just as exhausted.\n\n\n\u2014 I know... I didn\u2019t expect you to make this easy. But the thing is, Levi, I can give you all the directions, the artifacts you\u2019ll need, and the best route through the forest you could possibly take. The reality is, they\u2019re forbidden from handing Petra over without me being there.\n\n\nEren was concise as he spoke, slightly shifting his wrists, which were still sore, as he glanced down at them.\n\n\n\u2014You have complete control over my allies here. I wouldn\u2019t be stupid enough to gamble with their lives.\n\nHe sighed and extended his wrists, held together, toward Levi.\n\n\u2014You can tie me up again and keep me here, locked away, without answers, with Petra\u2019s life left at the mercy of whatever dangers await her... or you can choose to trust me for once.",
+          "Position": 5,
+          "Submitted": "2026-10-10T00:37:13.035192+00:00",
+          "Edited": null,
+          "FinalizedAt": "2026-10-10T00:37:47.852706+00:00",
+          "Flashbacks": []
+        },
+        {
+          "Id": "592961fd-b315-4450-afb5-2847ad88148a",
+          "AccountId": "Pauline",
+          "Character": "Levi",
+          "Text": "Levi\u0027s eyes dropped to the wrists Eren held out to him. For a moment, he didn\u0027t move. Then he took one of them.\n\nHis fingers settled carefully around Eren\u0027s forearm instead, turning his hand just enough to examine the swelling without putting pressure on the inflamed skin. His expression tightened.\n\n\u2014 Stop moving these around.\n\nHis thumb passed lightly beside the worst of the irritation, checking the heat there.\n\n\u2014 I\u0027m not tying anything over this again until the swelling goes down.\n\nOnly then did Levi look back at him.\n\n\u2014 Now, as for trusting you \u0027for once\u0027.\n\nSomething in his face went flat.\n\n\u2014 I followed you into that forest because you asked me to trust you. I woke up drugged and tied to a chair.\n\nHis hold on Eren\u0027s wrist remained careful.\n\n\u2014 I gave you the benefit of the doubt after that. I kept what I learned to myself. I didn\u0027t hand your name to the Crown. And somehow we\u0027ve ended up here, with another one of my people missing because of a plan you neglected to mention.\n\nLevi released his wrist.\n\n\u2014 So don\u0027t stand there and talk to me like trust is something I haven\u0027t tried giving you.\n\nHe rose, irritation finally showing through the exhaustion.\n\n\u2014 You\u0027ve had it. Twice. What you did with it was your decision.\n\nThe problem was that none of that changed Petra\u0027s situation. He hated that more than anything.\n\nEren had constructed the entire thing so that refusing him meant leaving Petra wherever she\u0027d been taken. Whether that had been intentional or merely another consequence of whatever system his people operated under hardly mattered now.\n\n\u2014 I\u0027m not letting you out because I trust you.\n\nHe made the distinction deliberately.\n\n\u2014 I\u0027m taking you because Petra doesn\u0027t deserve to pay for the fact that you\u0027ve made yourself indispensable to getting her back.\n\nHis gaze sharpened.\n\n\u2014 You don\u0027t leave my sight unless the situation requires it. You don\u0027t change the route without telling me why. You don\u0027t improvise another one of your clever little plans and expect me to discover it afterward.\n\nLevi stepped closer again.\n\n\u2014 And if you know there\u0027s a point where I can\u0027t follow you, you tell me before we reach it. Not when we\u0027re already standing there.\n\nA pause.\n\n\u2014 Those are my terms.\n\nHe glanced once more at Eren\u0027s wrists.\n\n\u2014 And we\u0027re dealing with those before you go anywhere.\n\nThen his eyes returned to Eren\u0027s.\n\n\u2014 You asked me to trust you again.\n\nLevi held his gaze for a long moment.\n\n\u2014 Fine.\n\nThe word tasted bitter.\n\n\u2014 But understand something before I open that door.\n\nHis expression went perfectly still.\n\n\u2014 There won\u0027t be a third time.",
+          "Position": 6,
+          "Submitted": "2026-10-10T00:49:05.258639+00:00",
+          "Edited": null,
+          "FinalizedAt": "2026-10-10T00:50:58.566288+00:00",
+          "Flashbacks": []
+        },
+        {
+          "Id": "e9e0a60d-41ea-46be-8a6d-6e5bf78d15c6",
+          "AccountId": "Ju",
+          "Character": "Eren",
+          "Text": "Eren never stopped looking at Levi, not while he touched his wrist, not while he laid down his orders.\n\n\u2014 I agree to all the rules you\u0027re asking for, and they will be followed. You\u0027ll know the routes, the paths that pose any danger, and any interference along the way. If anything happens, I won\u0027t let anything happen to you. That\u0027s something I can promise you.\nHe sighed softly.\n\n\u2014 I think you should know that you have more control than I do at the moment. You practically have my entire squad here, and there\u0027s one more thing, Levi\u2026 Soon, this will no longer be about whether you give them names or not. The Crown will demand that the cells be cleared out. I\u0027d rather that happen with you placing at least a little trust in me.\n\nHe reached out and touched one of the knives tucked into Levi\u0027s belt, which was about to fall loose. He secured it back into place before lifting his eyes to Levi\u0027s again.\n\n\u2014 We\u0027ll need some supplies, horses in good condition, and some equipment. I don\u0027t trust that there won\u0027t be soldiers stationed around the area to prevent anyone from passing through. Ah and get two black masks. We\u0027ll need them.",
+          "Position": 7,
+          "Submitted": "2026-10-10T01:15:22.788066+00:00",
+          "Edited": null,
+          "FinalizedAt": null,
+          "Flashbacks": []
+        },
+        {
+          "Id": "f9f92f04-27be-4b34-b2a4-13944043e599",
+          "AccountId": "Pauline",
+          "Character": "Levi",
+          "Text": "Levi glanced down at the knife Eren had pushed securely back into place, then at him.\n\nFor a moment, he didn\u0027t move.\n\nIt was such a stupidly familiar gesture. Eren\u0027s fingers near his belt, those green eyes lifting to meet his afterward as though the last few days hadn\u0027t put an entire damn wall between them.\n\nSomething in Levi\u0027s chest pulled unpleasantly. He stepped back before he could give it any attention.\n\n\u2014 Anything else? Bag of gold? Spare horse in case you dislike the first one?\n\nThe sarcasm came easily. Easier than everything else.\n\nNone of what Eren had asked for was particularly difficult to arrange. The timing was.\n\n\u2014 Zeke arrives tomorrow morning. I can\u0027t disappear into the forest indefinitely while the castle is preparing for a diplomatic visit.\n\nLevi folded his arms.\n\n\u2014 How long from the moment we leave this castle until Petra is back with us? Give me an actual estimate.\n\nHe paused, studying Eren again.\n\nHe was tired of wondering which version of him he was looking at. The man who had warned him to keep a knife ready beneath the fireworks, or the one who kept deciding Levi could survive one more lie. The idiot who brushed dirt from his cheek, kissed him beside the lake, then somehow made every memory of it harder to trust afterward.\n\nAnd despite all of that, Levi was about to open the door.\n\nOne last time.\n\n\u2014 If this goes the way you\u0027re promising me it will, we\u0027ll talk about Connie when we get back.\n\nHis voice had lost some of its edge.\n\n\u2014 Bring my squad home. Keep your word to me this time.\n\nLevi held his gaze.\n\n\u2014 Give me one reason to believe I wasn\u0027t an idiot for doing this again.",
+          "Position": 8,
+          "Submitted": "2026-10-10T01:24:49.993175+00:00",
+          "Edited": null,
+          "FinalizedAt": "2026-10-10T01:25:32.586732+00:00",
+          "Flashbacks": []
+        }
+      ]
+    }
+  ]
+}
