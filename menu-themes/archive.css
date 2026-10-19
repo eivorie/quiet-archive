@@ -704,7 +704,13 @@ body.archive .nav a:hover {
 }
 
 
-.archive-month-back:hover {
+.archive-month-back a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.archive-month-back:hover,
+.archive-month-back:focus-within {
   color: rgba(229, 190, 132, .94);
 
   text-shadow:
