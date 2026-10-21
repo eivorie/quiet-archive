@@ -1,98 +1,569 @@
 /* =====================================================
-   SUNMOON — CORE STAGE (NO SWIPE)
-   Desktop & Mobile unified
-   Navbar inherited from global .nav
+   SUNMOON — CORE
+   Commun à Moon et Sun
    ===================================================== */
 
-/* -----------------------------------------------------
+
+/* =====================================================
    GLOBAL
------------------------------------------------------ */
+===================================================== */
+
 .sunmoon {
   font-family: "Cormorant Garamond", serif;
   overflow-x: hidden;
 }
 
-/* =====================================================
-   GLOBAL BACKGROUNDS BY MODE
-===================================================== */
-
-/* 🌙 NIGHT */
-body.mode-moon {
-  background:
-    radial-gradient(circle at 30% 20%, rgba(120,140,165,0.18), transparent 60%),
-    linear-gradient(to bottom, #1a1f27, #0f1217);
-  transition: background 2.6s ease;
-}
-
-/* ☀️ DAY */
-body.mode-sun {
-  background:
-    radial-gradient(circle at 50% 10%, rgba(255,220,170,0.45), transparent 65%),
-    linear-gradient(to bottom, #e6bf8f, #b3824f);
-  transition: background 2.6s ease;
-}
 
 /* =====================================================
-   NAVBAR — ADAPTATION (GLOBAL .nav)
+   MOON — PAGE BACKGROUND
 ===================================================== */
 
-/* Moon */
-body.mode-moon .nav {
-  background: rgba(28,34,40,0.55);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(200,210,225,0.08);
+body.sunmoon-moon {
+  position: relative;
+
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      rgba(2, 7, 17, .10),
+      rgba(2, 7, 17, .22)
+    ),
+    url("assets/lua-background.png");
+
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: #eee7dc;
 }
 
-body.mode-moon .nav a {
-  color: rgba(200,215,230,0.75);
+/* voile très léger pour conserver la lisibilité */
+body.sunmoon-moon::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 34%,
+      transparent 0%,
+      rgba(1, 5, 14, .04) 48%,
+      rgba(1, 4, 11, .18) 100%
+    );
 }
 
-body.mode-moon .nav a:hover {
-  color: rgba(235,245,255,0.95);
+
+/* =====================================================
+   NAVBAR — SAME IDENTITY AS SUN & MOON INDEX
+===================================================== */
+
+body.sunmoon-moon .nav {
+  position: relative;
+  z-index: 50;
+
+  margin-bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 12px 22px;
+
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid rgba(255, 225, 185, .08);
+
+  background: transparent;
+
+  text-transform: uppercase;
 }
 
-/* Sun */
-body.mode-sun .nav {
-  background: rgba(255,235,205,0.55);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(120,90,60,0.18);
+body.sunmoon-moon .nav a {
+  color: rgba(235, 228, 232, .78);
+
+  text-transform: uppercase;
+  letter-spacing: .18em;
+
+  font-size: .72rem;
+
+  text-decoration: none;
+
+  transition:
+    color .3s ease,
+    text-shadow .3s ease;
 }
 
-body.mode-sun .nav a {
-  color: rgba(90,60,30,0.75);
+body.sunmoon-moon .nav a:hover {
+  color: rgba(245, 238, 230, .92);
+
+  text-shadow:
+    0 0 12px rgba(220, 185, 125, .20);
 }
 
-body.mode-sun .nav a:hover {
-  color: rgba(60,40,20,0.95);
+
+/* =====================================================
+   SUN — PAGE BACKGROUND
+===================================================== */
+
+body.sunmoon-sun {
+  position: relative;
+
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(92, 47, 5, .02),
+      rgba(72, 34, 3, .08)
+    ),
+    url("assets/sol-background.png");
+
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: #5c3a18;
 }
 
+
+/*
+   Très léger voile :
+   on NE veut surtout pas tuer le soleil de l'image.
+*/
+body.sunmoon-sun::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 18%,
+      rgba(255, 250, 222, .04) 0%,
+      transparent 42%,
+      rgba(104, 53, 6, .05) 78%,
+      rgba(67, 30, 2, .10) 100%
+    );
+}
+
+
+/* =====================================================
+   SUN — NAVBAR
+===================================================== */
+
+body.sunmoon-sun .nav {
+  position: relative;
+  z-index: 50;
+
+  margin-bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 12px 22px;
+
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(76, 57, 69, .42),
+      rgba(92, 64, 73, .32)
+    );
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  border-bottom:
+    1px solid rgba(255, 205, 183, .12);
+
+  box-shadow:
+    0 6px 20px rgba(48, 31, 40, .08);
+
+  text-transform: uppercase;
+}
+
+body.sunmoon-sun .nav a {
+  color: rgba(255, 224, 207, .88);
+
+  text-transform: uppercase;
+  letter-spacing: .18em;
+
+  font-size: .72rem;
+
+  text-decoration: none;
+
+  text-shadow:
+    0 1px 5px rgba(45, 27, 38, .55),
+    0 0 10px rgba(255, 184, 151, .10);
+
+  transition:
+    color .3s ease,
+    text-shadow .3s ease;
+}
+
+body.sunmoon-sun .nav a:hover {
+  color: rgba(255, 241, 230, 1);
+
+  text-shadow:
+    0 0 10px rgba(255, 189, 158, .38);
+}
+
+/* =====================================================
+   SUN — STAGE
+===================================================== */
+
+body.sunmoon-sun .sunmoon-stage {
+  position: relative;
+  z-index: 2;
+
+  animation:
+    dawn 2.4s cubic-bezier(.16, 1, .3, 1) forwards;
+}
+
+
+/* =====================================================
+   SUN — ENTRANCE
+===================================================== */
+
+@keyframes dawn {
+
+  from {
+    opacity: 0;
+
+    filter:
+      brightness(.88)
+      saturate(.85);
+  }
+
+  to {
+    opacity: 1;
+
+    filter:
+      brightness(1)
+      saturate(1);
+  }
+}
+
+/* =====================================================
+   ECLIPSE — PAGE BACKGROUND
+===================================================== */
+
+body.sunmoon-eclipse {
+  position: relative;
+
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(3, 3, 4, .06),
+      rgba(3, 3, 4, .14)
+    ),
+    url("assets/eclipse-background.png");
+
+  background-size: cover;
+  background-position: center top !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: #eee7dc;
+}
+
+
+/* =====================================================
+   ECLIPSE — VOILE
+===================================================== */
+
+body.sunmoon-eclipse::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 20%,
+      transparent 0%,
+      rgba(2, 2, 3, .02) 45%,
+      rgba(2, 2, 3, .14) 100%
+    );
+}
+
+
+/* =====================================================
+   ECLIPSE — NAVBAR
+===================================================== */
+
+body.sunmoon-eclipse .nav {
+  position: relative;
+  z-index: 100;
+
+  margin-bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 12px 22px;
+
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(8, 7, 7, .48),
+      rgba(10, 8, 7, .28)
+    );
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  border-bottom:
+    1px solid rgba(211, 169, 105, .14);
+
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, .12);
+
+  text-transform: uppercase;
+}
+
+body.sunmoon-eclipse .nav a {
+  color: rgba(224, 211, 191, .82);
+
+  text-transform: uppercase;
+  letter-spacing: .18em;
+
+  font-size: .72rem;
+
+  text-decoration: none;
+
+  text-shadow:
+    0 1px 5px rgba(0, 0, 0, .75),
+    0 0 10px rgba(207, 157, 87, .10);
+
+  transition:
+    color .3s ease,
+    text-shadow .3s ease;
+}
+
+body.sunmoon-eclipse .nav a:hover {
+  color: #fff3df;
+
+  text-shadow:
+    0 0 12px rgba(218, 170, 100, .35);
+}
+
+
+/* =====================================================
+   ECLIPSE — ENTRANCE
+===================================================== */
+
+body.sunmoon-eclipse .eclipse {
+  position: relative;
+  z-index: 2;
+
+  animation:
+    eclipse-entry 2.4s cubic-bezier(.16, 1, .3, 1) forwards;
+}
+
+@keyframes eclipse-entry {
+
+  from {
+    opacity: 0;
+
+    filter:
+      brightness(.82)
+      saturate(.75);
+  }
+
+  to {
+    opacity: 1;
+
+    filter:
+      brightness(1)
+      saturate(1);
+  }
+}
+/* =====================================================
+   STARS — PAGE BACKGROUND
+===================================================== */
+
+body.sunmoon-stars {
+  position: relative;
+
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(3, 6, 13, .04),
+      rgba(2, 4, 10, .12)
+    ),
+    url("assets/stars-background.png");
+
+  background-size: cover;
+  background-position: center top !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: #eef2ff;
+}
+
+
+/* =====================================================
+   STARS — VOILE
+===================================================== */
+
+body.sunmoon-stars::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 0;
+  pointer-events: none;
+
+  /*
+     Assombrit très légèrement le centre pour que
+     les chapitres restent parfaitement lisibles,
+     sans effacer les nébuleuses du background.
+  */
+  background:
+    radial-gradient(
+      ellipse at 50% 42%,
+      rgba(3, 7, 16, .05) 0%,
+      rgba(3, 7, 16, .08) 42%,
+      rgba(1, 3, 8, .16) 100%
+    );
+}
+
+
+/* =====================================================
+   STARS — CONTENT
+===================================================== */
+
+body.sunmoon-stars .stars {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =====================================================
+   STARS — NAVBAR
+===================================================== */
+
+body.sunmoon-stars .nav {
+  position: relative;
+  z-index: 100;
+
+  margin-bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 12px 22px;
+
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(4, 8, 17, .54),
+      rgba(5, 9, 19, .30)
+    );
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  border-bottom:
+    1px solid rgba(164, 188, 225, .13);
+
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, .14);
+
+  text-transform: uppercase;
+}
+
+
+body.sunmoon-stars .nav a {
+  color: rgba(220, 228, 245, .82);
+
+  text-transform: uppercase;
+  letter-spacing: .18em;
+
+  font-size: .72rem;
+
+  text-decoration: none;
+
+  text-shadow:
+    0 1px 5px rgba(0, 0, 0, .75),
+    0 0 10px rgba(175, 202, 245, .10);
+
+  transition:
+    color .3s ease,
+    text-shadow .3s ease;
+}
+
+
+body.sunmoon-stars .nav a:hover {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 12px rgba(190, 215, 255, .38);
+}
 /* =====================================================
    STAGE
 ===================================================== */
 
 .sunmoon-stage {
+  position: relative;
+  z-index: 2;
+
   min-height: calc(100vh - 64px);
+
   display: flex;
   justify-content: center;
 }
 
 /* =====================================================
-   CARDS
+   CARD
 ===================================================== */
 
 .sunmoon-card {
-  display: none;
+  position: relative;
+  z-index: 2;
+
+  display: flex;
   flex-direction: column;
   align-items: center;
+
   width: 100%;
+
+  animation: card-switch 2.8s ease forwards;
 }
 
-.sunmoon-card.is-active {
-  display: flex;
-}
 
 /* =====================================================
-   TITLES & SWITCH
+   HEADER
 ===================================================== */
 
 .card-header {
@@ -101,46 +572,17 @@ body.mode-sun .nav a:hover {
 }
 
 .card-title {
+  margin: 0;
+
   font-size: 2rem;
   font-weight: 500;
-  letter-spacing: 0.05em;
-  margin: 0;
+
+  letter-spacing: .05em;
 }
 
-/* Switch sous le titre */
-.sunmoon-switch {
-  margin-top: 18px;
-  background: none;
-  border: none;
-  padding: 6px 14px;
-
-  font-size: 1.1rem;
-  cursor: pointer;
-  line-height: 1;
-
-  opacity: 0.75;
-  transition:
-    opacity 0.8s ease,
-    transform 1.4s ease;
-}
-
-/* Moon switch */
-.card-moon .sunmoon-switch {
-  color: rgba(230,235,245,0.9);
-}
-
-/* Sun switch */
-.card-sun .sunmoon-switch {
-  color: rgba(90,60,30,0.85);
-}
-
-.sunmoon-switch:hover {
-  opacity: 1;
-  transform: translateY(-1px);
-}
 
 /* =====================================================
-   ORNEMENT SOUS TITRE — RYTHME VERTICAL
+   ORNEMENT
 ===================================================== */
 
 .card-ornament {
@@ -148,71 +590,49 @@ body.mode-sun .nav a:hover {
 
   width: 88px;
   height: 1px;
+
   margin: 18px auto 22px;
 
   opacity: .75;
+
   filter: blur(.3px);
 
   animation: ornament-breath 7.5s ease-in-out infinite;
 }
 
 @keyframes ornament-breath {
+
   0%,100% {
     width: 72px;
     opacity: .45;
   }
+
   50% {
     width: 112px;
     opacity: .95;
   }
 }
 
-/* =====================================================
-   TRANSITIONS — JOUR / NUIT
-===================================================== */
-
-body.mode-sun .sunmoon-stage {
-  animation: dawn 3s ease forwards;
-}
-
-body.mode-moon .sunmoon-stage {
-  animation: dusk 3s ease forwards;
-}
-
-@keyframes dawn {
-  from {
-    filter: brightness(0.75) saturate(0.85);
-  }
-  to {
-    filter: brightness(1.05) saturate(1);
-  }
-}
-
-@keyframes dusk {
-  from {
-    filter: brightness(1.05) saturate(1);
-  }
-  to {
-    filter: brightness(0.8) saturate(0.8);
-  }
-}
 
 /* =====================================================
-   CARD CONTENT
+   CONTENT
 ===================================================== */
 
 .card-content {
   width: 100%;
   max-width: 520px;
+
   padding: 44px 38px;
+
+  box-sizing: border-box;
+
   border-radius: 26px;
 
   box-shadow:
-    0 30px 70px rgba(0,0,0,0.6),
-    inset 0 0 0 1px rgba(255,245,235,0.10);
-
-  box-sizing: border-box;
+    0 30px 70px rgba(0,0,0,.60),
+    inset 0 0 0 1px rgba(255,245,235,.10);
 }
+
 
 /* =====================================================
    TEXT
@@ -220,43 +640,38 @@ body.mode-moon .sunmoon-stage {
 
 .card-content p {
   margin-bottom: 1.5em;
+
   font-size: 1.05rem;
   line-height: 1.75;
 }
 
+
 /* =====================================================
-   SUN & MOON — NAVBAR ALIGNMENT
+   NAVIGATION
 ===================================================== */
 
 .sunmoon .nav {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
 
-  //padding: 14px 24px;
-
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
   text-transform: uppercase;
-
-  gap: 20px 28px;
+  letter-spacing: .08em;
 }
 
 
 /* =====================================================
-   TRANSITION JOUR / NUIT — APPARITION DOUCE
+   APPARITION
 ===================================================== */
 
-.sunmoon-card.is-active {
-  animation: card-switch 2.8s ease forwards;
-}
-
 @keyframes card-switch {
+
   from {
     opacity: 0;
     transform: translateY(32px);
     filter: blur(6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -264,11 +679,13 @@ body.mode-moon .sunmoon-stage {
   }
 }
 
+
 /* =====================================================
    MOBILE
 ===================================================== */
 
 @media (max-width: 768px) {
+
   .sunmoon-card {
     padding: 0 16px 100px;
   }
@@ -278,9 +695,11 @@ body.mode-moon .sunmoon-stage {
   }
 
   .card-content {
-    max-width: none;
     width: 100%;
+    max-width: none;
+
     padding: 36px 26px;
+
     border-radius: 22px;
   }
 

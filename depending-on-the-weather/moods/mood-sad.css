@@ -21,7 +21,7 @@ body.mood-sad {
   color: #4d4a45;
 
   background-image:
-    url("../../assets/mood-sad-background.png") !important;
+    url("../../assets/images/weather/mood-sad-background.png") !important;
 
   background-position:
     center top !important;

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memories</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lavishly+Yours&display=swap"
+        rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="memories">
+
+    <div class="ambient">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <nav class="nav">
+      <script src="../assets/js/navigation.js"></script>
+    </nav>
+
+        <main class="memories-page">
+    
+        <header class="memories-hero">
+    
+            <h1>Memories</h1>
+    
+            <p class="subtitle">
+                Some things survive<br>
+                because we keep remembering them.
+            </p>
+    
+            <div class="hero-divider"></div>
+    
+        </header>
+    
+    
+       <section class="memory-panel">
+
+        <div class="memory-panel-inner">
+    
+            <span class="panel-title">
+                OPEN THE BOX
+            </span>
+    
+            <div class="divider"></div>
+    
+            <p class="panel-text">
+                Every memory is a little piece<br>
+                of our story.
+            </p>
+    
+            <div class="memory-chest">
+                <img
+                    id="memoryChest"
+                    class="closed"
+                    src="../assets/images/memories/memory-box-closed.png"
+                    alt="Memory chest">
+            </div>
+    
+            <section
+                id="result"
+                class="memory-result">
+            </section>
+    
+        </div>
+    
+     </section>
+    
+       <aside class="memory-score">
+
+         <span class="score-label">Last time,</span>
+    
+         <p id="lastScore"></p>
+    
+         <div class="score-ornament">✦</div>
+    
+     </aside>
+            
+    </main>
+
+    <script src="index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1220 @@
+/* =====================================================
+   MEMORIES
+   01 • ROOT
+===================================================== */
+
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
+.nav {
+  margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 22px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 225, 185, .08);
+    text-transform: uppercase;
+}
+
+.nav a{
+    color:rgba(235,228,232,.78);
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.72rem;
+    text-decoration:none;
+    transition:color .3s;
+}
+
+.nav a:hover {
+    color:
+        rgba(245,238,230,.92);
+}
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+body.memories{
+
+    font-family:"Cormorant Garamond",serif;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            rgba(18,22,30,.35),
+            rgba(22,24,30,.55)
+        ),
+        url("../assets/images/memories/memories-background.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    color:#efeef2;
+
+}
+
+/* =====================================================
+   PAGE ENTRANCE
+===================================================== */
+
+/* -----------------------------
+   DARK VEIL
+----------------------------- */
+
+body.memories::before {
+    content: "";
+
+    position: fixed;
+    z-index: 9999;
+
+    inset: 0;
+
+    background:
+        rgba(12, 15, 21, .94);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    pointer-events: none;
+
+    animation:
+        memories-veil-out
+        1.8s
+        cubic-bezier(.22,.61,.36,1)
+        forwards;
+}
+
+
+/* -----------------------------
+   NAV
+----------------------------- */
+
+body.memories .nav {
+    opacity: 0;
+
+    animation:
+        memories-fade-down 1.1s ease-out .15s forwards;
+}
+
+
+/* -----------------------------
+   HERO
+----------------------------- */
+
+.memories-hero {
+    opacity: 0;
+
+    transform:
+        translateY(12px);
+
+    filter:
+        blur(5px);
+
+    animation:
+        memories-dream-in
+        1.5s
+        cubic-bezier(.22,.61,.36,1)
+        .25s
+        forwards;
+}
+
+
+/* -----------------------------
+   PANEL
+----------------------------- */
+
+.memory-panel {
+    opacity: 0;
+
+    transform:
+        translateY(18px)
+        scale(.985);
+
+    filter:
+        blur(7px);
+
+    animation:
+        memories-dream-in
+        1.7s
+        cubic-bezier(.22,.61,.36,1)
+        .55s
+        forwards;
+}
+
+
+/* -----------------------------
+   LAST SCORE
+----------------------------- */
+
+.memory-score {
+    opacity: 0;
+
+    transform:
+        translateY(12px);
+
+    filter:
+        blur(4px);
+
+    animation:
+        memories-dream-in
+        1.4s
+        cubic-bezier(.22,.61,.36,1)
+        .9s
+        forwards;
+}
+
+
+/* =====================================================
+   ENTRANCE KEYFRAMES
+===================================================== */
+
+@keyframes memories-veil-out {
+
+    0% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: .88;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+@keyframes memories-dream-in {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(18px)
+            scale(.985);
+
+        filter:
+            blur(7px);
+    }
+
+    55% {
+        opacity: .72;
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+}
+
+
+@keyframes memories-fade-down {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+/* =====================================================
+   AMBIENT
+===================================================== */
+
+.ambient{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.ambient span{
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.45;
+
+    box-shadow:
+        0 0 6px rgba(255,255,255,.75);
+
+    animation:twinkle 5s ease-in-out infinite;
+
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.memories-page{
+
+    width:100%;
+    max-width:620px;
+
+    margin:0 auto;
+
+    padding:
+        30px
+        20px
+        100px;
+
+    box-sizing:border-box;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.memories-hero{
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+}
+
+.memories-hero h1{
+
+    margin:0;
+
+    font-size:clamp(2.8rem,7vw,4.4rem);
+
+    font-weight:400;
+
+    color:#f4f1ed;
+
+    text-shadow:
+        0 0 20px rgba(255,235,215,.08);
+
+}
+
+.subtitle{
+
+    margin-top:10px;
+
+    line-height:1.5;
+
+    color:rgba(238,235,228,.72);
+
+    font-style:italic;
+
+}
+
+.hero-divider{
+
+    width:80px;
+    height:1px;
+
+    margin:30px auto 0;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        rgba(255,235,205,.55),
+        transparent
+    );
+
+}
+
+
+/* =====================================================
+   PANEL
+===================================================== */
+
+.memory-panel{
+
+    position:relative;
+
+}
+
+.memory-panel-inner {
+    position: relative;
+
+    padding: 52px 24px;
+
+    border-radius: 28px;
+
+    background: rgba(28,31,36,.42);
+
+    backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.35);
+}
+
+.memory-panel-inner::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:14px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    pointer-events:none;
+
+}
+
+.memory-panel-inner::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-70px;
+
+    left:50%;
+
+    width:240px;
+
+    height:160px;
+
+    transform:translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,225,185,.15),
+            transparent 70%
+        );
+
+    filter:blur(30px);
+
+    pointer-events:none;
+
+}
+
+.panel-title{
+
+    display:block;
+
+    text-align:center;
+
+    letter-spacing:.32em;
+
+    font-size:.72rem;
+
+    color:rgba(235,229,220,.65);
+
+}
+
+.divider{
+
+    width:60px;
+
+    height:1px;
+
+    margin:18px auto 24px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(255,220,180,.6),
+            transparent
+        );
+
+}
+
+.panel-text{
+
+    text-align:center;
+
+    line-height:1.8;
+
+    color:rgba(235,231,226,.72);
+
+    margin-bottom:36px;
+
+}
+
+/* =====================================================
+   CHEST
+===================================================== */
+
+.memory-chest {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    /* zone stable : elle ne change jamais entre fermé/ouvert */
+    width: 100%;
+    max-width: 320px;
+
+    margin: 34px auto 0;
+
+    cursor: pointer;
+    z-index: 3;
+
+    transition:
+        transform .65s cubic-bezier(.22,.61,.36,1),
+        filter .65s ease;
+}
+
+/* -----------------------------
+   SHADOW
+----------------------------- */
+
+.memory-chest::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -4px;
+
+    width: 210px;
+    height: 42px;
+
+    transform:
+        translateX(-50%)
+        scale(.9);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(0,0,0,.58) 0%,
+            rgba(0,0,0,.34) 38%,
+            transparent 72%
+        );
+
+    filter: blur(9px);
+
+    opacity: .8;
+
+    pointer-events: none;
+
+    transition:
+        opacity .8s ease,
+        transform .9s cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* -----------------------------
+   GOLDEN GLOW
+----------------------------- */
+
+.memory-chest::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 5px;
+
+    width: 250px;
+    height: 110px;
+
+    transform:
+        translateX(-50%)
+        scale(.55);
+
+    transform-origin: center bottom;
+
+    background:
+        radial-gradient(
+            ellipse at center bottom,
+            rgba(255,195,105,.30) 0%,
+            rgba(225,145,65,.14) 36%,
+            transparent 72%
+        );
+
+    filter: blur(20px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 1s ease,
+        transform 1.1s cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* -----------------------------
+   IMAGE
+----------------------------- */
+
+.memory-chest img {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    width: 230px;
+    height: auto;
+
+    transform-origin: center bottom;
+
+    filter:
+        drop-shadow(0 18px 22px rgba(0,0,0,.48));
+
+    transition:
+        width .8s cubic-bezier(.22,.61,.36,1),
+        opacity .55s ease,
+        transform .8s cubic-bezier(.22,.61,.36,1),
+        filter .8s ease;
+}
+
+.memory-chest:hover {
+    transform: translateY(-2px);
+}
+
+
+/* -----------------------------
+   SWITCH
+----------------------------- */
+
+.memory-chest img.switching {
+    opacity: .12;
+
+    transform:
+        translateY(1px)
+        scale(.975);
+}
+
+
+/* -----------------------------
+   OPEN
+----------------------------- */
+
+.memory-chest:has(img.open)::before {
+    opacity: .9;
+
+    transform:
+        translateX(-50%)
+        scale(1.05);
+}
+
+
+.memory-chest:has(img.open)::after {
+    opacity: .72;
+
+    transform:
+        translateX(-50%)
+        scale(.92);
+}
+
+
+.memory-chest img.open {
+    width: 284px;
+
+    transform:
+        translateX(0)
+        translateY(-2px);
+
+    filter:
+        drop-shadow(0 18px 24px rgba(0,0,0,.48))
+        drop-shadow(0 8px 18px rgba(224,178,112,.14));
+}
+
+/* =====================================================
+   RESULT — MEMORY PARCHMENT
+===================================================== */
+
+#result.memory-result {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*
+       On profite vraiment de la largeur disponible.
+    */
+    width: min(100%, 470px);
+    box-sizing: border-box;
+
+    margin: -10px auto 0;
+    padding: 0 48px;
+
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    transform:
+        translateY(-24px)
+        scale(.97);
+
+    transform-origin: top center;
+
+    /*
+       IMPORTANT :
+       aucune couleur derrière le PNG.
+    */
+    background-color: transparent;
+
+    background-image:
+        url("../assets/images/memories/memory-parchment.png");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    filter:
+        drop-shadow(0 18px 22px rgba(0,0,0,.32));
+
+    transition:
+        max-height .75s cubic-bezier(.16,1,.3,1),
+        opacity .45s ease,
+        transform .75s cubic-bezier(.16,1,.3,1),
+        padding .65s ease,
+        margin .65s ease;
+}
+
+/* =====================================================
+   RESULT — OPEN
+===================================================== */
+
+#result.memory-result.show {
+    max-height: 900px;
+    min-height: 430px;
+
+    opacity: 1;
+    margin-top: 10px;
+
+    padding:
+        42px
+        48px
+        36px;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+/*
+   On désactive complètement les anciens
+   pseudo-éléments de la carte smoked glass.
+*/
+
+#result.memory-result::before,
+#result.memory-result::after {
+    content: none;
+}
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+.memory-question {
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: .82rem;
+    font-weight: 600;
+    line-height: 1.4;
+
+    letter-spacing: .22em;
+    text-transform: uppercase;
+
+    /*
+       Beaucoup plus sombre et quasiment opaque.
+    */
+    color: rgba(66, 40, 24, .96);
+
+    text-shadow:
+        0 1px 0 rgba(255, 225, 180, .18);
+}
+
+
+.memory-question::after {
+    content: "────  ✦  ────";
+
+    display: block;
+
+    margin: 9px auto 18px;
+
+    font-size: .42rem;
+    font-weight: 600;
+    letter-spacing: .05em;
+
+    color: rgba(105, 60, 28, .88);
+}
+
+/* =====================================================
+   MEMORY TEXT
+===================================================== */
+
+.memory-text {
+    position: relative;
+    z-index: 2;
+
+    margin: 0 auto 24px;
+
+    max-width: 310px;
+
+    text-align: center;
+
+    font-family: "Lavishly Yours", cursive;
+
+    font-size: 1.5rem;
+    line-height: 1.2;
+
+    font-weight: 400;
+    font-style: normal;
+
+    color: rgba(55, 34, 22, .96);
+
+    text-shadow:
+        0 .5px 0 rgba(40, 22, 12, .10);
+}
+
+
+/* =====================================================
+   CHOICES
+===================================================== */
+
+.choices {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 14px;
+
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.choices button {
+    flex: 1;
+    min-width: 0;
+
+    padding: 9px 12px;
+
+    border:
+        1px solid rgba(91, 52, 27, .62);
+
+    border-radius: 999px;
+
+    background:
+        rgba(86, 52, 30, .10);
+
+    color:
+        rgba(59, 36, 23, .96);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: .94rem;
+    font-weight: 600;
+
+    box-shadow:
+        0 3px 7px rgba(50, 29, 16, .12),
+        inset 0 1px 0 rgba(255, 231, 194, .14);
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        color .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.choices button:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    color:
+        rgba(50, 30, 19, .98);
+
+    background:
+        rgba(88, 52, 28, .18);
+
+    border-color:
+        rgba(103, 61, 31, .65);
+
+    box-shadow:
+        0 5px 10px rgba(48, 27, 14, .16);
+}
+
+
+.choices button:disabled {
+    cursor: default;
+}
+
+
+/* =====================================================
+   ANSWERS
+===================================================== */
+
+.choices button.right-answer {
+    color:
+        rgba(48, 29, 18, .98);
+
+    border-color:
+        rgba(99, 59, 30, .72);
+
+    background:
+        rgba(103, 65, 34, .24);
+
+    box-shadow:
+        0 0 12px rgba(83, 48, 24, .12),
+        inset 0 1px 0 rgba(255, 229, 187, .10);
+}
+
+
+#result.memory-result.correct,
+#result.memory-result.wrong {
+    filter:
+        drop-shadow(0 18px 20px rgba(0,0,0,.34));
+}
+
+
+/* =====================================================
+   NOTE
+===================================================== */
+
+.memory-note {
+    position: relative;
+    z-index: 2;
+
+    margin: 18px auto 0;
+    padding-top: 13px;
+
+    max-width: 290px;
+
+    border-top:
+        1px solid rgba(82, 46, 24, .34);
+
+    text-align: center;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: .9rem;
+    line-height: 1.55;
+    font-style: italic;
+
+    color:
+        rgba(58, 34, 21, .92);
+}
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.progress {
+    position: relative;
+    z-index: 2;
+
+    margin: 20px 0 0;
+    padding-top: 12px;
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: .69rem;
+    font-weight: 600;
+
+    letter-spacing: .18em;
+    text-transform: uppercase;
+
+    color: rgba(72, 43, 24, .92);
+}
+
+
+.progress::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 72px;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(104, 59, 27, .82) 25%,
+            rgba(104, 59, 27, .82) 75%,
+            transparent
+        );
+}
+
+/* =====================================================
+   FINAL SCORE
+===================================================== */
+
+.final-score {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: rgba(62, 38, 24, .94);
+}
+
+
+.final-score::before {
+    content: "✦";
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: .6rem;
+
+    color: rgba(105, 60, 28, .78);
+}
+
+
+.final-label {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: .78rem;
+    font-weight: 600;
+
+    letter-spacing: .18em;
+    text-transform: uppercase;
+
+    color: rgba(66, 40, 24, .90);
+}
+
+
+.final-number {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    gap: 8px;
+
+    margin: 8px 0 10px;
+
+    color: rgba(54, 31, 18, .98);
+}
+
+
+.final-number strong {
+    font-family: "Lavishly Yours", cursive;
+
+    font-size: 3.8rem;
+    line-height: 1;
+
+    font-weight: 400;
+}
+
+
+.final-number span {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+    font-style: italic;
+
+    opacity: .72;
+}
+
+
+.final-message {
+    display: block;
+
+    font-family: "Lavishly Yours", cursive;
+
+    font-size: 1.45rem;
+    line-height: 1.2;
+
+    color: rgba(58, 34, 21, .90);
+}
+
+
+.final-score::after {
+    content: "────  ✦  ────";
+
+    display: block;
+
+    margin-top: 19px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: .4rem;
+    letter-spacing: .04em;
+
+    color: rgba(105, 60, 28, .72);
+}
+
+/* =====================================================
+   SCORE — LAST TIME
+===================================================== */
+
+.memory-score {
+    position: relative;
+
+    width: min(100%, 330px);
+    box-sizing: border-box;
+
+    margin: 34px auto 0;
+    padding: 20px 26px 18px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35, 42, 48, .48),
+            rgba(24, 31, 38, .62)
+        );
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border:
+        1px solid rgba(205, 195, 180, .10);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 14px 32px rgba(0,0,0,.14),
+        inset 0 1px 0 rgba(255,255,255,.025);
+}
+
+
+/* petite lumière en haut du cadre */
+
+.memory-score::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 42%;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(218, 191, 151, .22),
+            transparent
+        );
+}
+
+
+/* -----------------------------
+   LABEL
+----------------------------- */
+
+.score-label {
+    display: block;
+
+    margin: 0 0 8px;
+
+    font-size: .68rem;
+    font-weight: 400;
+    line-height: 1;
+
+    letter-spacing: .12em;
+
+    text-transform: none;
+
+    color:
+        rgba(224, 217, 207, .52);
+}
+
+
+/* -----------------------------
+   LAST SCORE
+----------------------------- */
+
+#lastScore {
+    margin: 0;
+
+    font-size: .92rem;
+    line-height: 1.45;
+
+    font-style: italic;
+
+    color:
+        rgba(235, 230, 221, .72);
+}
+
+
+/* -----------------------------
+   ORNAMENT
+----------------------------- */
+
+.score-ornament {
+    margin-top: 11px;
+
+    font-size: .42rem;
+    line-height: 1;
+
+    color:
+        rgba(202, 169, 119, .48);
+}

@@ -1,176 +1,118 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sun & Moon</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Sun & Moon</title>
 
-  <!-- Global Styles -->
-  <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="index.css">
 
-  <!-- Module Styles -->
-  <link rel="stylesheet" href="sunmoon.css">
-  <link rel="stylesheet" href="moon.css">
-  <link rel="stylesheet" href="sun.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body class="sunmoon mode-moon">
+<body class="sunmoon-home">
 
-  <!-- NAVBAR UNIQUE -->
-  <nav class="nav">
-    <script src="../navigation.js"></script>
-  </nav>
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
-  <main class="sunmoon-stage">
+    <nav class="nav">
+      <script src="../assets/js/navigation.js"></script>
+    </nav>
 
-    <!-- 🌙 MOON -->
-    <article class="sunmoon-card card-moon is-active">
-      <header class="card-header">
-        <h1 class="card-title">Fases da Lua</h1>
-        <div class="card-ornament" aria-hidden="true"></div>
-        <button class="sunmoon-switch" data-target="sun">☀︎</button>
-      </header>
+    <main class="home">
 
-      <div class="card-content">
-        <p>
-          Existe uma fase da vida em que você se vê perdido<br>
-          Perdido no tempo, na monotonia, na sua própria mente<br>
-          As cores se perdem quase por completo ou ao menos a intensidade delas diminuem<br>
-          A busca incessante pela <em>Lua Nova</em> se inicia.
-        </p>
+        <header class="hero">
 
-        <p>
-          Existe uma fase da vida em que as fases não acontecem na ordem correta<br>
-          Mas talvez isso seja a vida, uma eterna surpresa<br>
-          Um dia você está perdido e no outro seu coração se encontra, sem resposta, sem perguntas, sem razão<br>
-          As cores começam ligeiramente a aparecer de novo, você começa a enxergar novos horizontes, as coisas começam a fazer mais sentido<br>
-          Sentimentos aparecem na <em>Lua Crescente</em>.
-        </p>
+            <h1>Sun & Moon</h1>
 
-        <p>
-          Existe uma fase da vida em que o amor não é mais questionado, ele se mostra em forma de pessoa<br>
-          O amor que parecia não existir te prova que ele só estava ali, escondido, no sigilo<br>
-          Esse amor é ambíguo, calmo e intenso, louco e pacífico, ele te faz duvidar da realidade<br>
-          Mas então você vê que talvez nada mais seja que a sorte batendo à sua porta e sutilmente você a deixa entrar e com ela, a <em>Lua Minguante</em>.
-        </p>
+            <div class="divider"></div>
 
-        <p>
-          Existe uma fase em que você não tem mais dúvidas<br>
-          Talvez seja isso o que eles chamam de alma gêmea<br>
-          E então você pensa que realmente não deveria importar se é “ele” ou “ela”, mas tinha que ser “L”<br>
-          E finalmente depois de tanto tempo perdido, com pouco, com quase nada talvez, você de repente se vê completo<br>
-          Bem-vinda, <em>Lua Cheia</em>.
-        </p>
+        </header>
 
-        <!-- 🌙 CYCLE LUNAIRE -->
-        <div class="lunar-cycle" aria-hidden="true">
-          <span class="moon-phase new"></span>
-          <span class="moon-phase crescent"></span>
-          <span class="moon-phase full"></span>
-          <span class="moon-phase waning"></span>
-        </div>
+        <section class="carousel">
 
-      </div>
-    </article>
+            <button class="carousel-btn prev" aria-label="Previous">
+                ❮
+            </button>
 
-   <!-- ☀️ SUN -->
-    <article class="sunmoon-card card-sun">
-      <header class="card-header">
-        <h1 class="card-title">Là où commence la lumière</h1>
-        <div class="card-ornament" aria-hidden="true"></div>
-        <button class="sunmoon-switch" data-target="moon">☾</button>
-      </header>
+            <div class="carousel-window">
 
-      <div class="card-content">
-          <p>
-            Il existe des jours où la vie n’était plus qu’un passage,<br>
-            un mouvement sans direction,<br>
-            une succession d’heures tenues debout par habitude.<br>
-            Tout brûlait trop vite,<br>
-            ou plus du tout.<br>
-            La chaleur n’atteignait plus rien.
-          </p>
+                <div class="carousel-track">
 
-          <p>
-            Puis une lumière s’est levée sans prévenir —<br>
-            pas celle du matin,<br>
-            pas celle que tout le monde voit.<br>
-            Une lumière qui reconnaît avant de comprendre,<br>
-            qui perce avant qu’on ait le temps de se défendre.<br>
-            Une lumière qui ressemble à quelqu’un.<br>
-            Une lumière qui porte un nom.
-          </p>
+                    <!-- MOON -->
+                    <a
+                        class="card moon active"
+                        href="moon/fases-da-lua.html"
+                        aria-label="Read Fases da Lua">
 
-          <p>
-            Ce soleil ne réchauffe pas seulement la peau.<br>
-            Il donne un sens aux choses immobiles.<br>
-            Il éveille des couleurs qu’on n’avait jamais vues,<br>
-            des émotions sans nom,<br>
-            des sensations si nouvelles qu’on ne sait d’abord pas où les ranger.<br>
-            Sous un soleil pareil,<br>
-            la brûlure est plus forte,<br>
-            le monde change d’axe.<br>
-            Le cœur aussi.
-          </p>
+                        <img
+                            src="assets/fases-da-lua.png"
+                            alt="Fases da Lua tarot card">
+                    </a>
 
-          <p>
-            Il existe une phase où la vie recommence à battre,<br>
-            où tout ce qui paraissait trop lourd retrouve un rythme,<br>
-            où l’on avance non pas par courage,<br>
-            mais parce qu’une présence rend le chemin moins hostile.<br>
-            Cette phase-là, c’est la sienne.<br>
-            Celle qu’il porte sans effort.<br>
-            Celle qu’il est.
-          </p>
+                    <!-- SUN -->
+                    <a
+                        class="card sun right"
+                        href="sun/la-ou-commence-la-lumiere.html"
+                        aria-label="Read Là où commence la lumière">
 
-          <p>
-            Et puis vient le moment où l’on ne doute plus.<br>
-            Où l’on ne questionne pas ce qui apaise<br>
-            et ce qui incendie en même temps.<br>
-            Où l’on sait — sans explication, sans logique —<br>
-            que ce rayonnement-là, n’a pas d’équivalent.<br>
-            Que rien, avant, n’avait eu ce goût.<br>
-            Et que rien, jamais, n’existera de la même façon.
-          </p>
+                        <img
+                            src="assets/la-ou-commence-la-lumiere.png"
+                            alt="Là où commence la lumière tarot card">
+                    </a>
 
-          <p>
-            On dit que certains amours arrivent comme des saisons.<br>
-            Le sien est arrivé comme un soleil :<br>
-            irréfutable, entier,<br>
-            capable de rendre la vie vivante,<br>
-            capable d’ouvrir des territoires intérieurs<br>
-            dont on n’aurait jamais soupçonné l’existence.
-          </p>
+                    <!-- ECLIPSE -->
+                    <a
+                        class="card eclipse left"
+                        href="eclipse/eclipse.html"
+                        aria-label="Read Eclipse">
 
-          <p>
-            Arrive l'instant où tout s’éclaire autrement.<br>
-            Où la lumière devient un repère, une évidence, une vérité intérieure.<br>
-            Rien n’a plus besoin d’être expliqué :<br>
-            la chaleur parle pour elle-même,<br>
-            la clarté aussi.<br>
-            Sa présence redessine le monde<br>
-            simplement en existant.<br>
-            Et il devient évident que tout ce qui compte<br>
-            commence là où il brille.
-          </p>
-        
-        <!-- ☀️ CYCLE SOLAIRE -->
-          <div class="solar-cycle" aria-hidden="true">
-            <span class="sun-phase dawn"></span>
-            <span class="sun-phase zenith"></span>
-            <span class="sun-phase soft"></span>
-            <span class="sun-phase dusk"></span>
-          </div>
+                        <img
+                            src="assets/eclipse.png"
+                            alt="Eclipse tarot card">
+                    </a>
+
+                    <!-- STARS -->
+                    <a
+                        class="card stars"
+                        href="stars/stars.html"
+                        aria-label="Read The Sky Between Us">
+
+                        <img
+                            src="assets/the-sky-between-us.png"
+                            alt="The Sky Between Us tarot card">
+                    </a>
+
+                </div>
+
+            </div>
+
+            <button class="carousel-btn next" aria-label="Next">
+                ❯
+            </button>
+
+        </section>
+
+        <div class="carousel-dots">
+
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
 
         </div>
-      </article>
-  </main>
 
-  <script src="sunmoon.js"></script>
+    </main>
+
+    <script src="index.js"></script>
+
 </body>
+
 </html>

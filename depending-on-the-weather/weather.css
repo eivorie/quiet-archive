@@ -49,7 +49,7 @@ body.weather {
     serif;
 
   background-image:
-    url("../assets/weather-background.png");
+    url("../assets/images/weather/weather-background.png");
 
   background-size: cover;
 
@@ -620,7 +620,7 @@ body.weather::after {
       rgba(8, 11, 8, .08),
       rgba(8, 10, 8, .18)
     ),
-    url("../assets/mood.png")
+    url("../assets/images/weather/mood.png")
     center / cover
     no-repeat;
 }
