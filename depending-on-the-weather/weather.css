@@ -557,6 +557,11 @@ body.weather::after {
   gap: 10px;
 }
 
+/* Place the first entry across the top when a page has an odd count. */
+.weather-grid > .weather-mood:first-child:nth-last-child(odd) {
+  grid-column: 1 / -1;
+}
+
 
 /* =====================================================
    MOOD CARD

@@ -51,9 +51,14 @@
       </div>
 
       <div class="weather-pages">
-
-        <div class="weather-index-page weather-panel is-active" data-weather-page="1">
+        <!-- Add new entries at the top of this grid. Pagination is automatic. -->
+        <div class="weather-index-page weather-panel is-active">
           <div class="weather-grid">
+
+            <a class="weather-mood" href="entries/an-appetite-for-you.html">
+              <span class="weather-mood-icon">✧</span>
+              <strong>Falling deeper</strong>
+            </a>
 
             <a class="weather-mood" href="entries/beyond-words.html">
               <span class="weather-mood-icon">✧</span>
@@ -94,12 +99,6 @@
               </strong>
             </a>
 
-          </div>
-        </div>
-
-        <div class="weather-index-page weather-panel" data-weather-page="2">
-          <div class="weather-grid">
-
             <a class="weather-mood" href="entries/feeling-angry.html">
               <span class="weather-mood-icon">—</span>
               <strong>I'm angry</strong>
@@ -136,12 +135,6 @@
               </strong>
             </a>
 
-          </div>
-        </div>
-
-        <div class="weather-index-page weather-panel" data-weather-page="3">
-          <div class="weather-grid">
-
             <a class="weather-mood" href="entries/feeling-steadfast.html">
               <span class="weather-mood-icon">⌃</span>
               <strong>
@@ -171,14 +164,8 @@
               </strong>
             </a>
 
-            <a class="weather-mood" href="entries/an-appetite-for-you.html">
-              <span class="weather-mood-icon">✧</span>
-              <strong>An appetite<br>for you</strong>
-            </a>
-
           </div>
         </div>
-
       </div>
 
       <footer class="weather-pagination">
@@ -196,14 +183,10 @@
           <span class="weather-page-number">
             <b class="weather-page-current">1</b>
             /
-            <span class="weather-page-total">3</span>
+            <span class="weather-page-total">1</span>
           </span>
 
-          <div class="weather-page-dots" aria-hidden="true">
-            <span class="is-active" data-page="0"></span>
-            <span data-page="1"></span>
-            <span data-page="2"></span>
-          </div>
+          <div class="weather-page-dots" aria-hidden="true"></div>
 
         </div>
 

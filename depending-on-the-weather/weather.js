@@ -52,12 +52,37 @@ document.addEventListener("DOMContentLoaded", () => {
      WEATHER INDEX PAGINATION
   ===================================================== */
 
-  const weatherPages = document.querySelectorAll(".weather-index-page");
+  const pagesContainer = document.querySelector(".weather-pages");
+  const sourceGrid = pagesContainer?.querySelector(".weather-grid");
+  const entries = sourceGrid ? Array.from(sourceGrid.children) : [];
+  const entriesPerPage = 6;
+  const weatherPages = [];
+
+  if (pagesContainer && entries.length) {
+    pagesContainer.replaceChildren();
+
+    for (let start = 0; start < entries.length; start += entriesPerPage) {
+      const page = document.createElement("div");
+      page.className = "weather-index-page weather-panel";
+      const grid = document.createElement("div");
+      grid.className = "weather-grid";
+      grid.append(...entries.slice(start, start + entriesPerPage));
+      page.append(grid);
+      pagesContainer.append(page);
+      weatherPages.push(page);
+    }
+  }
   const prevButton = document.querySelector(".weather-page-prev");
   const nextButton = document.querySelector(".weather-page-next");
   const pageCurrent = document.querySelector(".weather-page-current");
   const pageTotal = document.querySelector(".weather-page-total");
-  const pageDots = document.querySelectorAll(".weather-page-dots span");
+  const dotsContainer = document.querySelector(".weather-page-dots");
+  const pageDots = weatherPages.map((_, index) => {
+    const dot = document.createElement("span");
+    dot.dataset.page = index;
+    dotsContainer?.append(dot);
+    return dot;
+  });
 
   /*
      Si on n'est pas sur l'index Weather,
