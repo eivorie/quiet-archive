@@ -61,15 +61,19 @@ document.addEventListener("DOMContentLoaded", () => {
   if (pagesContainer && entries.length) {
     pagesContainer.replaceChildren();
 
-    for (let start = 0; start < entries.length; start += entriesPerPage) {
+    const firstPageSize = entries.length % entriesPerPage || entriesPerPage;
+
+    for (let start = 0; start < entries.length;) {
+      const pageSize = start === 0 ? firstPageSize : entriesPerPage;
       const page = document.createElement("div");
       page.className = "weather-index-page weather-panel";
       const grid = document.createElement("div");
       grid.className = "weather-grid";
-      grid.append(...entries.slice(start, start + entriesPerPage));
+      grid.append(...entries.slice(start, start + pageSize));
       page.append(grid);
       pagesContainer.append(page);
       weatherPages.push(page);
+      start += pageSize;
     }
   }
   const prevButton = document.querySelector(".weather-page-prev");
